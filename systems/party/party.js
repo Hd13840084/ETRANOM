@@ -68,7 +68,7 @@ export class ETRANOMParty {
 
             createParty: region =>
                 call("create_party", {
-                    p_region_key: region
+                    p_region_id: region
                 }),
 
             leaveParty: () =>
@@ -97,9 +97,9 @@ export class ETRANOMParty {
                     p_target_user_id: userId
                 }),
 
-            respondInvite: (partyId, accept) =>
+            respondInvite: (inviteId, accept) =>
                 call("respond_party_invite", {
-                    p_party_id: partyId,
+                    p_invite_id: inviteId,
                     p_accept: accept
                 }),
 
@@ -116,7 +116,7 @@ export class ETRANOMParty {
 
             selectRegion: region =>
                 call("select_party_region", {
-                    p_region_key: region
+                    p_region_id: region
                 }),
 
             startSession: () =>
