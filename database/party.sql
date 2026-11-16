@@ -1139,16 +1139,11 @@ begin
         raise exception 'Invalid session result';
     end if;
 
-    select id
-    into v_session
-    from public.party_sessions
     where id = p_session_id
-      and party_id = v_party
-      and status = 'active'
-    order by created_at desc
-    limit 1
-    for update;
-
+  and party_id = v_party
+  and status = 'active'
+for update;
+    
     if v_session is null then
         raise exception 'Active session not found';
     end if;
