@@ -49,7 +49,7 @@ const SUPABASE_URL = 'https://oqqhtctqzffglorurdhg.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_6-jModjPqRglQfAiHJc5iw_9Ifh-VAM';
 const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
 const gate=document.getElementById('auth-gate'),form=document.getElementById('auth-form'),note=document.getElementById('auth-note'),loginBtn=document.getElementById('login-btn'),signupBtn=document.getElementById('signup-btn');
-let currentUser=null,started=false;
+let currentUser=null,started=false,startupPromise=null;
 
 // Guild system: a standalone world button, with founding unlocked only through Toren.
 let guildTeacherVisited=false;
@@ -187,7 +187,7 @@ function showToastNotification(key){const labels={private:'پیام خصوصی �
 function markNotificationsRead(key){localStorage.setItem(noticeKey(key),new Date().toISOString());setNotificationCount(key,0);}
 
 
-async function start(session){
+async function startSession(session){
   if(started)return;
   if(!session?.user?.id)throw new Error('نشست کاربری معتبر نیست.');
   currentUser=session.user;
@@ -232,7 +232,14 @@ async function start(session){
     throw e;
   }
 }
-async function login(){const email=document.getElementById('email').value.trim(),password=document.getElementById('password').value;if(!email||!password){say('ایمیل و گذرواژه را وارد کن.');return;}setBusy(true);say('در حال ورود...');try{const {data,error}=await supabase.auth.signInWithPassword({email,password});if(error)throw error;await start(data.session);}catch(e){say(e.message==='Invalid login credentials'?'ایمیل یا گذرواژه نادرست است.':`ورود انجام نشد: ${e.message}`);}finally{setBusy(false);}}
+// Prevent overlapping startup attempts (for example, a manual login racing with session recovery).
+function start(session){
+  if(started)return Promise.resolve();
+  if(startupPromise)return startupPromise;
+  startupPromise=startSession(session).finally(()=>{startupPromise=null;});
+  return startupPromise;
+}
+async function login(){const email=document.getElementById('email').value.trim(),password=document.getElementById('password').value;if(!email||!password){say('ایمیل و گذرواژه را وارد کن.');return;}setBusy(true);say('در حال ورود...');try{const {data,error}=await supabase.auth.signInWithPassword({email,password});if(error)throw error;if(!data?.session)throw new Error('نشست ورود از سرویس دریافت نشد؛ دوباره تلاش کن.');await start(data.session);}catch(e){say(e.message==='Invalid login credentials'?'ایمیل یا گذرواژه نادرست است.':`ورود انجام نشد: ${e.message||'خطای نامشخص'}`);}finally{setBusy(false);}}
 async function signup(){const email=document.getElementById('email').value.trim(),password=document.getElementById('password').value;if(!email||!password){say('ایمیل و گذرواژه را وارد کن.');return;}if(password.length<6){say('ایمیل معتبر و گذرواژه حداقل ۶ نویسه‌ای وارد کن.');return;}setBusy(true);say('در حال ساخت حساب...');try{const {data,error}=await supabase.auth.signUp({email,password});if(error)throw error;if(data.session)await start(data.session);else say('حساب ساخته شد، اما نشست ورود دریافت نشد. تنظیم تأیید ایمیل را بررسی کن یا با همان ایمیل و گذرواژه وارد شو.');}catch(e){say(`ساخت حساب انجام نشد: ${e.message}`);}finally{setBusy(false);}}
 form.addEventListener('submit',e=>{e.preventDefault();login();});signupBtn.addEventListener('click',e=>{e.preventDefault();signup();});
 supabase.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT'){started=false;currentUser=null;document.getElementById('etr-game-root')?.classList.remove('etr-game-ready');gate.classList.remove('hidden');window.location.reload();}});
