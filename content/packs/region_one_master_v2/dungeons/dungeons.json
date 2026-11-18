@@ -4,9 +4,9 @@
     "name": "دانجن بیشه خارزار",
     "region_id": "thorn_grove",
     "entry_subarea_id": "thorn_grove_core",
-    "wave_count": 6,
-    "normal_waves": 5,
-    "boss_wave": 6,
+    "wave_count": 4,
+    "normal_waves": 3,
+    "boss_wave": 4,
     "pool_region_ids": [
       "burnt_forest",
       "thorn_grove",
@@ -35,16 +35,12 @@
         7,
         15,
         25,
-        35,
-        40,
-        0
+        35
       ],
       "trap_chance_percent": [
         15,
         30,
         45,
-        0,
-        15,
         0
       ],
       "trap_type_weights": [
@@ -57,16 +53,6 @@
           0.4,
           0.25,
           0.35
-        ],
-        [
-          0.3,
-          0.3,
-          0.4
-        ],
-        [
-          0.3,
-          0.3,
-          0.4
         ],
         [
           0.3,
@@ -104,8 +90,8 @@
     "failure": {
       "flee_or_death_resets_entire_run": true,
       "restore_entry_snapshot": true,
-      "death_xp_penalty_percent": 3,
-      "death_gold_penalty_percent": 1
+      "death_xp_penalty_percent": 5,
+      "death_gold_penalty_percent": 5
     },
     "version": 2
   },
@@ -114,9 +100,9 @@
     "name": "گذرگاه مقبره‌های آفتاب",
     "region_id": "southern_plains",
     "entry_subarea_id": "southern_plains_core",
-    "wave_count": 6,
-    "normal_waves": 5,
-    "boss_wave": 6,
+    "wave_count": 4,
+    "normal_waves": 3,
+    "boss_wave": 4,
     "pool_region_ids": [
       "vardash_river",
       "southern_plains",
@@ -145,16 +131,12 @@
         10,
         20,
         30,
-        45,
-        45,
-        0
+        45
       ],
       "trap_chance_percent": [
         20,
         30,
         45,
-        0,
-        20,
         0
       ],
       "trap_type_weights": [
@@ -167,16 +149,6 @@
           0.25,
           0.45,
           0.3
-        ],
-        [
-          0.3,
-          0.3,
-          0.4
-        ],
-        [
-          0.3,
-          0.3,
-          0.4
         ],
         [
           0.3,
@@ -214,8 +186,8 @@
     "failure": {
       "flee_or_death_resets_entire_run": true,
       "restore_entry_snapshot": true,
-      "death_xp_penalty_percent": 3,
-      "death_gold_penalty_percent": 1
+      "death_xp_penalty_percent": 5,
+      "death_gold_penalty_percent": 5
     },
     "version": 2
   }

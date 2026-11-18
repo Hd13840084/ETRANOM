@@ -1,13 +1,33 @@
-import test from "node:test";
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
-const root=new URL('../../',import.meta.url);
-const game=fs.readFileSync(new URL('../../game.js',import.meta.url),'utf8');
-const runtime=fs.readFileSync(new URL('../../systems/content/region-one-runtime.js',import.meta.url),'utf8');
-const encounters=JSON.parse(fs.readFileSync(new URL('content/packs/region_one_master_v2/monsters/monsters.json',root),'utf8'));
-const regions=JSON.parse(fs.readFileSync(new URL('content/packs/region_one_master_v2/regions/regions.json',root),'utf8'));
-const expected={burnt_forest:1,thorn_grove:2,ash_hills:3,vardash_river:4,southern_plains:5,rootbound_ruins:5};
-const keys=['power','speed','endurance','vitality','intellect','perception','luck','faith'];
-test('کاتالوگ ۳۶ دشمن با سطح و هشت ویژگی معتبر است',()=>{assert.equal(encounters.length,36);for(const [id,level] of Object.entries(expected)){const rows=encounters.filter(x=>x.region_id===id);assert.equal(rows.length,6);for(const e of rows){assert.equal(e.level,level);assert.ok(e.stats.hp>0&&e.stats.attack>0&&e.stats.defense>=0);for(const k of keys)assert.ok(Number.isFinite(e.stats[k])&&e.stats[k]>0,`${e.id}/${k}`);}}});
-test('هر محدوده پنج هیولای عادی و دقیقاً دو هیولای مهارت‌دار دارد',()=>{for(const r of regions){const rows=encounters.filter(x=>x.region_id===r.id&&x.kind==='normal');assert.equal(rows.length,5);assert.equal(rows.filter(x=>x.skills.length>0).length,2);assert.ok(rows.every(x=>x.skills.length?x.stats.mp>0:x.stats.mp===0));}});
-test('runtime داده JSON را به موتور نبرد متصل می‌کند',()=>{assert.match(runtime,/pack\.monsters\.map/);assert.match(game,/function makeCombatEnemy/);assert.match(game,/function warriorMaxHp/);});
+const source = fs.readFileSync(new URL('../../game.js', import.meta.url), 'utf8');
+function readArray(name) {
+  const match = source.match(new RegExp(`const ${name}=(\\[.*?\\]);\\n`));
+  assert.ok(match, `${name} catalogue exists`);
+  return JSON.parse(match[1]);
+}
+const expected = {
+  burnt_forest: { level: 1, normal: 5, special: 'miniboss' },
+  thorn_grove: { level: 2, normal: 5, special: 'miniboss' },
+  ash_hills: { level: 3, normal: 5, special: 'miniboss' },
+  vardash_river: { level: 4, normal: 5, special: 'miniboss' },
+  southern_plains: { level: 5, normal: 5, special: 'miniboss' },
+  rootbound_ruins: { level: 5, normal: 5, special: 'boss' },
+};
+const encounters = readArray('REGION_ENCOUNTERS');
+for (const [regionId, rule] of Object.entries(expected)) {
+  const rows = encounters.filter(x => x.regionId === regionId);
+  assert.equal(rows.length, 6, `${regionId}: five normal + one special`);
+  assert.equal(rows.filter(x => x.kind === 'normal').length, rule.normal);
+  assert.equal(rows.filter(x => x.kind === rule.special).length, 1);
+  for (const enemy of rows) {
+    assert.equal(enemy.level, rule.level, `${enemy.id}: correct zone level`);
+    assert.ok(enemy.hp > 0 && enemy.attack > 0 && enemy.defense >= 0);
+    assert.equal(enemy.stats.hp, enemy.hp);
+    assert.equal(enemy.stats.attack, enemy.attack);
+    assert.ok(enemy.quality && enemy.role && enemy.description);
+  }
+}
+assert.match(source, /enemy-combat-stats/);
+assert.match(source, /playerMaxHp/);
+console.log('Region combat catalogue passed: 36 enemies, levels 1–5, stats and display metadata consistent.');

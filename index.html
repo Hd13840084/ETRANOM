@@ -216,7 +216,7 @@ async function startSession(session){
     guildTeacherVisited=sessionStorage.getItem('etranom:guildTeacherVisited')==='1';
     const { loadRegionOneRuntime } = await import('./systems/content/region-one-runtime.js?v=2');
     await loadRegionOneRuntime();
-    await import('./game.js?v=43');
+    await import('./game.js?v=42');
     const gameRunner=window.run;
     if(typeof gameRunner!=='function')throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
     await gameRunner('play');
