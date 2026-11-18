@@ -1,0 +1,8 @@
+{
+  "id": "unique_recipe_id",
+  "region_id": "unique_region_id",
+  "output_item_id": "unique_item_id",
+  "materials": [],
+  "gold_cost": 0,
+  "version": 1
+}
