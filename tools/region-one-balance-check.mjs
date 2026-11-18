@@ -3,19 +3,17 @@ import path from 'node:path';
 const root=path.resolve('.');
 const game=fs.readFileSync(path.join(root,'game.js'),'utf8');
 const required=['power','speed','endurance','vitality','intellect','perception','luck','faith'];
-for(const key of required){if(!game.includes(key))throw new Error(`Missing core attribute: ${key}`);}
-const runtimeBlock=game.match(/const REGION_ENCOUNTERS=(\[.*?\]);\n  \/\/ کاتالوگ/s);
-if(!runtimeBlock)throw new Error('Runtime encounter catalogue missing');
-const runtimeEnemies=JSON.parse(runtimeBlock[1]);
+for(const key of required)if(!game.includes(key))throw new Error(`Missing core attribute: ${key}`);
+const pack=path.join(root,'content/packs/region_one_master_v2');
+const read=name=>JSON.parse(fs.readFileSync(path.join(pack,name),'utf8'));
+const runtimeEnemies=read('monsters/monsters.json'),regions=read('regions/regions.json'),recipes=read('recipes/recipes.json');
 if(runtimeEnemies.length!==36)throw new Error(`Expected 36 unique Region 1 encounters, found ${runtimeEnemies.length}`);
-const regionCounts=new Map();for(const enemy of runtimeEnemies)regionCounts.set(enemy.regionId,(regionCounts.get(enemy.regionId)||0)+1);
+const regionCounts=new Map();for(const enemy of runtimeEnemies)regionCounts.set(enemy.region_id,(regionCounts.get(enemy.region_id)||0)+1);
 if(regionCounts.size!==6||[...regionCounts.values()].some(n=>n!==6))throw new Error('Each of the six Region 1 subareas must contain six encounter records');
-if(!game.includes('recipeLevelMultiplier')||!game.includes('ETRONOM_RECIPE_LEVEL_CAP=10'))throw new Error('10-level recipe progression is missing');
-if(!game.includes('dropChance=[35,20,15,8,4,2]'))throw new Error('Recipe rarity drop rates mismatch');
+for(const enemy of runtimeEnemies){for(const key of required)if(!Number.isFinite(enemy.stats?.[key]))throw new Error(`${enemy.id}: missing ${key}`);if(!(enemy.stats.hp>0&&Number.isFinite(enemy.stats.mp)&&enemy.stats.mp>=0))throw new Error(`${enemy.id}: invalid HP/MP`);if((enemy.skills||[]).length>0&&!(enemy.stats.mp>0))throw new Error(`${enemy.id}: skill monster requires MP`);}
+if(!recipes.every(r=>r.recipe_level===1&&r.max_recipe_level===10&&r.item_level===1))throw new Error('Region 1 recipe level rules mismatch');
+const rarityChance=read('manifest.json').rules.rarity_drop_chances_percent;
+for(const [rarity,expected] of Object.entries({normal:35,uncommon:20,rare:15,epic:8,legendary:4,mythic:2}))if(rarityChance[rarity]!==expected)throw new Error(`Rarity chance mismatch for ${rarity}`);
+if(!game.includes('window.ETRANOM_RUNTIME_CONTENT?.monsters'))throw new Error('Runtime monster pack is not connected to game.js');
 if(!game.includes('Math.random()<0.02'))throw new Error('Mythic boss-only 2% check is missing');
-for(const rel of ['content/packs/burnt_forest_v1/monsters/monsters.json','content/packs/region_one_complete_v1/monsters/monsters.json']){
- const rows=JSON.parse(fs.readFileSync(path.join(root,rel),'utf8'));
- for(const m of rows){for(const key of required){if(!Number.isFinite(m.stats?.[key]))throw new Error(`${rel}/${m.id}: missing ${key}`);}if(!(m.stats.hp>0&&Number.isFinite(m.stats.mp)&&m.stats.mp>=0))throw new Error(`${rel}/${m.id}: invalid HP/MP`);if((m.skills||[]).length>0&&!(m.stats.mp>0))throw new Error(`${rel}/${m.id}: skill monster requires MP`);}
- console.log(`${rel}: ${rows.length} monsters; all 8 attributes and HP/MP present`);
-}
-console.log('Region 1 attribute/recipe static checks passed.');
+console.log(`Region 1 balance data checks passed: ${regions.length} zones, ${runtimeEnemies.length} encounters, ${recipes.length} recipes; all eight stats and HP/MP are valid.`);
