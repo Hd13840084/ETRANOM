@@ -1,0 +1,260 @@
+[
+  {
+    "id": "burnt_ash_wolf",
+    "name": "گرگ خاکستری سوخته",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "معمولی",
+    "role": "مهاجم سریع و تعقیب‌کننده",
+    "description_fa": "گرگی با پوست خاکستری و زخم‌های سوخته که در دسته‌های کوچک شکار می‌کند. هنگام کاهش شدید سلامت ممکن است عقب‌نشینی کند.",
+    "stats": {
+      "hp": 45,
+      "attack": 9,
+      "defense": 2,
+      "speed": 13,
+      "accuracy": 88,
+      "evasion": 12
+    },
+    "behavior": {
+      "style": "pack_hunter",
+      "aggression": 72,
+      "retreat_hp_percent": 18,
+      "preferred_targets": [
+        "isolated_player"
+      ]
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "burnt_wolf_pelt",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "respawn_seconds": 90,
+    "version": 1,
+    "zone_level": 1
+  },
+  {
+    "id": "ash_crow",
+    "name": "کلاغ خاکستر",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "معمولی",
+    "role": "مهاجم هوایی و جابه‌جاشونده",
+    "description_fa": "پرنده‌ای بزرگ با پرهای خاکستری و چشمان سرخ که از فاصله حمله می‌کند و پس از ضربه جابه‌جا می‌شود.",
+    "stats": {
+      "hp": 30,
+      "attack": 7,
+      "defense": 1,
+      "speed": 17,
+      "accuracy": 82,
+      "evasion": 20
+    },
+    "behavior": {
+      "style": "aerial_skirmisher",
+      "aggression": 55,
+      "retreat_hp_percent": 12,
+      "preferred_targets": [
+        "low_defense_player"
+      ]
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "ash_crow_feather",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "respawn_seconds": 90,
+    "version": 1,
+    "zone_level": 1
+  },
+  {
+    "id": "deadroot_crawler",
+    "name": "ریشه‌خوار مرده",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "معمولی",
+    "role": "مدافع سنگین و کند",
+    "description_fa": "توده‌ای خزنده از ریشه‌های خشک و چوب فاسد که در حالت سکون با زمین و ریشه‌های اطراف اشتباه گرفته می‌شود.",
+    "stats": {
+      "hp": 80,
+      "attack": 6,
+      "defense": 9,
+      "speed": 3,
+      "accuracy": 76,
+      "evasion": 2
+    },
+    "behavior": {
+      "style": "root_ambusher",
+      "aggression": 48,
+      "retreat_hp_percent": 0,
+      "preferred_targets": [
+        "nearest_player"
+      ]
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "deadroot_fiber",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "respawn_seconds": 120,
+    "version": 1,
+    "zone_level": 1
+  },
+  {
+    "id": "emberwound_stinger",
+    "name": "حشره آتش‌زخم",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "معمولی مهارت‌دار",
+    "role": "مهاجم سریع با اثر سوزش",
+    "description_fa": "حشره‌ای با پوسته سیاه و نیش داغ که با ضربه دقیق می‌تواند زخم سوزان ایجاد کند.",
+    "stats": {
+      "hp": 38,
+      "attack": 7,
+      "defense": 3,
+      "speed": 12,
+      "accuracy": 86,
+      "evasion": 10
+    },
+    "behavior": {
+      "style": "sting_and_withdraw",
+      "aggression": 66,
+      "retreat_hp_percent": 20,
+      "preferred_targets": [
+        "low_hp_player"
+      ]
+    },
+    "skills": [
+      "emberwound_sting"
+    ],
+    "drops": [
+      {
+        "material_id": "emberwound_stinger",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "respawn_seconds": 100,
+    "version": 1,
+    "zone_level": 1
+  },
+  {
+    "id": "ashen_flame_stalker",
+    "name": "سایه‌بان شعله‌مرده",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "معمولی مهارت‌دار",
+    "role": "شکارچی کمین‌گر",
+    "description_fa": "شکارچی‌ای پوشیده از دود و خاکستر که برای لحظه‌ای در تیرگی محیط پنهان می‌شود و با ضربه ناگهانی حمله می‌کند.",
+    "stats": {
+      "hp": 55,
+      "attack": 11,
+      "defense": 3,
+      "speed": 14,
+      "accuracy": 91,
+      "evasion": 16
+    },
+    "behavior": {
+      "style": "stealth_ambusher",
+      "aggression": 80,
+      "retreat_hp_percent": 10,
+      "preferred_targets": [
+        "isolated_player",
+        "low_hp_player"
+      ]
+    },
+    "skills": [
+      "ashen_ambush"
+    ],
+    "drops": [
+      {
+        "material_id": "ashen_stalker_essence",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "respawn_seconds": 110,
+    "version": 1,
+    "zone_level": 1
+  },
+  {
+    "id": "ashroot_warden",
+    "name": "ریشه‌سالار خاکستر",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "mini_boss",
+    "quality": "مینی‌باس",
+    "role": "مدافع سنگین و کنترل‌کننده میدان",
+    "description_fa": "موجودی عظیم از ریشه‌های سوخته و چوب فاسد که در ژرفای جنگل ریشه دوانده است. با وجود سطح ۱، به‌دلیل سلامت، دفاع، ضربات سنگین و مهارت‌های چندگانه تهدیدی بسیار فراتر از هیولاهای معمولی محسوب می‌شود.",
+    "stats": {
+      "hp": 420,
+      "attack": 19,
+      "defense": 16,
+      "speed": 5,
+      "accuracy": 88,
+      "evasion": 3,
+      "resistance": {
+        "physical": 18,
+        "fire": 8,
+        "poison": 25
+      }
+    },
+    "behavior": {
+      "style": "root_guardian",
+      "aggression": 100,
+      "retreat_hp_percent": 0,
+      "phases": [
+        {
+          "at_hp_percent": 100,
+          "style": "heavy_strikes"
+        },
+        {
+          "at_hp_percent": 60,
+          "style": "root_control"
+        },
+        {
+          "at_hp_percent": 25,
+          "style": "desperate_slam"
+        }
+      ]
+    },
+    "skills": [
+      "warden_root_slam",
+      "warden_entangling_roots",
+      "warden_ember_core"
+    ],
+    "drops": [
+      {
+        "material_id": "ashroot_core",
+        "quantity": 1,
+        "chance": 1
+      },
+      {
+        "material_id": "warden_bark_plate",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "respawn_seconds": 1800,
+    "version": 1,
+    "zone_level": 1
+  }
+]
