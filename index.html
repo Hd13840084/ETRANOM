@@ -214,7 +214,7 @@ async function startSession(session){
     if(!socialOverlay.isConnected)document.body.appendChild(socialOverlay);
     if(!guildLaunch.isConnected)document.body.appendChild(guildLaunch);
     guildTeacherVisited=sessionStorage.getItem('etranom:guildTeacherVisited')==='1';
-    await import('./game.js?v=26');
+    await import('./game.js?v=28');
     const gameRunner=window.run;
     if(typeof gameRunner!=='function')throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
     await gameRunner('play');

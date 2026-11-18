@@ -770,7 +770,7 @@ function run(mode) {
       const zone=ETRANOM_REGION_CONTENT[region];
       const zoneRarityBands=[[0,1],[0,1,2],[1,2,3],[2,3,4],[3,4],[4,5]];
       const allowedRarities=zoneRarityBands[region]||[0,1];
-      const rarity=ETRONOM_RARITIES[allowedRarities[rarityIndex%allowedRarities.length]];
+      const rarity=ETRANOM_RARITIES[allowedRarities[rarityIndex%allowedRarities.length]];
       const recipeLevel=Math.max(1,Math.min(ETRONOM_RECIPE_LEVEL_CAP,Number(zone.recipeLevel||zone.regionLevel)||1));
       const levelScale=recipeLevelMultiplier(recipeLevel),base=Math.max(1,Math.round((2+Math.floor(si/3))*rarityPower[rarityIndex]*levelScale));
       const stat=statByClass[ci],bonus={};bonus[stat]=base+(variant?1:0);
