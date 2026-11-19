@@ -1,0 +1,19 @@
+{
+  "id": "wizard_3",
+  "class_id": "wizard",
+  "class_name_fa": "جادوگر",
+  "name_fa": "وارلاک",
+  "role_fa": "جادوگر پیمان‌ها و نیروهای ممنوع",
+  "identity": {
+    "combat_fantasy": "جادوگر پیمان‌ها و نیروهای ممنوع",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}

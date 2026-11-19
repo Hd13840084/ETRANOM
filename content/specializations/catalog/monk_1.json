@@ -1,0 +1,19 @@
+{
+  "id": "monk_1",
+  "class_id": "monk",
+  "class_name_fa": "راهب",
+  "name_fa": "راهب رزمی",
+  "role_fa": "استاد فنون رزمی و ضربات تن‌به‌تن",
+  "identity": {
+    "combat_fantasy": "استاد فنون رزمی و ضربات تن‌به‌تن",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}
