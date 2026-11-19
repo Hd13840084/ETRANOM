@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const game = fs.readFileSync(new URL('../../game.js', import.meta.url), 'utf8');
+assert.ok(game.includes('window.__etranomPersistentStick'), 'joystick state must survive DOM rerenders');
+assert.ok(game.includes('stickState.pointerId=e.pointerId'), 'active pointer id must persist');
+assert.ok(game.includes("root.querySelector('[data-stick]')"), 'pointer move must resolve the current joystick after rerender');
+assert.ok(!game.includes("stick.addEventListener('lostpointercapture',()=>{if(drag)release();})"), 'lost capture during DOM replacement must not cancel active drag');
+assert.ok(game.includes('regionNameCards'), 'map region labels must be rendered as cards inside the map');
+assert.ok(game.includes('etranom-v100-battle-scroll'), 'mobile battle scrolling fix must be installed');
+assert.ok(game.includes('overflow-y:auto!important;-webkit-overflow-scrolling:touch!important'), 'battle outer container must scroll vertically');
+assert.ok(game.includes('height:auto!important;min-height:min-content!important;max-height:none!important;overflow:visible!important'), 'battle content must not clip skills and lower controls');
+console.log('PASS v100 joystick persistence, map cards and mobile battle scrolling');
