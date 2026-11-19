@@ -1,6 +1,0 @@
-name = "etranom-pages-admin"
-compatibility_date = "2026-11-19"
-
-[[kv_namespaces]]
-binding = "ETRANOM_ADMIN_KV"
-id = "REPLACE_WITH_CLOUDFLARE_KV_NAMESPACE_ID"
