@@ -37,6 +37,7 @@ export async function loadRegionOneRuntime() {
   if (!pack.manifest?.source_of_truth || pack.manifest.pack_id !== 'region_one_master_v2') throw new Error('نسخه یا مرجع بسته محتوایی منطقه اول معتبر نیست.');
   const materialById = new Map(pack.materials.map(x => [x.id, x]));
   const monsterById = new Map(pack.monsters.map(x => [x.id, x]));
+  const regionOneIds = new Set(pack.regions.filter(region => Number(region.region_number) === 1).map(region => region.id));
   const itemById = new Map(pack.items.map(x => [x.id, x]));
   const dungeonById = new Map(pack.dungeons.map(x => [x.id, x]));
   const towerBossIds = new Set((pack.tower.floors || []).filter(f => f.type === 'boss').flatMap(f => f.encounter_ids || []));
@@ -69,6 +70,12 @@ export async function loadRegionOneRuntime() {
     const materialNames = materialIds.map(id => materialById.get(id)?.name || id);
     const multiplier = regionCombatMultiplier(monster.region_id);
     const stats = scaleCombatStats(monster.stats, multiplier);
+    // منطقه خطر اول: فقط قدرت حمله پایه ۲۵٪ کاهش می‌یابد؛ HP، دفاع و سایر ویژگی‌ها ثابت می‌مانند.
+    if (regionOneIds.has(monster.region_id)) {
+      for (const key of ['attack', 'power']) {
+        if (Number.isFinite(Number(stats[key]))) stats[key] = Math.max(1, Math.round(Number(stats[key]) * 0.75));
+      }
+    }
     return {
       id: monster.id, name: monster.name, icon: '👹', kind: monster.kind === 'mini_boss' ? 'miniboss' : monster.kind === 'area_boss' ? 'boss' : monster.kind,
       regionId: monster.region_id, regionName: regions.find(x => x.id === monster.region_id)?.name || '', level: monster.level,

@@ -65,8 +65,8 @@
     "encounter_rules": {
       "normal_count_weights": {
         "1": 100,
-        "2": 40,
-        "3": 15
+        "2": 45,
+        "3": 30
       },
       "normal_spawn_guaranteed": true,
       "monsters_respawn": true
@@ -200,8 +200,8 @@
     "encounter_rules": {
       "normal_count_weights": {
         "1": 100,
-        "2": 40,
-        "3": 15
+        "2": 45,
+        "3": 30
       },
       "normal_spawn_guaranteed": true,
       "monsters_respawn": true
@@ -316,8 +316,8 @@
     "encounter_rules": {
       "normal_count_weights": {
         "1": 100,
-        "2": 40,
-        "3": 15
+        "2": 45,
+        "3": 30
       },
       "normal_spawn_guaranteed": true,
       "monsters_respawn": true
@@ -452,8 +452,8 @@
     "encounter_rules": {
       "normal_count_weights": {
         "1": 100,
-        "2": 40,
-        "3": 15
+        "2": 45,
+        "3": 30
       },
       "normal_spawn_guaranteed": true,
       "monsters_respawn": true
@@ -588,8 +588,8 @@
     "encounter_rules": {
       "normal_count_weights": {
         "1": 100,
-        "2": 40,
-        "3": 15
+        "2": 45,
+        "3": 30
       },
       "normal_spawn_guaranteed": true,
       "monsters_respawn": true
@@ -703,8 +703,8 @@
     "encounter_rules": {
       "normal_count_weights": {
         "1": 100,
-        "2": 40,
-        "3": 15
+        "2": 45,
+        "3": 30
       },
       "normal_spawn_guaranteed": true,
       "monsters_respawn": true
