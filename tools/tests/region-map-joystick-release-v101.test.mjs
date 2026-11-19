@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const game = fs.readFileSync(new URL('../../game.js', import.meta.url), 'utf8');
+assert.ok(game.includes("labelText=z.name+' • محدوده '+(i+1)"), 'zone name must precede its number in map card');
+assert.ok(game.includes('id:"burnt_forest",points:"20,20'), 'burnt forest must occupy upper-left selector position');
+assert.ok(game.includes('id:"southern_plains",points:"20,280'), 'southern plains must occupy lower-left selector position');
+assert.ok(game.includes('const hasLiveJoystick=drag&&stickState.drag&&stickState.pointerId!==null'), 'movement must require a live joystick pointer');
+assert.ok(game.includes("window.addEventListener('pointerup',e=>{if(e.pointerId===activeStickPointer)release();})"), 'pointerup must release movement immediately');
+assert.ok(game.includes("window.addEventListener('pointercancel',e=>{if(e.pointerId===activeStickPointer)release();})"), 'pointercancel must release movement');
+assert.ok(game.includes("stick.addEventListener('lostpointercapture',e=>{if(e.pointerId===activeStickPointer)release();})"), 'lost pointer capture must stop movement');
+assert.ok(game.includes('if(lastFrame>0&&t-lastFrame<16)'), 'movement loop must update at up to 60fps');
+console.log('PASS v101 map order, map cards, and immediate joystick release');
