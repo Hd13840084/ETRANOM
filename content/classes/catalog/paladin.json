@@ -1,0 +1,14 @@
+{
+  "id": "paladin",
+  "name_fa": "پالادین",
+  "description_fa": "سوگند، دفاع از همراهان و قدرت آیینی",
+  "specialization_ids": [
+    "paladin_1",
+    "paladin_2",
+    "paladin_3",
+    "paladin_4"
+  ],
+  "starting_equipment_ids": [],
+  "version": 1,
+  "content_status": "identity_shell_only"
+}
