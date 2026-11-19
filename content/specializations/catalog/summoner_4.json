@@ -1,0 +1,19 @@
+{
+  "id": "summoner_4",
+  "class_id": "summoner",
+  "class_name_fa": "احضارگر",
+  "name_fa": "احضارگر باستانی",
+  "role_fa": "فراخواننده موجودات و پیمان‌های کهن",
+  "identity": {
+    "combat_fantasy": "فراخواننده موجودات و پیمان‌های کهن",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}

@@ -1,0 +1,20 @@
+{
+  "id": "wizard_1",
+  "class_id": "wizard",
+  "class_name_fa": "جادوگر",
+  "name_fa": "آرکین‌میج",
+  "role_fa": "استاد انرژی آرکین، کنترل نوبتی و تکینگی",
+  "identity": {
+    "combat_fantasy": "استاد انرژی آرکین، کنترل نوبتی و تکینگی",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": "assets/classes/arcane_mage_portrait.webp",
+  "content_status": "existing_specialization_preserved",
+  "implementation_scope": "تخصص اجرایی موجود حفظ شده؛ در این مرحله تغییری در مهارت‌ها و مکانیک آن داده نشده",
+  "version": 1,
+  "data_module": "systems/classes/arcane-mage.js"
+}

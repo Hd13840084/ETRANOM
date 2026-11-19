@@ -1,0 +1,9 @@
+[
+  {"id":"burnt_wolf_pelt","name":"پوست گرگ سوخته","source_ids":["burnt_ash_wolf"],"tier":1,"category":"crafting","description_fa":"پوست زبر و نیم‌سوخته گرگ خاکستری." ,"version":1},
+  {"id":"ash_crow_feather","name":"پر کلاغ خاکستر","source_ids":["ash_crow"],"tier":1,"category":"crafting","description_fa":"پری سبک و دوده‌گرفته از کلاغ خاکستر.","version":1},
+  {"id":"deadroot_fiber","name":"الیاف ریشه مرده","source_ids":["deadroot_crawler"],"tier":1,"category":"crafting","description_fa":"الیاف سخت و تیره ریشه‌های فاسد.","version":1},
+  {"id":"emberwound_stinger","name":"نیش آتش‌زخم","source_ids":["emberwound_stinger"],"tier":1,"category":"crafting","description_fa":"نیش داغ حشره‌ای جهش‌یافته.","version":1},
+  {"id":"ashen_stalker_essence","name":"عصاره سایه‌بان شعله‌مرده","source_ids":["ashen_flame_stalker"],"tier":1,"category":"crafting","description_fa":"باقی‌مانده متراکم دود و خاکستر این شکارچی.","version":1},
+  {"id":"ashroot_core","name":"هسته ریشه‌سالار","source_ids":["ashroot_warden"],"tier":1,"category":"crafting","description_fa":"هسته فشرده و داغ موجود نگهبان جنگل.","version":1},
+  {"id":"warden_bark_plate","name":"صفحه پوست ریشه‌سالار","source_ids":["ashroot_warden"],"tier":1,"category":"crafting","description_fa":"قطعه‌ای سخت از پوسته چوبی ریشه‌سالار.","version":1}
+]

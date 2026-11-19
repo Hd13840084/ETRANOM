@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const game=fs.readFileSync(new URL('../../game.js',import.meta.url),'utf8');
+const html=fs.readFileSync(new URL('../../index.html',import.meta.url),'utf8');
+assert.match(game,/if\(!activeBattle\.awaitingFinish\)\s*\{[\s\S]*activeBattle\.phase="finished_pending"[\s\S]*return;/);
+assert.match(game,/if\(c\.awaitingFinish&&action!=="finish"\)/);
+assert.match(game,/if\(action==="finish"\)[\s\S]*c\.awaitingFinish=true;winCombat\(\)/);
+assert.ok(game.includes("c.awaitingFinish?'disabled':''"), 'combat controls should be disabled while waiting for finish');
+assert.match(game,/data-fight="finish" class="battle-finish"/);
+assert.match(game,/rewardClaimed=true/);
+assert.match(html,/game\.js\?v=74/);
+console.log('battle manual finish v73 checks passed');
