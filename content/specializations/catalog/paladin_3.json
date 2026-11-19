@@ -1,0 +1,19 @@
+{
+  "id": "paladin_3",
+  "class_id": "paladin",
+  "class_name_fa": "پالادین",
+  "name_fa": "پالادین سقوط‌کرده",
+  "role_fa": "جنگجوی سوگندشکسته و تاریک",
+  "identity": {
+    "combat_fantasy": "جنگجوی سوگندشکسته و تاریک",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}
