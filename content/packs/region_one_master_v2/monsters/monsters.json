@@ -1,0 +1,1489 @@
+[
+  {
+    "id": "ash_crow",
+    "name": "کلاغ خاکستر",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "تقویت‌شده",
+    "role": "شکارچی سریع",
+    "description_fa": "شکارچی سریع در جنگل سوخته؛ سطح 1 و درجه تقویت‌شده.",
+    "stats": {
+      "power": 6,
+      "speed": 18,
+      "endurance": 6,
+      "vitality": 17,
+      "intellect": 2,
+      "perception": 16,
+      "luck": 2,
+      "faith": 1,
+      "hp": 202,
+      "mp": 0,
+      "attack": 8,
+      "defense": 4,
+      "accuracy": 82
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "ash_crow_feather",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 12,
+    "gold": 2,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/ash_crow.webp",
+    "version": 2
+  },
+  {
+    "id": "ashen_flame_stalker",
+    "name": "سایه‌بان شعله‌مرده",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "نخبه",
+    "role": "مهاجم مهارت‌دار",
+    "description_fa": "مهاجم مهارت‌دار در جنگل سوخته؛ سطح 1 و درجه نخبه.",
+    "stats": {
+      "power": 8,
+      "speed": 15,
+      "endurance": 8,
+      "vitality": 21,
+      "intellect": 3,
+      "perception": 18,
+      "luck": 4,
+      "faith": 2,
+      "hp": 252,
+      "mp": 51,
+      "attack": 10,
+      "defense": 6,
+      "accuracy": 91
+    },
+    "skills": [
+      "ashen_ambush"
+    ],
+    "drops": [
+      {
+        "material_id": "ashen_stalker_essence",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 22,
+    "gold": 2,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/ashen_flame_stalker.webp",
+    "version": 2
+  },
+  {
+    "id": "burnt_ash_wolf",
+    "name": "گرگ خاکستری سوخته",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "معمولی",
+    "role": "مهاجم متعادل",
+    "description_fa": "مهاجم متعادل در جنگل سوخته؛ سطح 1 و درجه معمولی.",
+    "stats": {
+      "power": 6,
+      "speed": 14,
+      "endurance": 6,
+      "vitality": 15,
+      "intellect": 2,
+      "perception": 18,
+      "luck": 1,
+      "faith": 1,
+      "hp": 180,
+      "mp": 0,
+      "attack": 8,
+      "defense": 4,
+      "accuracy": 88
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "burnt_wolf_pelt",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 18,
+    "gold": 2,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/burnt_ash_wolf.webp",
+    "version": 2
+  },
+  {
+    "id": "deadroot_crawler",
+    "name": "ریشه‌خوار مرده",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "مهارت‌دار",
+    "role": "مدافع سنگین",
+    "description_fa": "مدافع سنگین در جنگل سوخته؛ سطح 1 و درجه مهارت‌دار.",
+    "stats": {
+      "power": 7,
+      "speed": 4,
+      "endurance": 7,
+      "vitality": 19,
+      "intellect": 2,
+      "perception": 15,
+      "luck": 3,
+      "faith": 1,
+      "hp": 225,
+      "mp": 0,
+      "attack": 9,
+      "defense": 5,
+      "accuracy": 76
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "deadroot_fiber",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 32,
+    "gold": 2,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/deadroot_crawler.webp",
+    "version": 2
+  },
+  {
+    "id": "emberwound_stinger",
+    "name": "حشره آتش‌زخم",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "normal",
+    "quality": "مهارت‌دار",
+    "role": "مدافع سنگین",
+    "description_fa": "مدافع سنگین در جنگل سوخته؛ سطح 1 و درجه مهارت‌دار.",
+    "stats": {
+      "power": 7,
+      "speed": 13,
+      "endurance": 7,
+      "vitality": 19,
+      "intellect": 3,
+      "perception": 17,
+      "luck": 3,
+      "faith": 2,
+      "hp": 225,
+      "mp": 51,
+      "attack": 9,
+      "defense": 5,
+      "accuracy": 86
+    },
+    "skills": [
+      "emberwound_sting"
+    ],
+    "drops": [
+      {
+        "material_id": "emberwound_stinger",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 15,
+    "gold": 2,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/emberwound_stinger.webp",
+    "version": 2
+  },
+  {
+    "id": "ashroot_warden",
+    "name": "ریشه‌سالار خاکستر",
+    "region_id": "burnt_forest",
+    "subarea_id": "burnt_forest_core",
+    "level": 1,
+    "kind": "mini_boss",
+    "quality": "مینی‌باس",
+    "role": "رهبر نخبه و تهدید ویژه محدوده",
+    "description_fa": "رهبر نخبه و تهدید ویژه محدوده در جنگل سوخته؛ سطح 1 و درجه مینی‌باس.",
+    "stats": {
+      "power": 12,
+      "speed": 6,
+      "endurance": 17,
+      "vitality": 58,
+      "intellect": 9,
+      "perception": 18,
+      "luck": 2,
+      "faith": 2,
+      "hp": 700,
+      "mp": 246,
+      "attack": 16,
+      "defense": 12,
+      "accuracy": 88
+    },
+    "skills": [
+      "warden_root_slam",
+      "warden_entangling_roots",
+      "warden_ember_core"
+    ],
+    "drops": [
+      {
+        "material_id": "ashroot_core",
+        "quantity": 1,
+        "chance": 1
+      },
+      {
+        "material_id": "warden_bark_plate",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 168,
+    "gold": 2,
+    "respawn_seconds": 1800,
+    "portrait": "assets/monsters/ashroot_warden.webp",
+    "version": 2
+  },
+  {
+    "id": "thorn_grove_monster_1",
+    "name": "روباه خارپوش",
+    "region_id": "thorn_grove",
+    "subarea_id": "thorn_grove_core",
+    "level": 2,
+    "kind": "normal",
+    "quality": "معمولی",
+    "role": "مهاجم متعادل",
+    "description_fa": "مهاجم متعادل در بیشه خارزار؛ سطح 2 و درجه معمولی. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 22,
+      "speed": 25,
+      "endurance": 47,
+      "vitality": 138,
+      "intellect": 11,
+      "perception": 45,
+      "luck": 9,
+      "faith": 6,
+      "hp": 1760,
+      "mp": 0,
+      "attack": 30,
+      "defense": 56,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "thorn_hide",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 18,
+    "gold": 4,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/thorn_grove_monster_1.webp",
+    "version": 2
+  },
+  {
+    "id": "thorn_grove_monster_2",
+    "name": "کلاغ تیغ‌دار",
+    "region_id": "thorn_grove",
+    "subarea_id": "thorn_grove_core",
+    "level": 2,
+    "kind": "normal",
+    "quality": "تقویت‌شده",
+    "role": "شکارچی سریع • مهارت‌دار",
+    "description_fa": "شکارچی سریع در بیشه خارزار؛ سطح 2 و درجه تقویت‌شده. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 22,
+      "speed": 28,
+      "endurance": 47,
+      "vitality": 170,
+      "intellect": 17,
+      "perception": 48,
+      "luck": 10,
+      "faith": 9,
+      "hp": 2148,
+      "mp": 276,
+      "attack": 32,
+      "defense": 58,
+      "accuracy": 87
+    },
+    "skills": [
+      "thorn_grove_barbed_dive"
+    ],
+    "drops": [
+      {
+        "material_id": "barbed_quill",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 22,
+    "gold": 4,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/thorn_grove_monster_2.webp",
+    "version": 2
+  },
+  {
+    "id": "thorn_grove_monster_3",
+    "name": "کرم ریشه‌خوار",
+    "region_id": "thorn_grove",
+    "subarea_id": "thorn_grove_core",
+    "level": 2,
+    "kind": "normal",
+    "quality": "مهارت‌دار",
+    "role": "مدافع سنگین",
+    "description_fa": "مدافع سنگین در بیشه خارزار؛ سطح 2 و درجه مهارت‌دار. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 27,
+      "speed": 14,
+      "endurance": 62,
+      "vitality": 230,
+      "intellect": 14,
+      "perception": 40,
+      "luck": 7,
+      "faith": 11,
+      "hp": 2606,
+      "mp": 0,
+      "attack": 32,
+      "defense": 60,
+      "accuracy": 86
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "briar_sap",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 27,
+    "gold": 4,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/thorn_grove_monster_3.webp",
+    "version": 2
+  },
+  {
+    "id": "thorn_grove_monster_4",
+    "name": "سوسک خارخون",
+    "region_id": "thorn_grove",
+    "subarea_id": "thorn_grove_core",
+    "level": 2,
+    "kind": "normal",
+    "quality": "نخبه",
+    "role": "مهاجم مهارت‌دار • مهارت‌دار",
+    "description_fa": "مهاجم مهارت‌دار در بیشه خارزار؛ سطح 2 و درجه نخبه. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 21,
+      "speed": 19,
+      "endurance": 60,
+      "vitality": 268,
+      "intellect": 25,
+      "perception": 46,
+      "luck": 11,
+      "faith": 15,
+      "hp": 3204,
+      "mp": 294,
+      "attack": 34,
+      "defense": 64,
+      "accuracy": 87
+    },
+    "skills": [
+      "thorn_grove_spore_cloud"
+    ],
+    "drops": [
+      {
+        "material_id": "thorn_mandible",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 31,
+    "gold": 4,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/thorn_grove_monster_4.webp",
+    "version": 2
+  },
+  {
+    "id": "thorn_grove_monster_5",
+    "name": "گرگ بیشه‌خار",
+    "region_id": "thorn_grove",
+    "subarea_id": "thorn_grove_core",
+    "level": 2,
+    "kind": "normal",
+    "quality": "کمیاب",
+    "role": "شکارچی نخبه",
+    "description_fa": "شکارچی نخبه در بیشه خارزار؛ سطح 2 و درجه کمیاب. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 29,
+      "speed": 24,
+      "endurance": 67,
+      "vitality": 330,
+      "intellect": 19,
+      "perception": 50,
+      "luck": 12,
+      "faith": 12,
+      "hp": 3874,
+      "mp": 0,
+      "attack": 34,
+      "defense": 68,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "bramble_heart",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 36,
+    "gold": 4,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/thorn_grove_monster_5.webp",
+    "version": 2
+  },
+  {
+    "id": "thorn_grove_miniboss",
+    "name": "مادر بیشه‌خار",
+    "region_id": "thorn_grove",
+    "subarea_id": "thorn_grove_core",
+    "level": 2,
+    "kind": "mini_boss",
+    "quality": "مینی‌باس",
+    "role": "رهبر نخبه و تهدید ویژه محدوده",
+    "description_fa": "رهبر نخبه و تهدید ویژه محدوده در بیشه خارزار؛ سطح 2 و درجه مینی‌باس.",
+    "stats": {
+      "power": 42,
+      "speed": 20,
+      "endurance": 100,
+      "vitality": 1502,
+      "intellect": 102,
+      "perception": 42,
+      "luck": 12,
+      "faith": 62,
+      "hp": 18016,
+      "mp": 1846,
+      "attack": 58,
+      "defense": 112,
+      "accuracy": 84
+    },
+    "skills": [
+      "heavy_strike",
+      "area_slam",
+      "guardian_fury"
+    ],
+    "drops": [
+      {
+        "material_id": "thorn_matriarch_blood",
+        "quantity": 1,
+        "chance": 1
+      },
+      {
+        "material_id": "barbed_crown",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 158,
+    "gold": 4,
+    "respawn_seconds": 1800,
+    "portrait": "assets/monsters/thorn_grove_miniboss.webp",
+    "version": 2
+  },
+  {
+    "id": "ash_hills_monster_1",
+    "name": "سوسک سنگستر",
+    "region_id": "ash_hills",
+    "subarea_id": "ash_hills_core",
+    "level": 3,
+    "kind": "normal",
+    "quality": "معمولی",
+    "role": "مهاجم متعادل • مهارت‌دار",
+    "description_fa": "مهاجم متعادل در تپه‌های خاکستر؛ سطح 3 و درجه معمولی. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 26,
+      "speed": 27,
+      "endurance": 55,
+      "vitality": 182,
+      "intellect": 15,
+      "perception": 45,
+      "luck": 11,
+      "faith": 8,
+      "hp": 2282,
+      "mp": 312,
+      "attack": 36,
+      "defense": 64,
+      "accuracy": 87
+    },
+    "skills": [
+      "ash_hills_cinder_burst"
+    ],
+    "drops": [
+      {
+        "material_id": "ashstone_shard",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 20,
+    "gold": 6,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/ash_hills_monster_1.webp",
+    "version": 2
+  },
+  {
+    "id": "ash_hills_monster_2",
+    "name": "مار خاکسترپوش",
+    "region_id": "ash_hills",
+    "subarea_id": "ash_hills_core",
+    "level": 3,
+    "kind": "normal",
+    "quality": "تقویت‌شده",
+    "role": "شکارچی سریع",
+    "description_fa": "شکارچی سریع در تپه‌های خاکستر؛ سطح 3 و درجه تقویت‌شده. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 24,
+      "speed": 30,
+      "endurance": 57,
+      "vitality": 222,
+      "intellect": 19,
+      "perception": 48,
+      "luck": 12,
+      "faith": 9,
+      "hp": 2784,
+      "mp": 0,
+      "attack": 36,
+      "defense": 68,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "cinder_beetle_shell",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 24,
+    "gold": 6,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/ash_hills_monster_2.webp",
+    "version": 2
+  },
+  {
+    "id": "ash_hills_monster_3",
+    "name": "خرگوش خاکستری",
+    "region_id": "ash_hills",
+    "subarea_id": "ash_hills_core",
+    "level": 3,
+    "kind": "normal",
+    "quality": "مهارت‌دار",
+    "role": "مدافع سنگین",
+    "description_fa": "مدافع سنگین در تپه‌های خاکستر؛ سطح 3 و درجه مهارت‌دار. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 29,
+      "speed": 16,
+      "endurance": 72,
+      "vitality": 294,
+      "intellect": 16,
+      "perception": 40,
+      "luck": 9,
+      "faith": 13,
+      "hp": 3376,
+      "mp": 0,
+      "attack": 36,
+      "defense": 70,
+      "accuracy": 86
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "grey_rockhide",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 28,
+    "gold": 6,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/ash_hills_monster_3.webp",
+    "version": 2
+  },
+  {
+    "id": "ash_hills_monster_4",
+    "name": "خفاش زغالین",
+    "region_id": "ash_hills",
+    "subarea_id": "ash_hills_core",
+    "level": 3,
+    "kind": "normal",
+    "quality": "نخبه",
+    "role": "مهاجم مهارت‌دار • مهارت‌دار",
+    "description_fa": "مهاجم مهارت‌دار در تپه‌های خاکستر؛ سطح 3 و درجه نخبه. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 25,
+      "speed": 21,
+      "endurance": 68,
+      "vitality": 346,
+      "intellect": 29,
+      "perception": 46,
+      "luck": 13,
+      "faith": 17,
+      "hp": 4152,
+      "mp": 342,
+      "attack": 38,
+      "defense": 74,
+      "accuracy": 87
+    },
+    "skills": [
+      "ash_hills_stone_skin"
+    ],
+    "drops": [
+      {
+        "material_id": "coal_moth_dust",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 33,
+    "gold": 6,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/ash_hills_monster_4.webp",
+    "version": 2
+  },
+  {
+    "id": "ash_hills_monster_5",
+    "name": "دندان‌سنگ تپه",
+    "region_id": "ash_hills",
+    "subarea_id": "ash_hills_core",
+    "level": 3,
+    "kind": "normal",
+    "quality": "کمیاب",
+    "role": "شکارچی نخبه",
+    "description_fa": "شکارچی نخبه در تپه‌های خاکستر؛ سطح 3 و درجه کمیاب. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 33,
+      "speed": 26,
+      "endurance": 75,
+      "vitality": 426,
+      "intellect": 23,
+      "perception": 50,
+      "luck": 14,
+      "faith": 14,
+      "hp": 5020,
+      "mp": 0,
+      "attack": 40,
+      "defense": 78,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "slagfang_tooth",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 37,
+    "gold": 6,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/ash_hills_monster_5.webp",
+    "version": 2
+  },
+  {
+    "id": "ash_hills_miniboss",
+    "name": "سنگ‌شکن اخگر",
+    "region_id": "ash_hills",
+    "subarea_id": "ash_hills_core",
+    "level": 3,
+    "kind": "mini_boss",
+    "quality": "مینی‌باس",
+    "role": "رهبر نخبه و تهدید ویژه محدوده",
+    "description_fa": "رهبر نخبه و تهدید ویژه محدوده در تپه‌های خاکستر؛ سطح 3 و درجه مینی‌باس.",
+    "stats": {
+      "power": 46,
+      "speed": 22,
+      "endurance": 114,
+      "vitality": 1946,
+      "intellect": 132,
+      "perception": 42,
+      "luck": 14,
+      "faith": 80,
+      "hp": 23346,
+      "mp": 2392,
+      "attack": 64,
+      "defense": 126,
+      "accuracy": 84
+    },
+    "skills": [
+      "heavy_strike",
+      "area_slam",
+      "guardian_fury"
+    ],
+    "drops": [
+      {
+        "material_id": "cinder_colossus_core",
+        "quantity": 1,
+        "chance": 1
+      },
+      {
+        "material_id": "basalt_plate",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 172,
+    "gold": 6,
+    "respawn_seconds": 1800,
+    "portrait": "assets/monsters/ash_hills_miniboss.webp",
+    "version": 2
+  },
+  {
+    "id": "vardash_river_monster_1",
+    "name": "ماهی فلس‌خاکستری",
+    "region_id": "vardash_river",
+    "subarea_id": "vardash_river_core",
+    "level": 4,
+    "kind": "normal",
+    "quality": "معمولی",
+    "role": "مهاجم متعادل",
+    "description_fa": "مهاجم متعادل در رود ورداش؛ سطح 4 و درجه معمولی. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 28,
+      "speed": 29,
+      "endurance": 63,
+      "vitality": 226,
+      "intellect": 17,
+      "perception": 45,
+      "luck": 13,
+      "faith": 10,
+      "hp": 2802,
+      "mp": 0,
+      "attack": 40,
+      "defense": 74,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "vardash_scale",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 21,
+    "gold": 8,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/vardash_river_monster_1.webp",
+    "version": 2
+  },
+  {
+    "id": "vardash_river_monster_2",
+    "name": "مارماهی ورداش",
+    "region_id": "vardash_river",
+    "subarea_id": "vardash_river_core",
+    "level": 4,
+    "kind": "normal",
+    "quality": "تقویت‌شده",
+    "role": "شکارچی سریع • مهارت‌دار",
+    "description_fa": "شکارچی سریع در رود ورداش؛ سطح 4 و درجه تقویت‌شده. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 26,
+      "speed": 30,
+      "endurance": 63,
+      "vitality": 274,
+      "intellect": 21,
+      "perception": 48,
+      "luck": 14,
+      "faith": 11,
+      "hp": 3418,
+      "mp": 366,
+      "attack": 40,
+      "defense": 76,
+      "accuracy": 87
+    },
+    "skills": [
+      "vardash_river_current_lash"
+    ],
+    "drops": [
+      {
+        "material_id": "river_reed_fiber",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 26,
+    "gold": 8,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/vardash_river_monster_2.webp",
+    "version": 2
+  },
+  {
+    "id": "vardash_river_monster_3",
+    "name": "خرچنگ گِل‌سنگ",
+    "region_id": "vardash_river",
+    "subarea_id": "vardash_river_core",
+    "level": 4,
+    "kind": "normal",
+    "quality": "مهارت‌دار",
+    "role": "مدافع سنگین",
+    "description_fa": "مدافع سنگین در رود ورداش؛ سطح 4 و درجه مهارت‌دار. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 33,
+      "speed": 18,
+      "endurance": 80,
+      "vitality": 358,
+      "intellect": 18,
+      "perception": 40,
+      "luck": 11,
+      "faith": 13,
+      "hp": 4148,
+      "mp": 0,
+      "attack": 42,
+      "defense": 80,
+      "accuracy": 86
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "mudfin_tooth",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 30,
+    "gold": 8,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/vardash_river_monster_3.webp",
+    "version": 2
+  },
+  {
+    "id": "vardash_river_monster_4",
+    "name": "پرنده نیزار",
+    "region_id": "vardash_river",
+    "subarea_id": "vardash_river_core",
+    "level": 4,
+    "kind": "normal",
+    "quality": "نخبه",
+    "role": "مهاجم مهارت‌دار",
+    "description_fa": "مهاجم مهارت‌دار در رود ورداش؛ سطح 4 و درجه نخبه. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 27,
+      "speed": 23,
+      "endurance": 78,
+      "vitality": 424,
+      "intellect": 31,
+      "perception": 46,
+      "luck": 15,
+      "faith": 19,
+      "hp": 5100,
+      "mp": 0,
+      "attack": 42,
+      "defense": 84,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "silver_gill",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 34,
+    "gold": 8,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/vardash_river_monster_4.webp",
+    "version": 2
+  },
+  {
+    "id": "vardash_river_monster_5",
+    "name": "شکارچی آب‌تیره",
+    "region_id": "vardash_river",
+    "subarea_id": "vardash_river_core",
+    "level": 4,
+    "kind": "normal",
+    "quality": "کمیاب",
+    "role": "شکارچی نخبه • مهارت‌دار",
+    "description_fa": "شکارچی نخبه در رود ورداش؛ سطح 4 و درجه کمیاب. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 37,
+      "speed": 28,
+      "endurance": 85,
+      "vitality": 522,
+      "intellect": 25,
+      "perception": 50,
+      "luck": 16,
+      "faith": 16,
+      "hp": 6166,
+      "mp": 408,
+      "attack": 44,
+      "defense": 88,
+      "accuracy": 87
+    },
+    "skills": [
+      "vardash_river_depth_call"
+    ],
+    "drops": [
+      {
+        "material_id": "current_pearl",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 39,
+    "gold": 8,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/vardash_river_monster_5.webp",
+    "version": 2
+  },
+  {
+    "id": "vardash_river_miniboss",
+    "name": "مارسالار ورداش",
+    "region_id": "vardash_river",
+    "subarea_id": "vardash_river_core",
+    "level": 4,
+    "kind": "mini_boss",
+    "quality": "مینی‌باس",
+    "role": "رهبر نخبه و تهدید ویژه محدوده",
+    "description_fa": "رهبر نخبه و تهدید ویژه محدوده در رود ورداش؛ سطح 4 و درجه مینی‌باس.",
+    "stats": {
+      "power": 52,
+      "speed": 24,
+      "endurance": 126,
+      "vitality": 2390,
+      "intellect": 164,
+      "perception": 42,
+      "luck": 16,
+      "faith": 98,
+      "hp": 28674,
+      "mp": 2938,
+      "attack": 72,
+      "defense": 140,
+      "accuracy": 84
+    },
+    "skills": [
+      "heavy_strike",
+      "area_slam",
+      "guardian_fury"
+    ],
+    "drops": [
+      {
+        "material_id": "river_hydra_scale",
+        "quantity": 1,
+        "chance": 1
+      },
+      {
+        "material_id": "deepwater_essence",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 186,
+    "gold": 8,
+    "respawn_seconds": 1800,
+    "portrait": "assets/monsters/vardash_river_miniboss.webp",
+    "version": 2
+  },
+  {
+    "id": "southern_plains_monster_1",
+    "name": "گرگ دشت‌گرد",
+    "region_id": "southern_plains",
+    "subarea_id": "southern_plains_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "معمولی",
+    "role": "مهاجم متعادل",
+    "description_fa": "مهاجم متعادل در دشت جنوبی؛ سطح 5 و درجه معمولی. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 32,
+      "speed": 30,
+      "endurance": 71,
+      "vitality": 268,
+      "intellect": 19,
+      "perception": 45,
+      "luck": 15,
+      "faith": 12,
+      "hp": 3324,
+      "mp": 0,
+      "attack": 44,
+      "defense": 82,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "plainstalker_hide",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 23,
+    "gold": 10,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/southern_plains_monster_1.webp",
+    "version": 2
+  },
+  {
+    "id": "southern_plains_monster_2",
+    "name": "شاهین آفتاب‌سوخته",
+    "region_id": "southern_plains",
+    "subarea_id": "southern_plains_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "تقویت‌شده",
+    "role": "شکارچی سریع",
+    "description_fa": "شکارچی سریع در دشت جنوبی؛ سطح 5 و درجه تقویت‌شده. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 30,
+      "speed": 30,
+      "endurance": 73,
+      "vitality": 328,
+      "intellect": 23,
+      "perception": 48,
+      "luck": 16,
+      "faith": 13,
+      "hp": 4054,
+      "mp": 0,
+      "attack": 44,
+      "defense": 86,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "sunhawk_feather",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 27,
+    "gold": 10,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/southern_plains_monster_2.webp",
+    "version": 2
+  },
+  {
+    "id": "southern_plains_monster_3",
+    "name": "موش‌خرمای خاکی",
+    "region_id": "southern_plains",
+    "subarea_id": "southern_plains_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "مهارت‌دار",
+    "role": "مدافع سنگین • مهارت‌دار",
+    "description_fa": "مدافع سنگین در دشت جنوبی؛ سطح 5 و درجه مهارت‌دار. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 37,
+      "speed": 20,
+      "endurance": 88,
+      "vitality": 422,
+      "intellect": 22,
+      "perception": 40,
+      "luck": 13,
+      "faith": 15,
+      "hp": 4918,
+      "mp": 424,
+      "attack": 46,
+      "defense": 88,
+      "accuracy": 86
+    },
+    "skills": [
+      "southern_plains_blood_rush"
+    ],
+    "drops": [
+      {
+        "material_id": "drygrass_fiber",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 32,
+    "gold": 10,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/southern_plains_monster_3.webp",
+    "version": 2
+  },
+  {
+    "id": "southern_plains_monster_4",
+    "name": "گراز غبارآلود",
+    "region_id": "southern_plains",
+    "subarea_id": "southern_plains_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "نخبه",
+    "role": "مهاجم مهارت‌دار",
+    "description_fa": "مهاجم مهارت‌دار در دشت جنوبی؛ سطح 5 و درجه نخبه. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 31,
+      "speed": 25,
+      "endurance": 86,
+      "vitality": 504,
+      "intellect": 33,
+      "perception": 46,
+      "luck": 17,
+      "faith": 19,
+      "hp": 6048,
+      "mp": 0,
+      "attack": 48,
+      "defense": 94,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "dusthorn",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 36,
+    "gold": 10,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/southern_plains_monster_4.webp",
+    "version": 2
+  },
+  {
+    "id": "southern_plains_monster_5",
+    "name": "شیر علفزار",
+    "region_id": "southern_plains",
+    "subarea_id": "southern_plains_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "کمیاب",
+    "role": "شکارچی نخبه • مهارت‌دار",
+    "description_fa": "شکارچی نخبه در دشت جنوبی؛ سطح 5 و درجه کمیاب. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 41,
+      "speed": 30,
+      "endurance": 93,
+      "vitality": 618,
+      "intellect": 29,
+      "perception": 50,
+      "luck": 18,
+      "faith": 18,
+      "hp": 7312,
+      "mp": 458,
+      "attack": 50,
+      "defense": 98,
+      "accuracy": 87
+    },
+    "skills": [
+      "southern_plains_sunfire_roar"
+    ],
+    "drops": [
+      {
+        "material_id": "yellowfang_claw",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 40,
+    "gold": 10,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/southern_plains_monster_5.webp",
+    "version": 2
+  },
+  {
+    "id": "southern_plains_miniboss",
+    "name": "شاخ‌دار دشت جنوبی",
+    "region_id": "southern_plains",
+    "subarea_id": "southern_plains_core",
+    "level": 5,
+    "kind": "mini_boss",
+    "quality": "مینی‌باس",
+    "role": "رهبر نخبه و تهدید ویژه محدوده",
+    "description_fa": "رهبر نخبه و تهدید ویژه محدوده در دشت جنوبی؛ سطح 5 و درجه مینی‌باس.",
+    "stats": {
+      "power": 58,
+      "speed": 26,
+      "endurance": 138,
+      "vitality": 2834,
+      "intellect": 194,
+      "perception": 42,
+      "luck": 18,
+      "faith": 116,
+      "hp": 34004,
+      "mp": 3484,
+      "attack": 80,
+      "defense": 154,
+      "accuracy": 84
+    },
+    "skills": [
+      "heavy_strike",
+      "area_slam",
+      "guardian_fury"
+    ],
+    "drops": [
+      {
+        "material_id": "plains_alpha_bone",
+        "quantity": 1,
+        "chance": 1
+      },
+      {
+        "material_id": "savanna_heart",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 200,
+    "gold": 10,
+    "respawn_seconds": 1800,
+    "portrait": "assets/monsters/southern_plains_miniboss.webp",
+    "version": 2
+  },
+  {
+    "id": "rootbound_ruins_monster_1",
+    "name": "نگهبان شکسته",
+    "region_id": "rootbound_ruins",
+    "subarea_id": "rootbound_ruins_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "معمولی",
+    "role": "مهاجم متعادل",
+    "description_fa": "مهاجم متعادل در ویرانه‌های ریشه‌پوش؛ سطح 5 و درجه معمولی. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 38,
+      "speed": 30,
+      "endurance": 86,
+      "vitality": 323,
+      "intellect": 23,
+      "perception": 53,
+      "luck": 18,
+      "faith": 15,
+      "hp": 3989,
+      "mp": 0,
+      "attack": 53,
+      "defense": 98,
+      "accuracy": 88
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "rune_dust",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 24,
+    "gold": 12,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/rootbound_ruins_monster_1.webp",
+    "version": 2
+  },
+  {
+    "id": "rootbound_ruins_monster_2",
+    "name": "عنکبوت رون‌خورده",
+    "region_id": "rootbound_ruins",
+    "subarea_id": "rootbound_ruins_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "تقویت‌شده",
+    "role": "شکارچی سریع • مهارت‌دار",
+    "description_fa": "شکارچی سریع در ویرانه‌های ریشه‌پوش؛ سطح 5 و درجه تقویت‌شده. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 36,
+      "speed": 30,
+      "endurance": 89,
+      "vitality": 396,
+      "intellect": 27,
+      "perception": 56,
+      "luck": 19,
+      "faith": 16,
+      "hp": 4865,
+      "mp": 492,
+      "attack": 53,
+      "defense": 103,
+      "accuracy": 88
+    },
+    "skills": [
+      "rootbound_ruins_rune_web"
+    ],
+    "drops": [
+      {
+        "material_id": "rootstone_fragment",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 29,
+    "gold": 12,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/rootbound_ruins_monster_2.webp",
+    "version": 2
+  },
+  {
+    "id": "rootbound_ruins_monster_3",
+    "name": "پیکر ریشه‌ای",
+    "region_id": "rootbound_ruins",
+    "subarea_id": "rootbound_ruins_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "مهارت‌دار",
+    "role": "مدافع سنگین",
+    "description_fa": "مدافع سنگین در ویرانه‌های ریشه‌پوش؛ سطح 5 و درجه مهارت‌دار. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 44,
+      "speed": 25,
+      "endurance": 104,
+      "vitality": 504,
+      "intellect": 27,
+      "perception": 48,
+      "luck": 16,
+      "faith": 18,
+      "hp": 5902,
+      "mp": 0,
+      "attack": 55,
+      "defense": 106,
+      "accuracy": 87
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "ancient_thread",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 33,
+    "gold": 12,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/rootbound_ruins_monster_3.webp",
+    "version": 2
+  },
+  {
+    "id": "rootbound_ruins_monster_4",
+    "name": "سایه کتیبه",
+    "region_id": "rootbound_ruins",
+    "subarea_id": "rootbound_ruins_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "نخبه",
+    "role": "مهاجم مهارت‌دار • مهارت‌دار",
+    "description_fa": "مهاجم مهارت‌دار در ویرانه‌های ریشه‌پوش؛ سطح 5 و درجه نخبه. دارای مهارت ویژه و ذخیره مانای مستقل است.",
+    "stats": {
+      "power": 38,
+      "speed": 30,
+      "endurance": 103,
+      "vitality": 605,
+      "intellect": 38,
+      "perception": 54,
+      "luck": 20,
+      "faith": 22,
+      "hp": 7258,
+      "mp": 528,
+      "attack": 58,
+      "defense": 113,
+      "accuracy": 88
+    },
+    "skills": [
+      "rootbound_ruins_ancient_pulse"
+    ],
+    "drops": [
+      {
+        "material_id": "sealed_wax",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 38,
+    "gold": 12,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/rootbound_ruins_monster_4.webp",
+    "version": 2
+  },
+  {
+    "id": "rootbound_ruins_monster_5",
+    "name": "پاسدار بی‌نام",
+    "region_id": "rootbound_ruins",
+    "subarea_id": "rootbound_ruins_core",
+    "level": 5,
+    "kind": "normal",
+    "quality": "کمیاب",
+    "role": "شکارچی نخبه",
+    "description_fa": "شکارچی نخبه در ویرانه‌های ریشه‌پوش؛ سطح 5 و درجه کمیاب. بدون مهارت فعال؛ تمام قدرتش بر پایه ویژگی‌های فیزیکی و ذاتی است.",
+    "stats": {
+      "power": 48,
+      "speed": 30,
+      "endurance": 111,
+      "vitality": 740,
+      "intellect": 34,
+      "perception": 58,
+      "luck": 21,
+      "faith": 21,
+      "hp": 8774,
+      "mp": 0,
+      "attack": 60,
+      "defense": 118,
+      "accuracy": 88
+    },
+    "skills": [],
+    "drops": [
+      {
+        "material_id": "memory_shard",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 42,
+    "gold": 12,
+    "respawn_seconds": 90,
+    "portrait": "assets/monsters/rootbound_ruins_monster_5.webp",
+    "version": 2
+  },
+  {
+    "id": "rootbound_region_boss",
+    "name": "نگهبان واپسین ریشه‌پوش",
+    "region_id": "rootbound_ruins",
+    "subarea_id": "rootbound_ruins_core",
+    "level": 5,
+    "kind": "area_boss",
+    "quality": "باس نهایی",
+    "role": "باس نهایی منطقه و تهدید اصلی",
+    "description_fa": "باس نهایی منطقه و تهدید اصلی در ویرانه‌های ریشه‌پوش؛ سطح 5 و درجه باس نهایی.",
+    "stats": {
+      "power": 103,
+      "speed": 30,
+      "endurance": 252,
+      "vitality": 9917,
+      "intellect": 857,
+      "perception": 50,
+      "luck": 22,
+      "faith": 514,
+      "hp": 118992,
+      "mp": 15437,
+      "attack": 144,
+      "defense": 281,
+      "accuracy": 84
+    },
+    "skills": [
+      "root_wave",
+      "rune_break",
+      "ancient_collapse"
+    ],
+    "drops": [
+      {
+        "material_id": "rootbound_relic",
+        "quantity": 1,
+        "chance": 1
+      },
+      {
+        "material_id": "old_guardian_seal",
+        "quantity": 1,
+        "chance": 1
+      },
+      {
+        "material_id": "memory_shard",
+        "quantity": 1,
+        "chance": 1
+      }
+    ],
+    "xp": 380,
+    "gold": 12,
+    "respawn_seconds": 1800,
+    "portrait": "assets/monsters/rootbound_region_boss.webp",
+    "version": 2
+  }
+]
