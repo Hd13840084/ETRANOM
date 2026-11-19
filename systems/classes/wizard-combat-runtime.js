@@ -93,7 +93,7 @@ export function resolveNecromancerRecruitChance(progress, effects = {}) {
 }
 export function normalizeLegionCapacity(progress) {
   if (!progress || typeof progress !== 'object') return [];
-  return Array.isArray(progress.legion) ? progress.legion.slice(0,3) : [];
+  return Array.isArray(progress.legion) ? progress.legion.slice(0,10) : [];
 }
 export function tickWizardCombatState(combat) {
   if (!combat) return { expired: [], damage: 0 };
@@ -124,9 +124,9 @@ export function runLegionActions(combat, character, progress, powerScale = 1) {
   if (!combat || !Array.isArray(progress?.legion)) return [];
   if (!(combat.enemies || []).some(e => e.hp > 0)) return [];
   const reports = [];
-  const selected = Array.isArray(combat.summonedLegionIds) ? new Set(combat.summonedLegionIds.map(String)) : new Set();
+  const selected = Array.isArray(combat.summonedLegionIds) && combat.summonedLegionIds.length ? new Set(combat.summonedLegionIds.map(String)) : new Set((progress.activeLegionIds || []).slice(0,3).map(String));
   if (!selected.size) return reports;
-  for (const member of progress.legion.slice(0, 3)) {
+  for (const member of progress.legion.slice(0, 10)) {
     const memberId=String(member.id||member.speciesId||member.name); if(!selected.has(memberId)) continue;
     if (member.incapacitated || member.hp === 0) continue;
     const enemies = (combat.enemies || []).filter(e => e.hp > 0); if (!enemies.length) break;
