@@ -1,0 +1,758 @@
+[
+  {
+    "id": "burnt_forest",
+    "name": "جنگل سوخته",
+    "region_number": 1,
+    "level_min": 1,
+    "level_max": 1,
+    "recommended_level": 1,
+    "recipe_level": 1,
+    "item_level": 1,
+    "material_theme": "خاکسترچوب",
+    "subareas": [
+      "burnt_forest_core"
+    ],
+    "subarea": {
+      "id": "burnt_forest_core",
+      "name": "جنگل سوخته",
+      "entry": "دروازه خاکسترزار",
+      "entry_point": [
+        -350,
+        1200
+      ],
+      "boundary": [
+        [
+          -550,
+          1050
+        ],
+        [
+          -200,
+          1050
+        ],
+        [
+          -200,
+          1350
+        ],
+        [
+          -550,
+          1350
+        ],
+        [
+          -530,
+          1200
+        ]
+      ]
+    },
+    "dungeon_id": null,
+    "ruins_enabled": false,
+    "material_ids": [
+      "burnt_wolf_pelt",
+      "ash_crow_feather",
+      "deadroot_fiber",
+      "emberwound_stinger",
+      "ashen_stalker_essence",
+      "ashroot_core",
+      "warden_bark_plate"
+    ],
+    "normal_encounter_ids": [
+      "ash_crow",
+      "ashen_flame_stalker",
+      "burnt_ash_wolf",
+      "deadroot_crawler",
+      "emberwound_stinger"
+    ],
+    "leader_encounter_id": "ashroot_warden",
+    "encounter_rules": {
+      "normal_count_weights": {
+        "1": 100,
+        "2": 40,
+        "3": 15
+      },
+      "normal_spawn_guaranteed": true,
+      "monsters_respawn": true
+    },
+    "version": 2,
+    "recipe_distribution": {
+      "monster_recipe_count": 43,
+      "source_recipe_ids": {
+        "ash_crow": [
+          "recipe_0_0_0",
+          "recipe_2_8_0",
+          "recipe_4_1_0",
+          "recipe_4_10_0",
+          "recipe_5_6_1",
+          "recipe_8_8_0"
+        ],
+        "ashen_flame_stalker": [
+          "recipe_1_2_1",
+          "recipe_2_5_0",
+          "recipe_2_11_0",
+          "recipe_4_4_0",
+          "recipe_5_9_1",
+          "recipe_7_2_1",
+          "recipe_8_5_0",
+          "recipe_9_4_1"
+        ],
+        "ashroot_warden": [
+          "recipe_0_6_0",
+          "recipe_0_12_0",
+          "recipe_1_11_1",
+          "recipe_3_4_1",
+          "recipe_5_3_1",
+          "recipe_6_12_0",
+          "recipe_7_11_1",
+          "recipe_9_1_1"
+        ],
+        "burnt_ash_wolf": [
+          "recipe_0_3_0",
+          "recipe_1_5_1",
+          "recipe_4_7_0",
+          "recipe_5_12_1",
+          "recipe_6_0_0",
+          "recipe_6_6_0",
+          "recipe_7_5_1"
+        ],
+        "deadroot_crawler": [
+          "recipe_0_9_0",
+          "recipe_2_2_0",
+          "recipe_3_7_1",
+          "recipe_5_0_1",
+          "recipe_6_9_0",
+          "recipe_8_2_0",
+          "recipe_9_7_1"
+        ],
+        "emberwound_stinger": [
+          "recipe_1_8_1",
+          "recipe_3_1_1",
+          "recipe_3_10_1",
+          "recipe_6_3_0",
+          "recipe_7_8_1",
+          "recipe_8_11_0",
+          "recipe_9_10_1"
+        ]
+      },
+      "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
+    }
+  },
+  {
+    "id": "thorn_grove",
+    "name": "بیشه خارزار",
+    "region_number": 1,
+    "level_min": 2,
+    "level_max": 2,
+    "recommended_level": 2,
+    "recipe_level": 1,
+    "item_level": 1,
+    "material_theme": "خارِ سیاه",
+    "subareas": [
+      "thorn_grove_core"
+    ],
+    "subarea": {
+      "id": "thorn_grove_core",
+      "name": "بیشه خارزار",
+      "entry": "گذرگاه خارهای سیاه",
+      "entry_point": [
+        -720,
+        1200
+      ],
+      "boundary": [
+        [
+          -900,
+          1050
+        ],
+        [
+          -550,
+          1050
+        ],
+        [
+          -530,
+          1200
+        ],
+        [
+          -550,
+          1350
+        ],
+        [
+          -900,
+          1350
+        ]
+      ]
+    },
+    "dungeon_id": "dungeon_thorn",
+    "ruins_enabled": false,
+    "material_ids": [
+      "thorn_hide",
+      "barbed_quill",
+      "briar_sap",
+      "thorn_mandible",
+      "bramble_heart",
+      "thorn_matriarch_blood",
+      "barbed_crown"
+    ],
+    "normal_encounter_ids": [
+      "thorn_grove_monster_1",
+      "thorn_grove_monster_2",
+      "thorn_grove_monster_3",
+      "thorn_grove_monster_4",
+      "thorn_grove_monster_5"
+    ],
+    "leader_encounter_id": "thorn_grove_miniboss",
+    "encounter_rules": {
+      "normal_count_weights": {
+        "1": 100,
+        "2": 40,
+        "3": 15
+      },
+      "normal_spawn_guaranteed": true,
+      "monsters_respawn": true
+    },
+    "version": 2,
+    "recipe_distribution": {
+      "monster_recipe_count": 24,
+      "source_recipe_ids": {
+        "thorn_grove_miniboss": [
+          "recipe_0_3_1",
+          "recipe_1_6_0",
+          "recipe_4_4_1",
+          "recipe_6_3_1",
+          "recipe_8_5_1"
+        ],
+        "thorn_grove_monster_1": [
+          "recipe_1_3_0",
+          "recipe_2_5_1",
+          "recipe_5_7_0",
+          "recipe_7_6_0"
+        ],
+        "thorn_grove_monster_2": [
+          "recipe_0_6_1",
+          "recipe_3_8_0",
+          "recipe_6_6_1",
+          "recipe_9_8_0"
+        ],
+        "thorn_grove_monster_3": [
+          "recipe_1_9_0",
+          "recipe_4_7_1",
+          "recipe_5_4_0",
+          "recipe_7_9_0"
+        ],
+        "thorn_grove_monster_4": [
+          "recipe_2_8_1",
+          "recipe_7_3_0",
+          "recipe_8_8_1"
+        ],
+        "thorn_grove_monster_5": [
+          "recipe_0_9_1",
+          "recipe_3_5_0",
+          "recipe_6_9_1",
+          "recipe_9_5_0"
+        ]
+      },
+      "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
+    }
+  },
+  {
+    "id": "ash_hills",
+    "name": "تپه‌های خاکستر",
+    "region_number": 1,
+    "level_min": 3,
+    "level_max": 3,
+    "recommended_level": 3,
+    "recipe_level": 1,
+    "item_level": 1,
+    "material_theme": "سنگستر",
+    "subareas": [
+      "ash_hills_core"
+    ],
+    "subarea": {
+      "id": "ash_hills_core",
+      "name": "تپه‌های خاکستر",
+      "entry": "شیب سنگستر",
+      "entry_point": [
+        -720,
+        1505
+      ],
+      "boundary": [
+        [
+          -900,
+          1350
+        ],
+        [
+          -550,
+          1350
+        ],
+        [
+          -530,
+          1505
+        ],
+        [
+          -550,
+          1660
+        ],
+        [
+          -900,
+          1660
+        ]
+      ]
+    },
+    "dungeon_id": null,
+    "ruins_enabled": false,
+    "material_ids": [
+      "ashstone_shard",
+      "cinder_beetle_shell",
+      "grey_rockhide",
+      "coal_moth_dust",
+      "slagfang_tooth",
+      "cinder_colossus_core",
+      "basalt_plate"
+    ],
+    "normal_encounter_ids": [
+      "ash_hills_monster_1",
+      "ash_hills_monster_2",
+      "ash_hills_monster_3",
+      "ash_hills_monster_4",
+      "ash_hills_monster_5"
+    ],
+    "leader_encounter_id": "ash_hills_miniboss",
+    "encounter_rules": {
+      "normal_count_weights": {
+        "1": 100,
+        "2": 40,
+        "3": 15
+      },
+      "normal_spawn_guaranteed": true,
+      "monsters_respawn": true
+    },
+    "version": 2,
+    "recipe_distribution": {
+      "monster_recipe_count": 44,
+      "source_recipe_ids": {
+        "ash_hills_miniboss": [
+          "recipe_1_3_1",
+          "recipe_2_6_0",
+          "recipe_2_12_0",
+          "recipe_3_11_1",
+          "recipe_5_1_1",
+          "recipe_7_3_1",
+          "recipe_8_6_0",
+          "recipe_8_12_0",
+          "recipe_9_11_1"
+        ],
+        "ash_hills_monster_1": [
+          "recipe_0_7_0",
+          "recipe_1_12_1",
+          "recipe_2_0_0",
+          "recipe_3_5_1",
+          "recipe_6_7_0",
+          "recipe_7_12_1",
+          "recipe_8_0_0",
+          "recipe_9_5_1"
+        ],
+        "ash_hills_monster_2": [
+          "recipe_0_10_0",
+          "recipe_1_6_1",
+          "recipe_4_8_0",
+          "recipe_6_1_0",
+          "recipe_6_10_0",
+          "recipe_7_6_1"
+        ],
+        "ash_hills_monster_3": [
+          "recipe_0_4_0",
+          "recipe_1_0_1",
+          "recipe_2_9_0",
+          "recipe_4_2_0",
+          "recipe_5_7_1",
+          "recipe_6_4_0",
+          "recipe_8_9_0"
+        ],
+        "ash_hills_monster_4": [
+          "recipe_0_1_0",
+          "recipe_2_3_0",
+          "recipe_3_8_1",
+          "recipe_5_10_1",
+          "recipe_7_0_1",
+          "recipe_8_3_0",
+          "recipe_9_8_1"
+        ],
+        "ash_hills_monster_5": [
+          "recipe_1_9_1",
+          "recipe_3_2_1",
+          "recipe_4_5_0",
+          "recipe_4_11_0",
+          "recipe_5_4_1",
+          "recipe_7_9_1",
+          "recipe_9_2_1"
+        ]
+      },
+      "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
+    }
+  },
+  {
+    "id": "vardash_river",
+    "name": "رود ورداش",
+    "region_number": 1,
+    "level_min": 4,
+    "level_max": 4,
+    "recommended_level": 4,
+    "recipe_level": 1,
+    "item_level": 1,
+    "material_theme": "رسوب ورداش",
+    "subareas": [
+      "vardash_river_core"
+    ],
+    "subarea": {
+      "id": "vardash_river_core",
+      "name": "رود ورداش",
+      "entry": "پل چوبی ورداش",
+      "entry_point": [
+        -350,
+        1505
+      ],
+      "boundary": [
+        [
+          -550,
+          1350
+        ],
+        [
+          -200,
+          1350
+        ],
+        [
+          -200,
+          1660
+        ],
+        [
+          -550,
+          1660
+        ],
+        [
+          -530,
+          1505
+        ]
+      ]
+    },
+    "dungeon_id": null,
+    "ruins_enabled": false,
+    "material_ids": [
+      "vardash_scale",
+      "river_reed_fiber",
+      "mudfin_tooth",
+      "silver_gill",
+      "current_pearl",
+      "river_hydra_scale",
+      "deepwater_essence"
+    ],
+    "normal_encounter_ids": [
+      "vardash_river_monster_1",
+      "vardash_river_monster_2",
+      "vardash_river_monster_3",
+      "vardash_river_monster_4",
+      "vardash_river_monster_5"
+    ],
+    "leader_encounter_id": "vardash_river_miniboss",
+    "encounter_rules": {
+      "normal_count_weights": {
+        "1": 100,
+        "2": 40,
+        "3": 15
+      },
+      "normal_spawn_guaranteed": true,
+      "monsters_respawn": true
+    },
+    "version": 2,
+    "recipe_distribution": {
+      "monster_recipe_count": 44,
+      "source_recipe_ids": {
+        "vardash_river_miniboss": [
+          "recipe_0_10_1",
+          "recipe_2_3_1",
+          "recipe_3_6_0",
+          "recipe_3_12_0",
+          "recipe_4_11_1",
+          "recipe_6_1_1",
+          "recipe_8_3_1",
+          "recipe_9_12_0"
+        ],
+        "vardash_river_monster_1": [
+          "recipe_1_7_0",
+          "recipe_2_12_1",
+          "recipe_3_0_0",
+          "recipe_4_5_1",
+          "recipe_7_7_0",
+          "recipe_8_12_1",
+          "recipe_9_0_0",
+          "recipe_9_6_0"
+        ],
+        "vardash_river_monster_2": [
+          "recipe_1_1_0",
+          "recipe_1_10_0",
+          "recipe_2_6_1",
+          "recipe_5_8_0",
+          "recipe_7_1_0",
+          "recipe_7_10_0",
+          "recipe_8_6_1"
+        ],
+        "vardash_river_monster_3": [
+          "recipe_0_7_1",
+          "recipe_1_4_0",
+          "recipe_3_9_0",
+          "recipe_5_2_0",
+          "recipe_6_7_1",
+          "recipe_7_4_0",
+          "recipe_9_9_0"
+        ],
+        "vardash_river_monster_4": [
+          "recipe_0_1_1",
+          "recipe_2_0_1",
+          "recipe_3_3_0",
+          "recipe_4_8_1",
+          "recipe_6_10_1",
+          "recipe_8_0_1",
+          "recipe_9_3_0"
+        ],
+        "vardash_river_monster_5": [
+          "recipe_0_4_1",
+          "recipe_2_9_1",
+          "recipe_4_2_1",
+          "recipe_5_5_0",
+          "recipe_5_11_0",
+          "recipe_6_4_1",
+          "recipe_8_9_1"
+        ]
+      },
+      "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
+    }
+  },
+  {
+    "id": "southern_plains",
+    "name": "دشت جنوبی",
+    "region_number": 1,
+    "level_min": 5,
+    "level_max": 5,
+    "recommended_level": 5,
+    "recipe_level": 1,
+    "item_level": 1,
+    "material_theme": "علفزار جنوبی",
+    "subareas": [
+      "southern_plains_core"
+    ],
+    "subarea": {
+      "id": "southern_plains_core",
+      "name": "دشت جنوبی",
+      "entry": "گذرگاه علفزار",
+      "entry_point": [
+        -720,
+        1815
+      ],
+      "boundary": [
+        [
+          -900,
+          1660
+        ],
+        [
+          -550,
+          1660
+        ],
+        [
+          -530,
+          1815
+        ],
+        [
+          -550,
+          1970
+        ],
+        [
+          -900,
+          1970
+        ]
+      ]
+    },
+    "dungeon_id": "dungeon_south",
+    "ruins_enabled": false,
+    "material_ids": [
+      "plainstalker_hide",
+      "sunhawk_feather",
+      "drygrass_fiber",
+      "dusthorn",
+      "yellowfang_claw",
+      "plains_alpha_bone",
+      "savanna_heart"
+    ],
+    "normal_encounter_ids": [
+      "southern_plains_monster_1",
+      "southern_plains_monster_2",
+      "southern_plains_monster_3",
+      "southern_plains_monster_4",
+      "southern_plains_monster_5"
+    ],
+    "leader_encounter_id": "southern_plains_miniboss",
+    "encounter_rules": {
+      "normal_count_weights": {
+        "1": 100,
+        "2": 40,
+        "3": 15
+      },
+      "normal_spawn_guaranteed": true,
+      "monsters_respawn": true
+    },
+    "version": 2,
+    "recipe_distribution": {
+      "monster_recipe_count": 23,
+      "source_recipe_ids": {
+        "southern_plains_miniboss": [
+          "recipe_0_5_0",
+          "recipe_3_3_1",
+          "recipe_4_9_0",
+          "recipe_7_4_1",
+          "recipe_9_3_1"
+        ],
+        "southern_plains_monster_1": [
+          "recipe_2_7_0",
+          "recipe_4_6_0",
+          "recipe_5_5_1",
+          "recipe_8_7_0"
+        ],
+        "southern_plains_monster_2": [
+          "recipe_0_8_0",
+          "recipe_3_6_1",
+          "recipe_6_8_0",
+          "recipe_9_6_1"
+        ],
+        "southern_plains_monster_3": [
+          "recipe_1_7_1",
+          "recipe_2_4_0",
+          "recipe_7_7_1",
+          "recipe_8_4_0"
+        ],
+        "southern_plains_monster_4": [
+          "recipe_4_3_0",
+          "recipe_5_8_1"
+        ],
+        "southern_plains_monster_5": [
+          "recipe_1_4_1",
+          "recipe_3_9_1",
+          "recipe_6_5_0",
+          "recipe_9_9_1"
+        ]
+      },
+      "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
+    }
+  },
+  {
+    "id": "rootbound_ruins",
+    "name": "ویرانه‌های ریشه‌پوش",
+    "region_number": 1,
+    "level_min": 5,
+    "level_max": 5,
+    "recommended_level": 5,
+    "recipe_level": 1,
+    "item_level": 1,
+    "material_theme": "یادگار ریشه‌پوش",
+    "subareas": [
+      "rootbound_ruins_core"
+    ],
+    "subarea": {
+      "id": "rootbound_ruins_core",
+      "name": "ویرانه‌های ریشه‌پوش",
+      "entry": "دروازه ریشه‌بسته",
+      "entry_point": [
+        -350,
+        1815
+      ],
+      "boundary": [
+        [
+          -550,
+          1660
+        ],
+        [
+          -200,
+          1660
+        ],
+        [
+          -200,
+          1970
+        ],
+        [
+          -550,
+          1970
+        ],
+        [
+          -530,
+          1815
+        ]
+      ]
+    },
+    "dungeon_id": null,
+    "ruins_enabled": true,
+    "material_ids": [
+      "rune_dust",
+      "rootstone_fragment",
+      "ancient_thread",
+      "sealed_wax",
+      "memory_shard",
+      "rootbound_relic",
+      "old_guardian_seal"
+    ],
+    "normal_encounter_ids": [
+      "rootbound_ruins_monster_1",
+      "rootbound_ruins_monster_2",
+      "rootbound_ruins_monster_3",
+      "rootbound_ruins_monster_4",
+      "rootbound_ruins_monster_5"
+    ],
+    "leader_encounter_id": "rootbound_region_boss",
+    "encounter_rules": {
+      "normal_count_weights": {
+        "1": 100,
+        "2": 40,
+        "3": 15
+      },
+      "normal_spawn_guaranteed": true,
+      "monsters_respawn": true
+    },
+    "version": 2,
+    "recipe_distribution": {
+      "monster_recipe_count": 26,
+      "source_recipe_ids": {
+        "rootbound_region_boss": [
+          "recipe_0_5_1",
+          "recipe_0_11_1",
+          "recipe_1_2_0",
+          "recipe_1_8_0",
+          "recipe_2_1_1",
+          "recipe_2_7_1",
+          "recipe_3_4_0",
+          "recipe_3_10_0",
+          "recipe_4_3_1",
+          "recipe_4_9_1",
+          "recipe_5_0_0",
+          "recipe_5_6_0",
+          "recipe_5_12_0",
+          "recipe_6_5_1",
+          "recipe_6_11_1",
+          "recipe_7_2_0",
+          "recipe_7_8_0",
+          "recipe_8_1_1",
+          "recipe_8_7_1",
+          "recipe_9_4_0",
+          "recipe_9_10_0"
+        ],
+        "rootbound_ruins_monster_1": [
+          "recipe_5_3_0"
+        ],
+        "rootbound_ruins_monster_2": [
+          "recipe_9_1_0"
+        ],
+        "rootbound_ruins_monster_3": [
+          "recipe_3_7_0"
+        ],
+        "rootbound_ruins_monster_4": [
+          "recipe_0_8_1"
+        ],
+        "rootbound_ruins_monster_5": [
+          "recipe_2_4_1"
+        ]
+      },
+      "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
+    }
+  }
+]
