@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "classes": [
+    {
+      "id": "gunner",
+      "name_fa": "تفنگدار",
+      "description_fa": "تیراندازی دوربرد، سلاح گرم و فشار پیوسته",
+      "specialization_ids": [
+        "gunner_1",
+        "gunner_2",
+        "gunner_3",
+        "gunner_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    },
+    {
+      "id": "monk",
+      "name_fa": "راهب",
+      "description_fa": "هنرهای رزمی، تمرکز درونی و نبرد نزدیک",
+      "specialization_ids": [
+        "monk_1",
+        "monk_2",
+        "monk_3",
+        "monk_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    },
+    {
+      "id": "warrior",
+      "name_fa": "جنگجو",
+      "description_fa": "نبرد مستقیم، پایداری و شکستن خطوط دشمن",
+      "specialization_ids": [
+        "warrior_1",
+        "warrior_2",
+        "warrior_3",
+        "warrior_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    },
+    {
+      "id": "wizard",
+      "name_fa": "جادوگر",
+      "description_fa": "جادوی اسرارآمیز و دستکاری نیروهای ماورایی",
+      "specialization_ids": [
+        "wizard_1",
+        "wizard_2",
+        "wizard_3",
+        "wizard_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    },
+    {
+      "id": "ranger",
+      "name_fa": "رنجر",
+      "description_fa": "ردیابی، بقا و شکار در سرزمین‌های وحشی",
+      "specialization_ids": [
+        "ranger_1",
+        "ranger_2",
+        "ranger_3",
+        "ranger_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    },
+    {
+      "id": "assassin",
+      "name_fa": "آدمکش",
+      "description_fa": "پنهان‌کاری، ضربات دقیق و حذف هدف",
+      "specialization_ids": [
+        "assassin_1",
+        "assassin_2",
+        "assassin_3",
+        "assassin_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    },
+    {
+      "id": "priest",
+      "name_fa": "کشیش",
+      "description_fa": "ایمان، نیایش و نیروهای مقدس یا نفرین‌شده",
+      "specialization_ids": [
+        "priest_1",
+        "priest_2",
+        "priest_3",
+        "priest_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    },
+    {
+      "id": "paladin",
+      "name_fa": "پالادین",
+      "description_fa": "سوگند، دفاع از همراهان و قدرت آیینی",
+      "specialization_ids": [
+        "paladin_1",
+        "paladin_2",
+        "paladin_3",
+        "paladin_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    },
+    {
+      "id": "shaman",
+      "name_fa": "شمن",
+      "description_fa": "ارواح، توتم‌ها و نیروهای طبیعت و ابیس",
+      "specialization_ids": [
+        "shaman_1",
+        "shaman_2",
+        "shaman_3",
+        "shaman_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    },
+    {
+      "id": "summoner",
+      "name_fa": "احضارگر",
+      "description_fa": "پیمان، فراخوانی موجودات و نیروهای بیرونی",
+      "specialization_ids": [
+        "summoner_1",
+        "summoner_2",
+        "summoner_3",
+        "summoner_4"
+      ],
+      "starting_equipment_ids": [],
+      "version": 1,
+      "content_status": "identity_shell_only"
+    }
+  ]
+}
