@@ -1,0 +1,14 @@
+{
+  "id": "ranger",
+  "name_fa": "رنجر",
+  "description_fa": "ردیابی، بقا و شکار در سرزمین‌های وحشی",
+  "specialization_ids": [
+    "ranger_1",
+    "ranger_2",
+    "ranger_3",
+    "ranger_4"
+  ],
+  "starting_equipment_ids": [],
+  "version": 1,
+  "content_status": "identity_shell_only"
+}
