@@ -1,0 +1,14 @@
+{
+  "id": "priest",
+  "name_fa": "کشیش",
+  "description_fa": "ایمان، نیایش و نیروهای مقدس یا نفرین‌شده",
+  "specialization_ids": [
+    "priest_1",
+    "priest_2",
+    "priest_3",
+    "priest_4"
+  ],
+  "starting_equipment_ids": [],
+  "version": 1,
+  "content_status": "identity_shell_only"
+}
