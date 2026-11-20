@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#111016">
+<title>ETRANOM</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#111016;color:#eee9e2;font-family:Tahoma,Arial,sans-serif}#auth-gate{position:relative;z-index:20;min-height:100dvh;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 50% 10%,#382448 0,#17131d 48%,#0c0b10 100%)}.auth-card{width:min(100%,430px);padding:28px 22px;border:1px solid #80613e88;border-radius:18px;background:linear-gradient(145deg,#211a2b,#121016);box-shadow:0 18px 70px #0009}.auth-brand{font-size:34px;letter-spacing:5px;text-align:center;color:#d7b477;margin:8px 0}.auth-sub{color:#bdb2c3;text-align:center;font-size:13px;line-height:2;margin:0 0 24px}.auth-card label{display:block;font-size:13px;color:#d8c8ad;margin:14px 0 7px}.auth-card input{width:100%;padding:14px;border:1px solid #51445c;border-radius:9px;background:#0e0c12;color:#fff;font:inherit;direction:ltr;text-align:left}.auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.auth-actions button{padding:13px 8px;border:1px solid #9a794d;border-radius:9px;background:#241d2d;color:#f5e8d1;font:inherit;font-size:13px}.auth-actions button.primary{background:linear-gradient(100deg,#c8a36b,#8c633e);color:#160f12;font-weight:bold}.auth-actions button:disabled{opacity:.55}.auth-note{min-height:42px;margin:16px 0 0;color:#d8c99f;font-size:12px;line-height:1.9;text-align:center}.hidden{display:none!important}#etr-game-root{display:none!important;min-height:100vh}#etr-game-root.etr-game-ready{display:block!important}#auth-gate.hidden{display:none!important}
+</style>
+
+<style id="etranom-login-cinematic-v112">
+#auth-gate{isolation:isolate;position:relative;overflow:hidden;min-height:100svh;padding:28px 18px 58px;background:radial-gradient(ellipse at 50% 42%,#30203d 0,#17111f 37%,#0b0910 78%,#07060a 100%)}
+#auth-gate:before,#auth-gate:after{content:"";position:absolute;pointer-events:none;z-index:-1}
+#auth-gate:before{inset:0;background:linear-gradient(115deg,transparent 0 28%,#c99a4c08 49%,transparent 70%),repeating-linear-gradient(0deg,transparent 0 79px,#d4b06b08 80px,#d4b06b08 81px),repeating-linear-gradient(90deg,transparent 0 79px,#d4b06b07 80px,#d4b06b07 81px);mask-image:radial-gradient(ellipse at center,#000 10%,transparent 78%)}
+#auth-gate:after{width:min(90vw,720px);height:min(90vw,720px);border:1px solid #c39a5830;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 22px #c39a5808,0 0 0 62px #c39a5806,0 0 100px #9b61bd18}
+.auth-atmosphere{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.auth-orbit{position:absolute;left:50%;top:50%;width:min(105vw,900px);height:min(105vw,900px);border:1px solid #c59b5530;border-radius:50%;transform:translate(-50%,-50%) rotate(-25deg)}.orbit-two{width:min(78vw,660px);height:min(110vw,900px);transform:translate(-50%,-50%) rotate(34deg);border-color:#9d70b52b}
+.auth-rune{position:absolute;color:#c49b60;opacity:.25;text-shadow:0 0 18px #d7b477;font-family:Georgia,serif}.rune-one{top:13%;left:13%;font-size:42px}.rune-two{right:12%;top:25%;font-size:30px}.rune-three{bottom:14%;right:16%;font-size:38px}
+.auth-frame{position:absolute;inset:13px;pointer-events:none;border:1px solid #b18a5426}.auth-frame i{position:absolute;width:22px;height:22px;border-color:#c6a16a99;border-style:solid}.auth-frame i:nth-child(1){top:-1px;left:-1px;border-width:2px 0 0 2px}.auth-frame i:nth-child(2){top:-1px;right:-1px;border-width:2px 2px 0 0}.auth-frame i:nth-child(3){bottom:-1px;left:-1px;border-width:0 0 2px 2px}.auth-frame i:nth-child(4){bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.auth-card{position:relative;width:min(100%,450px);padding:30px 30px 20px;border:1px solid #b18a5470;border-radius:5px;background:linear-gradient(155deg,#21182bf5 0%,#15101cf8 54%,#0e0b13fa 100%);box-shadow:0 28px 100px #000d,0 0 0 5px #c39a5809,0 0 48px #8e59b51c;clip-path:polygon(0 12px,12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px))}
+.auth-card:before{content:"";position:absolute;inset:7px;border:1px solid #b18a5428;pointer-events:none}
+.auth-emblem{position:relative;width:76px;height:76px;margin:0 auto 12px;display:grid;place-items:center;color:#e5c68c}.emblem-ring{position:absolute;inset:7px;border:1px solid #c6a16a;border-radius:50%;transform:rotate(45deg);box-shadow:0 0 18px #c39a5838}.emblem-ring:before,.emblem-ring:after{content:"";position:absolute;inset:6px;border:1px solid #c6a16a77;border-radius:50%;transform:rotate(45deg)}.emblem-ring:after{inset:-6px;border-radius:0;transform:rotate(45deg)}.emblem-core{font-size:34px;text-shadow:0 0 20px #e5c68c}.emblem-point{position:absolute;width:5px;height:5px;background:#e5c68c;transform:rotate(45deg)}.point-top{top:0}.point-bottom{bottom:0}
+.auth-overline{display:flex;align-items:center;justify-content:center;gap:10px;color:#c7a66f;font-size:10px;letter-spacing:1.2px}.auth-overline span{height:1px;width:28px;background:linear-gradient(90deg,transparent,#b18a54)}.auth-overline span:last-child{transform:scaleX(-1)}
+.auth-brand{font-family:Georgia,serif;font-size:clamp(35px,9vw,43px);font-weight:500;letter-spacing:7px;text-align:center;color:#e2c38a;margin:8px 0 2px;text-shadow:0 2px 3px #000,0 0 25px #c29a5b55}.auth-sub{color:#c0b4c9;text-align:center;font-size:12px;line-height:2;margin:0 0 12px}.auth-divider{display:flex;align-items:center;gap:12px;margin:14px 0 18px;color:#c9a66d}.auth-divider:before,.auth-divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#98734c88)}.auth-divider:after{transform:scaleX(-1)}
+.auth-card label{display:block;font-size:12px;color:#e0c99f;margin:13px 0 7px}.field-icon{display:inline-block;margin-left:5px;color:#c6a16a}.auth-card input{width:100%;padding:14px 15px;border:1px solid #65516f;border-radius:3px;background:linear-gradient(90deg,#0b0910,#17111f);color:#fff;font:13px Tahoma,Arial,sans-serif;direction:ltr;text-align:left;outline:none;transition:border-color .2s,box-shadow .2s}.auth-card input:focus{border-color:#c5a16b;box-shadow:0 0 0 2px #c5a16b20,0 0 18px #9e6bc022}.auth-card input::placeholder{color:#756a7e}.auth-actions{display:grid;grid-template-columns:1.15fr 1fr;gap:10px;margin-top:21px}.auth-actions button{min-height:48px;display:flex;align-items:center;justify-content:center;gap:10px;padding:11px 10px;border:1px solid #98734c;border-radius:3px;background:linear-gradient(145deg,#30243a,#1b1424);color:#e8d9c0;font:12px Tahoma,Arial,sans-serif;cursor:pointer;transition:transform .18s,filter .18s,box-shadow .18s}.auth-actions button b{font-size:17px;color:#d7b477}.auth-actions button.primary{background:linear-gradient(120deg,#dfc28b,#a77c4e);color:#1a1112;font-weight:bold;box-shadow:0 5px 22px #b58a4c25}.auth-actions button.primary b{color:#25191a}.auth-actions button:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 8px 24px #0007}.auth-actions button:active{transform:translateY(0)}.auth-actions button:disabled{opacity:.55;cursor:wait;transform:none}
+.auth-note{min-height:38px;margin:15px 0 0;color:#bca77f;font-size:10px;line-height:1.9;text-align:center}.auth-footer{display:flex;justify-content:space-between;gap:10px;padding-top:12px;border-top:1px solid #b18a5426;color:#81758b;font-size:9px;letter-spacing:.4px}.auth-bottom-mark{position:absolute;bottom:19px;left:0;right:0;text-align:center;color:#9c8058;font:10px Georgia,serif;letter-spacing:3px;opacity:.65}
+@media(max-width:520px){#auth-gate{padding:20px 16px 52px}.auth-card{padding:25px 20px 17px}.auth-frame{inset:8px}.auth-rune{opacity:.16}.auth-bottom-mark{font-size:8px;letter-spacing:2px;bottom:15px}.auth-emblem{width:68px;height:68px}}
+@media(max-height:650px){#auth-gate{padding-top:12px;padding-bottom:38px}.auth-card{padding-top:16px;padding-bottom:12px}.auth-emblem{width:54px;height:54px;margin-bottom:6px}.auth-brand{font-size:32px}.auth-divider{margin:8px 0 10px}.auth-card label{margin:9px 0 5px}.auth-card input{padding:11px}.auth-actions{margin-top:13px}.auth-note{margin-top:9px;min-height:28px}}
+@media(prefers-reduced-motion:reduce){.auth-actions button,.auth-card input{transition:none}}
+</style>
+  <link rel="stylesheet" href="./systems/party/party.css">
+<link rel="stylesheet" href="./systems/online/social-ui.css">
+<link rel="stylesheet" href="./systems/classes/arcane-mage.css?v=1">
+<link rel="stylesheet" href="./systems/ui/dark-fantasy-pages.css?v=125">
+<link rel="stylesheet" href="./systems/ui/battle-compact-v119.css?v=121">
+<style>.status-avatar{display:block!important;width:54px!important;height:62px!important;flex:0 0 54px!important;overflow:hidden!important;border:1px solid #b18a54!important;border-radius:11px!important;background:#17111d!important;box-shadow:0 0 13px #d18b3c55!important}.status-avatar img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 22%!important}</style>
+
+<style id="etranom-v93-mobile-fit">
+@media (max-width: 600px) {
+  html, body { width:100%; height:100%; min-height:100%; overflow:hidden!important; overscroll-behavior:none!important; }
+  #etr-game-root { position:fixed!important; inset:0!important; width:100%!important; height:100dvh!important; min-height:0!important; overflow:hidden!important; }
+  #etr-game-root.etr-game-ready { display:block!important; }
+  .shell.game-shell { width:100%!important; max-width:720px!important; height:100dvh!important; min-height:0!important; max-height:100dvh!important; margin:0 auto!important; padding:6px 7px calc(6px + env(safe-area-inset-bottom,0px))!important; overflow:hidden!important; display:flex!important; flex-direction:column!important; }
+  .game-brand { flex:0 0 auto!important; margin:0 0 4px!important; padding:5px 7px!important; }
+  .etr-system-notice { flex:0 0 auto!important; margin:3px 0!important; padding:5px 30px 5px 7px!important; font-size:10px!important; line-height:1.45!important; }
+  .exploration-screen { flex:1 1 auto!important; min-height:0!important; height:0!important; margin:3px 0!important; overflow:hidden!important; display:flex!important; flex-direction:column!important; }
+  .explore-top { flex:0 0 auto!important; padding:6px 8px!important; }
+  .explore-top b { font-size:11px!important; }
+  .explore-top small { font-size:9px!important; }
+  .explore-top-actions button { min-width:54px!important; min-height:36px!important; padding:4px 6px!important; font-size:10px!important; }
+  .explore-mini-hud { flex:0 0 auto!important; padding:4px!important; gap:3px!important; flex-wrap:wrap!important; font-size:8px!important; }
+  .explore-mini-hud span { padding:2px 4px!important; }
+  .explore-viewport { flex:1 1 auto!important; min-height:0!important; height:0!important; overflow:hidden!important; }
+  .explore-viewport canvas { width:100%!important; height:100%!important; min-height:0!important; max-height:none!important; object-fit:cover!important; }
+  .world-hint { top:4px!important; left:4px!important; right:4px!important; padding:4px 6px!important; font-size:8px!important; }
+  .world-coords { bottom:4px!important; right:4px!important; padding:3px 5px!important; font-size:8px!important; }
+  .world-player-legend { left:4px!important; bottom:4px!important; gap:4px!important; padding:4px!important; font-size:8px!important; }
+  .explore-controls { flex:0 0 auto!important; padding:5px 8px!important; }
+  .joystick-base { width:68px!important; height:68px!important; }
+  .joystick-knob { width:32px!important; height:32px!important; }
+  .explore-actions button { min-width:48px!important; min-height:43px!important; padding:3px!important; font-size:16px!important; }
+  .explore-actions button small { font-size:8px!important; }
+  .game-shell footer { flex:0 0 auto!important; margin:1px 0 0!important; padding:2px!important; font-size:7px!important; }
+  .player-window-backdrop { position:fixed!important; inset:0!important; overflow:hidden!important; align-items:center!important; padding:8px!important; }
+  .player-window,.world-panel-window,.interaction-window { width:100%!important; max-height:calc(100dvh - 16px)!important; overflow-y:auto!important; overscroll-behavior:contain!important; }
+  .etr-battle-screen,.combat-screen { max-height:calc(100dvh - 58px)!important; overflow-y:auto!important; padding:7px!important; }
+  .etr-battle-card.enemy { min-width:0!important; width:auto!important; padding:4px!important; border-radius:8px!important; }
+  .etr-battle-screen { padding:5px!important; }
+  .battle-heading { padding:3px 3px 6px!important; }
+  .battle-heading h2 { font-size:18px!important; margin:2px 0!important; }
+  .battle-round { padding:3px 8px!important; font-size:9px!important; }
+  .battle-section-title { margin:5px 1px 4px!important; }
+  .battle-section-title b { font-size:11px!important; }
+  .battle-section-title small { font-size:8px!important; }
+  .battle-side.enemy-side { display:grid!important; grid-template-columns:repeat(3,minmax(0,1fr))!important; gap:4px!important; }
+  .enemy-art { height:auto!important; min-height:0!important; aspect-ratio:.82/1!important; padding:4px 3px!important; }
+  .enemy-level-chip { top:3px!important; right:3px!important; font-size:7px!important; padding:2px 4px!important; }
+  .enemy-card-name { font-size:8px!important; }
+  .enemy-resource-bar { height:5px!important; }
+  .battle-vs { margin:5px 0!important; }
+  .battle-instruction { margin:3px 0 5px!important; font-size:8px!important; }
+  .battle-actions { gap:5px!important; margin-top:5px!important; }
+  .battle-actions button { min-height:39px!important; padding:4px!important; font-size:10px!important; }
+  .battle-actions button span { font-size:13px!important; }
+  .battle-actions button small { font-size:7px!important; }
+  .battle-finish,.battle-retreat { min-height:36px!important; margin:5px 0!important; padding:5px!important; font-size:10px!important; }
+  .battle-messages,.battle-log { max-height:68px!important; overflow:hidden!important; font-size:8px!important; line-height:1.4!important; }
+  .etr-battle-card.player { width:100%!important; padding:6px!important; }
+  .battle-stat-line { margin-top:4px!important; font-size:8px!important; }
+  .battle-meter { height:6px!important; margin:2px 0!important; }
+  .enemy-target-hint { display:block!important; color:#f4d28d!important; font-size:8px!important; padding-top:3px!important; }
+}
+.etr-battle-card.enemy.selected { outline:3px solid #f1c96f!important; border-color:#f1c96f!important; box-shadow:0 0 0 3px #d8a84c55,0 0 16px #d8a84c66!important; }
+.enemy-target-hint { display:block; color:#f0ce8c; font-size:9px; text-align:center; padding:3px 2px 0; }
+.combat-target-label { border:1px solid #8f6c43; border-radius:8px; background:#2a211b; color:#ffe0a2; padding:8px 10px; margin:7px 0; text-align:center; font-size:11px; line-height:1.7; }
+</style>
+
+<style id="etranom-v107-mobile-scroll-fix">
+@media (max-width: 700px) {
+  html, body { overflow: hidden !important; height: 100% !important; }
+  #etr-game-root { overflow: hidden !important; }
+  /* Landing / character creator: make the page itself the vertical scroll owner. */
+  #etr-game-root > .shell:not(.game-shell) {
+    display: block !important;
+    width: 100% !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    max-height: 100dvh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  #etr-game-root > .landing-shell,
+  #etr-game-root > .shell:has(#creator) {
+    overflow-y: auto !important;
+    touch-action: pan-y !important;
+  }
+  #creator, .creator-panel, .landing-shell .panel {
+    max-height: none !important;
+    overflow: visible !important;
+    touch-action: pan-y !important;
+  }
+  #creator label, #creator input, #creator select, #creator textarea,
+  #creator button { touch-action: manipulation !important; }
+  /* Other long game screens and dialogs must keep an independent scroll surface. */
+  #etr-game-root > .shell.game-shell > .combat-screen {
+    min-height: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+  }
+  .player-window-backdrop, .player-window, .world-panel-window,
+  .interaction-window, #etr-social-card, #etr-guild-card, #etr-market-card {
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+  }
+}
+</style>
+
+<style id="etranom-dark-fantasy-visual-v111">
+:root{--etr-void:#09070e;--etr-panel:#17111f;--etr-panel2:#21172c;--etr-violet:#8e5ac4;--etr-violet-hi:#c69aff;--etr-gold:#c7a46a;--etr-gold-hi:#f0d49b;--etr-line:#72538a;--etr-text:#f0e8f5}
+html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#08070c 100%)!important;color:var(--etr-text)}
+#auth-gate{background:radial-gradient(ellipse at 50% 0%,#54346d 0,#1b1425 42%,#08070d 100%)!important}
+.auth-card{border:1px solid #a77ac477!important;border-radius:22px!important;background:linear-gradient(145deg,#261b34f5,#100d17f8)!important;box-shadow:0 22px 80px #000c,0 0 35px #8d55b322!important}
+.auth-brand,.game-brand{color:var(--etr-gold-hi)!important;text-shadow:0 0 18px #c28aff55,0 2px 4px #000!important;letter-spacing:3px}
+.auth-card input,.auth-card select,.auth-card textarea{border-color:#634b78!important;background:#0c0911!important;border-radius:11px!important}
+.auth-actions button,.auth-card button{border-radius:12px!important;border-color:#98734c!important;transition:filter .15s,transform .15s,box-shadow .15s}
+.auth-actions button.primary{background:linear-gradient(135deg,#d7b77d,#9566b5)!important;color:#160f1c!important;box-shadow:0 5px 18px #a46bc344!important}
+/* Unified arcane surfaces, without changing game logic or layout dimensions. */
+#etr-game-root .shell,#etr-game-root .panel,#etr-game-root .card,.player-window,.world-panel-window,.interaction-window,.etr-battle-screen,.combat-screen{border-color:#614777!important}
+#etr-game-root .panel,#etr-game-root .card,.player-window,.world-panel-window,.interaction-window{background:linear-gradient(145deg,#21182b,#100d16)!important;box-shadow:0 12px 34px #0008,0 0 18px #8957ad12!important}
+#etr-game-root button,.player-window button,.world-panel-window button,.interaction-window button{border-radius:10px!important;transition:filter .15s,transform .15s,box-shadow .15s}
+#etr-game-root button:hover,.player-window button:hover,.world-panel-window button:hover,.interaction-window button:hover{filter:brightness(1.16);box-shadow:0 0 13px #b27be633}
+#etr-game-root input,#etr-game-root textarea,#etr-game-root select{border-color:#604878!important;background:#0c0911!important;color:#f3eafa!important;border-radius:9px!important}
+#etr-social-launch,#etr-guild-launch{position:fixed!important;z-index:100002!important;bottom:calc(17px + env(safe-area-inset-bottom,0px))!important;left:auto!important;right:auto!important;width:48px!important;height:48px!important;min-width:48px!important;min-height:48px!important;padding:0!important;margin:0!important;display:grid!important;place-items:center!important;border:1px solid #d4b477!important;border-radius:50%!important;background:radial-gradient(circle at 35% 25%,#563a70 0,#21152e 58%,#100b17 100%)!important;color:#f2d9a5!important;box-shadow:0 4px 18px #000c,0 0 0 3px #281a35,0 0 20px #9c6bd044!important;font: bold 22px Georgia,serif!important;cursor:pointer!important;isolation:isolate}
+#etr-social-launch{left:calc(50% - 54px)!important;right:auto!important}
+#etr-guild-launch{left:calc(50% + 6px)!important;right:auto!important;font-size:23px!important}
+#etr-social-launch:before,#etr-guild-launch:before{content:"";position:absolute;inset:4px;border:1px solid #a886bd88;border-radius:50%;pointer-events:none}
+#etr-social-launch .etr-launch-symbol{display:block;line-height:1;font-size:24px;text-shadow:0 0 10px #d7b5ff}
+#etr-guild-launch span{line-height:1;text-shadow:0 0 10px #f0d49b}
+#etr-social-launch .etr-badge{position:absolute!important;top:-5px!important;right:-5px!important;left:auto!important;min-width:19px!important;height:19px!important;padding:0 4px!important;border:1px solid #ffd7dc!important;border-radius:50%!important;background:#c51f45!important;color:#fff!important;font: bold 10px Tahoma!important;box-shadow:0 2px 7px #000!important}
+#etr-social-launch .etr-badge[hidden]{display:none!important}
+@media(max-width:600px){#etr-social-launch,#etr-guild-launch{width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;bottom:calc(13px + env(safe-area-inset-bottom,0px))!important}#etr-social-launch{left:calc(50% - 49px)!important}#etr-guild-launch{left:calc(50% + 5px)!important}}
+#etr-social-card,#etr-guild-card{border-color:#9b78b8!important;background:radial-gradient(ellipse at 50% 0,#342340 0,#1b1424 45%,#0d0a12 100%)!important;box-shadow:0 24px 90px #000e,0 0 35px #a56ed522!important}
+#etr-social-card h2,#etr-guild-card h2,#etr-social-card h3,#etr-guild-card h3{color:#e7c88e!important}
+#etr-social-card .social-tabs button,#etr-guild-card button{border-color:#795b91!important;background:linear-gradient(145deg,#33233f,#1b1424)!important;color:#f0e3f5!important}
+#etr-social-card .social-tabs button:focus-visible,#etr-guild-card button:focus-visible,#etr-social-launch:focus-visible,#etr-guild-launch:focus-visible{outline:2px solid #f2d69c!important;outline-offset:3px!important}
+</style>
+
+</head>
+<body>
+<div id="auth-gate">
+  <div class="auth-atmosphere" aria-hidden="true"><span class="auth-orbit orbit-one"></span><span class="auth-orbit orbit-two"></span><span class="auth-rune rune-one">ᛟ</span><span class="auth-rune rune-two">✦</span><span class="auth-rune rune-three">ᚱ</span></div>
+  <div class="auth-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <section class="auth-card" aria-labelledby="auth-title">
+    <div class="auth-emblem" aria-hidden="true"><span class="emblem-ring"></span><span class="emblem-core">✦</span><span class="emblem-point point-top"></span><span class="emblem-point point-bottom"></span></div>
+    <div class="auth-overline"><span></span> دروازه‌ی سرزمین‌های بی‌کران <span></span></div>
+    <h1 class="auth-brand" id="auth-title">ETRANOM</h1>
+    <p class="auth-sub">آن‌سوی مرزهای شناخته‌شده، سرنوشتت انتظار تو را می‌کشد.</p>
+    <div class="auth-divider"><span>✧</span></div>
+    <form id="auth-form">
+      <label for="email"><span class="field-icon">◈</span> نشانی ایمیل</label><input id="email" type="email" autocomplete="email" required placeholder="name@example.com">
+      <label for="password"><span class="field-icon">⌑</span> گذرواژه</label><input id="password" type="password" autocomplete="current-password" minlength="6" required placeholder="حداقل ۶ نویسه">
+      <div class="auth-actions"><button class="primary" id="login-btn" type="submit"><span>ورود به جهان</span><b>⟵</b></button><button id="signup-btn" type="button"><span>ساخت حساب</span><b>✧</b></button></div>
+    </form>
+    <p id="auth-note" class="auth-note" role="status">✧ &nbsp; اتصال امن · اطلاعات حساب محافظت می‌شود</p>
+    <div class="auth-footer"><span>یک جهان · هزاران سرنوشت</span><span>ETRANOM ©</span></div>
+  </section>
+  <div class="auth-bottom-mark" aria-hidden="true">✦ &nbsp; THE WORLD AWAITS &nbsp; ✦</div>
+</div>
+<script>
+// Keep the form from performing a native page reload even if module/CDN loading fails.
+(()=>{const f=document.getElementById('auth-form'),n=document.getElementById('auth-note');if(f)f.addEventListener('submit',e=>{e.preventDefault();if(n&&n.textContent.includes('اطلاعات حساب'))n.textContent='در حال آماده‌سازی اتصال امن...';});})();
+</script>
+<script type="module">
+// Initialize notification state before any asynchronous startup or auth recovery can run.
+const notificationCounts={private:0,global:0,requests:0,party:0};
+let notificationChannels=[],notificationReady=false;
+let createClient;
+try {
+  ({ createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'));
+} catch (firstError) {
+  try {
+    ({ createClient } = await import('https://esm.sh/@supabase/supabase-js@2'));
+  } catch (secondError) {
+    console.error('Supabase SDK could not be loaded', firstError, secondError);
+    const n=document.getElementById('auth-note');
+    if(n)n.textContent='کتابخانه اتصال بارگذاری نشد. اینترنت را بررسی کن و صفحه را دوباره بارگذاری کن. اگر مشکل ادامه داشت، فیلترشکن یا محدودیت شبکه ممکن است مانع اتصال شده باشد.';
+    const f=document.getElementById('auth-form');
+    if(f)f.addEventListener('submit',e=>e.preventDefault());
+    document.getElementById('signup-btn')?.addEventListener('click',()=>{if(n)n.textContent='اتصال به سرویس حساب کاربری برقرار نشد؛ لطفاً اتصال اینترنت را بررسی کن.';});
+    throw secondError;
+  }
+}
+const SUPABASE_URL = 'https://oqqhtctqzffglorurdhg.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_6-jModjPqRglQfAiHJc5iw_9Ifh-VAM';
+const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+const gate=document.getElementById('auth-gate'),form=document.getElementById('auth-form'),note=document.getElementById('auth-note'),loginBtn=document.getElementById('login-btn'),signupBtn=document.getElementById('signup-btn');
+let currentUser=null,started=false,startupPromise=null;
+
+// Guild system: a standalone world button, with founding unlocked only through Toren.
+let guildTeacherVisited=false;
+const guildCss=document.createElement('style');guildCss.textContent=`#etr-guild-launch{position:fixed;z-index:100002;right:14px;bottom:calc(18px + env(safe-area-inset-bottom,0px));padding:12px 18px;border:1px solid #b99a65;border-radius:12px;background:linear-gradient(135deg,#29203a,#15121b);color:#f1d9aa;font:bold 13px Tahoma;box-shadow:0 6px 22px #0009}#etr-guild-overlay{position:fixed;inset:0;z-index:100006;background:#08070bf0;display:none;align-items:center;justify-content:center;padding:12px;font-family:Tahoma}#etr-guild-card{width:min(680px,100%);max-height:92dvh;overflow:auto;background:linear-gradient(145deg,#211a2b,#111016);border:1px solid #9b7a4e;border-radius:16px;padding:17px;color:#eee5d7;box-shadow:0 20px 70px #000}#etr-guild-card h2,#etr-guild-card h3{color:#d9b879}#etr-guild-card button,#etr-guild-card input,#etr-guild-card textarea{font:inherit}#etr-guild-card button{border:1px solid #8e704c;border-radius:8px;background:#302438;color:#f3dfbd;padding:9px 12px;margin:4px}#etr-guild-card button.primary{background:#927044;color:#120f12;font-weight:bold}#etr-guild-card input,#etr-guild-card textarea{width:100%;padding:11px;border-radius:8px;border:1px solid #63516d;background:#0d0b11;color:#fff;margin:6px 0;box-sizing:border-box}#etr-guild-card .guild-box{padding:12px;margin:9px 0;border:1px solid #51443c;border-radius:10px;background:#17141c}#etr-guild-card .guild-muted{color:#b8a78e;font-size:12px;line-height:1.9}#etr-guild-card .guild-row{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:9px;border-bottom:1px solid #403747}#etr-guild-card .guild-error{color:#ffaaa3;line-height:1.8}`;document.head.appendChild(guildCss);
+const guildOverlay=document.createElement('div');guildOverlay.id='etr-guild-overlay';guildOverlay.innerHTML=`<section id="etr-guild-card" role="dialog" aria-modal="true" aria-label="انجمن‌ها"><header style="display:flex;justify-content:space-between;align-items:center"><div><small style="color:#b99a65">ETRANOM • GUILD HALL</small><h2 style="margin:5px 0">انجمن‌ها</h2></div><button id="etr-guild-close">✕</button></header><div id="etr-guild-content">در حال بارگذاری...</div></section>`;document.body.appendChild(guildOverlay);
+const guildLaunch=document.createElement('button');guildLaunch.id='etr-guild-launch';guildLaunch.innerHTML='<span aria-hidden="true">⚜</span>';guildLaunch.type='button';guildLaunch.title='انجمن‌ها';guildLaunch.setAttribute('aria-label','باز کردن انجمن‌ها');guildLaunch.onclick=()=>openGuildPanel();
+function guildEscape(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function guildMessage(t,error=false){const el=document.getElementById('etr-guild-feedback');if(el){el.textContent=t;el.className=error?'guild-error':'guild-muted';}}
+async function guildRpc(name,args={}){const {data,error}=await supabase.rpc(name,args);if(error)throw error;return data;}
+async function renderGuildPanel(){const box=document.getElementById('etr-guild-content');box.innerHTML='<p>در حال دریافت اطلاعات انجمن...</p>';try{const snap=await guildRpc('etranom_guild_snapshot');const g=snap.guild;let html='';
+ if(g){html+=`<div class="guild-box"><div style="display:flex;justify-content:space-between;gap:10px"><div><small class="guild-muted">نشان انجمن • [${guildEscape(g.tag)}]</small><h3 style="margin:5px 0">${guildEscape(g.name)}</h3></div><b style="color:#d8b879">سطح ${g.level}</b></div><p class="guild-muted">${guildEscape(g.description||'بدون توضیحات')}</p><div class="guild-row"><span>اعضا</span><b>${snap.members.length} / ${g.member_limit}</b></div><div class="guild-row"><span>تأسیس</span><b>${new Date(g.created_at).toLocaleDateString('fa-IR')}</b></div></div><h3>اعضای انجمن</h3>`;
+ html+=(snap.members||[]).map(m=>`<div class="guild-row"><span><b>${guildEscape(m.display_name)}</b><br><small class="guild-muted">سطح ${m.player_level} • ${guildEscape(m.player_class)}</small></span><b>${m.role==='leader'?'رهبر':m.role==='officer'?'افسر':'عضو'}</b></div>`).join('');
+ html+=`<div class="guild-box guild-chat-box"><h3>💬 گفت‌وگوی اختصاصی انجمن</h3><p class="guild-muted">این کانال فقط برای اعضای همین انجمن قابل مشاهده است.</p><div id="guild-chat-messages" style="height:220px;overflow:auto;padding:8px;background:#0d0b11;border-radius:8px" aria-live="polite">در حال دریافت پیام‌ها...</div><form id="guild-chat-form" style="display:flex;gap:6px;margin-top:8px"><input name="body" maxlength="1000" placeholder="پیام برای اعضای انجمن..." required style="flex:1;min-width:0"><button class="primary" type="submit">ارسال</button></form></div>`;
+ if(g.leader_id===currentUser.id || (snap.members||[]).some(m=>m.user_id===currentUser.id&&m.role==='officer')) html+=`<div class="guild-box"><h3>دعوت بازیکن</h3><input id="guild-player-search" placeholder="نام بازیکن را جست‌وجو کن"><div id="guild-search-results"></div></div>`;
+ html+=`<button id="guild-leave">${g.leader_id===currentUser.id&&snap.members.length===1?'انحلال انجمن':'خروج از انجمن'}</button>`;
+ }else{html+=`<div class="guild-box"><h3>هنوز عضو هیچ انجمنی نیستی</h3><p class="guild-muted">برای ساخت انجمن باید ابتدا در شهر خاکستر به تالار انجمن بروی و با تورِن، استاد انجمن، صحبت کنی. پس از تأیید او، هزینه ثبت رسمی ۱۰۰۰ سکه از ذخیره بازی کسر می‌شود.</p><p style="color:${guildTeacherVisited?'#9bd6a4':'#e6b77b'}">${guildTeacherVisited?'✓ تأیید تورِن ثبت شد؛ امکان تأسیس انجمن فعال است.':'قفل تأسیس: دیدار با تورِن لازم است.'}</p>${guildTeacherVisited?`<h3>ثبت انجمن جدید</h3><input id="guild-name" maxlength="32" placeholder="نام انجمن (۳ تا ۳۲ نویسه)"><input id="guild-tag" maxlength="5" placeholder="نشان کوتاه لاتین (۲ تا ۵ حرف/عدد)"><textarea id="guild-description" maxlength="240" rows="3" placeholder="معرفی انجمن (اختیاری)"></textarea><button class="primary" id="guild-create">پرداخت ۱۰۰۰ سکه و تأسیس انجمن</button>`:`<button id="guild-go-teacher">راهنمای رسیدن به تورِن</button>`}</div>`;}
+ if((snap.invites||[]).length){html+='<h3>دعوت‌نامه‌های دریافتی</h3>'+(snap.invites||[]).map(i=>`<div class="guild-row"><span><b>${guildEscape(i.guild_name)}</b> [${guildEscape(i.guild_tag)}]<br><small class="guild-muted">دعوت از سوی انجمن</small></span><span><button data-guild-accept="${i.id}">پذیرفتن</button><button data-guild-decline="${i.id}">رد</button></span></div>`).join('');}
+ html+='<p id="etr-guild-feedback" class="guild-muted" role="status"></p>';box.innerHTML=html;
+ if(g){initGuildChat(g.id);}
+ document.getElementById('guild-go-teacher')?.addEventListener('click',()=>{guildMessage('به تالار انجمن ماجراجویان در شهر خاکستر برو و با تورِن، استاد انجمن، تعامل کن.');});
+ document.getElementById('guild-create')?.addEventListener('click',async()=>{const name=document.getElementById('guild-name').value.trim(),tag=document.getElementById('guild-tag').value.trim(),description=document.getElementById('guild-description').value.trim();try{await guildRpc('etranom_guild_create',{p_name:name,p_tag:tag,p_description:description});guildMessage('انجمن با موفقیت تأسیس شد؛ ۱۰۰۰ سکه از ذخیره بازی کسر شد.');await renderGuildPanel();}catch(e){guildMessage(guildErrorFa(e.message),true);}});
+ document.getElementById('guild-leave')?.addEventListener('click',async()=>{if(!confirm('از انجمن خارج شوی؟ اگر رهبر تنها عضو باشد، انجمن منحل می‌شود.'))return;try{await guildRpc('etranom_guild_leave');await renderGuildPanel();}catch(e){guildMessage(guildErrorFa(e.message),true);}});
+ const search=document.getElementById('guild-player-search');if(search){let timer;search.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(async()=>{const q=search.value.trim();if(q.length<2)return;const {data,error}=await supabase.from('player_profiles').select('user_id,display_name,username,player_level').or(`display_name.ilike.%${q}%,username.ilike.%${q}%`).neq('user_id',currentUser.id).limit(8);const out=document.getElementById('guild-search-results');if(error){out.textContent='جست‌وجو ناموفق بود.';return;}out.innerHTML=(data||[]).map(p=>`<div class="guild-row"><span>${guildEscape(p.display_name||p.username)} • سطح ${p.player_level}</span><button data-guild-invite="${p.user_id}">دعوت</button></div>`).join('')||'<small class="guild-muted">بازیکنی پیدا نشد.</small>';out.querySelectorAll('[data-guild-invite]').forEach(b=>b.onclick=async()=>{try{await guildRpc('etranom_guild_invite',{p_target:b.dataset.guildInvite});b.textContent='دعوت شد';b.disabled=true;}catch(e){guildMessage(guildErrorFa(e.message),true);}});},350);});}
+ box.querySelectorAll('[data-guild-accept],[data-guild-decline]').forEach(b=>b.onclick=async()=>{try{await guildRpc('etranom_guild_respond_invite',{p_invite:b.dataset.guildAccept||b.dataset.guildDecline,p_accept:!!b.dataset.guildAccept});await renderGuildPanel();}catch(e){guildMessage(guildErrorFa(e.message),true);}});
+ }catch(e){box.innerHTML=`<p class="guild-error">سیستم انجمن در دسترس نیست: ${guildEscape(guildErrorFa(e.message))}</p><p class="guild-muted">ابتدا فایل database/guilds_phase3.sql را در SQL Editor اجرا کن.</p>`;}}
+let guildChatChannel=null;
+async function initGuildChat(guildId){
+ const area=document.getElementById('guild-chat-messages'),form=document.getElementById('guild-chat-form');if(!area||!form)return;
+ if(guildChatChannel){await supabase.removeChannel(guildChatChannel).catch(()=>{});guildChatChannel=null;}
+ const esc=guildEscape;
+ const render=rows=>{area.innerHTML=rows.length?rows.map(m=>`<div data-guild-message="${esc(m.id)}" style="padding:7px 4px;border-bottom:1px solid #342b3b"><b>${esc(m.sender_name||'عضو انجمن')}</b><p style="margin:5px 0;white-space:pre-wrap;overflow-wrap:anywhere">${esc(m.body)}</p><small class="guild-muted">${new Date(m.created_at).toLocaleString('fa-IR')}</small></div>`).join(''):'<p class="guild-muted">هنوز پیامی در گفت‌وگوی انجمن نیست. اولین پیام را بفرست.</p>';area.scrollTop=area.scrollHeight;};
+ const load=async()=>{const {data,error}=await supabase.from('guild_messages').select('id,sender_id,body,created_at').eq('guild_id',guildId).order('created_at',{ascending:true}).limit(100);if(error){area.textContent='دریافت پیام‌ها ناموفق بود: '+error.message;return;}const ids=[...new Set((data||[]).map(x=>x.sender_id))];let profiles=[];if(ids.length){const r=await supabase.from('player_profiles').select('user_id,display_name,username').in('user_id',ids);profiles=r.data||[];}const names=Object.fromEntries(profiles.map(x=>[x.user_id,x.display_name||x.username||'عضو انجمن']));render((data||[]).map(x=>({...x,sender_name:names[x.sender_id]||'عضو انجمن'})));};
+ await load();guildChatChannel=supabase.channel('etranom:guild-chat:'+guildId).on('postgres_changes',{event:'INSERT',schema:'public',table:'guild_messages',filter:`guild_id=eq.${guildId}`},async payload=>{const row=payload.new;if(!row)return;const {data:p}=await supabase.from('player_profiles').select('display_name,username').eq('user_id',row.sender_id).maybeSingle();if(area.querySelector(`[data-guild-message="${row.id}"]`))return;const article=document.createElement('div');article.dataset.guildMessage=row.id;article.style.cssText='padding:7px 4px;border-bottom:1px solid #342b3b';article.innerHTML=`<b>${esc(p?.display_name||p?.username||'عضو انجمن')}</b><p style="margin:5px 0;white-space:pre-wrap;overflow-wrap:anywhere">${esc(row.body)}</p><small class="guild-muted">${new Date(row.created_at).toLocaleString('fa-IR')}</small>`;if(area.querySelector('.guild-muted')&&area.textContent.includes('هنوز پیامی'))area.innerHTML='';area.appendChild(article);area.scrollTop=area.scrollHeight;}).subscribe();
+ form.onsubmit=async e=>{e.preventDefault();const input=form.elements.body,body=String(input.value||'').trim();if(!body||body.length>1000)return;const button=form.querySelector('button');button.disabled=true;try{const {error}=await supabase.from('guild_messages').insert({guild_id:guildId,sender_id:currentUser.id,body});if(error)throw error;input.value='';await load();}catch(err){guildMessage('ارسال پیام ناموفق بود: '+err.message,true);}finally{button.disabled=false;input.focus();}};
+}
+function guildErrorFa(m){const s=String(m||'');const map={guild_name_length:'نام انجمن باید بین ۳ تا ۳۲ نویسه باشد.',guild_tag_length:'نشان انجمن باید بین ۲ تا ۵ حرف یا عدد باشد.',already_in_guild:'در حال حاضر عضو یک انجمن هستی.',guild_fee_insufficient:'برای تأسیس انجمن حداقل ۱۰۰۰ سکه نیاز داری.',guild_name_or_tag_taken:'این نام یا نشان قبلاً ثبت شده است.',game_save_missing:'ابتدا شخصیتت را ذخیره کن و دوباره تلاش کن.',guild_permission_denied:'فقط رهبر یا افسر انجمن می‌تواند دعوت بفرستد.',target_unavailable:'این بازیکن عضو انجمن است یا قابل دعوت نیست.',guild_full:'ظرفیت انجمن تکمیل شده است.',invite_not_found:'دعوت‌نامه معتبر پیدا نشد.',not_in_guild:'عضو انجمنی نیستی.'};for(const [k,v] of Object.entries(map))if(s.includes(k))return v;return s;}
+function openGuildPanel(){guildOverlay.style.display='flex';renderGuildPanel();}
+guildLaunch.addEventListener('click',openGuildPanel);guildOverlay.addEventListener('click',e=>{if(e.target===guildOverlay)guildOverlay.style.display='none';});document.getElementById('etr-guild-close').onclick=()=>guildOverlay.style.display='none';
+document.addEventListener('click',e=>{const b=e.target.closest('[data-guild-master-open]');if(b){guildTeacherVisited=true;sessionStorage.setItem('etranom:guildTeacherVisited','1');openGuildPanel();}});
+
+const say=t=>{note.textContent=t};
+function setBusy(v){loginBtn.disabled=v;signupBtn.disabled=v;}
+// Bind authentication controls immediately after the auth client and helpers exist.
+// This prevents later optional UI/module initialization from leaving both buttons inert.
+let authHandlersBound=false;
+function bindAuthHandlers(){
+  if(authHandlersBound)return;
+  authHandlersBound=true;
+  form.addEventListener('submit',e=>{e.preventDefault();login().catch(err=>{console.error('[ETRANOM] Login handler failed:',err);say('ورود ناموفق بود؛ دوباره تلاش کن.');setBusy(false);});});
+  signupBtn.addEventListener('click',e=>{e.preventDefault();signup().catch(err=>{console.error('[ETRANOM] Signup handler failed:',err);say('ساخت حساب ناموفق بود؛ دوباره تلاش کن.');setBusy(false);});});
+  window.__ETRANOM_AUTH_CONTROLS_READY=true;
+}
+bindAuthHandlers();
+window.lib={
+  getUserGameState:async()=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.from('game_saves').select('save_data').eq('user_id',currentUser.id).maybeSingle();if(error)throw error;return data?{state:data.save_data}:null;},
+  saveUserGameState:async state=>{if(!currentUser)throw new Error('not_authenticated');const now=new Date().toISOString();const {error}=await supabase.from('game_saves').upsert({user_id:currentUser.id,save_data:state,updated_at:now},{onConflict:'user_id'});if(error)throw error;const c=state?.character||{};const profile={display_name:String(c.name||'بازیکن').trim().slice(0,40),username:String(c.name||'بازیکن').trim().slice(0,40),player_level:Math.max(1,Number(c.level)||1),player_class:String(c.archetype||'نامشخص').slice(0,40),updated_at:now};const pr=await supabase.from('player_profiles').update(profile).eq('user_id',currentUser.id);if(pr.error)console.warn('[ETRANOM] profile sync deferred:',pr.error.message);return {success:true,profileSynced:!pr.error};},
+  deleteUserGameState:async()=>{if(!currentUser)throw new Error('not_authenticated');const {error}=await supabase.from('game_saves').delete().eq('user_id',currentUser.id);if(error)throw error;return {success:true};},
+  signOut:async()=>{if(window.etranomPresence)await window.etranomPresence.stop();const {error}=await supabase.auth.signOut({scope:'local'});if(error)throw error;currentUser=null;started=false;return {success:true};},
+  getSocialOverview:async()=>{if(!currentUser)throw new Error('not_authenticated');const uid=currentUser.id;const [meReq,inReq,outReq,friendRows]=await Promise.all([
+    supabase.from('player_profiles').select('user_id,username,display_name,player_level,player_class,created_at').eq('user_id',uid).maybeSingle(),
+    supabase.from('friend_requests').select('id,sender_id,receiver_id,status,created_at').eq('receiver_id',uid).eq('status','pending').order('created_at',{ascending:false}),
+    supabase.from('friend_requests').select('id,sender_id,receiver_id,status,created_at').eq('sender_id',uid).eq('status','pending').order('created_at',{ascending:false}),
+    supabase.from('friendships').select('user_low,user_high').or(`user_low.eq.${uid},user_high.eq.${uid}`)
+  ]);for(const r of [meReq,inReq,outReq,friendRows])if(r.error)throw r.error;const ids=(friendRows.data||[]).map(x=>x.user_low===uid?x.user_high:x.user_low);const profileIds=[...new Set([...ids,...(inReq.data||[]).map(x=>x.sender_id),...(outReq.data||[]).map(x=>x.receiver_id)])];let profiles=[];if(profileIds.length){const p=await supabase.from('player_profiles').select('user_id,username,display_name,player_level,player_class').in('user_id',profileIds);if(p.error)throw p.error;profiles=p.data||[];}const map=Object.fromEntries(profiles.map(p=>[p.user_id,p]));return {me:meReq.data,friends:ids.map(id=>map[id]).filter(Boolean),incoming:(inReq.data||[]).map(x=>({...x,profile:map[x.sender_id]})),outgoing:(outReq.data||[]).map(x=>({...x,profile:map[x.receiver_id]}))};},
+  syncSocialProfile:async character=>{if(!currentUser)throw new Error('not_authenticated');const playerName=String(character?.name||'').trim().slice(0,40);if(!playerName)throw new Error('player_name_required');const payload={username:playerName,display_name:playerName,player_level:Math.max(1,Number(character?.level)||1),player_class:String(character?.archetype||character?.class||'نامشخص').slice(0,40),updated_at:new Date().toISOString()};const {data,error}=await supabase.from('player_profiles').update(payload).eq('user_id',currentUser.id).select('user_id').maybeSingle();if(error){if(error.code==='23505')throw new Error('این نام بازیکن قبلاً انتخاب شده است؛ نام دیگری انتخاب کن.');throw error;}if(!data)throw new Error('player_profile_missing');return {success:true,username:playerName,display_name:playerName};},
+  currentUserId:()=>currentUser?.id||null,
+  searchPlayers:async query=>{if(!currentUser)throw new Error('not_authenticated');const q=String(query||'').trim().replace(/[%,]/g,'');if(q.length<2)return [];const {data,error}=await supabase.from('player_profiles').select('user_id,username,display_name,player_level,player_class').or(`display_name.ilike.%${q}%,username.ilike.%${q}%`).neq('user_id',currentUser.id).limit(20);if(error)throw error;return data||[];},
+  sendPlayerAsset:async(receiver,assetType,itemId,quantity)=>{if(!currentUser)throw new Error('not_authenticated');const safeType=assetType==='gold'?'gold':'item';const safeItemId=safeType==='item'?(itemId||null):null;if(safeType==='item'&&!safeItemId)throw new Error('invalid_item');const {data,error}=await supabase.rpc('etranom_send_player_asset',{p_receiver:receiver,p_asset_type:safeType,p_item_id:safeItemId,p_quantity:quantity});if(error)throw error;return data;},
+  getPlayerTransfers:async()=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.from('player_asset_transfers').select('id,sender_id,receiver_id,asset_type,item_id,item_snapshot,quantity,created_at').or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`).order('created_at',{ascending:false}).limit(40);if(error)throw error;return data||[];},
+  createPlayerTrade:async(receiver,proposerAssets,receiverAssets)=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_trade_create',{p_receiver:receiver,p_proposer_assets:proposerAssets,p_receiver_assets:receiverAssets});if(error)throw error;return data;},
+  respondPlayerTrade:async(offerId,accept)=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_trade_respond',{p_offer:offerId,p_accept:!!accept});if(error)throw error;return data;},
+  getPlayerTrades:async()=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.from('player_trade_offers').select('id,proposer_id,receiver_id,proposer_assets,receiver_assets,status,created_at,responded_at').or(`proposer_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`).order('created_at',{ascending:false}).limit(60);if(error)throw error;return data||[];},
+  sendFriendRequest:async target=>{const {data,error}=await supabase.rpc('send_friend_request',{target_user_id:target});if(error)throw error;return data;},
+  respondFriendRequest:async(id,accept)=>{const {data,error}=await supabase.rpc('respond_friend_request',{request_id:id,accept_request:!!accept});if(error)throw error;return data;},
+  cancelFriendRequest:async id=>{const {data,error}=await supabase.rpc('cancel_friend_request',{request_id:id});if(error)throw error;return data;},
+  removeFriend:async id=>{const {data,error}=await supabase.rpc('remove_friend',{other_user_id:id});if(error)throw error;return data;},
+  marketList:async (mine,filters={})=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_market_snapshot',{p_mine:!!mine,p_search:filters.search||null,p_category:filters.category||null,p_sort:filters.sort||'newest',p_limit:40,p_offset:0});if(error)throw error;return data||[];},
+  marketHistory:async()=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_market_history',{p_limit:40,p_offset:0});if(error)throw error;return data||[];},
+  marketCreate:async(itemId,qty,price)=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_market_list',{p_item_id:itemId,p_quantity:qty,p_unit_price:price});if(error)throw error;return data;},
+  marketBuy:async listingId=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_market_buy',{p_listing_id:listingId});if(error)throw error;return data;},
+  marketCancel:async listingId=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_market_cancel',{p_listing_id:listingId});if(error)throw error;return data;},
+  pvpSnapshot:async()=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_pvp_snapshot');if(error)throw error;return data||{};},
+  pvpChallenge:async target=>{const {data,error}=await supabase.rpc('etranom_pvp_challenge',{p_target:target});if(error)throw error;return data;},
+  pvpRespond:async(id,accept)=>{const {data,error}=await supabase.rpc('etranom_pvp_respond',{p_challenge:id,p_accept:!!accept});if(error)throw error;return data;},
+  pvpMatchSnapshot:async id=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_pvp_match_snapshot',{p_match:id});if(error)throw error;return data||{};},
+  pvpAction:async(id,action)=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_pvp_action',{p_match:id,p_action:action});if(error)throw error;return data||{};},
+  pvpSubscribeMatch:(id,onChange)=>{if(!currentUser)throw new Error('not_authenticated');const channel=supabase.channel('etr-pvp-match-'+id).on('postgres_changes',{event:'*',schema:'public',table:'pvp_matches',filter:'id=eq.'+id},payload=>onChange?.(payload)).subscribe();return ()=>supabase.removeChannel(channel);},
+  leaderboard:async board=>{const {data,error}=await supabase.rpc('etranom_leaderboards',{p_board:board});if(error)throw error;return data||{};}
+};
+
+
+// Party is embedded inside the Social Hub; no separate floating button or overlay.
+let partySystem=null,partyInitPromise=null;
+async function openPartyTab(regionId=null){
+  markNotificationsRead('party');
+  const body=document.getElementById('etr-party-body');
+  partyOverlay.style.display='flex';
+  body.innerHTML='<p>در حال اتصال به گروه ماجراجویان...</p>';
+  if(partySystem){
+    partySystem.preferredRegion=regionId||partySystem.preferredRegion||null;
+    try{await partySystem.refresh();const party=partySystem.manager.party;if(party&&regionId&&partySystem.manager.isLeader()&&party.status!=='active'&&party.region_id!==regionId){await partySystem.combat.selectRegion(regionId);await partySystem.refresh();}else if(!party&&partySystem.ui){partySystem.ui.render();}}catch(e){body.innerHTML=`<p class="social-error">بازیابی گروه ناموفق بود: ${socialEsc(e.message||'خطای نامشخص')}</p>`;}
+    return;
+  }
+  if(partyInitPromise)return partyInitPromise;
+  partyInitPromise=(async()=>{try{const {ETRANOMParty}=await import('./systems/party/party.js');partySystem=new ETRANOMParty({supabase,container:body,onUpdate:()=>{}});partySystem.preferredRegion=regionId||null;await partySystem.initialize();window.etranomParty=partySystem;const party=partySystem.manager.party;if(party&&regionId&&partySystem.manager.isLeader()&&party.status!=='active'&&party.region_id!==regionId){await partySystem.combat.selectRegion(regionId);await partySystem.refresh();}}catch(e){partySystem=null;body.innerHTML=`<h3>گروه ماجراجویان</h3><p class="social-error">اتصال گروه ناموفق بود: ${socialEsc(e.message||'خطای نامشخص')}</p><button id="etr-party-retry">تلاش دوباره</button>`;document.getElementById('etr-party-retry')?.addEventListener('click',()=>openPartyTab(regionId));}finally{partyInitPromise=null;}})();
+  return partyInitPromise;
+}
+window.openETRANOMParty=regionId=>openPartyTab(regionId);
+document.getElementById('etr-party-close')?.addEventListener('click',()=>{partyOverlay.style.display='none';});
+partyOverlay.addEventListener('click',e=>{if(e.target===partyOverlay)partyOverlay.style.display='none';});
+
+// ETRANOM social hub: profile, player search, friend requests and friends.
+const socialStyle=document.createElement('style');socialStyle.textContent=`#etr-social-launch{position:fixed!important;z-index:100002!important;left:14px;bottom:calc(18px + env(safe-area-inset-bottom,0px));padding:12px 16px;border:1px solid #b99a65;border-radius:12px;background:linear-gradient(135deg,#38283f,#17121d);color:#f1d9aa;font: bold 13px Tahoma;box-shadow:0 6px 22px #0009}#etr-social-overlay{position:fixed;inset:0;z-index:100003!important;background:#08070beF;display:none;align-items:center;justify-content:center;padding:12px;font-family:Tahoma}#etr-social-card{width:min(720px,100%);max-height:92dvh;overflow:auto;background:linear-gradient(145deg,#211a2b,#111016);border:1px solid #8d7048;border-radius:16px;padding:16px;color:#eee5d7;box-shadow:0 20px 70px #000}#etr-social-card h2{color:#d9b879;margin:0 0 4px}#etr-online-indicator{display:inline-block;color:#c8b58f;margin-bottom:10px}#etr-online-indicator[data-connected="true"]{color:#9cdaa5}#etr-social-card button,#etr-social-card input{font:inherit}#etr-social-card button{border:1px solid #8e704c;border-radius:8px;background:#302438;color:#f3dfbd;padding:9px 12px;margin:3px}#etr-social-card button.primary{background:#927044;color:#120f12}#etr-social-card input{width:100%;padding:12px;border-radius:8px;border:1px solid #63516d;background:#0d0b11;color:#fff;margin:8px 0;box-sizing:border-box}#etr-social-card .social-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px;margin:7px 0;border:1px solid #51443c;border-radius:9px;background:#17141c}#etr-social-card small{color:#b8a78e}#etr-social-card .social-tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid #594b40;padding-bottom:8px;margin-bottom:10px}#etr-social-card .social-body{min-height:170px}#etr-social-card .etr-party{padding:4px 0}#etr-social-card .etr-party button{margin:5px}#etr-social-card .social-error{color:#ffb2a8;line-height:1.9}`;socialStyle.textContent+=`;#etr-social-card .etr-global-chat{display:flex;flex-direction:column;gap:10px}#etr-social-card .etr-global-chat h3{color:#d9b879;margin:4px 0}#etr-social-card .etr-global-chat header p{color:#b9a98f;font-size:12px;margin:4px 0}#etr-social-card .etr-global-chat-notice{padding:9px 11px;border:1px solid #675237;border-radius:8px;background:#19151d;color:#c8b58f;font-size:11px;line-height:1.8}#etr-social-card .etr-global-chat-messages{height:min(48vh,430px);min-height:220px;overflow:auto;padding:8px;border:1px solid #51443c;border-radius:10px;background:#0d0b11}#etr-social-card .etr-global-chat-message{padding:8px 10px;margin:6px 0;border:1px solid #403447;border-radius:9px;background:#211a29;overflow-wrap:anywhere}#etr-social-card .etr-global-chat-message.mine{border-color:#8b7049;background:#292117}#etr-social-card .etr-global-chat-message header{display:flex;justify-content:space-between;gap:8px;color:#d8bd8b;font-size:12px}#etr-social-card .etr-global-chat-message time{color:#9d91a2;font-size:10px}#etr-social-card .etr-global-chat-message p{white-space:pre-wrap;margin:7px 0 0;line-height:1.8}#etr-social-card .etr-global-chat-compose{display:flex;gap:6px;align-items:center}#etr-social-card .etr-global-chat-compose input{flex:1;min-width:0;margin:0}#etr-social-card .etr-global-chat-compose button{white-space:nowrap;background:#927044;color:#120f12;font-weight:bold}`;
+socialStyle.textContent+=`;#etr-social-launch{position:relative;padding-inline-start:42px!important}#etr-social-launch .etr-badge,#etr-social-card .etr-tab-badge{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:#d71935;color:#fff;font:bold 10px Tahoma;line-height:1;box-shadow:0 0 0 2px #211722;vertical-align:middle;margin-inline-start:5px}#etr-social-launch .etr-badge{position:absolute;top:-7px;inset-inline-start:-7px;min-width:22px;height:22px;font-size:11px}#etr-social-card .etr-tab-badge[hidden],#etr-social-launch .etr-badge[hidden]{display:none!important}#etr-social-card button[data-social-tab]{position:relative}#etr-social-card .etr-notice-summary{margin:8px 0 12px;padding:9px 11px;border:1px solid #5c4936;border-radius:9px;background:#17131c;color:#d8c49e;font-size:12px;line-height:1.8}`;
+socialStyle.textContent += `#etr-social-card .etr-map-profile{text-align:center;padding:22px 12px}#etr-social-card .etr-map-profile-mark{width:74px;height:74px;border:2px solid;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;font-size:34px;box-shadow:0 0 22px currentColor}#etr-social-card .etr-map-profile h3{font-size:21px;color:#e8d0a0;margin:8px}#etr-social-card .etr-map-profile p{color:#c9bda9;line-height:1.8}#etr-social-card .etr-map-profile-relation{font-size:12px}#etr-social-card .etr-map-profile-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:18px}#etr-social-card .etr-map-profile-actions button{padding:11px 16px;border:1px solid #a98a5c;border-radius:10px;background:#302438;color:#f4dfbd}#etr-social-card .etr-map-profile-actions button:disabled{opacity:.55}`;
+document.head.appendChild(socialStyle);
+const socialOverlay=document.createElement('div');socialOverlay.id='etr-social-overlay';socialOverlay.innerHTML=`<section id="etr-social-card" aria-label="مرکز اجتماع بازیکنان"><header style="display:flex;justify-content:space-between;align-items:center;gap:8px"><div><div class="etr-social-heading"><span class="etr-social-kicker">ETRANOM • WORLD NETWORK</span><h2>اجتماع بازیکنان</h2><p>ارتباط زنده با ماجراجویان سرزمین‌های بی‌کران</p></div><small id="etr-online-indicator" class="etr-online-indicator" role="status" aria-live="polite">در حال اتصال به شبکه...</small></div><button id="etr-social-close">✕</button></header><nav class="social-tabs"><button data-social-tab="profile">پروفایل من</button><button data-social-tab="search">جست‌وجوی بازیکن</button><button data-social-tab="friends">دوستان</button><button data-social-tab="requests">درخواست‌ها <span class="etr-tab-badge" data-badge="requests" hidden></span></button><button data-social-tab="chat">✉ پیام‌ها <span class="etr-tab-badge" data-badge="private" hidden></span></button><button data-social-tab="global-chat">🌐 چت جهانی <span class="etr-tab-badge" data-badge="global" hidden></span></button><button data-social-tab="leaderboards">🏆 رتبه‌بندی جهان</button></nav><div id="etr-social-status" class="etr-social-feedback" role="status" aria-live="polite"></div><div class="social-body" id="etr-social-body"></div></section>`;document.body.appendChild(socialOverlay);
+const partyOverlay=document.createElement('div');partyOverlay.id='etr-party-overlay';partyOverlay.innerHTML='<section id="etr-party-card" role="dialog" aria-modal="true" aria-label="گروه ماجراجویان"><header><div><small>ETRANOM • PARTY HUNT</small><h2>گروه ماجراجویان</h2><p>تشکیل گروه و ورود به نبرد گروهی</p></div><button type="button" id="etr-party-close">✕</button></header><div id="etr-party-body" class="etr-party-body"></div></section>';document.body.appendChild(partyOverlay);
+const partyOverlayStyle=document.createElement('style');partyOverlayStyle.textContent=`#etr-party-overlay{position:fixed;inset:0;z-index:100010;display:none;align-items:center;justify-content:center;padding:10px;background:#08070bf2;font-family:Tahoma}#etr-party-card{width:min(760px,100%);max-height:94dvh;overflow:auto;padding:14px;border:1px solid #8d7048;border-radius:17px;background:linear-gradient(145deg,#211a2b,#111016);color:#eee5d7;box-shadow:0 20px 70px #000}#etr-party-card>header{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #594b40;padding-bottom:10px;margin-bottom:10px}#etr-party-card h2{margin:3px 0;color:#d9b879}#etr-party-card header p{margin:3px 0;color:#b9a98f;font-size:11px}#etr-party-card header small{color:#c5a66e}#etr-party-card button{font:inherit}#etr-party-card .etr-party-battle{margin-top:12px}#etr-party-card .etr-party-members{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#etr-party-card .etr-party-player-card{width:100%;max-width:none;padding:9px}#etr-party-card .etr-party-monsters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}#etr-party-card .etr-party-monster-card{width:100%;max-width:none;padding:0;min-height:120px}#etr-party-card .etr-party-monster-card .enemy-art{min-height:120px}#etr-party-card .etr-party-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}#etr-party-card .etr-party-actions button{padding:9px 12px;border:1px solid #8e704c;border-radius:9px;background:#302438;color:#f3dfbd}#etr-party-card .etr-party-status{margin-top:8px;color:#e5c58e;font-size:11px}#etr-party-card .etr-party-summary{padding:9px;border:1px solid #584837;border-radius:10px;background:#19151d}#etr-party-card .etr-party-member:not(.etr-battle-card){padding:9px;border:1px solid #51443c;border-radius:9px;background:#17141c}#etr-party-card .battle-actions{grid-template-columns:repeat(3,minmax(0,1fr))}#etr-party-card .battle-actions button{min-height:48px;font-size:12px}@media(max-width:480px){#etr-party-card{padding:10px}#etr-party-card .etr-party-members{grid-template-columns:1fr}#etr-party-card .etr-party-monsters{grid-template-columns:repeat(2,minmax(0,1fr))}#etr-party-card .battle-actions{grid-template-columns:1fr 1fr}}`;document.head.appendChild(partyOverlayStyle);
+const isSystemPlayerName=v=>/^(?:wanderer-[a-z0-9]+|مسافر(?:-|_)[a-z0-9]+)$/i.test(String(v||'').trim())||/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(String(v||'').trim());
+const socialName=p=>{const d=String(p?.display_name||'').trim(),u=String(p?.username||'').trim();if(d&&!isSystemPlayerName(d))return d;if(u&&!isSystemPlayerName(u))return u;return 'بازیکن';};
+const socialEsc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Public profile card opened directly from a live map avatar.
+window.etranomShowPlayerProfile=player=>{
+  if(!player?.user_id||player.user_id===currentUser?.id)return;
+  const body=document.getElementById('etr-social-body');
+  socialOverlay.style.display='flex';socialTab='map-profile';
+  const color=player.relation==='friend'?'#55dc91':player.relation==='guild'?'#e4bd58':'#d9dce3';
+  body.innerHTML=`<div class="etr-map-profile"><div class="etr-map-profile-mark" style="border-color:${color};color:${color}">✦</div><h3>${socialEsc(player.name||'ماجراجو')}</h3><p>سطح ${Math.max(1,Number(player.level)||1)} • ${socialEsc(player.player_class||'کلاس نامشخص')}</p><p class="etr-map-profile-relation">${player.relation==='friend'?'دوست':player.relation==='guild'?'هم‌انجمنی':'ماجراجوی دیگر'} • ${player.state==='away'?'مشغول / دور از دسترس':'آنلاین'}</p><div class="etr-map-profile-actions">${player.relation==='friend'?'<span>این بازیکن در فهرست دوستان توست.</span>':`<button id="etr-map-profile-add">درخواست دوستی</button>`}<button id="etr-map-profile-close">بازگشت</button></div></div>`;
+  document.getElementById('etr-map-profile-close')?.addEventListener('click',()=>{socialTab='friends';loadSocial();});
+  document.getElementById('etr-map-profile-add')?.addEventListener('click',async e=>{const button=e.currentTarget;button.disabled=true;try{await window.lib.sendFriendRequest(player.user_id);button.textContent='درخواست ارسال شد';socialStatus('درخواست دوستی ارسال شد.');}catch(error){button.disabled=false;socialStatus(error.message||'ارسال درخواست ناموفق بود.');}});
+};
+
+let socialOverview=null,socialTab='profile',privateChatSystem=null,privateChatInitPromise=null,globalChatSystem=null;
+function socialStatus(t=''){document.getElementById('etr-social-status').textContent=t;}
+function socialOpen(){socialOverlay.style.display='flex';socialTab='profile';loadSocial();refreshNotificationCounts();}
+async function socialClose(){socialOverlay.style.display='none';if(privateChatSystem){await privateChatSystem.destroy();privateChatSystem=null;}if(globalChatSystem){await globalChatSystem.destroy();globalChatSystem=null;}}
+async function loadSocial(){const body=document.getElementById('etr-social-body');body.innerHTML='<p>در حال دریافت اطلاعات اجتماعی...</p>';socialStatus('');try{socialOverview=await window.lib.getSocialOverview();renderSocial();}catch(e){body.innerHTML='<p>دریافت اطلاعات ناموفق بود.</p>';socialStatus(e.message||'خطای ارتباط با سرور');}}
+function socialPresenceLabel(userId){
+  const meta=window.etranomPresence?.getUser(userId);
+  if(!meta)return {label:'آفلاین',state:'is-offline'};
+  if(meta.state==='away')return {label:'مشغول / دور از دسترس',state:'is-away'};
+  return {label:'آنلاین',state:'is-online'};
+}
+async function openPrivateChat(){markNotificationsRead('private');const body=document.getElementById('etr-social-body');if(globalChatSystem){await globalChatSystem.destroy();globalChatSystem=null;}if(!socialOverview)socialOverview=await window.lib.getSocialOverview();if(privateChatSystem){await privateChatSystem.destroy();privateChatSystem=null;}body.innerHTML='<p>در حال آماده‌سازی پیام‌رسان...</p>';try{const {ETRANOMPrivateChat}=await import('./systems/online/private-chat.js');privateChatSystem=new ETRANOMPrivateChat({supabase,user:currentUser,container:body,friends:socialOverview?.friends||[],onStatus:socialStatus});await privateChatSystem.mount();}catch(error){body.innerHTML='<p class="social-error">راه‌اندازی پیام‌رسان ناموفق بود.</p>';socialStatus(error.message||'خطای پیام‌رسان');}}
+async function openGlobalChat(){markNotificationsRead('global');const body=document.getElementById('etr-social-body');if(privateChatSystem){await privateChatSystem.destroy();privateChatSystem=null;}if(globalChatSystem){await globalChatSystem.destroy();globalChatSystem=null;}body.innerHTML='<p>در حال اتصال به کانال جهانی...</p>';try{const {ETRANOMGlobalChat}=await import('./systems/online/global-chat.js?v=91');globalChatSystem=new ETRANOMGlobalChat({supabase,user:currentUser,container:body,onStatus:socialStatus});await globalChatSystem.mount();}catch(error){body.innerHTML='<p class="social-error">راه‌اندازی چت جهانی ناموفق بود.</p>';socialStatus(error.message||'خطای چت جهانی');}}
+const socialLeaderboards=[['بالاترین سطح',1],['بیشترین تجربه',2],['بیشترین مجموع ویژگی‌های پایه',3],['بیشترین پیروزی PvP',4],['بالاترین نرخ برد PvP',5],['بیشترین هیولاهای کشته‌شده',6],['بیشترین باس و مینی‌باس شکست‌داده‌شده',7],['ثروتمندترین بازیکنان',8],['بیشترین مأموریت تکمیل‌شده',9],['برترین انجمن‌ها',10]];
+async function renderSocialLeaderboard(board=1){
+ const box=document.getElementById('etr-social-leaderboard-results');if(!box)return;
+ document.querySelectorAll('[data-social-board]').forEach(x=>{const active=Number(x.dataset.socialBoard)===Number(board);x.classList.toggle('is-active-board',active);x.setAttribute('aria-pressed',active?'true':'false');});
+ box.innerHTML='<p>در حال دریافت جدول رتبه‌بندی...</p>';
+ try{
+  const result=await window.lib.leaderboard(board);
+  if(!result.available){box.innerHTML=`<p class="social-error">${socialEsc(result.reason||'دریافت این جدول ممکن نشد.')}</p>`;return;}
+  let rows=Array.isArray(result.rows)?result.rows:[];
+  const ids=[...new Set(rows.map(row=>row.user_id).filter(Boolean))];
+  if(ids.length){
+   const {data,error}=await supabase.from('player_profiles').select('user_id,display_name,username').in('user_id',ids);
+   if(!error){const names=new Map((data||[]).map(profile=>[profile.user_id,socialName(profile)]));rows=rows.map(row=>({...row,name:names.get(row.user_id)||(!isSystemPlayerName(row.name)?row.name:'بازیکن')}));}
+  }
+  const numberFmt=new Intl.NumberFormat('fa-IR',{maximumFractionDigits:1});
+  box.innerHTML=rows.length?rows.map((row,i)=>{const value=Number(row.value)||0;const shown=board===5?numberFmt.format(value)+'٪':numberFmt.format(value);const updated=row.updated_at?new Date(row.updated_at).toLocaleString('fa-IR') : '';return `<div class="social-row leaderboard-entry"><span><i class="leaderboard-rank">${i+1}</i>${socialEsc(isSystemPlayerName(row.name)?'بازیکن':(row.name||'بازیکن'))}${updated?`<small>آخرین ذخیره: ${socialEsc(updated)}</small>`:''}</span><b>${socialEsc(shown)} ${row.detail?`<small>${socialEsc(row.detail)}</small>`:''}</b></div>`;}).join(''):'<p class="social-empty">برای این جدول هنوز رویداد یا ذخیره معتبری ثبت نشده است؛ مقدار ساختگی نمایش داده نمی‌شود.</p>';
+  if(result.note)box.insertAdjacentHTML('beforeend',`<p class="social-note"><small>${socialEsc(result.note)}</small></p>`);
+ }catch(error){box.innerHTML=`<p class="social-error">دریافت رتبه‌بندی ناموفق بود: ${socialEsc(error.message)}. ابتدا migration نهایی رتبه‌بندی v159 را پس از سایر migrationهای PvP اجرا کن.</p>`;}
+}
+function renderSocial(){const b=document.getElementById('etr-social-body'),o=socialOverview||{};if(socialTab==='leaderboards'){b.innerHTML=`<h3>🏆 رتبه‌بندی جهان ETRANOM</h3><p><small>جایگاه ماجراجویان و انجمن‌ها در جهان را در ده جدول دنبال کن.</small></p><div style="display:flex;gap:6px;flex-wrap:wrap">${socialLeaderboards.map(([name,id])=>`<button type="button" data-social-board="${id}">${name}</button>`).join('')}</div><div id="etr-social-leaderboard-results" style="margin-top:12px">یک جدول را انتخاب کن.</div>`;b.querySelectorAll('[data-social-board]').forEach(button=>button.addEventListener('click',()=>renderSocialLeaderboard(Number(button.dataset.socialBoard))));return;}if(socialTab==='chat'){openPrivateChat();return;}if(socialTab==='global-chat'){openGlobalChat();return;}if(socialTab==='profile'){const m=o.me||{};b.innerHTML=`<h3>پروفایل بازیکن</h3><div class="social-row"><span>نام کاربری / نام شخصیت</span><b>${socialEsc(socialName(m))}</b></div><div class="social-row"><span>سطح</span><b>${Number(m.player_level||1)}</b></div><div class="social-row"><span>کلاس</span><b>${socialEsc(m.player_class||'هنوز ثبت نشده')}</b></div><small>نام کاربری پس از ساخت شخصیت در پروفایل ثبت می‌شود. نام بازیکن باید یکتا باشد.</small>`;return;}if(socialTab==='search'){b.innerHTML=`<h3>جست‌وجوی بازیکنان</h3><input id="etr-social-query" placeholder="نام بازیکن را وارد کن (حداقل ۲ حرف)"><button class="primary" id="etr-social-search">جست‌وجو</button><div id="etr-social-results"></div>`;document.getElementById('etr-social-search').onclick=async()=>{const q=document.getElementById('etr-social-query').value;const out=document.getElementById('etr-social-results');out.innerHTML='<p>در حال جست‌وجو...</p>';try{const rows=await window.lib.searchPlayers(q);out.innerHTML=rows.length?rows.map(x=>`<div class="social-row"><span><b>${socialEsc(socialName(x))}</b><br><small>سطح ${x.player_level} • ${socialEsc(x.player_class||'نامشخص')}</small></span><button data-social-add="${socialEsc(x.user_id)}">درخواست دوستی</button></div>`).join(''):'<p>بازیکنی با این نام پیدا نشد.</p>';out.querySelectorAll('[data-social-add]').forEach(btn=>btn.onclick=async()=>{btn.disabled=true;try{await window.lib.sendFriendRequest(btn.dataset.socialAdd);socialStatus('درخواست دوستی ارسال شد.');btn.textContent='ارسال شد';}catch(e){btn.disabled=false;socialStatus(e.message||'ارسال درخواست ناموفق بود.');}});}catch(e){out.textContent='خطا در جست‌وجو: '+e.message;}};return;}if(socialTab==='friends'){b.innerHTML='<h3>فهرست دوستان</h3>'+((o.friends||[]).length?[...(o.friends||[])].sort((a,b)=>Number(window.etranomPresence?.isOnline(b.user_id)||false)-Number(window.etranomPresence?.isOnline(a.user_id)||false)).map(x=>{const presence=socialPresenceLabel(x.user_id);return `<div class="social-row"><span><b>${socialEsc(socialName(x))}</b><br><small>سطح ${x.player_level} • ${socialEsc(x.player_class||'نامشخص')} • <span class="etr-friend-presence ${presence.state}">${presence.label}</span></small></span><button data-social-remove="${socialEsc(x.user_id)}">حذف از دوستان</button></div>`;}).join(''):'<p>هنوز دوستی ثبت نشده است.</p>');b.querySelectorAll('[data-social-remove]').forEach(btn=>btn.onclick=async()=>{if(!confirm('این بازیکن از فهرست دوستان حذف شود؟'))return;try{await window.lib.removeFriend(btn.dataset.socialRemove);await loadSocial();}catch(e){socialStatus(e.message);}});return;}if(socialTab==='requests'){markNotificationsRead('requests');const incoming=o.incoming||[],outgoing=o.outgoing||[];b.innerHTML='<h3>درخواست‌های دریافتی</h3>'+(incoming.length?incoming.map(x=>`<div class="social-row"><span><b>${socialEsc(socialName(x.profile))}</b><br><small>درخواست دوستی</small></span><span><button data-social-accept="${socialEsc(x.id)}">پذیرفتن</button><button data-social-reject="${socialEsc(x.id)}">رد</button></span></div>`).join(''):'<p>درخواست دریافتی نداری.</p>')+'<h3>درخواست‌های ارسالی</h3>'+(outgoing.length?outgoing.map(x=>`<div class="social-row"><span>${socialEsc(socialName(x.profile))}</span><button data-social-cancel="${socialEsc(x.id)}">لغو درخواست</button></div>`).join(''):'<p>درخواست ارسالی نداری.</p>');b.querySelectorAll('[data-social-accept],[data-social-reject]').forEach(btn=>btn.onclick=async()=>{try{await window.lib.respondFriendRequest(btn.dataset.socialAccept||btn.dataset.socialReject,!!btn.dataset.socialAccept);await loadSocial();}catch(e){socialStatus(e.message);}});b.querySelectorAll('[data-social-cancel]').forEach(btn=>btn.onclick=async()=>{try{await window.lib.cancelFriendRequest(btn.dataset.socialCancel);await loadSocial();}catch(e){socialStatus(e.message);}});}}
+document.getElementById('etr-social-close').onclick=socialClose;socialOverlay.addEventListener('click',e=>{if(e.target===socialOverlay)socialClose();});socialOverlay.querySelectorAll('[data-social-tab]').forEach(btn=>btn.onclick=async()=>{socialTab=btn.dataset.socialTab;if(socialTab!=='chat'&&privateChatSystem){await privateChatSystem.destroy();privateChatSystem=null;}if(socialTab!=='global-chat'&&globalChatSystem){await globalChatSystem.destroy();globalChatSystem=null;}if(socialTab==='chat')openPrivateChat();else if(socialTab==='global-chat')openGlobalChat();else renderSocial();});
+const socialLaunch=document.createElement('button');socialLaunch.id='etr-social-launch';socialLaunch.type='button';socialLaunch.title='اجتماع بازیکنان';socialLaunch.setAttribute('aria-label','باز کردن اجتماع بازیکنان');socialLaunch.innerHTML='<span class="etr-launch-symbol" aria-hidden="true">✥</span><span class="etr-badge" data-badge="total" hidden></span>';socialLaunch.onclick=socialOpen;
+
+const badgeValue=n=>n>99?'99+':String(Math.max(0,n));
+function updateNotificationBadges(){const total=Object.values(notificationCounts).reduce((a,b)=>a+b,0);for(const [key,count] of Object.entries({...notificationCounts,total})){document.querySelectorAll(`[data-badge="${key}"]`).forEach(el=>{el.textContent=badgeValue(count);el.hidden=count<=0;});}}
+function setNotificationCount(key,value){notificationCounts[key]=Math.max(0,Number(value)||0);updateNotificationBadges();}
+function bumpNotification(key,amount=1){setNotificationCount(key,notificationCounts[key]+amount);}
+function noticeKey(kind){return `etranom:${kind}:lastSeen:${currentUser?.id||'guest'}`;}
+async function refreshNotificationCounts(){if(!currentUser)return;try{const sincePrivate=localStorage.getItem(noticeKey('private'))||new Date(0).toISOString();const sinceGlobal=localStorage.getItem(noticeKey('global'))||new Date(0).toISOString();const [pm,gm,fr,pi]=await Promise.all([
+supabase.from('private_messages').select('id',{count:'exact',head:true}).eq('receiver_id',currentUser.id).gt('created_at',sincePrivate),
+supabase.from('global_messages').select('id',{count:'exact',head:true}).neq('sender_id',currentUser.id).gt('created_at',sinceGlobal),
+supabase.from('friend_requests').select('id',{count:'exact',head:true}).eq('receiver_id',currentUser.id).eq('status','pending'),
+supabase.rpc('get_party_invites')
+]);if(!pm.error)setNotificationCount('private',pm.count||0);if(!gm.error)setNotificationCount('global',gm.count||0);if(!fr.error)setNotificationCount('requests',fr.count||0);if(!pi.error)setNotificationCount('party',Array.isArray(pi.data)?pi.data.length:0);}catch(e){console.warn('[ETRANOM] Notification counts unavailable:',e);}}
+function startNotificationRealtime(){notificationChannels.forEach(c=>supabase.removeChannel(c).catch(()=>{}));notificationChannels=[];const specs=[['private_messages','private',`receiver_id=eq.${currentUser.id}`],['global_messages','global',null],['friend_requests','requests',`receiver_id=eq.${currentUser.id}`],['party_invites','party',`receiver_id=eq.${currentUser.id}`]];for(const [table,key,filter] of specs){let q=supabase.channel(`etr-notify:${currentUser.id}:${table}`).on('postgres_changes',{event:'INSERT',schema:'public',table,...(filter?{filter}:{})},payload=>{const row=payload.new||{};if(table==='global_messages'&&row.sender_id===currentUser.id)return;if(table==='party_invites'&&row.expires_at&&new Date(row.expires_at)<new Date())return;if((socialTab==='chat'&&key==='private')||(socialTab==='global-chat'&&key==='global'))return;bumpNotification(key);if(!socialOverlay || socialOverlay.style.display!=='flex')showToastNotification(key);}).subscribe();notificationChannels.push(q);}}
+function showToastNotification(key){const labels={private:'پیام خصوصی جدید دریافت کردی',global:'پیام تازه‌ای در چت جهانی',requests:'درخواست دوستی جدید داری',party:'دعوت جدید گروه ماجراجویان داری'};let toast=document.getElementById('etr-notification-toast');if(!toast){toast=document.createElement('div');toast.id='etr-notification-toast';toast.style.cssText='position:fixed;z-index:100010;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);max-width:90vw;padding:11px 16px;border:1px solid #a7834f;border-radius:12px;background:#241a2c;color:#f4dfb6;box-shadow:0 8px 28px #000b;font:13px Tahoma;text-align:center';document.body.appendChild(toast);}toast.textContent=labels[key]||'اعلان جدید';toast.style.display='block';clearTimeout(toast._timer);toast._timer=setTimeout(()=>toast.style.display='none',4200);}
+function markNotificationsRead(key){localStorage.setItem(noticeKey(key),new Date().toISOString());setNotificationCount(key,0);}
+
+
+async function startSession(session){
+  if(started)return;
+  if(!session?.user?.id)throw new Error('نشست کاربری معتبر نیست.');
+  currentUser=session.user;
+  let gameRoot=document.getElementById('etr-game-root');
+  if(!gameRoot){gameRoot=document.createElement('main');gameRoot.id='etr-game-root';gameRoot.style.minHeight='100vh';document.body.appendChild(gameRoot);}
+  gameRoot.classList.remove('etr-game-ready');
+  gameRoot.replaceChildren();
+  gate.classList.remove('hidden');
+  try{
+    try{const {ETRANOMMarketplaceUI}=await import('./systems/marketplace/marketplace-ui.js?v=91');const marketUI=new ETRANOMMarketplaceUI({api:window.lib});window.etranomOpenMarket=()=>marketUI.open();}
+    catch(e){console.warn('[ETRANOM] Marketplace UI unavailable:',e);window.etranomOpenMarket=()=>alert('بازار آنلاین هنوز بارگذاری نشده است.');}
+    try{const {ETRANOMPvPUI}=await import('./systems/pvp/pvp-ui.js');const pvpUI=new ETRANOMPvPUI(window.lib);window.etranomOpenPvP=()=>pvpUI.open();}
+    catch(e){console.warn('[ETRANOM] PvP UI unavailable:',e);window.etranomOpenPvP=()=>alert('تالار PvP بارگذاری نشد.');}
+    await refreshNotificationCounts();
+    startNotificationRealtime();
+    try{
+      const {ETRANOMPresence}=await import('./systems/online/presence.js?v=102');
+      const presence=new ETRANOMPresence(supabase,currentUser,info=>{const el=document.getElementById('etr-online-indicator');if(el){const connected=info.status==='SUBSCRIBED';el.textContent=connected?`● جهان متصل | ${info.onlineCount} بازیکن یکتا | ${info.sessionCount} نشست`:`◌ ${info.status==='CONNECTING'?'در حال اتصال':info.status==='DISCONNECTING'?'در حال خروج':'اتصال ناپایدار'} | وضعیت‌ها موقتاً به‌روزرسانی نمی‌شوند`;el.dataset.connected=connected?'true':'false';if(socialTab==='friends'&&socialOverview)renderSocial();}});
+      window.etranomPresence=presence;await presence.start();
+      try{const {ETRANOMWorldPresence}=await import('./systems/online/world-presence.js?v=102');const worldPresence=new ETRANOMWorldPresence({supabase,user:currentUser,onChange:players=>window.dispatchEvent(new CustomEvent('etranom:world-presence',{detail:{players}}))});window.etranomWorldPresence=worldPresence;await worldPresence.start();}
+      catch(e){console.warn('[ETRANOM] Map presence unavailable:',e);}
+    }catch(e){console.warn('[ETRANOM] Online presence unavailable:',e);}
+    if(!socialLaunch.isConnected)document.body.appendChild(socialLaunch);
+    if(!socialOverlay.isConnected)document.body.appendChild(socialOverlay);
+    if(!guildLaunch.isConnected)document.body.appendChild(guildLaunch);
+    guildTeacherVisited=sessionStorage.getItem('etranom:guildTeacherVisited')==='1';
+    const { loadRegionOneRuntime } = await import('./systems/content/region-one-runtime.js?v=146');
+    await loadRegionOneRuntime();
+    const elementalistModule = await import('./systems/classes/elementalist.js?v=2');
+    window.ETRANOM_ELEMENTALIST = elementalistModule.ELEMENTALIST;
+    window.ETRANOM_CREATE_ELEMENTALIST_PROGRESS = elementalistModule.createElementalistProgress;
+    window.ETRANOM_NORMALIZE_ELEMENTALIST_PROGRESS = elementalistModule.normalizeElementalistProgress;
+    window.ETRANOM_ACTIVATE_ELEMENTALIST_DOMAIN = elementalistModule.activateElementalistDomain;
+    window.ETRANOM_GET_ELEMENTALIST_ASCENDED_SKILLS = elementalistModule.getAvailableElementalistAscendedSkills;
+    window.ETRANOM_USE_ELEMENTALIST_ASCENDED_SKILL = elementalistModule.consumeElementalistAscendedSkill;
+    window.ETRANOM_END_ELEMENTALIST_DOMAIN = elementalistModule.endElementalistDomain;
+    // A missing/stale specialization asset must never prevent every account from entering the game.
+    // The actual Warlock module is shipped in this release and cache-busted to v125.
+    try {
+      const warlockModule = await import('./systems/classes/warlock.js?v=125');
+      window.ETRANOM_WARLOCK = warlockModule.WARLOCK;
+      window.ETRANOM_CREATE_WARLOCK_PROGRESS = warlockModule.createWarlockProgress;
+      window.ETRANOM_NORMALIZE_WARLOCK_PROGRESS = warlockModule.normalizeWarlockProgress;
+      window.ETRANOM_ACTIVATE_WARLOCK_DOMAIN = warlockModule.activateWarlockDomain;
+      window.ETRANOM_GET_WARLOCK_ASCENDED_SKILLS = warlockModule.getAvailableWarlockAscendedSkills;
+      window.ETRANOM_USE_WARLOCK_ASCENDED_SKILL = warlockModule.consumeWarlockAscendedSkill;
+      window.ETRANOM_END_WARLOCK_DOMAIN = warlockModule.endWarlockDomain;
+    } catch (warlockLoadError) {
+      console.error('[ETRANOM] Warlock specialization module failed to load; continuing without blocking login.', warlockLoadError);
+      window.ETRANOM_WARLOCK = { id: 'wizard_warlock', classId: 'wizard', specialization: 'وارلاک', skills: [], ascendedSkills: [], domain: { unlockLevel: 25 }, pactSystem: { maxDebt: 0, maxCredit: 0 } };
+      window.ETRANOM_CREATE_WARLOCK_PROGRESS = () => ({ skillRanks: {}, domainActive: false, domainUsesThisBattle: 0 });
+      window.ETRANOM_NORMALIZE_WARLOCK_PROGRESS = p => p || window.ETRANOM_CREATE_WARLOCK_PROGRESS();
+      window.ETRANOM_ACTIVATE_WARLOCK_DOMAIN = p => ({ ok: false, reason: 'module_unavailable', progress: p || {} });
+      window.ETRANOM_GET_WARLOCK_ASCENDED_SKILLS = () => [];
+      window.ETRANOM_USE_WARLOCK_ASCENDED_SKILL = p => ({ ok: false, reason: 'module_unavailable', progress: p || {} });
+      window.ETRANOM_END_WARLOCK_DOMAIN = p => p || {};
+    }
+    const necromancerModule = await import('./systems/classes/necromancer.js?v=82');
+    window.ETRANOM_NECROMANCER = necromancerModule.NECROMANCER;
+    window.ETRANOM_CREATE_NECROMANCER_PROGRESS = necromancerModule.createNecromancerProgress;
+    window.ETRANOM_NORMALIZE_NECROMANCER_PROGRESS = necromancerModule.normalizeNecromancerProgress;
+    window.ETRANOM_RECRUIT_NECROMANCER_LEGION = necromancerModule.recruitNecromancerLegion;
+    window.ETRANOM_ACTIVATE_NECROMANCER_DOMAIN = necromancerModule.activateNecromancerDomain;
+    window.ETRANOM_GET_NECROMANCER_ASCENDED_SKILLS = necromancerModule.getAvailableNecromancerAscendedSkills;
+    window.ETRANOM_USE_NECROMANCER_ASCENDED_SKILL = necromancerModule.consumeNecromancerAscendedSkill;
+    window.ETRANOM_END_NECROMANCER_DOMAIN = necromancerModule.endNecromancerDomain;
+    window.ETRANOM_RESET_NECROMANCER_BATTLE = necromancerModule.resetNecromancerBattle;
+    const wizardRuntimeModule = await import('./systems/classes/wizard-combat-runtime.js?v=82');
+    window.ETRANOM_WIZARD_RUNTIME = wizardRuntimeModule;
+    window.ETRANOM_COMPLETE_WIZARD_DOMAIN_TRIAL_STAGE = wizardRuntimeModule.completeWizardDomainTrial;
+    // Load Arcane Mage from a versioned filename to bypass stale CDN/module caches.
+    // A missing specialization asset must never block every player from logging in.
+    try {
+      const arcaneModule = await import('./systems/classes/arcane-mage-v130.js');
+      window.ETRANOM_ARCANE_MAGE = arcaneModule.ARCANE_MAGE;
+      window.ETRANOM_CREATE_ARCANE_PROGRESS = arcaneModule.createArcaneMageProgress;
+      window.ETRANOM_NORMALIZE_ARCANE_PROGRESS = arcaneModule.normalizeArcaneMageProgress;
+      window.ETRANOM_ACTIVATE_ARCANE_DOMAIN = arcaneModule.activateArcaneMageDomain;
+      window.ETRANOM_GET_ARCANE_ASCENDED_SKILLS = arcaneModule.getAvailableArcaneMageAscendedSkills;
+      window.ETRANOM_USE_ARCANE_ASCENDED_SKILL = arcaneModule.consumeArcaneMageAscendedSkill;
+      window.ETRANOM_END_ARCANE_DOMAIN = arcaneModule.endArcaneMageDomain;
+    } catch (arcaneLoadError) {
+      console.error('[ETRANOM] Arcane Mage specialization failed to load; continuing with safe fallback.', arcaneLoadError);
+      window.ETRANOM_ARCANE_MAGE = { id:'wizard_arcane_mage', classId:'wizard', className:'جادوگر', specialization:'آرکین‌میج', skills:[], ascendedSkills:[], domain:{unlockLevel:25} };
+      window.ETRANOM_CREATE_ARCANE_PROGRESS = () => ({charges:0,chargeExpiresAt:null,skillRanks:{},unlockedTalents:[],domainStage:'locked',domainQuest:{started:false,guardianDefeats:0,coreFragments:0,trialComplete:false,complete:false},domainActive:false,domainUsesThisBattle:0,ascendedUsesThisDomain:0,ascendedSkillUsedThisDomain:false,ascendedSkillId:null,lastSpellId:null,skillCooldowns:{},buffs:{},statuses:{}});
+      window.ETRANOM_NORMALIZE_ARCANE_PROGRESS = progress => ({...window.ETRANOM_CREATE_ARCANE_PROGRESS(),...(progress||{})});
+      window.ETRANOM_ACTIVATE_ARCANE_DOMAIN = progress => ({ok:false,reason:'module_unavailable',progress:progress||window.ETRANOM_CREATE_ARCANE_PROGRESS()});
+      window.ETRANOM_GET_ARCANE_ASCENDED_SKILLS = () => [];
+      window.ETRANOM_USE_ARCANE_ASCENDED_SKILL = progress => ({ok:false,reason:'module_unavailable',progress:progress||{}});
+      window.ETRANOM_END_ARCANE_DOMAIN = progress => progress||{};
+    }
+    await import('./game.js?v=146');
+    const gameRunner=window.run;
+    if(typeof gameRunner!=='function')throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
+    await gameRunner('play');
+    gameRoot.classList.add('etr-game-ready');
+    gate.classList.add('hidden');
+    started=true;
+  }catch(e){
+    started=false;
+    gameRoot.classList.remove('etr-game-ready');
+    gameRoot.replaceChildren();
+    gate.classList.remove('hidden');
+    const detail=String(e?.message||e||'خطای ناشناخته').slice(0,180);
+    say('ورود انجام شد، اما اجرای بازی کامل نشد: '+detail+' — صفحه ورود را باز نگه داشتیم؛ دوباره تلاش کن.');
+    console.error('[ETRANOM] Startup failed:',e);
+    throw e;
+  }
+}
+// Prevent overlapping startup attempts (for example, a manual login racing with session recovery).
+function start(session){
+  if(started)return Promise.resolve();
+  if(startupPromise)return startupPromise;
+  startupPromise=startSession(session).finally(()=>{startupPromise=null;});
+  return startupPromise;
+}
+async function login(){const email=document.getElementById('email').value.trim(),password=document.getElementById('password').value;if(!email||!password){say('ایمیل و گذرواژه را وارد کن.');return;}setBusy(true);say('در حال ورود...');let timer;try{const result=await Promise.race([supabase.auth.signInWithPassword({email,password}),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('مهلت اتصال به سرویس حساب کاربری تمام شد. اینترنت، VPN یا وضعیت Supabase را بررسی کن.')),15000);})]);clearTimeout(timer);const {data,error}=result;if(error)throw error;if(!data?.session)throw new Error('نشست ورود از سرویس دریافت نشد؛ دوباره تلاش کن.');await start(data.session);}catch(e){clearTimeout(timer);say(e.message==='Invalid login credentials'?'ایمیل یا گذرواژه نادرست است.':`ورود انجام نشد: ${e.message||'خطای نامشخص'}`);}finally{setBusy(false);}}
+async function signup(){const email=document.getElementById('email').value.trim(),password=document.getElementById('password').value;if(!email||!password){say('ایمیل و گذرواژه را وارد کن.');return;}if(password.length<6){say('ایمیل معتبر و گذرواژه حداقل ۶ نویسه‌ای وارد کن.');return;}setBusy(true);say('در حال ساخت حساب...');let timer;try{const result=await Promise.race([supabase.auth.signUp({email,password}),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('مهلت اتصال برای ساخت حساب تمام شد. اینترنت، VPN یا وضعیت Supabase را بررسی کن.')),15000);})]);clearTimeout(timer);const {data,error}=result;if(error)throw error;if(data.session)await start(data.session);else say('درخواست ساخت حساب پذیرفته شد، اما نشست ورود دریافت نشد. ایمیل را برای تأیید بررسی کن یا با همان مشخصات وارد شو.');}catch(e){clearTimeout(timer);say(`ساخت حساب انجام نشد: ${e.message||'خطای نامشخص'}`);}finally{setBusy(false);}}
+bindAuthHandlers();
+supabase.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT'){started=false;currentUser=null;document.getElementById('etr-game-root')?.classList.remove('etr-game-ready');gate.classList.remove('hidden');window.location.reload();}});
+const {data:{session},error}=await supabase.auth.getSession();if(error){say('بازیابی نشست انجام نشد؛ ایمیل و گذرواژه را وارد کن.');}else if(session){const {data:{user},error:verifyError}=await supabase.auth.getUser();if(!verifyError&&user&&user.id===session.user.id){await start({...session,user});}else{await supabase.auth.signOut({scope:'local'});currentUser=null;started=false;say('نشست قبلی معتبر نیست. برای ورود، ایمیل و گذرواژه را وارد کن.');}}
+</script>
+<style id="etranom-v94-controls">
+.exploration-screen,.explore-viewport,.explore-controls,.joystick-wrap,.joystick-base{touch-action:none!important}
+.joystick-wrap{user-select:none!important;-webkit-user-select:none!important;-webkit-touch-callout:none!important}
+.joystick-base{position:relative;touch-action:none!important;overscroll-behavior:contain!important}
+.joystick-knob{pointer-events:none!important;will-change:transform}
+.necromancer-battle-controls{display:flex;gap:8px;margin:8px 0}
+.necromancer-battle-controls button{flex:1;min-height:42px;border:1px solid #9569b8;border-radius:10px;background:linear-gradient(120deg,#382449,#21182d);color:#f0dcff;font-weight:700}
+.necromancer-battle-controls button[data-necro-summon-all]{border-color:#c39b5c;background:linear-gradient(120deg,#554026,#30231b);color:#ffe2a4}
+.necromancer-battle-controls button:disabled{opacity:.45}
+.necromancer-battle-legion{margin-top:8px}
+.world-panel-window{overflow-anchor:none;overscroll-behavior:contain}
+.hub-tabs{position:sticky;top:0;z-index:20;display:flex;overflow-x:auto;gap:6px;padding:7px;background:#17151df2;overscroll-behavior-x:contain}
+.hub-tabs button{flex:0 0 auto;white-space:nowrap}
+@media(max-width:600px){.necromancer-battle-controls button{min-height:46px;font-size:12px}}
+</style>
+</body>
+</html>
