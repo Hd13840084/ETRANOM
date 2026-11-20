@@ -1,0 +1,166 @@
+{
+  "schema_version": 2,
+  "pack_id": "region_one_master_v2",
+  "game_region": 1,
+  "content_version": "region1-recipe-distribution-v48",
+  "source_of_truth": true,
+  "level_range": {
+    "min": 1,
+    "max": 5
+  },
+  "item_recipe_level": 1,
+  "recipe_level_cap": 10,
+  "rarity_tiers": [
+    "معمولی",
+    "غیرمعمول",
+    "کمیاب",
+    "حماسی",
+    "افسانه‌ای",
+    "اسطوره‌ای"
+  ],
+  "files": [
+    {
+      "path": "regions/regions.json"
+    },
+    {
+      "path": "monsters/monsters.json"
+    },
+    {
+      "path": "materials/materials.json"
+    },
+    {
+      "path": "skills/monster_skills.json"
+    },
+    {
+      "path": "items/items.json"
+    },
+    {
+      "path": "recipes/recipes.json"
+    },
+    {
+      "path": "quests/quests.json"
+    },
+    {
+      "path": "npcs/npcs.json"
+    },
+    {
+      "path": "dungeons/dungeons.json"
+    },
+    {
+      "path": "ruins/ruins.json"
+    },
+    {
+      "path": "tower/tower.json"
+    },
+    {
+      "path": "tower/tower_encounters.json"
+    }
+  ],
+  "rules": {
+    "monster_material_types": {
+      "normal": 1,
+      "mini_boss": 2,
+      "area_boss": 3
+    },
+    "recipes_use_two_material_types": true,
+    "recipe_materials_must_be_from_same_subarea": true,
+    "recipe_sources_must_produce_required_materials": false,
+    "normal_monster_spawn": {
+      "one_guaranteed": true,
+      "two_monster_chance_percent": 40,
+      "three_monster_chance_percent": 15
+    },
+    "monsters_respawn": true,
+    "zone_levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      5
+    ],
+    "all_region_one_items_level": 1,
+    "rarity_drop_chances_percent": {
+      "normal": 35,
+      "uncommon": 20,
+      "rare": 15,
+      "epic": 8,
+      "legendary": 4,
+      "mythic": 2
+    },
+    "mythic_region_boss_bonus_chance_percent": 2,
+    "stats": [
+      "power",
+      "speed",
+      "endurance",
+      "vitality",
+      "intellect",
+      "perception",
+      "luck",
+      "faith"
+    ],
+    "recipe_distribution": {
+      "total_recipes": 260,
+      "drop_source_types": [
+        "monster",
+        "dungeon_treasure",
+        "dungeon_boss",
+        "tower_boss"
+      ],
+      "mythic_only_from_final_region_boss": true,
+      "mythic_drop_chance_percent": 2,
+      "dungeon_recipes_are_dungeon_locked": true,
+      "tower_recipes_are_floor_boss_locked": true,
+      "recipe_materials_must_be_from_same_region": true
+    },
+    "recipe_material_sources_must_produce_required_materials": true,
+    "recipe_drop_source_must_be_explicit": true
+  },
+  "recipe_level_multiplier_base": 3,
+  "runtime_integration_status": "runtime_connected_phase_2",
+  "data_snapshot_source": "ETRANOM game.js runtime encounter/recipe definitions in v40 baseline",
+  "recipe_distribution": {
+    "total": 260,
+    "by_source_type": {
+      "monster": 204,
+      "dungeon_treasure": 20,
+      "dungeon_boss": 20,
+      "tower_boss": 16
+    },
+    "by_region": {
+      "burnt_forest": {
+        "monster": 43,
+        "dungeon": 0,
+        "tower": 0
+      },
+      "thorn_grove": {
+        "monster": 24,
+        "dungeon": 20,
+        "tower": 0
+      },
+      "ash_hills": {
+        "monster": 44,
+        "dungeon": 0,
+        "tower": 0
+      },
+      "vardash_river": {
+        "monster": 44,
+        "dungeon": 0,
+        "tower": 0
+      },
+      "southern_plains": {
+        "monster": 23,
+        "dungeon": 20,
+        "tower": 0
+      },
+      "rootbound_ruins": {
+        "monster": 26,
+        "dungeon": 0,
+        "tower": 16
+      }
+    },
+    "mythic_policy": "فقط باس نهایی rootbound_region_boss با شانس ۲٪",
+    "tower_policy": "فقط باس طبقات ۴، ۸، ۱۲، ۱۶ و ۲۰؛ بدون دستور اسطوره‌ای",
+    "dungeon_policy": "هر دانجن ۱۰ دستور از گنجینه و ۱۰ دستور از باس نهایی همان دانجن"
+  }
+}
