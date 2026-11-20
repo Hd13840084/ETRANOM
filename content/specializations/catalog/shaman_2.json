@@ -1,0 +1,19 @@
+{
+  "id": "shaman_2",
+  "class_id": "shaman",
+  "class_name_fa": "شمن",
+  "name_fa": "شمن ارواح",
+  "role_fa": "میانجی جهان زندگان و ارواح",
+  "identity": {
+    "combat_fantasy": "میانجی جهان زندگان و ارواح",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}
