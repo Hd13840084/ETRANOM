@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const game=fs.readFileSync(new URL('../../game.js',import.meta.url),'utf8');
+const html=fs.readFileSync(new URL('../../index.html',import.meta.url),'utf8');
+assert.match(game,/function renderStartingRegionMap\(\)/);
+assert.match(game,/grand-world-map/);
+assert.match(game,/safeNPCs\.map\(/);
+assert.match(game,/cityPOI\.map\(/);
+assert.match(game,/safeLandmarks\.filter\(/);
+for(const id of ['burnt_forest','thorn_grove','ash_hills','vardash_river','southern_plains','rootbound_ruins']) assert.ok(game.includes("id:'"+id+"'"),`missing region ${id}`);
+assert.match(game,/data-open-region="\$\{z\.id\}"/);
+assert.match(game,/map-frontier-list/);
+assert.match(game,/etranom-live-avatars/);
+assert.match(html,/game\.js\?v=124/);
+console.log('Dark fantasy integrated world/safe-zone/region-one map v116: PASS');

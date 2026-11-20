@@ -1,0 +1,14 @@
+import { readFileSync } from 'node:fs';
+import assert from 'node:assert/strict';
+const game = readFileSync(new URL('../../game.js', import.meta.url), 'utf8');
+const html = readFileSync(new URL('../../index.html', import.meta.url), 'utf8');
+assert.match(game, /function winCombat\(\)\s*\{\s*\/\/ Older saves may predate region-content arrays\./);
+assert.match(game, /state\.knownRecipes=Array\.isArray\(state\.knownRecipes\)\?state\.knownRecipes:\[\]/);
+assert.doesNotMatch(game, /for\(const key of \["skillRanks","talentRanks","skillCooldowns","knownRecipes"/);
+assert.match(game, /data-fight="finish"/);
+assert.match(game, /data-battle-report-close/);
+assert.match(game, /showSystemReport\('هشدار ورود: محدوده قفل است'/);
+assert.match(game, /showSystemReport\("هشدار ورود به دانجن: مسیر قفل است"/);
+assert.match(game, /showSystemReport\('ورود به برج باستانی ممکن نیست'/);
+assert.match(html, /game\.js\?v=124/);
+console.log('Battle-report regression checks: PASS');

@@ -1,0 +1,19 @@
+{
+  "id": "priest_2",
+  "class_id": "priest",
+  "class_name_fa": "کشیش",
+  "name_fa": "شفادهنده",
+  "role_fa": "متخصص حمایت و بازیابی همراهان",
+  "identity": {
+    "combat_fantasy": "متخصص حمایت و بازیابی همراهان",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}
