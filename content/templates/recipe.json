@@ -1,0 +1,8 @@
+{
+  "id": "rough_leather_recipe",
+  "name": "دستور چرم زمخت",
+  "result_item_id": "rough_leather_armor",
+  "ingredients": [{ "material_id": "wolf_hide", "quantity": 3 }],
+  "required_level": 1,
+  "version": 1
+}
