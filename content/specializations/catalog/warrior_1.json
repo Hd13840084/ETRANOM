@@ -1,0 +1,19 @@
+{
+  "id": "warrior_1",
+  "class_id": "warrior",
+  "class_name_fa": "جنگجو",
+  "name_fa": "شمشیرزن",
+  "role_fa": "متخصص شمشیر و نبرد متوازن",
+  "identity": {
+    "combat_fantasy": "متخصص شمشیر و نبرد متوازن",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}
