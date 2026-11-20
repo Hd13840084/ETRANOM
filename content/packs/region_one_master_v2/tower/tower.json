@@ -1,0 +1,475 @@
+{
+  "id": "ancient_rootbound_tower",
+  "name": "برج باستانی ویرانه‌های ریشه‌پوش",
+  "region_id": "rootbound_ruins",
+  "key": {
+    "id": "ancient_tower_key",
+    "name": "کلید برج باستانی",
+    "source_encounter_id": "rootbound_region_boss",
+    "drop_chance_percent": 12,
+    "consumed_on_entry": true
+  },
+  "floor_count": 20,
+  "level_blocks": [
+    {
+      "floors": [
+        1,
+        4
+      ],
+      "level": 1
+    },
+    {
+      "floors": [
+        5,
+        8
+      ],
+      "level": 2
+    },
+    {
+      "floors": [
+        9,
+        12
+      ],
+      "level": 3
+    },
+    {
+      "floors": [
+        13,
+        16
+      ],
+      "level": 4
+    },
+    {
+      "floors": [
+        17,
+        20
+      ],
+      "level": 5
+    }
+  ],
+  "floor_pattern": [
+    "3_normal_monsters",
+    "1_unique_miniboss",
+    "2_unique_minibosses",
+    "unique_boss"
+  ],
+  "floors": [
+    {
+      "floor": 1,
+      "level": 1,
+      "type": "normal",
+      "encounter_ids": [
+        "tower_sentinel_l1",
+        "tower_sentinel_l1",
+        "tower_sentinel_l1"
+      ],
+      "reward": {
+        "gold": 51,
+        "xp": 200
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 2,
+      "level": 1,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l1_1"
+      ],
+      "reward": {
+        "gold": 123,
+        "xp": 550
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 3,
+      "level": 1,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l1_1",
+        "tower_miniboss_l1_2"
+      ],
+      "reward": {
+        "gold": 123,
+        "xp": 550
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 4,
+      "level": 1,
+      "type": "boss",
+      "encounter_ids": [
+        "tower_boss_floor04"
+      ],
+      "reward": {
+        "gold": 270,
+        "xp": 1420
+      },
+      "boss_recipe_drop_chance_percent": 8,
+      "recipe_ids": [
+        "recipe_5_9_0",
+        "recipe_9_7_0",
+        "recipe_0_2_1",
+        "recipe_3_1_0"
+      ]
+    },
+    {
+      "floor": 5,
+      "level": 2,
+      "type": "normal",
+      "encounter_ids": [
+        "tower_sentinel_l2",
+        "tower_sentinel_l2",
+        "tower_sentinel_l2"
+      ],
+      "reward": {
+        "gold": 67,
+        "xp": 270
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 6,
+      "level": 2,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l2_1"
+      ],
+      "reward": {
+        "gold": 161,
+        "xp": 740
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 7,
+      "level": 2,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l2_1",
+        "tower_miniboss_l2_2"
+      ],
+      "reward": {
+        "gold": 161,
+        "xp": 740
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 8,
+      "level": 2,
+      "type": "boss",
+      "encounter_ids": [
+        "tower_boss_floor08"
+      ],
+      "reward": {
+        "gold": 360,
+        "xp": 1940
+      },
+      "boss_recipe_drop_chance_percent": 12,
+      "recipe_ids": [
+        "recipe_2_10_1",
+        "recipe_1_11_0",
+        "recipe_4_0_1"
+      ]
+    },
+    {
+      "floor": 9,
+      "level": 3,
+      "type": "normal",
+      "encounter_ids": [
+        "tower_sentinel_l3",
+        "tower_sentinel_l3",
+        "tower_sentinel_l3"
+      ],
+      "reward": {
+        "gold": 83,
+        "xp": 340
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 10,
+      "level": 3,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l3_1"
+      ],
+      "reward": {
+        "gold": 199,
+        "xp": 930
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 11,
+      "level": 3,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l3_1",
+        "tower_miniboss_l3_2"
+      ],
+      "reward": {
+        "gold": 199,
+        "xp": 930
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 12,
+      "level": 3,
+      "type": "boss",
+      "encounter_ids": [
+        "tower_boss_floor12"
+      ],
+      "reward": {
+        "gold": 450,
+        "xp": 2460
+      },
+      "boss_recipe_drop_chance_percent": 16,
+      "recipe_ids": [
+        "recipe_8_10_1",
+        "recipe_7_11_0",
+        "recipe_6_2_1"
+      ]
+    },
+    {
+      "floor": 13,
+      "level": 4,
+      "type": "normal",
+      "encounter_ids": [
+        "tower_sentinel_l4",
+        "tower_sentinel_l4",
+        "tower_sentinel_l4"
+      ],
+      "reward": {
+        "gold": 99,
+        "xp": 410
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 14,
+      "level": 4,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l4_1"
+      ],
+      "reward": {
+        "gold": 237,
+        "xp": 1120
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 15,
+      "level": 4,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l4_1",
+        "tower_miniboss_l4_2"
+      ],
+      "reward": {
+        "gold": 237,
+        "xp": 1120
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 16,
+      "level": 4,
+      "type": "boss",
+      "encounter_ids": [
+        "tower_boss_floor16"
+      ],
+      "reward": {
+        "gold": 540,
+        "xp": 2980
+      },
+      "boss_recipe_drop_chance_percent": 20,
+      "recipe_ids": [
+        "recipe_1_5_0",
+        "recipe_4_12_1",
+        "recipe_8_4_1"
+      ]
+    },
+    {
+      "floor": 17,
+      "level": 5,
+      "type": "normal",
+      "encounter_ids": [
+        "tower_sentinel_l5",
+        "tower_sentinel_l5",
+        "tower_sentinel_l5"
+      ],
+      "reward": {
+        "gold": 115,
+        "xp": 480
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 18,
+      "level": 5,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l5_1"
+      ],
+      "reward": {
+        "gold": 275,
+        "xp": 1310
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 19,
+      "level": 5,
+      "type": "miniboss",
+      "encounter_ids": [
+        "tower_miniboss_l5_1",
+        "tower_miniboss_l5_2"
+      ],
+      "reward": {
+        "gold": 275,
+        "xp": 1310
+      },
+      "boss_recipe_drop_chance_percent": 0,
+      "recipe_ids": []
+    },
+    {
+      "floor": 20,
+      "level": 5,
+      "type": "boss",
+      "encounter_ids": [
+        "tower_boss_floor20"
+      ],
+      "reward": {
+        "gold": 630,
+        "xp": 3500
+      },
+      "boss_recipe_drop_chance_percent": 30,
+      "recipe_ids": [
+        "recipe_7_5_0",
+        "recipe_6_8_1",
+        "recipe_4_6_1"
+      ]
+    }
+  ],
+  "progression": {
+    "save_highest_cleared_floor": true,
+    "retry_starts_at_next_uncleared_floor": true,
+    "failed_attempt_preserves_cleared_floors": true,
+    "complete_after_floor": 20
+  },
+  "version": 2,
+  "portraits": {
+    "tower_miniboss_l1_1": {
+      "label": "شکنجه‌گر اخگرپوش",
+      "path": "assets/monsters/tower/tower_miniboss_l1_a.webp"
+    },
+    "tower_miniboss_l1_2": {
+      "label": "نگهبان زنجیرهای سرخ",
+      "path": "assets/monsters/tower/tower_miniboss_l1_b.webp"
+    },
+    "tower_boss_floor04": {
+      "label": "آذرپیکرِ زنجیرشکن",
+      "path": "assets/monsters/tower/tower_boss_floor04.webp"
+    },
+    "tower_miniboss_l2_1": {
+      "label": "بانوی خارهای سیاه",
+      "path": "assets/monsters/tower/tower_miniboss_l2_a.webp"
+    },
+    "tower_miniboss_l2_2": {
+      "label": "جلاد بیشه‌زاد",
+      "path": "assets/monsters/tower/tower_miniboss_l2_b.webp"
+    },
+    "tower_boss_floor08": {
+      "label": "مادرِ تاج‌خار",
+      "path": "assets/monsters/tower/tower_boss_floor08.webp"
+    },
+    "tower_miniboss_l3_1": {
+      "label": "غول سنگسترِ شکافته",
+      "path": "assets/monsters/tower/tower_miniboss_l3_a.webp"
+    },
+    "tower_miniboss_l3_2": {
+      "label": "جادوگر خاکسترکُش",
+      "path": "assets/monsters/tower/tower_miniboss_l3_b.webp"
+    },
+    "tower_boss_floor12": {
+      "label": "سنگ‌سالارِ فروپاشی",
+      "path": "assets/monsters/tower/tower_boss_floor12.webp"
+    },
+    "tower_miniboss_l4_1": {
+      "label": "مارسالار ژرفاب",
+      "path": "assets/monsters/tower/tower_miniboss_l4_a.webp"
+    },
+    "tower_miniboss_l4_2": {
+      "label": "شوالیه سیلاب خاموش",
+      "path": "assets/monsters/tower/tower_miniboss_l4_b.webp"
+    },
+    "tower_boss_floor16": {
+      "label": "اژدهای سیاه‌آب",
+      "path": "assets/monsters/tower/tower_boss_floor16.webp"
+    },
+    "tower_miniboss_l5_1": {
+      "label": "فرمانده تاج‌خاک",
+      "path": "assets/monsters/tower/tower_miniboss_l5_a.webp"
+    },
+    "tower_miniboss_l5_2": {
+      "label": "شکارچی بی‌سپیده",
+      "path": "assets/monsters/tower/tower_miniboss_l5_b.webp"
+    },
+    "tower_boss_floor20": {
+      "label": "شاهِ بی‌نامِ برج",
+      "path": "assets/monsters/tower/tower_boss_floor20.webp"
+    }
+  },
+  "recipe_distribution": {
+    "total_recipe_count": 16,
+    "boss_floor_recipe_ids": {
+      "tower_boss_floor04": [
+        "recipe_5_9_0",
+        "recipe_9_7_0",
+        "recipe_0_2_1",
+        "recipe_3_1_0"
+      ],
+      "tower_boss_floor08": [
+        "recipe_2_10_1",
+        "recipe_1_11_0",
+        "recipe_4_0_1"
+      ],
+      "tower_boss_floor12": [
+        "recipe_8_10_1",
+        "recipe_7_11_0",
+        "recipe_6_2_1"
+      ],
+      "tower_boss_floor16": [
+        "recipe_1_5_0",
+        "recipe_4_12_1",
+        "recipe_8_4_1"
+      ],
+      "tower_boss_floor20": [
+        "recipe_7_5_0",
+        "recipe_6_8_1",
+        "recipe_4_6_1"
+      ]
+    },
+    "rule_fa": "دستورهای برج فقط از باس همان طبقه می‌افتند. این ۱۶ دستور افسانه‌ای هستند؛ هیچ دستور اسطوره‌ای از برج دریافت نمی‌شود."
+  }
+}

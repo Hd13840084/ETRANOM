@@ -1,0 +1,19 @@
+{
+  "id": "warrior_4",
+  "class_id": "warrior",
+  "class_name_fa": "جنگجو",
+  "name_fa": "شوالیه ویرانی",
+  "role_fa": "شوالیه‌ای با تمرکز بر قدرت ویرانگر",
+  "identity": {
+    "combat_fantasy": "شوالیه‌ای با تمرکز بر قدرت ویرانگر",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}
