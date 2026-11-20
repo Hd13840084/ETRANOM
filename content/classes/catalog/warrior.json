@@ -1,0 +1,14 @@
+{
+  "id": "warrior",
+  "name_fa": "جنگجو",
+  "description_fa": "نبرد مستقیم، پایداری و شکستن خطوط دشمن",
+  "specialization_ids": [
+    "warrior_1",
+    "warrior_2",
+    "warrior_3",
+    "warrior_4"
+  ],
+  "starting_equipment_ids": [],
+  "version": 1,
+  "content_status": "identity_shell_only"
+}
