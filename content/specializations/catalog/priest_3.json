@@ -1,0 +1,19 @@
+{
+  "id": "priest_3",
+  "class_id": "priest",
+  "class_name_fa": "کشیش",
+  "name_fa": "کشیش نفرین",
+  "role_fa": "کارگزار نفرین‌ها و آیین‌های تاریک",
+  "identity": {
+    "combat_fantasy": "کارگزار نفرین‌ها و آیین‌های تاریک",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}

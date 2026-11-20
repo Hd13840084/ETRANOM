@@ -1,0 +1,19 @@
+{
+  "id": "assassin_2",
+  "class_id": "assassin",
+  "class_name_fa": "آدمکش",
+  "name_fa": "قاتل حرفه‌ای",
+  "role_fa": "متخصص حذف سریع و حساب‌شده هدف",
+  "identity": {
+    "combat_fantasy": "متخصص حذف سریع و حساب‌شده هدف",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}

@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const ui=fs.readFileSync('systems/marketplace/marketplace-ui.js','utf8');
+const html=fs.readFileSync('index.html','utf8');
+const sql=fs.readFileSync('database/marketplace_phase5_ALL_IN_ONE.sql','utf8');
+for(const token of ['marketHistory','marketCreate','marketBuy','marketCancel','marketList']) assert.ok(html.includes(token),`missing API ${token}`);
+for(const token of ['market-search','market-category','market-sort','history','data-market-buy','data-market-cancel']) assert.ok(ui.includes(token),`missing UI ${token}`);
+for(const token of ['etranom_market_list','etranom_market_buy','etranom_market_cancel','etranom_market_snapshot','etranom_market_history','etranom_market_expire','market_transactions','for update','skip locked']) assert.ok(sql.toLowerCase().includes(token.toLowerCase()),`missing SQL contract ${token}`);
+assert.ok(sql.includes("revoke all on function public.etranom_market_expire() from public,anon,authenticated"),'expiry must not be callable by normal clients');
+console.log('Phase 5 static contract checks: PASS');

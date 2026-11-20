@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const game=fs.readFileSync(new URL('../game.js',import.meta.url),'utf8');
+const market=fs.readFileSync(new URL('../systems/marketplace/marketplace-ui.js',import.meta.url),'utf8');
+const sql=fs.readFileSync(new URL('../database/marketplace_visibility_repair_v126.sql',import.meta.url),'utf8');
+test('potion recipes become tradable inventory items',()=>{assert.match(game,/itemType:'potion_recipe'/);assert.match(game,/category:'recipe'/);});
+test('NPC sale supports selected quantity and keep-all action',()=>{assert.match(game,/data-sell-qty/);assert.match(game,/data-sell-item/);assert.match(game,/data-sell-all-item/);});
+test('market refreshes buyer save after atomic purchase',()=>{assert.match(market,/etranom:market-save-refreshed/);assert.match(market,/marketBuy/);});
+test('market snapshot includes own active listing in public feed',()=>{assert.match(sql,/p_mine and l\.seller_id=uid/);assert.doesNotMatch(sql,/l\.seller_id<>uid/);});
