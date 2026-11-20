@@ -71,7 +71,7 @@ export async function loadRegionOneRuntime() {
     const materialNames = materialIds.map(id => materialById.get(id)?.name || id);
     const multiplier = regionCombatMultiplier(monster.region_id);
     const stats = scaleCombatStats(monster.stats, multiplier);
-    // Combat instantiation applies the v140 25% reduction relative to v139 effective values. Do not pre-scale this data here.
+    // Global 25% enemy stat reduction is applied once when combat entities are instantiated.
     return {
       id: monster.id, name: monster.name, icon: '👹', kind: monster.kind === 'mini_boss' ? 'miniboss' : monster.kind === 'area_boss' ? 'boss' : monster.kind,
       regionId: monster.region_id, regionName: regions.find(x => x.id === monster.region_id)?.name || '', level: monster.level,

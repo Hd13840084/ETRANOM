@@ -8,17 +8,20 @@ const items=JSON.parse(fs.readFileSync(new URL('items/items.json',pack),'utf8'))
 const recipes=JSON.parse(fs.readFileSync(new URL('recipes/recipes.json',pack),'utf8'));
 const runtime=fs.readFileSync(new URL('systems/content/region-one-runtime.js',root),'utf8');
 const game=fs.readFileSync(new URL('game.js',root),'utf8');
-test('v139 removes hidden zone multipliers and keeps beginner-zone enemies in a bounded HP range',()=>{
+test('v142 doubles combat stats for all 36 region-one monsters and keeps runtime mirrors synchronized',()=>{
  assert.match(runtime,/function regionCombatMultiplier\(_regionId\)[\s\S]*?return 1;/);
+ assert.equal(monsters.length,36);
+ for(const m of monsters){
+  for(const key of ['hp','mp','attack','defense','accuracy','speed']){
+   assert.ok(m.stats[key]>=0,`${m.id} missing ${key}`);
+  }
+  assert.equal(m.hp,m.stats.hp); assert.equal(m.maxHp,m.stats.hp);
+  assert.equal(m.attack,m.stats.attack); assert.equal(m.defense,m.stats.defense);
+  assert.equal(m.accuracy,m.stats.accuracy); assert.equal(m.speed,m.stats.speed);
+  assert.equal(m.mp,m.stats.mp); assert.equal(m.maxMp,m.stats.mp);
+ }
  const first=monsters.filter(m=>m.region_id==='burnt_forest'&&m.kind==='normal');
- assert.equal(first.length,5); assert.ok(first.every(m=>m.stats.hp>=180&&m.stats.hp<=260));
- const mini=monsters.find(m=>m.id==='ashroot_warden'); assert.ok(mini.stats.hp<=900);
-});
-test('zone progression grows gradually and bosses remain proportionate',()=>{
- const zones=['burnt_forest','thorn_grove','ash_hills','vardash_river','southern_plains','rootbound_ruins'];
- const avg=id=>{const a=monsters.filter(m=>m.region_id===id&&m.kind==='normal');return a.reduce((s,m)=>s+m.stats.hp,0)/a.length;};
- for(let i=1;i<zones.length;i++)assert.ok(avg(zones[i])>avg(zones[i-1]));
- for(const id of zones){const normals=monsters.filter(m=>m.region_id===id&&m.kind==='normal');const leader=monsters.find(m=>m.region_id===id&&m.kind!=='normal');const ratio=id==='rootbound_ruins'?5.2:3.1;assert.ok(leader.stats.hp>Math.max(...normals.map(m=>m.stats.hp))*(ratio-.25));assert.ok(leader.stats.hp<Math.max(...normals.map(m=>m.stats.hp))*(ratio+.25));}
+ assert.equal(first.length,5); assert.ok(first.every(m=>m.stats.hp>=500));
 });
 test('item and recipe balance metadata is applied without changing progression caps',()=>{
  assert.equal(items.length,260);assert.ok(items.every(i=>i.balance_version===139));

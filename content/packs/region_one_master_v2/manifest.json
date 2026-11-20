@@ -2,7 +2,7 @@
   "schema_version": 2,
   "pack_id": "region_one_master_v2",
   "game_region": 1,
-  "content_version": "region1-combat-balance-v140-minus25-current",
+  "content_version": "region1-monster-power-x2-v142",
   "source_of_truth": true,
   "level_range": {
     "min": 1,
