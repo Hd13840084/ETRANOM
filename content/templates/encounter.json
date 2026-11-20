@@ -1,0 +1,14 @@
+{
+  "id": "burnt_forest_charred_path_01",
+  "region_id": "burnt_forest",
+  "subarea_id": "charred_path",
+  "monster_id": "ashen_wolf",
+  "encounter_kind": "normal",
+  "level_min": 1,
+  "level_max": 2,
+  "party_size_min": 2,
+  "party_size_max": 4,
+  "respawn_seconds": 90,
+  "spawn_weight": 100,
+  "version": 1
+}
