@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const game=fs.readFileSync(new URL('../../game.js',import.meta.url),'utf8');
+const html=fs.readFileSync(new URL('../../index.html',import.meta.url),'utf8');
+assert.match(game,/function drawBuilding\(o\)/);
+assert.match(game,/drawVillageLife\(t\);/);
+assert.match(game,/drawCityDistricts\(t\);/);
+assert.match(game,/function drawCityDistricts\(t\)/);
+assert.match(game,/دروازه خاکسترزار/);
+assert.match(game,/const safeNPCs=\[/);
+for(const id of ['smith_bram','guildmaster_toren','innkeeper_ella','healer_nara','priest_amon','merchant_ren']) assert.ok(game.includes(id),`missing key city NPC ${id}`);
+assert.match(game,/dist<185/);
+assert.match(html,/game\.js\?v=116/);
+console.log('Dark fantasy city architecture, district dressing, NPC identities and Burnt Forest gateway v116: PASS');
