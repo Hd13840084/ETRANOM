@@ -1,0 +1,19 @@
+{
+  "id": "priest_4",
+  "class_id": "priest",
+  "class_name_fa": "کشیش",
+  "name_fa": "پیام‌آور مرگ",
+  "role_fa": "روحانی مرگ و داوری واپسین",
+  "identity": {
+    "combat_fantasy": "روحانی مرگ و داوری واپسین",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}
