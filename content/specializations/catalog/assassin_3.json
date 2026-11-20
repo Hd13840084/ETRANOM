@@ -1,0 +1,19 @@
+{
+  "id": "assassin_3",
+  "class_id": "assassin",
+  "class_name_fa": "آدمکش",
+  "name_fa": "تیغ روح‌خوار",
+  "role_fa": "آدمکشی با پیوند به ارواح و جوهر حیات",
+  "identity": {
+    "combat_fantasy": "آدمکشی با پیوند به ارواح و جوهر حیات",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}
