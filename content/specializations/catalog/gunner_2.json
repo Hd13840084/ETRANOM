@@ -1,0 +1,19 @@
+{
+  "id": "gunner_2",
+  "class_id": "gunner",
+  "class_name_fa": "تفنگدار",
+  "name_fa": "تیرانداز سریع",
+  "role_fa": "متخصص شلیک‌های پیاپی و فشار مداوم",
+  "identity": {
+    "combat_fantasy": "متخصص شلیک‌های پیاپی و فشار مداوم",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}

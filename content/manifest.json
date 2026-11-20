@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "content_policy": "append_only",
+  "active_content_source": "region_one_master_v2",
+  "packs": [
+    {
+      "id": "region_one_master_v2",
+      "path": "packs/region_one_master_v2",
+      "files": [
+        {
+          "kind": "regions",
+          "path": "packs/region_one_master_v2/regions/regions.json"
+        },
+        {
+          "kind": "monsters",
+          "path": "packs/region_one_master_v2/monsters/monsters.json"
+        },
+        {
+          "kind": "materials",
+          "path": "packs/region_one_master_v2/materials/materials.json"
+        },
+        {
+          "kind": "skills",
+          "path": "packs/region_one_master_v2/skills/monster_skills.json"
+        },
+        {
+          "kind": "items",
+          "path": "packs/region_one_master_v2/items/items.json"
+        },
+        {
+          "kind": "recipes",
+          "path": "packs/region_one_master_v2/recipes/recipes.json"
+        },
+        {
+          "kind": "npcs",
+          "path": "packs/region_one_master_v2/npcs/npcs.json"
+        },
+        {
+          "kind": "quests",
+          "path": "packs/region_one_master_v2/quests/quests.json"
+        }
+      ]
+    }
+  ],
+  "catalogs": [
+    "classes",
+    "specializations",
+    "skills",
+    "regions",
+    "monsters",
+    "materials",
+    "items",
+    "recipes",
+    "npcs",
+    "quests"
+  ],
+  "note_fa": "بسته region_one_master_v2 تنها مرجع فعال محتوای منطقه خطر اول است. فایل‌های آن پیش از بارگذاری موتور بازی خوانده و اعتبارسنجی می‌شوند؛ مناطق، هیولاها، مواد، دستورها، دانجن‌ها، خرابه و برج از همین بسته به موتور بازی تزریق می‌شوند."
+}
