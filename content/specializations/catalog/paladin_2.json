@@ -1,0 +1,19 @@
+{
+  "id": "paladin_2",
+  "class_id": "paladin",
+  "class_name_fa": "پالادین",
+  "name_fa": "شوالیه نور",
+  "role_fa": "شوالیه نیروی روشنایی",
+  "identity": {
+    "combat_fantasy": "شوالیه نیروی روشنایی",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}

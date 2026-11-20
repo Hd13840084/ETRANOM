@@ -1,0 +1,19 @@
+{
+  "id": "ranger_4",
+  "class_id": "ranger",
+  "class_name_fa": "رنجر",
+  "name_fa": "نگهبان جنگل سیاه",
+  "role_fa": "پاسدار مرموز جنگل‌های نفرین‌شده",
+  "identity": {
+    "combat_fantasy": "پاسدار مرموز جنگل‌های نفرین‌شده",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "identity_shell_only",
+  "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+  "version": 1
+}
