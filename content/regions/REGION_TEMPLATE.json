@@ -1,0 +1,11 @@
+{
+  "id": "unique_region_id",
+  "name_fa": "نام منطقه",
+  "level_range": {"min": 1, "max": 5},
+  "description_fa": "توضیح منطقه",
+  "subareas": [],
+  "monster_ids": [],
+  "dungeon_ids": [],
+  "boss_ids": [],
+  "version": 1
+}
