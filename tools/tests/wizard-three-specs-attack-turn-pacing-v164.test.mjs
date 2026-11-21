@@ -5,16 +5,19 @@ import { readFileSync } from 'node:fs';
 const game = readFileSync(new URL('../../game.js', import.meta.url), 'utf8');
 const partyUI = readFileSync(new URL('../../systems/party/party-ui.js', import.meta.url), 'utf8');
 const partyCss = readFileSync(new URL('../../systems/party/party.css', import.meta.url), 'utf8');
-const sql = readFileSync(new URL('../../database/wizard_three_specs_attack_tuning_v164.sql', import.meta.url), 'utf8');
+const sql = readFileSync(new URL('../../database/wizard_three_specs_power_boost_v1649.sql', import.meta.url), 'utf8');
 
-test('v164 applies a modest 8% damage multiplier only to the three non-Necromancer Wizard specs', () => {
-  assert.match(game, /function wizardSpecializationAttackMultiplier\(\)\{return isArcaneMage\(\)\|\|isElementalist\(\)\|\|isWarlock\(\)\?1\.08:1;\}/);
+test('v164.9 applies a 50% attack and skill-power multiplier only to the three non-Necromancer Wizard specs', () => {
+  assert.match(game, /function wizardSpecializationAttackMultiplier\(\)\{return isArcaneMage\(\)\|\|isElementalist\(\)\|\|isWarlock\(\)\?1\.5:1;\}/);
   assert.match(game, /wizardRuntimePower\(\).*?wizardSpecializationAttackMultiplier\(\)/s);
+  assert.match(game, /function wizardSpecializationSkillPowerMultiplier\(\)\{return isArcaneMage\(\)\|\|isElementalist\(\)\|\|isWarlock\(\)\?1\.5:1;\}/);
+  assert.match(game, /wizardRuntimeSkillPower\(\).*?wizardRuntimePower\(\)\*wizardSpecializationSkillPowerMultiplier/s);
+  assert.match(game, /function arcaneApplyShield\(amount,turns,reflectPct=0\).*?amount\*wizardSpecializationSkillPowerMultiplier\(\)/s);
   assert.match(game, /arcaneDamageEnemy\(enemy,damagePct/);
   assert.match(game, /wizardSpecializationAttackMultiplier\(\).*?extraDamage/s);
-  assert.match(sql, /attack_value:=floor\(attack_value\*1\.08\)/);
+  assert.match(sql, /attack_value:=floor\(attack_value\*1\.50\)/);
   assert.match(sql, /specialization_name in/);
-  assert.doesNotMatch(sql, /'نکرومنسر'.*?1\.08/s);
+  assert.doesNotMatch(sql, /'نکرومنسر'.*?1\.50/s);
 });
 
 test('solo combat keeps a phase lock and adds a visible pause before enemy response', () => {

@@ -553,7 +553,7 @@ async function startSession(session){
       window.ETRANOM_USE_ARCANE_ASCENDED_SKILL = progress => ({ok:false,reason:'module_unavailable',progress:progress||{}});
       window.ETRANOM_END_ARCANE_DOMAIN = progress => progress||{};
     }
-    await import('./game.js?v=1648');
+    await import('./game.js?v=1649');
     const gameRunner=window.run;
     if(typeof gameRunner!=='function')throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
     await gameRunner('play');
