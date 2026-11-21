@@ -1,0 +1,7 @@
+[
+  {"id":"emberwound_sting","name":"نیش خاکستر","unlock_level":1,"type":"debuff","description":"حمله نیش‌دار که آسیب مستقیم وارد می‌کند و اثر سوزش کوتاه‌مدت بر جای می‌گذارد.","effects":{"damage_multiplier":1.0,"burn_chance":0.25,"burn_rounds":2,"burn_damage":2},"version":1},
+  {"id":"ashen_ambush","name":"کمین خاکستر","unlock_level":1,"type":"attack","description":"موجود برای لحظه‌ای در دود پنهان می‌شود و با ضربه‌ای ناگهانی حمله می‌کند.","effects":{"damage_multiplier":1.35,"accuracy_bonus":12,"cooldown_rounds":3},"version":1},
+  {"id":"warden_root_slam","name":"کوبش ریشه‌ای","unlock_level":1,"type":"attack","description":"ریشه‌سالار با توده ریشه‌های خود ضربه‌ای سنگین وارد می‌کند.","effects":{"damage_multiplier":1.5,"cooldown_rounds":2},"version":1},
+  {"id":"warden_entangling_roots","name":"ریشه‌های گرفتارکننده","unlock_level":1,"type":"control","description":"ریشه‌سالار ریشه‌هایی را از زمین بیرون می‌کشد و حرکت هدف را برای یک دور مختل می‌کند.","effects":{"damage_multiplier":0.65,"slow_rounds":1,"cooldown_rounds":3},"version":1},
+  {"id":"warden_ember_core","name":"تپش هسته اخگر","unlock_level":1,"type":"buff","description":"در مرحله پایانی نبرد، هسته داغ ریشه‌سالار قدرت ضرباتش را افزایش می‌دهد.","effects":{"attack_bonus_percent":20,"duration_rounds":2,"trigger_hp_percent":25},"version":1}
+]
