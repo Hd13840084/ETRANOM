@@ -1,0 +1,89 @@
+{
+  "id": "assassin_2",
+  "class_id": "assassin",
+  "class_name_fa": "آدمکش",
+  "name_fa": "قاتل حرفه‌ای",
+  "role_fa": "متخصص حذف سریع و حساب‌شده هدف",
+  "identity": {
+    "combat_fantasy": "متخصص حذف سریع و حساب‌شده هدف",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "assassin_2_strike",
+      "name": "قاتل حرفه‌ای: برش سایه",
+      "name_fa": "قاتل حرفه‌ای: برش سایه",
+      "type": "single_damage",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص قاتل حرفه‌ای؛ متخصص حذف سریع و حساب‌شده هدف. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 165,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "assassin_2_guard",
+      "name": "قاتل حرفه‌ای: زهر خاموش برتر",
+      "name_fa": "قاتل حرفه‌ای: زهر خاموش برتر",
+      "type": "debuff",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص قاتل حرفه‌ای؛ متخصص حذف سریع و حساب‌شده هدف. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "attackReductionPct": 21,
+      "defenseReductionPct": 12,
+      "dotPct": 0
+    },
+    {
+      "id": "assassin_2_wave",
+      "name": "قاتل حرفه‌ای: لغزش بی‌صدا پیشرفته",
+      "name_fa": "قاتل حرفه‌ای: لغزش بی‌صدا پیشرفته",
+      "type": "evasion_counter",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص قاتل حرفه‌ای؛ متخصص حذف سریع و حساب‌شده هدف. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "effects": {
+        "attackPct": 17,
+        "defensePct": 11,
+        "speedPct": 5
+      }
+    },
+    {
+      "id": "assassin_2_stance",
+      "name": "قاتل حرفه‌ای: مکیدن جوهر والا",
+      "name_fa": "قاتل حرفه‌ای: مکیدن جوهر والا",
+      "type": "damage_heal",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص قاتل حرفه‌ای؛ متخصص حذف سریع و حساب‌شده هدف. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 144,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "assassin_2_ultimate",
+      "name": "قاتل حرفه‌ای: اعدام از تاریکی اساطیری",
+      "name_fa": "قاتل حرفه‌ای: اعدام از تاریکی اساطیری",
+      "type": "single_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص قاتل حرفه‌ای؛ متخصص حذف سریع و حساب‌شده هدف. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 257,
+      "scalingStat": "attack"
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}
