@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import { NECROMANCER, createNecromancerProgress, recruitNecromancerLegion, activateNecromancerDomain, consumeNecromancerAscendedSkill, endNecromancerDomain } from '../../systems/classes/necromancer.js';
+assert.equal(NECROMANCER.skills.length,10);
+assert.equal(NECROMANCER.skills.reduce((n,s)=>n+s.upgrades.length,0),60);
+assert.equal(NECROMANCER.talents.length,32);
+assert.equal(NECROMANCER.talentBranches.length,4);
+assert.ok(NECROMANCER.talentBranches.every(b=>b.talentIds.length===8));
+assert.equal(NECROMANCER.ascendedSkills.length,10);
+assert.equal(new Set(NECROMANCER.ascendedSkills.map(s=>s.name)).size,10);
+let p=createNecromancerProgress();
+assert.equal(NECROMANCER.combatRules.legionCapacity,10);
+assert.equal(NECROMANCER.combatRules.activeLegionCapacity,3);
+assert.equal(NECROMANCER.legionSystem.maxMembers,10);
+assert.equal(NECROMANCER.legionSystem.activeMembers,3);
+let r;
+for(let i=0;i<10;i++){r=recruitNecromancerLegion(p,{id:`mob${i+1}`,speciesId:`beast${i}`,hp:40,maxHp:40},0);assert.equal(r.ok,true);p=r.progress;}
+assert.equal(p.legion.length,10);
+assert.equal(p.activeLegionIds.length,3);
+r=recruitNecromancerLegion(p,{id:'eleventh',speciesId:'eleventh',hp:40,maxHp:40},0);assert.equal(r.reason,'legion_full');assert.equal(r.corpseConsumed,false);
+r=activateNecromancerDomain(p,25);assert.equal(r.ok,true);p=r.progress;assert.ok(p.legion.every(m=>m.deathForm?.active));
+r=consumeNecromancerAscendedSkill(p,NECROMANCER.ascendedSkills[1].id);assert.equal(r.ok,true);p=r.progress;
+r=consumeNecromancerAscendedSkill(p,NECROMANCER.ascendedSkills[0].id);assert.equal(r.reason,'ascended_skill_already_used');
+p=endNecromancerDomain(p);assert.ok(p.legion.every(m=>m.deathForm===null));
+console.log('Necromancer specialization data tests passed.');
