@@ -1,0 +1,250 @@
+[
+  {
+    "id": "dungeon_thorn",
+    "name": "دانجن بیشه خارزار",
+    "region_id": "thorn_grove",
+    "entry_subarea_id": "thorn_grove_core",
+    "wave_count": 6,
+    "normal_waves": 5,
+    "boss_wave": 6,
+    "pool_region_ids": [
+      "thorn_grove"
+    ],
+    "level_weights": [
+      {
+        "level": 2,
+        "weight": 100
+      }
+    ],
+    "enemy_count": {
+      "guaranteed": 1,
+      "second_enemy_chance_percent": 35
+    },
+    "events_after_wave": {
+      "treasure_chance_percent": [
+        8,
+        12,
+        18,
+        25,
+        32,
+        55
+      ],
+      "trap_chance_percent": [
+        10,
+        15,
+        20,
+        25,
+        30,
+        0
+      ],
+      "trap_type_weights": [
+        [
+          0.5,
+          0.3,
+          0.2
+        ],
+        [
+          0.4,
+          0.25,
+          0.35
+        ],
+        [
+          0.3,
+          0.3,
+          0.4
+        ]
+      ]
+    },
+    "treasure_types": [
+      "recipe",
+      "gold",
+      "same_dungeon_materials_4_to_6"
+    ],
+    "boss": {
+      "id": "dungeon_boss_dungeon_thorn",
+      "name": "فرمانروای ریشه‌های تباه",
+      "level": 2,
+      "hp": 4200,
+      "mp": 700,
+      "attack": 34,
+      "defense": 24,
+      "skills": [
+        "ریشه‌های مرگبار",
+        "فریاد وحشت",
+        "طوفان خارها",
+        "احضار ریشه‌های نفرین‌شده"
+      ],
+      "portrait": "assets/monsters/dungeon_thorn_lord.webp",
+      "material_ids": [
+        "bramble_heart",
+        "thorn_matriarch_blood",
+        "barbed_crown"
+      ]
+    },
+    "failure": {
+      "flee_or_death_resets_entire_run": true,
+      "restore_entry_snapshot": true,
+      "death_xp_penalty_percent": 5,
+      "death_gold_penalty_percent": 5
+    },
+    "version": 2,
+    "recipe_distribution": {
+      "total_recipe_count": 20,
+      "treasure_recipe_ids": [
+        "recipe_0_0_1",
+        "recipe_1_0_0",
+        "recipe_2_11_1",
+        "recipe_3_11_0",
+        "recipe_4_10_1",
+        "recipe_5_10_0",
+        "recipe_6_0_1",
+        "recipe_7_0_0",
+        "recipe_8_11_1",
+        "recipe_9_11_0"
+      ],
+      "boss_recipe_ids": [
+        "recipe_0_12_1",
+        "recipe_1_12_0",
+        "recipe_2_2_1",
+        "recipe_3_2_0",
+        "recipe_4_1_1",
+        "recipe_5_1_0",
+        "recipe_6_12_1",
+        "recipe_7_12_0",
+        "recipe_8_2_1",
+        "recipe_9_2_0"
+      ],
+      "rule_fa": "دستورهای این دانجن فقط از گنجینه‌های همین دانجن یا باس نهایی همین دانجن می‌افتند؛ مواد لازم همگی از محدوده اصلی همین دانجن جمع می‌شوند."
+    },
+    "balance_version": 1653
+  },
+  {
+    "id": "dungeon_south",
+    "name": "گذرگاه مقبره‌های آفتاب",
+    "region_id": "southern_plains",
+    "entry_subarea_id": "southern_plains_core",
+    "wave_count": 6,
+    "normal_waves": 5,
+    "boss_wave": 6,
+    "pool_region_ids": [
+      "vardash_river",
+      "southern_plains",
+      "rootbound_ruins"
+    ],
+    "level_weights": [
+      {
+        "level": 3,
+        "weight": 100
+      },
+      {
+        "level": 4,
+        "weight": 65
+      },
+      {
+        "level": 5,
+        "weight": 35
+      }
+    ],
+    "enemy_count": {
+      "guaranteed": 1,
+      "second_enemy_chance_percent": 35
+    },
+    "events_after_wave": {
+      "treasure_chance_percent": [
+        10,
+        15,
+        22,
+        30,
+        40,
+        65
+      ],
+      "trap_chance_percent": [
+        12,
+        18,
+        22,
+        28,
+        32,
+        0
+      ],
+      "trap_type_weights": [
+        [
+          0.4,
+          0.4,
+          0.2
+        ],
+        [
+          0.25,
+          0.45,
+          0.3
+        ],
+        [
+          0.3,
+          0.3,
+          0.4
+        ]
+      ]
+    },
+    "treasure_types": [
+      "recipe",
+      "gold",
+      "same_dungeon_materials_4_to_6"
+    ],
+    "boss": {
+      "id": "dungeon_boss_dungeon_south",
+      "name": "شاه‌دندانِ شن‌خفته",
+      "level": 5,
+      "hp": 7800,
+      "mp": 1500,
+      "attack": 44,
+      "defense": 32,
+      "skills": [
+        "غرش شکافنده شن",
+        "یورش چنگال‌های آذرین",
+        "طوفان خرده‌سنگ",
+        "بلعیدن نیروی حیات"
+      ],
+      "portrait": "assets/monsters/dungeon_south_sovereign.webp",
+      "material_ids": [
+        "yellowfang_claw",
+        "plains_alpha_bone",
+        "savanna_heart"
+      ]
+    },
+    "failure": {
+      "flee_or_death_resets_entire_run": true,
+      "restore_entry_snapshot": true,
+      "death_xp_penalty_percent": 5,
+      "death_gold_penalty_percent": 5
+    },
+    "version": 2,
+    "recipe_distribution": {
+      "total_recipe_count": 20,
+      "treasure_recipe_ids": [
+        "recipe_0_11_0",
+        "recipe_1_10_1",
+        "recipe_2_10_0",
+        "recipe_3_0_1",
+        "recipe_4_0_0",
+        "recipe_5_11_1",
+        "recipe_6_11_0",
+        "recipe_7_10_1",
+        "recipe_8_10_0",
+        "recipe_9_0_1"
+      ],
+      "boss_recipe_ids": [
+        "recipe_0_2_0",
+        "recipe_1_1_1",
+        "recipe_2_1_0",
+        "recipe_3_12_1",
+        "recipe_4_12_0",
+        "recipe_5_2_1",
+        "recipe_6_2_0",
+        "recipe_7_1_1",
+        "recipe_8_1_0",
+        "recipe_9_12_1"
+      ],
+      "rule_fa": "دستورهای این دانجن فقط از گنجینه‌های همین دانجن یا باس نهایی همین دانجن می‌افتند؛ مواد لازم همگی از محدوده اصلی همین دانجن جمع می‌شوند."
+    },
+    "balance_version": 1653
+  }
+]
