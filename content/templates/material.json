@@ -1,0 +1,8 @@
+{
+  "id": "wolf_hide",
+  "name": "پوست گرگ",
+  "source_ids": ["ashen_wolf"],
+  "tier": 1,
+  "category": "crafting",
+  "version": 1
+}

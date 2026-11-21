@@ -1,0 +1,90 @@
+{
+  "id": "wizard_3",
+  "class_id": "wizard",
+  "class_name_fa": "جادوگر",
+  "name_fa": "وارلاک",
+  "role_fa": "وارث پیمان‌های ممنوع؛ قرارداد، بدهی، خلأ و قربانی",
+  "identity": {
+    "combat_fantasy": "مدیریت قراردادهای خطرناک، دست‌کاری قوانین نبرد و تبدیل بهای پیمان به قدرت",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "مانا، اعتبار پیمان و بدهی پیمان"
+  },
+  "skills": [
+    {
+      "id": "wizard_3_strike",
+      "name": "وارلاک: پرتاب نیروی راز",
+      "name_fa": "وارلاک: پرتاب نیروی راز",
+      "type": "single_damage",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص وارلاک؛ وارث پیمان‌های ممنوع؛ قرارداد، بدهی، خلأ و قربانی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 165,
+      "scalingStat": "magicPower"
+    },
+    {
+      "id": "wizard_3_guard",
+      "name": "وارلاک: پرده جادویی برتر",
+      "name_fa": "وارلاک: پرده جادویی برتر",
+      "type": "shield",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص وارلاک؛ وارث پیمان‌های ممنوع؛ قرارداد، بدهی، خلأ و قربانی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "shieldPct": 153,
+      "damageReductionPct": 10
+    },
+    {
+      "id": "wizard_3_wave",
+      "name": "وارلاک: موج فروپاشی پیشرفته",
+      "name_fa": "وارلاک: موج فروپاشی پیشرفته",
+      "type": "all_control_damage",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص وارلاک؛ وارث پیمان‌های ممنوع؛ قرارداد، بدهی، خلأ و قربانی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 126,
+      "scalingStat": "magicPower",
+      "attackReductionPct": 24,
+      "defenseReductionPct": 14,
+      "dotPct": 10
+    },
+    {
+      "id": "wizard_3_stance",
+      "name": "وارلاک: نشان تضعیف والا",
+      "name_fa": "وارلاک: نشان تضعیف والا",
+      "type": "debuff",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص وارلاک؛ وارث پیمان‌های ممنوع؛ قرارداد، بدهی، خلأ و قربانی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "attackReductionPct": 27,
+      "defenseReductionPct": 16,
+      "dotPct": 0
+    },
+    {
+      "id": "wizard_3_ultimate",
+      "name": "وارلاک: تکینگی نهایی اساطیری",
+      "name_fa": "وارلاک: تکینگی نهایی اساطیری",
+      "type": "ultimate_all_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص وارلاک؛ وارث پیمان‌های ممنوع؛ قرارداد، بدهی، خلأ و قربانی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 237,
+      "scalingStat": "magicPower"
+    }
+  ],
+  "talents": 32,
+  "domain": "محکمه آن‌سوی آفرینش",
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2,
+  "data_module": "systems/classes/warlock.js",
+  "ascended_skill_rule": "با فعال‌سازی قلمرو از سطح ۲۵، هر ۱۰ مهارت تعالی‌یافته با نام متفاوت در دسترس است؛ فقط یک مهارت از مجموع ۱۰ مهارت، یک بار در هر فعال‌سازی قابل اجراست."
+}

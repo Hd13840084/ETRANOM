@@ -1,0 +1,209 @@
+[
+  {
+    "id": "thorn_grove_barbed_dive",
+    "name": "یورش خارپوش",
+    "unlock_level": 2,
+    "type": "attack",
+    "description": "موجود با جهشی سریع و ضربه‌ای برنده حمله می‌کند.",
+    "effects": {
+      "damage_multiplier": 1.55,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "thorn_grove_spore_cloud",
+    "name": "ابر هاگ سمی",
+    "unlock_level": 2,
+    "type": "debuff",
+    "description": "ابر هاگ، آسیب می‌زند و دقت هدف را برای یک دور کاهش می‌دهد.",
+    "effects": {
+      "damage_multiplier": 1.2,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "ash_hills_cinder_burst",
+    "name": "انفجار اخگر",
+    "unlock_level": 3,
+    "type": "attack",
+    "description": "انفجار سنگستر با قدرت جادویی به هدف برخورد می‌کند.",
+    "effects": {
+      "damage_multiplier": 1.65,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "ash_hills_stone_skin",
+    "name": "پوست سنگی",
+    "unlock_level": 3,
+    "type": "buff",
+    "description": "پوسته سنگی دفاع موجود را برای دو دور افزایش می‌دهد.",
+    "effects": {
+      "damage_multiplier": 1,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "vardash_river_current_lash",
+    "name": "شلاق جریان",
+    "unlock_level": 4,
+    "type": "attack",
+    "description": "جریان فشرده آب با ضربه‌ای سنگین هدف را می‌کوبد.",
+    "effects": {
+      "damage_multiplier": 1.6,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "vardash_river_depth_call",
+    "name": "ندای ژرفاب",
+    "unlock_level": 4,
+    "type": "debuff",
+    "description": "موجود نیروی ژرفاب را فرا می‌خواند و هدف را کند می‌کند.",
+    "effects": {
+      "damage_multiplier": 1.25,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "southern_plains_blood_rush",
+    "name": "یورش خونین",
+    "unlock_level": 5,
+    "type": "attack",
+    "description": "با تمام نیرو به هدف هجوم می‌برد و ضربه‌ای شدید وارد می‌کند.",
+    "effects": {
+      "damage_multiplier": 1.7,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "southern_plains_sunfire_roar",
+    "name": "غرش آفتاب",
+    "unlock_level": 5,
+    "type": "attack",
+    "description": "غرشی آکنده از گرما موجی از انرژی به هدف می‌فرستد.",
+    "effects": {
+      "damage_multiplier": 1.65,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "rootbound_ruins_rune_web",
+    "name": "تار رون‌نوشته",
+    "unlock_level": 5,
+    "type": "debuff",
+    "description": "تارهای جادویی هدف را گرفتار و حرکتش را مختل می‌کنند.",
+    "effects": {
+      "damage_multiplier": 1.35,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "rootbound_ruins_ancient_pulse",
+    "name": "تپش باستانی",
+    "unlock_level": 5,
+    "type": "attack",
+    "description": "انرژی کتیبه‌های کهن با ضربه‌ای جادویی آزاد می‌شود.",
+    "effects": {
+      "damage_multiplier": 1.8,
+      "mp_cost": 12,
+      "cooldown_rounds": 2
+    },
+    "version": 1
+  },
+  {
+    "id": "ashen_ambush",
+    "name": "ashen ambush",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "emberwound_sting",
+    "name": "emberwound sting",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "warden_root_slam",
+    "name": "warden root slam",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "warden_entangling_roots",
+    "name": "warden entangling roots",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "warden_ember_core",
+    "name": "warden ember core",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "heavy_strike",
+    "name": "heavy strike",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "area_slam",
+    "name": "area slam",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "guardian_fury",
+    "name": "guardian fury",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "root_wave",
+    "name": "root wave",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "rune_break",
+    "name": "rune break",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  },
+  {
+    "id": "ancient_collapse",
+    "name": "ancient collapse",
+    "unlock_level": 1,
+    "type": "monster_active",
+    "description": "مهارت فعال اختصاصی موجودات منطقه اول یا برج باستانی."
+  }
+]
