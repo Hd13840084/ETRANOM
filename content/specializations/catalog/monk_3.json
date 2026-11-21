@@ -1,0 +1,91 @@
+{
+  "id": "monk_3",
+  "class_id": "monk",
+  "class_name_fa": "راهب",
+  "name_fa": "راهب اهریمنی",
+  "role_fa": "راهبی با نیروی ممنوع و وجه اهریمنی",
+  "identity": {
+    "combat_fantasy": "راهبی با نیروی ممنوع و وجه اهریمنی",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "monk_3_strike",
+      "name": "راهب اهریمنی: مشت زنجیره‌ای",
+      "name_fa": "راهب اهریمنی: مشت زنجیره‌ای",
+      "type": "single_damage",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص راهب اهریمنی؛ راهبی با نیروی ممنوع و وجه اهریمنی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 140,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "monk_3_guard",
+      "name": "راهب اهریمنی: تنفس رزمی برتر",
+      "name_fa": "راهب اهریمنی: تنفس رزمی برتر",
+      "type": "evasion_counter",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص راهب اهریمنی؛ راهبی با نیروی ممنوع و وجه اهریمنی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "effects": {
+        "attackPct": 14,
+        "defensePct": 9,
+        "speedPct": 5
+      }
+    },
+    {
+      "id": "monk_3_wave",
+      "name": "راهب اهریمنی: تمرکز درونی پیشرفته",
+      "name_fa": "راهب اهریمنی: تمرکز درونی پیشرفته",
+      "type": "self_heal",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص راهب اهریمنی؛ راهبی با نیروی ممنوع و وجه اهریمنی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "healPct": 105,
+      "target": "self"
+    },
+    {
+      "id": "monk_3_stance",
+      "name": "راهب اهریمنی: جریان چی والا",
+      "name_fa": "راهب اهریمنی: جریان چی والا",
+      "type": "self_buff",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص راهب اهریمنی؛ راهبی با نیروی ممنوع و وجه اهریمنی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "effects": {
+        "attackPct": 20,
+        "defensePct": 13,
+        "speedPct": 5
+      }
+    },
+    {
+      "id": "monk_3_ultimate",
+      "name": "راهب اهریمنی: طوفان مشت‌ها اساطیری",
+      "name_fa": "راهب اهریمنی: طوفان مشت‌ها اساطیری",
+      "type": "multi_target_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص راهب اهریمنی؛ راهبی با نیروی ممنوع و وجه اهریمنی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 187,
+      "scalingStat": "attack"
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}
