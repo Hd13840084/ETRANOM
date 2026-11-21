@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const source=fs.readFileSync(new URL('../game.js',import.meta.url),'utf8');
+const expected=[['معمولی','غیرمعمول'],['معمولی','غیرمعمول','کمیاب'],['غیرمعمول','کمیاب','حماسی'],['کمیاب','حماسی','افسانه‌ای'],['حماسی','افسانه‌ای'],['افسانه‌ای','اسطوره‌ای']];
+for(const tier of expected) for(const rarity of tier) assert.ok(source.includes(`"${rarity}"`),`missing rarity ${rarity}`);
+assert.match(source,/const zoneRarityBands=?\[\[0,1\],\[0,1,2\],\[1,2,3\],\[2,3,4\],\[3,4\],\[4,5\]\]/);
+assert.match(source,/def\.regionId==="rootbound_ruins"[\s\S]*?Math\.random\(\)<0\.02/,'mythic recipe must be final-zone boss only at 2%');
+assert.match(source,/state\.messages\.slice\(-1\)/,'battle report must show one latest event');
+assert.match(source,/\.etr-battle-card\.player \.battle-meter\{height:6px!important;margin:2px 0 3px!important\}/,'player bars must be compact with a visible gap');
+assert.match(source,/\.etr-battle-screen\{padding:7px 9px!important;margin:4px auto!important/,'battle viewport compact rules missing');
+console.log('PASS: zone rarity ladder, final boss mythic gate, compact battle report and player-bar spacing.');

@@ -1,0 +1,89 @@
+{
+  "id": "ranger_2",
+  "class_id": "ranger",
+  "class_name_fa": "رنجر",
+  "name_fa": "تیرانداز طبیعت",
+  "role_fa": "تیرانداز پیوندخورده با طبیعت",
+  "identity": {
+    "combat_fantasy": "تیرانداز پیوندخورده با طبیعت",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "ranger_2_strike",
+      "name": "تیرانداز طبیعت: تیر شکار",
+      "name_fa": "تیرانداز طبیعت: تیر شکار",
+      "type": "single_damage",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیرانداز طبیعت؛ تیرانداز پیوندخورده با طبیعت. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 145,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "ranger_2_guard",
+      "name": "تیرانداز طبیعت: دام ریشه‌ای برتر",
+      "name_fa": "تیرانداز طبیعت: دام ریشه‌ای برتر",
+      "type": "control",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیرانداز طبیعت؛ تیرانداز پیوندخورده با طبیعت. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "attackReductionPct": 21,
+      "defenseReductionPct": 12,
+      "dotPct": 0
+    },
+    {
+      "id": "ranger_2_wave",
+      "name": "تیرانداز طبیعت: رگبار جنگلی پیشرفته",
+      "name_fa": "تیرانداز طبیعت: رگبار جنگلی پیشرفته",
+      "type": "multi_target_damage",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیرانداز طبیعت؛ تیرانداز پیوندخورده با طبیعت. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 106,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "ranger_2_stance",
+      "name": "تیرانداز طبیعت: تمرکز شکارچی والا",
+      "name_fa": "تیرانداز طبیعت: تمرکز شکارچی والا",
+      "type": "self_buff",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیرانداز طبیعت؛ تیرانداز پیوندخورده با طبیعت. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "effects": {
+        "attackPct": 20,
+        "defensePct": 13,
+        "speedPct": 5
+      }
+    },
+    {
+      "id": "ranger_2_ultimate",
+      "name": "تیرانداز طبیعت: بارش تیرها اساطیری",
+      "name_fa": "تیرانداز طبیعت: بارش تیرها اساطیری",
+      "type": "all_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیرانداز طبیعت؛ تیرانداز پیوندخورده با طبیعت. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 187,
+      "scalingStat": "attack"
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}

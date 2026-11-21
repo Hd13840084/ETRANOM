@@ -1,0 +1,1471 @@
+{
+  "schemaVersion": 1,
+  "id": "warrior_iron_bastion",
+  "classId": "warrior",
+  "className": "جنگجو",
+  "specialization": "دژ پولادین",
+  "specializationEn": "Iron Bastion",
+  "status": "design_complete_pending_runtime_integration",
+  "identity": {
+    "title": "دژ تخریب‌ناپذیر",
+    "philosophy": "وقتی صف‌ها می‌شکنند، او می‌ایستد؛ وقتی دشمن پشت زره پنهان می‌شود، تبرش راه را باز می‌کند.",
+    "role": "جنگجوی زره‌سنگین با تبر غول‌پیکر دوسر؛ کند اما سخت‌جان و کوبنده.",
+    "resource": "استقامت",
+    "signatureWeapon": "تبر غول‌پیکر دوسر"
+  },
+  "skills": [
+    {
+      "id": "ironcleave",
+      "name": "شکافت پولاد",
+      "en": "Ironcleave",
+      "unlockLevel": 1,
+      "type": "single_damage",
+      "target": "یک دشمن",
+      "resource": "استقامت",
+      "staminaCost": 6,
+      "cooldownTurns": 0,
+      "powerPct": 175,
+      "description": "ضربه سنگین تبر که بخشی از زره هدف را می‌شکافد.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: قدرت پایه مهارت به‌اندازه 7 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 7
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: قدرت پایه مهارت به‌اندازه 8 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 8
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: قدرت پایه مهارت به‌اندازه 9 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 9
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: قدرت پایه مهارت به‌اندازه 10 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 10
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: قدرت پایه مهارت به‌اندازه 11 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 11
+          }
+        }
+      ],
+      "effects": {
+        "armorPenPct": 12
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    },
+    {
+      "id": "unyielding_wall",
+      "name": "دیوار تسلیم‌ناپذیر",
+      "en": "Unyielding Wall",
+      "unlockLevel": 2,
+      "type": "self_guard",
+      "target": "خود",
+      "resource": "استقامت",
+      "staminaCost": 7,
+      "cooldownTurns": 2,
+      "powerPct": 0,
+      "description": "گارد سنگین؛ آسیب دریافتی را برای دو نوبت کاهش می‌دهد.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: اثر damageReductionPct به‌اندازه 2 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damageReductionPct": 2
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: اثر damageReductionPct به‌اندازه 2 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damageReductionPct": 2
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: اثر damageReductionPct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damageReductionPct": 3
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: اثر damageReductionPct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damageReductionPct": 3
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: اثر damageReductionPct به‌اندازه 4 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damageReductionPct": 4
+          }
+        }
+      ],
+      "effects": {
+        "damageReductionPct": 22,
+        "durationTurns": 2
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    },
+    {
+      "id": "quake_of_iron",
+      "name": "زلزله آهن",
+      "en": "Quake of Iron",
+      "unlockLevel": 3,
+      "type": "multi_target_damage",
+      "target": "همه دشمنان",
+      "resource": "استقامت",
+      "staminaCost": 10,
+      "cooldownTurns": 3,
+      "powerPct": 125,
+      "description": "کوبیدن تبر به زمین و واردکردن آسیب به همه دشمنان؛ احتمال کاهش سرعت آنان.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: قدرت پایه مهارت به‌اندازه 6 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 6
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: قدرت پایه مهارت به‌اندازه 7 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 7
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: قدرت پایه مهارت به‌اندازه 8 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 8
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: قدرت پایه مهارت به‌اندازه 9 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 9
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: قدرت پایه مهارت به‌اندازه 10 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 10
+          }
+        }
+      ],
+      "effects": {
+        "slowPct": 12,
+        "durationTurns": 1
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    },
+    {
+      "id": "fortress_stance",
+      "name": "حالت دژ",
+      "en": "Fortress Stance",
+      "unlockLevel": 4,
+      "type": "self_buff",
+      "target": "خود",
+      "resource": "استقامت",
+      "staminaCost": 9,
+      "cooldownTurns": 3,
+      "powerPct": 0,
+      "description": "استقرار دفاعی؛ دفاع و مقاومت در برابر کنترل را افزایش می‌دهد اما سرعت را کاهش می‌دهد.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: اثر defensePct به‌اندازه 2 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "defensePct": 2
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: اثر defensePct به‌اندازه 2 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "defensePct": 2
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: اثر defensePct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "defensePct": 3
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: اثر defensePct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "defensePct": 3
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: اثر defensePct به‌اندازه 4 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "defensePct": 4
+          }
+        }
+      ],
+      "effects": {
+        "defensePct": 24,
+        "controlResistPct": 20,
+        "speedPct": -10,
+        "durationTurns": 3
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    },
+    {
+      "id": "breaker_slam",
+      "name": "فرود درهم‌شکن",
+      "en": "Breaker Slam",
+      "unlockLevel": 5,
+      "type": "single_damage",
+      "target": "یک دشمن",
+      "resource": "استقامت",
+      "staminaCost": 12,
+      "cooldownTurns": 3,
+      "powerPct": 235,
+      "description": "ضربه عمودی تبر؛ آسیب بیشتر به دشمنان دارای سپر یا زره.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: قدرت پایه مهارت به‌اندازه 8 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 8
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: قدرت پایه مهارت به‌اندازه 9 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 9
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: قدرت پایه مهارت به‌اندازه 10 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 10
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: قدرت پایه مهارت به‌اندازه 11 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 11
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: قدرت پایه مهارت به‌اندازه 12 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 12
+          }
+        }
+      ],
+      "effects": {
+        "bonusVsArmoredPct": 25
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    },
+    {
+      "id": "iron_reprisal",
+      "name": "پاسخ آهنین",
+      "en": "Iron Reprisal",
+      "unlockLevel": 6,
+      "type": "counter",
+      "target": "خود",
+      "resource": "استقامت",
+      "staminaCost": 11,
+      "cooldownTurns": 3,
+      "powerPct": 0,
+      "description": "تا نوبت بعد بخشی از آسیب دریافتی را بازمی‌گرداند و گارد را حفظ می‌کند.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: اثر reflectPct به‌اندازه 2 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "reflectPct": 2
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: اثر reflectPct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "reflectPct": 3
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: اثر reflectPct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "reflectPct": 3
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: اثر reflectPct به‌اندازه 4 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "reflectPct": 4
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: اثر reflectPct به‌اندازه 5 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "reflectPct": 5
+          }
+        }
+      ],
+      "effects": {
+        "reflectPct": 30,
+        "durationTurns": 1
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    },
+    {
+      "id": "marching_bastion",
+      "name": "پیشروی دژ",
+      "en": "Marching Bastion",
+      "unlockLevel": 7,
+      "type": "team_guard",
+      "target": "هم‌تیمی‌ها",
+      "resource": "استقامت",
+      "staminaCost": 14,
+      "cooldownTurns": 4,
+      "powerPct": 0,
+      "description": "با پیشروی سنگین، از خود و یاران نزدیک محافظت می‌کند.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: اثر allyDamageReductionPct به‌اندازه 1 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "allyDamageReductionPct": 1
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: اثر allyDamageReductionPct به‌اندازه 2 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "allyDamageReductionPct": 2
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: اثر allyDamageReductionPct به‌اندازه 2 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "allyDamageReductionPct": 2
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: اثر allyDamageReductionPct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "allyDamageReductionPct": 3
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: اثر allyDamageReductionPct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "allyDamageReductionPct": 3
+          }
+        }
+      ],
+      "effects": {
+        "allyDamageReductionPct": 14,
+        "durationTurns": 2
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    },
+    {
+      "id": "shatterguard",
+      "name": "خردکننده گارد",
+      "en": "Shatterguard",
+      "unlockLevel": 8,
+      "type": "single_damage_debuff",
+      "target": "یک دشمن",
+      "resource": "استقامت",
+      "staminaCost": 15,
+      "cooldownTurns": 4,
+      "powerPct": 205,
+      "description": "ضربه‌ای برای شکستن گارد؛ دفاع هدف را برای چند نوبت کاهش می‌دهد.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: قدرت پایه مهارت به‌اندازه 7 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 7
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: قدرت پایه مهارت به‌اندازه 8 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 8
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: قدرت پایه مهارت به‌اندازه 9 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 9
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: قدرت پایه مهارت به‌اندازه 10 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 10
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: قدرت پایه مهارت به‌اندازه 11 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 11
+          }
+        }
+      ],
+      "effects": {
+        "defenseBreakPct": 18,
+        "durationTurns": 2
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    },
+    {
+      "id": "colossus_rage",
+      "name": "خشم غول‌آسا",
+      "en": "Colossus Rage",
+      "unlockLevel": 9,
+      "type": "self_buff",
+      "target": "خود",
+      "resource": "استقامت",
+      "staminaCost": 18,
+      "cooldownTurns": 5,
+      "powerPct": 0,
+      "description": "خشم مهارشده دژ؛ قدرت ضربه و پایداری را بالا می‌برد، اما سرعت را کم می‌کند.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: اثر attackPct به‌اندازه 2 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "attackPct": 2
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: اثر attackPct به‌اندازه 2 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "attackPct": 2
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: اثر attackPct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "attackPct": 3
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: اثر attackPct به‌اندازه 3 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "attackPct": 3
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: اثر attackPct به‌اندازه 4 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "attackPct": 4
+          }
+        }
+      ],
+      "effects": {
+        "attackPct": 22,
+        "defensePct": 12,
+        "speedPct": -8,
+        "durationTurns": 3
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    },
+    {
+      "id": "last_bastion",
+      "name": "آخرین سنگر",
+      "en": "Last Bastion",
+      "unlockLevel": 10,
+      "type": "ultimate_aoe",
+      "target": "همه دشمنان",
+      "resource": "استقامت",
+      "staminaCost": 28,
+      "cooldownTurns": 7,
+      "powerPct": 390,
+      "description": "ضربه نهایی تبر غول‌پیکر؛ آسیب سنگین به همه دشمنان و ایجاد سپر موقت بر پایه دشمنان آسیب‌دیده.",
+      "upgrades": [
+        {
+          "rank": 2,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 2: قدرت پایه مهارت به‌اندازه 12 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 12
+          }
+        },
+        {
+          "rank": 3,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 3: قدرت پایه مهارت به‌اندازه 14 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 14
+          }
+        },
+        {
+          "rank": 4,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 4: قدرت پایه مهارت به‌اندازه 16 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 16
+          }
+        },
+        {
+          "rank": 5,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 5: قدرت پایه مهارت به‌اندازه 18 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 18
+          }
+        },
+        {
+          "rank": 6,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه 6: قدرت پایه مهارت به‌اندازه 20 واحد درصد افزایش می‌یابد.",
+          "modifier": {
+            "damagePct": 20
+          }
+        }
+      ],
+      "effects": {
+        "shieldPerTargetPct": 8,
+        "maxShieldPct": 24
+      },
+      "rankOne": true,
+      "rankCurrency": "skillPoints",
+      "rankCost": 1,
+      "maxRank": 6,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+    }
+  ],
+  "talentBranches": [
+    {
+      "id": "bulwark",
+      "name": "سنگر پولادین",
+      "focus": "تمرکز بر دفاع، سپر و کاهش آسیب",
+      "talents": [
+        {
+          "id": "tempered_plate",
+          "name": "صفحه آب‌دیده",
+          "description": "دفاع +۳٪",
+          "effect": {
+            "defensePct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "deep_stance",
+          "name": "ایستادگی عمیق",
+          "description": "کاهش آسیب دریافتی +۲٪",
+          "effect": {
+            "damageReductionPct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "unyielding_core",
+          "name": "هسته تسلیم‌ناپذیر",
+          "description": "مقاومت کنترل +۴٪",
+          "effect": {
+            "controlResistPct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "shield_reserve",
+          "name": "ذخیره سپر",
+          "description": "قدرت سپرها +۵٪",
+          "effect": {
+            "shieldPct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "fortified_breath",
+          "name": "نفس سنگر",
+          "description": "بازیابی استقامت +۲٪",
+          "effect": {
+            "staminaRegenPct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "iron_vigil",
+          "name": "نگهبانی آهنین",
+          "description": "دفاع هنگام گارد +۵٪",
+          "effect": {
+            "guardDefensePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "last_line",
+          "name": "خط آخر",
+          "description": "کاهش آسیب در HP زیر ۳۰٪، +۶٪",
+          "effect": {
+            "lowHpDamageReductionPct": 6
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "living_fortress",
+          "name": "دژ زنده",
+          "description": "دفاع +۸٪ و سرعت -۲٪",
+          "effect": {
+            "defensePct": 8,
+            "speedPct": -2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        }
+      ]
+    },
+    {
+      "id": "breaker",
+      "name": "درهم‌شکن زره",
+      "focus": "تمرکز بر تبر، آسیب سنگین و شکستن دفاع",
+      "talents": [
+        {
+          "id": "axe_mastery",
+          "name": "استادی تبر",
+          "description": "آسیب تبر +۳٪",
+          "effect": {
+            "axeDamagePct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "heavy_edge",
+          "name": "لبه سنگین",
+          "description": "قدرت ضربات سنگین +۴٪",
+          "effect": {
+            "heavyAttackPct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "armor_cracker",
+          "name": "زره‌شکاف",
+          "description": "نفوذ زره +۳٪",
+          "effect": {
+            "armorPenPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "staggering_force",
+          "name": "نیروی برهم‌زننده",
+          "description": "احتمال برهم‌زدن تعادل +۲٪",
+          "effect": {
+            "staggerChancePct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "execution_weight",
+          "name": "وزن اعدام",
+          "description": "آسیب به دشمن کم‌جان +۴٪",
+          "effect": {
+            "lowHpDamagePct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "quake_training",
+          "name": "آموزش زلزله",
+          "description": "آسیب ناحیه‌ای +۴٪",
+          "effect": {
+            "aoeDamagePct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "rending_arc",
+          "name": "قوس شکافنده",
+          "description": "آسیب ضربه شکافنده +۶٪",
+          "effect": {
+            "ironcleavePct": 6
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "colossus_hand",
+          "name": "دست غول",
+          "description": "قدرت حمله +۷٪ و سرعت -۲٪",
+          "effect": {
+            "attackPct": 7,
+            "speedPct": -2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        }
+      ]
+    },
+    {
+      "id": "war_march",
+      "name": "پیشروی جنگی",
+      "focus": "تمرکز بر حمایت از گروه و کنترل میدان",
+      "talents": [
+        {
+          "id": "steadfast_aura",
+          "name": "هاله پایداری",
+          "description": "دفاع هم‌تیمی‌ها +۲٪",
+          "effect": {
+            "allyDefensePct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "marching_order",
+          "name": "فرمان پیشروی",
+          "description": "کاهش آسیب یاران +۳٪",
+          "effect": {
+            "allyDamageReductionPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "anchor_presence",
+          "name": "حضور لنگر",
+          "description": "تهدید ایجادشده +۵٪",
+          "effect": {
+            "threatPct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "frontline_call",
+          "name": "ندای خط مقدم",
+          "description": "مقاومت کنترل یاران +۳٪",
+          "effect": {
+            "allyControlResistPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "shared_cover",
+          "name": "پناه مشترک",
+          "description": "قدرت محافظت گروهی +۴٪",
+          "effect": {
+            "teamGuardPct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "battle_rhythm",
+          "name": "ریتم نبرد",
+          "description": "هزینه مهارت‌های دفاعی -۲٪",
+          "effect": {
+            "guardCostReductionPct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "unyielding_advance",
+          "name": "پیشروی تسلیم‌ناپذیر",
+          "description": "مدت گارد گروهی +۱ نوبت",
+          "effect": {
+            "teamGuardDurationTurns": 1
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "banner_of_iron",
+          "name": "پرچم آهنین",
+          "description": "دفاع گروه +۵٪ برای شروع نبرد",
+          "effect": {
+            "openingTeamDefensePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        }
+      ]
+    },
+    {
+      "id": "titan_will",
+      "name": "اراده تایتان",
+      "focus": "تمرکز بر پایداری، ضدحمله و مهارت نهایی",
+      "talents": [
+        {
+          "id": "titan_blood",
+          "name": "خون تایتان",
+          "description": "سلامت +۳٪",
+          "effect": {
+            "maxHpPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "iron_resolve",
+          "name": "اراده آهنین",
+          "description": "استقامت +۴٪",
+          "effect": {
+            "maxStaminaPct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "pain_forged",
+          "name": "آبدیده در درد",
+          "description": "کاهش آسیب پس از ضربه +۳٪",
+          "effect": {
+            "postHitReductionPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "counterweight",
+          "name": "وزنه ضدحمله",
+          "description": "آسیب ضدحمله +۵٪",
+          "effect": {
+            "counterDamagePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "rage_tempered",
+          "name": "خشم مهارشده",
+          "description": "قدرت خشم غول‌آسا +۵٪",
+          "effect": {
+            "colossusRagePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "unyielding_spirit",
+          "name": "روح تسلیم‌ناپذیر",
+          "description": "اثر درمان دریافتی +۳٪",
+          "effect": {
+            "healingReceivedPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "final_anchor",
+          "name": "لنگر واپسین",
+          "description": "سپر آخرین سنگر +۶٪",
+          "effect": {
+            "lastBastionShieldPct": 6
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "titan_unbroken",
+          "name": "تایتان نشکستنی",
+          "description": "سلامت +۵٪، دفاع +۵٪",
+          "effect": {
+            "maxHpPct": 5,
+            "defensePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        }
+      ]
+    }
+  ],
+  "progression": {
+    "maxSkillRank": 6,
+    "talentBranches": 4,
+    "talentsPerBranch": 8,
+    "totalTalents": 32,
+    "skillPointsPerRank": 1,
+    "skillUnlocksEveryLevel": true,
+    "firstSkillLevel": 1,
+    "lastSkillLevel": 10,
+    "skillUpgradeCount": 6,
+    "skillUpgradeCost": 1,
+    "talentCount": 32,
+    "talentUnlockCost": 1,
+    "levelUpRewards": {
+      "attributePoints": 5,
+      "skillPoints": 2
+    },
+    "domainUnlockLevel": 25,
+    "domainMasteryLevel": 40,
+    "domainAscensionLevel": 50,
+    "absoluteDomainLevel": 50,
+    "absoluteDomainRequiresQuest": true,
+    "ascendedSkillAvailableOnlyInDomain": true,
+    "ascendedSkillAvailability": "all_10_during_domain",
+    "ascendedSkillSelectionTiming": "after_domain_activation",
+    "ascendedSkillUsesPerDomain": 1,
+    "ascendedSkillSelectionLimitPerDomain": 1,
+    "skillUnlockLevels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "skillUpgradeCurrency": "skillPoints",
+    "talentUnlockCurrency": "skillPoints",
+    "talentUpgradeCurrency": "skillPoints",
+    "talentsArePurchasedWithAttributePoints": false,
+    "domainStages": 4,
+    "ascendedSkillChoiceCount": 1,
+    "ascendedSkillRevertsAtDomainEnd": true
+  },
+  "implementationNotes": [
+    "این فایل مرجع طراحی است و تا پایان اتصال runtime نباید به‌عنوان محتوای فعال بازی بارگذاری شود.",
+    "شناسه تخصص warrior_2 و شناسه محتوایی warrior_iron_bastion حفظ می‌شوند.",
+    "امتیاز ویژگی فقط برای ویژگی‌هاست؛ بازکردن/ارتقای مهارت و استعداد فقط با امتیاز مهارت انجام می‌شود.",
+    "هر مهارت در سطح متناظر ۱ تا ۱۰ باز می‌شود؛ ارتقای رتبه و استعدادها هزینه مستقل skillPoints دارند.",
+    "تعالی نام، عملکرد، اعداد، انیمیشن و صدای مهارت را در قلمرو تغییر می‌دهد و در پایان قلمرو بازمی‌گرداند.",
+    "محدودیت‌های باس، مینی‌باس، PvP و Party باید در سرور authoritative اعمال شوند؛ UI مرجع اعتبار نیست."
+  ],
+  "domain": {
+    "id": "titan_throne",
+    "name": "تختگاه تایتان",
+    "unlockLevel": 25,
+    "usesPerBattle": 1,
+    "stages": [
+      {
+        "stage": 1,
+        "id": "awakening",
+        "name": "بیداری تختگاه",
+        "unlockLevel": 25,
+        "durationPlayerTurns": 5,
+        "effects": [
+          "دفاع +۱۰٪",
+          "مقاومت کنترل +۸٪",
+          "نخستین مهارت تهاجمی موفق، تهدید +۵٪"
+        ]
+      },
+      {
+        "stage": 2,
+        "id": "iron_sovereignty",
+        "name": "فرمانروایی آهن",
+        "unlockLevel": 40,
+        "durationPlayerTurns": 6,
+        "effects": [
+          "دفاع +۱۵٪",
+          "مقاومت کنترل +۱۲٪",
+          "زلزله آهن و خردکننده گارد ۱۰٪ اثر بیشتر"
+        ]
+      },
+      {
+        "stage": 3,
+        "id": "titan_rage",
+        "name": "خشم تایتان",
+        "unlockLevel": 50,
+        "durationPlayerTurns": 7,
+        "effects": [
+          "دفاع +۱۸٪",
+          "قدرت ضربات تبر +۱۵٪",
+          "اولین ضربه سنگین هر نوبت ۵٪ سپر دشمن را می‌شکند؛ باس حداکثر ۲٪"
+        ]
+      },
+      {
+        "stage": 4,
+        "id": "eternal_throne",
+        "name": "تختگاه ابدی",
+        "unlockLevel": 50,
+        "requiresQuest": true,
+        "durationPlayerTurns": 8,
+        "effects": [
+          "دفاع +۲۲٪",
+          "قدرت ضربات تبر +۲۰٪",
+          "مقاومت کنترل +۱۵٪",
+          "موج پایانی با قدرت ۱۲۰٪ حمله"
+        ]
+      }
+    ],
+    "rules": [
+      "یک بار در هر نبرد",
+      "انتخاب دقیقاً یک تعالی از میان ۱۰ تعالی پس از فعال‌سازی",
+      "تعالی فقط تا پایان قلمرو فعال است",
+      "پس از پایان قلمرو نام و عملکرد مهارت به حالت پایه بازمی‌گردد",
+      "کنترل و آسیب باس تابع سقف‌های عمومی باس است"
+    ],
+    "activationRules": {
+      "unlockLevel": 25,
+      "usesPerBattle": 1,
+      "stageSelection": "highest_unlocked_stage",
+      "stageEffectsStack": "replace_with_highest_stage_value_per_effect_category",
+      "selection": "choose_exactly_one_ascended_skill_after_activation",
+      "ascendedSkillUses": 1,
+      "ascendedSkillDuration": "until_domain_end",
+      "revert": "restore_original_skill_name_effects_and_visual_identity_at_domain_end",
+      "endTriggers": [
+        "duration_expired",
+        "victory",
+        "defeat",
+        "retreat",
+        "battle_abort"
+      ]
+    }
+  },
+  "ascendedSkills": [
+    {
+      "id": "asc_ironcleave",
+      "skillId": "ironcleave",
+      "name": "حکم اعدام تایتان",
+      "target": "متناسب با مهارت پایه",
+      "description": "ضربه ۳۰۰٪؛ اگر سلامت هدف زیر ۳۰٪ باشد ۲۰٪ آسیب اضافه. روی باس، ۱۰٪ آسیب اضافه بدون اعدام قطعی.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    },
+    {
+      "id": "asc_unyielding_wall",
+      "skillId": "unyielding_wall",
+      "name": "حصار آخرین تایتان",
+      "target": "متناسب با مهارت پایه",
+      "description": "گارد ۳ نوبتی با کاهش آسیب ۳۵٪؛ نخستین ضربه مستقیم هر دشمن، ۵٪ قدرت حمله را بازمی‌گرداند.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    },
+    {
+      "id": "asc_quake_of_iron",
+      "skillId": "quake_of_iron",
+      "name": "گسل هزارستون",
+      "target": "متناسب با مهارت پایه",
+      "description": "آسیب ۱۹۰٪ به همه دشمنان و کندی ۲۰٪ برای یک نوبت؛ باس فقط اختلال جزئی می‌گیرد.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    },
+    {
+      "id": "asc_fortress_stance",
+      "skillId": "fortress_stance",
+      "name": "قلب دژ ابدی",
+      "target": "متناسب با مهارت پایه",
+      "description": "دفاع +۳۵٪ و مقاومت کنترل +۳۰٪ برای ۳ نوبت؛ سرعت -۱۰٪؛ سپس سپر ۸٪ سلامت.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    },
+    {
+      "id": "asc_breaker_slam",
+      "skillId": "breaker_slam",
+      "name": "سقوط تبر آسمانی",
+      "target": "متناسب با مهارت پایه",
+      "description": "ضربه ۳۳۰٪ و تخریب ۳۰٪ سپر؛ روی باس حداکثر ۸٪.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    },
+    {
+      "id": "asc_iron_reprisal",
+      "skillId": "iron_reprisal",
+      "name": "بازتاب داوری آهن",
+      "target": "متناسب با مهارت پایه",
+      "description": "تا ۲ نوبت، ۴۰٪ ضربه مستقیم را بازمی‌گرداند؛ سقف باس ۱۸٪ و بدون بازتاب زنجیره‌ای.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    },
+    {
+      "id": "asc_marching_bastion",
+      "skillId": "marching_bastion",
+      "name": "لشکرگاه تسخیرناپذیر",
+      "target": "متناسب با مهارت پایه",
+      "description": "یاران ۲۵٪ کاهش آسیب و ۱۰٪ مقاومت کنترل برای ۳ نوبت می‌گیرند؛ تهدید دژ افزایش می‌یابد.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    },
+    {
+      "id": "asc_shatterguard",
+      "skillId": "shatterguard",
+      "name": "فروپاشی تاج فولاد",
+      "target": "متناسب با مهارت پایه",
+      "description": "ضربه ۲۶۰٪ و کاهش دفاع ۲۵٪ برای ۲ نوبت؛ روی باس حداکثر ۱۰٪.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    },
+    {
+      "id": "asc_colossus_rage",
+      "skillId": "colossus_rage",
+      "name": "خشم تایتان سرخ",
+      "target": "متناسب با مهارت پایه",
+      "description": "حمله +۳۵٪، دفاع +۲۰٪ و سرعت -۵٪ برای ۳ نوبت؛ سپس خستگی ۱ نوبتی با حمله -۸٪.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    },
+    {
+      "id": "asc_last_bastion",
+      "skillId": "last_bastion",
+      "name": "سقوط تختگاه",
+      "target": "متناسب با مهارت پایه",
+      "description": "ضربه منطقه‌ای ۵۲۰٪؛ سپر خود و یاران ۱۰٪ سلامت با سقف ۳۰٪؛ آسیب باس تابع سقف عمومی.",
+      "domainOnly": true,
+      "oneUsePerDomain": true,
+      "visualUpgrade": true,
+      "mechanicUpgrade": true,
+      "nameChangeRequired": true,
+      "mechanicsChangeRequired": true,
+      "visualChangeRequired": true,
+      "audioChangeRequired": true,
+      "revertAtDomainEnd": true,
+      "consumesSingleAscensionChoice": true
+    }
+  ],
+  "talentRules": {
+    "currency": "skillPoints",
+    "pointsPerLevelUp": 2,
+    "branchCount": 4,
+    "talentsPerBranch": 8,
+    "totalTalents": 32,
+    "costPerTalent": 1,
+    "maxRankPerTalent": 1,
+    "attributePointsCannotPurchaseTalents": true,
+    "respecPolicy": "No free respec in design phase; respec must use the global specialization respec policy."
+  },
+  "sharedClassContract": {
+    "specializationsPerClass": 4,
+    "skillsPerSpecialization": 10,
+    "skillUnlockLevels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "skillRanksPerSkill": 6,
+    "skillPointsPerLevelUp": 2,
+    "attributePointsPerLevelUp": 5,
+    "talentsPerSpecialization": 32,
+    "talentPurchaseCurrency": "skillPoints",
+    "domainsPerSpecialization": 1,
+    "domainStages": 4,
+    "ascendedSkillChoicesPerDomain": 1
+  }
+}
