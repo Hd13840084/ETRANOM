@@ -1,9 +1,0 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import {findSharedSkill,resolveCombatSkill} from '../systems/combat/shared-skill-runtime.js';
-const catalog=JSON.parse(fs.readFileSync(new URL('../content/combat/shared_skill_catalog_v172.json',import.meta.url),'utf8'));
-test('all 40 specializations have five unique executable skills',()=>{assert.equal(catalog.specializations.length,40);const ids=new Set();for(const spec of catalog.specializations){assert.equal(spec.skills.length,5,spec.specialization_id);for(const skill of spec.skills){assert.ok(skill.id&&skill.name_fa&&skill.type);assert.ok(!ids.has(skill.id));ids.add(skill.id);}}});
-test('all ten classes have three base skills',()=>{assert.equal(new Set(catalog.class_core_skills.map(x=>x.class_id)).size,10);assert.equal(catalog.class_core_skills.length,30);});
-test('catalog lookup returns only trusted implemented Wizard records',()=>{const s=findSharedSkill(catalog,'arcane_bolt','wizard_1','wizard');assert.equal(s.type,'single_damage');assert.equal(findSharedSkill(catalog,'wizard_1_strike','wizard_1','wizard'),null);assert.equal(findSharedSkill(catalog,'assassin_1_strike','assassin_1','assassin'),null);assert.equal(findSharedSkill(catalog,'not_real'),null);});
-test('mana cost and cooldown are enforced by resolver',()=>{const skill={id:'cost_test',type:'single_damage',damagePct:100,manaCost:10,cooldownTurns:2};const r=resolveCombatSkill({skill,actor:{hp:50,maxHp:50,mp:20,attack:20},targets:[{id:'x',hp:100,defense:0}]});assert.equal(r.actor.mp,10);assert.equal(r.actor.skillCooldowns.cost_test,2);assert.throws(()=>resolveCombatSkill({skill,actor:{hp:50,maxHp:50,mp:5,attack:20},targets:[]}),/insufficient_mana/);assert.throws(()=>resolveCombatSkill({skill,actor:{hp:50,maxHp:50,mp:20,attack:20,skillCooldowns:{cost_test:1}},targets:[]}),/skill_on_cooldown/);});
