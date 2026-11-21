@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const game=fs.readFileSync(new URL('../game.js',import.meta.url),'utf8');
+const runtime=fs.readFileSync(new URL('../systems/content/region-one-runtime.js',import.meta.url),'utf8');
+const classBlock=game.match(/const CLASS_DATA = \{([\s\S]*?)\n  \};/);
+assert.ok(classBlock,'CLASS_DATA registry missing');
+const classEntries=[...classBlock[1].matchAll(/^    "([^"]+)":\{specs:\[([^\]]*)\]/gm)];
+assert.equal(classEntries.length,10,'Expected ten classes');
+assert.ok(classEntries.every(([, ,specs])=>(specs.match(/"[^"]+"/g)||[]).length===4),'Each class must retain four specializations');
+const obsolete=['WARRIOR_SKILLS','WARRIOR_TALENTS','WARRIOR_UNLOCK_LEVELS','skillRankFor','talentTotals','warriorSkillCostLabel','warriorSkillCooldown','warriorSkillDetail','upgradeWarriorSkill','upgradeWarriorTalent','useWarriorSkill','data-fight-skill','data-skill-upgrade','data-talent-upgrade','data-toggle-combat-skills'];
+assert.ok(obsolete.every(token=>!game.includes(token)),'Legacy skill subsystem references remain');
+assert.ok(runtime.includes('loadRegionOneRuntime'),'Runtime content loader missing');
+assert.ok(game.includes('window.ETRANOM_RUNTIME_CONTENT?.regions'),'Region catalog not connected');
+assert.ok(game.includes('window.ETRANOM_RUNTIME_CONTENT?.monsters'),'Monster catalog not connected');
+assert.ok(game.includes('window.ETRANOM_RUNTIME_CONTENT?.recipes?.length'),'Recipe catalog not connected');
+assert.ok(game.includes('window.ETRANOM_RUNTIME_CONTENT?.dungeons'),'Dungeon catalog not connected');
+console.log('Phase 2 regression checks passed: class registry retained, obsolete class-skill subsystem absent, Region 1 runtime catalogs connected.');
