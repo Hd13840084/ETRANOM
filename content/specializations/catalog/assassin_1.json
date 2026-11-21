@@ -1,0 +1,89 @@
+{
+  "id": "assassin_1",
+  "class_id": "assassin",
+  "class_name_fa": "آدمکش",
+  "name_fa": "سایه‌رو",
+  "role_fa": "نفوذگر پنهان و جابه‌جایی بی‌صدا",
+  "identity": {
+    "combat_fantasy": "نفوذگر پنهان و جابه‌جایی بی‌صدا",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "assassin_1_strike",
+      "name": "سایه‌رو: برش سایه",
+      "name_fa": "سایه‌رو: برش سایه",
+      "type": "single_damage",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص سایه‌رو؛ نفوذگر پنهان و جابه‌جایی بی‌صدا. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 165,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "assassin_1_guard",
+      "name": "سایه‌رو: زهر خاموش برتر",
+      "name_fa": "سایه‌رو: زهر خاموش برتر",
+      "type": "debuff",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص سایه‌رو؛ نفوذگر پنهان و جابه‌جایی بی‌صدا. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "attackReductionPct": 21,
+      "defenseReductionPct": 12,
+      "dotPct": 0
+    },
+    {
+      "id": "assassin_1_wave",
+      "name": "سایه‌رو: لغزش بی‌صدا پیشرفته",
+      "name_fa": "سایه‌رو: لغزش بی‌صدا پیشرفته",
+      "type": "evasion_counter",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص سایه‌رو؛ نفوذگر پنهان و جابه‌جایی بی‌صدا. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "effects": {
+        "attackPct": 17,
+        "defensePct": 11,
+        "speedPct": 5
+      }
+    },
+    {
+      "id": "assassin_1_stance",
+      "name": "سایه‌رو: مکیدن جوهر والا",
+      "name_fa": "سایه‌رو: مکیدن جوهر والا",
+      "type": "damage_heal",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص سایه‌رو؛ نفوذگر پنهان و جابه‌جایی بی‌صدا. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 144,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "assassin_1_ultimate",
+      "name": "سایه‌رو: اعدام از تاریکی اساطیری",
+      "name_fa": "سایه‌رو: اعدام از تاریکی اساطیری",
+      "type": "single_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص سایه‌رو؛ نفوذگر پنهان و جابه‌جایی بی‌صدا. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 257,
+      "scalingStat": "attack"
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}
