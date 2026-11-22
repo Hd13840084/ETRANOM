@@ -29,7 +29,3 @@
 .etr-battle-screen .battle-vs{margin:2px 0!important;padding:0!important;min-height:20px!important}
 .etr-battle-screen .battle-section-title{margin:3px 2px 2px!important;padding-top:0!important}
 @media(max-width:420px){.etr-battle-screen .battle-resource-line{grid-template-columns:43px minmax(0,1fr) auto!important;column-gap:4px!important;margin:2px 0!important}.etr-battle-screen .battle-resource-label,.etr-battle-screen .battle-resource-value{font-size:8px!important}.etr-battle-screen .battle-resource-line .battle-meter{height:7px!important}}
-
-/* V1893: three primary actions; defensive choices live only in the enemy reaction window. */
-.etr-battle-screen .battle-actions.etr-shared-combat-actions,.etr-shared-combat-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
-@media(max-width:420px){.etr-battle-screen .battle-actions.etr-shared-combat-actions,.etr-shared-combat-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}.etr-battle-screen .etr-shared-combat-actions button{min-height:54px!important;padding:6px 3px!important}.etr-battle-screen .etr-shared-combat-actions button b{font-size:11px!important}}

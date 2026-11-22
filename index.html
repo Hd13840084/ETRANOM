@@ -565,7 +565,7 @@ async function startSession(session){
     window.ETRANOM_WIZARD_RUNTIME = wizardRuntimeModule;
     window.ETRANOM_COMPLETE_WIZARD_DOMAIN_TRIAL_STAGE = wizardRuntimeModule.completeWizardDomainTrial;
     try { const swordAsceticModule = await import('./systems/classes/sword-ascetic-data.js?v=1862'); window.ETRANOM_SWORD_ASCETIC = swordAsceticModule.SWORD_ASCETIC; window.ETRANOM_CREATE_SWORD_ASCETIC_PROGRESS = swordAsceticModule.createSwordAsceticProgress; } catch (e) { console.error('[ETRANOM] Sword Ascetic data failed to load.', e); window.ETRANOM_SWORD_ASCETIC = null; }
-    try { const swordAsceticRuntime = await import('./systems/combat/sword-ascetic-runtime.js?v=1893'); window.ETRANOM_SWORD_ASCETIC_RUNTIME = swordAsceticRuntime; } catch (e) { console.error('[ETRANOM] Sword Ascetic combat runtime failed to load.', e); window.ETRANOM_SWORD_ASCETIC_RUNTIME = null; }
+    try { const swordAsceticRuntime = await import('./systems/combat/sword-ascetic-runtime.js?v=1887'); window.ETRANOM_SWORD_ASCETIC_RUNTIME = swordAsceticRuntime; } catch (e) { console.error('[ETRANOM] Sword Ascetic combat runtime failed to load.', e); window.ETRANOM_SWORD_ASCETIC_RUNTIME = null; }
     try { const apocalypseModule = await import('./systems/combat/apocalypse-harbinger-runtime.js?v=1885'); window.ETRANOM_APOCALYPSE_HARBINGER = apocalypseModule.APOCALYPSE_HARBINGER_DATA; window.ETRANOM_APOCALYPSE_RUNTIME = apocalypseModule; } catch (e) { console.error('[ETRANOM] Apocalypse Harbinger runtime failed to load.', e); window.ETRANOM_APOCALYPSE_HARBINGER = null; window.ETRANOM_APOCALYPSE_RUNTIME = null; }
     try { const ironBastionModule = await import('./systems/combat/iron-bastion-runtime.js?v=1887'); window.ETRANOM_IRON_BASTION = ironBastionModule.IRON_BASTION_DATA; window.ETRANOM_CREATE_IRON_BASTION_PROGRESS = ironBastionModule.createIronBastionProgress; window.ETRANOM_NORMALIZE_IRON_BASTION_PROGRESS = ironBastionModule.normalizeIronBastionProgress; window.ETRANOM_IRON_BASTION_RUNTIME = ironBastionModule; } catch (e) { console.error('[ETRANOM] Iron Bastion runtime failed to load.', e); window.ETRANOM_IRON_BASTION = null; }
     try { const chaosWarriorModule = await import('./systems/combat/chaos-warrior-runtime.js?v=1887'); window.ETRANOM_CHAOS_WARRIOR = chaosWarriorModule.CHAOS_WARRIOR_DATA; window.ETRANOM_CREATE_CHAOS_WARRIOR_PROGRESS = chaosWarriorModule.createChaosWarriorProgress; window.ETRANOM_NORMALIZE_CHAOS_WARRIOR_PROGRESS = chaosWarriorModule.normalizeChaosWarriorProgress; window.ETRANOM_CHAOS_WARRIOR_RUNTIME = chaosWarriorModule; } catch (e) { console.error('[ETRANOM] Chaos Warrior runtime failed to load.', e); window.ETRANOM_CHAOS_WARRIOR = null; }
@@ -675,13 +675,4 @@ body:has(#etr-guild-overlay[style*="display: flex"]) #etr-social-launch,body:has
 </style>
 <style id="etr-v1892-map-shortcut-priority">
 body:has(.starting-region-map) #etr-social-launch,body:has(.starting-region-map) #etr-guild-launch{display:grid!important}
-</style>
-
-<style id="etr-v1893-warrior-portrait-fix">
-/* Give each warrior specialization portrait a genuinely large, full-width card area. */
-.specialization-grid .specialization-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:8px!important;min-height:0!important;padding:9px!important}
-.specialization-grid .specialization-card .spec-art{display:block!important;width:100%!important;height:clamp(190px,54vw,270px)!important;min-height:0!important;flex:0 0 auto!important;overflow:hidden!important;border-radius:10px!important}
-.specialization-grid .specialization-card .spec-art img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important}
-.specialization-grid .specialization-card .spec-copy{min-height:58px!important}
-@media(max-width:520px){.specialization-grid .specialization-card .spec-art{height:230px!important}}
 </style>

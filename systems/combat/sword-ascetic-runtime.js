@@ -170,8 +170,7 @@ export function resolveSwordAsceticSkill(skillId, payload = {}) {
   const preparedTargets = copy(payload.targets || []);
   if (n(normalized.defenseReductionPct) > 0) { for (const target of preparedTargets.filter(t => n(t.hp) > 0)) target.statuses = { ...(target.statuses || {}), sword_ascetic_penetration: { turns: 1, defenseReductionPct: n(normalized.defenseReductionPct), hardControl: false } }; }
   const corePayload = { ...payload, actor, targets: preparedTargets, skill: normalized, mode: payload.mode || 'solo', effects: { ...(payload.effects || {}), damagePct: n(payload.effects?.damagePct) + n(talentFx.swordDamagePct) + (ascSkill ? n(talentFx.ascendedSkillPct) : 0) + (domainActive ? n(domainActive.attackPct) : 0), defenseReductionPct: n(payload.effects?.defenseReductionPct) + n(talentFx.defensePenetrationPct), accuracyPct: n(payload.effects?.accuracyPct) + n(talentFx.accuracyPct), critChancePct: n(payload.effects?.critChancePct) + n(talentFx.swordCritPct) } };
-  for (const t of preparedTargets) if (t.id == null && t.encounterId != null) t.id = String(t.encounterId);
-  const primaryTarget = preparedTargets.find(t => String(t.id ?? t.encounterId) === String(payload.targetId)) || preparedTargets.find(t => n(t.hp) > 0);
+  const primaryTarget = preparedTargets.find(t => String(t.id) === String(payload.targetId)) || preparedTargets.find(t => n(t.hp) > 0);
   const attackSkill = n(normalized.damagePct) > 0 && !['self_buff','shield','heal'].includes(normalized.type);
   const hitChance = clamp(n(actor.accuracy, 100) - n(primaryTarget?.evasionPct ?? primaryTarget?.evasion), 5, 100);
   const hasHitRoll = Number.isFinite(Number(payload.rolls?.hit));
@@ -190,7 +189,7 @@ export function resolveSwordAsceticSkill(skillId, payload = {}) {
     if (resolvedTarget) {
       const alreadyLogged = out.log.some(x => x.type === 'damage' && String(x.target) === String(resolvedTarget.id) && n(x.amount) > 0);
       if (!alreadyLogged) {
-        const raw = Math.max(1, Math.floor(n(actor.attack, n(actor.power, n(actor.stats?.power, 10))) * n(normalized.damagePct, 280) / 100));
+        const raw = Math.max(1, Math.floor(n(actor.attack) * n(normalized.damagePct, 280) / 100));
         const defense = Math.max(0, n(resolvedTarget.defense ?? resolvedTarget.enemyDefense));
         const amount = Math.max(1, Math.floor(raw * 100 / (100 + defense * 1.25)));
         resolvedTarget.hp = Math.max(0, n(resolvedTarget.hp) - amount);

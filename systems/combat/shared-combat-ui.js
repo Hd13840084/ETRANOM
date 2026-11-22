@@ -74,7 +74,8 @@ export function renderCombatActionBar({ attribute = 'data-combat-action', disabl
   const actions = [
     { id: 'attack', icon: '⚔️', label: 'حمله عادی', cls: 'attack' },
     { id: 'skill', icon: '✦', label: 'مهارت‌ها', cls: 'skill' },
-    { id: 'items', icon: '🎒', label: 'آیتم‌ها', cls: 'items' }
+    { id: 'items', icon: '🎒', label: 'آیتم‌ها', cls: 'items' },
+    { id: 'guard', value: 'guard', icon: '🛡️', label: 'دفاع / جاخالی', cls: 'defend' }
   ];
   return `<div class="battle-actions etr-shared-combat-actions">${actions.map(a => {
     const isDisabled = Boolean(disabled[a.id]);

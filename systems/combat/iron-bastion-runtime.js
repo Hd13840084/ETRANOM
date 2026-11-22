@@ -89,7 +89,7 @@ export function resolveIronBastionSkill(skillId,payload={}){
  if(asc&&p.domain.ascendedUsed)throw new Error('iron_bastion_only_one_ascension_per_domain');
  if(asc&&p.domain.ascendedSkillId!==asc.id)throw new Error('iron_bastion_ascension_not_selected');
  const rank=clamp(n(p.skillRanks[skill.id],1),1,6),ranked=rankSkill(skill,rank),talentFx=collectIronBastionTalentEffects(p),cooldowns={...(actor.skillCooldowns||{})};if(n(cooldowns[skill.id])>0)throw new Error('skill_on_cooldown');const cost=Math.max(0,Math.ceil(n(skill.staminaCost)*(1-clamp(n(talentFx.guardCostReductionPct),0,50)/100)));
- if(n(actor.stamina,n(actor.maxStamina,100))<cost)throw new Error('insufficient_stamina');actor.stamina=Math.max(0,n(actor.stamina,n(actor.maxStamina,100))-cost);if(n(skill.cooldownTurns)>0)cooldowns[skill.id]=n(skill.cooldownTurns);
+ if(n(actor.stamina,n(actor.maxStamina,100))<cost)throw new Error('insufficient_stamina');actor.stamina=Math.max(0,n(actor.stamina,n(actor.maxStamina,100))-cost);if(n(skill.cooldownTurns)>0)cooldowns[skill.id]=n(skill.cooldownTurns);actor.skillCooldowns=cooldowns;
  const type=coreType(ranked),effects={...(payload.effects||{})};let talentDamage=n(talentFx.axeDamagePct)+n(talentFx.heavyAttackPct)+(ranked.type==='multi_target_damage'||ranked.type==='ultimate_aoe'?n(talentFx.aoeDamagePct):0)+(skill.id==='ironcleave'?n(talentFx.ironcleavePct):0);let normalized={...ranked,type,scalingStat:'attack',damagePct:Math.floor(n(ranked.powerPct)*(1+talentDamage/100)),manaCost:0,staminaCost:0};
  if(['self_guard','team_guard'].includes(ranked.type)){normalized.type='shield';normalized.shieldPct=(ranked.type==='team_guard'?n(ranked.effects?.allyDamageReductionPct,14):22)*(1+n(talentFx.shieldPct)/100);normalized.durationTurns=n(ranked.effects?.durationTurns,2);normalized.damageReductionPct=n(ranked.effects?.damageReductionPct,22);normalized.target='self';}
  if(ranked.type==='counter')normalized.type='self_buff';
@@ -97,7 +97,6 @@ export function resolveIronBastionSkill(skillId,payload={}){
  if(asc){normalized.name=asc.name;normalized.damagePct=({ironcleave:300,quake_of_iron:190,breaker_slam:330,shatterguard:260,last_bastion:520}[skill.id]||0);if(skill.id==='unyielding_wall')normalized.type='shield';if(skill.id==='fortress_stance'||skill.id==='colossus_rage'||skill.id==='iron_reprisal'||skill.id==='marching_bastion')normalized.type='self_buff';}
  const core=resolveCombatSkill({...payload,actor,skill:normalized,effects:{...(payload.effects||{}),...(actor.combatEffects||{})},targets:clone(payload.targets||[]),mode:payload.mode||'solo'});
  const out=applySpecialEffects({...core,log:[...(core.log||[])]},ranked,asc,core.actor,p,payload);
- out.actor.skillCooldowns={...(out.actor.skillCooldowns||{}),[skill.id]:Math.max(0,n(skill.cooldownTurns))};
  return Object.freeze({...out,skillId:skill.id,baseSkillId:skill.id,rank,staminaSpent:cost});
 }
 export function applyIronBastionTurnRecovery(actor={},baseRecovery=0){const a=clone(actor),p=getProgress(a),fx=collectIronBastionTalentEffects(p),bonus=Math.floor(n(a.maxStamina,100)*clamp(n(fx.staminaRegenPct),0,30)/100),before=n(a.stamina),max=n(a.maxStamina,100);a.stamina=Math.min(max,before+Math.max(0,n(baseRecovery))+bonus);return Object.freeze({actor:a,recovered:a.stamina-before,bonus});}
