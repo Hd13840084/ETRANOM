@@ -1,0 +1,86 @@
+{
+  "id": "priest_3",
+  "class_id": "priest",
+  "class_name_fa": "کشیش",
+  "name_fa": "کشیش نفرین",
+  "role_fa": "کارگزار نفرین‌ها و آیین‌های تاریک",
+  "identity": {
+    "combat_fantasy": "کارگزار نفرین‌ها و آیین‌های تاریک",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "priest_3_strike",
+      "name": "کشیش نفرین: شفای روشن",
+      "name_fa": "کشیش نفرین: شفای روشن",
+      "type": "heal",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص کشیش نفرین؛ کارگزار نفرین‌ها و آیین‌های تاریک. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "healPct": 145,
+      "target": "ally"
+    },
+    {
+      "id": "priest_3_guard",
+      "name": "کشیش نفرین: نیایش همگانی برتر",
+      "name_fa": "کشیش نفرین: نیایش همگانی برتر",
+      "type": "group_heal",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص کشیش نفرین؛ کارگزار نفرین‌ها و آیین‌های تاریک. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "healPct": 90,
+      "target": "self"
+    },
+    {
+      "id": "priest_3_wave",
+      "name": "کشیش نفرین: حفاظ قدسی پیشرفته",
+      "name_fa": "کشیش نفرین: حفاظ قدسی پیشرفته",
+      "type": "shield",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص کشیش نفرین؛ کارگزار نفرین‌ها و آیین‌های تاریک. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "shieldPct": 151,
+      "damageReductionPct": 12
+    },
+    {
+      "id": "priest_3_stance",
+      "name": "کشیش نفرین: داوری روح والا",
+      "name_fa": "کشیش نفرین: داوری روح والا",
+      "type": "debuff",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص کشیش نفرین؛ کارگزار نفرین‌ها و آیین‌های تاریک. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "attackReductionPct": 27,
+      "defenseReductionPct": 16,
+      "dotPct": 0
+    },
+    {
+      "id": "priest_3_ultimate",
+      "name": "کشیش نفرین: فرمان واپسین اساطیری",
+      "name_fa": "کشیش نفرین: فرمان واپسین اساطیری",
+      "type": "all_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص کشیش نفرین؛ کارگزار نفرین‌ها و آیین‌های تاریک. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 162,
+      "scalingStat": "magicPower"
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}
