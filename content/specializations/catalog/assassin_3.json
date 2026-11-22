@@ -1,0 +1,89 @@
+{
+  "id": "assassin_3",
+  "class_id": "assassin",
+  "class_name_fa": "آدمکش",
+  "name_fa": "تیغ روح‌خوار",
+  "role_fa": "آدمکشی با پیوند به ارواح و جوهر حیات",
+  "identity": {
+    "combat_fantasy": "آدمکشی با پیوند به ارواح و جوهر حیات",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "assassin_3_strike",
+      "name": "تیغ روح‌خوار: برش سایه",
+      "name_fa": "تیغ روح‌خوار: برش سایه",
+      "type": "single_damage",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیغ روح‌خوار؛ آدمکشی با پیوند به ارواح و جوهر حیات. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 165,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "assassin_3_guard",
+      "name": "تیغ روح‌خوار: زهر خاموش برتر",
+      "name_fa": "تیغ روح‌خوار: زهر خاموش برتر",
+      "type": "debuff",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیغ روح‌خوار؛ آدمکشی با پیوند به ارواح و جوهر حیات. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "attackReductionPct": 21,
+      "defenseReductionPct": 12,
+      "dotPct": 0
+    },
+    {
+      "id": "assassin_3_wave",
+      "name": "تیغ روح‌خوار: لغزش بی‌صدا پیشرفته",
+      "name_fa": "تیغ روح‌خوار: لغزش بی‌صدا پیشرفته",
+      "type": "evasion_counter",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیغ روح‌خوار؛ آدمکشی با پیوند به ارواح و جوهر حیات. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "effects": {
+        "attackPct": 17,
+        "defensePct": 11,
+        "speedPct": 5
+      }
+    },
+    {
+      "id": "assassin_3_stance",
+      "name": "تیغ روح‌خوار: مکیدن جوهر والا",
+      "name_fa": "تیغ روح‌خوار: مکیدن جوهر والا",
+      "type": "damage_heal",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیغ روح‌خوار؛ آدمکشی با پیوند به ارواح و جوهر حیات. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 144,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "assassin_3_ultimate",
+      "name": "تیغ روح‌خوار: اعدام از تاریکی اساطیری",
+      "name_fa": "تیغ روح‌خوار: اعدام از تاریکی اساطیری",
+      "type": "single_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص تیغ روح‌خوار؛ آدمکشی با پیوند به ارواح و جوهر حیات. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 257,
+      "scalingStat": "attack"
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}
