@@ -1,0 +1,1411 @@
+{
+  "schema_version": 1,
+  "specialization_count": 40,
+  "specializations": [
+    {
+      "id": "gunner_1",
+      "class_id": "gunner",
+      "class_name_fa": "تفنگدار",
+      "name_fa": "تک‌تیرانداز",
+      "role_fa": "متخصص شلیک دقیق و هدف‌گیری تک‌هدف",
+      "identity": {
+        "combat_fantasy": "متخصص شلیک دقیق و هدف‌گیری تک‌هدف",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "gunner_2",
+      "class_id": "gunner",
+      "class_name_fa": "تفنگدار",
+      "name_fa": "تیرانداز سریع",
+      "role_fa": "متخصص شلیک‌های پیاپی و فشار مداوم",
+      "identity": {
+        "combat_fantasy": "متخصص شلیک‌های پیاپی و فشار مداوم",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "gunner_3",
+      "class_id": "gunner",
+      "class_name_fa": "تفنگدار",
+      "name_fa": "تفنگدار عالم اموات",
+      "role_fa": "تفنگداری با هویت تاریک و پیوند با مرگ",
+      "identity": {
+        "combat_fantasy": "تفنگداری با هویت تاریک و پیوند با مرگ",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "gunner_4",
+      "class_id": "gunner",
+      "class_name_fa": "تفنگدار",
+      "name_fa": "تفنگدار جهنمی",
+      "role_fa": "متخصص آتش ویرانگر و جنگ تهاجمی",
+      "identity": {
+        "combat_fantasy": "متخصص آتش ویرانگر و جنگ تهاجمی",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "monk_1",
+      "class_id": "monk",
+      "class_name_fa": "راهب",
+      "name_fa": "راهب رزمی",
+      "role_fa": "استاد فنون رزمی و ضربات تن‌به‌تن",
+      "identity": {
+        "combat_fantasy": "استاد فنون رزمی و ضربات تن‌به‌تن",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "monk_2",
+      "class_id": "monk",
+      "class_name_fa": "راهب",
+      "name_fa": "راهب چی",
+      "role_fa": "راهب متمرکز بر نیروی درونی و تعادل",
+      "identity": {
+        "combat_fantasy": "راهب متمرکز بر نیروی درونی و تعادل",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "monk_3",
+      "class_id": "monk",
+      "class_name_fa": "راهب",
+      "name_fa": "راهب اهریمنی",
+      "role_fa": "راهبی با نیروی ممنوع و وجه اهریمنی",
+      "identity": {
+        "combat_fantasy": "راهبی با نیروی ممنوع و وجه اهریمنی",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "monk_4",
+      "class_id": "monk",
+      "class_name_fa": "راهب",
+      "name_fa": "راهب خون‌نوش",
+      "role_fa": "راهبی با سبک خون‌محور و بقا در نبرد",
+      "identity": {
+        "combat_fantasy": "راهبی با سبک خون‌محور و بقا در نبرد",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "warrior_1",
+      "class_id": "warrior",
+      "class_name_fa": "جنگجو",
+      "name_fa": "زاهد شمشیر",
+      "role_fa": "جنگجوی شرقی که شمشیر را امتداد روح و هویت خود می‌داند.",
+      "identity": {
+        "combat_fantasy": "جنگجوی شرقی که شمشیر را امتداد روح و هویت خود می‌داند.",
+        "theme": "دارک فانتزی شرقی",
+        "resource_affinity": "استقامت و تسلط شمشیر"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "design_data_v1",
+      "implementation_scope": "داده طراحی تخصص؛ اتصال به رابط و موتور نبرد در مرحله بعد",
+      "version": 1
+    },
+    {
+      "id": "warrior_2",
+      "class_id": "warrior",
+      "class_name_fa": "جنگجو",
+      "name_fa": "دژ پولادین",
+      "role_fa": "جنگجوی زره‌سنگین با تبر غول‌پیکر دوسر؛ کند اما سخت‌جان و کوبنده.",
+      "identity": {
+        "combat_fantasy": "سنگر متحرک میدان نبرد؛ مبارزی که با زره فولادی سنگین ضربات را تاب می‌آورد و با سلاح‌های عظیم خطوط دشمن را درهم می‌شکند.",
+        "theme": "دارک فانتزی؛ فولاد سیاه، آهن سوخته و نشان‌های سرخ تیره",
+        "weapons_fa": [
+          "تبر غول‌پیکر دوسر",
+          "پتک جنگی",
+          "شمشیر عظیم دوسر"
+        ],
+        "armor_fa": "زره تمام‌صفحه فولادی بسیار سنگین با کلاه‌خود بسته و شنل تیره",
+        "combat_style_fa": "ضربات آهسته اما کوبنده، پایداری دفاعی و شکستن گارد و زره دشمن",
+        "strengths_fa": [
+          "دفاع و تحمل آسیب بالا",
+          "قدرت ضربه سنگین",
+          "فشار بر دشمنان زره‌پوش"
+        ],
+        "weaknesses_fa": [
+          "سرعت و چابکی پایین‌تر",
+          "وابستگی به زمان‌بندی ضربات",
+          "آسیب‌پذیری نسبی در برابر دشمنان بسیار سریع"
+        ],
+        "resource_affinity": "استقامت",
+        "content_status": "combat_content_v1871",
+        "signature_weapon_fa": "تبر غول‌پیکر دوسر"
+      },
+      "skills": [
+        {
+          "id": "ironcleave",
+          "name": "شکافت پولاد",
+          "name_fa": "شکافت پولاد",
+          "type": "single_damage",
+          "unlockLevel": 1,
+          "resource": "stamina",
+          "staminaCost": 6,
+          "cooldownTurns": 0,
+          "durationTurns": 1,
+          "description": "ضربه سنگین تبر که بخشی از زره هدف را می‌شکافد.",
+          "damagePct": 175,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        },
+        {
+          "id": "unyielding_wall",
+          "name": "دیوار تسلیم‌ناپذیر",
+          "name_fa": "دیوار تسلیم‌ناپذیر",
+          "type": "shield",
+          "unlockLevel": 2,
+          "resource": "stamina",
+          "staminaCost": 7,
+          "cooldownTurns": 2,
+          "durationTurns": 2,
+          "description": "گارد سنگین؛ آسیب دریافتی را برای دو نوبت کاهش می‌دهد.",
+          "damagePct": 0,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        },
+        {
+          "id": "quake_of_iron",
+          "name": "زلزله آهن",
+          "name_fa": "زلزله آهن",
+          "type": "multi_target_damage",
+          "unlockLevel": 3,
+          "resource": "stamina",
+          "staminaCost": 10,
+          "cooldownTurns": 3,
+          "durationTurns": 1,
+          "description": "کوبیدن تبر به زمین و واردکردن آسیب به همه دشمنان؛ احتمال کاهش سرعت آنان.",
+          "damagePct": 125,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        },
+        {
+          "id": "fortress_stance",
+          "name": "حالت دژ",
+          "name_fa": "حالت دژ",
+          "type": "self_buff",
+          "unlockLevel": 4,
+          "resource": "stamina",
+          "staminaCost": 9,
+          "cooldownTurns": 3,
+          "durationTurns": 3,
+          "description": "استقرار دفاعی؛ دفاع و مقاومت در برابر کنترل را افزایش می‌دهد اما سرعت را کاهش می‌دهد.",
+          "damagePct": 0,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        },
+        {
+          "id": "breaker_slam",
+          "name": "فرود درهم‌شکن",
+          "name_fa": "فرود درهم‌شکن",
+          "type": "single_damage",
+          "unlockLevel": 5,
+          "resource": "stamina",
+          "staminaCost": 12,
+          "cooldownTurns": 3,
+          "durationTurns": 1,
+          "description": "ضربه عمودی تبر؛ آسیب بیشتر به دشمنان دارای سپر یا زره.",
+          "damagePct": 235,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        },
+        {
+          "id": "iron_reprisal",
+          "name": "پاسخ آهنین",
+          "name_fa": "پاسخ آهنین",
+          "type": "self_buff",
+          "unlockLevel": 6,
+          "resource": "stamina",
+          "staminaCost": 11,
+          "cooldownTurns": 3,
+          "durationTurns": 1,
+          "description": "تا نوبت بعد بخشی از آسیب دریافتی را بازمی‌گرداند و گارد را حفظ می‌کند.",
+          "damagePct": 0,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        },
+        {
+          "id": "marching_bastion",
+          "name": "پیشروی دژ",
+          "name_fa": "پیشروی دژ",
+          "type": "shield",
+          "unlockLevel": 7,
+          "resource": "stamina",
+          "staminaCost": 14,
+          "cooldownTurns": 4,
+          "durationTurns": 2,
+          "description": "با پیشروی سنگین، از خود و یاران نزدیک محافظت می‌کند.",
+          "damagePct": 0,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        },
+        {
+          "id": "shatterguard",
+          "name": "خردکننده گارد",
+          "name_fa": "خردکننده گارد",
+          "type": "single_damage",
+          "unlockLevel": 8,
+          "resource": "stamina",
+          "staminaCost": 15,
+          "cooldownTurns": 4,
+          "durationTurns": 2,
+          "description": "ضربه‌ای برای شکستن گارد؛ دفاع هدف را برای چند نوبت کاهش می‌دهد.",
+          "damagePct": 205,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        },
+        {
+          "id": "colossus_rage",
+          "name": "خشم غول‌آسا",
+          "name_fa": "خشم غول‌آسا",
+          "type": "self_buff",
+          "unlockLevel": 9,
+          "resource": "stamina",
+          "staminaCost": 18,
+          "cooldownTurns": 5,
+          "durationTurns": 3,
+          "description": "خشم مهارشده دژ؛ قدرت ضربه و پایداری را بالا می‌برد، اما سرعت را کم می‌کند.",
+          "damagePct": 0,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        },
+        {
+          "id": "last_bastion",
+          "name": "آخرین سنگر",
+          "name_fa": "آخرین سنگر",
+          "type": "ultimate_all_damage",
+          "unlockLevel": 10,
+          "resource": "stamina",
+          "staminaCost": 28,
+          "cooldownTurns": 7,
+          "durationTurns": 1,
+          "description": "ضربه نهایی تبر غول‌پیکر؛ آسیب سنگین به همه دشمنان و ایجاد سپر موقت بر پایه دشمنان آسیب‌دیده.",
+          "damagePct": 390,
+          "scalingStat": "attack",
+          "specializationId": "warrior_iron_bastion",
+          "implementationStatus": "runtime_v1871"
+        }
+      ],
+      "talents": [
+        {
+          "id": "tempered_plate",
+          "name": "صفحه آب‌دیده",
+          "description": "دفاع +۳٪",
+          "effect": {
+            "defensePct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "deep_stance",
+          "name": "ایستادگی عمیق",
+          "description": "کاهش آسیب دریافتی +۲٪",
+          "effect": {
+            "damageReductionPct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "unyielding_core",
+          "name": "هسته تسلیم‌ناپذیر",
+          "description": "مقاومت کنترل +۴٪",
+          "effect": {
+            "controlResistPct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "shield_reserve",
+          "name": "ذخیره سپر",
+          "description": "قدرت سپرها +۵٪",
+          "effect": {
+            "shieldPct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "fortified_breath",
+          "name": "نفس سنگر",
+          "description": "بازیابی استقامت +۲٪",
+          "effect": {
+            "staminaRegenPct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "iron_vigil",
+          "name": "نگهبانی آهنین",
+          "description": "دفاع هنگام گارد +۵٪",
+          "effect": {
+            "guardDefensePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "last_line",
+          "name": "خط آخر",
+          "description": "کاهش آسیب در HP زیر ۳۰٪، +۶٪",
+          "effect": {
+            "lowHpDamageReductionPct": 6
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "living_fortress",
+          "name": "دژ زنده",
+          "description": "دفاع +۸٪ و سرعت -۲٪",
+          "effect": {
+            "defensePct": 8,
+            "speedPct": -2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "axe_mastery",
+          "name": "استادی تبر",
+          "description": "آسیب تبر +۳٪",
+          "effect": {
+            "axeDamagePct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "heavy_edge",
+          "name": "لبه سنگین",
+          "description": "قدرت ضربات سنگین +۴٪",
+          "effect": {
+            "heavyAttackPct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "armor_cracker",
+          "name": "زره‌شکاف",
+          "description": "نفوذ زره +۳٪",
+          "effect": {
+            "armorPenPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "staggering_force",
+          "name": "نیروی برهم‌زننده",
+          "description": "احتمال برهم‌زدن تعادل +۲٪",
+          "effect": {
+            "staggerChancePct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "execution_weight",
+          "name": "وزن اعدام",
+          "description": "آسیب به دشمن کم‌جان +۴٪",
+          "effect": {
+            "lowHpDamagePct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "quake_training",
+          "name": "آموزش زلزله",
+          "description": "آسیب ناحیه‌ای +۴٪",
+          "effect": {
+            "aoeDamagePct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "rending_arc",
+          "name": "قوس شکافنده",
+          "description": "آسیب ضربه شکافنده +۶٪",
+          "effect": {
+            "ironcleavePct": 6
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "colossus_hand",
+          "name": "دست غول",
+          "description": "قدرت حمله +۷٪ و سرعت -۲٪",
+          "effect": {
+            "attackPct": 7,
+            "speedPct": -2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "steadfast_aura",
+          "name": "هاله پایداری",
+          "description": "دفاع هم‌تیمی‌ها +۲٪",
+          "effect": {
+            "allyDefensePct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "marching_order",
+          "name": "فرمان پیشروی",
+          "description": "کاهش آسیب یاران +۳٪",
+          "effect": {
+            "allyDamageReductionPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "anchor_presence",
+          "name": "حضور لنگر",
+          "description": "تهدید ایجادشده +۵٪",
+          "effect": {
+            "threatPct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "frontline_call",
+          "name": "ندای خط مقدم",
+          "description": "مقاومت کنترل یاران +۳٪",
+          "effect": {
+            "allyControlResistPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "shared_cover",
+          "name": "پناه مشترک",
+          "description": "قدرت محافظت گروهی +۴٪",
+          "effect": {
+            "teamGuardPct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "battle_rhythm",
+          "name": "ریتم نبرد",
+          "description": "هزینه مهارت‌های دفاعی -۲٪",
+          "effect": {
+            "guardCostReductionPct": 2
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "unyielding_advance",
+          "name": "پیشروی تسلیم‌ناپذیر",
+          "description": "مدت گارد گروهی +۱ نوبت",
+          "effect": {
+            "teamGuardDurationTurns": 1
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "banner_of_iron",
+          "name": "پرچم آهنین",
+          "description": "دفاع گروه +۵٪ برای شروع نبرد",
+          "effect": {
+            "openingTeamDefensePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "titan_blood",
+          "name": "خون تایتان",
+          "description": "سلامت +۳٪",
+          "effect": {
+            "maxHpPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "iron_resolve",
+          "name": "اراده آهنین",
+          "description": "استقامت +۴٪",
+          "effect": {
+            "maxStaminaPct": 4
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "pain_forged",
+          "name": "آبدیده در درد",
+          "description": "کاهش آسیب پس از ضربه +۳٪",
+          "effect": {
+            "postHitReductionPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "counterweight",
+          "name": "وزنه ضدحمله",
+          "description": "آسیب ضدحمله +۵٪",
+          "effect": {
+            "counterDamagePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "rage_tempered",
+          "name": "خشم مهارشده",
+          "description": "قدرت خشم غول‌آسا +۵٪",
+          "effect": {
+            "colossusRagePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "unyielding_spirit",
+          "name": "روح تسلیم‌ناپذیر",
+          "description": "اثر درمان دریافتی +۳٪",
+          "effect": {
+            "healingReceivedPct": 3
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "final_anchor",
+          "name": "لنگر واپسین",
+          "description": "سپر آخرین سنگر +۶٪",
+          "effect": {
+            "lastBastionShieldPct": 6
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        },
+        {
+          "id": "titan_unbroken",
+          "name": "تایتان نشکستنی",
+          "description": "سلامت +۵٪، دفاع +۵٪",
+          "effect": {
+            "maxHpPct": 5,
+            "defensePct": 5
+          },
+          "pointsRequired": 1,
+          "currency": "skillPoints",
+          "maxRank": 1,
+          "purchaseType": "unlock"
+        }
+      ],
+      "progression": {
+        "specializationsPerClass": 4,
+        "skillsPerSpecialization": 10,
+        "skillUnlockLevels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "skillRanksPerSkill": 6,
+        "skillPointsPerLevelUp": 2,
+        "attributePointsPerLevelUp": 5,
+        "talentsPerSpecialization": 32,
+        "talentPurchaseCurrency": "skillPoints",
+        "domainsPerSpecialization": 1,
+        "domainStages": 4,
+        "ascendedSkillChoicesPerDomain": 1
+      },
+      "portrait": "assets/classes/iron_bastion_portrait.webp",
+      "content_status": "implemented_runtime_v1871",
+      "implementation_scope": "۱۰ مهارت، ۳۲ استعداد، قلمرو و تعالی؛ runtime مشترک و UI اختصاصی",
+      "version": 3
+    },
+    {
+      "id": "warrior_3",
+      "class_id": "warrior",
+      "class_name_fa": "جنگجو",
+      "name_fa": "جنگجوی آشوب",
+      "role_fa": "جنگجوی تهاجمی و غیرقابل‌پیش‌بینی",
+      "identity": {
+        "combat_fantasy": "جنگجوی تهاجمی و غیرقابل‌پیش‌بینی",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "warrior_4",
+      "class_id": "warrior",
+      "class_name_fa": "جنگجو",
+      "name_fa": "شوالیه ویرانی",
+      "role_fa": "شوالیه‌ای با تمرکز بر قدرت ویرانگر",
+      "identity": {
+        "combat_fantasy": "شوالیه‌ای با تمرکز بر قدرت ویرانگر",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "wizard_1",
+      "class_id": "wizard",
+      "class_name_fa": "جادوگر",
+      "name_fa": "آرکین‌میج",
+      "role_fa": "استاد انرژی آرکین، کنترل نوبتی و تکینگی",
+      "identity": {
+        "combat_fantasy": "استاد انرژی آرکین، کنترل نوبتی و تکینگی",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": "assets/classes/arcane_mage_portrait.webp",
+      "content_status": "existing_specialization_preserved",
+      "implementation_scope": "تخصص اجرایی موجود حفظ شده؛ در این مرحله تغییری در مهارت‌ها و مکانیک آن داده نشده",
+      "version": 1,
+      "data_module": "systems/classes/arcane-mage.js"
+    },
+    {
+      "id": "wizard_2",
+      "class_id": "wizard",
+      "class_name_fa": "جادوگر",
+      "name_fa": "المنتالیست",
+      "role_fa": "جادوگر نیروهای بنیادین عناصر",
+      "identity": {
+        "combat_fantasy": "جادوگر نیروهای بنیادین عناصر",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "wizard_3",
+      "class_id": "wizard",
+      "class_name_fa": "جادوگر",
+      "name_fa": "وارلاک",
+      "role_fa": "وارث پیمان‌های ممنوع؛ قرارداد، بدهی، خلأ و قربانی",
+      "identity": {
+        "combat_fantasy": "مدیریت قراردادهای خطرناک، دست‌کاری قوانین نبرد و تبدیل بهای پیمان به قدرت",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "مانا، اعتبار پیمان و بدهی پیمان"
+      },
+      "skills": [
+        "forbidden_signature",
+        "stolen_moment",
+        "demons_testament",
+        "reversal_of_sacrifice",
+        "court_of_nameless",
+        "hostage_heart",
+        "erasure_from_reality",
+        "heir_of_hunger",
+        "true_name_shatter",
+        "final_covenant"
+      ],
+      "talents": 32,
+      "domain": "محکمه آن‌سوی آفرینش",
+      "content_status": "data_module_created_runtime_integration_pending",
+      "implementation_scope": "تعریف کامل داده‌ای ۱۰ مهارت با ۶ ارتقا، ۳۲ استعداد، قلمرو چهارمرحله‌ای، آزمون و ۱۰ مهارت تعالی‌یافته با نام‌های مستقل؛ اتصال موتور نبرد/رابط/ذخیره‌سازی در مرحله یکپارچه‌سازی کلاس جادوگر انجام می‌شود.",
+      "version": 1,
+      "data_module": "systems/classes/warlock.js",
+      "ascended_skill_rule": "با فعال‌سازی قلمرو از سطح ۲۵، هر ۱۰ مهارت تعالی‌یافته با نام متفاوت در دسترس است؛ فقط یک مهارت از مجموع ۱۰ مهارت، یک بار در هر فعال‌سازی قابل اجراست."
+    },
+    {
+      "id": "wizard_4",
+      "class_id": "wizard",
+      "class_name_fa": "جادوگر",
+      "name_fa": "نکرومنسر",
+      "role_fa": "جادوگر مرگ، ارواح و نیروهای مردگان",
+      "identity": {
+        "combat_fantasy": "فرمانروای مرگ، ارواح و لژیون دائمی سه‌عضوی؛ آزادسازی فرم مرگ اعضا در قلمرو",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "مانا و ارواح ذخیره‌شده"
+      },
+      "skills": [
+        "death_claw",
+        "legion",
+        "death_memory",
+        "bone_blossom",
+        "assembly_of_souls",
+        "life_siphon",
+        "kingdom_of_bones",
+        "return_threshold",
+        "soul_domination",
+        "eternal_sovereign"
+      ],
+      "talents": 32,
+      "progression": {
+        "skillUnlockLevels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "upgradesPerSkill": 6,
+        "talentCount": 32,
+        "talentBranches": 4,
+        "talentsPerBranch": 8,
+        "talentMaxRank": 5,
+        "attributePointsPerLevel": 5,
+        "skillPointsPerLevel": 2,
+        "levelCap": 50,
+        "domainLevels": [
+          25,
+          40,
+          50,
+          "trial"
+        ]
+      },
+      "portrait": null,
+      "content_status": "data_module_created_runtime_integration_pending",
+      "implementation_scope": "داده کامل ۱۰ مهارت با ۶ ارتقا، ۳۲ استعداد، قلمرو چهارمرحله‌ای، فرم مرگ لژیون، آزمون و ۱۰ مهارت تعالی‌یافته؛ اتصال موتور نبرد/رابط/ذخیره‌سازی در یکپارچه‌سازی کلاس جادوگر انجام می‌شود.",
+      "version": 1,
+      "domain": "قلمرو رستاخیز مردگان",
+      "data_module": "systems/classes/necromancer.js",
+      "ascended_skill_rule": "با فعال‌سازی قلمرو از سطح ۲۵، هر ۱۰ مهارت تعالی‌یافته با نام متفاوت در دسترس است؛ فقط یک مهارت از مجموع ۱۰ مهارت، یک بار در هر فعال‌سازی قابل اجراست."
+    },
+    {
+      "id": "ranger_1",
+      "class_id": "ranger",
+      "class_name_fa": "رنجر",
+      "name_fa": "شکارچی",
+      "role_fa": "ردیاب و شکارچی همه‌فن‌حریف",
+      "identity": {
+        "combat_fantasy": "ردیاب و شکارچی همه‌فن‌حریف",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "ranger_2",
+      "class_id": "ranger",
+      "class_name_fa": "رنجر",
+      "name_fa": "تیرانداز طبیعت",
+      "role_fa": "تیرانداز پیوندخورده با طبیعت",
+      "identity": {
+        "combat_fantasy": "تیرانداز پیوندخورده با طبیعت",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "ranger_3",
+      "class_id": "ranger",
+      "class_name_fa": "رنجر",
+      "name_fa": "شکارچی کابوس",
+      "role_fa": "شکارچی موجودات هراس‌آور",
+      "identity": {
+        "combat_fantasy": "شکارچی موجودات هراس‌آور",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "ranger_4",
+      "class_id": "ranger",
+      "class_name_fa": "رنجر",
+      "name_fa": "نگهبان جنگل سیاه",
+      "role_fa": "پاسدار مرموز جنگل‌های نفرین‌شده",
+      "identity": {
+        "combat_fantasy": "پاسدار مرموز جنگل‌های نفرین‌شده",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "assassin_1",
+      "class_id": "assassin",
+      "class_name_fa": "آدمکش",
+      "name_fa": "سایه‌رو",
+      "role_fa": "نفوذگر پنهان و جابه‌جایی بی‌صدا",
+      "identity": {
+        "combat_fantasy": "نفوذگر پنهان و جابه‌جایی بی‌صدا",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "assassin_2",
+      "class_id": "assassin",
+      "class_name_fa": "آدمکش",
+      "name_fa": "قاتل حرفه‌ای",
+      "role_fa": "متخصص حذف سریع و حساب‌شده هدف",
+      "identity": {
+        "combat_fantasy": "متخصص حذف سریع و حساب‌شده هدف",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "assassin_3",
+      "class_id": "assassin",
+      "class_name_fa": "آدمکش",
+      "name_fa": "تیغ روح‌خوار",
+      "role_fa": "آدمکشی با پیوند به ارواح و جوهر حیات",
+      "identity": {
+        "combat_fantasy": "آدمکشی با پیوند به ارواح و جوهر حیات",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "assassin_4",
+      "class_id": "assassin",
+      "class_name_fa": "آدمکش",
+      "name_fa": "شبح مرگ",
+      "role_fa": "قاتلی افسانه‌ای با هویت مرگ‌محور",
+      "identity": {
+        "combat_fantasy": "قاتلی افسانه‌ای با هویت مرگ‌محور",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "priest_1",
+      "class_id": "priest",
+      "class_name_fa": "کشیش",
+      "name_fa": "روحانی مقدس",
+      "role_fa": "کارگزار نیروی مقدس و آیین‌های تطهیر",
+      "identity": {
+        "combat_fantasy": "کارگزار نیروی مقدس و آیین‌های تطهیر",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "priest_2",
+      "class_id": "priest",
+      "class_name_fa": "کشیش",
+      "name_fa": "شفادهنده",
+      "role_fa": "متخصص حمایت و بازیابی همراهان",
+      "identity": {
+        "combat_fantasy": "متخصص حمایت و بازیابی همراهان",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "priest_3",
+      "class_id": "priest",
+      "class_name_fa": "کشیش",
+      "name_fa": "کشیش نفرین",
+      "role_fa": "کارگزار نفرین‌ها و آیین‌های تاریک",
+      "identity": {
+        "combat_fantasy": "کارگزار نفرین‌ها و آیین‌های تاریک",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "priest_4",
+      "class_id": "priest",
+      "class_name_fa": "کشیش",
+      "name_fa": "پیام‌آور مرگ",
+      "role_fa": "روحانی مرگ و داوری واپسین",
+      "identity": {
+        "combat_fantasy": "روحانی مرگ و داوری واپسین",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "paladin_1",
+      "class_id": "paladin",
+      "class_name_fa": "پالادین",
+      "name_fa": "نگهبان مقدس",
+      "role_fa": "مدافع سوگندخورده و سپر همراهان",
+      "identity": {
+        "combat_fantasy": "مدافع سوگندخورده و سپر همراهان",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "paladin_2",
+      "class_id": "paladin",
+      "class_name_fa": "پالادین",
+      "name_fa": "شوالیه نور",
+      "role_fa": "شوالیه نیروی روشنایی",
+      "identity": {
+        "combat_fantasy": "شوالیه نیروی روشنایی",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "paladin_3",
+      "class_id": "paladin",
+      "class_name_fa": "پالادین",
+      "name_fa": "پالادین سقوط‌کرده",
+      "role_fa": "جنگجوی سوگندشکسته و تاریک",
+      "identity": {
+        "combat_fantasy": "جنگجوی سوگندشکسته و تاریک",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "paladin_4",
+      "class_id": "paladin",
+      "class_name_fa": "پالادین",
+      "name_fa": "شوالیه دوزخ",
+      "role_fa": "شوالیه نیروی جهنمی و ویرانی",
+      "identity": {
+        "combat_fantasy": "شوالیه نیروی جهنمی و ویرانی",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "shaman_1",
+      "class_id": "shaman",
+      "class_name_fa": "شمن",
+      "name_fa": "شمن طبیعت",
+      "role_fa": "پیوندخورده با ارواح طبیعت",
+      "identity": {
+        "combat_fantasy": "پیوندخورده با ارواح طبیعت",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "shaman_2",
+      "class_id": "shaman",
+      "class_name_fa": "شمن",
+      "name_fa": "شمن ارواح",
+      "role_fa": "میانجی جهان زندگان و ارواح",
+      "identity": {
+        "combat_fantasy": "میانجی جهان زندگان و ارواح",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "shaman_3",
+      "class_id": "shaman",
+      "class_name_fa": "شمن",
+      "name_fa": "شمن ابیس",
+      "role_fa": "شمن نیروهای ژرفای ابیس",
+      "identity": {
+        "combat_fantasy": "شمن نیروهای ژرفای ابیس",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "shaman_4",
+      "class_id": "shaman",
+      "class_name_fa": "شمن",
+      "name_fa": "شمن تباهی",
+      "role_fa": "شمن نیروهای فساد و تباهی",
+      "identity": {
+        "combat_fantasy": "شمن نیروهای فساد و تباهی",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "summoner_1",
+      "class_id": "summoner",
+      "class_name_fa": "احضارگر",
+      "name_fa": "احضارگر موجودات",
+      "role_fa": "فراخواننده موجودات و همراهان",
+      "identity": {
+        "combat_fantasy": "فراخواننده موجودات و همراهان",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "summoner_2",
+      "class_id": "summoner",
+      "class_name_fa": "احضارگر",
+      "name_fa": "احضارگر عناصر",
+      "role_fa": "فراخواننده تجسم‌های عنصری",
+      "identity": {
+        "combat_fantasy": "فراخواننده تجسم‌های عنصری",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "summoner_3",
+      "class_id": "summoner",
+      "class_name_fa": "احضارگر",
+      "name_fa": "احضارگر شیاطین",
+      "role_fa": "پیمان‌بند نیروهای شیطانی",
+      "identity": {
+        "combat_fantasy": "پیمان‌بند نیروهای شیطانی",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    },
+    {
+      "id": "summoner_4",
+      "class_id": "summoner",
+      "class_name_fa": "احضارگر",
+      "name_fa": "احضارگر باستانی",
+      "role_fa": "فراخواننده موجودات و پیمان‌های کهن",
+      "identity": {
+        "combat_fantasy": "فراخواننده موجودات و پیمان‌های کهن",
+        "theme": "دارک فانتزی",
+        "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+      },
+      "skills": [],
+      "talents": [],
+      "progression": null,
+      "portrait": null,
+      "content_status": "identity_shell_only",
+      "implementation_scope": "پوسته هویتی בלבד؛ بدون مهارت، استعداد، پیشرفت یا تغییر مکانیک",
+      "version": 1
+    }
+  ]
+}
