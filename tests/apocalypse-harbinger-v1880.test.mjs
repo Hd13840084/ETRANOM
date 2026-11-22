@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import DATA from '../content/classes/warrior_apocalypse_harbinger_v1.json' with {type:'json'};
+import {createApocalypseProgress,unlockApocalypseSkills,activateWorldsEnd,selectApocalypseAscension,resolveApocalypseSkill,tickWorldsEnd} from '../systems/combat/apocalypse-harbinger-runtime.js';
+assert.equal(DATA.skills.length,10);assert.equal(DATA.talentBranches.length,4);assert.equal(DATA.talentBranches.reduce((n,b)=>n+b.talents.length,0),32);assert.equal(DATA.ascendedSkills.length,10);assert.equal(DATA.domain.stages.length,4);
+const actor={level:30,attack:120,stamina:100,classProgress:{warrior_apocalypse_harbinger:createApocalypseProgress()}};
+const p=unlockApocalypseSkills(actor);assert.equal(Object.keys(p.skillRanks).length,10);
+const enemies=[{id:'a',name:'A',hp:2000},{id:'b',name:'B',hp:2000}];
+const hit=resolveApocalypseSkill('apoc_strike',{actor,targets:enemies,targetId:'a'});assert.ok(hit.damage>0);assert.ok(hit.targets[0].hp<2000);assert.equal(hit.targets[1].hp,2000);
+const dom=activateWorldsEnd(actor);assert.equal(dom.domain.active,true);
+selectApocalypseAscension(actor,'apoc_strike_ascended');
+const asc=resolveApocalypseSkill('apoc_strike_ascended',{actor,targets:enemies,targetId:'a'});assert.equal(asc.ascended,true);
+let tick;for(let i=0;i<5;i++)tick=tickWorldsEnd(actor,enemies);assert.equal(tick.ended,true);
+console.log('Apocalypse Harbinger V1880: all tests passed.');
