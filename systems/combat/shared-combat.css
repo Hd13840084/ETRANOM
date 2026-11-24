@@ -1,0 +1,47 @@
+
+/* v168: identical four-control combat bar across solo, party and PvP. */
+.etr-shared-combat-actions{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:7px!important;margin:14px 0 0!important}
+.etr-shared-combat-actions button{min-width:0!important;min-height:56px!important;padding:7px 4px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;border:1.5px solid #c18a43!important;border-radius:13px!important;background:linear-gradient(135deg,#43204d,#171624 80%)!important;color:#f8e9d5!important;font-size:clamp(10px,2.8vw,14px)!important;font-weight:800!important}
+.etr-shared-combat-actions button.attack{background:linear-gradient(135deg,#c6383d,#781b28)!important}
+.etr-shared-combat-actions button.skill{background:linear-gradient(135deg,#6733a0,#3b205f)!important}
+.etr-shared-combat-actions button.items{background:linear-gradient(135deg,#159b78,#08684f)!important}
+.etr-shared-combat-actions button.defend{background:linear-gradient(135deg,#53677b,#293d54)!important}
+.etr-shared-combat-actions button span{font-size:clamp(17px,4.5vw,23px)!important;line-height:1!important}
+.etr-shared-combat-actions button b{font-size:inherit!important;white-space:normal!important;text-align:center!important}
+.etr-shared-combat-actions button small{font-size:9px!important;opacity:.85!important}
+.etr-shared-combat-actions button:disabled{opacity:.42!important;filter:grayscale(.65)!important;cursor:not-allowed!important}
+.etr-combat-mode-note{font-size:11px;color:#c8b9a4;line-height:1.8;margin:8px 2px}
+.etr-pvp-battle-screen{max-width:680px;margin:8px auto;padding:11px;border:1px solid #72534b;border-radius:17px;background:radial-gradient(ellipse at 50% 0%,#4a2024 0,#21151b 38%,#11121b 100%);color:#f8eee5}
+.etr-pvp-battle-screen .etr-pvp-combatant-card{width:100%;max-width:none;min-width:0}
+.etr-pvp-battle-screen .etr-combat-log-entry{margin:4px 0}
+@media(max-width:420px){.etr-shared-combat-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important}.etr-shared-combat-actions button{min-height:49px!important}}
+
+/* V1854 mobile layout refinement: keep all four actions in one compact row. */
+.etr-battle-screen .battle-actions.etr-shared-combat-actions,.etr-shared-combat-actions{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;margin:7px 0 0!important}
+.etr-battle-screen .etr-shared-combat-actions button{min-width:0!important;min-height:50px!important;padding:5px 2px!important}
+@media(max-width:420px){.etr-battle-screen .battle-actions.etr-shared-combat-actions,.etr-shared-combat-actions{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important}.etr-battle-screen .etr-shared-combat-actions button{min-height:48px!important;padding:4px 1px!important}.etr-battle-screen .etr-shared-combat-actions button b{font-size:clamp(8px,2.4vw,10px)!important}}
+/* Horizontal HP / MP / stamina rows: label, long bar, value on the same line. */
+.etr-battle-screen .battle-resource-line{direction:rtl!important;display:grid!important;grid-template-columns:48px minmax(0,1fr) auto!important;align-items:center!important;column-gap:5px!important;margin:3px 0!important;min-height:12px!important}
+.etr-battle-screen .battle-resource-label{font-size:9px!important;line-height:1.15!important;white-space:nowrap!important;text-align:right!important;color:#e4d5c0!important}
+.etr-battle-screen .battle-resource-value{font-size:9px!important;line-height:1!important;white-space:nowrap!important;text-align:left!important;color:#f6e8d2!important;font-variant-numeric:tabular-nums!important}
+.etr-battle-screen .battle-resource-line .battle-meter{height:7px!important;min-width:0!important;margin:0!important;border-radius:99px!important;overflow:hidden!important}
+.etr-battle-screen .battle-resource-line .battle-meter i{display:block!important;height:100%!important;border-radius:99px!important}
+.etr-battle-screen .battle-vs{margin:2px 0!important;padding:0!important;min-height:20px!important}
+.etr-battle-screen .battle-section-title{margin:3px 2px 2px!important;padding-top:0!important}
+@media(max-width:420px){.etr-battle-screen .battle-resource-line{grid-template-columns:43px minmax(0,1fr) auto!important;column-gap:4px!important;margin:2px 0!important}.etr-battle-screen .battle-resource-label,.etr-battle-screen .battle-resource-value{font-size:8px!important}.etr-battle-screen .battle-resource-line .battle-meter{height:7px!important}}
+
+/* V1893: three primary actions; defensive choices live only in the enemy reaction window. */
+.etr-battle-screen .battle-actions.etr-shared-combat-actions,.etr-shared-combat-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
+@media(max-width:420px){.etr-battle-screen .battle-actions.etr-shared-combat-actions,.etr-shared-combat-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}.etr-battle-screen .etr-shared-combat-actions button{min-height:54px!important;padding:6px 3px!important}.etr-battle-screen .etr-shared-combat-actions button b{font-size:11px!important}}
+
+/* V1963 canonical battle surface: all encounter families share this layout. */
+.ubv1963-battle-screen{display:grid;gap:10px;max-width:760px;margin:0 auto;padding:9px;color:#f2e8d8;background:linear-gradient(160deg,#17131d,#211a25 55%,#17151a);border:1px solid #59445f;border-radius:14px;box-sizing:border-box;max-height:calc(100dvh - 64px);overflow-y:auto}
+.ubv1963-battle-header{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 2px 8px;border-bottom:1px solid #554451}.ubv1963-battle-header h2{font-size:17px;margin:3px 0}.ubv1963-battle-header small,.ubv1963-battle-header p{color:#c6ad91;font-size:10px;margin:2px 0}.ubv1963-turn{white-space:nowrap;border:1px solid #866b45;border-radius:8px;padding:6px 9px;font-size:11px;color:#f4d49b}
+.ubv1963-side{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:7px}.ubv1963-vs{text-align:center;line-height:1;color:#cda96d;font-weight:900;font-size:12px;letter-spacing:3px}.ubv1963-vs span{display:inline-block;padding:3px 18px;border-top:1px solid #65503c;border-bottom:1px solid #65503c}
+.ubv1963-enemy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.ubv1963-enemy-card{min-width:0;text-align:center;padding:7px 5px;border:1px solid #604a4e;border-radius:10px;background:#241b23;display:flex;flex-direction:column;align-items:center;gap:4px}.ubv1963-enemy-card.is-selected{border-color:#e3bd70;box-shadow:0 0 0 1px #e3bd7040}.ubv1963-enemy-card.is-defeated{opacity:.48;filter:grayscale(.7)}.ubv1963-enemy-level{font-size:10px;color:#d6b67b}.ubv1963-enemy-portrait{width:min(100%,92px);aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#17131a;border:1px solid #59434d}.ubv1963-enemy-portrait img{width:100%;height:100%;object-fit:cover}.ubv1963-enemy-name{font-size:11px;line-height:1.5;min-height:30px;overflow-wrap:anywhere}.ubv1963-enemy-card small{font-size:9px;color:#d4c5b2;direction:ltr}.ubv1963-enemy-meter{width:100%;height:6px;border-radius:8px;overflow:hidden;background:#46343b}.ubv1963-enemy-meter i{display:block;height:100%;border-radius:8px}.ubv1963-enemy-meter.hp i{background:#c8434d}.ubv1963-enemy-meter.mp i{background:#3988d0}.ubv1963-empty{grid-column:1/-1;text-align:center;color:#bda98f;font-size:12px;padding:15px}
+.ubv1963-battle-log{border:1px solid #51424e;border-radius:9px;background:#17131b;padding:7px 9px;min-height:48px}.ubv1963-battle-log h3{font-size:11px;margin:0 0 5px;color:#e4c894}.ubv1963-battle-log>div{font-size:10px;line-height:1.6;max-height:112px;overflow:auto}.ubv1963-battle-log p{margin:2px 0}.ubv1963-battle-footer{text-align:center;color:#a99583;font-size:9px}.ubv1963-battle-screen .etr-shared-combat-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.ubv1963-battle-screen .etr-shared-combat-actions button{min-width:0}
+@media(max-width:380px){.ubv1963-enemy-grid{gap:4px}.ubv1963-enemy-card{padding:5px 3px}.ubv1963-enemy-portrait{width:100%}.ubv1963-enemy-name{font-size:10px}.ubv1963-side{grid-template-columns:1fr}}
+/* V1965: PvP opponent cards and state panel use the canonical battle surface. */
+.ubv1963-opponents{grid-template-columns:minmax(0,1fr);max-width:420px;margin:0 auto;width:100%}
+.ubv1963-status-panel{padding:9px 11px;border:1px solid #51445e;border-radius:9px;background:#17131d;color:#e8d5b8;font-size:11px;line-height:1.8}
+.ubv1963-pvp-footer{display:flex;justify-content:center}.ubv1963-pvp-footer button{padding:7px 13px;border:1px solid #94734c;border-radius:8px;background:#2a2028;color:#f4dfbd}

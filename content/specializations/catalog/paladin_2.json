@@ -1,0 +1,88 @@
+{
+  "id": "paladin_2",
+  "class_id": "paladin",
+  "class_name_fa": "پالادین",
+  "name_fa": "شوالیه نور",
+  "role_fa": "شوالیه نیروی روشنایی",
+  "identity": {
+    "combat_fantasy": "شوالیه نیروی روشنایی",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "paladin_2_strike",
+      "name": "شوالیه نور: ضربت سوگند",
+      "name_fa": "شوالیه نور: ضربت سوگند",
+      "type": "single_damage",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه نور؛ شوالیه نیروی روشنایی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 135,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "paladin_2_guard",
+      "name": "شوالیه نور: پناه سوگند برتر",
+      "name_fa": "شوالیه نور: پناه سوگند برتر",
+      "type": "shield",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه نور؛ شوالیه نیروی روشنایی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "shieldPct": 178,
+      "damageReductionPct": 10
+    },
+    {
+      "id": "paladin_2_wave",
+      "name": "شوالیه نور: برکت همراهان پیشرفته",
+      "name_fa": "شوالیه نور: برکت همراهان پیشرفته",
+      "type": "group_heal",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه نور؛ شوالیه نیروی روشنایی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "healPct": 75,
+      "target": "self"
+    },
+    {
+      "id": "paladin_2_stance",
+      "name": "شوالیه نور: ایستادگی مقدس والا",
+      "name_fa": "شوالیه نور: ایستادگی مقدس والا",
+      "type": "self_buff",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه نور؛ شوالیه نیروی روشنایی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "effects": {
+        "attackPct": 20,
+        "defensePct": 13,
+        "speedPct": 5
+      }
+    },
+    {
+      "id": "paladin_2_ultimate",
+      "name": "شوالیه نور: داوری فروزان اساطیری",
+      "name_fa": "شوالیه نور: داوری فروزان اساطیری",
+      "type": "all_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه نور؛ شوالیه نیروی روشنایی. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 192,
+      "scalingStat": "attack"
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}

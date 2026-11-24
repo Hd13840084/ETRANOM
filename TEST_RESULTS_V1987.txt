@@ -1,0 +1,35 @@
+TAP version 13
+# Subtest: 20 Epic companions have unique identities, canonical stats, skills, AI and portraits
+ok 1 - 20 Epic companions have unique identities, canonical stats, skills, AI and portraits
+  ---
+  duration_ms: 2.061011
+  type: 'test'
+  ...
+# Subtest: Bestiary contains 80 species with no repeated ids or English names
+ok 2 - Bestiary contains 80 species with no repeated ids or English names
+  ---
+  duration_ms: 0.227313
+  type: 'test'
+  ...
+# Subtest: Epic skill types are supported by the combat resolver
+ok 3 - Epic skill types are supported by the combat resolver
+  ---
+  duration_ms: 0.266052
+  type: 'test'
+  ...
+# Subtest: Epic AI selects a species skill when available
+ok 4 - Epic AI selects a species skill when available
+  ---
+  duration_ms: 1.46397
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 109.777361
+

@@ -1,0 +1,676 @@
+{
+  "version": "1980.0.0",
+  "level_cap": 100,
+  "region_count": 10,
+  "zones_per_region": 6,
+  "rule_fa": "هر منطقه دقیقاً ۱۰ سطح را پوشش می‌دهد. محدوده‌های ۱ تا ۴ هرکدام دو سطح، محدوده ۵ یک سطح و محدوده ۶ یک سطح را پوشش می‌دهند.",
+  "region_level_ranges": [],
+  "zone_level_offsets": {
+    "zone_1": [
+      1,
+      2
+    ],
+    "zone_2": [
+      3,
+      4
+    ],
+    "zone_3": [
+      5,
+      6
+    ],
+    "zone_4": [
+      7,
+      8
+    ],
+    "zone_5": [
+      9,
+      9
+    ],
+    "zone_6": [
+      10,
+      10
+    ]
+  },
+  "regions": [
+    {
+      "region_number": 1,
+      "id": "region_one",
+      "name_fa": "جنگل سوخته",
+      "level_min": 1,
+      "level_max": 10,
+      "content_status": "authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "burnt_forest",
+          "name_fa": "جنگل سوخته",
+          "level_min": 1,
+          "level_max": 2,
+          "recommended_level": 1,
+          "content_status": "authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "thorn_grove",
+          "name_fa": "بیشه خارزار",
+          "level_min": 3,
+          "level_max": 4,
+          "recommended_level": 3,
+          "content_status": "authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "ash_hills",
+          "name_fa": "تپه‌های خاکستر",
+          "level_min": 5,
+          "level_max": 6,
+          "recommended_level": 5,
+          "content_status": "authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "vardash_river",
+          "name_fa": "رود ورداش",
+          "level_min": 7,
+          "level_max": 8,
+          "recommended_level": 7,
+          "content_status": "authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "southern_plains",
+          "name_fa": "دشت جنوبی",
+          "level_min": 9,
+          "level_max": 9,
+          "recommended_level": 9,
+          "content_status": "authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "rootbound_ruins",
+          "name_fa": "ویرانه‌های ریشه‌پوش",
+          "level_min": 10,
+          "level_max": 10,
+          "recommended_level": 10,
+          "content_status": "authored"
+        }
+      ]
+    },
+    {
+      "region_number": 2,
+      "id": "region_02",
+      "name_fa": null,
+      "level_min": 11,
+      "level_max": 20,
+      "content_status": "not_authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "region_02_zone_1",
+          "name_fa": null,
+          "level_min": 11,
+          "level_max": 12,
+          "recommended_level": 11,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "region_02_zone_2",
+          "name_fa": null,
+          "level_min": 13,
+          "level_max": 14,
+          "recommended_level": 13,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "region_02_zone_3",
+          "name_fa": null,
+          "level_min": 15,
+          "level_max": 16,
+          "recommended_level": 15,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "region_02_zone_4",
+          "name_fa": null,
+          "level_min": 17,
+          "level_max": 18,
+          "recommended_level": 17,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "region_02_zone_5",
+          "name_fa": null,
+          "level_min": 19,
+          "level_max": 19,
+          "recommended_level": 19,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "region_02_zone_6",
+          "name_fa": null,
+          "level_min": 20,
+          "level_max": 20,
+          "recommended_level": 20,
+          "content_status": "not_authored"
+        }
+      ]
+    },
+    {
+      "region_number": 3,
+      "id": "region_03",
+      "name_fa": null,
+      "level_min": 21,
+      "level_max": 30,
+      "content_status": "not_authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "region_03_zone_1",
+          "name_fa": null,
+          "level_min": 21,
+          "level_max": 22,
+          "recommended_level": 21,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "region_03_zone_2",
+          "name_fa": null,
+          "level_min": 23,
+          "level_max": 24,
+          "recommended_level": 23,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "region_03_zone_3",
+          "name_fa": null,
+          "level_min": 25,
+          "level_max": 26,
+          "recommended_level": 25,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "region_03_zone_4",
+          "name_fa": null,
+          "level_min": 27,
+          "level_max": 28,
+          "recommended_level": 27,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "region_03_zone_5",
+          "name_fa": null,
+          "level_min": 29,
+          "level_max": 29,
+          "recommended_level": 29,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "region_03_zone_6",
+          "name_fa": null,
+          "level_min": 30,
+          "level_max": 30,
+          "recommended_level": 30,
+          "content_status": "not_authored"
+        }
+      ]
+    },
+    {
+      "region_number": 4,
+      "id": "region_04",
+      "name_fa": null,
+      "level_min": 31,
+      "level_max": 40,
+      "content_status": "not_authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "region_04_zone_1",
+          "name_fa": null,
+          "level_min": 31,
+          "level_max": 32,
+          "recommended_level": 31,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "region_04_zone_2",
+          "name_fa": null,
+          "level_min": 33,
+          "level_max": 34,
+          "recommended_level": 33,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "region_04_zone_3",
+          "name_fa": null,
+          "level_min": 35,
+          "level_max": 36,
+          "recommended_level": 35,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "region_04_zone_4",
+          "name_fa": null,
+          "level_min": 37,
+          "level_max": 38,
+          "recommended_level": 37,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "region_04_zone_5",
+          "name_fa": null,
+          "level_min": 39,
+          "level_max": 39,
+          "recommended_level": 39,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "region_04_zone_6",
+          "name_fa": null,
+          "level_min": 40,
+          "level_max": 40,
+          "recommended_level": 40,
+          "content_status": "not_authored"
+        }
+      ]
+    },
+    {
+      "region_number": 5,
+      "id": "region_05",
+      "name_fa": null,
+      "level_min": 41,
+      "level_max": 50,
+      "content_status": "not_authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "region_05_zone_1",
+          "name_fa": null,
+          "level_min": 41,
+          "level_max": 42,
+          "recommended_level": 41,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "region_05_zone_2",
+          "name_fa": null,
+          "level_min": 43,
+          "level_max": 44,
+          "recommended_level": 43,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "region_05_zone_3",
+          "name_fa": null,
+          "level_min": 45,
+          "level_max": 46,
+          "recommended_level": 45,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "region_05_zone_4",
+          "name_fa": null,
+          "level_min": 47,
+          "level_max": 48,
+          "recommended_level": 47,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "region_05_zone_5",
+          "name_fa": null,
+          "level_min": 49,
+          "level_max": 49,
+          "recommended_level": 49,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "region_05_zone_6",
+          "name_fa": null,
+          "level_min": 50,
+          "level_max": 50,
+          "recommended_level": 50,
+          "content_status": "not_authored"
+        }
+      ]
+    },
+    {
+      "region_number": 6,
+      "id": "region_06",
+      "name_fa": null,
+      "level_min": 51,
+      "level_max": 60,
+      "content_status": "not_authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "region_06_zone_1",
+          "name_fa": null,
+          "level_min": 51,
+          "level_max": 52,
+          "recommended_level": 51,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "region_06_zone_2",
+          "name_fa": null,
+          "level_min": 53,
+          "level_max": 54,
+          "recommended_level": 53,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "region_06_zone_3",
+          "name_fa": null,
+          "level_min": 55,
+          "level_max": 56,
+          "recommended_level": 55,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "region_06_zone_4",
+          "name_fa": null,
+          "level_min": 57,
+          "level_max": 58,
+          "recommended_level": 57,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "region_06_zone_5",
+          "name_fa": null,
+          "level_min": 59,
+          "level_max": 59,
+          "recommended_level": 59,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "region_06_zone_6",
+          "name_fa": null,
+          "level_min": 60,
+          "level_max": 60,
+          "recommended_level": 60,
+          "content_status": "not_authored"
+        }
+      ]
+    },
+    {
+      "region_number": 7,
+      "id": "region_07",
+      "name_fa": null,
+      "level_min": 61,
+      "level_max": 70,
+      "content_status": "not_authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "region_07_zone_1",
+          "name_fa": null,
+          "level_min": 61,
+          "level_max": 62,
+          "recommended_level": 61,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "region_07_zone_2",
+          "name_fa": null,
+          "level_min": 63,
+          "level_max": 64,
+          "recommended_level": 63,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "region_07_zone_3",
+          "name_fa": null,
+          "level_min": 65,
+          "level_max": 66,
+          "recommended_level": 65,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "region_07_zone_4",
+          "name_fa": null,
+          "level_min": 67,
+          "level_max": 68,
+          "recommended_level": 67,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "region_07_zone_5",
+          "name_fa": null,
+          "level_min": 69,
+          "level_max": 69,
+          "recommended_level": 69,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "region_07_zone_6",
+          "name_fa": null,
+          "level_min": 70,
+          "level_max": 70,
+          "recommended_level": 70,
+          "content_status": "not_authored"
+        }
+      ]
+    },
+    {
+      "region_number": 8,
+      "id": "region_08",
+      "name_fa": null,
+      "level_min": 71,
+      "level_max": 80,
+      "content_status": "not_authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "region_08_zone_1",
+          "name_fa": null,
+          "level_min": 71,
+          "level_max": 72,
+          "recommended_level": 71,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "region_08_zone_2",
+          "name_fa": null,
+          "level_min": 73,
+          "level_max": 74,
+          "recommended_level": 73,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "region_08_zone_3",
+          "name_fa": null,
+          "level_min": 75,
+          "level_max": 76,
+          "recommended_level": 75,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "region_08_zone_4",
+          "name_fa": null,
+          "level_min": 77,
+          "level_max": 78,
+          "recommended_level": 77,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "region_08_zone_5",
+          "name_fa": null,
+          "level_min": 79,
+          "level_max": 79,
+          "recommended_level": 79,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "region_08_zone_6",
+          "name_fa": null,
+          "level_min": 80,
+          "level_max": 80,
+          "recommended_level": 80,
+          "content_status": "not_authored"
+        }
+      ]
+    },
+    {
+      "region_number": 9,
+      "id": "region_09",
+      "name_fa": null,
+      "level_min": 81,
+      "level_max": 90,
+      "content_status": "not_authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "region_09_zone_1",
+          "name_fa": null,
+          "level_min": 81,
+          "level_max": 82,
+          "recommended_level": 81,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "region_09_zone_2",
+          "name_fa": null,
+          "level_min": 83,
+          "level_max": 84,
+          "recommended_level": 83,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "region_09_zone_3",
+          "name_fa": null,
+          "level_min": 85,
+          "level_max": 86,
+          "recommended_level": 85,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "region_09_zone_4",
+          "name_fa": null,
+          "level_min": 87,
+          "level_max": 88,
+          "recommended_level": 87,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "region_09_zone_5",
+          "name_fa": null,
+          "level_min": 89,
+          "level_max": 89,
+          "recommended_level": 89,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "region_09_zone_6",
+          "name_fa": null,
+          "level_min": 90,
+          "level_max": 90,
+          "recommended_level": 90,
+          "content_status": "not_authored"
+        }
+      ]
+    },
+    {
+      "region_number": 10,
+      "id": "region_10",
+      "name_fa": null,
+      "level_min": 91,
+      "level_max": 100,
+      "content_status": "not_authored",
+      "zones": [
+        {
+          "zone_number": 1,
+          "id": "region_10_zone_1",
+          "name_fa": null,
+          "level_min": 91,
+          "level_max": 92,
+          "recommended_level": 91,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 2,
+          "id": "region_10_zone_2",
+          "name_fa": null,
+          "level_min": 93,
+          "level_max": 94,
+          "recommended_level": 93,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 3,
+          "id": "region_10_zone_3",
+          "name_fa": null,
+          "level_min": 95,
+          "level_max": 96,
+          "recommended_level": 95,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 4,
+          "id": "region_10_zone_4",
+          "name_fa": null,
+          "level_min": 97,
+          "level_max": 98,
+          "recommended_level": 97,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 5,
+          "id": "region_10_zone_5",
+          "name_fa": null,
+          "level_min": 99,
+          "level_max": 99,
+          "recommended_level": 99,
+          "content_status": "not_authored"
+        },
+        {
+          "zone_number": 6,
+          "id": "region_10_zone_6",
+          "name_fa": null,
+          "level_min": 100,
+          "level_max": 100,
+          "recommended_level": 100,
+          "content_status": "not_authored"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "design_gate": "readiness-v1.json",
+  "content_policy": "empty_until_10_classes_and_10_danger_regions_approved",
+  "modules": {
+    "npc_profiles": [],
+    "dialogue_trees": [],
+    "buildings": [],
+    "services": [],
+    "item_catalogs": [],
+    "material_catalogs": [],
+    "vendor_catalogs": [],
+    "quest_catalogs": [],
+    "recipe_catalogs": [],
+    "crafting_stations": [],
+    "reward_tables": [],
+    "schedules": [],
+    "reputation_rules": [],
+    "travel_routes": [],
+    "interiors": [],
+    "city_events": [],
+    "tutorials": []
+  },
+  "note_fa": "این Manifest فقط جایگاه ماژول‌های آینده را دارد. هیچ NPC، گفتگو، ساختمان، خدمت، آیتم، ماده، فروشگاه، مأموریت، دستور ساخت یا پاداش جدیدی در آن تعریف نشده است."
+}

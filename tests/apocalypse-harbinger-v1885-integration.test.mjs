@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import DATA from '../content/classes/warrior_apocalypse_harbinger_v1.json' with {type:'json'};
+import {createApocalypseProgress,unlockApocalypseSkills,resolveApocalypseSkill,activateWorldsEnd,selectApocalypseAscension,resetApocalypseBattle,upgradeApocalypseSkill,purchaseApocalypseTalent,tickApocalypseTurn} from '../systems/combat/apocalypse-harbinger-runtime.js';
+const actor={level:30,attack:180,stamina:100,skillPoints:50,classProgress:{warrior_apocalypse_harbinger:createApocalypseProgress()}};
+unlockApocalypseSkills(actor);
+assert.equal(Object.keys(actor.classProgress.warrior_apocalypse_harbinger.skillRanks).length,10);
+const up=upgradeApocalypseSkill(actor,'apoc_strike');assert.equal(up.rank,2);assert.equal(up.actor.skillPoints,49);Object.assign(actor,up.actor);
+const t=DATA.talentBranches[0].talents[0];const bought=purchaseApocalypseTalent(actor,t.id);Object.assign(actor,bought.actor);assert.ok(actor.classProgress.warrior_apocalypse_harbinger.unlockedTalents.includes(t.id));
+const foes=[{id:'a',name:'هدف',hp:5000},{id:'b',name:'دشمن دوم',hp:5000}];
+const hit=resolveApocalypseSkill('apoc_strike',{actor,targets:foes,targetId:'a'});assert.ok(hit.damage>0);assert.ok(hit.targets[0].hp<5000);
+activateWorldsEnd(actor);selectApocalypseAscension(actor,'apoc_strike_ascended');
+const asc=resolveApocalypseSkill('apoc_strike_ascended',{actor,targets:foes,targetId:'a'});assert.equal(asc.ascended,true);
+const tick=tickApocalypseTurn(actor,asc.targets);assert.ok(Array.isArray(tick.targets));
+resetApocalypseBattle(actor);assert.equal(actor.classProgress.warrior_apocalypse_harbinger.domain.active,false);assert.equal(actor.classProgress.warrior_apocalypse_harbinger.domain.usedThisBattle,false);
+console.log('V1885 Apocalypse Harbinger end-to-end runtime checks passed.');
