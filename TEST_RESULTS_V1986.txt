@@ -1,0 +1,101 @@
+TAP version 13
+# Subtest: five summon seals have valid 100 percent tables
+ok 1 - five summon seals have valid 100 percent tables
+  ---
+  duration_ms: 0.869292
+  type: 'test'
+  ...
+# Subtest: gate requires its special item and consumes exactly one
+ok 2 - gate requires its special item and consumes exactly one
+  ---
+  duration_ms: 0.242286
+  type: 'test'
+  ...
+# Subtest: successful summon consumes one seal and creates a unique companion instance
+ok 3 - successful summon consumes one seal and creates a unique companion instance
+  ---
+  duration_ms: 1.55604
+  type: 'test'
+  ...
+# Subtest: seal is preserved when the rolled rank has no authored bestiary pool
+ok 4 - seal is preserved when the rolled rank has no authored bestiary pool
+  ---
+  duration_ms: 0.224099
+  type: 'test'
+  ...
+# Subtest: multi-target damage skills resolve against up to two living enemies
+ok 5 - multi-target damage skills resolve against up to two living enemies
+  ---
+  duration_ms: 0.511682
+  type: 'test'
+  ...
+# Subtest: healing skills heal the lowest-health ally
+ok 6 - healing skills heal the lowest-health ally
+  ---
+  duration_ms: 0.181804
+  type: 'test'
+  ...
+# Subtest: control skill transfers enemy turn to another enemy
+ok 7 - control skill transfers enemy turn to another enemy
+  ---
+  duration_ms: 0.233012
+  type: 'test'
+  ...
+# Subtest: debuff, silence and damage-over-time connect to combat fields used by enemy turn runtime
+ok 8 - debuff, silence and damage-over-time connect to combat fields used by enemy turn runtime
+  ---
+  duration_ms: 0.303849
+  type: 'test'
+  ...
+# Subtest: project wires gate module, seal controls, reward drops and authored skill resolver
+ok 9 - project wires gate module, seal controls, reward drops and authored skill resolver
+  ---
+  duration_ms: 5.525474
+  type: 'test'
+  ...
+# Subtest: 20 unique uncommon companions with full canonical data
+ok 10 - 20 unique uncommon companions with full canonical data
+  ---
+  duration_ms: 1.123586
+  type: 'test'
+  ...
+# Subtest: combined bestiary exposes Common and Uncommon to summon pool
+ok 11 - combined bestiary exposes Common and Uncommon to summon pool
+  ---
+  duration_ms: 0.141033
+  type: 'test'
+  ...
+# Subtest: each uncommon species has a valid AI decision and engine-supported skill type
+ok 12 - each uncommon species has a valid AI decision and engine-supported skill type
+  ---
+  duration_ms: 1.54919
+  type: 'test'
+  ...
+# Subtest: 20 unique Rare companions with eight canonical stats, skills, AI and portraits
+ok 13 - 20 unique Rare companions with eight canonical stats, skills, AI and portraits
+  ---
+  duration_ms: 1.578934
+  type: 'test'
+  ...
+# Subtest: Bestiary exposes 60 distinct species
+ok 14 - Bestiary exposes 60 distinct species
+  ---
+  duration_ms: 0.163427
+  type: 'test'
+  ...
+# Subtest: Rare AI returns an authored legal intent
+ok 15 - Rare AI returns an authored legal intent
+  ---
+  duration_ms: 0.515188
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 184.984065
+

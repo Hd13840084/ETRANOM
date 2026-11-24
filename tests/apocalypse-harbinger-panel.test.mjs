@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import DATA from '../content/classes/warrior_apocalypse_harbinger_v1.json' with {type:'json'};
+const source=await (await import('node:fs/promises')).readFile(new URL('../systems/classes/apocalypse-harbinger-panel.js',import.meta.url),'utf8');
+assert.match(source,/customElements\.define\('apocalypse-harbinger-panel'/);
+assert.match(source,/\['skills','مهارت‌ها'\]/);
+assert.match(source,/\['talents','استعدادها'\]/);
+assert.match(source,/\['ascensions','تعالی‌ها'\]/);
+assert.match(source,/\['domain','قلمرو'\]/);
+assert.equal(DATA.skills.length,10);assert.equal(DATA.talentBranches.reduce((n,b)=>n+b.talents.length,0),32);
+console.log('V1883 panel catalog checks passed');

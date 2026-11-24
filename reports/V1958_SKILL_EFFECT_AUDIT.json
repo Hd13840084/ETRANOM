@@ -1,0 +1,732 @@
+{
+  "version": "1958.0.0",
+  "totalSkills": 80,
+  "baseAdapters": 80,
+  "ascendedForms": 80,
+  "missingAscendedForms": 0,
+  "domainStageProfiles": 8,
+  "parityVerified": false,
+  "executionAuthority": "shadow_only",
+  "rows": [
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_bolt",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_arcane_bolt",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_shield",
+      "type": "shield",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_arcane_shield",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_explosion",
+      "type": "all_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_arcane_explosion",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_blink",
+      "type": "evasion_counter",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_arcane_blink",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "ancient_rune",
+      "type": "all_control_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_ancient_rune",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "prismatic_lance",
+      "type": "multi_target_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_prismatic_lance",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_echo",
+      "type": "repeat_last_spell",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_arcane_echo",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "gravity_well",
+      "type": "all_dot_control",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_gravity_well",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_overload",
+      "type": "self_buff",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_arcane_overload",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_singularity",
+      "type": "ultimate_all_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_arcane_singularity",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "ember_bolt",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_ember_bolt",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "frozen_armor",
+      "type": "shield",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_frozen_armor",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "chain_lightning",
+      "type": "multi_target_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_chain_lightning",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "tempest",
+      "type": "all_damage_control",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_tempest",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "earth_rupture",
+      "type": "all_damage_debuff",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_earth_rupture",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "tidal_renewal",
+      "type": "self_heal_cleanse",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_tidal_renewal",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "radiant_judgment",
+      "type": "single_damage_cleanse",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_radiant_judgment",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "darkness_chains",
+      "type": "single_damage_drain",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_darkness_chains",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "elemental_fusion",
+      "type": "dual_element_combo",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_elemental_fusion",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "primordial_cataclysm",
+      "type": "ultimate_all_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_primordial_cataclysm",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "forbidden_signature",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "edict_of_the_true_name",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "stolen_moment",
+      "type": "control",
+      "hasAscendedForm": true,
+      "ascendedId": "theft_of_tomorrow",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "demons_testament",
+      "type": "stance",
+      "hasAscendedForm": true,
+      "ascendedId": "testament_of_the_eightfold",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "reversal_of_sacrifice",
+      "type": "empower",
+      "hasAscendedForm": true,
+      "ascendedId": "altar_of_the_unpayable",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "court_of_nameless",
+      "type": "choice_control",
+      "hasAscendedForm": true,
+      "ascendedId": "court_of_final_verdicts",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "hostage_heart",
+      "type": "link",
+      "hasAscendedForm": true,
+      "ascendedId": "heart_of_the_bound_king",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "erasure_from_reality",
+      "type": "purge",
+      "hasAscendedForm": true,
+      "ascendedId": "unmaking_of_the_named",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "heir_of_hunger",
+      "type": "summon_resource",
+      "hasAscendedForm": true,
+      "ascendedId": "the_hunger_beyond_gods",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "true_name_shatter",
+      "type": "true_name_debuff",
+      "hasAscendedForm": true,
+      "ascendedId": "shattering_of_first_speech",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "final_covenant",
+      "type": "ultimate_choice",
+      "hasAscendedForm": true,
+      "ascendedId": "covenant_at_worlds_end",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "death_claw",
+      "type": "damage",
+      "hasAscendedForm": true,
+      "ascendedId": "death_claw_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "legion",
+      "type": "permanent_recruit",
+      "hasAscendedForm": true,
+      "ascendedId": "legion_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "death_memory",
+      "type": "debuff_choice",
+      "hasAscendedForm": true,
+      "ascendedId": "death_memory_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "bone_blossom",
+      "type": "legion_defense_buff",
+      "hasAscendedForm": true,
+      "ascendedId": "bone_blossom_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "assembly_of_souls",
+      "type": "soul_command",
+      "hasAscendedForm": true,
+      "ascendedId": "assembly_of_souls_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "life_siphon",
+      "type": "life_steal",
+      "hasAscendedForm": true,
+      "ascendedId": "life_siphon_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "kingdom_of_bones",
+      "type": "legion_offense_buff",
+      "hasAscendedForm": true,
+      "ascendedId": "kingdom_of_bones_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "return_threshold",
+      "type": "self_revive",
+      "hasAscendedForm": true,
+      "ascendedId": "return_threshold_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "soul_domination",
+      "type": "control_choice",
+      "hasAscendedForm": true,
+      "ascendedId": "soul_domination_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "eternal_sovereign",
+      "type": "ultimate_form",
+      "hasAscendedForm": true,
+      "ascendedId": "eternal_sovereign_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "black_crescent",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_black_crescent",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "mist_step",
+      "type": "evasion_counter",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_mist_step",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "soul_blade",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_soul_blade",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "body_sword_unity",
+      "type": "self_buff",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_body_sword_unity",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "echo",
+      "type": "reflect_next",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_echo",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "crimson_blossom",
+      "type": "multi_hit",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_crimson_blossom",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "mountain_river_cleave",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_mountain_river_cleave",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "absolute_instinct",
+      "type": "self_buff",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_absolute_instinct",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "mind_blade",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_mind_blade",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "silent_finale",
+      "type": "all_damage_execute",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_silent_finale",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "ironcleave",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_ironcleave",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "unyielding_wall",
+      "type": "self_guard",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_unyielding_wall",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "quake_of_iron",
+      "type": "multi_target_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_quake_of_iron",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "fortress_stance",
+      "type": "self_buff",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_fortress_stance",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "breaker_slam",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_breaker_slam",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "iron_reprisal",
+      "type": "counter",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_iron_reprisal",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "marching_bastion",
+      "type": "team_guard",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_marching_bastion",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "shatterguard",
+      "type": "single_damage_debuff",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_shatterguard",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "colossus_rage",
+      "type": "self_buff",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_colossus_rage",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "last_bastion",
+      "type": "ultimate_aoe",
+      "hasAscendedForm": true,
+      "ascendedId": "asc_last_bastion",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "chaos_rend",
+      "type": "single_damage_debuff",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_2",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "primordial_rage",
+      "type": "self_buff",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_1",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "fractured_chance",
+      "type": "control",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_3",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "paradox_knot",
+      "type": "link",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_4",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "endless_wound",
+      "type": "damage_over_time",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_5",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "broken_moments_prison",
+      "type": "aoe_control",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_6",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "chaos_fangs",
+      "type": "multi_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_7",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "moment_slip",
+      "type": "evasion",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_8",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "discordant_vessel",
+      "type": "passive",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_9",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "undefined_end",
+      "type": "ultimate",
+      "hasAscendedForm": true,
+      "ascendedId": "chaos_asc_10",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "apoc_strike",
+      "type": "single_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "apoc_strike_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "world_rift",
+      "type": "line_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "world_rift_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "meteor_rain",
+      "type": "area_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "meteor_rain_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "existence_inversion",
+      "type": "control",
+      "hasAscendedForm": true,
+      "ascendedId": "existence_inversion_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "end_mark",
+      "type": "mark",
+      "hasAscendedForm": true,
+      "ascendedId": "end_mark_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "ruin_crown",
+      "type": "self_buff",
+      "hasAscendedForm": true,
+      "ascendedId": "ruin_crown_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "captivity_dominion",
+      "type": "control",
+      "hasAscendedForm": true,
+      "ascendedId": "captivity_dominion_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "outside_time",
+      "type": "control",
+      "hasAscendedForm": true,
+      "ascendedId": "outside_time_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "kingfall",
+      "type": "area_damage",
+      "hasAscendedForm": true,
+      "ascendedId": "kingfall_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "worlds_end",
+      "type": "ultimate",
+      "hasAscendedForm": true,
+      "ascendedId": "worlds_end_ascended",
+      "baseAdapter": "authored",
+      "ascendedAdapter": "authored"
+    }
+  ]
+}
