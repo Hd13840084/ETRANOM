@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "phase": "deferred_until_all_classes_and_danger_regions_are_designed",
+  "policy": "no_safe_zone_content_before_world_design_lock",
+  "classes": {
+    "warrior": {"status": "pending", "approved": false},
+    "wizard": {"status": "pending", "approved": false},
+    "gunner": {"status": "pending", "approved": false},
+    "assassin": {"status": "pending", "approved": false},
+    "monk": {"status": "pending", "approved": false},
+    "paladin": {"status": "pending", "approved": false},
+    "priest": {"status": "pending", "approved": false},
+    "ranger": {"status": "pending", "approved": false},
+    "shaman": {"status": "pending", "approved": false},
+    "summoner": {"status": "pending", "approved": false}
+  },
+  "regions": {
+    "danger_region_01": {"status": "pending", "approved": false},
+    "danger_region_02": {"status": "pending", "approved": false},
+    "danger_region_03": {"status": "pending", "approved": false},
+    "danger_region_04": {"status": "pending", "approved": false},
+    "danger_region_05": {"status": "pending", "approved": false},
+    "danger_region_06": {"status": "pending", "approved": false},
+    "danger_region_07": {"status": "pending", "approved": false},
+    "danger_region_08": {"status": "pending", "approved": false},
+    "danger_region_09": {"status": "pending", "approved": false},
+    "danger_region_10": {"status": "pending", "approved": false}
+  },
+  "active_content": {
+    "npc_profiles": [], "dialogue_trees": [], "buildings": [], "services": [],
+    "item_catalogs": [], "material_catalogs": [], "vendor_catalogs": [],
+    "quest_catalogs": [], "recipe_catalogs": [], "crafting_stations": [],
+    "reward_tables": [], "schedules": [], "reputation_rules": [],
+    "travel_routes": [], "interiors": [], "city_events": [], "tutorials": []
+  },
+  "note_fa": "این فایل فقط دروازه آمادگی و جایگاه‌های خالی را تعریف می‌کند؛ محتوای جدید منطقه امن عمداً هنوز طراحی نشده است."
+}

@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {CHAOS_WARRIOR_DATA as d,createChaosWarriorProgress,resolveChaosSkill,activateChaosDomain,selectChaosAscension,tickChaosWarrior,resetChaosWarriorBattle,upgradeChaosWarriorSkill,purchaseChaosWarriorTalent} from '../systems/combat/chaos-warrior-runtime.js';
+assert.equal(d.skills.length,10);assert.deepEqual(d.talentBranches.map(x=>x.talents.length),[8,8,8,8]);assert.equal(d.ascendedSkills.length,10);assert.equal(d.domain.stages.length,4);
+const actor={level:50,attack:100,stamina:500,skillPoints:50,classProgress:{warrior_chaos:createChaosWarriorProgress()}};
+let r=upgradeChaosWarriorSkill(actor,'chaos_rend');assert.equal(r.progress.skillRanks.chaos_rend,2);assert.equal(r.actor.skillPoints,49);
+r=purchaseChaosWarriorTalent(r.actor,'chaos_talent_01');assert.ok(r.progress.unlockedTalents.includes('chaos_talent_01'));
+const enemy=()=>({encounterId:'enemy-1',hp:5000});
+let hit=resolveChaosSkill('chaos_rend',{actor:r.actor,targets:[enemy()],targetId:'enemy-1'});assert.ok(hit.targets[0].hp<5000);assert.equal(hit.progress.cooldowns.chaos_rend,1);
+assert.throws(()=>resolveChaosSkill('chaos_rend',{actor:hit.actor,targets:hit.targets,targetId:'enemy-1'}),/chaos_skill_cooldown/);
+let tick=tickChaosWarrior(hit.actor,hit.targets);assert.equal(tick.actor.classProgress.warrior_chaos.cooldowns.chaos_rend,undefined);
+const domain=activateChaosDomain(tick.actor,{level:50});const chosen=selectChaosAscension(domain.actor,'chaos_asc_2');
+const ascended=resolveChaosSkill('chaos_rend',{actor:chosen.actor,targets:[enemy()],targetId:'enemy-1'});assert.equal(ascended.ascended,true);assert.equal(ascended.progress.domain.ascendedUsed,true);
+assert.throws(()=>resolveChaosSkill('chaos_rend',{actor:ascended.actor,targets:[enemy()],targetId:'enemy-1'}),/chaos_ascension_not_selected|chaos_skill_cooldown/);
+const reset=resetChaosWarriorBattle(ascended.actor);assert.equal(reset.progress.domain.usedThisBattle,false);assert.equal(reset.progress.domain.active,false);
+console.log('Chaos Warrior V1877 runtime tests passed.');

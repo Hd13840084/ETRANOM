@@ -1,0 +1,4146 @@
+{
+  "version": "1958.0.0",
+  "referencePower": 1000,
+  "skills": 80,
+  "rows": [
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_bolt",
+      "skillName": "گلوله آرکین",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 1300
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "arcane_charge:arcane_bolt",
+              "polarity": "positive",
+              "turns": 1,
+              "chargeGain": 1
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_arcane_bolt",
+        "name": "گلوله آرکین مطلق",
+        "description": "پرتابه عظیم آرکین به هدف اصلی ۶۰۰٪ قدرت جادویی آسیب می‌زند و به دیگر دشمنان ۲۰۰٪ آسیب انفجاری وارد می‌کند؛ ۳۰٪ دفاع جادویی هدف اصلی نادیده گرفته می‌شود.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 11600
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "arcane_charge:arcane_bolt",
+              "polarity": "positive",
+              "turns": 1,
+              "chargeGain": 1
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 2900
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armor_pen:arcane_bolt",
+              "polarity": "positive",
+              "turns": 1,
+              "defensePenetrationPct": 30
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 4640
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_shield",
+      "skillName": "سپر آرکین",
+      "skillType": "shield",
+      "base": {
+        "operations": [
+          {
+            "type": "shield",
+            "scope": "self",
+            "amount": 1800
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_arcane_shield",
+        "name": "سپر جهان آرکین",
+        "description": "سپر ۹۰۰٪ قدرت جادویی جذب می‌کند، چهار نوبت دشمن باقی می‌ماند، ۲۰٪ آسیب دریافتی را کاهش می‌دهد و دو اثر منفی قابل پاک‌سازی را حذف می‌کند.",
+        "operations": [
+          {
+            "type": "shield",
+            "scope": "self",
+            "amount": 18850
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "damageReductionPct",
+            "amount": 20,
+            "turns": 2
+          },
+          {
+            "type": "remove_status",
+            "scope": "self",
+            "polarity": "negative",
+            "maxCount": 2
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_explosion",
+      "skillName": "انفجار آرکین",
+      "skillType": "all_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1000
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_arcane_explosion",
+        "name": "انفجار کیهانی",
+        "description": "به همه دشمنان ۷۵۰٪ آسیب می‌زند و موج دوم ۲۵۰٪ ایجاد می‌کند؛ دشمن عادی یک نوبت از اقدام بازمی‌ماند، باس فقط ۱۵٪ تضعیف می‌شود.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 14500
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 3625
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 4350
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "boss_slow:arcane_explosion",
+              "polarity": "negative",
+              "turns": 2,
+              "bossSlowPct": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_blink",
+      "skillName": "لغزش آرکین",
+      "skillType": "evasion_counter",
+      "base": {
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "counter",
+            "amount": 0,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "evade:arcane_blink",
+              "polarity": "positive",
+              "turns": 2,
+              "evadeNextAttack": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_arcane_blink",
+        "name": "شکاف بی‌نهایت",
+        "description": "دو حمله دشمن را خنثی می‌کند، به همه دشمنان ۲۵۰٪ قدرت جادویی آسیب بازگشتی می‌زند و سپر ۳۰۰٪ ایجاد می‌کند.",
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "counter",
+            "amount": 3625,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "evade:arcane_blink",
+              "polarity": "positive",
+              "turns": 2,
+              "evadeNextAttack": true
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "asc_evasion:arcane_blink",
+              "polarity": "positive",
+              "turns": 2,
+              "evadeTurns": 2,
+              "evadePct": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "ancient_rune",
+      "skillName": "نشان باستانی",
+      "skillType": "all_control_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 500
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "attack",
+            "amount": -20,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "slow:ancient_rune",
+              "polarity": "negative",
+              "turns": 2,
+              "slowPct": 15
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_ancient_rune",
+        "name": "حکم باستانی",
+        "description": "به همه دشمنان ۳۰۰٪ آسیب اولیه و پس از سه نوبت ۴۰۰٪ آسیب پایانی می‌زند؛ قدرت حمله دشمنان ۲۰٪ کاهش می‌یابد و باس‌ها کنترل کامل نمی‌شوند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 4350
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "attack",
+            "amount": -20,
+            "turns": 3
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "slow:ancient_rune",
+              "polarity": "negative",
+              "turns": 2,
+              "slowPct": 15
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 10150
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "attack",
+            "amount": -20,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "defense",
+            "amount": -15,
+            "turns": 3
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "boss_slow:ancient_rune",
+              "polarity": "negative",
+              "turns": 2,
+              "bossSlowPct": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "prismatic_lance",
+      "skillName": "نیزه منشوری",
+      "skillType": "multi_target_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "ordered_targets",
+            "amount": 1900,
+            "maxTargets": 5,
+            "falloffPct": 100
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_prismatic_lance",
+        "name": "نیزه منشوری مطلق",
+        "description": "به حداکثر هشت دشمن آسیب می‌زند؛ هدف نخست ۸۰۰٪ و اهداف بعدی هرکدام ۸۵٪ از آسیب هدف قبلی را دریافت می‌کنند. دفاع جادویی اهداف ۲۰٪ کاهش می‌یابد.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "ordered_targets",
+            "amount": 15950,
+            "maxTargets": 8,
+            "falloffPct": 85
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "defense",
+            "amount": -20,
+            "turns": 2
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 3625
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_echo",
+      "skillName": "پژواک جادویی",
+      "skillType": "repeat_last_spell",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "repeat_next:arcane_echo",
+              "polarity": "positive",
+              "turns": 1,
+              "repeatLastSpellPct": 40
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_arcane_echo",
+        "name": "پژواک ابدی",
+        "description": "آخرین مهارت تهاجمی مجاز را سه بار با ۵۰٪، ۴۰٪ و ۳۰٪ قدرت تکرار می‌کند. مهارت تعالی‌یافته و قلمرو قابل تکرار نیستند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "repeat_next:arcane_echo",
+              "polarity": "positive",
+              "turns": 1,
+              "repeatLastSpellPct": 40
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "gravity_well",
+      "skillName": "چاه گرانشی",
+      "skillType": "all_dot_control",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "dot:gravity_well",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 450
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "attack",
+            "amount": -15,
+            "turns": 3
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_gravity_well",
+        "name": "حفره گرانشی مطلق",
+        "description": "همه دشمنان برای شش نوبت، هر نوبت ۱۰۰٪ قدرت جادویی آسیب می‌گیرند و قدرت حمله‌شان ۲۵٪ کاهش می‌یابد؛ باس‌ها فقط تضعیف می‌شوند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "dot:gravity_well",
+              "polarity": "negative",
+              "turns": 6,
+              "dotDamage": 1450
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "attack",
+            "amount": -25,
+            "turns": 6
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 7250
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "attack",
+            "amount": -25,
+            "turns": 3
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_overload",
+      "skillName": "اضافه‌بار آرکین",
+      "skillType": "self_buff",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "magicPower",
+            "amount": 20,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "castSpeed",
+            "amount": 10,
+            "turns": 3
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_arcane_overload",
+        "name": "اضافه‌بار خدایان",
+        "description": "برای پنج نوبت قدرت جادویی ۷۰٪، کارایی اجرای جادو ۳۰٪ و کاهش هزینه مانا ۲۵٪ افزایش می‌یابد.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "magicPower",
+            "amount": 145,
+            "turns": 5
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "castSpeed",
+            "amount": 14.5,
+            "turns": 5
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "castEfficiency",
+            "amount": 43.5,
+            "turns": 5
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "manaCostReduction",
+            "amount": 36.25,
+            "turns": 5
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 7250
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_arcane_mage",
+      "skillId": "arcane_singularity",
+      "skillName": "تکینگی",
+      "skillType": "ultimate_all_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1500
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 3500
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_arcane_singularity",
+        "name": "تکینگی مطلق",
+        "description": "یک نوبت برای شکل‌گیری هسته و سه نوبت برای فشرده‌سازی لازم دارد؛ در هر نوبت ۱۵۰٪ آسیب و در پایان ۸۰۰٪ آسیب نهایی وارد می‌کند. هر شارژ مصرفی ۵٪ آسیب نهایی می‌افزاید.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 5075
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 5075
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 21750
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 2175
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 2175
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "ember_bolt",
+      "skillName": "گلوله شعله",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 1500
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_ember_bolt",
+        "name": "خورشیدِ ویرانگر",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 6459.75
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "frozen_armor",
+      "skillName": "زره یخی",
+      "skillType": "shield",
+      "base": {
+        "operations": [
+          {
+            "type": "shield",
+            "scope": "self",
+            "amount": 1800
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_frozen_armor",
+        "name": "زره ابدی بلورین",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "shield",
+            "scope": "self",
+            "amount": 7751.7
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "chain_lightning",
+      "skillName": "صاعقه زنجیره‌ای",
+      "skillType": "multi_target_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "ordered_targets",
+            "amount": 1450,
+            "maxTargets": 5,
+            "falloffPct": 100
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_chain_lightning",
+        "name": "داوری آسمانی",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "ordered_targets",
+            "amount": 4625.5,
+            "maxTargets": 3,
+            "falloffPct": 100
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "tempest",
+      "skillName": "گردباد سهمگین",
+      "skillType": "all_damage_control",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 950
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:tempest",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlChancePct": 35
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_tempest",
+        "name": "توفان پایان جهان",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 4091.175
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:tempest",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlChancePct": 35
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "earth_rupture",
+      "skillName": "شکاف زمین",
+      "skillType": "all_damage_debuff",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1300
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "defense",
+            "amount": -15,
+            "turns": 2
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_earth_rupture",
+        "name": "خشم هسته زمین",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 5598.45
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "defense",
+            "amount": -15,
+            "turns": 2
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "tidal_renewal",
+      "skillName": "موج احیاگر",
+      "skillType": "self_heal_cleanse",
+      "base": {
+        "operations": [
+          {
+            "type": "heal",
+            "scope": "self",
+            "amount": 2200
+          },
+          {
+            "type": "remove_status",
+            "scope": "self",
+            "polarity": "negative"
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_tidal_renewal",
+        "name": "چشمه حیات نخستین",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "heal",
+            "scope": "self",
+            "amount": 9474.3
+          },
+          {
+            "type": "remove_status",
+            "scope": "self",
+            "polarity": "negative"
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "radiant_judgment",
+      "skillName": "پرتو تطهیر",
+      "skillType": "single_damage_cleanse",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2300
+          },
+          {
+            "type": "remove_status",
+            "scope": "self",
+            "polarity": "negative"
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_radiant_judgment",
+        "name": "تجلی نور مطلق",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 9904.95
+          },
+          {
+            "type": "remove_status",
+            "scope": "self",
+            "polarity": "negative"
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "darkness_chains",
+      "skillName": "زنجیرهای تاریکی",
+      "skillType": "single_damage_drain",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 1750
+          },
+          {
+            "type": "resource_gain",
+            "resource": "mana",
+            "amount": 262.5
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_darkness_chains",
+        "name": "بندهای خلأ ابدی",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 7536.375
+          },
+          {
+            "type": "resource_gain",
+            "resource": "mana",
+            "amount": 1130.45625
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "elemental_fusion",
+      "skillName": "هم‌جوشی عناصر",
+      "skillType": "dual_element_combo",
+      "base": {
+        "operations": [
+          {
+            "type": "multi_hit",
+            "scope": "all_live_targets",
+            "hits": 2,
+            "amount": 1200
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_elemental_fusion",
+        "name": "اتحاد هشت بنیاد",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "multi_hit",
+            "scope": "all_live_targets",
+            "hits": 2,
+            "amount": 5167.8
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_elementalist",
+      "skillId": "primordial_cataclysm",
+      "skillName": "فاجعه بنیادین",
+      "skillType": "ultimate_all_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 2160
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 4800
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_primordial_cataclysm",
+        "name": "رستاخیز عناصر نخستین",
+        "description": "نسخه تعالی‌یافته این مهارت؛ با فعال‌سازی قلمرو، این نسخه در کنار ۹ نسخه تعالی‌یافته دیگر در دسترس قرار می‌گیرد؛ بازیکن دقیقاً یکی از ده نسخه را انتخاب و فقط یک بار در همان فعال‌سازی اجرا می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 15312
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 15312
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "forbidden_signature",
+      "skillName": "امضای ممنوع",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 1700
+          }
+        ]
+      },
+      "ascended": {
+        "id": "edict_of_the_true_name",
+        "name": "فرمان نام نخستین",
+        "description": "هدف برای 3 نوبت در دفتر نخستین ثبت می‌شود؛ هر آسیب دریافتی‌اش 28٪ بازتاب دارد و هر مهارت ویژه‌اش 6٪ حداکثر مانا به وارلاک می‌دهد.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2176
+          },
+          {
+            "type": "modifier",
+            "scope": "selected_target",
+            "stat": "attack",
+            "amount": -8,
+            "turns": 3
+          },
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 28,
+            "turns": 3
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "stolen_moment",
+      "skillName": "سرقت لحظه",
+      "skillType": "control",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "control:stolen_moment",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "theft_of_tomorrow",
+        "name": "ربایش فردا",
+        "description": "مهارت ویژه هدف برای یک نوبت مهروموم می‌شود؛ وارلاک دو لحظه ذخیره می‌کند و مهارت بعدی‌اش 35٪ قوی‌تر و 25٪ ارزان‌تر است.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "control:stolen_moment",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "next_skill:stolen_moment",
+              "polarity": "positive",
+              "turns": 1,
+              "powerPct": 35,
+              "costReductionPct": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "demons_testament",
+      "skillName": "وصیت‌نامه اهریمن",
+      "skillType": "stance",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "magicPower",
+            "amount": 3,
+            "turns": 1
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "pact_debt:demons_testament",
+              "polarity": "positive",
+              "turns": 1,
+              "debtPerSkill": 1,
+              "maxStacks": 8
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "testament_of_the_eightfold",
+        "name": "وصیت‌نامه هشت مُهر",
+        "description": "تا پایان قلمرو هر مهارت 2 بدهی می‌سازد؛ هر بدهی 5٪ آسیب می‌دهد، اما آستانه‌های هزینه فقط یک بار و با سقف 8 بدهی اعمال می‌شوند.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "magicPower",
+            "amount": 3,
+            "turns": 1
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "pact_debt:demons_testament",
+              "polarity": "positive",
+              "turns": 1,
+              "debtPerSkill": 1,
+              "maxStacks": 8
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "asc_debt:demons_testament",
+              "polarity": "positive",
+              "turns": 8,
+              "debtPerSkill": 2,
+              "debtDamagePct": 5,
+              "maxStacks": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "reversal_of_sacrifice",
+      "skillName": "وارونگی قربانی",
+      "skillType": "empower",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "next_skill_empower:reversal_of_sacrifice",
+              "polarity": "positive",
+              "turns": 1,
+              "nextSkillPowerPct": 55,
+              "hpCostPct": 7,
+              "refundPct": 35
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "altar_of_the_unpayable",
+        "name": "مذبح بهای ناپرداختنی",
+        "description": "12٪ حداکثر HP را (بدون کشتن) قربانی می‌کند؛ مهارت بعدی 100٪ قوی‌تر است و 60٪ قربانی در صورت اصابت بازمی‌گردد.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "next_skill_empower:reversal_of_sacrifice",
+              "polarity": "positive",
+              "turns": 1,
+              "nextSkillPowerPct": 55,
+              "hpCostPct": 7,
+              "refundPct": 35
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "next_skill:reversal_of_sacrifice",
+              "polarity": "positive",
+              "turns": 1,
+              "powerPct": 100,
+              "costReductionPct": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "court_of_nameless",
+      "skillName": "دادگاه بی‌نامان",
+      "skillType": "choice_control",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "judgment:court_of_nameless",
+              "polarity": "negative",
+              "turns": 4,
+              "choices": [
+                "silence",
+                "reprisal",
+                "confiscation"
+              ],
+              "choiceRequired": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "court_of_final_verdicts",
+        "name": "محکمه احکام واپسین",
+        "description": "هر سه حکم هم‌زمان برای 3 نوبت اجرا می‌شوند؛ شدت علیه باس 60٪ است.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "judgment:court_of_nameless",
+              "polarity": "negative",
+              "turns": 4,
+              "choices": [
+                "silence",
+                "reprisal",
+                "confiscation"
+              ],
+              "choiceRequired": true
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "three_judgments:court_of_nameless",
+              "polarity": "negative",
+              "turns": 3,
+              "judgments": [
+                "silence",
+                "reprisal",
+                "confiscation"
+              ],
+              "bossEffectPct": 60
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "hostage_heart",
+      "skillName": "قلب گروگان",
+      "skillType": "link",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "link:hostage_heart",
+              "polarity": "negative",
+              "turns": 3,
+              "linkPct": 22,
+              "linkedTo": "actor"
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "heart_of_the_bound_king",
+        "name": "قلب شاه دربند",
+        "description": "پیوند 3 نوبت برقرار می‌شود؛ 35٪ آسیب وارلاک منتقل و 25٪ آسیب او بازیابی می‌شود؛ شکستن پیوند ضربه‌ای برابر 120٪ آسیب منتقل‌شده می‌زند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "link:hostage_heart",
+              "polarity": "negative",
+              "turns": 3,
+              "linkPct": 22,
+              "linkedTo": "actor"
+            }
+          },
+          {
+            "type": "heal",
+            "scope": "self",
+            "amount": 320
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "asc_link:hostage_heart",
+              "polarity": "negative",
+              "turns": 3,
+              "linkPct": 35
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "erasure_from_reality",
+      "skillName": "حذف از واقعیت",
+      "skillType": "purge",
+      "base": {
+        "operations": [
+          {
+            "type": "remove_status",
+            "scope": "selected_target",
+            "polarity": "positive",
+            "statusIds": []
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "erasure:erasure_from_reality",
+              "polarity": "negative",
+              "turns": 1,
+              "banished": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "unmaking_of_the_named",
+        "name": "نیستی نام‌داران",
+        "description": "یک دشمن عادی یک نوبت از نبرد حذف و یک اثر مثبتش نابود می‌شود؛ باس یک اثر مثبت را از دست می‌دهد و مهارت بعدی‌اش 40٪ ضعیف می‌شود.",
+        "operations": [
+          {
+            "type": "remove_status",
+            "scope": "selected_target",
+            "polarity": "positive",
+            "statusIds": []
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "erasure:erasure_from_reality",
+              "polarity": "negative",
+              "turns": 1,
+              "banished": true
+            }
+          },
+          {
+            "type": "remove_status",
+            "scope": "all_live_targets",
+            "polarity": "positive",
+            "maxCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "heir_of_hunger",
+      "skillName": "وارث گرسنگی",
+      "skillType": "summon_resource",
+      "base": {
+        "operations": [
+          {
+            "type": "summon",
+            "maxSummons": 3,
+            "summon": {
+              "id": "heir_of_hunger_hunger",
+              "name": "موجود گرسنگی",
+              "hp": 500,
+              "turns": 5,
+              "manaDrainPct": 2
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "the_hunger_beyond_gods",
+        "name": "گرسنگی آن‌سوی خدایان",
+        "description": "موجود 4 نوبت می‌ماند؛ تا 18٪ مانای دشمنان را ذخیره می‌کند و وارلاک می‌تواند هر نوبت آن را میان HP، MP و ضربه نهایی تقسیم کند.",
+        "operations": [
+          {
+            "type": "summon",
+            "maxSummons": 3,
+            "summon": {
+              "id": "heir_of_hunger_hunger",
+              "name": "موجود گرسنگی",
+              "hp": 500,
+              "turns": 5,
+              "manaDrainPct": 2
+            }
+          },
+          {
+            "type": "summon",
+            "maxSummons": 3,
+            "summon": {
+              "id": "heir_of_hunger_asc_summon",
+              "name": "تجلی تعالی",
+              "hp": 1000,
+              "turns": 4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "true_name_shatter",
+      "skillName": "شکستن نام حقیقی",
+      "skillType": "true_name_debuff",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "true_name:true_name_shatter",
+              "polarity": "negative",
+              "turns": 5,
+              "clauses": [
+                "body",
+                "will",
+                "magic",
+                "bond"
+              ],
+              "choiceRequired": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "shattering_of_first_speech",
+        "name": "شکستن گفتار نخستین",
+        "description": "دو بند از چهار بند روی هدف انتخاب می‌شود و 3 نوبت می‌ماند؛ شدت علیه باس 65٪ است.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "true_name:true_name_shatter",
+              "polarity": "negative",
+              "turns": 5,
+              "clauses": [
+                "body",
+                "will",
+                "magic",
+                "bond"
+              ],
+              "choiceRequired": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_warlock",
+      "skillId": "final_covenant",
+      "skillName": "آخرین قرارداد",
+      "skillType": "ultimate_choice",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 3600
+          },
+          {
+            "type": "remove_status",
+            "scope": "all_live_targets",
+            "polarity": "positive"
+          },
+          {
+            "type": "heal",
+            "scope": "self",
+            "amount": 150
+          }
+        ]
+      },
+      "ascended": {
+        "id": "covenant_at_worlds_end",
+        "name": "پیمان پایان جهان",
+        "description": "سه تجلی با هم ترکیب می‌شوند: 420٪ قدرت جادویی به همه دشمنان، حذف یک اثر مثبت غیرذاتی، و بازیابی 15٪ HP ازدست‌رفته؛ هر 2 بدهی +10٪ آسیب تا سقف +50٪.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 5376
+          },
+          {
+            "type": "remove_status",
+            "scope": "all_live_targets",
+            "polarity": "positive"
+          },
+          {
+            "type": "heal",
+            "scope": "self",
+            "amount": 192
+          },
+          {
+            "type": "remove_status",
+            "scope": "all_live_targets",
+            "polarity": "positive",
+            "maxCount": 1
+          },
+          {
+            "type": "heal",
+            "scope": "self",
+            "amount": 192
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "death_claw",
+      "skillName": "چنگال مرگ",
+      "skillType": "damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2200
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "death_wound:death_claw",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 220
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "death_claw_ascended",
+        "name": "چنگال داوری ابدی",
+        "description": "چنگال مرگ با آسیب و زخم تقویت‌شده؛ کشتن هدف زخمی روح بیشتری می‌دهد.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2750
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "death_wound:death_claw",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 275
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "asc_dot:death_claw",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 275
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "soul_on_kill:death_claw",
+              "polarity": "positive",
+              "turns": 1,
+              "soulOnKill": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "legion",
+      "skillName": "لژیون",
+      "skillType": "permanent_recruit",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "legion_recruit:legion",
+              "polarity": "positive",
+              "turns": 99,
+              "recruit": true,
+              "normalChancePct": 35,
+              "minibossChancePct": 12,
+              "bossChancePct": 7,
+              "maxStored": 10,
+              "maxActive": 3
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "legion_ascended",
+        "name": "ارتش برخاسته",
+        "description": "تمام اعضای لژیون احضار می‌شوند و هرکدام فرم مرگ و توانایی اختصاصی خود را آزاد می‌کنند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "legion_recruit:legion",
+              "polarity": "positive",
+              "turns": 99,
+              "recruit": true,
+              "normalChancePct": 35,
+              "minibossChancePct": 12,
+              "bossChancePct": 7,
+              "maxStored": 10,
+              "maxActive": 3
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "legion_asc:legion",
+              "polarity": "positive",
+              "turns": 99,
+              "recruitChance": {
+                "normal": 35,
+                "miniboss": 12,
+                "boss": 7
+              },
+              "maxStored": 10,
+              "maxActive": 3,
+              "permanent": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "death_memory",
+      "skillName": "خاطره مرگ",
+      "skillType": "debuff_choice",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "memory:death_memory",
+              "polarity": "negative",
+              "turns": 3,
+              "choices": [
+                "attack_down",
+                "defense_down",
+                "magic_down"
+              ],
+              "choiceRequired": true,
+              "bossEffectPct": 50
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "death_memory_ascended",
+        "name": "کتاب آخرین خاطرات",
+        "description": "هر سه خاطره جنگ، بقا و جادو هم‌زمان بر هدف اعمال می‌شوند؛ باس‌ها شدت کمتر می‌گیرند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "memory:death_memory",
+              "polarity": "negative",
+              "turns": 3,
+              "choices": [
+                "attack_down",
+                "defense_down",
+                "magic_down"
+              ],
+              "choiceRequired": true,
+              "bossEffectPct": 50
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "defense",
+            "amount": -15,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "selected_target",
+            "stat": "attack",
+            "amount": -15,
+            "turns": 3
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "bone_blossom",
+      "skillName": "شکوفایی استخوان",
+      "skillType": "legion_defense_buff",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "defense",
+            "amount": 18,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "controlResist",
+            "amount": 12,
+            "turns": 3
+          }
+        ]
+      },
+      "ascended": {
+        "id": "bone_blossom_ascended",
+        "name": "رستاخیز استخوان‌های سیاه",
+        "description": "تقویت دفاعی و زخم استخوانی اعضای لژیون با شدت بیشتر.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "defense",
+            "amount": 22.5,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "controlResist",
+            "amount": 15,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "defense",
+            "amount": 18,
+            "turns": 3
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "assembly_of_souls",
+      "skillName": "مجلس ارواح",
+      "skillType": "soul_command",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "soul_command:assembly_of_souls",
+              "polarity": "positive",
+              "turns": 1,
+              "choices": [
+                "hunt",
+                "guard",
+                "feed"
+              ],
+              "choiceRequired": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "assembly_of_souls_ascended",
+        "name": "ضیافت هزار روح",
+        "description": "یکی از سه فرمان شکار، محافظت یا تغذیه با قدرت بسیار بیشتر اجرا می‌شود.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "soul_command:assembly_of_souls",
+              "polarity": "positive",
+              "turns": 1,
+              "choices": [
+                "hunt",
+                "guard",
+                "feed"
+              ],
+              "choiceRequired": true
+            }
+          },
+          {
+            "type": "heal",
+            "scope": "self",
+            "amount": 187.5
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1250
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "life_siphon",
+      "skillName": "مکیدن حیات",
+      "skillType": "life_steal",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "life_siphon:life_siphon",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 300,
+              "healFromDamagePct": 30
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "life_siphon_ascended",
+        "name": "بلعنده جوهر زندگی",
+        "description": "سرقت حیات و انتقال انرژی به لژیون با ضریب بیشتر و سرقت محدود مانا.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "life_siphon:life_siphon",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 375,
+              "healFromDamagePct": 30
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "asc_dot:life_siphon",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "kingdom_of_bones",
+      "skillName": "پادشاهی استخوان‌ها",
+      "skillType": "legion_offense_buff",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "attack",
+            "amount": 20,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "armorPen",
+            "amount": 15,
+            "turns": 3
+          }
+        ]
+      },
+      "ascended": {
+        "id": "kingdom_of_bones_ascended",
+        "name": "فرمان امپراتور مردگان",
+        "description": "تمام اعضای لژیون وارد فرمان جنگ ارتقایافته می‌شوند و حملاتشان دفاع را می‌شکند.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "attack",
+            "amount": 25,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "armorPen",
+            "amount": 18.75,
+            "turns": 3
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armor_pen:kingdom_of_bones",
+              "polarity": "positive",
+              "turns": 1,
+              "defensePenetrationPct": 15
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 20,
+            "turns": 3
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armor_pen:kingdom_of_bones",
+              "polarity": "positive",
+              "turns": 1,
+              "defensePenetrationPct": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "return_threshold",
+      "skillName": "بازگشت از آستانه",
+      "skillType": "self_revive",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "death_ward:return_threshold",
+              "polarity": "positive",
+              "turns": 3,
+              "reviveHpPct": 25,
+              "oncePerBattle": true,
+              "soulCost": 3
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "return_threshold_ascended",
+        "name": "انکار مرگ",
+        "description": "نکرومنسر پس از ضربه مرگبار با سلامتی بیشتر بازمی‌گردد؛ همچنان یک بار در نبرد.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "death_ward:return_threshold",
+              "polarity": "positive",
+              "turns": 3,
+              "reviveHpPct": 25,
+              "oncePerBattle": true,
+              "soulCost": 3
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "death_ward:return_threshold",
+              "polarity": "positive",
+              "turns": 3,
+              "reviveHpPct": 35,
+              "oncePerBattle": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "soul_domination",
+      "skillName": "سلطه بر ارواح",
+      "skillType": "control_choice",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "soul_control:soul_domination",
+              "polarity": "negative",
+              "turns": 3,
+              "choices": [
+                "dominate",
+                "chain",
+                "silence"
+              ],
+              "choiceRequired": true,
+              "bossEffectPct": 35
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "soul_domination_ascended",
+        "name": "سلطه مطلق بر اراده",
+        "description": "یک فرمان کنترل با شدت بالا؛ زنجیر می‌تواند چند دشمن را هدف بگیرد، باس فقط تضعیف می‌شود.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "soul_control:soul_domination",
+              "polarity": "negative",
+              "turns": 3,
+              "choices": [
+                "dominate",
+                "chain",
+                "silence"
+              ],
+              "choiceRequired": true,
+              "bossEffectPct": 35
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "asc_control:soul_domination",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "wizard_necromancer",
+      "skillId": "eternal_sovereign",
+      "skillName": "فرمانروای ابدی",
+      "skillType": "ultimate_form",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "magicPower",
+            "amount": 20,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "legionPower",
+            "amount": 20,
+            "turns": 3
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "eternal_sovereign:eternal_sovereign",
+              "polarity": "positive",
+              "turns": 3,
+              "legionLifestealPct": 15
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "eternal_sovereign_ascended",
+        "name": "تجسد خدای مرگ",
+        "description": "فرم نهایی نکرومنسر و لژیون با تقویت جادوی تاریک، توانایی ویژه لژیون و بازیابی از آسیب آن‌ها.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "magicPower",
+            "amount": 25,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "legionPower",
+            "amount": 25,
+            "turns": 3
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "eternal_sovereign:eternal_sovereign",
+              "polarity": "positive",
+              "turns": 3,
+              "legionLifestealPct": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "black_crescent",
+      "skillName": "برش هلال سیاه",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2800
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_black_crescent",
+        "name": "هلال سیاه بی‌پایان",
+        "description": "برش هلال سیاه چندپاره می‌شود و برش ثانویه به هدف می‌رسد.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 5684
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "mist_step",
+      "skillName": "گام مه",
+      "skillType": "evasion_counter",
+      "base": {
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "counter",
+            "amount": 0,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "evade:mist_step",
+              "polarity": "positive",
+              "turns": 2,
+              "evadeNextAttack": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_mist_step",
+        "name": "گام در ورای زمان",
+        "description": "جاخالی موفق، ضدحمله‌ای فوری و تقویت‌شده ایجاد می‌کند.",
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "counter",
+            "amount": 0,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "evade:mist_step",
+              "polarity": "positive",
+              "turns": 2,
+              "evadeNextAttack": true
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "accuracy",
+            "amount": 25,
+            "turns": 3
+          },
+          {
+            "type": "reaction",
+            "reaction": "counter",
+            "amount": 3190,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "asc_evasion:mist_step",
+              "polarity": "positive",
+              "turns": 2,
+              "evadeTurns": 2,
+              "evadePct": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "soul_blade",
+      "skillName": "تیغه روح",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2100
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_soul_blade",
+        "name": "تجلی روح شمشیر",
+        "description": "تیغه روح از بخش بیشتری از دفاع هدف عبور می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 4263
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armor_pen:soul_blade",
+              "polarity": "positive",
+              "turns": 1,
+              "defensePenetrationPct": 45
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "body_sword_unity",
+      "skillName": "یگانگی بدن و شمشیر",
+      "skillType": "self_buff",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "empower:body_sword_unity",
+              "polarity": "positive",
+              "turns": 2,
+              "powerPct": 20
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_body_sword_unity",
+        "name": "یکی شدن روح و شمشیر",
+        "description": "بدن، ذهن و تیغه کاملاً هماهنگ می‌شوند و قدرت و دقت حملات به‌شدت بالا می‌رود.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 50.75,
+            "turns": 2
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 35,
+            "turns": 4
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "accuracy",
+            "amount": 25,
+            "turns": 4
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "echo",
+      "skillName": "پژواک",
+      "skillType": "reflect_next",
+      "base": {
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 45,
+            "turns": 1
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_echo",
+        "name": "پژواک هزار تیغه",
+        "description": "بخش بیشتری از آسیب حمله بعدی دشمن به او بازمی‌گردد؛ بازتاب روی باس محدودیت سقف دارد.",
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 65,
+            "turns": 1
+          },
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 65,
+            "turns": 1
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "crimson_blossom",
+      "skillName": "شکوفه خونین",
+      "skillType": "multi_hit",
+      "base": {
+        "operations": [
+          {
+            "type": "multi_hit",
+            "scope": "selected_target",
+            "hits": 3,
+            "amount": 750
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_crimson_blossom",
+        "name": "شکوفه خونین ابدی",
+        "description": "سه برش به پنج برش ارتقا می‌یابد و خون‌ریزی قوی‌تری ایجاد می‌کند.",
+        "operations": [
+          {
+            "type": "multi_hit",
+            "scope": "selected_target",
+            "hits": 5,
+            "amount": 1087.5
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "bleed:crimson_blossom",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 290
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "mountain_river_cleave",
+      "skillName": "برش شکافنده کوه‌ها و رودخانه‌ها",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 3300
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_mountain_river_cleave",
+        "name": "شکافنده آسمان و زمین",
+        "description": "ضربه‌ای عظیم با نفوذ دفاع بسیار بالا؛ آسیب باس طبق ضریب محدودشده اعمال می‌شود.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 6698.999999999999
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "boss_cap:mountain_river_cleave",
+              "polarity": "positive",
+              "turns": 1,
+              "bossDamageCapPct": 30
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armor_pen:mountain_river_cleave",
+              "polarity": "positive",
+              "turns": 1,
+              "defensePenetrationPct": 65
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "absolute_instinct",
+      "skillName": "غریزه مطلق",
+      "skillType": "self_buff",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "empower:absolute_instinct",
+              "polarity": "positive",
+              "turns": 2,
+              "powerPct": 20
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_absolute_instinct",
+        "name": "غریزه فراتر از مرگ",
+        "description": "پیش‌بینی حمله بعدی دشمن و افزایش بزرگ جاخالی و ضدحمله.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "controlResist",
+            "amount": 50.75,
+            "turns": 2
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "controlResist",
+            "amount": 35,
+            "turns": 3
+          },
+          {
+            "type": "reaction",
+            "reaction": "counter",
+            "amount": 2610,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "asc_evasion:absolute_instinct",
+              "polarity": "positive",
+              "turns": 3,
+              "evadeTurns": 2,
+              "evadePct": 60
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "mind_blade",
+      "skillName": "تیغه ذهن",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2900
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_mind_blade",
+        "name": "تیغه ذهن بی‌کران",
+        "description": "ضربه‌ای بسیار دقیق که شانس جاخالی دشمن را کاهش می‌دهد.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 5887
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "accuracy",
+            "amount": 35,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "selected_target",
+            "stat": "evasion",
+            "amount": -25,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armor_pen:mind_blade",
+              "polarity": "positive",
+              "turns": 1,
+              "defensePenetrationPct": 35
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_sword_ascetic",
+      "skillId": "silent_finale",
+      "skillName": "فرجام خاموش",
+      "skillType": "all_damage_execute",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 6500
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "execute_guard:silent_finale",
+              "polarity": "negative",
+              "turns": 1,
+              "executeNormalOnly": true,
+              "bossImmune": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_silent_finale",
+        "name": "فرجام ابدی",
+        "description": "نسخه قلمروی فرجام خاموش؛ برش هم‌زمان به تمام دشمنان زنده می‌رسد. دشمن عادی در صورت مرگ دو نیم می‌شود؛ باس‌ها از اعدام فوری مصون‌اند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 13194.999999999998
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "execute_guard:silent_finale",
+              "polarity": "negative",
+              "turns": 1,
+              "executeNormalOnly": true,
+              "bossImmune": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "ironcleave",
+      "skillName": "فرود خردکننده پولاد",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2850
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armor_pen:ironcleave",
+              "polarity": "positive",
+              "turns": 1,
+              "defensePenetrationPct": 12
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "selected_target",
+            "stat": "defense",
+            "amount": -15,
+            "turns": 2
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_ironcleave",
+        "name": "حکم اعدام تایتان",
+        "description": "ضربه ۳۰۰٪؛ اگر سلامت هدف زیر ۳۰٪ باشد ۲۰٪ آسیب اضافه. روی باس، ۱۰٪ آسیب اضافه بدون اعدام قطعی.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 3660
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armor_pen:ironcleave",
+              "polarity": "positive",
+              "turns": 1,
+              "defensePenetrationPct": 12
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "selected_target",
+            "stat": "defense",
+            "amount": -15,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "execute_rule:ironcleave",
+              "polarity": "positive",
+              "turns": 1,
+              "executeThresholdPct": 30,
+              "executeBonusPct": 20,
+              "bossBonusPct": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "unyielding_wall",
+      "skillName": "دیوار تسلیم‌ناپذیر",
+      "skillType": "self_guard",
+      "base": {
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "absorb",
+            "amountPct": 22,
+            "turns": 2
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_unyielding_wall",
+        "name": "حصار آخرین تایتان",
+        "description": "گارد ۳ نوبتی با کاهش آسیب ۳۵٪؛ نخستین ضربه مستقیم هر دشمن، ۵٪ قدرت حمله را بازمی‌گرداند.",
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "absorb",
+            "amountPct": 26.84,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "damageReductionPct",
+            "amount": 35,
+            "turns": 2
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "quake_of_iron",
+      "skillName": "زلزله آهن",
+      "skillType": "multi_target_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1250,
+            "maxTargets": 5,
+            "falloffPct": 100
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "slow:quake_of_iron",
+              "polarity": "negative",
+              "turns": 1,
+              "slowPct": 12
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_quake_of_iron",
+        "name": "گسل هزارستون",
+        "description": "آسیب ۱۹۰٪ به همه دشمنان و کندی ۲۰٪ برای یک نوبت؛ باس فقط اختلال جزئی می‌گیرد.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "ordered_targets",
+            "amount": 2318,
+            "maxTargets": 5,
+            "falloffPct": 100
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "slow:quake_of_iron",
+              "polarity": "negative",
+              "turns": 1,
+              "slowPct": 12
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "slow:quake_of_iron",
+              "polarity": "negative",
+              "turns": 2,
+              "slowPct": 20
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "fortress_stance",
+      "skillName": "حالت دژ",
+      "skillType": "self_buff",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "defense",
+            "amount": 24,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "controlResist",
+            "amount": 20,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "speed",
+            "amount": -10,
+            "turns": 3
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_fortress_stance",
+        "name": "قلب دژ ابدی",
+        "description": "دفاع +۳۵٪ و مقاومت کنترل +۳۰٪ برای ۳ نوبت؛ سرعت -۱۰٪؛ سپس سپر ۸٪ سلامت.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "defense",
+            "amount": 29.28,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "controlResist",
+            "amount": 24.4,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "speed",
+            "amount": -12.2,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "defense",
+            "amount": 35,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "controlResist",
+            "amount": 30,
+            "turns": 3
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "breaker_slam",
+      "skillName": "فرود درهم‌شکن",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2350
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armored_bonus:breaker_slam",
+              "polarity": "positive",
+              "turns": 1,
+              "bonusVsArmoredPct": 25
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_breaker_slam",
+        "name": "سقوط تبر آسمانی",
+        "description": "ضربه ۳۳۰٪ و تخریب ۳۰٪ سپر؛ روی باس حداکثر ۸٪.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 4026
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "armored_bonus:breaker_slam",
+              "polarity": "positive",
+              "turns": 1,
+              "bonusVsArmoredPct": 25
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "shield_break:breaker_slam",
+              "polarity": "negative",
+              "turns": 1,
+              "shieldBreakPct": 30,
+              "bossShieldBreakPct": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "iron_reprisal",
+      "skillName": "پاسخ آهنین",
+      "skillType": "counter",
+      "base": {
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 30,
+            "turns": 1
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_iron_reprisal",
+        "name": "بازتاب داوری آهن",
+        "description": "تا ۲ نوبت، ۴۰٪ ضربه مستقیم را بازمی‌گرداند؛ سقف باس ۱۸٪ و بدون بازتاب زنجیره‌ای.",
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 36.6,
+            "turns": 2
+          },
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 40,
+            "turns": 2
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "marching_bastion",
+      "skillName": "پیشروی دژ",
+      "skillType": "team_guard",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "damageReductionPct",
+            "amount": 14,
+            "turns": 2
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_marching_bastion",
+        "name": "لشکرگاه تسخیرناپذیر",
+        "description": "یاران ۲۵٪ کاهش آسیب و ۱۰٪ مقاومت کنترل برای ۳ نوبت می‌گیرند؛ تهدید دژ افزایش می‌یابد.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "all_allies",
+            "stat": "damageReductionPct",
+            "amount": 17.08,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "controlResist",
+            "amount": 10,
+            "turns": 3
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "shatterguard",
+      "skillName": "خردکننده گارد",
+      "skillType": "single_damage_debuff",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2050
+          },
+          {
+            "type": "modifier",
+            "scope": "selected_target",
+            "stat": "defense",
+            "amount": -18,
+            "turns": 2
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_shatterguard",
+        "name": "فروپاشی تاج فولاد",
+        "description": "ضربه ۲۶۰٪ و کاهش دفاع ۲۵٪ برای ۲ نوبت؛ روی باس حداکثر ۱۰٪.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 3172
+          },
+          {
+            "type": "modifier",
+            "scope": "selected_target",
+            "stat": "defense",
+            "amount": -21.96,
+            "turns": 2
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "defense",
+            "amount": -25,
+            "turns": 2
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "colossus_rage",
+      "skillName": "خشم غول‌آسا",
+      "skillType": "self_buff",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 22,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "defense",
+            "amount": 12,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "speed",
+            "amount": -8,
+            "turns": 3
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_colossus_rage",
+        "name": "خشم تایتان سرخ",
+        "description": "حمله +۳۵٪، دفاع +۲۰٪ و سرعت -۵٪ برای ۳ نوبت؛ سپس خستگی ۱ نوبتی با حمله -۸٪.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 26.84,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "defense",
+            "amount": 14.64,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "speed",
+            "amount": -9.76,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 35,
+            "turns": 3
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "defense",
+            "amount": 20,
+            "turns": 3
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_iron_bastion",
+      "skillId": "last_bastion",
+      "skillName": "آخرین سنگر",
+      "skillType": "ultimate_aoe",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 3900
+          },
+          {
+            "type": "shield",
+            "scope": "self",
+            "amount": 240
+          }
+        ]
+      },
+      "ascended": {
+        "id": "asc_last_bastion",
+        "name": "سقوط تختگاه",
+        "description": "ضربه منطقه‌ای ۵۲۰٪؛ سپر خود و یاران ۱۰٪ سلامت با سقف ۳۰٪؛ آسیب باس تابع سقف عمومی.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 6344
+          },
+          {
+            "type": "shield",
+            "scope": "self",
+            "amount": 292.8
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "chaos_rend",
+      "skillName": "شکافنده بی‌نظمی",
+      "skillType": "single_damage_debuff",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 1550
+          },
+          {
+            "type": "modifier",
+            "scope": "selected_target",
+            "stat": "defense",
+            "amount": -15,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "mark:chaos_rend",
+              "polarity": "negative",
+              "turns": 3,
+              "marked": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_2",
+        "name": "شکافِ بلعنده",
+        "description": "شکاف گسترش می‌یابد و به اهداف مجاور آسیب می‌زند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2518.75
+          },
+          {
+            "type": "modifier",
+            "scope": "selected_target",
+            "stat": "defense",
+            "amount": -18.75,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "mark:chaos_rend",
+              "polarity": "negative",
+              "turns": 3,
+              "marked": true
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 562.5
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "primordial_rage",
+      "skillName": "خشم نخستین",
+      "skillType": "self_buff",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 18,
+            "turns": 2
+          },
+          {
+            "type": "resource_gain",
+            "resource": "energy",
+            "amount": 20
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_1",
+        "name": "خشمِ آن‌سوی مرز",
+        "description": "خشم با مهارت‌های دیگر هم‌افزایی بیشتری پیدا می‌کند.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 22.5,
+            "turns": 2
+          },
+          {
+            "type": "resource_gain",
+            "resource": "energy",
+            "amount": 20
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 30,
+            "turns": 4
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "fractured_chance",
+      "skillName": "شکاف احتمال",
+      "skillType": "control",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "control:fractured_chance",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "critChance",
+            "amount": 8,
+            "turns": 2
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_3",
+        "name": "انتخابِ ناممکن",
+        "description": "نتیجه اختلال با قطعیت بیشتری انتخاب می‌شود.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "control:fractured_chance",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "critChance",
+            "amount": 8,
+            "turns": 2
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "critChance",
+            "amount": 12,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "asc_control:fractured_chance",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "paradox_knot",
+      "skillName": "گره تناقض",
+      "skillType": "link",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "link:paradox_knot",
+              "polarity": "negative",
+              "turns": 3,
+              "linkPct": 35,
+              "linkedTo": "actor"
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_4",
+        "name": "پیوندِ دو سرنوشت",
+        "description": "پیوند چند اثر را میان دو هدف منتقل می‌کند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "link:paradox_knot",
+              "polarity": "negative",
+              "turns": 3,
+              "linkPct": 35,
+              "linkedTo": "actor"
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "asc_link:paradox_knot",
+              "polarity": "negative",
+              "turns": 4,
+              "linkPct": 50
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "endless_wound",
+      "skillName": "زخم بی‌پایان",
+      "skillType": "damage_over_time",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "dot:endless_wound",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 380
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_5",
+        "name": "زخمِ زنده‌جهان",
+        "description": "زخم به اقدام دشمن واکنش شدیدتری نشان می‌دهد.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "dot:endless_wound",
+              "polarity": "negative",
+              "turns": 3,
+              "dotDamage": 475
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "reactive_wound:endless_wound",
+              "polarity": "negative",
+              "turns": 4,
+              "reactiveOnActionPct": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "broken_moments_prison",
+      "skillName": "زندان لحظه‌های شکسته",
+      "skillType": "aoe_control",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 700
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:broken_moments_prison",
+              "polarity": "negative",
+              "turns": 1,
+              "control": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_6",
+        "name": "دخمه زمانِ مرده",
+        "description": "محدوده مهار گسترده‌تر و انفجار پایانی قوی‌تر می‌شود.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1137.5
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:broken_moments_prison",
+              "polarity": "negative",
+              "turns": 1,
+              "control": true
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1125
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "asc_control:broken_moments_prison",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "chaos_fangs",
+      "skillName": "دندان‌های آشوب",
+      "skillType": "multi_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "multi_hit",
+            "scope": "all_live_targets",
+            "hits": 3,
+            "amount": 383.33333333333337
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_7",
+        "name": "آرواره‌های پایان",
+        "description": "شکاف‌ها ضربات بیشتری وارد می‌کنند.",
+        "operations": [
+          {
+            "type": "multi_hit",
+            "scope": "all_live_targets",
+            "hits": 4,
+            "amount": 359.375
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "moment_slip",
+      "skillName": "لغزش لحظه",
+      "skillType": "evasion",
+      "base": {
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "damageReductionPct",
+            "amount": 45,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "evasion:moment_slip",
+              "polarity": "positive",
+              "turns": 2,
+              "delayNegativeStatus": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_8",
+        "name": "سرقتِ یک لحظه",
+        "description": "لغزش، یک اثر منفی را نیز به تأخیر می‌اندازد.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "damageReductionPct",
+            "amount": 56.25,
+            "turns": 2
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "evasion:moment_slip",
+              "polarity": "positive",
+              "turns": 2,
+              "delayNegativeStatus": true
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "damageReductionPct",
+            "amount": 60,
+            "turns": 3
+          },
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "delay_debuff:moment_slip",
+              "polarity": "positive",
+              "turns": 3,
+              "delayNegativeStatus": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "discordant_vessel",
+      "skillName": "کالبد ناسازگار",
+      "skillType": "passive",
+      "base": {
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 35,
+            "turns": 2
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_9",
+        "name": "وجودِ بیرون از قانون",
+        "description": "واکنش کالبد آسیب بیشتری بازمی‌گرداند.",
+        "operations": [
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 43.75,
+            "turns": 2
+          },
+          {
+            "type": "reaction",
+            "reaction": "reflect",
+            "amountPct": 50,
+            "turns": 3
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_chaos",
+      "skillId": "undefined_end",
+      "skillName": "پایان تعریف‌ناپذیر",
+      "skillType": "ultimate",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 2600
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:undefined_end",
+              "polarity": "negative",
+              "turns": 1,
+              "control": true,
+              "bossControlReduced": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "chaos_asc_10",
+        "name": "آخرین تناقض",
+        "description": "میدان نهایی ضربات و اختلال قوی‌تری ایجاد می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 4225
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:undefined_end",
+              "polarity": "negative",
+              "turns": 1,
+              "control": true,
+              "bossControlReduced": true
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 2000
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "asc_control:undefined_end",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "apoc_strike",
+      "skillName": "ضربه آخرالزمان",
+      "skillType": "single_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 1600
+          }
+        ]
+      },
+      "ascended": {
+        "id": "apoc_strike_ascended",
+        "name": "ضربه واپسین جهان",
+        "description": "ضربه شمشیر شکاف واقعیت می‌سازد و موج تخریب منتشر می‌کند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "selected_target",
+            "amount": 2592
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 660
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "world_rift",
+      "skillName": "شکاف جهان",
+      "skillType": "line_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "ordered_targets",
+            "amount": 1900,
+            "maxTargets": 4
+          },
+          {
+            "type": "apply_status",
+            "scope": "ordered_targets",
+            "status": {
+              "id": "rift:world_rift",
+              "polarity": "negative",
+              "turns": 2,
+              "dotDamage": 200,
+              "slowPct": 15
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "world_rift_ascended",
+        "name": "زخم بی‌پایان واقعیت",
+        "description": "شکاف باز می‌ماند، سایه‌ها دشمن را می‌کشند و چند موج انرژی آزاد می‌شود.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "ordered_targets",
+            "amount": 3078,
+            "maxTargets": 4
+          },
+          {
+            "type": "apply_status",
+            "scope": "ordered_targets",
+            "status": {
+              "id": "rift:world_rift",
+              "polarity": "negative",
+              "turns": 4,
+              "dotDamage": 240,
+              "slowPct": 15
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "slow:world_rift",
+              "polarity": "negative",
+              "turns": 2,
+              "slowPct": 20
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "asc_dot:world_rift",
+              "polarity": "negative",
+              "turns": 4,
+              "dotDamage": 420
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1077.3
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "meteor_rain",
+      "skillName": "باران شهاب",
+      "skillType": "area_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 2200
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "burn:meteor_rain",
+              "polarity": "negative",
+              "turns": 2,
+              "dotDamage": 200
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "meteor_rain_ascended",
+        "name": "سقوط ستارگان مرده",
+        "description": "شهاب‌های تعقیب‌کننده فرود می‌آیند و شهاب پایانی انفجار بزرگی دارد.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 3564
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "burn:meteor_rain",
+              "polarity": "negative",
+              "turns": 2,
+              "dotDamage": 240
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1200
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "existence_inversion",
+      "skillName": "وارونگی هستی",
+      "skillType": "control",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "control:existence_inversion",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "existence_inversion_ascended",
+        "name": "جهان وارونه",
+        "description": "جاذبه و جهت حرکت دشمنان وارونه و سپس همگی به مرکز کوبیده می‌شوند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "control:existence_inversion",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "asc_control:existence_inversion",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1200
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "end_mark",
+      "skillName": "نشان پایان",
+      "skillType": "mark",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "mark:end_mark",
+              "polarity": "negative",
+              "turns": 3,
+              "marked": true,
+              "detonationPct": 150,
+              "stacking": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "end_mark_ascended",
+        "name": "حکم نابودی",
+        "description": "نشان به چشم تاج‌دار بدل می‌شود و انفجار آن به اهداف نزدیک سرایت می‌کند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "mark:end_mark",
+              "polarity": "negative",
+              "turns": 3,
+              "marked": true,
+              "detonationPct": 150,
+              "stacking": true
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 600
+          },
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "detonation:end_mark",
+              "polarity": "negative",
+              "turns": 3,
+              "detonationPct": 250
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "ruin_crown",
+      "skillName": "تاج ویرانی",
+      "skillType": "self_buff",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "self",
+            "status": {
+              "id": "empower:ruin_crown",
+              "polarity": "positive",
+              "turns": 2,
+              "powerPct": 20
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "ruin_crown_ascended",
+        "name": "تاج آخرین پادشاه",
+        "description": "تاج شناور قدرت ضربه و مقاومت کنترل را افزایش می‌دهد و از شکست دشمن انرژی می‌گیرد.",
+        "operations": [
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 36,
+            "turns": 2
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "controlResist",
+            "amount": 30,
+            "turns": 2
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "attack",
+            "amount": 30,
+            "turns": 4
+          },
+          {
+            "type": "modifier",
+            "scope": "self",
+            "stat": "controlResist",
+            "amount": 25,
+            "turns": 4
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "captivity_dominion",
+      "skillName": "فرمانروایی اسارت",
+      "skillType": "control",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "control:captivity_dominion",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "captivity_dominion_ascended",
+        "name": "حکم سکون ابدی",
+        "description": "نشان‌های زمینی دشمنان را بی‌حرکت می‌کنند و در پایان به مرکز می‌کوبند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "selected_target",
+            "status": {
+              "id": "control:captivity_dominion",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "asc_control:captivity_dominion",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "outside_time",
+      "skillName": "لحظه‌ای خارج از زمان",
+      "skillType": "control",
+      "base": {
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:outside_time",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "outside_time_ascended",
+        "name": "آخرین ثانیه جهان",
+        "description": "ساعت شکسته، حملات را در میانه اجرا معلق می‌کند؛ تأخیرها در پایان به موج آسیب بدل می‌شوند.",
+        "operations": [
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:outside_time",
+              "polarity": "negative",
+              "turns": 2,
+              "control": true,
+              "controlTurns": 1,
+              "controlChancePct": 100
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1440
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "slow:outside_time",
+              "polarity": "negative",
+              "turns": 2,
+              "slowPct": 30
+            }
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "kingfall",
+      "skillName": "فرود پادشاه پایان",
+      "skillType": "area_damage",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 3000
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "burn:kingfall",
+              "polarity": "negative",
+              "turns": 2,
+              "dotDamage": 200
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "kingfall_ascended",
+        "name": "سقوط تختگاه مرگ",
+        "description": "تختگاه عظیم نمایان می‌شود و چند موج تخریب از محل فرود شمشیر می‌گذرند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 4860
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "burn:kingfall",
+              "polarity": "negative",
+              "turns": 2,
+              "dotDamage": 240
+            }
+          },
+          {
+            "type": "modifier",
+            "scope": "all_live_targets",
+            "stat": "defense",
+            "amount": -20,
+            "turns": 2
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1701
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 1701
+          }
+        ]
+      }
+    },
+    {
+      "specializationId": "warrior_apocalypse_harbinger",
+      "skillId": "worlds_end",
+      "skillName": "پایان جهان",
+      "skillType": "ultimate",
+      "base": {
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 4200
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:worlds_end",
+              "polarity": "negative",
+              "turns": 1,
+              "control": true,
+              "bossControlReduced": true
+            }
+          }
+        ]
+      },
+      "ascended": {
+        "id": "worlds_end_ascended",
+        "name": "خاموشی آفرینش",
+        "description": "چهار پرده فروپاشی؛ آسیب نهایی بسیار سنگین اما باس‌ها از حذف فوری مصون‌اند.",
+        "operations": [
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 6804
+          },
+          {
+            "type": "apply_status",
+            "scope": "all_live_targets",
+            "status": {
+              "id": "control:worlds_end",
+              "polarity": "negative",
+              "turns": 1,
+              "control": true,
+              "bossControlReduced": true
+            }
+          },
+          {
+            "type": "damage",
+            "scope": "all_live_targets",
+            "amount": 2640
+          }
+        ]
+      }
+    }
+  ]
+}

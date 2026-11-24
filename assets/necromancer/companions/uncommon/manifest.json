@@ -1,0 +1,107 @@
+{
+  "version": "V1985",
+  "rank": "uncommon",
+  "count": 20,
+  "portraits": [
+    {
+      "id": "grave_knight",
+      "name": "شوالیه گور",
+      "path": "assets/necromancer/companions/uncommon/grave_knight.webp"
+    },
+    {
+      "id": "ashen_warden",
+      "name": "نگهبان خاکستر",
+      "path": "assets/necromancer/companions/uncommon/ashen_warden.webp"
+    },
+    {
+      "id": "lantern_wraith",
+      "name": "روح فانوس",
+      "path": "assets/necromancer/companions/uncommon/lantern_wraith.webp"
+    },
+    {
+      "id": "bone_oracle",
+      "name": "غیب‌گوی استخوان",
+      "path": "assets/necromancer/companions/uncommon/bone_oracle.webp"
+    },
+    {
+      "id": "oni_revenant",
+      "name": "اونی بازگشته",
+      "path": "assets/necromancer/companions/uncommon/oni_revenant.webp"
+    },
+    {
+      "id": "jiangshi_sentinel",
+      "name": "نگهبان جیانگ‌شی",
+      "path": "assets/necromancer/companions/uncommon/jiangshi_sentinel.webp"
+    },
+    {
+      "id": "carrion_brute",
+      "name": "درنده لاشه‌خوار",
+      "path": "assets/necromancer/companions/uncommon/carrion_brute.webp"
+    },
+    {
+      "id": "mourning_bride",
+      "name": "عروس سوگوار",
+      "path": "assets/necromancer/companions/uncommon/mourning_bride.webp"
+    },
+    {
+      "id": "crimson_banshee",
+      "name": "بانشی سرخ",
+      "path": "assets/necromancer/companions/uncommon/crimson_banshee.webp"
+    },
+    {
+      "id": "ember_hound",
+      "name": "سگ شکاری اخگر",
+      "path": "assets/necromancer/companions/uncommon/ember_hound.webp"
+    },
+    {
+      "id": "tomb_reaver",
+      "name": "غارتگر مقبره",
+      "path": "assets/necromancer/companions/uncommon/tomb_reaver.webp"
+    },
+    {
+      "id": "frost_necromancer",
+      "name": "نکرومنسر یخی",
+      "path": "assets/necromancer/companions/uncommon/frost_necromancer.webp"
+    },
+    {
+      "id": "bone_hound",
+      "name": "سگ استخوانی",
+      "path": "assets/necromancer/companions/uncommon/bone_hound.webp"
+    },
+    {
+      "id": "reaper_acolyte",
+      "name": "پیرو داس‌دار",
+      "path": "assets/necromancer/companions/uncommon/reaper_acolyte.webp"
+    },
+    {
+      "id": "pale_banshee",
+      "name": "بانشی رنگ‌پریده",
+      "path": "assets/necromancer/companions/uncommon/pale_banshee.webp"
+    },
+    {
+      "id": "pharaoh_guardian",
+      "name": "نگهبان فرعون",
+      "path": "assets/necromancer/companions/uncommon/pharaoh_guardian.webp"
+    },
+    {
+      "id": "mummy_stalker",
+      "name": "مومیایی کمین‌گر",
+      "path": "assets/necromancer/companions/uncommon/mummy_stalker.webp"
+    },
+    {
+      "id": "thorn_dryad_revenant",
+      "name": "دریاد خارپوش بازگشته",
+      "path": "assets/necromancer/companions/uncommon/thorn_dryad_revenant.webp"
+    },
+    {
+      "id": "spirit_dancer",
+      "name": "رقصنده ارواح",
+      "path": "assets/necromancer/companions/uncommon/spirit_dancer.webp"
+    },
+    {
+      "id": "hollow_treant",
+      "name": "درخت‌زاد توخالی",
+      "path": "assets/necromancer/companions/uncommon/hollow_treant.webp"
+    }
+  ]
+}

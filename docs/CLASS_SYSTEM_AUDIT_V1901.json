@@ -1,0 +1,183 @@
+{
+  "version": "V1901",
+  "generatedAt": "2026-11-22T14:16:44.921Z",
+  "specializationCount": 8,
+  "totals": {
+    "skills": 80,
+    "upgradeSteps": 480,
+    "talents": 256,
+    "domainStages": 32,
+    "ascensions": 80
+  },
+  "ok": true,
+  "specializations": [
+    {
+      "id": "wizard_arcane_mage",
+      "ok": true,
+      "errors": [],
+      "skills": 10,
+      "upgradeSteps": 60,
+      "talents": 32,
+      "talentBranches": 4,
+      "domainUnlockLevels": [
+        25,
+        40,
+        50,
+        50
+      ],
+      "ascensions": 10,
+      "ascensionsWithBaseSkill": 10,
+      "primaryResource": "mana",
+      "resourceCostModes": [
+        "percent_of_max"
+      ]
+    },
+    {
+      "id": "wizard_elementalist",
+      "ok": true,
+      "errors": [],
+      "skills": 10,
+      "upgradeSteps": 60,
+      "talents": 32,
+      "talentBranches": 4,
+      "domainUnlockLevels": [
+        25,
+        40,
+        50,
+        50
+      ],
+      "ascensions": 10,
+      "ascensionsWithBaseSkill": 10,
+      "primaryResource": "mana",
+      "resourceCostModes": [
+        "percent_of_max"
+      ]
+    },
+    {
+      "id": "wizard_warlock",
+      "ok": true,
+      "errors": [],
+      "skills": 10,
+      "upgradeSteps": 60,
+      "talents": 32,
+      "talentBranches": 4,
+      "domainUnlockLevels": [
+        25,
+        40,
+        50,
+        50
+      ],
+      "ascensions": 10,
+      "ascensionsWithBaseSkill": 10,
+      "primaryResource": "mana",
+      "resourceCostModes": [
+        "percent_of_max"
+      ]
+    },
+    {
+      "id": "wizard_necromancer",
+      "ok": true,
+      "errors": [],
+      "skills": 10,
+      "upgradeSteps": 60,
+      "talents": 32,
+      "talentBranches": 4,
+      "domainUnlockLevels": [
+        25,
+        40,
+        50,
+        50
+      ],
+      "ascensions": 10,
+      "ascensionsWithBaseSkill": 10,
+      "primaryResource": "mana",
+      "resourceCostModes": [
+        "percent_of_max"
+      ]
+    },
+    {
+      "id": "warrior_sword_ascetic",
+      "ok": true,
+      "errors": [],
+      "skills": 10,
+      "upgradeSteps": 60,
+      "talents": 32,
+      "talentBranches": 4,
+      "domainUnlockLevels": [
+        25,
+        40,
+        50,
+        50
+      ],
+      "ascensions": 10,
+      "ascensionsWithBaseSkill": 10,
+      "primaryResource": "stamina",
+      "resourceCostModes": [
+        "flat"
+      ]
+    },
+    {
+      "id": "warrior_iron_bastion",
+      "ok": true,
+      "errors": [],
+      "skills": 10,
+      "upgradeSteps": 60,
+      "talents": 32,
+      "talentBranches": 4,
+      "domainUnlockLevels": [
+        25,
+        40,
+        50,
+        50
+      ],
+      "ascensions": 10,
+      "ascensionsWithBaseSkill": 10,
+      "primaryResource": "stamina",
+      "resourceCostModes": [
+        "flat"
+      ]
+    },
+    {
+      "id": "warrior_chaos",
+      "ok": true,
+      "errors": [],
+      "skills": 10,
+      "upgradeSteps": 60,
+      "talents": 32,
+      "talentBranches": 4,
+      "domainUnlockLevels": [
+        25,
+        40,
+        50,
+        50
+      ],
+      "ascensions": 10,
+      "ascensionsWithBaseSkill": 10,
+      "primaryResource": "stamina",
+      "resourceCostModes": [
+        "flat"
+      ]
+    },
+    {
+      "id": "warrior_apocalypse_harbinger",
+      "ok": true,
+      "errors": [],
+      "skills": 10,
+      "upgradeSteps": 60,
+      "talents": 32,
+      "talentBranches": 4,
+      "domainUnlockLevels": [
+        25,
+        40,
+        50,
+        50
+      ],
+      "ascensions": 10,
+      "ascensionsWithBaseSkill": 10,
+      "primaryResource": "stamina",
+      "resourceCostModes": [
+        "flat"
+      ]
+    }
+  ]
+}
