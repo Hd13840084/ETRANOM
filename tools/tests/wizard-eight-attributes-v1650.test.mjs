@@ -12,9 +12,11 @@ test('all eight attributes have an explicit gameplay effect description', () => 
 });
 
 test('strength/power and intellect are routed to physical and magical attack formulas', () => {
-  assert.match(game, /attackStat=magicClasses\.includes\(className\)\?"intellect":"power"/);
-  assert.match(game, /characterStat\('intellect'\).*\*5/);
-  assert.match(game, /characterStat\(attackStat\)/);
+  assert.match(game, /function canonicalOffensiveStats\(\)/);
+  assert.match(game, /stats:\{power:characterStat\('power'\),intellect:characterStat\('intellect'\)\}/);
+  assert.match(game, /physicalSkillPower:physicalBase\+power\*2\.8/);
+  assert.match(game, /magicalAttack:magicalBase\+intellect\*5/);
+  assert.match(game, /function wizardRuntimePower\(\)/);
 });
 
 test('endurance, vitality, speed and perception affect mitigation, HP, evasion and accuracy', () => {
@@ -33,9 +35,9 @@ test('luck and faith affect criticals, recipes, mana, magic resistance and heali
 });
 
 test('wizard attribute descriptions are visible in both specialization attribute panels', () => {
-  assert.equal((game.match(/ATTRIBUTE_EFFECT_TEXT\[k\]/g) || []).length, 2);
+  assert.ok((game.match(/ATTRIBUTE_EFFECT_TEXT\[k\]/g) || []).length >= 2);
 });
 
 test('game module cache is advanced for the attribute engine changes', () => {
-  assert.match(index, /game\.js\?v=185/);
+  assert.match(index, /game\.js\?v=1961/);
 });

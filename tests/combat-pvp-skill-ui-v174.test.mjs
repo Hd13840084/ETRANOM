@@ -6,11 +6,11 @@ const html=fs.readFileSync(new URL('../index.html',import.meta.url),'utf8');
 const sql=fs.readFileSync(new URL('../database/combat_shared_skills_pvp_fix_v174.sql',import.meta.url),'utf8');
 test('PvP UI loads the shared skill catalog and exposes the authenticated server skill action',()=>{
  assert.match(ui,/loadSharedSkillCatalog/); assert.match(ui,/data-pvp-cast-skill/); assert.match(ui,/performSkill\(/);
- assert.match(html,/pvpSkillAction:async/); assert.match(html,/etranom_pvp_skill_action/);
+ assert.match(html,/pvpSkillAction:async/); assert.match(html,/etranom_pvp_skill_action_v1969/);
 });
 test('PvP skill action does not accept client-calculated combat values',()=>{
- const method=html.match(/pvpSkillAction:async\(id,skillId\)=>\{[\s\S]*?\},/);
- assert.ok(method); assert.match(method[0],/p_match:id/); assert.match(method[0],/p_skill_id:skillId/);
+ const method=html.match(/pvpSkillAction:async\(id,skillId,choice=null,requestId=createCombatRequestId\(\)\)=>\{[\s\S]*?\},/);
+ assert.ok(method); assert.match(method[0],/p_match:id/); assert.match(method[0],/p_skill_id:skillId/); assert.match(method[0],/p_choice:choice/); assert.match(method[0],/p_request_id:requestId/);
  assert.doesNotMatch(method[0],/damage|heal|mana|hp:/i);
 });
 test('v174 keeps actor and target HP in separate variables for damage-heal',()=>{

@@ -16,8 +16,9 @@ test('recipe state accepts legacy object records and mirrors learned potion reci
 
 test('recipe inventory classification and crafting ledgers include equipment and potion blueprints', () => {
   assert.match(game, /item\?\.recipeType\|\|item\?\.itemType==='equipment_recipe'\|\|item\?\.itemType==='potion_recipe'/);
-  assert.match(game, /function smithyCraftingPanel\(\)[\s\S]*?const known=ETRANOM_RECIPES\.filter[\s\S]*?knownPotions=POTION_RECIPES\.filter/);
-  assert.match(game, /آمار فارسی:/);
+  assert.match(game, /item\?\.recipeType\|\|item\?\.itemType==='equipment_recipe'\|\|item\?\.itemType==='potion_recipe'/);
+  assert.doesNotMatch(game, /function smithyCraftingPanel\(\)/);
+  assert.match(game, /function craftingView\(\)[\s\S]*?دفتر جامع ساخت و کیمیاگری/);
   assert.match(game, /function craftingView\(\)[\s\S]*?دفتر جامع ساخت و کیمیاگری/);
 });
 
@@ -36,7 +37,7 @@ test('victory restores HP, MP and stamina after battle events and records recove
   assert.match(game, /report\.stamina=postBattleResources\.stamina/);
 });
 
-test('updated app and Necromancer module use cache-busted v1853 imports', () => {
-  assert.match(html, /necromancer\.js\?v=1853/);
-  assert.match(html, /game\.js\?v=1853&nav=1853/);
+test('updated app uses current V1961 cache key while Necromancer module remains V1936', () => {
+  assert.match(html, /necromancer\.js\?v=1936/);
+  assert.match(html, /game\.js\?v=1961&nav=1961/);
 });

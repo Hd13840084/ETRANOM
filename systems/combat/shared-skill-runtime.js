@@ -6,13 +6,18 @@ import { ARCANE_MAGE } from '../classes/arcane-mage.js';
 import { ELEMENTALIST } from '../classes/elementalist.js';
 import { WARLOCK } from '../classes/warlock.js';
 import { NECROMANCER } from '../classes/necromancer.js';
+import SWORD_ASCETIC from '../../content/classes/warrior_sword_ascetic_v1.json' with { type: 'json' };
+import IRON_BASTION from '../../content/classes/warrior_iron_bastion_v1.json' with { type: 'json' };
+import CHAOS_WARRIOR from '../../content/classes/warrior_chaos_warrior_v1.json' with { type: 'json' };
+import APOCALYPSE_HARBINGER from '../../content/classes/warrior_apocalypse_harbinger_v1.json' with { type: 'json' };
+import { resolveActorAttackPower, resolveCanonicalSkillDamage } from './character-stat-core.js?v=1904';
 
 const n=(v,d=0)=>Number.isFinite(Number(v))?Number(v):d;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const clone=v=>JSON.parse(JSON.stringify(v??{}));
-export const SHARED_SKILL_RUNTIME_VERSION='183.0.0';
+export const SHARED_SKILL_RUNTIME_VERSION='1904.0.0';
 export const BASE_STAT_FIELDS=Object.freeze(['attack','defense','maxHp','maxMp','magicPower','accuracy','critChance','speed']);
-export const EFFECT_FIELDS=Object.freeze(['attackPct','defensePct','magicPowerPct','healingPct','damagePct','damageReductionPct','accuracyPct','critChancePct','speedPct','manaCostReductionPct','cooldownReductionTurns','lifeStealPct','reflectPct','dotPct','attackReductionPct','defenseReductionPct']);
+export const EFFECT_FIELDS=Object.freeze(['attackPct','defensePct','magicPowerPct','healingPct','damagePct','damageReductionPct','accuracyPct','critChancePct','speedPct','manaCostReductionPct','cooldownReductionTurns','cooldownReductionPct','lifeStealPct','reflectPct','dotPct','attackReductionPct','defenseReductionPct']);
 const TYPES=new Set(['single_damage','multi_target_damage','all_damage','all_control_damage','all_dot_control','ultimate_all_damage','shield','self_heal','heal','group_heal','summon','summon_resource','control','debuff','self_buff','evasion_counter','repeat_last_spell','damage_heal','purge','link']);
 export function normalizeCombatEffects(...sources){
  const out={}; for(const src of sources){if(!src||typeof src!=='object')continue;for(const k of EFFECT_FIELDS){const v=n(src[k],0);if(v)out[k]=clamp(n(out[k])+v,-90,500);} }
@@ -33,33 +38,66 @@ function hpCap(x){return Math.max(1,n(x.maxHp??x.max_hp,1));}
 function requestedPartyMember(actor,id){return (actor.partyMembers||[]).find(x=>id!==null&&id!==undefined&&String(x.id)===String(id)&&n(x.hp)>0)||null;}
 function applyHeal(target,amount){const max=hpCap(target),before=clamp(n(target.hp),0,max),after=Math.min(max,before+Math.max(0,Math.floor(amount)));return {...target,hp:after,healed:after-before};}
 function applyDamage(target,amount){const before=Math.max(0,n(target.hp)),damage=Math.min(before,Math.max(0,Math.floor(amount)));return {...target,hp:before-damage,damageTaken:damage};}
-function skillDamage(skill,actor,target,effects){const power=Math.max(0,n(skill.scalingStat==='attack'?actor.attack:skill.scalingStat==='magicPower'?actor.magicPower:(actor.magicPower??actor.attack))); const pct=Math.max(0,n(skill.damagePct??skill.powerPct,100));const bonus=n(effects.damagePct)+n(skill.damageBonusPct);const statusValues=Object.values(target.statuses||{});const defenseReduction=clamp(statusValues.reduce((v,x)=>v+n(x?.defenseReductionPct),0),0,80);const def=Math.max(0,n(target.defense)*(1-defenseReduction/100));const raw=power*pct/100*(1+bonus/100);return Math.max(1,Math.floor(raw*100/(100+def*1.25)));}
+function skillDamage(skill,actor,target,effects){
+ const archetype=String(actor.damageArchetype||'').toLowerCase();
+ const canonical=actor.useCanonicalStatCore===true&&actor.stats&&archetype?resolveActorAttackPower(actor):null;
+ const legacyPower=Math.max(0,n(skill.scalingStat==='attack'?actor.attack:skill.scalingStat==='magicPower'?actor.magicPower:(actor.magicPower??actor.attack)));
+ const power=canonical?(skill.scalingStat==='attack'&&archetype==='physical'?canonical.physicalSkillPower:canonical.attackPower):legacyPower;
+ const pct=Math.max(0,n(skill.damagePct??skill.powerPct,100));
+ const bonus=n(effects.damagePct)+n(skill.damageBonusPct);
+ const statusValues=Object.values(target.statuses||{});
+ const defenseReduction=clamp(statusValues.reduce((v,x)=>v+n(x?.defenseReductionPct),0),0,80);
+ const damageReduction=statusValues.reduce((v,x)=>v+n(x?.damageReductionPct),n(target.damageReductionPct));
+ const flatBonus=n(effects.flatDamage)+n(skill.flatDamage);
+ return resolveCanonicalSkillDamage({attackPower:power,damagePct:pct,percentBonus:bonus,flatBonus,targetDefense:target.defense??target.enemyDefense,defenseReductionPct:defenseReduction,targetDamageReductionPct:damageReduction}).damage;
+}
 /** Resolve catalog records by stable id. Catalog must be loaded from the trusted game content bundle. */
-const WIZARD_SPEC_ALIASES=Object.freeze({wizard_arcane_mage:'wizard_1',wizard_elementalist:'wizard_2',wizard_warlock:'wizard_3',wizard_necromancer:'wizard_4'});
+const WIZARD_SPEC_ALIASES=Object.freeze({wizard_arcane_mage:'wizard_1',wizard_elementalist:'wizard_2',wizard_warlock:'wizard_3',wizard_necromancer:'wizard_4', 'آرکین‌میج':'wizard_1','آرکین میج':'wizard_1','Arcane Mage':'wizard_1','المنتالیست':'wizard_2','Elementalist':'wizard_2','وارلاک':'wizard_3','Warlock':'wizard_3','نکرومنسر':'wizard_4','Necromancer':'wizard_4'});
 const WIZARD_SPECS=Object.freeze([
- {catalogId:'wizard_1',id:'wizard_arcane_mage',data:ARCANE_MAGE},
- {catalogId:'wizard_2',id:'wizard_elementalist',data:ELEMENTALIST},
- {catalogId:'wizard_3',id:'wizard_warlock',data:WARLOCK},
- {catalogId:'wizard_4',id:'wizard_necromancer',data:NECROMANCER}
+ {classId:'wizard',catalogId:'wizard_1',id:'wizard_arcane_mage',progressKey:'arcaneMage',data:ARCANE_MAGE},
+ {classId:'wizard',catalogId:'wizard_2',id:'wizard_elementalist',data:ELEMENTALIST},
+ {classId:'wizard',catalogId:'wizard_3',id:'wizard_warlock',data:WARLOCK},
+ {classId:'wizard',catalogId:'wizard_4',id:'wizard_necromancer',data:NECROMANCER}
 ]);
+const WARRIOR_SPECS=Object.freeze([
+ {classId:'warrior',catalogId:'warrior_1',id:'warrior_sword_ascetic',data:SWORD_ASCETIC,progressKey:'warrior_sword_ascetic'},
+ {classId:'warrior',catalogId:'warrior_2',id:'warrior_iron_bastion',data:IRON_BASTION,progressKey:'warrior_iron_bastion'},
+ {classId:'warrior',catalogId:'warrior_3',id:'warrior_chaos_warrior',data:CHAOS_WARRIOR,progressKey:'warrior_chaos'},
+ {classId:'warrior',catalogId:'warrior_4',id:'warrior_apocalypse_harbinger',data:APOCALYPSE_HARBINGER,progressKey:'warrior_apocalypse_harbinger'}
+]);
+const ALL_SPECS=Object.freeze([...WIZARD_SPECS,...WARRIOR_SPECS]);
+const SPEC_ALIASES=Object.freeze({
+ wizard_1:'wizard_arcane_mage',wizard_2:'wizard_elementalist',wizard_3:'wizard_warlock',wizard_4:'wizard_necromancer',
+ warrior_1:'warrior_sword_ascetic',warrior_2:'warrior_iron_bastion',warrior_3:'warrior_chaos_warrior',warrior_4:'warrior_apocalypse_harbinger',
+ warrior_chaos:'warrior_chaos_warrior','زاهد شمشیر':'warrior_sword_ascetic','Sword Ascetic':'warrior_sword_ascetic',
+ 'دژ پولادین':'warrior_iron_bastion','Iron Bastion':'warrior_iron_bastion','جنگجوی آشوب':'warrior_chaos_warrior','Chaos Warrior':'warrior_chaos_warrior',
+ 'آورنده آخرالزمان':'warrior_apocalypse_harbinger','Apocalypse Harbinger':'warrior_apocalypse_harbinger'
+});
 function canonicalWizardSpec(id){const raw=String(id||'');return WIZARD_SPEC_ALIASES[raw]||raw;}
-function actualWizardSkills(specId=null){
- return WIZARD_SPECS.filter(s=>!specId||s.catalogId===canonicalWizardSpec(specId)||s.id===specId)
-  .flatMap(s=>(s.data.skills||[]).map(skill=>({...skill,class_id:'wizard',specialization_id:s.catalogId,specialization_key:s.id,implementation_status:'implemented'})));
+/** Build the PvP picker catalog from the same shipped specialization data used by Solo.
+ * No database catalog or stale wizard_1 placeholder rows are required for display.
+ */
+export async function loadSharedSkillCatalog(){
+ return Object.freeze({schema:'etranom.shared.skill.catalog.v1',class_core_skills:Object.freeze([]),specializations:Object.freeze(ALL_SPECS.map(spec=>Object.freeze({class_id:spec.classId,specialization_id:spec.catalogId,specialization_key:spec.id,progress_key:spec.progressKey||spec.id,skills:Object.freeze((spec.data.skills||[]).map(skill=>Object.freeze({...skill,id:String(skill.id),class_id:spec.classId,specialization_id:spec.catalogId,specialization_key:spec.id,implementation_status:'implemented'}))),ascendedSkills:Object.freeze((spec.data.ascendedSkills||[]).map(skill=>Object.freeze({...skill}))),domain:Object.freeze({...spec.data.domain})})))});
+}
+export function normalizeSharedSpecializationId(id){return SPEC_ALIASES[String(id||'')]||canonicalWizardSpec(id);}
+function actualSkills(specId=null,classId=null){
+ return ALL_SPECS.filter(s=>(!classId||s.classId===classId)&&(!specId||s.catalogId===normalizeSharedSpecializationId(specId)||s.id===normalizeSharedSpecializationId(specId)||s.id===specId))
+  .flatMap(s=>(s.data.skills||[]).map(skill=>({...skill,class_id:s.classId,specialization_id:s.catalogId,specialization_key:s.id,progress_key:s.progressKey||s.id,implementation_status:'implemented'})));
 }
 export function listAvailableSharedSkills(catalog,{classId=null,specializationId=null,level=1,ownedSkillIds=[]}={}){
  const owned=new Set((Array.isArray(ownedSkillIds)?ownedSkillIds:[]).map(String));
- if(!catalog||catalog.schema!=='etranom.shared.skill.catalog.v1'||(classId&&classId!=='wizard'))return [];
- const specId=specializationId?canonicalWizardSpec(specializationId):null;
- const core=(catalog.class_core_skills||[]).filter(x=>x.class_id==='wizard'&&x.implementation_status!=='shell');
- const rows=[...core,...actualWizardSkills(specId)];
- return rows.filter(x=>(!specId||!x.specialization_id||x.specialization_id===specId)&&n(x.unlockLevel,1)<=n(level,1)&&owned.has(String(x.id))).map(x=>Object.freeze({...x}));
+ if(!catalog||catalog.schema!=='etranom.shared.skill.catalog.v1'||(classId&& !['wizard','warrior'].includes(classId)))return [];
+ const specId=specializationId?normalizeSharedSpecializationId(specializationId):null;
+ const core=(catalog.class_core_skills||[]).filter(x=>x.class_id===classId&&x.implementation_status!=='shell');
+ const rows=[...core,...actualSkills(specId,classId)];
+ return rows.filter(x=>(!specId||!x.specialization_key||x.specialization_key===specId||x.specialization_id===specId)&&n(x.unlockLevel,1)<=n(level,1)&&owned.has(String(x.id))).map(x=>Object.freeze({...x}));
 }
 export function findSharedSkill(catalog, skillId, specializationId=null, classId='wizard'){
- const id=String(skillId||'');if(!catalog||catalog.schema!=='etranom.shared.skill.catalog.v1'||classId!=='wizard')return null;
- const specId=specializationId?canonicalWizardSpec(specializationId):null;
- const actual=actualWizardSkills(specId).find(x=>x.id===id);if(actual)return actual;
- const base=(catalog.class_core_skills||[]).find(x=>x.id===id&&x.class_id==='wizard'&&x.implementation_status!=='shell');if(base)return base;
+ const id=String(skillId||'');if(!catalog||catalog.schema!=='etranom.shared.skill.catalog.v1'||!['wizard','warrior'].includes(classId))return null;
+ const specId=specializationId?normalizeSharedSpecializationId(specializationId):null;
+ const actual=actualSkills(specId,classId).find(x=>x.id===id);if(actual)return actual;
+ const base=(catalog.class_core_skills||[]).find(x=>x.id===id&&x.class_id===classId&&x.implementation_status!=='shell');if(base)return base;
  return null;
 }
 /** Apply an incoming hit to a combatant, consuming shield before HP. */
@@ -82,7 +120,10 @@ export function resolveCombatSkill({mode='solo',skill,actor={},targets=[],effect
  const fx=normalizeCombatEffects(effects);const a=clone(actor);let enemies=(Array.isArray(targets)?targets:[]).map(clone);let log=[];let summons=Array.isArray(a.summons)?a.summons.slice(0,2):[];
  const skillId=String(skill.id);const cooldowns={...(a.skillCooldowns||{})};if(n(cooldowns[skillId])>0)throw new Error('skill_on_cooldown');
  const baseCost=Math.max(0,n(skill.manaCost??skill.manaPct,0));const cost=Math.max(0,Math.ceil(baseCost*(1-clamp(n(fx.manaCostReductionPct),0,80)/100)));if(n(a.mp)<cost)throw new Error('insufficient_mana');a.mp=Math.max(0,n(a.mp)-cost);
- if(n(skill.cooldownTurns)>0)cooldowns[skillId]=Math.floor(n(skill.cooldownTurns));a.skillCooldowns=cooldowns;
+ const cooldownBase=Math.max(0,Math.floor(n(skill.cooldownTurns)));
+ const cooldownReduction=Math.max(0,n(fx.cooldownReductionTurns))+Math.ceil(cooldownBase*clamp(n(fx.cooldownReductionPct),0,80)/100);
+ const effectiveCooldown=Math.max(0,cooldownBase-Math.floor(cooldownReduction));
+ if(effectiveCooldown>0)cooldowns[skillId]=effectiveCooldown;else delete cooldowns[skillId];a.skillCooldowns=cooldowns;
  const chosenTargetId=targetId??skill.targetId??null;
  const primary=enemies.find(t=>chosenTargetId!==null&&String(t.id)===String(chosenTargetId)&&n(t.hp)>0)||enemies.find(t=>n(t.hp)>0);
  const scale=1+n(fx.damagePct)/100;const healScale=1+n(fx.healingPct)/100;
@@ -120,8 +161,25 @@ export function resolveCombatSkill({mode='solo',skill,actor={},targets=[],effect
 /** Advance duration-based combat effects once at the authoritative round boundary.
  * Applies damage-over-time before decrementing durations; callers persist the returned state.
  */
-export function tickCombatStatuses(combatant={}){
+export function tickCombatStatuses(combatant={}, options={}){
  const out=clone(combatant),logs=[];
+ const turnId=options?.turnId==null?null:String(options.turnId);
+ const alreadyTicked=turnId!==null&&String(out._combatLifecycleLastTickId??'')===turnId;
+ if(alreadyTicked)return Object.freeze({combatant:out,log:[]});
+ const tickCooldowns=options?.tickCooldowns!==false;
+ if(tickCooldowns){
+  const tickMap=map=>{if(!map||typeof map!=='object'||Array.isArray(map))return;for(const [id,value] of Object.entries(map)){const next=Math.max(0,Math.floor(n(value)-1));if(next<=0)delete map[id];else map[id]=next;}};
+  const tickProgress=progress=>{if(!progress||typeof progress!=='object'||Array.isArray(progress))return;tickMap(progress.skillCooldowns);tickMap(progress.skill_cooldowns);tickMap(progress.cooldowns);};
+  tickMap(out.skillCooldowns);tickMap(out.skill_cooldowns);tickMap(out.cooldowns);
+  const classProgress=out.classProgress||out.class_progress||{};
+  for(const progress of Object.values(classProgress))tickProgress(progress);
+  tickProgress(out.specializationProgress);tickProgress(out.specialization_progress);
+ }
+ // The lifecycle marker belongs to the turn boundary, not to the cooldown
+ // branch: specialization runtimes may own their cooldown tick and still need
+ // the same idempotency guard for statuses/domain timers.
+ if(turnId!==null)out._combatLifecycleLastTickId=turnId;
+ if(options?.tickStatuses!==false){
  const statuses={...(out.statuses||{})};
  for(const [id,status] of Object.entries(statuses)){
   const turns=Math.max(0,n(status?.turns));
@@ -131,8 +189,9 @@ export function tickCombatStatuses(combatant={}){
   const next=turns-1;if(next<=0)delete statuses[id];else statuses[id]={...status,turns:next};
  }
  out.statuses=statuses;
- if(out.shield&&n(out.shield.turns)>0){out.shield={...out.shield,turns:n(out.shield.turns)-1};if(out.shield.turns<=0)out.shield=null;}
+ if(out.shield&&n(out.shield.turns)>0){out.shield={...out.shield,turns:n(out.shield.turns)-1};if(out.shield.turns<=0||n(out.shield.hp)<=0)out.shield=null;}
  for(const key of ['buffs']){if(out[key]&&typeof out[key]==='object'){for(const [id,buff] of Object.entries(out[key])){const turns=Math.max(0,n(buff?.turns)-1);if(turns<=0)delete out[key][id];else out[key][id]={...buff,turns};}}}
  if(Array.isArray(out.summons))out.summons=out.summons.map(x=>({...x,turns:Math.max(0,n(x.turns)-1)})).filter(x=>x.turns>0&&n(x.hp)>0);
+ }
  return Object.freeze({combatant:out,log:logs});
 }

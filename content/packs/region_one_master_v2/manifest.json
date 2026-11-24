@@ -2,11 +2,11 @@
   "schema_version": 2,
   "pack_id": "region_one_master_v2",
   "game_region": 1,
-  "content_version": "region1-monster-power-x2-v142",
+  "content_version": "region1-ten-level-progression-v1980",
   "source_of_truth": true,
   "level_range": {
     "min": 1,
-    "max": 5
+    "max": 10
   },
   "item_recipe_level": 1,
   "recipe_level_cap": 10,
@@ -54,6 +54,9 @@
     },
     {
       "path": "tower/tower_encounters.json"
+    },
+    {
+      "path": "rewards/reward_tables.json"
     }
   ],
   "rules": {
@@ -72,12 +75,36 @@
     },
     "monsters_respawn": true,
     "zone_levels": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      5
+      {
+        "zone": 1,
+        "level_min": 1,
+        "level_max": 2
+      },
+      {
+        "zone": 2,
+        "level_min": 3,
+        "level_max": 4
+      },
+      {
+        "zone": 3,
+        "level_min": 5,
+        "level_max": 6
+      },
+      {
+        "zone": 4,
+        "level_min": 7,
+        "level_max": 8
+      },
+      {
+        "zone": 5,
+        "level_min": 9,
+        "level_max": 9
+      },
+      {
+        "zone": 6,
+        "level_min": 10,
+        "level_max": 10
+      }
     ],
     "all_region_one_items_level": 1,
     "rarity_drop_chances_percent": {
@@ -127,7 +154,48 @@
       ],
       "mini_boss_hp_vs_zone_normal_max": 3.1,
       "area_boss_hp_vs_zone_normal_max": 5.2
-    }
+    },
+    "reward_engine": {
+      "version": "1971.0.0",
+      "supported_types": [
+        "material",
+        "item",
+        "currency",
+        "recipe",
+        "key",
+        "custom"
+      ],
+      "drop_chance_range": [
+        0,
+        1
+      ],
+      "quantity_formats": [
+        "integer",
+        "{min,max}"
+      ],
+      "table_selection": [
+        "independent",
+        "weighted"
+      ],
+      "legacy_material_chance_preserved": true,
+      "normal_material_type_limit": 1,
+      "miniboss_material_type_limit": 2,
+      "boss_material_type_limit": 3
+    },
+    "region_level_span": 10,
+    "zone_level_distribution": {
+      "two_level_zones": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "single_level_zones": [
+        5,
+        6
+      ]
+    },
+    "monster_level_assignment": "سه هیولای عادی اول در سطح پایین محدوده، دو هیولای عادی بعدی در سطح بالای محدوده؛ مینی‌باس/باس در سطح بالای محدوده."
   },
   "recipe_level_multiplier_base": 3,
   "runtime_integration_status": "runtime_connected_phase_2",
@@ -176,5 +244,6 @@
     "tower_policy": "فقط باس طبقات ۴، ۸، ۱۲، ۱۶ و ۲۰؛ بدون دستور اسطوره‌ای",
     "dungeon_policy": "هر دانجن ۱۰ دستور از گنجینه و ۱۰ دستور از باس نهایی همان دانجن"
   },
-  "balance_version": 139
+  "balance_version": 139,
+  "world_level_map": "../../progression/world-level-map-v1980.json"
 }

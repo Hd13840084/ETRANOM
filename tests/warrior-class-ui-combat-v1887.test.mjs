@@ -11,7 +11,7 @@ test('Sword Ascetic combat buttons dispatch to its real runtime',()=>{
  assert.match(game,/function swordAsceticUseSkill\(id\)/);
  assert.match(game,/data-use-sword-skill/);
  assert.match(game,/swordAsceticUseSkill\(b\.dataset\.useSwordSkill\)/);
- assert.match(index,/sword-ascetic-runtime\.js\?v=1887/);
+ assert.match(index,/sword-ascetic-runtime\.js\?v=1937/);
 });
 test('all warrior specialization books use their correct portrait assets',()=>{
  const game=read('game.js');

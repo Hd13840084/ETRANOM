@@ -27,5 +27,5 @@ test('gather button clears stale combat state and returns to the active region p
 });
 
 test('deployed entry point requests the new cache-busted game module', () => {
-  assert.match(html, /game\.js\?v=1862&nav=1862/);
+  assert.match(html, /game\.js\?v=1908&nav=1908/);
 });

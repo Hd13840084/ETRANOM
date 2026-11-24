@@ -10,13 +10,12 @@ test('equipment tab renders all thirteen canonical equipment slots and inventory
   assert.match(game,/data-equip-item=/);
   assert.match(game,/data-unequip-slot=/);
 });
-test('blacksmith combines recipe crafting, repair and enchantment while retaining one-use recipe flow',()=>{
-  const smith=game.split('\n').find(x=>x.includes('else if(p.kind==="smith")body='))||'';
-  assert.match(smith,/smithyCraftingPanel\(\)/);
-  assert.match(smith,/gear-repair-all/);
-  assert.match(smith,/gear-upgrade/);
-  assert.match(game,/state\.knownRecipes=state\.knownRecipes\.filter/);
-  assert.match(game,/دستور و تمام مواد لازم/);
+test('safe-zone blacksmith services are removed pending the unified workshop redesign',()=>{
+  const panel=game.slice(game.indexOf('function renderInteractionPanel(){'),game.indexOf('function renderHubTabs(){'));
+  assert.doesNotMatch(panel,/smithyCraftingPanel|gear-repair-all|gear-upgrade|data-interact-action=\"craft/);
+  assert.doesNotMatch(game,/function smithyCraftingPanel\(\)/);
+  assert.match(game,/const EQUIPMENT_EFFECTS = \{/);
+  assert.match(game,/function equipmentCatalogFor/);
 });
 test('equipment workspace has compact responsive dark-fantasy styling',()=>{
   assert.match(css,/\.gear-slots-grid/);

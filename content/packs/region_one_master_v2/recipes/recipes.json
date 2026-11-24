@@ -1,7 +1,7 @@
 [
   {
     "id": "recipe_0_0_0",
-    "name": "دستور خاکستر سلاح اصلی آغازین • تفنگدار",
+    "name": "تفنگِ اخگرِ خاموش؛ سوگندِ سپیده ـ 001",
     "result_item_id": "item_recipe_0_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -40,11 +40,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ خاکستر",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "تفنگ",
+    "lore_description_fa": "اخگرِ خاموش؛ تفنگ ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_0_0_1",
-    "name": "دستور خار سلاح اصلی پایدار • تفنگدار",
+    "name": "رازآلودِ تفنگِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 002",
     "result_item_id": "item_recipe_0_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -81,11 +83,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "تفنگ",
+    "lore_description_fa": "خارستانِ سوگند؛ تفنگ ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_0_1_0",
-    "name": "دستور سنگستر سلاح دوم آغازین • تفنگدار",
+    "name": "آذرنشانِ تپانچهِ سنگسترِ کبود؛ یادگارِ نخستین ـ 003",
     "result_item_id": "item_recipe_0_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -124,11 +128,13 @@
     "drop_source_label_fa": "هیولای عادی: خفاش زغالین",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "تپانچه",
+    "lore_description_fa": "سنگسترِ کبود؛ تپانچه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_0_1_1",
-    "name": "دستور ورداش سلاح دوم پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ تپانچهِ موجِ ورداش؛ پناهِ سپیده ـ 004",
     "result_item_id": "item_recipe_0_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -167,11 +173,13 @@
     "drop_source_label_fa": "هیولای عادی: پرنده نیزار",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "تپانچه",
+    "lore_description_fa": "موجِ ورداش؛ تپانچه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_0_2_0",
-    "name": "دستور جنوبی زره آغازین • تفنگدار",
+    "name": "حماسه‌زادِ زره سینهِ آفتابِ مدفون؛ آوازِ ژرفا ـ 005",
     "result_item_id": "item_recipe_0_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -208,11 +216,13 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "آفتابِ مدفون؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_0_2_1",
-    "name": "دستور ریشه‌پوش زره پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ زره سینهِ ریشه‌گاهِ واپسین؛ اشکِ ماه‌سنگ ـ 006",
     "result_item_id": "item_recipe_0_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -250,11 +260,13 @@
     "drop_source_label_fa": "باس طبقه 04 برج باستانی",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_0_3_0",
-    "name": "دستور خاکستر کلاه آغازین • تفنگدار",
+    "name": "آذرنشانِ کلاه‌خودِ اخگرِ خاموش؛ شکوهِ بی‌مرز ـ 007",
     "result_item_id": "item_recipe_0_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -293,11 +305,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ خاکستری سوخته",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "اخگرِ خاموش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_0_3_1",
-    "name": "دستور خار کلاه پایدار • تفنگدار",
+    "name": "رازآلودِ کلاه‌خودِ خارستانِ سوگند؛ پیکرِ ابدی ـ 008",
     "result_item_id": "item_recipe_0_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -336,11 +350,13 @@
     "drop_source_label_fa": "مینی‌باس: مادر بیشه‌خار",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "خارستانِ سوگند؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_0_4_0",
-    "name": "دستور سنگستر چکمه آغازین • تفنگدار",
+    "name": "آذرنشانِ پوتینِ سنگسترِ کبود؛ مهرِ هفت‌پرده ـ 009",
     "result_item_id": "item_recipe_0_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -379,11 +395,13 @@
     "drop_source_label_fa": "هیولای عادی: خرگوش خاکستری",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "سنگسترِ کبود؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_0_4_1",
-    "name": "دستور ورداش چکمه پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ پوتینِ موجِ ورداش؛ نگینِ فراموشی ـ 010",
     "result_item_id": "item_recipe_0_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -422,11 +440,13 @@
     "drop_source_label_fa": "هیولای عادی: شکارچی آب‌تیره",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "موجِ ورداش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_0_5_0",
-    "name": "دستور جنوبی دستکش آغازین • تفنگدار",
+    "name": "افسانه‌نشانِ دستکشِ آفتابِ مدفون؛ قلبِ جهان ـ 011",
     "result_item_id": "item_recipe_0_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -465,11 +485,13 @@
     "drop_source_label_fa": "مینی‌باس: شاخ‌دار دشت جنوبی",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "آفتابِ مدفون؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_0_5_1",
-    "name": "دستور ریشه‌پوش دستکش پایدار • تفنگدار",
+    "name": "اسطوره‌زادِ دستکشِ ریشه‌گاهِ واپسین؛ چشمِ بیدار ـ 012",
     "result_item_id": "item_recipe_0_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -508,11 +530,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_0_6_0",
-    "name": "دستور خاکستر ساق‌پوش آغازین • تفنگدار",
+    "name": "ساق‌بندِ اخگرِ خاموش؛ خوابِ اژدها ـ 013",
     "result_item_id": "item_recipe_0_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -551,11 +575,13 @@
     "drop_source_label_fa": "مینی‌باس: ریشه‌سالار خاکستر",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "اخگرِ خاموش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_0_6_1",
-    "name": "دستور خار ساق‌پوش پایدار • تفنگدار",
+    "name": "رازآلودِ ساق‌بندِ خارستانِ سوگند؛ خشمِ کهن ـ 014",
     "result_item_id": "item_recipe_0_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -594,11 +620,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ تیغ‌دار",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "خارستانِ سوگند؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_0_7_0",
-    "name": "دستور سنگستر بازوبند آغازین • تفنگدار",
+    "name": "آذرنشانِ بازوبندِ سنگسترِ کبود؛ نفرینِ جاودان ـ 015",
     "result_item_id": "item_recipe_0_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -637,11 +665,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک سنگستر",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "سنگسترِ کبود؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_0_7_1",
-    "name": "دستور ورداش بازوبند پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ بازوبندِ موجِ ورداش؛ نفسِ خاکستر ـ 016",
     "result_item_id": "item_recipe_0_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -680,11 +710,13 @@
     "drop_source_label_fa": "هیولای عادی: خرچنگ گِل‌سنگ",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "موجِ ورداش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_0_8_0",
-    "name": "دستور جنوبی حلقه ۱ آغازین • تفنگدار",
+    "name": "حماسه‌زادِ انگشترِ آفتابِ مدفون؛ پیمانِ آذرین ـ 017",
     "result_item_id": "item_recipe_0_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -723,11 +755,13 @@
     "drop_source_label_fa": "هیولای عادی: شاهین آفتاب‌سوخته",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "آفتابِ مدفون؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_0_8_1",
-    "name": "دستور ریشه‌پوش حلقه ۱ پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ انگشترِ ریشه‌گاهِ واپسین؛ سرودِ واپسین ـ 018",
     "result_item_id": "item_recipe_0_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -766,11 +800,13 @@
     "drop_source_label_fa": "هیولای عادی: سایه کتیبه",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_0_9_0",
-    "name": "دستور خاکستر حلقه ۲ آغازین • تفنگدار",
+    "name": "آذرنشانِ خاتمِ اخگرِ خاموش؛ آتشِ بی‌نام ـ 019",
     "result_item_id": "item_recipe_0_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -809,11 +845,13 @@
     "drop_source_label_fa": "هیولای عادی: ریشه‌خوار مرده",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "اخگرِ خاموش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_0_9_1",
-    "name": "دستور خار حلقه ۲ پایدار • تفنگدار",
+    "name": "رازآلودِ خاتمِ خارستانِ سوگند؛ میراثِ بی‌غروب ـ 020",
     "result_item_id": "item_recipe_0_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -852,11 +890,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ بیشه‌خار",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "خارستانِ سوگند؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_0_10_0",
-    "name": "دستور سنگستر گردنبند آغازین • تفنگدار",
+    "name": "آذرنشانِ گردن‌آویزِ سنگسترِ کبود؛ وارثِ توفان ـ 021",
     "result_item_id": "item_recipe_0_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -895,11 +935,13 @@
     "drop_source_label_fa": "هیولای عادی: مار خاکسترپوش",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "سنگسترِ کبود؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_0_10_1",
-    "name": "دستور ورداش گردنبند پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ گردن‌آویزِ موجِ ورداش؛ رازِ هزارساله ـ 022",
     "result_item_id": "item_recipe_0_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -938,11 +980,13 @@
     "drop_source_label_fa": "مینی‌باس: مارسالار ورداش",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "موجِ ورداش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_0_11_0",
-    "name": "دستور جنوبی شنل آغازین • تفنگدار",
+    "name": "افسانه‌نشانِ شنلِ آفتابِ مدفون؛ نشانِ تقدیر ـ 023",
     "result_item_id": "item_recipe_0_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -979,11 +1023,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "آفتابِ مدفون؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_0_11_1",
-    "name": "دستور ریشه‌پوش شنل پایدار • تفنگدار",
+    "name": "اسطوره‌زادِ شنلِ ریشه‌گاهِ واپسین؛ خونِ ستارگان ـ 024",
     "result_item_id": "item_recipe_0_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -1021,11 +1067,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_0_12_0",
-    "name": "دستور خاکستر نشان آغازین • تفنگدار",
+    "name": "نشان جنگیِ اخگرِ خاموش؛ طلسمِ سپهر ـ 025",
     "result_item_id": "item_recipe_0_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -1063,11 +1111,13 @@
     "drop_source_label_fa": "مینی‌باس: ریشه‌سالار خاکستر",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "اخگرِ خاموش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_0_12_1",
-    "name": "دستور خار نشان پایدار • تفنگدار",
+    "name": "رازآلودِ نشان جنگیِ خارستانِ سوگند؛ تاجِ فروزان ـ 026",
     "result_item_id": "item_recipe_0_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -1104,11 +1154,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "تفنگدار",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "خارستانِ سوگند؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_1_0_0",
-    "name": "دستور خار سلاح اصلی آغازین • راهب",
+    "name": "آذرنشانِ چوب‌دستی رزمیِ خارستانِ سوگند؛ نفسِ خاکستر ـ 027",
     "result_item_id": "item_recipe_1_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -1145,11 +1197,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "چوب‌دستی رزمی",
+    "lore_description_fa": "خارستانِ سوگند؛ چوب‌دستی رزمی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_0_1",
-    "name": "دستور سنگستر سلاح اصلی پایدار • راهب",
+    "name": "آذرنشانِ چوب‌دستی رزمیِ سنگسترِ کبود؛ پیمانِ آذرین ـ 028",
     "result_item_id": "item_recipe_1_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -1188,11 +1242,13 @@
     "drop_source_label_fa": "هیولای عادی: خرگوش خاکستری",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "چوب‌دستی رزمی",
+    "lore_description_fa": "سنگسترِ کبود؛ چوب‌دستی رزمی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_1_0",
-    "name": "دستور ورداش سلاح دوم آغازین • راهب",
+    "name": "حماسه‌زادِ چوب‌دستی کوتاهِ موجِ ورداش؛ سرودِ واپسین ـ 029",
     "result_item_id": "item_recipe_1_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -1231,11 +1287,13 @@
     "drop_source_label_fa": "هیولای عادی: مارماهی ورداش",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "چوب‌دستی کوتاه",
+    "lore_description_fa": "موجِ ورداش؛ چوب‌دستی کوتاه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_1_1_1",
-    "name": "دستور جنوبی سلاح دوم پایدار • راهب",
+    "name": "حماسه‌زادِ چوب‌دستی کوتاهِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 030",
     "result_item_id": "item_recipe_1_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -1272,11 +1330,13 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "چوب‌دستی کوتاه",
+    "lore_description_fa": "آفتابِ مدفون؛ چوب‌دستی کوتاه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_1_2_0",
-    "name": "دستور ریشه‌پوش زره آغازین • راهب",
+    "name": "اسطوره‌زادِ زره سینهِ ریشه‌گاهِ واپسین؛ میراثِ بی‌غروب ـ 031",
     "result_item_id": "item_recipe_1_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -1315,11 +1375,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_1_2_1",
-    "name": "دستور خاکستر زره پایدار • راهب",
+    "name": "آذرنشانِ زره سینهِ اخگرِ خاموش؛ وارثِ توفان ـ 032",
     "result_item_id": "item_recipe_1_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -1358,11 +1420,13 @@
     "drop_source_label_fa": "هیولای عادی: سایه‌بان شعله‌مرده",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "اخگرِ خاموش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_3_0",
-    "name": "دستور خار کلاه آغازین • راهب",
+    "name": "آذرنشانِ کلاه‌خودِ خارستانِ سوگند؛ رازِ هزارساله ـ 033",
     "result_item_id": "item_recipe_1_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -1401,11 +1465,13 @@
     "drop_source_label_fa": "هیولای عادی: روباه خارپوش",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "خارستانِ سوگند؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_3_1",
-    "name": "دستور سنگستر کلاه پایدار • راهب",
+    "name": "آذرنشانِ کلاه‌خودِ سنگسترِ کبود؛ نشانِ تقدیر ـ 034",
     "result_item_id": "item_recipe_1_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -1444,11 +1510,13 @@
     "drop_source_label_fa": "مینی‌باس: سنگ‌شکن اخگر",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "سنگسترِ کبود؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_4_0",
-    "name": "دستور ورداش چکمه آغازین • راهب",
+    "name": "حماسه‌زادِ پوتینِ موجِ ورداش؛ خونِ ستارگان ـ 035",
     "result_item_id": "item_recipe_1_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -1487,11 +1555,13 @@
     "drop_source_label_fa": "هیولای عادی: خرچنگ گِل‌سنگ",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "موجِ ورداش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_1_4_1",
-    "name": "دستور جنوبی چکمه پایدار • راهب",
+    "name": "افسانه‌نشانِ پوتینِ آفتابِ مدفون؛ طلسمِ سپهر ـ 036",
     "result_item_id": "item_recipe_1_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -1530,11 +1600,13 @@
     "drop_source_label_fa": "هیولای عادی: شیر علفزار",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "آفتابِ مدفون؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_1_5_0",
-    "name": "دستور ریشه‌پوش دستکش آغازین • راهب",
+    "name": "افسانه‌نشانِ دستکشِ ریشه‌گاهِ واپسین؛ تاجِ فروزان ـ 037",
     "result_item_id": "item_recipe_1_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -1571,11 +1643,13 @@
     "drop_source_label_fa": "باس طبقه 16 برج باستانی",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_1_5_1",
-    "name": "دستور خاکستر دستکش پایدار • راهب",
+    "name": "دستکشِ اخگرِ خاموش؛ سوگندِ سپیده ـ 038",
     "result_item_id": "item_recipe_1_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -1614,11 +1688,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ خاکستری سوخته",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "اخگرِ خاموش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_1_6_0",
-    "name": "دستور خار ساق‌پوش آغازین • راهب",
+    "name": "آذرنشانِ ساق‌بندِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 039",
     "result_item_id": "item_recipe_1_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -1657,11 +1733,13 @@
     "drop_source_label_fa": "مینی‌باس: مادر بیشه‌خار",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "خارستانِ سوگند؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_6_1",
-    "name": "دستور سنگستر ساق‌پوش پایدار • راهب",
+    "name": "آذرنشانِ ساق‌بندِ سنگسترِ کبود؛ یادگارِ نخستین ـ 040",
     "result_item_id": "item_recipe_1_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -1700,11 +1778,13 @@
     "drop_source_label_fa": "هیولای عادی: مار خاکسترپوش",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "سنگسترِ کبود؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_7_0",
-    "name": "دستور ورداش بازوبند آغازین • راهب",
+    "name": "حماسه‌زادِ بازوبندِ موجِ ورداش؛ پناهِ سپیده ـ 041",
     "result_item_id": "item_recipe_1_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -1743,11 +1823,13 @@
     "drop_source_label_fa": "هیولای عادی: ماهی فلس‌خاکستری",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "موجِ ورداش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_1_7_1",
-    "name": "دستور جنوبی بازوبند پایدار • راهب",
+    "name": "حماسه‌زادِ بازوبندِ آفتابِ مدفون؛ آوازِ ژرفا ـ 042",
     "result_item_id": "item_recipe_1_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -1786,11 +1868,13 @@
     "drop_source_label_fa": "هیولای عادی: موش‌خرمای خاکی",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "آفتابِ مدفون؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_1_8_0",
-    "name": "دستور ریشه‌پوش حلقه ۱ آغازین • راهب",
+    "name": "اسطوره‌زادِ انگشترِ ریشه‌گاهِ واپسین؛ اشکِ ماه‌سنگ ـ 043",
     "result_item_id": "item_recipe_1_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -1830,11 +1914,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_1_8_1",
-    "name": "دستور خاکستر حلقه ۱ پایدار • راهب",
+    "name": "آذرنشانِ انگشترِ اخگرِ خاموش؛ شکوهِ بی‌مرز ـ 044",
     "result_item_id": "item_recipe_1_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -1873,11 +1959,13 @@
     "drop_source_label_fa": "هیولای عادی: حشره آتش‌زخم",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "اخگرِ خاموش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_9_0",
-    "name": "دستور خار حلقه ۲ آغازین • راهب",
+    "name": "آذرنشانِ خاتمِ خارستانِ سوگند؛ پیکرِ ابدی ـ 045",
     "result_item_id": "item_recipe_1_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -1916,11 +2004,13 @@
     "drop_source_label_fa": "هیولای عادی: کرم ریشه‌خوار",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "خارستانِ سوگند؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_9_1",
-    "name": "دستور سنگستر حلقه ۲ پایدار • راهب",
+    "name": "آذرنشانِ خاتمِ سنگسترِ کبود؛ مهرِ هفت‌پرده ـ 046",
     "result_item_id": "item_recipe_1_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -1959,11 +2049,13 @@
     "drop_source_label_fa": "هیولای عادی: دندان‌سنگ تپه",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "سنگسترِ کبود؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_10_0",
-    "name": "دستور ورداش گردنبند آغازین • راهب",
+    "name": "حماسه‌زادِ گردن‌آویزِ موجِ ورداش؛ نگینِ فراموشی ـ 047",
     "result_item_id": "item_recipe_1_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -2002,11 +2094,13 @@
     "drop_source_label_fa": "هیولای عادی: مارماهی ورداش",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "موجِ ورداش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_1_10_1",
-    "name": "دستور جنوبی گردنبند پایدار • راهب",
+    "name": "افسانه‌نشانِ گردن‌آویزِ آفتابِ مدفون؛ قلبِ جهان ـ 048",
     "result_item_id": "item_recipe_1_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -2043,11 +2137,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "آفتابِ مدفون؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_1_11_0",
-    "name": "دستور ریشه‌پوش شنل آغازین • راهب",
+    "name": "افسانه‌نشانِ شنلِ ریشه‌گاهِ واپسین؛ چشمِ بیدار ـ 049",
     "result_item_id": "item_recipe_1_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -2085,11 +2181,13 @@
     "drop_source_label_fa": "باس طبقه 08 برج باستانی",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_1_11_1",
-    "name": "دستور خاکستر شنل پایدار • راهب",
+    "name": "شنلِ اخگرِ خاموش؛ خوابِ اژدها ـ 050",
     "result_item_id": "item_recipe_1_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -2127,11 +2225,13 @@
     "drop_source_label_fa": "مینی‌باس: ریشه‌سالار خاکستر",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "اخگرِ خاموش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_1_12_0",
-    "name": "دستور خار نشان آغازین • راهب",
+    "name": "آذرنشانِ نشان جنگیِ خارستانِ سوگند؛ خشمِ کهن ـ 051",
     "result_item_id": "item_recipe_1_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -2167,11 +2267,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "خارستانِ سوگند؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_1_12_1",
-    "name": "دستور سنگستر نشان پایدار • راهب",
+    "name": "آذرنشانِ نشان جنگیِ سنگسترِ کبود؛ نفرینِ جاودان ـ 052",
     "result_item_id": "item_recipe_1_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -2210,11 +2312,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک سنگستر",
     "balance_version": 139,
     "original_class_name": "راهب",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "سنگسترِ کبود؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_2_0_0",
-    "name": "دستور سنگستر سلاح اصلی آغازین • جنگجو",
+    "name": "حماسه‌زادِ شمشیرِ سنگسترِ کبود؛ آوازِ ژرفا ـ 053",
     "result_item_id": "item_recipe_2_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -2253,11 +2357,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک سنگستر",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شمشیر",
+    "lore_description_fa": "سنگسترِ کبود؛ شمشیر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_0_1",
-    "name": "دستور ورداش سلاح اصلی پایدار • جنگجو",
+    "name": "حماسه‌زادِ شمشیرِ موجِ ورداش؛ اشکِ ماه‌سنگ ـ 054",
     "result_item_id": "item_recipe_2_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -2296,11 +2402,13 @@
     "drop_source_label_fa": "هیولای عادی: پرنده نیزار",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شمشیر",
+    "lore_description_fa": "موجِ ورداش؛ شمشیر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_1_0",
-    "name": "دستور جنوبی سلاح دوم آغازین • جنگجو",
+    "name": "افسانه‌نشانِ شمشیر بزرگِ آفتابِ مدفون؛ شکوهِ بی‌مرز ـ 055",
     "result_item_id": "item_recipe_2_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -2337,11 +2445,13 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شمشیر بزرگ",
+    "lore_description_fa": "آفتابِ مدفون؛ شمشیر بزرگ ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_2_1_1",
-    "name": "دستور ریشه‌پوش سلاح دوم پایدار • جنگجو",
+    "name": "اسطوره‌زادِ شمشیر بزرگِ ریشه‌گاهِ واپسین؛ پیکرِ ابدی ـ 056",
     "result_item_id": "item_recipe_2_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -2380,11 +2490,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شمشیر بزرگ",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ شمشیر بزرگ ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_2_2_0",
-    "name": "دستور خاکستر زره آغازین • جنگجو",
+    "name": "زره سینهِ اخگرِ خاموش؛ مهرِ هفت‌پرده ـ 057",
     "result_item_id": "item_recipe_2_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -2423,11 +2535,13 @@
     "drop_source_label_fa": "هیولای عادی: ریشه‌خوار مرده",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "اخگرِ خاموش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_2_2_1",
-    "name": "دستور خار زره پایدار • جنگجو",
+    "name": "آذرنشانِ زره سینهِ خارستانِ سوگند؛ نگینِ فراموشی ـ 058",
     "result_item_id": "item_recipe_2_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -2464,11 +2578,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "خارستانِ سوگند؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_2_3_0",
-    "name": "دستور سنگستر کلاه آغازین • جنگجو",
+    "name": "حماسه‌زادِ کلاه‌خودِ سنگسترِ کبود؛ قلبِ جهان ـ 059",
     "result_item_id": "item_recipe_2_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -2507,11 +2623,13 @@
     "drop_source_label_fa": "هیولای عادی: خفاش زغالین",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "سنگسترِ کبود؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_3_1",
-    "name": "دستور ورداش کلاه پایدار • جنگجو",
+    "name": "حماسه‌زادِ کلاه‌خودِ موجِ ورداش؛ چشمِ بیدار ـ 060",
     "result_item_id": "item_recipe_2_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -2550,11 +2668,13 @@
     "drop_source_label_fa": "مینی‌باس: مارسالار ورداش",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "موجِ ورداش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_4_0",
-    "name": "دستور جنوبی چکمه آغازین • جنگجو",
+    "name": "حماسه‌زادِ پوتینِ آفتابِ مدفون؛ خوابِ اژدها ـ 061",
     "result_item_id": "item_recipe_2_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -2593,11 +2713,13 @@
     "drop_source_label_fa": "هیولای عادی: موش‌خرمای خاکی",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "آفتابِ مدفون؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_4_1",
-    "name": "دستور ریشه‌پوش چکمه پایدار • جنگجو",
+    "name": "افسانه‌نشانِ پوتینِ ریشه‌گاهِ واپسین؛ خشمِ کهن ـ 062",
     "result_item_id": "item_recipe_2_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -2636,11 +2758,13 @@
     "drop_source_label_fa": "هیولای عادی: پاسدار بی‌نام",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_2_5_0",
-    "name": "دستور خاکستر دستکش آغازین • جنگجو",
+    "name": "آذرنشانِ دستکشِ اخگرِ خاموش؛ نفرینِ جاودان ـ 063",
     "result_item_id": "item_recipe_2_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -2679,11 +2803,13 @@
     "drop_source_label_fa": "هیولای عادی: سایه‌بان شعله‌مرده",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "اخگرِ خاموش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_2_5_1",
-    "name": "دستور خار دستکش پایدار • جنگجو",
+    "name": "آذرنشانِ دستکشِ خارستانِ سوگند؛ نفسِ خاکستر ـ 064",
     "result_item_id": "item_recipe_2_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -2722,11 +2848,13 @@
     "drop_source_label_fa": "هیولای عادی: روباه خارپوش",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "خارستانِ سوگند؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_2_6_0",
-    "name": "دستور سنگستر ساق‌پوش آغازین • جنگجو",
+    "name": "حماسه‌زادِ ساق‌بندِ سنگسترِ کبود؛ پیمانِ آذرین ـ 065",
     "result_item_id": "item_recipe_2_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -2765,11 +2893,13 @@
     "drop_source_label_fa": "مینی‌باس: سنگ‌شکن اخگر",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "سنگسترِ کبود؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_6_1",
-    "name": "دستور ورداش ساق‌پوش پایدار • جنگجو",
+    "name": "حماسه‌زادِ ساق‌بندِ موجِ ورداش؛ سرودِ واپسین ـ 066",
     "result_item_id": "item_recipe_2_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -2808,11 +2938,13 @@
     "drop_source_label_fa": "هیولای عادی: مارماهی ورداش",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "موجِ ورداش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_7_0",
-    "name": "دستور جنوبی بازوبند آغازین • جنگجو",
+    "name": "افسانه‌نشانِ بازوبندِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 067",
     "result_item_id": "item_recipe_2_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -2851,11 +2983,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ دشت‌گرد",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "آفتابِ مدفون؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_2_7_1",
-    "name": "دستور ریشه‌پوش بازوبند پایدار • جنگجو",
+    "name": "اسطوره‌زادِ بازوبندِ ریشه‌گاهِ واپسین؛ میراثِ بی‌غروب ـ 068",
     "result_item_id": "item_recipe_2_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -2895,11 +3029,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_2_8_0",
-    "name": "دستور خاکستر حلقه ۱ آغازین • جنگجو",
+    "name": "انگشترِ اخگرِ خاموش؛ وارثِ توفان ـ 069",
     "result_item_id": "item_recipe_2_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -2938,11 +3074,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ خاکستر",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "اخگرِ خاموش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_2_8_1",
-    "name": "دستور خار حلقه ۱ پایدار • جنگجو",
+    "name": "آذرنشانِ انگشترِ خارستانِ سوگند؛ رازِ هزارساله ـ 070",
     "result_item_id": "item_recipe_2_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -2981,11 +3119,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک خارخون",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "خارستانِ سوگند؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_2_9_0",
-    "name": "دستور سنگستر حلقه ۲ آغازین • جنگجو",
+    "name": "حماسه‌زادِ خاتمِ سنگسترِ کبود؛ نشانِ تقدیر ـ 071",
     "result_item_id": "item_recipe_2_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -3024,11 +3164,13 @@
     "drop_source_label_fa": "هیولای عادی: خرگوش خاکستری",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "سنگسترِ کبود؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_9_1",
-    "name": "دستور ورداش حلقه ۲ پایدار • جنگجو",
+    "name": "حماسه‌زادِ خاتمِ موجِ ورداش؛ خونِ ستارگان ـ 072",
     "result_item_id": "item_recipe_2_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -3067,11 +3209,13 @@
     "drop_source_label_fa": "هیولای عادی: شکارچی آب‌تیره",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "موجِ ورداش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_10_0",
-    "name": "دستور جنوبی گردنبند آغازین • جنگجو",
+    "name": "حماسه‌زادِ گردن‌آویزِ آفتابِ مدفون؛ طلسمِ سپهر ـ 073",
     "result_item_id": "item_recipe_2_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -3108,11 +3252,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "آفتابِ مدفون؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_10_1",
-    "name": "دستور ریشه‌پوش گردنبند پایدار • جنگجو",
+    "name": "افسانه‌نشانِ گردن‌آویزِ ریشه‌گاهِ واپسین؛ تاجِ فروزان ـ 074",
     "result_item_id": "item_recipe_2_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -3149,11 +3295,13 @@
     "drop_source_label_fa": "باس طبقه 08 برج باستانی",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_2_11_0",
-    "name": "دستور خاکستر شنل آغازین • جنگجو",
+    "name": "آذرنشانِ شنلِ اخگرِ خاموش؛ سوگندِ سپیده ـ 075",
     "result_item_id": "item_recipe_2_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -3192,11 +3340,13 @@
     "drop_source_label_fa": "هیولای عادی: سایه‌بان شعله‌مرده",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "اخگرِ خاموش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_2_11_1",
-    "name": "دستور خار شنل پایدار • جنگجو",
+    "name": "آذرنشانِ شنلِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 076",
     "result_item_id": "item_recipe_2_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -3232,11 +3382,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "خارستانِ سوگند؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_2_12_0",
-    "name": "دستور سنگستر نشان آغازین • جنگجو",
+    "name": "حماسه‌زادِ نشان جنگیِ سنگسترِ کبود؛ یادگارِ نخستین ـ 077",
     "result_item_id": "item_recipe_2_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -3274,11 +3426,13 @@
     "drop_source_label_fa": "مینی‌باس: سنگ‌شکن اخگر",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "سنگسترِ کبود؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_2_12_1",
-    "name": "دستور ورداش نشان پایدار • جنگجو",
+    "name": "حماسه‌زادِ نشان جنگیِ موجِ ورداش؛ پناهِ سپیده ـ 078",
     "result_item_id": "item_recipe_2_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -3317,11 +3471,13 @@
     "drop_source_label_fa": "هیولای عادی: ماهی فلس‌خاکستری",
     "balance_version": 139,
     "original_class_name": "جنگجو",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "موجِ ورداش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_3_0_0",
-    "name": "دستور ورداش سلاح اصلی آغازین • جادوگر",
+    "name": "رازآلودِ عصای جادوِ موجِ ورداش؛ میراثِ بی‌غروب ـ 079",
     "result_item_id": "item_recipe_3_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -3360,11 +3516,13 @@
     "drop_source_label_fa": "هیولای عادی: ماهی فلس‌خاکستری",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "عصای جادو",
+    "lore_description_fa": "موجِ ورداش؛ عصای جادو ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_3_0_1",
-    "name": "دستور جنوبی سلاح اصلی پایدار • جادوگر",
+    "name": "افسانه‌نشانِ عصای جادوِ آفتابِ مدفون؛ وارثِ توفان ـ 080",
     "result_item_id": "item_recipe_3_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -3401,11 +3559,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "عصای جادو",
+    "lore_description_fa": "آفتابِ مدفون؛ عصای جادو ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_3_1_0",
-    "name": "دستور ریشه‌پوش سلاح دوم آغازین • جادوگر",
+    "name": "افسانه‌نشانِ کتاب طلسمِ ریشه‌گاهِ واپسین؛ رازِ هزارساله ـ 081",
     "result_item_id": "item_recipe_3_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -3442,11 +3602,13 @@
     "drop_source_label_fa": "باس طبقه 04 برج باستانی",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کتاب طلسم",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ کتاب طلسم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_3_1_1",
-    "name": "دستور خاکستر سلاح دوم پایدار • جادوگر",
+    "name": "کتاب طلسمِ اخگرِ خاموش؛ نشانِ تقدیر ـ 082",
     "result_item_id": "item_recipe_3_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -3485,11 +3647,13 @@
     "drop_source_label_fa": "هیولای عادی: حشره آتش‌زخم",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کتاب طلسم",
+    "lore_description_fa": "اخگرِ خاموش؛ کتاب طلسم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_3_2_0",
-    "name": "دستور خار زره آغازین • جادوگر",
+    "name": "زره سینهِ خارستانِ سوگند؛ خونِ ستارگان ـ 083",
     "result_item_id": "item_recipe_3_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -3526,11 +3690,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "خارستانِ سوگند؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_3_2_1",
-    "name": "دستور سنگستر زره پایدار • جادوگر",
+    "name": "حماسه‌زادِ زره سینهِ سنگسترِ کبود؛ طلسمِ سپهر ـ 084",
     "result_item_id": "item_recipe_3_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -3569,11 +3735,13 @@
     "drop_source_label_fa": "هیولای عادی: دندان‌سنگ تپه",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "سنگسترِ کبود؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_3_3_0",
-    "name": "دستور ورداش کلاه آغازین • جادوگر",
+    "name": "رازآلودِ کلاه‌خودِ موجِ ورداش؛ تاجِ فروزان ـ 085",
     "result_item_id": "item_recipe_3_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -3612,11 +3780,13 @@
     "drop_source_label_fa": "هیولای عادی: پرنده نیزار",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "موجِ ورداش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_3_3_1",
-    "name": "دستور جنوبی کلاه پایدار • جادوگر",
+    "name": "حماسه‌زادِ کلاه‌خودِ آفتابِ مدفون؛ سوگندِ سپیده ـ 086",
     "result_item_id": "item_recipe_3_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -3655,11 +3825,13 @@
     "drop_source_label_fa": "مینی‌باس: شاخ‌دار دشت جنوبی",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "آفتابِ مدفون؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_3_4_0",
-    "name": "دستور ریشه‌پوش چکمه آغازین • جادوگر",
+    "name": "اسطوره‌زادِ پوتینِ ریشه‌گاهِ واپسین؛ فرمانِ خاموشی ـ 087",
     "result_item_id": "item_recipe_3_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -3699,11 +3871,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_3_4_1",
-    "name": "دستور خاکستر چکمه پایدار • جادوگر",
+    "name": "آذرنشانِ پوتینِ اخگرِ خاموش؛ یادگارِ نخستین ـ 088",
     "result_item_id": "item_recipe_3_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -3742,11 +3916,13 @@
     "drop_source_label_fa": "مینی‌باس: ریشه‌سالار خاکستر",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "اخگرِ خاموش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_3_5_0",
-    "name": "دستور خار دستکش آغازین • جادوگر",
+    "name": "دستکشِ خارستانِ سوگند؛ پناهِ سپیده ـ 089",
     "result_item_id": "item_recipe_3_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -3785,11 +3961,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ بیشه‌خار",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "خارستانِ سوگند؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_3_5_1",
-    "name": "دستور سنگستر دستکش پایدار • جادوگر",
+    "name": "حماسه‌زادِ دستکشِ سنگسترِ کبود؛ آوازِ ژرفا ـ 090",
     "result_item_id": "item_recipe_3_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -3828,11 +4006,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک سنگستر",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "سنگسترِ کبود؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_3_6_0",
-    "name": "دستور ورداش ساق‌پوش آغازین • جادوگر",
+    "name": "رازآلودِ ساق‌بندِ موجِ ورداش؛ اشکِ ماه‌سنگ ـ 091",
     "result_item_id": "item_recipe_3_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -3871,11 +4051,13 @@
     "drop_source_label_fa": "مینی‌باس: مارسالار ورداش",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "موجِ ورداش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_3_6_1",
-    "name": "دستور جنوبی ساق‌پوش پایدار • جادوگر",
+    "name": "افسانه‌نشانِ ساق‌بندِ آفتابِ مدفون؛ شکوهِ بی‌مرز ـ 092",
     "result_item_id": "item_recipe_3_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -3914,11 +4096,13 @@
     "drop_source_label_fa": "هیولای عادی: شاهین آفتاب‌سوخته",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "آفتابِ مدفون؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_3_7_0",
-    "name": "دستور ریشه‌پوش بازوبند آغازین • جادوگر",
+    "name": "افسانه‌نشانِ بازوبندِ ریشه‌گاهِ واپسین؛ پیکرِ ابدی ـ 093",
     "result_item_id": "item_recipe_3_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -3957,11 +4141,13 @@
     "drop_source_label_fa": "هیولای عادی: پیکر ریشه‌ای",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_3_7_1",
-    "name": "دستور خاکستر بازوبند پایدار • جادوگر",
+    "name": "بازوبندِ اخگرِ خاموش؛ مهرِ هفت‌پرده ـ 094",
     "result_item_id": "item_recipe_3_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -4000,11 +4186,13 @@
     "drop_source_label_fa": "هیولای عادی: ریشه‌خوار مرده",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "اخگرِ خاموش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_3_8_0",
-    "name": "دستور خار حلقه ۱ آغازین • جادوگر",
+    "name": "انگشترِ خارستانِ سوگند؛ نگینِ فراموشی ـ 095",
     "result_item_id": "item_recipe_3_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -4043,11 +4231,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ تیغ‌دار",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "خارستانِ سوگند؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_3_8_1",
-    "name": "دستور سنگستر حلقه ۱ پایدار • جادوگر",
+    "name": "حماسه‌زادِ انگشترِ سنگسترِ کبود؛ قلبِ جهان ـ 096",
     "result_item_id": "item_recipe_3_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -4086,11 +4276,13 @@
     "drop_source_label_fa": "هیولای عادی: خفاش زغالین",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "سنگسترِ کبود؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_3_9_0",
-    "name": "دستور ورداش حلقه ۲ آغازین • جادوگر",
+    "name": "رازآلودِ خاتمِ موجِ ورداش؛ چشمِ بیدار ـ 097",
     "result_item_id": "item_recipe_3_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -4129,11 +4321,13 @@
     "drop_source_label_fa": "هیولای عادی: خرچنگ گِل‌سنگ",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "موجِ ورداش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_3_9_1",
-    "name": "دستور جنوبی حلقه ۲ پایدار • جادوگر",
+    "name": "حماسه‌زادِ خاتمِ آفتابِ مدفون؛ خوابِ اژدها ـ 098",
     "result_item_id": "item_recipe_3_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -4172,11 +4366,13 @@
     "drop_source_label_fa": "هیولای عادی: شیر علفزار",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "آفتابِ مدفون؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_3_10_0",
-    "name": "دستور ریشه‌پوش گردنبند آغازین • جادوگر",
+    "name": "اسطوره‌زادِ گردن‌آویزِ ریشه‌گاهِ واپسین؛ خشمِ کهن ـ 099",
     "result_item_id": "item_recipe_3_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -4215,11 +4411,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_3_10_1",
-    "name": "دستور خاکستر گردنبند پایدار • جادوگر",
+    "name": "آذرنشانِ گردن‌آویزِ اخگرِ خاموش؛ نفرینِ جاودان ـ 100",
     "result_item_id": "item_recipe_3_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -4258,11 +4456,13 @@
     "drop_source_label_fa": "هیولای عادی: حشره آتش‌زخم",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "اخگرِ خاموش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_3_11_0",
-    "name": "دستور خار شنل آغازین • جادوگر",
+    "name": "شنلِ خارستانِ سوگند؛ نفسِ خاکستر ـ 101",
     "result_item_id": "item_recipe_3_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -4299,11 +4499,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "خارستانِ سوگند؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_3_11_1",
-    "name": "دستور سنگستر شنل پایدار • جادوگر",
+    "name": "حماسه‌زادِ شنلِ سنگسترِ کبود؛ پیمانِ آذرین ـ 102",
     "result_item_id": "item_recipe_3_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -4341,11 +4543,13 @@
     "drop_source_label_fa": "مینی‌باس: سنگ‌شکن اخگر",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "سنگسترِ کبود؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_3_12_0",
-    "name": "دستور ورداش نشان آغازین • جادوگر",
+    "name": "رازآلودِ نشان جنگیِ موجِ ورداش؛ سرودِ واپسین ـ 103",
     "result_item_id": "item_recipe_3_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -4383,11 +4587,13 @@
     "drop_source_label_fa": "مینی‌باس: مارسالار ورداش",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "موجِ ورداش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_3_12_1",
-    "name": "دستور جنوبی نشان پایدار • جادوگر",
+    "name": "افسانه‌نشانِ نشان جنگیِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 104",
     "result_item_id": "item_recipe_3_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -4424,11 +4630,13 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "جادوگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "آفتابِ مدفون؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_4_0_0",
-    "name": "دستور جنوبی سلاح اصلی آغازین • رنجر",
+    "name": "حماسه‌زادِ کمانِ آفتابِ مدفون؛ مهرِ هفت‌پرده ـ 105",
     "result_item_id": "item_recipe_4_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -4465,11 +4673,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کمان",
+    "lore_description_fa": "آفتابِ مدفون؛ کمان ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_4_0_1",
-    "name": "دستور ریشه‌پوش سلاح اصلی پایدار • رنجر",
+    "name": "افسانه‌نشانِ کمانِ ریشه‌گاهِ واپسین؛ نگینِ فراموشی ـ 106",
     "result_item_id": "item_recipe_4_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -4506,11 +4716,13 @@
     "drop_source_label_fa": "باس طبقه 08 برج باستانی",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کمان",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ کمان ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_4_1_0",
-    "name": "دستور خاکستر سلاح دوم آغازین • رنجر",
+    "name": "آذرنشانِ خنجر شکارچیِ اخگرِ خاموش؛ قلبِ جهان ـ 107",
     "result_item_id": "item_recipe_4_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -4549,11 +4761,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ خاکستر",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خنجر شکارچی",
+    "lore_description_fa": "اخگرِ خاموش؛ خنجر شکارچی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_4_1_1",
-    "name": "دستور خار سلاح دوم پایدار • رنجر",
+    "name": "خنجر شکارچیِ خارستانِ سوگند؛ چشمِ بیدار ـ 108",
     "result_item_id": "item_recipe_4_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -4590,11 +4804,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خنجر شکارچی",
+    "lore_description_fa": "خارستانِ سوگند؛ خنجر شکارچی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_4_2_0",
-    "name": "دستور سنگستر زره آغازین • رنجر",
+    "name": "رازآلودِ زره سینهِ سنگسترِ کبود؛ خوابِ اژدها ـ 109",
     "result_item_id": "item_recipe_4_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -4633,11 +4849,13 @@
     "drop_source_label_fa": "هیولای عادی: خرگوش خاکستری",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "سنگسترِ کبود؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_4_2_1",
-    "name": "دستور ورداش زره پایدار • رنجر",
+    "name": "رازآلودِ زره سینهِ موجِ ورداش؛ خشمِ کهن ـ 110",
     "result_item_id": "item_recipe_4_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -4676,11 +4894,13 @@
     "drop_source_label_fa": "هیولای عادی: شکارچی آب‌تیره",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "موجِ ورداش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_4_3_0",
-    "name": "دستور جنوبی کلاه آغازین • رنجر",
+    "name": "افسانه‌نشانِ کلاه‌خودِ آفتابِ مدفون؛ نفرینِ جاودان ـ 111",
     "result_item_id": "item_recipe_4_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -4719,11 +4939,13 @@
     "drop_source_label_fa": "هیولای عادی: گراز غبارآلود",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "آفتابِ مدفون؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_4_3_1",
-    "name": "دستور ریشه‌پوش کلاه پایدار • رنجر",
+    "name": "اسطوره‌زادِ کلاه‌خودِ ریشه‌گاهِ واپسین؛ نفسِ خاکستر ـ 112",
     "result_item_id": "item_recipe_4_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -4762,11 +4984,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_4_4_0",
-    "name": "دستور خاکستر چکمه آغازین • رنجر",
+    "name": "پوتینِ اخگرِ خاموش؛ پیمانِ آذرین ـ 113",
     "result_item_id": "item_recipe_4_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -4805,11 +5029,13 @@
     "drop_source_label_fa": "هیولای عادی: سایه‌بان شعله‌مرده",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "اخگرِ خاموش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_4_4_1",
-    "name": "دستور خار چکمه پایدار • رنجر",
+    "name": "پوتینِ خارستانِ سوگند؛ سرودِ واپسین ـ 114",
     "result_item_id": "item_recipe_4_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -4848,11 +5074,13 @@
     "drop_source_label_fa": "مینی‌باس: مادر بیشه‌خار",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "خارستانِ سوگند؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_4_5_0",
-    "name": "دستور سنگستر دستکش آغازین • رنجر",
+    "name": "رازآلودِ دستکشِ سنگسترِ کبود؛ آتشِ بی‌نام ـ 115",
     "result_item_id": "item_recipe_4_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -4891,11 +5119,13 @@
     "drop_source_label_fa": "هیولای عادی: دندان‌سنگ تپه",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "سنگسترِ کبود؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_4_5_1",
-    "name": "دستور ورداش دستکش پایدار • رنجر",
+    "name": "رازآلودِ دستکشِ موجِ ورداش؛ میراثِ بی‌غروب ـ 116",
     "result_item_id": "item_recipe_4_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -4934,11 +5164,13 @@
     "drop_source_label_fa": "هیولای عادی: ماهی فلس‌خاکستری",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "موجِ ورداش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_4_6_0",
-    "name": "دستور جنوبی ساق‌پوش آغازین • رنجر",
+    "name": "حماسه‌زادِ ساق‌بندِ آفتابِ مدفون؛ وارثِ توفان ـ 117",
     "result_item_id": "item_recipe_4_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -4977,11 +5209,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ دشت‌گرد",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "آفتابِ مدفون؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_4_6_1",
-    "name": "دستور ریشه‌پوش ساق‌پوش پایدار • رنجر",
+    "name": "افسانه‌نشانِ ساق‌بندِ ریشه‌گاهِ واپسین؛ رازِ هزارساله ـ 118",
     "result_item_id": "item_recipe_4_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -5018,11 +5252,13 @@
     "drop_source_label_fa": "باس طبقه 20 برج باستانی",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_4_7_0",
-    "name": "دستور خاکستر بازوبند آغازین • رنجر",
+    "name": "آذرنشانِ بازوبندِ اخگرِ خاموش؛ نشانِ تقدیر ـ 119",
     "result_item_id": "item_recipe_4_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -5061,11 +5297,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ خاکستری سوخته",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "اخگرِ خاموش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_4_7_1",
-    "name": "دستور خار بازوبند پایدار • رنجر",
+    "name": "بازوبندِ خارستانِ سوگند؛ خونِ ستارگان ـ 120",
     "result_item_id": "item_recipe_4_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -5104,11 +5342,13 @@
     "drop_source_label_fa": "هیولای عادی: کرم ریشه‌خوار",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "خارستانِ سوگند؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_4_8_0",
-    "name": "دستور سنگستر حلقه ۱ آغازین • رنجر",
+    "name": "رازآلودِ انگشترِ سنگسترِ کبود؛ طلسمِ سپهر ـ 121",
     "result_item_id": "item_recipe_4_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -5147,11 +5387,13 @@
     "drop_source_label_fa": "هیولای عادی: مار خاکسترپوش",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "سنگسترِ کبود؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_4_8_1",
-    "name": "دستور ورداش حلقه ۱ پایدار • رنجر",
+    "name": "رازآلودِ انگشترِ موجِ ورداش؛ تاجِ فروزان ـ 122",
     "result_item_id": "item_recipe_4_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -5190,11 +5432,13 @@
     "drop_source_label_fa": "هیولای عادی: پرنده نیزار",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "موجِ ورداش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_4_9_0",
-    "name": "دستور جنوبی حلقه ۲ آغازین • رنجر",
+    "name": "افسانه‌نشانِ خاتمِ آفتابِ مدفون؛ سوگندِ سپیده ـ 123",
     "result_item_id": "item_recipe_4_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -5233,11 +5477,13 @@
     "drop_source_label_fa": "مینی‌باس: شاخ‌دار دشت جنوبی",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "آفتابِ مدفون؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_4_9_1",
-    "name": "دستور ریشه‌پوش حلقه ۲ پایدار • رنجر",
+    "name": "اسطوره‌زادِ خاتمِ ریشه‌گاهِ واپسین؛ فرمانِ خاموشی ـ 124",
     "result_item_id": "item_recipe_4_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -5277,11 +5523,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_4_10_0",
-    "name": "دستور خاکستر گردنبند آغازین • رنجر",
+    "name": "گردن‌آویزِ اخگرِ خاموش؛ یادگارِ نخستین ـ 125",
     "result_item_id": "item_recipe_4_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -5320,11 +5568,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ خاکستر",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "اخگرِ خاموش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_4_10_1",
-    "name": "دستور خار گردنبند پایدار • رنجر",
+    "name": "گردن‌آویزِ خارستانِ سوگند؛ پناهِ سپیده ـ 126",
     "result_item_id": "item_recipe_4_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -5361,11 +5611,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "خارستانِ سوگند؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_4_11_0",
-    "name": "دستور سنگستر شنل آغازین • رنجر",
+    "name": "رازآلودِ شنلِ سنگسترِ کبود؛ آوازِ ژرفا ـ 127",
     "result_item_id": "item_recipe_4_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -5404,11 +5656,13 @@
     "drop_source_label_fa": "هیولای عادی: دندان‌سنگ تپه",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "سنگسترِ کبود؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_4_11_1",
-    "name": "دستور ورداش شنل پایدار • رنجر",
+    "name": "رازآلودِ شنلِ موجِ ورداش؛ اشکِ ماه‌سنگ ـ 128",
     "result_item_id": "item_recipe_4_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -5446,11 +5700,13 @@
     "drop_source_label_fa": "مینی‌باس: مارسالار ورداش",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "موجِ ورداش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_4_12_0",
-    "name": "دستور جنوبی نشان آغازین • رنجر",
+    "name": "حماسه‌زادِ نشان جنگیِ آفتابِ مدفون؛ شکوهِ بی‌مرز ـ 129",
     "result_item_id": "item_recipe_4_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -5486,11 +5742,13 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "آفتابِ مدفون؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_4_12_1",
-    "name": "دستور ریشه‌پوش نشان پایدار • رنجر",
+    "name": "افسانه‌نشانِ نشان جنگیِ ریشه‌گاهِ واپسین؛ پیکرِ ابدی ـ 130",
     "result_item_id": "item_recipe_4_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -5527,11 +5785,13 @@
     "drop_source_label_fa": "باس طبقه 16 برج باستانی",
     "balance_version": 139,
     "original_class_name": "رنجر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_5_0_0",
-    "name": "دستور ریشه‌پوش سلاح اصلی آغازین • آدمکش",
+    "name": "اسطوره‌زادِ خنجرِ ریشه‌گاهِ واپسین؛ خونِ ستارگان ـ 131",
     "result_item_id": "item_recipe_5_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -5570,11 +5830,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خنجر",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ خنجر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_5_0_1",
-    "name": "دستور خاکستر سلاح اصلی پایدار • آدمکش",
+    "name": "آذرنشانِ خنجرِ اخگرِ خاموش؛ طلسمِ سپهر ـ 132",
     "result_item_id": "item_recipe_5_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -5613,11 +5875,13 @@
     "drop_source_label_fa": "هیولای عادی: ریشه‌خوار مرده",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خنجر",
+    "lore_description_fa": "اخگرِ خاموش؛ خنجر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_5_1_0",
-    "name": "دستور خار سلاح دوم آغازین • آدمکش",
+    "name": "رازآلودِ تیغه دوقلوِ خارستانِ سوگند؛ تاجِ فروزان ـ 133",
     "result_item_id": "item_recipe_5_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -5654,11 +5918,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "تیغه دوقلو",
+    "lore_description_fa": "خارستانِ سوگند؛ تیغه دوقلو ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_5_1_1",
-    "name": "دستور سنگستر سلاح دوم پایدار • آدمکش",
+    "name": "رازآلودِ تیغه دوقلوِ سنگسترِ کبود؛ سوگندِ سپیده ـ 134",
     "result_item_id": "item_recipe_5_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -5697,11 +5963,13 @@
     "drop_source_label_fa": "مینی‌باس: سنگ‌شکن اخگر",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "تیغه دوقلو",
+    "lore_description_fa": "سنگسترِ کبود؛ تیغه دوقلو ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_5_2_0",
-    "name": "دستور ورداش زره آغازین • آدمکش",
+    "name": "افسانه‌نشانِ زره سینهِ موجِ ورداش؛ فرمانِ خاموشی ـ 135",
     "result_item_id": "item_recipe_5_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -5740,11 +6008,13 @@
     "drop_source_label_fa": "هیولای عادی: خرچنگ گِل‌سنگ",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "موجِ ورداش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_5_2_1",
-    "name": "دستور جنوبی زره پایدار • آدمکش",
+    "name": "افسانه‌نشانِ زره سینهِ آفتابِ مدفون؛ یادگارِ نخستین ـ 136",
     "result_item_id": "item_recipe_5_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -5781,11 +6051,13 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "آفتابِ مدفون؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_5_3_0",
-    "name": "دستور ریشه‌پوش کلاه آغازین • آدمکش",
+    "name": "افسانه‌نشانِ کلاه‌خودِ ریشه‌گاهِ واپسین؛ پناهِ سپیده ـ 137",
     "result_item_id": "item_recipe_5_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -5824,11 +6096,13 @@
     "drop_source_label_fa": "هیولای عادی: نگهبان شکسته",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_5_3_1",
-    "name": "دستور خاکستر کلاه پایدار • آدمکش",
+    "name": "کلاه‌خودِ اخگرِ خاموش؛ آوازِ ژرفا ـ 138",
     "result_item_id": "item_recipe_5_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -5867,11 +6141,13 @@
     "drop_source_label_fa": "مینی‌باس: ریشه‌سالار خاکستر",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "اخگرِ خاموش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_5_4_0",
-    "name": "دستور خار چکمه آغازین • آدمکش",
+    "name": "رازآلودِ پوتینِ خارستانِ سوگند؛ اشکِ ماه‌سنگ ـ 139",
     "result_item_id": "item_recipe_5_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -5910,11 +6186,13 @@
     "drop_source_label_fa": "هیولای عادی: کرم ریشه‌خوار",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "خارستانِ سوگند؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_5_4_1",
-    "name": "دستور سنگستر چکمه پایدار • آدمکش",
+    "name": "رازآلودِ پوتینِ سنگسترِ کبود؛ شکوهِ بی‌مرز ـ 140",
     "result_item_id": "item_recipe_5_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -5953,11 +6231,13 @@
     "drop_source_label_fa": "هیولای عادی: دندان‌سنگ تپه",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "سنگسترِ کبود؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_5_5_0",
-    "name": "دستور ورداش دستکش آغازین • آدمکش",
+    "name": "افسانه‌نشانِ دستکشِ موجِ ورداش؛ پیکرِ ابدی ـ 141",
     "result_item_id": "item_recipe_5_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -5996,11 +6276,13 @@
     "drop_source_label_fa": "هیولای عادی: شکارچی آب‌تیره",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "موجِ ورداش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_5_5_1",
-    "name": "دستور جنوبی دستکش پایدار • آدمکش",
+    "name": "حماسه‌زادِ دستکشِ آفتابِ مدفون؛ مهرِ هفت‌پرده ـ 142",
     "result_item_id": "item_recipe_5_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -6039,11 +6321,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ دشت‌گرد",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "آفتابِ مدفون؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_5_6_0",
-    "name": "دستور ریشه‌پوش ساق‌پوش آغازین • آدمکش",
+    "name": "اسطوره‌زادِ ساق‌بندِ ریشه‌گاهِ واپسین؛ نگینِ فراموشی ـ 143",
     "result_item_id": "item_recipe_5_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -6082,11 +6366,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_5_6_1",
-    "name": "دستور خاکستر ساق‌پوش پایدار • آدمکش",
+    "name": "آذرنشانِ ساق‌بندِ اخگرِ خاموش؛ قلبِ جهان ـ 144",
     "result_item_id": "item_recipe_5_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -6125,11 +6411,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ خاکستر",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "اخگرِ خاموش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_5_7_0",
-    "name": "دستور خار بازوبند آغازین • آدمکش",
+    "name": "رازآلودِ بازوبندِ خارستانِ سوگند؛ چشمِ بیدار ـ 145",
     "result_item_id": "item_recipe_5_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -6168,11 +6456,13 @@
     "drop_source_label_fa": "هیولای عادی: روباه خارپوش",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "خارستانِ سوگند؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_5_7_1",
-    "name": "دستور سنگستر بازوبند پایدار • آدمکش",
+    "name": "رازآلودِ بازوبندِ سنگسترِ کبود؛ خوابِ اژدها ـ 146",
     "result_item_id": "item_recipe_5_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -6211,11 +6501,13 @@
     "drop_source_label_fa": "هیولای عادی: خرگوش خاکستری",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "سنگسترِ کبود؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_5_8_0",
-    "name": "دستور ورداش حلقه ۱ آغازین • آدمکش",
+    "name": "افسانه‌نشانِ انگشترِ موجِ ورداش؛ خشمِ کهن ـ 147",
     "result_item_id": "item_recipe_5_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -6254,11 +6546,13 @@
     "drop_source_label_fa": "هیولای عادی: مارماهی ورداش",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "موجِ ورداش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_5_8_1",
-    "name": "دستور جنوبی حلقه ۱ پایدار • آدمکش",
+    "name": "افسانه‌نشانِ انگشترِ آفتابِ مدفون؛ نفرینِ جاودان ـ 148",
     "result_item_id": "item_recipe_5_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -6297,11 +6591,13 @@
     "drop_source_label_fa": "هیولای عادی: گراز غبارآلود",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "آفتابِ مدفون؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_5_9_0",
-    "name": "دستور ریشه‌پوش حلقه ۲ آغازین • آدمکش",
+    "name": "افسانه‌نشانِ خاتمِ ریشه‌گاهِ واپسین؛ نفسِ خاکستر ـ 149",
     "result_item_id": "item_recipe_5_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -6338,11 +6634,13 @@
     "drop_source_label_fa": "باس طبقه 04 برج باستانی",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_5_9_1",
-    "name": "دستور خاکستر حلقه ۲ پایدار • آدمکش",
+    "name": "خاتمِ اخگرِ خاموش؛ پیمانِ آذرین ـ 150",
     "result_item_id": "item_recipe_5_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -6381,11 +6679,13 @@
     "drop_source_label_fa": "هیولای عادی: سایه‌بان شعله‌مرده",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "اخگرِ خاموش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_5_10_0",
-    "name": "دستور خار گردنبند آغازین • آدمکش",
+    "name": "رازآلودِ گردن‌آویزِ خارستانِ سوگند؛ سرودِ واپسین ـ 151",
     "result_item_id": "item_recipe_5_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -6422,11 +6722,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "خارستانِ سوگند؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_5_10_1",
-    "name": "دستور سنگستر گردنبند پایدار • آدمکش",
+    "name": "رازآلودِ گردن‌آویزِ سنگسترِ کبود؛ آتشِ بی‌نام ـ 152",
     "result_item_id": "item_recipe_5_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -6465,11 +6767,13 @@
     "drop_source_label_fa": "هیولای عادی: خفاش زغالین",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "سنگسترِ کبود؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_5_11_0",
-    "name": "دستور ورداش شنل آغازین • آدمکش",
+    "name": "افسانه‌نشانِ شنلِ موجِ ورداش؛ میراثِ بی‌غروب ـ 153",
     "result_item_id": "item_recipe_5_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -6508,11 +6812,13 @@
     "drop_source_label_fa": "هیولای عادی: شکارچی آب‌تیره",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "موجِ ورداش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_5_11_1",
-    "name": "دستور جنوبی شنل پایدار • آدمکش",
+    "name": "حماسه‌زادِ شنلِ آفتابِ مدفون؛ وارثِ توفان ـ 154",
     "result_item_id": "item_recipe_5_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -6548,11 +6854,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "آفتابِ مدفون؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_5_12_0",
-    "name": "دستور ریشه‌پوش نشان آغازین • آدمکش",
+    "name": "اسطوره‌زادِ نشان جنگیِ ریشه‌گاهِ واپسین؛ رازِ هزارساله ـ 155",
     "result_item_id": "item_recipe_5_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -6590,11 +6898,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_5_12_1",
-    "name": "دستور خاکستر نشان پایدار • آدمکش",
+    "name": "آذرنشانِ نشان جنگیِ اخگرِ خاموش؛ نشانِ تقدیر ـ 156",
     "result_item_id": "item_recipe_5_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -6633,11 +6943,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ خاکستری سوخته",
     "balance_version": 139,
     "original_class_name": "آدمکش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "اخگرِ خاموش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_6_0_0",
-    "name": "دستور خاکستر سلاح اصلی آغازین • کشیش",
+    "name": "عصای مقدسِ اخگرِ خاموش؛ خوابِ اژدها ـ 157",
     "result_item_id": "item_recipe_6_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -6676,11 +6988,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ خاکستری سوخته",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "عصای مقدس",
+    "lore_description_fa": "اخگرِ خاموش؛ عصای مقدس ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_6_0_1",
-    "name": "دستور خار سلاح اصلی پایدار • کشیش",
+    "name": "رازآلودِ عصای مقدسِ خارستانِ سوگند؛ خشمِ کهن ـ 158",
     "result_item_id": "item_recipe_6_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -6717,11 +7031,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "عصای مقدس",
+    "lore_description_fa": "خارستانِ سوگند؛ عصای مقدس ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_6_1_0",
-    "name": "دستور سنگستر سلاح دوم آغازین • کشیش",
+    "name": "آذرنشانِ کتاب نیایشِ سنگسترِ کبود؛ نفرینِ جاودان ـ 159",
     "result_item_id": "item_recipe_6_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -6760,11 +7076,13 @@
     "drop_source_label_fa": "هیولای عادی: مار خاکسترپوش",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کتاب نیایش",
+    "lore_description_fa": "سنگسترِ کبود؛ کتاب نیایش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_6_1_1",
-    "name": "دستور ورداش سلاح دوم پایدار • کشیش",
+    "name": "افسانه‌نشانِ کتاب نیایشِ موجِ ورداش؛ نفسِ خاکستر ـ 160",
     "result_item_id": "item_recipe_6_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -6803,11 +7121,13 @@
     "drop_source_label_fa": "مینی‌باس: مارسالار ورداش",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کتاب نیایش",
+    "lore_description_fa": "موجِ ورداش؛ کتاب نیایش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_6_2_0",
-    "name": "دستور جنوبی زره آغازین • کشیش",
+    "name": "حماسه‌زادِ زره سینهِ آفتابِ مدفون؛ پیمانِ آذرین ـ 161",
     "result_item_id": "item_recipe_6_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -6844,11 +7164,13 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "آفتابِ مدفون؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_6_2_1",
-    "name": "دستور ریشه‌پوش زره پایدار • کشیش",
+    "name": "افسانه‌نشانِ زره سینهِ ریشه‌گاهِ واپسین؛ سرودِ واپسین ـ 162",
     "result_item_id": "item_recipe_6_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -6886,11 +7208,13 @@
     "drop_source_label_fa": "باس طبقه 12 برج باستانی",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_6_3_0",
-    "name": "دستور خاکستر کلاه آغازین • کشیش",
+    "name": "آذرنشانِ کلاه‌خودِ اخگرِ خاموش؛ آتشِ بی‌نام ـ 163",
     "result_item_id": "item_recipe_6_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -6929,11 +7253,13 @@
     "drop_source_label_fa": "هیولای عادی: حشره آتش‌زخم",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "اخگرِ خاموش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_6_3_1",
-    "name": "دستور خار کلاه پایدار • کشیش",
+    "name": "رازآلودِ کلاه‌خودِ خارستانِ سوگند؛ میراثِ بی‌غروب ـ 164",
     "result_item_id": "item_recipe_6_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -6972,11 +7298,13 @@
     "drop_source_label_fa": "مینی‌باس: مادر بیشه‌خار",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "خارستانِ سوگند؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_6_4_0",
-    "name": "دستور سنگستر چکمه آغازین • کشیش",
+    "name": "آذرنشانِ پوتینِ سنگسترِ کبود؛ وارثِ توفان ـ 165",
     "result_item_id": "item_recipe_6_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -7015,11 +7343,13 @@
     "drop_source_label_fa": "هیولای عادی: خرگوش خاکستری",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "سنگسترِ کبود؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_6_4_1",
-    "name": "دستور ورداش چکمه پایدار • کشیش",
+    "name": "افسانه‌نشانِ پوتینِ موجِ ورداش؛ رازِ هزارساله ـ 166",
     "result_item_id": "item_recipe_6_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -7058,11 +7388,13 @@
     "drop_source_label_fa": "هیولای عادی: شکارچی آب‌تیره",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "موجِ ورداش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_6_5_0",
-    "name": "دستور جنوبی دستکش آغازین • کشیش",
+    "name": "افسانه‌نشانِ دستکشِ آفتابِ مدفون؛ نشانِ تقدیر ـ 167",
     "result_item_id": "item_recipe_6_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -7101,11 +7433,13 @@
     "drop_source_label_fa": "هیولای عادی: شیر علفزار",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "آفتابِ مدفون؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_6_5_1",
-    "name": "دستور ریشه‌پوش دستکش پایدار • کشیش",
+    "name": "اسطوره‌زادِ دستکشِ ریشه‌گاهِ واپسین؛ خونِ ستارگان ـ 168",
     "result_item_id": "item_recipe_6_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -7144,11 +7478,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_6_6_0",
-    "name": "دستور خاکستر ساق‌پوش آغازین • کشیش",
+    "name": "ساق‌بندِ اخگرِ خاموش؛ طلسمِ سپهر ـ 169",
     "result_item_id": "item_recipe_6_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -7187,11 +7523,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ خاکستری سوخته",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "اخگرِ خاموش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_6_6_1",
-    "name": "دستور خار ساق‌پوش پایدار • کشیش",
+    "name": "رازآلودِ ساق‌بندِ خارستانِ سوگند؛ تاجِ فروزان ـ 170",
     "result_item_id": "item_recipe_6_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -7230,11 +7568,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ تیغ‌دار",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "خارستانِ سوگند؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_6_7_0",
-    "name": "دستور سنگستر بازوبند آغازین • کشیش",
+    "name": "آذرنشانِ بازوبندِ سنگسترِ کبود؛ سوگندِ سپیده ـ 171",
     "result_item_id": "item_recipe_6_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -7273,11 +7613,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک سنگستر",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "سنگسترِ کبود؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_6_7_1",
-    "name": "دستور ورداش بازوبند پایدار • کشیش",
+    "name": "افسانه‌نشانِ بازوبندِ موجِ ورداش؛ فرمانِ خاموشی ـ 172",
     "result_item_id": "item_recipe_6_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -7316,11 +7658,13 @@
     "drop_source_label_fa": "هیولای عادی: خرچنگ گِل‌سنگ",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "موجِ ورداش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_6_8_0",
-    "name": "دستور جنوبی حلقه ۱ آغازین • کشیش",
+    "name": "حماسه‌زادِ انگشترِ آفتابِ مدفون؛ یادگارِ نخستین ـ 173",
     "result_item_id": "item_recipe_6_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -7359,11 +7703,13 @@
     "drop_source_label_fa": "هیولای عادی: شاهین آفتاب‌سوخته",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "آفتابِ مدفون؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_6_8_1",
-    "name": "دستور ریشه‌پوش حلقه ۱ پایدار • کشیش",
+    "name": "افسانه‌نشانِ انگشترِ ریشه‌گاهِ واپسین؛ پناهِ سپیده ـ 174",
     "result_item_id": "item_recipe_6_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -7400,11 +7746,13 @@
     "drop_source_label_fa": "باس طبقه 20 برج باستانی",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_6_9_0",
-    "name": "دستور خاکستر حلقه ۲ آغازین • کشیش",
+    "name": "آذرنشانِ خاتمِ اخگرِ خاموش؛ آوازِ ژرفا ـ 175",
     "result_item_id": "item_recipe_6_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -7443,11 +7791,13 @@
     "drop_source_label_fa": "هیولای عادی: ریشه‌خوار مرده",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "اخگرِ خاموش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_6_9_1",
-    "name": "دستور خار حلقه ۲ پایدار • کشیش",
+    "name": "رازآلودِ خاتمِ خارستانِ سوگند؛ اشکِ ماه‌سنگ ـ 176",
     "result_item_id": "item_recipe_6_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -7486,11 +7836,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ بیشه‌خار",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "خارستانِ سوگند؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_6_10_0",
-    "name": "دستور سنگستر گردنبند آغازین • کشیش",
+    "name": "آذرنشانِ گردن‌آویزِ سنگسترِ کبود؛ شکوهِ بی‌مرز ـ 177",
     "result_item_id": "item_recipe_6_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -7529,11 +7881,13 @@
     "drop_source_label_fa": "هیولای عادی: مار خاکسترپوش",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "سنگسترِ کبود؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_6_10_1",
-    "name": "دستور ورداش گردنبند پایدار • کشیش",
+    "name": "افسانه‌نشانِ گردن‌آویزِ موجِ ورداش؛ پیکرِ ابدی ـ 178",
     "result_item_id": "item_recipe_6_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -7572,11 +7926,13 @@
     "drop_source_label_fa": "هیولای عادی: پرنده نیزار",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "موجِ ورداش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_6_11_0",
-    "name": "دستور جنوبی شنل آغازین • کشیش",
+    "name": "افسانه‌نشانِ شنلِ آفتابِ مدفون؛ مهرِ هفت‌پرده ـ 179",
     "result_item_id": "item_recipe_6_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -7613,11 +7969,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "آفتابِ مدفون؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_6_11_1",
-    "name": "دستور ریشه‌پوش شنل پایدار • کشیش",
+    "name": "اسطوره‌زادِ شنلِ ریشه‌گاهِ واپسین؛ نگینِ فراموشی ـ 180",
     "result_item_id": "item_recipe_6_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -7655,11 +8013,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_6_12_0",
-    "name": "دستور خاکستر نشان آغازین • کشیش",
+    "name": "نشان جنگیِ اخگرِ خاموش؛ قلبِ جهان ـ 181",
     "result_item_id": "item_recipe_6_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -7697,11 +8057,13 @@
     "drop_source_label_fa": "مینی‌باس: ریشه‌سالار خاکستر",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "اخگرِ خاموش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_6_12_1",
-    "name": "دستور خار نشان پایدار • کشیش",
+    "name": "رازآلودِ نشان جنگیِ خارستانِ سوگند؛ چشمِ بیدار ـ 182",
     "result_item_id": "item_recipe_6_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -7738,11 +8100,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "کشیش",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "خارستانِ سوگند؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_7_0_0",
-    "name": "دستور خار سلاح اصلی آغازین • پالادین",
+    "name": "آذرنشانِ شمشیر مقدسِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 183",
     "result_item_id": "item_recipe_7_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -7779,11 +8143,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شمشیر مقدس",
+    "lore_description_fa": "خارستانِ سوگند؛ شمشیر مقدس ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_0_1",
-    "name": "دستور سنگستر سلاح اصلی پایدار • پالادین",
+    "name": "آذرنشانِ شمشیر مقدسِ سنگسترِ کبود؛ یادگارِ نخستین ـ 184",
     "result_item_id": "item_recipe_7_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -7822,11 +8188,13 @@
     "drop_source_label_fa": "هیولای عادی: خفاش زغالین",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شمشیر مقدس",
+    "lore_description_fa": "سنگسترِ کبود؛ شمشیر مقدس ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_1_0",
-    "name": "دستور ورداش سلاح دوم آغازین • پالادین",
+    "name": "حماسه‌زادِ سپرِ موجِ ورداش؛ پناهِ سپیده ـ 185",
     "result_item_id": "item_recipe_7_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -7865,11 +8233,13 @@
     "drop_source_label_fa": "هیولای عادی: مارماهی ورداش",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "سپر",
+    "lore_description_fa": "موجِ ورداش؛ سپر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_7_1_1",
-    "name": "دستور جنوبی سلاح دوم پایدار • پالادین",
+    "name": "حماسه‌زادِ سپرِ آفتابِ مدفون؛ آوازِ ژرفا ـ 186",
     "result_item_id": "item_recipe_7_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -7906,11 +8276,13 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "سپر",
+    "lore_description_fa": "آفتابِ مدفون؛ سپر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_7_2_0",
-    "name": "دستور ریشه‌پوش زره آغازین • پالادین",
+    "name": "اسطوره‌زادِ زره سینهِ ریشه‌گاهِ واپسین؛ اشکِ ماه‌سنگ ـ 187",
     "result_item_id": "item_recipe_7_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -7949,11 +8321,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_7_2_1",
-    "name": "دستور خاکستر زره پایدار • پالادین",
+    "name": "آذرنشانِ زره سینهِ اخگرِ خاموش؛ شکوهِ بی‌مرز ـ 188",
     "result_item_id": "item_recipe_7_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -7992,11 +8366,13 @@
     "drop_source_label_fa": "هیولای عادی: سایه‌بان شعله‌مرده",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "اخگرِ خاموش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_3_0",
-    "name": "دستور خار کلاه آغازین • پالادین",
+    "name": "آذرنشانِ کلاه‌خودِ خارستانِ سوگند؛ پیکرِ ابدی ـ 189",
     "result_item_id": "item_recipe_7_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -8035,11 +8411,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک خارخون",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "خارستانِ سوگند؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_3_1",
-    "name": "دستور سنگستر کلاه پایدار • پالادین",
+    "name": "آذرنشانِ کلاه‌خودِ سنگسترِ کبود؛ مهرِ هفت‌پرده ـ 190",
     "result_item_id": "item_recipe_7_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -8078,11 +8456,13 @@
     "drop_source_label_fa": "مینی‌باس: سنگ‌شکن اخگر",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "سنگسترِ کبود؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_4_0",
-    "name": "دستور ورداش چکمه آغازین • پالادین",
+    "name": "حماسه‌زادِ پوتینِ موجِ ورداش؛ نگینِ فراموشی ـ 191",
     "result_item_id": "item_recipe_7_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -8121,11 +8501,13 @@
     "drop_source_label_fa": "هیولای عادی: خرچنگ گِل‌سنگ",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "موجِ ورداش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_7_4_1",
-    "name": "دستور جنوبی چکمه پایدار • پالادین",
+    "name": "افسانه‌نشانِ پوتینِ آفتابِ مدفون؛ قلبِ جهان ـ 192",
     "result_item_id": "item_recipe_7_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -8164,11 +8546,13 @@
     "drop_source_label_fa": "مینی‌باس: شاخ‌دار دشت جنوبی",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "آفتابِ مدفون؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_7_5_0",
-    "name": "دستور ریشه‌پوش دستکش آغازین • پالادین",
+    "name": "افسانه‌نشانِ دستکشِ ریشه‌گاهِ واپسین؛ چشمِ بیدار ـ 193",
     "result_item_id": "item_recipe_7_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -8205,11 +8589,13 @@
     "drop_source_label_fa": "باس طبقه 20 برج باستانی",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_7_5_1",
-    "name": "دستور خاکستر دستکش پایدار • پالادین",
+    "name": "دستکشِ اخگرِ خاموش؛ خوابِ اژدها ـ 194",
     "result_item_id": "item_recipe_7_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -8248,11 +8634,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ خاکستری سوخته",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "اخگرِ خاموش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_7_6_0",
-    "name": "دستور خار ساق‌پوش آغازین • پالادین",
+    "name": "آذرنشانِ ساق‌بندِ خارستانِ سوگند؛ خشمِ کهن ـ 195",
     "result_item_id": "item_recipe_7_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -8291,11 +8679,13 @@
     "drop_source_label_fa": "هیولای عادی: روباه خارپوش",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "خارستانِ سوگند؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_6_1",
-    "name": "دستور سنگستر ساق‌پوش پایدار • پالادین",
+    "name": "آذرنشانِ ساق‌بندِ سنگسترِ کبود؛ نفرینِ جاودان ـ 196",
     "result_item_id": "item_recipe_7_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -8334,11 +8724,13 @@
     "drop_source_label_fa": "هیولای عادی: مار خاکسترپوش",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "سنگسترِ کبود؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_7_0",
-    "name": "دستور ورداش بازوبند آغازین • پالادین",
+    "name": "حماسه‌زادِ بازوبندِ موجِ ورداش؛ نفسِ خاکستر ـ 197",
     "result_item_id": "item_recipe_7_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -8377,11 +8769,13 @@
     "drop_source_label_fa": "هیولای عادی: ماهی فلس‌خاکستری",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "موجِ ورداش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_7_7_1",
-    "name": "دستور جنوبی بازوبند پایدار • پالادین",
+    "name": "حماسه‌زادِ بازوبندِ آفتابِ مدفون؛ پیمانِ آذرین ـ 198",
     "result_item_id": "item_recipe_7_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -8420,11 +8814,13 @@
     "drop_source_label_fa": "هیولای عادی: موش‌خرمای خاکی",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "آفتابِ مدفون؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_7_8_0",
-    "name": "دستور ریشه‌پوش حلقه ۱ آغازین • پالادین",
+    "name": "اسطوره‌زادِ انگشترِ ریشه‌گاهِ واپسین؛ سرودِ واپسین ـ 199",
     "result_item_id": "item_recipe_7_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -8464,11 +8860,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_7_8_1",
-    "name": "دستور خاکستر حلقه ۱ پایدار • پالادین",
+    "name": "آذرنشانِ انگشترِ اخگرِ خاموش؛ آتشِ بی‌نام ـ 200",
     "result_item_id": "item_recipe_7_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -8507,11 +8905,13 @@
     "drop_source_label_fa": "هیولای عادی: حشره آتش‌زخم",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "اخگرِ خاموش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_9_0",
-    "name": "دستور خار حلقه ۲ آغازین • پالادین",
+    "name": "آذرنشانِ خاتمِ خارستانِ سوگند؛ میراثِ بی‌غروب ـ 201",
     "result_item_id": "item_recipe_7_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -8550,11 +8950,13 @@
     "drop_source_label_fa": "هیولای عادی: کرم ریشه‌خوار",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "خارستانِ سوگند؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_9_1",
-    "name": "دستور سنگستر حلقه ۲ پایدار • پالادین",
+    "name": "آذرنشانِ خاتمِ سنگسترِ کبود؛ وارثِ توفان ـ 202",
     "result_item_id": "item_recipe_7_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -8593,11 +8995,13 @@
     "drop_source_label_fa": "هیولای عادی: دندان‌سنگ تپه",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "سنگسترِ کبود؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_10_0",
-    "name": "دستور ورداش گردنبند آغازین • پالادین",
+    "name": "حماسه‌زادِ گردن‌آویزِ موجِ ورداش؛ رازِ هزارساله ـ 203",
     "result_item_id": "item_recipe_7_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -8636,11 +9040,13 @@
     "drop_source_label_fa": "هیولای عادی: مارماهی ورداش",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "موجِ ورداش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_7_10_1",
-    "name": "دستور جنوبی گردنبند پایدار • پالادین",
+    "name": "افسانه‌نشانِ گردن‌آویزِ آفتابِ مدفون؛ نشانِ تقدیر ـ 204",
     "result_item_id": "item_recipe_7_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -8677,11 +9083,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "آفتابِ مدفون؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_7_11_0",
-    "name": "دستور ریشه‌پوش شنل آغازین • پالادین",
+    "name": "افسانه‌نشانِ شنلِ ریشه‌گاهِ واپسین؛ خونِ ستارگان ـ 205",
     "result_item_id": "item_recipe_7_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -8719,11 +9127,13 @@
     "drop_source_label_fa": "باس طبقه 12 برج باستانی",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_7_11_1",
-    "name": "دستور خاکستر شنل پایدار • پالادین",
+    "name": "شنلِ اخگرِ خاموش؛ طلسمِ سپهر ـ 206",
     "result_item_id": "item_recipe_7_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -8761,11 +9171,13 @@
     "drop_source_label_fa": "مینی‌باس: ریشه‌سالار خاکستر",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "اخگرِ خاموش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_7_12_0",
-    "name": "دستور خار نشان آغازین • پالادین",
+    "name": "آذرنشانِ نشان جنگیِ خارستانِ سوگند؛ تاجِ فروزان ـ 207",
     "result_item_id": "item_recipe_7_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -8801,11 +9213,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "خارستانِ سوگند؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_7_12_1",
-    "name": "دستور سنگستر نشان پایدار • پالادین",
+    "name": "آذرنشانِ نشان جنگیِ سنگسترِ کبود؛ سوگندِ سپیده ـ 208",
     "result_item_id": "item_recipe_7_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -8844,11 +9258,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک سنگستر",
     "balance_version": 139,
     "original_class_name": "پالادین",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "سنگسترِ کبود؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_8_0_0",
-    "name": "دستور سنگستر سلاح اصلی آغازین • شمن",
+    "name": "حماسه‌زادِ چوب‌دستی آیینیِ سنگسترِ کبود؛ پیمانِ آذرین ـ 209",
     "result_item_id": "item_recipe_8_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -8887,11 +9303,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک سنگستر",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "چوب‌دستی آیینی",
+    "lore_description_fa": "سنگسترِ کبود؛ چوب‌دستی آیینی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_0_1",
-    "name": "دستور ورداش سلاح اصلی پایدار • شمن",
+    "name": "حماسه‌زادِ چوب‌دستی آیینیِ موجِ ورداش؛ سرودِ واپسین ـ 210",
     "result_item_id": "item_recipe_8_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -8930,11 +9348,13 @@
     "drop_source_label_fa": "هیولای عادی: پرنده نیزار",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "چوب‌دستی آیینی",
+    "lore_description_fa": "موجِ ورداش؛ چوب‌دستی آیینی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_1_0",
-    "name": "دستور جنوبی سلاح دوم آغازین • شمن",
+    "name": "افسانه‌نشانِ طلسم آیینیِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 211",
     "result_item_id": "item_recipe_8_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -8971,11 +9391,13 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "طلسم آیینی",
+    "lore_description_fa": "آفتابِ مدفون؛ طلسم آیینی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_8_1_1",
-    "name": "دستور ریشه‌پوش سلاح دوم پایدار • شمن",
+    "name": "اسطوره‌زادِ طلسم آیینیِ ریشه‌گاهِ واپسین؛ میراثِ بی‌غروب ـ 212",
     "result_item_id": "item_recipe_8_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -9014,11 +9436,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "طلسم آیینی",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ طلسم آیینی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_8_2_0",
-    "name": "دستور خاکستر زره آغازین • شمن",
+    "name": "زره سینهِ اخگرِ خاموش؛ وارثِ توفان ـ 213",
     "result_item_id": "item_recipe_8_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -9057,11 +9481,13 @@
     "drop_source_label_fa": "هیولای عادی: ریشه‌خوار مرده",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "اخگرِ خاموش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_8_2_1",
-    "name": "دستور خار زره پایدار • شمن",
+    "name": "آذرنشانِ زره سینهِ خارستانِ سوگند؛ رازِ هزارساله ـ 214",
     "result_item_id": "item_recipe_8_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -9098,11 +9524,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "خارستانِ سوگند؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_8_3_0",
-    "name": "دستور سنگستر کلاه آغازین • شمن",
+    "name": "حماسه‌زادِ کلاه‌خودِ سنگسترِ کبود؛ نشانِ تقدیر ـ 215",
     "result_item_id": "item_recipe_8_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -9141,11 +9569,13 @@
     "drop_source_label_fa": "هیولای عادی: خفاش زغالین",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "سنگسترِ کبود؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_3_1",
-    "name": "دستور ورداش کلاه پایدار • شمن",
+    "name": "حماسه‌زادِ کلاه‌خودِ موجِ ورداش؛ خونِ ستارگان ـ 216",
     "result_item_id": "item_recipe_8_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -9184,11 +9614,13 @@
     "drop_source_label_fa": "مینی‌باس: مارسالار ورداش",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "موجِ ورداش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_4_0",
-    "name": "دستور جنوبی چکمه آغازین • شمن",
+    "name": "حماسه‌زادِ پوتینِ آفتابِ مدفون؛ طلسمِ سپهر ـ 217",
     "result_item_id": "item_recipe_8_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -9227,11 +9659,13 @@
     "drop_source_label_fa": "هیولای عادی: موش‌خرمای خاکی",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "آفتابِ مدفون؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_4_1",
-    "name": "دستور ریشه‌پوش چکمه پایدار • شمن",
+    "name": "افسانه‌نشانِ پوتینِ ریشه‌گاهِ واپسین؛ تاجِ فروزان ـ 218",
     "result_item_id": "item_recipe_8_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -9268,11 +9702,13 @@
     "drop_source_label_fa": "باس طبقه 16 برج باستانی",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_8_5_0",
-    "name": "دستور خاکستر دستکش آغازین • شمن",
+    "name": "آذرنشانِ دستکشِ اخگرِ خاموش؛ سوگندِ سپیده ـ 219",
     "result_item_id": "item_recipe_8_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -9311,11 +9747,13 @@
     "drop_source_label_fa": "هیولای عادی: سایه‌بان شعله‌مرده",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "اخگرِ خاموش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_8_5_1",
-    "name": "دستور خار دستکش پایدار • شمن",
+    "name": "آذرنشانِ دستکشِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 220",
     "result_item_id": "item_recipe_8_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -9354,11 +9792,13 @@
     "drop_source_label_fa": "مینی‌باس: مادر بیشه‌خار",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "خارستانِ سوگند؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_8_6_0",
-    "name": "دستور سنگستر ساق‌پوش آغازین • شمن",
+    "name": "حماسه‌زادِ ساق‌بندِ سنگسترِ کبود؛ یادگارِ نخستین ـ 221",
     "result_item_id": "item_recipe_8_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -9397,11 +9837,13 @@
     "drop_source_label_fa": "مینی‌باس: سنگ‌شکن اخگر",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "سنگسترِ کبود؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_6_1",
-    "name": "دستور ورداش ساق‌پوش پایدار • شمن",
+    "name": "حماسه‌زادِ ساق‌بندِ موجِ ورداش؛ پناهِ سپیده ـ 222",
     "result_item_id": "item_recipe_8_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -9440,11 +9882,13 @@
     "drop_source_label_fa": "هیولای عادی: مارماهی ورداش",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "موجِ ورداش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_7_0",
-    "name": "دستور جنوبی بازوبند آغازین • شمن",
+    "name": "افسانه‌نشانِ بازوبندِ آفتابِ مدفون؛ آوازِ ژرفا ـ 223",
     "result_item_id": "item_recipe_8_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -9483,11 +9927,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ دشت‌گرد",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "آفتابِ مدفون؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_8_7_1",
-    "name": "دستور ریشه‌پوش بازوبند پایدار • شمن",
+    "name": "اسطوره‌زادِ بازوبندِ ریشه‌گاهِ واپسین؛ اشکِ ماه‌سنگ ـ 224",
     "result_item_id": "item_recipe_8_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -9527,11 +9973,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_8_8_0",
-    "name": "دستور خاکستر حلقه ۱ آغازین • شمن",
+    "name": "انگشترِ اخگرِ خاموش؛ شکوهِ بی‌مرز ـ 225",
     "result_item_id": "item_recipe_8_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -9570,11 +10018,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ خاکستر",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "اخگرِ خاموش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_8_8_1",
-    "name": "دستور خار حلقه ۱ پایدار • شمن",
+    "name": "آذرنشانِ انگشترِ خارستانِ سوگند؛ پیکرِ ابدی ـ 226",
     "result_item_id": "item_recipe_8_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -9613,11 +10063,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک خارخون",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "خارستانِ سوگند؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_8_9_0",
-    "name": "دستور سنگستر حلقه ۲ آغازین • شمن",
+    "name": "حماسه‌زادِ خاتمِ سنگسترِ کبود؛ مهرِ هفت‌پرده ـ 227",
     "result_item_id": "item_recipe_8_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -9656,11 +10108,13 @@
     "drop_source_label_fa": "هیولای عادی: خرگوش خاکستری",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "سنگسترِ کبود؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_9_1",
-    "name": "دستور ورداش حلقه ۲ پایدار • شمن",
+    "name": "حماسه‌زادِ خاتمِ موجِ ورداش؛ نگینِ فراموشی ـ 228",
     "result_item_id": "item_recipe_8_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -9699,11 +10153,13 @@
     "drop_source_label_fa": "هیولای عادی: شکارچی آب‌تیره",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "موجِ ورداش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_10_0",
-    "name": "دستور جنوبی گردنبند آغازین • شمن",
+    "name": "حماسه‌زادِ گردن‌آویزِ آفتابِ مدفون؛ قلبِ جهان ـ 229",
     "result_item_id": "item_recipe_8_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -9740,11 +10196,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "آفتابِ مدفون؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_10_1",
-    "name": "دستور ریشه‌پوش گردنبند پایدار • شمن",
+    "name": "افسانه‌نشانِ گردن‌آویزِ ریشه‌گاهِ واپسین؛ چشمِ بیدار ـ 230",
     "result_item_id": "item_recipe_8_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -9781,11 +10239,13 @@
     "drop_source_label_fa": "باس طبقه 12 برج باستانی",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_8_11_0",
-    "name": "دستور خاکستر شنل آغازین • شمن",
+    "name": "آذرنشانِ شنلِ اخگرِ خاموش؛ خوابِ اژدها ـ 231",
     "result_item_id": "item_recipe_8_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -9824,11 +10284,13 @@
     "drop_source_label_fa": "هیولای عادی: حشره آتش‌زخم",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "اخگرِ خاموش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_8_11_1",
-    "name": "دستور خار شنل پایدار • شمن",
+    "name": "آذرنشانِ شنلِ خارستانِ سوگند؛ خشمِ کهن ـ 232",
     "result_item_id": "item_recipe_8_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -9864,11 +10326,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "خارستانِ سوگند؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_8_12_0",
-    "name": "دستور سنگستر نشان آغازین • شمن",
+    "name": "حماسه‌زادِ نشان جنگیِ سنگسترِ کبود؛ نفرینِ جاودان ـ 233",
     "result_item_id": "item_recipe_8_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -9906,11 +10370,13 @@
     "drop_source_label_fa": "مینی‌باس: سنگ‌شکن اخگر",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "سنگسترِ کبود؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_8_12_1",
-    "name": "دستور ورداش نشان پایدار • شمن",
+    "name": "حماسه‌زادِ نشان جنگیِ موجِ ورداش؛ نفسِ خاکستر ـ 234",
     "result_item_id": "item_recipe_8_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -9949,11 +10415,13 @@
     "drop_source_label_fa": "هیولای عادی: ماهی فلس‌خاکستری",
     "balance_version": 139,
     "original_class_name": "شمن",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "موجِ ورداش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_9_0_0",
-    "name": "دستور ورداش سلاح اصلی آغازین • احضارگر",
+    "name": "رازآلودِ عصای احضارِ موجِ ورداش؛ اشکِ ماه‌سنگ ـ 235",
     "result_item_id": "item_recipe_9_0_0",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -9992,11 +10460,13 @@
     "drop_source_label_fa": "هیولای عادی: ماهی فلس‌خاکستری",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "عصای احضار",
+    "lore_description_fa": "موجِ ورداش؛ عصای احضار ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_9_0_1",
-    "name": "دستور جنوبی سلاح اصلی پایدار • احضارگر",
+    "name": "افسانه‌نشانِ عصای احضارِ آفتابِ مدفون؛ شکوهِ بی‌مرز ـ 236",
     "result_item_id": "item_recipe_9_0_1",
     "class_name": "عمومی",
     "slot": "سلاح اصلی",
@@ -10033,11 +10503,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "عصای احضار",
+    "lore_description_fa": "آفتابِ مدفون؛ عصای احضار ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_9_1_0",
-    "name": "دستور ریشه‌پوش سلاح دوم آغازین • احضارگر",
+    "name": "افسانه‌نشانِ مُهر احضارِ ریشه‌گاهِ واپسین؛ پیکرِ ابدی ـ 237",
     "result_item_id": "item_recipe_9_1_0",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -10076,11 +10548,13 @@
     "drop_source_label_fa": "هیولای عادی: عنکبوت رون‌خورده",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "مُهر احضار",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ مُهر احضار ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_9_1_1",
-    "name": "دستور خاکستر سلاح دوم پایدار • احضارگر",
+    "name": "مُهر احضارِ اخگرِ خاموش؛ مهرِ هفت‌پرده ـ 238",
     "result_item_id": "item_recipe_9_1_1",
     "class_name": "عمومی",
     "slot": "سلاح دوم",
@@ -10119,11 +10593,13 @@
     "drop_source_label_fa": "مینی‌باس: ریشه‌سالار خاکستر",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "مُهر احضار",
+    "lore_description_fa": "اخگرِ خاموش؛ مُهر احضار ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_9_2_0",
-    "name": "دستور خار زره آغازین • احضارگر",
+    "name": "زره سینهِ خارستانِ سوگند؛ نگینِ فراموشی ـ 239",
     "result_item_id": "item_recipe_9_2_0",
     "class_name": "عمومی",
     "slot": "زره",
@@ -10160,11 +10636,13 @@
     "drop_source_label_fa": "باس نهایی دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "خارستانِ سوگند؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_9_2_1",
-    "name": "دستور سنگستر زره پایدار • احضارگر",
+    "name": "حماسه‌زادِ زره سینهِ سنگسترِ کبود؛ قلبِ جهان ـ 240",
     "result_item_id": "item_recipe_9_2_1",
     "class_name": "عمومی",
     "slot": "زره",
@@ -10203,11 +10681,13 @@
     "drop_source_label_fa": "هیولای عادی: دندان‌سنگ تپه",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "زره سینه",
+    "lore_description_fa": "سنگسترِ کبود؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_9_3_0",
-    "name": "دستور ورداش کلاه آغازین • احضارگر",
+    "name": "رازآلودِ کلاه‌خودِ موجِ ورداش؛ چشمِ بیدار ـ 241",
     "result_item_id": "item_recipe_9_3_0",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -10246,11 +10726,13 @@
     "drop_source_label_fa": "هیولای عادی: پرنده نیزار",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "موجِ ورداش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_9_3_1",
-    "name": "دستور جنوبی کلاه پایدار • احضارگر",
+    "name": "حماسه‌زادِ کلاه‌خودِ آفتابِ مدفون؛ خوابِ اژدها ـ 242",
     "result_item_id": "item_recipe_9_3_1",
     "class_name": "عمومی",
     "slot": "کلاه",
@@ -10289,11 +10771,13 @@
     "drop_source_label_fa": "مینی‌باس: شاخ‌دار دشت جنوبی",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "کلاه‌خود",
+    "lore_description_fa": "آفتابِ مدفون؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_9_4_0",
-    "name": "دستور ریشه‌پوش چکمه آغازین • احضارگر",
+    "name": "اسطوره‌زادِ پوتینِ ریشه‌گاهِ واپسین؛ خشمِ کهن ـ 243",
     "result_item_id": "item_recipe_9_4_0",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -10333,11 +10817,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_9_4_1",
-    "name": "دستور خاکستر چکمه پایدار • احضارگر",
+    "name": "آذرنشانِ پوتینِ اخگرِ خاموش؛ نفرینِ جاودان ـ 244",
     "result_item_id": "item_recipe_9_4_1",
     "class_name": "عمومی",
     "slot": "چکمه",
@@ -10376,11 +10862,13 @@
     "drop_source_label_fa": "هیولای عادی: سایه‌بان شعله‌مرده",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "پوتین",
+    "lore_description_fa": "اخگرِ خاموش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_9_5_0",
-    "name": "دستور خار دستکش آغازین • احضارگر",
+    "name": "دستکشِ خارستانِ سوگند؛ نفسِ خاکستر ـ 245",
     "result_item_id": "item_recipe_9_5_0",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -10419,11 +10907,13 @@
     "drop_source_label_fa": "هیولای عادی: گرگ بیشه‌خار",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "خارستانِ سوگند؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_9_5_1",
-    "name": "دستور سنگستر دستکش پایدار • احضارگر",
+    "name": "حماسه‌زادِ دستکشِ سنگسترِ کبود؛ پیمانِ آذرین ـ 246",
     "result_item_id": "item_recipe_9_5_1",
     "class_name": "عمومی",
     "slot": "دستکش",
@@ -10462,11 +10952,13 @@
     "drop_source_label_fa": "هیولای عادی: سوسک سنگستر",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "دستکش",
+    "lore_description_fa": "سنگسترِ کبود؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_9_6_0",
-    "name": "دستور ورداش ساق‌پوش آغازین • احضارگر",
+    "name": "رازآلودِ ساق‌بندِ موجِ ورداش؛ سرودِ واپسین ـ 247",
     "result_item_id": "item_recipe_9_6_0",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -10505,11 +10997,13 @@
     "drop_source_label_fa": "هیولای عادی: ماهی فلس‌خاکستری",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "موجِ ورداش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_9_6_1",
-    "name": "دستور جنوبی ساق‌پوش پایدار • احضارگر",
+    "name": "افسانه‌نشانِ ساق‌بندِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 248",
     "result_item_id": "item_recipe_9_6_1",
     "class_name": "عمومی",
     "slot": "ساق‌پوش",
@@ -10548,11 +11042,13 @@
     "drop_source_label_fa": "هیولای عادی: شاهین آفتاب‌سوخته",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "ساق‌بند",
+    "lore_description_fa": "آفتابِ مدفون؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_9_7_0",
-    "name": "دستور ریشه‌پوش بازوبند آغازین • احضارگر",
+    "name": "افسانه‌نشانِ بازوبندِ ریشه‌گاهِ واپسین؛ میراثِ بی‌غروب ـ 249",
     "result_item_id": "item_recipe_9_7_0",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -10589,11 +11085,13 @@
     "drop_source_label_fa": "باس طبقه 04 برج باستانی",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "recipe_9_7_1",
-    "name": "دستور خاکستر بازوبند پایدار • احضارگر",
+    "name": "بازوبندِ اخگرِ خاموش؛ وارثِ توفان ـ 250",
     "result_item_id": "item_recipe_9_7_1",
     "class_name": "عمومی",
     "slot": "بازوبند",
@@ -10632,11 +11130,13 @@
     "drop_source_label_fa": "هیولای عادی: ریشه‌خوار مرده",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "بازوبند",
+    "lore_description_fa": "اخگرِ خاموش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_9_8_0",
-    "name": "دستور خار حلقه ۱ آغازین • احضارگر",
+    "name": "انگشترِ خارستانِ سوگند؛ رازِ هزارساله ـ 251",
     "result_item_id": "item_recipe_9_8_0",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -10675,11 +11175,13 @@
     "drop_source_label_fa": "هیولای عادی: کلاغ تیغ‌دار",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "خارستانِ سوگند؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_9_8_1",
-    "name": "دستور سنگستر حلقه ۱ پایدار • احضارگر",
+    "name": "حماسه‌زادِ انگشترِ سنگسترِ کبود؛ نشانِ تقدیر ـ 252",
     "result_item_id": "item_recipe_9_8_1",
     "class_name": "عمومی",
     "slot": "حلقه ۱",
@@ -10718,11 +11220,13 @@
     "drop_source_label_fa": "هیولای عادی: خفاش زغالین",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "انگشتر",
+    "lore_description_fa": "سنگسترِ کبود؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_9_9_0",
-    "name": "دستور ورداش حلقه ۲ آغازین • احضارگر",
+    "name": "رازآلودِ خاتمِ موجِ ورداش؛ خونِ ستارگان ـ 253",
     "result_item_id": "item_recipe_9_9_0",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -10761,11 +11265,13 @@
     "drop_source_label_fa": "هیولای عادی: خرچنگ گِل‌سنگ",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "موجِ ورداش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_9_9_1",
-    "name": "دستور جنوبی حلقه ۲ پایدار • احضارگر",
+    "name": "حماسه‌زادِ خاتمِ آفتابِ مدفون؛ طلسمِ سپهر ـ 254",
     "result_item_id": "item_recipe_9_9_1",
     "class_name": "عمومی",
     "slot": "حلقه ۲",
@@ -10804,11 +11310,13 @@
     "drop_source_label_fa": "هیولای عادی: شیر علفزار",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "خاتم",
+    "lore_description_fa": "آفتابِ مدفون؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_9_10_0",
-    "name": "دستور ریشه‌پوش گردنبند آغازین • احضارگر",
+    "name": "اسطوره‌زادِ گردن‌آویزِ ریشه‌گاهِ واپسین؛ تاجِ فروزان ـ 255",
     "result_item_id": "item_recipe_9_10_0",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -10847,11 +11355,13 @@
     "drop_source_label_fa": "باس نهایی منطقه: نگهبان واپسین ریشه‌پوش",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "ریشه‌گاهِ واپسین؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "recipe_9_10_1",
-    "name": "دستور خاکستر گردنبند پایدار • احضارگر",
+    "name": "آذرنشانِ گردن‌آویزِ اخگرِ خاموش؛ سوگندِ سپیده ـ 256",
     "result_item_id": "item_recipe_9_10_1",
     "class_name": "عمومی",
     "slot": "گردنبند",
@@ -10890,11 +11400,13 @@
     "drop_source_label_fa": "هیولای عادی: حشره آتش‌زخم",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "گردن‌آویز",
+    "lore_description_fa": "اخگرِ خاموش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "recipe_9_11_0",
-    "name": "دستور خار شنل آغازین • احضارگر",
+    "name": "شنلِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 257",
     "result_item_id": "item_recipe_9_11_0",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -10931,11 +11443,13 @@
     "drop_source_label_fa": "گنجینه‌های دانجن دانجن بیشه خارزار",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "خارستانِ سوگند؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "recipe_9_11_1",
-    "name": "دستور سنگستر شنل پایدار • احضارگر",
+    "name": "حماسه‌زادِ شنلِ سنگسترِ کبود؛ یادگارِ نخستین ـ 258",
     "result_item_id": "item_recipe_9_11_1",
     "class_name": "عمومی",
     "slot": "شنل",
@@ -10973,11 +11487,13 @@
     "drop_source_label_fa": "مینی‌باس: سنگ‌شکن اخگر",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "شنل",
+    "lore_description_fa": "سنگسترِ کبود؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "recipe_9_12_0",
-    "name": "دستور ورداش نشان آغازین • احضارگر",
+    "name": "رازآلودِ نشان جنگیِ موجِ ورداش؛ پناهِ سپیده ـ 259",
     "result_item_id": "item_recipe_9_12_0",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -11015,11 +11531,13 @@
     "drop_source_label_fa": "مینی‌باس: مارسالار ورداش",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "موجِ ورداش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "recipe_9_12_1",
-    "name": "دستور جنوبی نشان پایدار • احضارگر",
+    "name": "افسانه‌نشانِ نشان جنگیِ آفتابِ مدفون؛ آوازِ ژرفا ـ 260",
     "result_item_id": "item_recipe_9_12_1",
     "class_name": "عمومی",
     "slot": "نشان",
@@ -11056,6 +11574,8 @@
     "drop_source_label_fa": "باس نهایی دانجن گذرگاه مقبره‌های آفتاب",
     "balance_version": 139,
     "original_class_name": "احضارگر",
-    "access_scope": "public"
+    "access_scope": "public",
+    "equipment_type_label_fa": "نشان جنگی",
+    "lore_description_fa": "آفتابِ مدفون؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   }
 ]

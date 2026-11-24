@@ -12,8 +12,12 @@
     ],
     "level_weights": [
       {
-        "level": 2,
-        "weight": 100
+        "level": 3,
+        "weight": 60
+      },
+      {
+        "level": 4,
+        "weight": 40
       }
     ],
     "enemy_count": {
@@ -63,7 +67,7 @@
     "boss": {
       "id": "dungeon_boss_dungeon_thorn",
       "name": "فرمانروای ریشه‌های تباه",
-      "level": 2,
+      "level": 4,
       "hp": 4200,
       "mp": 700,
       "attack": 34,
@@ -84,8 +88,8 @@
     "failure": {
       "flee_or_death_resets_entire_run": true,
       "restore_entry_snapshot": true,
-      "death_xp_penalty_percent": 5,
-      "death_gold_penalty_percent": 5
+      "death_xp_penalty_percent": 3,
+      "death_gold_penalty_percent": 1
     },
     "version": 2,
     "recipe_distribution": {
@@ -116,7 +120,10 @@
       ],
       "rule_fa": "دستورهای این دانجن فقط از گنجینه‌های همین دانجن یا باس نهایی همین دانجن می‌افتند؛ مواد لازم همگی از محدوده اصلی همین دانجن جمع می‌شوند."
     },
-    "balance_version": 1653
+    "balance_version": 1653,
+    "level_min": 3,
+    "level_max": 4,
+    "recommended_level": 3
   },
   {
     "id": "dungeon_south",
@@ -133,16 +140,20 @@
     ],
     "level_weights": [
       {
-        "level": 3,
-        "weight": 100
+        "level": 7,
+        "weight": 25
       },
       {
-        "level": 4,
-        "weight": 65
+        "level": 8,
+        "weight": 25
       },
       {
-        "level": 5,
+        "level": 9,
         "weight": 35
+      },
+      {
+        "level": 10,
+        "weight": 15
       }
     ],
     "enemy_count": {
@@ -192,7 +203,7 @@
     "boss": {
       "id": "dungeon_boss_dungeon_south",
       "name": "شاه‌دندانِ شن‌خفته",
-      "level": 5,
+      "level": 9,
       "hp": 7800,
       "mp": 1500,
       "attack": 44,
@@ -213,8 +224,8 @@
     "failure": {
       "flee_or_death_resets_entire_run": true,
       "restore_entry_snapshot": true,
-      "death_xp_penalty_percent": 5,
-      "death_gold_penalty_percent": 5
+      "death_xp_penalty_percent": 3,
+      "death_gold_penalty_percent": 1
     },
     "version": 2,
     "recipe_distribution": {
@@ -245,6 +256,9 @@
       ],
       "rule_fa": "دستورهای این دانجن فقط از گنجینه‌های همین دانجن یا باس نهایی همین دانجن می‌افتند؛ مواد لازم همگی از محدوده اصلی همین دانجن جمع می‌شوند."
     },
-    "balance_version": 1653
+    "balance_version": 1653,
+    "level_min": 7,
+    "level_max": 10,
+    "recommended_level": 9
   }
 ]

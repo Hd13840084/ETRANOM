@@ -1085,6 +1085,7 @@ export const WARLOCK = {
   "ascendedSkills": [
     {
       "id": "edict_of_the_true_name",
+      "baseSkillId": "forbidden_signature",
       "name": "فرمان نام نخستین",
       "baseSkillName": "امضای ممنوع تعالی‌یافته",
       "description": "هدف برای 3 نوبت در دفتر نخستین ثبت می‌شود؛ هر آسیب دریافتی‌اش 28٪ بازتاب دارد و هر مهارت ویژه‌اش 6٪ حداکثر مانا به وارلاک می‌دهد.",
@@ -1095,6 +1096,7 @@ export const WARLOCK = {
     },
     {
       "id": "theft_of_tomorrow",
+      "baseSkillId": "stolen_moment",
       "name": "ربایش فردا",
       "baseSkillName": "سرقت لحظه تعالی‌یافته",
       "description": "مهارت ویژه هدف برای یک نوبت مهروموم می‌شود؛ وارلاک دو لحظه ذخیره می‌کند و مهارت بعدی‌اش 35٪ قوی‌تر و 25٪ ارزان‌تر است.",
@@ -1105,6 +1107,7 @@ export const WARLOCK = {
     },
     {
       "id": "testament_of_the_eightfold",
+      "baseSkillId": "demons_testament",
       "name": "وصیت‌نامه هشت مُهر",
       "baseSkillName": "وصیت‌نامه اهریمن تعالی‌یافته",
       "description": "تا پایان قلمرو هر مهارت 2 بدهی می‌سازد؛ هر بدهی 5٪ آسیب می‌دهد، اما آستانه‌های هزینه فقط یک بار و با سقف 8 بدهی اعمال می‌شوند.",
@@ -1115,6 +1118,7 @@ export const WARLOCK = {
     },
     {
       "id": "altar_of_the_unpayable",
+      "baseSkillId": "reversal_of_sacrifice",
       "name": "مذبح بهای ناپرداختنی",
       "baseSkillName": "وارونگی قربانی تعالی‌یافته",
       "description": "12٪ حداکثر HP را (بدون کشتن) قربانی می‌کند؛ مهارت بعدی 100٪ قوی‌تر است و 60٪ قربانی در صورت اصابت بازمی‌گردد.",
@@ -1125,6 +1129,7 @@ export const WARLOCK = {
     },
     {
       "id": "court_of_final_verdicts",
+      "baseSkillId": "court_of_nameless",
       "name": "محکمه احکام واپسین",
       "baseSkillName": "دادگاه بی‌نامان تعالی‌یافته",
       "description": "هر سه حکم هم‌زمان برای 3 نوبت اجرا می‌شوند؛ شدت علیه باس 60٪ است.",
@@ -1135,6 +1140,7 @@ export const WARLOCK = {
     },
     {
       "id": "heart_of_the_bound_king",
+      "baseSkillId": "hostage_heart",
       "name": "قلب شاه دربند",
       "baseSkillName": "قلب گروگان تعالی‌یافته",
       "description": "پیوند 3 نوبت برقرار می‌شود؛ 35٪ آسیب وارلاک منتقل و 25٪ آسیب او بازیابی می‌شود؛ شکستن پیوند ضربه‌ای برابر 120٪ آسیب منتقل‌شده می‌زند.",
@@ -1145,6 +1151,7 @@ export const WARLOCK = {
     },
     {
       "id": "unmaking_of_the_named",
+      "baseSkillId": "erasure_from_reality",
       "name": "نیستی نام‌داران",
       "baseSkillName": "حذف از واقعیت تعالی‌یافته",
       "description": "یک دشمن عادی یک نوبت از نبرد حذف و یک اثر مثبتش نابود می‌شود؛ باس یک اثر مثبت را از دست می‌دهد و مهارت بعدی‌اش 40٪ ضعیف می‌شود.",
@@ -1155,6 +1162,7 @@ export const WARLOCK = {
     },
     {
       "id": "the_hunger_beyond_gods",
+      "baseSkillId": "heir_of_hunger",
       "name": "گرسنگی آن‌سوی خدایان",
       "baseSkillName": "وارث گرسنگی تعالی‌یافته",
       "description": "موجود 4 نوبت می‌ماند؛ تا 18٪ مانای دشمنان را ذخیره می‌کند و وارلاک می‌تواند هر نوبت آن را میان HP، MP و ضربه نهایی تقسیم کند.",
@@ -1165,6 +1173,7 @@ export const WARLOCK = {
     },
     {
       "id": "shattering_of_first_speech",
+      "baseSkillId": "true_name_shatter",
       "name": "شکستن گفتار نخستین",
       "baseSkillName": "شکستن نام حقیقی تعالی‌یافته",
       "description": "دو بند از چهار بند روی هدف انتخاب می‌شود و 3 نوبت می‌ماند؛ شدت علیه باس 65٪ است.",
@@ -1175,6 +1184,7 @@ export const WARLOCK = {
     },
     {
       "id": "covenant_at_worlds_end",
+      "baseSkillId": "final_covenant",
       "name": "پیمان پایان جهان",
       "baseSkillName": "آخرین قرارداد تعالی‌یافته",
       "description": "سه تجلی با هم ترکیب می‌شوند: 420٪ قدرت جادویی به همه دشمنان، حذف یک اثر مثبت غیرذاتی، و بازیابی 15٪ HP ازدست‌رفته؛ هر 2 بدهی +10٪ آسیب تا سقف +50٪.",
@@ -1214,7 +1224,13 @@ export const WARLOCK = {
     "talentsPerBranch": 8,
     "attributePointsPerLevel": 5,
     "skillPointsPerLevel": 2,
-    "levelCap": 50
+    "levelCap": 100,
+    "ascendedSkillChoiceCount": 1,
+    "ascendedSkillAvailableOnlyInDomain": true,
+    "ascendedSkillAvailability": "all_10_during_domain",
+    "ascendedSkillSelectionTiming": "after_domain_activation",
+    "ascendedSkillSelectionLimitPerDomain": 1,
+    "ascendedSkillUsesPerDomain": 1
   }
 };
 

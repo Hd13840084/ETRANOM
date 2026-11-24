@@ -19,10 +19,10 @@ test('fallback delegation covers top navigation, market and PvP entry points', (
   }
 });
 test('shared modules retain their identities and game entry uses the current cache-buster', () => {
-  assert.match(index, /game\.js\?v=1862&nav=1862/);
-  assert.match(index, /shared-skill-runtime\.js\?v=1841/);
-  assert.match(index, /party\.js\?v=1841/);
-  assert.match(index, /pvp-ui\.js\?v=1841/);
+  assert.match(index, /game\.js\?v=1908&nav=1908/);
+  assert.match(index, /shared-skill-runtime\.js\?v=1921/);
+  assert.match(index, /party\.js\?v=1908/);
+  assert.match(index, /pvp-ui\.js\?v=1921/);
 });
 test('retreat SQL patch renames local variable but preserves party_battle_state.monsters column', () => {
   assert.match(sql, /st\.v_monsters', 'st\.monsters/);

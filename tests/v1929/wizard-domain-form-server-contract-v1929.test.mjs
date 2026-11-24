@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { resolveWizardDomainFormServerContractV1929 as resolve } from '../../systems/combat/engines/wizard-domain-form-server-contract-v1929.js';
+import { ARCANE_MAGE } from '../../systems/classes/arcane-mage.js';
+import { ELEMENTALIST } from '../../systems/classes/elementalist.js';
+import { WARLOCK } from '../../systems/classes/warlock.js';
+import { NECROMANCER } from '../../systems/classes/necromancer.js';
+const specs=[ARCANE_MAGE,ELEMENTALIST,WARLOCK,NECROMANCER];
+test('all 40 authored forms map one-to-one to their base skills',()=>{let n=0;for(const s of specs){assert.equal(s.skills.length,10);assert.equal(s.ascendedSkills.length,10);for(const f of s.ascendedSkills){assert.ok(s.skills.some(x=>x.id===(f.skillId||f.baseSkillId)));n++;}}assert.equal(n,40);});
+test('outside Domain normal form is returned unchanged',()=>{const s=ARCANE_MAGE,b=s.skills[0],f=s.ascendedSkills.find(x=>(x.skillId||x.baseSkillId)===b.id);assert.equal(resolve({specializationKey:s.id,baseSkillId:b.id,progress:{domainActive:false},baseSkill:b,forms:[f]}),b);});
+test('active Domain applies only selected matching form and preserves base id/type',()=>{const s=ARCANE_MAGE,b=s.skills[0],f=s.ascendedSkills.find(x=>(x.skillId||x.baseSkillId)===b.id);const out=resolve({specializationKey:s.id,baseSkillId:b.id,progress:{domainActive:true,ascendedSkillId:f.id,ascendedSkillUsedThisDomain:true},baseSkill:b,forms:[f]});assert.equal(out.id,b.id);assert.equal(out.type,b.type);assert.equal(out.domainFormId,f.id);});
+test('selected form for another base skill does not alter this skill',()=>{const s=ARCANE_MAGE,b=s.skills[0],f=s.ascendedSkills.find(x=>(x.skillId||x.baseSkillId)===s.skills[1].id);assert.equal(resolve({specializationKey:s.id,baseSkillId:b.id,progress:{domainActive:true,ascendedSkillId:f.id,ascendedSkillUsedThisDomain:true},baseSkill:b,forms:[f]}),b);});
+test('invalid selection and uncommitted selection fail closed',()=>{const s=ARCANE_MAGE,b=s.skills[0];assert.throws(()=>resolve({specializationKey:s.id,baseSkillId:b.id,progress:{domainActive:true,ascendedSkillId:'bad',ascendedSkillUsedThisDomain:true},baseSkill:b,forms:[]}),/invalid_selection/);const f=s.ascendedSkills.find(x=>(x.skillId||x.baseSkillId)===b.id);assert.throws(()=>resolve({specializationKey:s.id,baseSkillId:b.id,progress:{domainActive:true,ascendedSkillId:f.id},baseSkill:b,forms:[f]}),/not_committed/);});

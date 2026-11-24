@@ -4,8 +4,8 @@ import fs from 'node:fs';
 const game = fs.readFileSync(new URL('../game.js', import.meta.url), 'utf8');
 test('summoned legion attacks each player turn and enemy damage is routed to summoned guard first', () => {
   assert.match(game, /necromancerLegionTurn\(combatRef\)/);
-  assert.match(game, /routeDamageToSummonedLegion\(c,dmg,c\.enemy\)/);
-  assert.match(game, /routeDamageToSummonedLegion\(live,dmg,e\.enemy\)/);
+  assert.match(game, /routeEnemyAttackToSummonedLegion\(c,raw,c\.enemy\)/);
+  assert.match(game, /routeEnemyAttackToSummonedLegion\(live,raw,e\.enemy\)/);
   assert.match(game, /از این پس دشمنان دوباره قهرمان را هدف می‌گیرند/);
 });
 test('crafted recipe equipment maps localized slot labels to canonical equipment slots', () => {

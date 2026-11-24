@@ -101,7 +101,7 @@
     "talentMaxRank": 5,
     "attributePointsPerLevel": 5,
     "skillPointsPerLevel": 2,
-    "levelCap": 50,
+    "levelCap": 100,
     "domainLevels": [
       25,
       40,

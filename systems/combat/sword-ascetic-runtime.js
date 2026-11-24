@@ -1,17 +1,25 @@
 /** Sword Ascetic authoritative pure mechanics shared by solo/party/PvP adapters. */
 import SWORD_ASCETIC from '../../content/classes/warrior_sword_ascetic_v1.json' with { type: 'json' };
-import { resolveCombatSkill } from './shared-skill-runtime.js?v=1841';
+import { resolveCombatSkill } from './shared-skill-runtime.js?v=1906';
+import { resolveCanonicalSkillDamage } from './character-stat-core.js?v=1901';
 
 const copy = value => JSON.parse(JSON.stringify(value ?? {}));
 const clamp = (value, min, max) => Math.max(min, Math.min(max, Number(value) || 0));
 const n = (value, fallback = 0) => Number.isFinite(Number(value)) ? Number(value) : fallback;
+// Prefer the highest populated physical-power alias. Battle snapshots can contain
+// a stale/default attack=1 while the actual character power is stored elsewhere.
+function resolvePhysicalAttack(actor = {}) {
+  const values = [actor.attack, actor.power, actor.stats?.attack, actor.stats?.power, actor.combatStats?.attack, actor.combatStats?.power]
+    .map(Number).filter(value => Number.isFinite(value) && value > 0);
+  return values.length ? Math.max(...values) : 1;
+}
 const SKILLS = new Map(SWORD_ASCETIC.skills.map(skill => [skill.id, skill]));
 const ASCENDED = new Map(SWORD_ASCETIC.ascendedSkills.map(skill => [skill.id, skill]));
 const TALENTS = SWORD_ASCETIC.talentBranches.flatMap(branch => branch.talents);
 const TALENT_BY_ID = new Map(TALENTS.map(talent => [talent.id, talent]));
 const DOMAIN_STAGE = (level, questFlags = {}) => [...SWORD_ASCETIC.domain.stages].reverse().find(stage => n(level) >= n(stage.unlockLevel) && (!stage.requiresQuest || Boolean(questFlags.swordAsceticDomainTrial))) || null;
 
-export const SWORD_ASCETIC_RUNTIME_VERSION = '1.3.0';
+export const SWORD_ASCETIC_RUNTIME_VERSION = '1.3.1';
 export const SWORD_ASCETIC_DATA = SWORD_ASCETIC;
 
 export function collectSwordAsceticTalentEffects(progress = {}) {
@@ -147,12 +155,16 @@ export function resolveSwordAsceticSkill(skillId, payload = {}) {
   if (!baseSkill && !ascSkill) throw new Error('specialization_skill_not_found');
   const passiveSnapshot = applySwordAsceticPassiveStats(payload.actor || {});
   const actor = copy(passiveSnapshot.actor);
+  // Normalize physical power for this specialization only. Some live snapshots
+  // contain a stale/default attack value (often 1) while the real power is stored
+  // in power, stats.power, or combatStats.power. The shared core reads attack only.
+  actor.attack = resolvePhysicalAttack(actor);
   const progress = copy(actor.classProgress?.warrior_sword_ascetic || actor.swordAsceticProgress || {});
   const skill = baseSkill || SKILLS.get(ascSkill.skillId);
   const level = n(actor.level, 1);
   if (level < n(skill.unlockLevel, 1)) throw new Error('sword_ascetic_skill_locked');
   const ranks = progress.skillRanks || {};
-  const rank = clamp(Math.floor(n(ranks[skill.id], 1)), 1, 6);
+  const rank = clamp(Math.floor(n(ranks[skill.id], 1)), 1, 7);
   const talentFx = collectSwordAsceticTalentEffects(progress);
   const domainState = checkDomainAndAscension(String(skillId), actor, progress);
   const staminaReduction = clamp(n(talentFx.staminaCostReductionPct) + n(talentFx.swordStaminaCostReductionPct), 0, 50);
@@ -170,7 +182,8 @@ export function resolveSwordAsceticSkill(skillId, payload = {}) {
   const preparedTargets = copy(payload.targets || []);
   if (n(normalized.defenseReductionPct) > 0) { for (const target of preparedTargets.filter(t => n(t.hp) > 0)) target.statuses = { ...(target.statuses || {}), sword_ascetic_penetration: { turns: 1, defenseReductionPct: n(normalized.defenseReductionPct), hardControl: false } }; }
   const corePayload = { ...payload, actor, targets: preparedTargets, skill: normalized, mode: payload.mode || 'solo', effects: { ...(payload.effects || {}), damagePct: n(payload.effects?.damagePct) + n(talentFx.swordDamagePct) + (ascSkill ? n(talentFx.ascendedSkillPct) : 0) + (domainActive ? n(domainActive.attackPct) : 0), defenseReductionPct: n(payload.effects?.defenseReductionPct) + n(talentFx.defensePenetrationPct), accuracyPct: n(payload.effects?.accuracyPct) + n(talentFx.accuracyPct), critChancePct: n(payload.effects?.critChancePct) + n(talentFx.swordCritPct) } };
-  const primaryTarget = preparedTargets.find(t => String(t.id) === String(payload.targetId)) || preparedTargets.find(t => n(t.hp) > 0);
+  for (const t of preparedTargets) if (t.id == null && t.encounterId != null) t.id = String(t.encounterId);
+  const primaryTarget = preparedTargets.find(t => String(t.id ?? t.encounterId) === String(payload.targetId)) || preparedTargets.find(t => n(t.hp) > 0);
   const attackSkill = n(normalized.damagePct) > 0 && !['self_buff','shield','heal'].includes(normalized.type);
   const hitChance = clamp(n(actor.accuracy, 100) - n(primaryTarget?.evasionPct ?? primaryTarget?.evasion), 5, 100);
   const hasHitRoll = Number.isFinite(Number(payload.rolls?.hit));
@@ -187,14 +200,19 @@ export function resolveSwordAsceticSkill(skillId, payload = {}) {
   if (skill.id === 'black_crescent' && primaryTarget) {
     const resolvedTarget = out.targets.find(t => String(t.id) === String(primaryTarget.id)) || out.targets.find(t => n(t.hp) > 0);
     if (resolvedTarget) {
-      const alreadyLogged = out.log.some(x => x.type === 'damage' && String(x.target) === String(resolvedTarget.id) && n(x.amount) > 0);
-      if (!alreadyLogged) {
-        const raw = Math.max(1, Math.floor(n(actor.attack) * n(normalized.damagePct, 280) / 100));
-        const defense = Math.max(0, n(resolvedTarget.defense ?? resolvedTarget.enemyDefense));
-        const amount = Math.max(1, Math.floor(raw * 100 / (100 + defense * 1.25)));
-        resolvedTarget.hp = Math.max(0, n(resolvedTarget.hp) - amount);
-        out.log.push({ type: 'damage', target: resolvedTarget.id, amount, skillId: 'black_crescent', source: 'black_crescent_fallback' });
+      const logged = out.log.filter(x => x.type === 'damage' && String(x.target) === String(resolvedTarget.id));
+      const loggedDamage = logged.reduce((sum, x) => sum + Math.max(0, n(x.amount)), 0);
+      // The shared core may already have applied damage. If it used a stale/empty
+      // attack stat, top up only the missing difference to the authoritative hit.
+      const defenseReductionPct = Object.values(resolvedTarget.statuses || {}).reduce((sum, status) => sum + n(status?.defenseReductionPct), 0);
+      const expectedDamage = resolveCanonicalSkillDamage({ attackPower: actor.attack, damagePct: n(normalized.damagePct, 280), targetDefense: resolvedTarget.defense ?? resolvedTarget.enemyDefense, defenseReductionPct, targetDamageReductionPct: n(resolvedTarget.damageReductionPct) }).damage;
+      const extra = Math.max(0, expectedDamage - loggedDamage);
+      if (extra > 0) {
+        resolvedTarget.hp = Math.max(0, n(resolvedTarget.hp) - extra);
+        out.log.push({ type: 'damage', target: resolvedTarget.id, amount: extra, skillId: 'black_crescent', source: 'black_crescent_damage_bridge' });
       }
+      // Ensure the report attributes the hit to the named specialization skill.
+      for (const entry of logged) entry.skillId = 'black_crescent';
     }
   }
   // Target-tagged armor bonus is applied after shared-core damage so the common
@@ -242,10 +260,10 @@ export function resolveSwordAsceticSkill(skillId, payload = {}) {
   if (skill.id === 'crimson_blossom') {
     const target = out.targets.find(t => String(t.id) === String(payload.targetId)) || out.targets.find(t => n(t.hp) > 0);
     if (target) {
-      const perHit = Math.max(1, Math.floor(n(out.actor.attack) * n(normalized.damagePct) / 300));
+      const perHitPct = n(normalized.damagePct) / 3;
       const hits = ascSkill ? 5 : 3;
       let total = 0;
-      for (let i = 1; i < hits; i++) { const amount = Math.max(1, Math.floor(perHit * 100 / (100 + n(target.defense) * 1.25))); target.hp = Math.max(0, n(target.hp) - amount); total += amount; out.log.push({ type: 'sword_multi_hit', target: target.id, hit: i + 1, amount }); }
+      for (let i = 1; i < hits; i++) { const defenseReductionPct = Object.values(target.statuses || {}).reduce((sum, status) => sum + n(status?.defenseReductionPct), 0); const amount = resolveCanonicalSkillDamage({ attackPower: n(out.actor.attack), damagePct: perHitPct, targetDefense: target.defense, defenseReductionPct, targetDamageReductionPct: n(target.damageReductionPct) }).damage; target.hp = Math.max(0, n(target.hp) - amount); total += amount; out.log.push({ type: 'sword_multi_hit', target: target.id, hit: i + 1, amount }); }
       if (total) out.log.push({ type: 'sword_multi_hit_total', target: target.id, amount: total });
     }
   }

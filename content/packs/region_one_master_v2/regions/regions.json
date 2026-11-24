@@ -4,7 +4,7 @@
     "name": "جنگل سوخته",
     "region_number": 1,
     "level_min": 1,
-    "level_max": 1,
+    "level_max": 2,
     "recommended_level": 1,
     "recipe_level": 1,
     "item_level": 1,
@@ -132,15 +132,17 @@
         ]
       },
       "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
-    }
+    },
+    "level_range_label_fa": "۱ تا ۲",
+    "progression_zone_number": 1
   },
   {
     "id": "thorn_grove",
     "name": "بیشه خارزار",
     "region_number": 1,
-    "level_min": 2,
-    "level_max": 2,
-    "recommended_level": 2,
+    "level_min": 3,
+    "level_max": 4,
+    "recommended_level": 3,
     "recipe_level": 1,
     "item_level": 1,
     "material_theme": "خارِ سیاه",
@@ -248,15 +250,17 @@
         ]
       },
       "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
-    }
+    },
+    "level_range_label_fa": "۳ تا ۴",
+    "progression_zone_number": 2
   },
   {
     "id": "ash_hills",
     "name": "تپه‌های خاکستر",
     "region_number": 1,
-    "level_min": 3,
-    "level_max": 3,
-    "recommended_level": 3,
+    "level_min": 5,
+    "level_max": 6,
+    "recommended_level": 5,
     "recipe_level": 1,
     "item_level": 1,
     "material_theme": "سنگستر",
@@ -384,15 +388,17 @@
         ]
       },
       "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
-    }
+    },
+    "level_range_label_fa": "۵ تا ۶",
+    "progression_zone_number": 3
   },
   {
     "id": "vardash_river",
     "name": "رود ورداش",
     "region_number": 1,
-    "level_min": 4,
-    "level_max": 4,
-    "recommended_level": 4,
+    "level_min": 7,
+    "level_max": 8,
+    "recommended_level": 7,
     "recipe_level": 1,
     "item_level": 1,
     "material_theme": "رسوب ورداش",
@@ -520,15 +526,17 @@
         ]
       },
       "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
-    }
+    },
+    "level_range_label_fa": "۷ تا ۸",
+    "progression_zone_number": 4
   },
   {
     "id": "southern_plains",
     "name": "دشت جنوبی",
     "region_number": 1,
-    "level_min": 5,
-    "level_max": 5,
-    "recommended_level": 5,
+    "level_min": 9,
+    "level_max": 9,
+    "recommended_level": 9,
     "recipe_level": 1,
     "item_level": 1,
     "material_theme": "علفزار جنوبی",
@@ -635,15 +643,17 @@
         ]
       },
       "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
-    }
+    },
+    "level_range_label_fa": "۹",
+    "progression_zone_number": 5
   },
   {
     "id": "rootbound_ruins",
     "name": "ویرانه‌های ریشه‌پوش",
     "region_number": 1,
-    "level_min": 5,
-    "level_max": 5,
-    "recommended_level": 5,
+    "level_min": 10,
+    "level_max": 10,
+    "recommended_level": 10,
     "recipe_level": 1,
     "item_level": 1,
     "material_theme": "یادگار ریشه‌پوش",
@@ -753,6 +763,8 @@
         ]
       },
       "rule_fa": "این دستورها فقط از هیولای مشخص‌شده در همین محدوده می‌افتند؛ مواد لازم نیز فقط از هیولاهای همین محدوده تأمین می‌شوند."
-    }
+    },
+    "level_range_label_fa": "۱۰",
+    "progression_zone_number": 6
   }
 ]

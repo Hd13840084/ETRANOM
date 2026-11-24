@@ -1,10 +1,13 @@
+import { validateRegionZonesV1980 } from "../progression/world-level-map-v1980.js";
+import { createMonsterCombatEngineV1970, validateMonsterSkillLinksV1970 } from "../combat/monster-combat-engine-v1970.js";
+import { createMonsterRewardEngineV1971, validateMonsterRewardLinksV1971 } from "../combat/monster-reward-engine-v1971.js";
 const ROOT = './content/packs/region_one_master_v2/';
 const FILES = {
   manifest: 'manifest.json', regions: 'regions/regions.json', monsters: 'monsters/monsters.json',
   materials: 'materials/materials.json', skills: 'skills/monster_skills.json', items: 'items/items.json',
   recipes: 'recipes/recipes.json', quests: 'quests/quests.json', npcs: 'npcs/npcs.json',
   dungeons: 'dungeons/dungeons.json', ruins: 'ruins/ruins.json', tower: 'tower/tower.json',
-  towerEncounters: 'tower/tower_encounters.json'
+  towerEncounters: 'tower/tower_encounters.json', rewards: 'rewards/reward_tables.json'
 };
 async function readJson(path) {
   const response = await fetch(ROOT + path, { cache: 'no-store' });
@@ -30,12 +33,21 @@ function assertUnique(list, label) {
 export async function loadRegionOneRuntime() {
   const entries = await Promise.all(Object.entries(FILES).map(async ([key, path]) => [key, await readJson(path)]));
   const pack = Object.fromEntries(entries);
-  const listKeys = ['regions','monsters','materials','skills','items','recipes','quests','npcs','dungeons','towerEncounters'];
+  const listKeys = ['regions','monsters','materials','skills','items','recipes','quests','npcs','dungeons','towerEncounters','rewards'];
   for (const key of listKeys) {
     if (!Array.isArray(pack[key])) throw new Error(`ساختار ${key} در بسته محتوایی معتبر نیست.`);
     assertUnique(pack[key], key);
   }
   if (!pack.manifest?.source_of_truth || pack.manifest.pack_id !== 'region_one_master_v2') throw new Error('نسخه یا مرجع بسته محتوایی منطقه اول معتبر نیست.');
+  const worldLevelValidation = validateRegionZonesV1980(pack.regions, 1);
+  if (!worldLevelValidation.valid) throw new Error(`سطح‌بندی محدوده‌های منطقه اول نامعتبر است: ${worldLevelValidation.errors.join(', ')}`);
+  if (Number(pack.manifest.level_range?.min) !== 1 || Number(pack.manifest.level_range?.max) !== 10) throw new Error('بازه سطح بسته منطقه اول باید ۱ تا ۱۰ باشد.');
+  const skillLinks = validateMonsterSkillLinksV1970(pack.monsters, pack.skills);
+  if (!skillLinks.valid) throw new Error(`مهارت نامعتبر برای هیولا: ${skillLinks.errors.map(x => `${x.monsterId}:${x.skillId}`).join(', ')}`);
+  const monsterCombatEngine = createMonsterCombatEngineV1970({ skillMap: Object.fromEntries(pack.skills.map(x => [x.id, x])) });
+  const monsterRewardEngine = createMonsterRewardEngineV1971({ rewardTables: pack.rewards, names: Object.fromEntries([...pack.materials,...pack.items].map(x => [x.id,x.name])) });
+  const rewardLinks = validateMonsterRewardLinksV1971(pack.monsters, pack.rewards, { materials: new Set(pack.materials.map(x=>x.id)), items: new Set(pack.items.map(x=>x.id)), recipes: new Set(pack.recipes.map(x=>x.id)) });
+  if (!rewardLinks.valid) throw new Error(`پاداش نامعتبر برای هیولا: ${rewardLinks.errors.map(x => `${x.monsterId}:${x.id||x.tableId||x.reason}`).join(', ')}`);
   const materialById = new Map(pack.materials.map(x => [x.id, x]));
   const monsterById = new Map(pack.monsters.map(x => [x.id, x]));
   const regionOneIds = new Set(pack.regions.filter(region => Number(region.region_number) === 1).map(region => region.id));
@@ -59,6 +71,8 @@ export async function loadRegionOneRuntime() {
   }
   const regions = pack.regions.map(region => ({
     id: region.id, name: region.name, level: Number(region.recommended_level || region.level_min || 1),
+    levelMin: Number(region.level_min || region.recommended_level || 1), levelMax: Number(region.level_max || region.recommended_level || 1),
+    levelRangeLabel: region.level_range_label_fa || String(region.recommended_level || region.level_min || 1), zoneNumber: Number(region.progression_zone_number || 0),
     regionNumber: region.region_number, recipeLevel: region.recipe_level, itemLevel: region.item_level,
     material: region.material_theme, mats: [...region.material_ids], dungeon: region.dungeon_id || null,
     ruins: !!region.ruins_enabled, subarea: region.subarea, entryPoint: region.subarea?.entry_point || null,
@@ -67,19 +81,19 @@ export async function loadRegionOneRuntime() {
   const materialNames = regions.map(region => region.mats.map(id => materialById.get(id)?.name || id));
   const encounters = pack.monsters.map(monster => {
     const drops = monster.drops || [];
-    const materialIds = drops.map(x => x.material_id);
+    const materialIds = drops.filter(x => !x.type || x.type === 'material').map(x => x.material_id || x.id);
     const materialNames = materialIds.map(id => materialById.get(id)?.name || id);
     const multiplier = regionCombatMultiplier(monster.region_id);
     const stats = scaleCombatStats(monster.stats, multiplier);
     // v146: authored enemy stats are passed to combat unchanged; no hidden scaling is applied.
     return {
       id: monster.id, name: monster.name, icon: '👹', kind: monster.kind === 'mini_boss' ? 'miniboss' : monster.kind === 'area_boss' ? 'boss' : monster.kind,
-      regionId: monster.region_id, regionName: regions.find(x => x.id === monster.region_id)?.name || '', level: monster.level,
+      regionId: monster.region_id, regionName: regions.find(x => x.id === monster.region_id)?.name || '', level: monster.level, levelMin: monster.level, levelMax: monster.level,
       hp: Number(stats.hp || 1), maxHp: Number(stats.hp || 1), mp: Number(stats.mp || 0), maxMp: Number(stats.mp || 0),
       attack: Number(stats.attack || stats.power || 1), defense: Number(stats.defense || stats.endurance || 0),
       accuracy: Number(stats.accuracy || 80), speed: Number(stats.speed || 1), combatMultiplier: multiplier, quality: monster.quality,
       role: monster.role || '', description: monster.description_fa || '', stats,
-      materialId: materialIds[0] || null, materialName: materialNames[0] || '', materialIds, materialNames,
+      materialId: materialIds[0] || null, materialName: materialNames[0] || '', materialIds, materialNames, dropEntries: drops.map(x => ({ ...x })), rewardEntries: [...(monster.reward_entries || monster.rewards?.entries || [])], rewardTableIds: [...(monster.reward_table_ids || [])],
       xp: Math.max(1, Math.floor(Math.max(1, Number(stats.hp || monster.hp || 15)) / 15)), gold: Number(monster.gold || 0), skills: [...(monster.skills || [])],
       portrait: monster.portrait || null, respawnSeconds: monster.respawn_seconds || 90, sourceVersion: monster.version
     };
@@ -87,7 +101,7 @@ export async function loadRegionOneRuntime() {
   const recipes = pack.recipes.map(recipe => {
     const item = itemById.get(recipe.result_item_id);
     return {
-      id: recipe.id, name: recipe.name, className: 'عمومی', originalClassName: recipe.original_class_name || recipe.class_name, accessScope: 'public', slot: recipe.slot,
+      id: recipe.id, name: recipe.name, className: 'عمومی', originalClassName: recipe.original_class_name || recipe.class_name, accessScope: 'public', slot: recipe.slot, equipmentTypeLabel: recipe.equipment_type_label_fa || recipe.slot, loreDescription: recipe.lore_description_fa || '',
       regionId: recipe.region_id, regionName: recipe.region_name, recipeLevel: recipe.recipe_level,
       maxRecipeLevel: recipe.max_recipe_level, itemLevel: recipe.item_level, rarity: recipe.rarity,
       materials: (recipe.ingredients || []).map(x => ({ id: x.material_id, name: materialById.get(x.material_id)?.name || x.material_id, qty: x.quantity })),
@@ -99,7 +113,7 @@ export async function loadRegionOneRuntime() {
     const multiplier = regionCombatMultiplier(d.region_id);
     const boss = d.boss || {};
     return ({
-    id: d.id, name: d.name, regionId: d.region_id, poolRegions: [...d.pool_region_ids], waves: d.wave_count,
+    id: d.id, name: d.name, regionId: d.region_id, levelMin: Number(d.level_min || d.boss?.level || 1), levelMax: Number(d.level_max || d.boss?.level || 1), recommendedLevel: Number(d.recommended_level || d.boss?.level || 1), poolRegions: [...d.pool_region_ids], waves: d.wave_count,
     normalWaves: d.normal_waves, bossWave: d.boss_wave, enemyCount: d.enemy_count || {guaranteed:1,second_enemy_chance_percent:60},
     levelWeights: (d.level_weights || []).map(x => ({ level: x.level, weight: x.weight })),
     treasureChances: (d.events_after_wave?.treasure_chance_percent || []).map(x => x / 100),
@@ -154,15 +168,20 @@ export async function loadRegionOneRuntime() {
       materialQty:Number(item?.quantity||1),rewardGold:Number(q.rewards?.gold||0),rewardXp:Number(q.rewards?.xp||0)};
   });
   window.ETRANOM_RUNTIME_CONTENT = {
-    packId: pack.manifest.pack_id, version: pack.manifest.content_version, manifest: pack.manifest,
+    packId: pack.manifest.pack_id, version: pack.manifest.content_version, manifest: pack.manifest, worldLevelValidation,
     regions, materialNames, materials: pack.materials, monsters: encounters, skills: pack.skills,
     items: pack.items, recipes, quests: pack.quests, mainQuestChains, mainQuestSteps, npcQuests,
     npcs: pack.npcs, dungeons, ruins, tower, towerFloors, towerEncounters,
     monsterSkillMap: Object.fromEntries(pack.skills.map(x => [x.id, x])),
+    monsterCombatEngine,
+    monsterCombatEngineVersion: monsterCombatEngine.version,
+    monsterRewardEngine,
+    monsterRewardEngineVersion: monsterRewardEngine.version,
+    rewardTables: pack.rewards,
     monsterPortraits: Object.fromEntries(pack.monsters.filter(x => x.portrait).map(x => [x.id, x.portrait]))
   };
   console.info('[ETRANOM] Region One runtime content loaded', {
-    regions: regions.length, monsters: encounters.length, materials: pack.materials.length,
+    regions: regions.length, monsters: encounters.length, materials: pack.materials.length, levelRange: [Math.min(...regions.map(r=>r.levelMin)), Math.max(...regions.map(r=>r.levelMax))],
     recipes: recipes.length, dungeons: dungeons.length, towerFloors: towerFloors.length,
     towerEncounters: towerEncounters.length
   });

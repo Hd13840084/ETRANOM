@@ -19,9 +19,9 @@ test('all ascension selection UI paths use the runtime validation function', () 
 });
 
 test('Iron Bastion runtime cache version is synchronized across app and combat adapters', () => {
-  assert.match(index, /iron-bastion-runtime\.js\?v=1874/);
-  assert.match(bridge, /iron-bastion-runtime\.js\?v=1874/);
-  assert.match(adapters, /iron-bastion-runtime\.js\?v=1874/);
+  assert.match(index, /iron-bastion-runtime\.js\?v=1901/);
+  assert.match(bridge, /iron-bastion-runtime\.js\?v=1901/);
+  assert.match(adapters, /iron-bastion-runtime\.js\?v=1901/);
 });
 
 test('V1874 domain visual state and single-use UI state are connected', () => {

@@ -1,7 +1,7 @@
 [
   {
     "id": "item_recipe_0_0_0",
-    "name": "خاکستر سلاح اصلی آغازین • تفنگدار",
+    "name": "تفنگِ اخگرِ خاموش؛ سوگندِ سپیده ـ 001",
     "slot": "سلاح اصلی",
     "class_name": "تفنگدار",
     "rarity": "معمولی",
@@ -15,11 +15,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "تفنگ",
+    "description_fa": "اخگرِ خاموش؛ تفنگ ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_0_0_1",
-    "name": "خار سلاح اصلی پایدار • تفنگدار",
+    "name": "رازآلودِ تفنگِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 002",
     "slot": "سلاح اصلی",
     "class_name": "تفنگدار",
     "rarity": "کمیاب",
@@ -33,11 +35,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "تفنگ",
+    "description_fa": "خارستانِ سوگند؛ تفنگ ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_0_1_0",
-    "name": "سنگستر سلاح دوم آغازین • تفنگدار",
+    "name": "آذرنشانِ تپانچهِ سنگسترِ کبود؛ یادگارِ نخستین ـ 003",
     "slot": "سلاح دوم",
     "class_name": "تفنگدار",
     "rarity": "غیرمعمول",
@@ -51,11 +55,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "تپانچه",
+    "description_fa": "سنگسترِ کبود؛ تپانچه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_0_1_1",
-    "name": "ورداش سلاح دوم پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ تپانچهِ موجِ ورداش؛ پناهِ سپیده ـ 004",
     "slot": "سلاح دوم",
     "class_name": "تفنگدار",
     "rarity": "افسانه‌ای",
@@ -69,11 +75,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "تپانچه",
+    "description_fa": "موجِ ورداش؛ تپانچه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_0_2_0",
-    "name": "جنوبی زره آغازین • تفنگدار",
+    "name": "حماسه‌زادِ زره سینهِ آفتابِ مدفون؛ آوازِ ژرفا ـ 005",
     "slot": "زره",
     "class_name": "تفنگدار",
     "rarity": "حماسی",
@@ -87,11 +95,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "آفتابِ مدفون؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_0_2_1",
-    "name": "ریشه‌پوش زره پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ زره سینهِ ریشه‌گاهِ واپسین؛ اشکِ ماه‌سنگ ـ 006",
     "slot": "زره",
     "class_name": "تفنگدار",
     "rarity": "افسانه‌ای",
@@ -105,11 +115,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "ریشه‌گاهِ واپسین؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_0_3_0",
-    "name": "خاکستر کلاه آغازین • تفنگدار",
+    "name": "آذرنشانِ کلاه‌خودِ اخگرِ خاموش؛ شکوهِ بی‌مرز ـ 007",
     "slot": "کلاه",
     "class_name": "تفنگدار",
     "rarity": "غیرمعمول",
@@ -123,11 +135,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "اخگرِ خاموش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_0_3_1",
-    "name": "خار کلاه پایدار • تفنگدار",
+    "name": "رازآلودِ کلاه‌خودِ خارستانِ سوگند؛ پیکرِ ابدی ـ 008",
     "slot": "کلاه",
     "class_name": "تفنگدار",
     "rarity": "کمیاب",
@@ -141,11 +155,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "خارستانِ سوگند؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_0_4_0",
-    "name": "سنگستر چکمه آغازین • تفنگدار",
+    "name": "آذرنشانِ پوتینِ سنگسترِ کبود؛ مهرِ هفت‌پرده ـ 009",
     "slot": "چکمه",
     "class_name": "تفنگدار",
     "rarity": "غیرمعمول",
@@ -155,15 +171,18 @@
       "power": 4,
       "luck": 2,
       "hp": 11,
-      "mp": 11
+      "mp": 11,
+      "speed": 4
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "سنگسترِ کبود؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_0_4_1",
-    "name": "ورداش چکمه پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ پوتینِ موجِ ورداش؛ نگینِ فراموشی ـ 010",
     "slot": "چکمه",
     "class_name": "تفنگدار",
     "rarity": "افسانه‌ای",
@@ -173,15 +192,18 @@
       "power": 10,
       "faith": 4,
       "hp": 27,
-      "mp": 27
+      "mp": 27,
+      "speed": 10
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "موجِ ورداش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_0_5_0",
-    "name": "جنوبی دستکش آغازین • تفنگدار",
+    "name": "افسانه‌نشانِ دستکشِ آفتابِ مدفون؛ قلبِ جهان ـ 011",
     "slot": "دستکش",
     "class_name": "تفنگدار",
     "rarity": "افسانه‌ای",
@@ -195,11 +217,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "آفتابِ مدفون؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_0_5_1",
-    "name": "ریشه‌پوش دستکش پایدار • تفنگدار",
+    "name": "اسطوره‌زادِ دستکشِ ریشه‌گاهِ واپسین؛ چشمِ بیدار ـ 012",
     "slot": "دستکش",
     "class_name": "تفنگدار",
     "rarity": "اسطوره‌ای",
@@ -212,11 +236,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "ریشه‌گاهِ واپسین؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_0_6_0",
-    "name": "خاکستر ساق‌پوش آغازین • تفنگدار",
+    "name": "ساق‌بندِ اخگرِ خاموش؛ خوابِ اژدها ـ 013",
     "slot": "ساق‌پوش",
     "class_name": "تفنگدار",
     "rarity": "معمولی",
@@ -229,11 +255,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "اخگرِ خاموش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_0_6_1",
-    "name": "خار ساق‌پوش پایدار • تفنگدار",
+    "name": "رازآلودِ ساق‌بندِ خارستانِ سوگند؛ خشمِ کهن ـ 014",
     "slot": "ساق‌پوش",
     "class_name": "تفنگدار",
     "rarity": "کمیاب",
@@ -246,11 +274,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "خارستانِ سوگند؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_0_7_0",
-    "name": "سنگستر بازوبند آغازین • تفنگدار",
+    "name": "آذرنشانِ بازوبندِ سنگسترِ کبود؛ نفرینِ جاودان ـ 015",
     "slot": "بازوبند",
     "class_name": "تفنگدار",
     "rarity": "غیرمعمول",
@@ -263,11 +293,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "سنگسترِ کبود؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_0_7_1",
-    "name": "ورداش بازوبند پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ بازوبندِ موجِ ورداش؛ نفسِ خاکستر ـ 016",
     "slot": "بازوبند",
     "class_name": "تفنگدار",
     "rarity": "افسانه‌ای",
@@ -281,11 +313,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "موجِ ورداش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_0_8_0",
-    "name": "جنوبی حلقه ۱ آغازین • تفنگدار",
+    "name": "حماسه‌زادِ انگشترِ آفتابِ مدفون؛ پیمانِ آذرین ـ 017",
     "slot": "حلقه ۱",
     "class_name": "تفنگدار",
     "rarity": "حماسی",
@@ -299,11 +333,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "آفتابِ مدفون؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_0_8_1",
-    "name": "ریشه‌پوش حلقه ۱ پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ انگشترِ ریشه‌گاهِ واپسین؛ سرودِ واپسین ـ 018",
     "slot": "حلقه ۱",
     "class_name": "تفنگدار",
     "rarity": "افسانه‌ای",
@@ -317,11 +353,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "ریشه‌گاهِ واپسین؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_0_9_0",
-    "name": "خاکستر حلقه ۲ آغازین • تفنگدار",
+    "name": "آذرنشانِ خاتمِ اخگرِ خاموش؛ آتشِ بی‌نام ـ 019",
     "slot": "حلقه ۲",
     "class_name": "تفنگدار",
     "rarity": "غیرمعمول",
@@ -335,11 +373,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "اخگرِ خاموش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_0_9_1",
-    "name": "خار حلقه ۲ پایدار • تفنگدار",
+    "name": "رازآلودِ خاتمِ خارستانِ سوگند؛ میراثِ بی‌غروب ـ 020",
     "slot": "حلقه ۲",
     "class_name": "تفنگدار",
     "rarity": "کمیاب",
@@ -353,11 +393,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "خارستانِ سوگند؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_0_10_0",
-    "name": "سنگستر گردنبند آغازین • تفنگدار",
+    "name": "آذرنشانِ گردن‌آویزِ سنگسترِ کبود؛ وارثِ توفان ـ 021",
     "slot": "گردنبند",
     "class_name": "تفنگدار",
     "rarity": "غیرمعمول",
@@ -371,11 +413,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "سنگسترِ کبود؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_0_10_1",
-    "name": "ورداش گردنبند پایدار • تفنگدار",
+    "name": "افسانه‌نشانِ گردن‌آویزِ موجِ ورداش؛ رازِ هزارساله ـ 022",
     "slot": "گردنبند",
     "class_name": "تفنگدار",
     "rarity": "افسانه‌ای",
@@ -389,11 +433,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "موجِ ورداش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_0_11_0",
-    "name": "جنوبی شنل آغازین • تفنگدار",
+    "name": "افسانه‌نشانِ شنلِ آفتابِ مدفون؛ نشانِ تقدیر ـ 023",
     "slot": "شنل",
     "class_name": "تفنگدار",
     "rarity": "افسانه‌ای",
@@ -407,11 +453,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "آفتابِ مدفون؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_0_11_1",
-    "name": "ریشه‌پوش شنل پایدار • تفنگدار",
+    "name": "اسطوره‌زادِ شنلِ ریشه‌گاهِ واپسین؛ خونِ ستارگان ـ 024",
     "slot": "شنل",
     "class_name": "تفنگدار",
     "rarity": "اسطوره‌ای",
@@ -425,11 +473,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "ریشه‌گاهِ واپسین؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_0_12_0",
-    "name": "خاکستر نشان آغازین • تفنگدار",
+    "name": "نشان جنگیِ اخگرِ خاموش؛ طلسمِ سپهر ـ 025",
     "slot": "نشان",
     "class_name": "تفنگدار",
     "rarity": "معمولی",
@@ -443,11 +493,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "اخگرِ خاموش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_0_12_1",
-    "name": "خار نشان پایدار • تفنگدار",
+    "name": "رازآلودِ نشان جنگیِ خارستانِ سوگند؛ تاجِ فروزان ـ 026",
     "slot": "نشان",
     "class_name": "تفنگدار",
     "rarity": "کمیاب",
@@ -461,11 +513,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "خارستانِ سوگند؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_1_0_0",
-    "name": "خار سلاح اصلی آغازین • راهب",
+    "name": "آذرنشانِ چوب‌دستی رزمیِ خارستانِ سوگند؛ نفسِ خاکستر ـ 027",
     "slot": "سلاح اصلی",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -476,15 +530,18 @@
       "endurance": 1,
       "hp": 8,
       "mp": 8,
-      "power": 1
+      "power": 1,
+      "speed": 2
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "چوب‌دستی رزمی",
+    "description_fa": "خارستانِ سوگند؛ چوب‌دستی رزمی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_0_1",
-    "name": "سنگستر سلاح اصلی پایدار • راهب",
+    "name": "آذرنشانِ چوب‌دستی رزمیِ سنگسترِ کبود؛ پیمانِ آذرین ـ 028",
     "slot": "سلاح اصلی",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -495,15 +552,18 @@
       "intellect": 1,
       "hp": 8,
       "mp": 8,
-      "power": 1
+      "power": 1,
+      "speed": 2
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "چوب‌دستی رزمی",
+    "description_fa": "سنگسترِ کبود؛ چوب‌دستی رزمی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_1_0",
-    "name": "ورداش سلاح دوم آغازین • راهب",
+    "name": "حماسه‌زادِ چوب‌دستی کوتاهِ موجِ ورداش؛ سرودِ واپسین ـ 029",
     "slot": "سلاح دوم",
     "class_name": "راهب",
     "rarity": "حماسی",
@@ -514,15 +574,18 @@
       "intellect": 2,
       "hp": 14,
       "mp": 14,
-      "power": 1
+      "power": 1,
+      "speed": 4
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "چوب‌دستی کوتاه",
+    "description_fa": "موجِ ورداش؛ چوب‌دستی کوتاه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_1_1_1",
-    "name": "جنوبی سلاح دوم پایدار • راهب",
+    "name": "حماسه‌زادِ چوب‌دستی کوتاهِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 030",
     "slot": "سلاح دوم",
     "class_name": "راهب",
     "rarity": "حماسی",
@@ -533,15 +596,18 @@
       "perception": 2,
       "hp": 14,
       "mp": 14,
-      "power": 1
+      "power": 1,
+      "speed": 4
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "چوب‌دستی کوتاه",
+    "description_fa": "آفتابِ مدفون؛ چوب‌دستی کوتاه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_1_2_0",
-    "name": "ریشه‌پوش زره آغازین • راهب",
+    "name": "اسطوره‌زادِ زره سینهِ ریشه‌گاهِ واپسین؛ میراثِ بی‌غروب ـ 031",
     "slot": "زره",
     "class_name": "راهب",
     "rarity": "اسطوره‌ای",
@@ -555,11 +621,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "ریشه‌گاهِ واپسین؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_1_2_1",
-    "name": "خاکستر زره پایدار • راهب",
+    "name": "آذرنشانِ زره سینهِ اخگرِ خاموش؛ وارثِ توفان ـ 032",
     "slot": "زره",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -573,11 +641,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "اخگرِ خاموش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_3_0",
-    "name": "خار کلاه آغازین • راهب",
+    "name": "آذرنشانِ کلاه‌خودِ خارستانِ سوگند؛ رازِ هزارساله ـ 033",
     "slot": "کلاه",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -591,11 +661,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "خارستانِ سوگند؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_3_1",
-    "name": "سنگستر کلاه پایدار • راهب",
+    "name": "آذرنشانِ کلاه‌خودِ سنگسترِ کبود؛ نشانِ تقدیر ـ 034",
     "slot": "کلاه",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -608,11 +680,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "سنگسترِ کبود؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_4_0",
-    "name": "ورداش چکمه آغازین • راهب",
+    "name": "حماسه‌زادِ پوتینِ موجِ ورداش؛ خونِ ستارگان ـ 035",
     "slot": "چکمه",
     "class_name": "راهب",
     "rarity": "حماسی",
@@ -621,15 +695,18 @@
     "stats": {
       "faith": 9,
       "hp": 19,
-      "mp": 19
+      "mp": 19,
+      "speed": 8
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "موجِ ورداش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_1_4_1",
-    "name": "جنوبی چکمه پایدار • راهب",
+    "name": "افسانه‌نشانِ پوتینِ آفتابِ مدفون؛ طلسمِ سپهر ـ 036",
     "slot": "چکمه",
     "class_name": "راهب",
     "rarity": "افسانه‌ای",
@@ -638,15 +715,18 @@
     "stats": {
       "faith": 10,
       "hp": 32,
-      "mp": 27
+      "mp": 27,
+      "speed": 10
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "آفتابِ مدفون؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_1_5_0",
-    "name": "ریشه‌پوش دستکش آغازین • راهب",
+    "name": "افسانه‌نشانِ دستکشِ ریشه‌گاهِ واپسین؛ تاجِ فروزان ـ 037",
     "slot": "دستکش",
     "class_name": "راهب",
     "rarity": "افسانه‌ای",
@@ -659,11 +739,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "ریشه‌گاهِ واپسین؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_1_5_1",
-    "name": "خاکستر دستکش پایدار • راهب",
+    "name": "دستکشِ اخگرِ خاموش؛ سوگندِ سپیده ـ 038",
     "slot": "دستکش",
     "class_name": "راهب",
     "rarity": "معمولی",
@@ -676,11 +758,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "اخگرِ خاموش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_1_6_0",
-    "name": "خار ساق‌پوش آغازین • راهب",
+    "name": "آذرنشانِ ساق‌بندِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 039",
     "slot": "ساق‌پوش",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -693,11 +777,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "خارستانِ سوگند؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_6_1",
-    "name": "سنگستر ساق‌پوش پایدار • راهب",
+    "name": "آذرنشانِ ساق‌بندِ سنگسترِ کبود؛ یادگارِ نخستین ـ 040",
     "slot": "ساق‌پوش",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -711,11 +797,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "سنگسترِ کبود؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_7_0",
-    "name": "ورداش بازوبند آغازین • راهب",
+    "name": "حماسه‌زادِ بازوبندِ موجِ ورداش؛ پناهِ سپیده ـ 041",
     "slot": "بازوبند",
     "class_name": "راهب",
     "rarity": "حماسی",
@@ -729,11 +817,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "موجِ ورداش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_1_7_1",
-    "name": "جنوبی بازوبند پایدار • راهب",
+    "name": "حماسه‌زادِ بازوبندِ آفتابِ مدفون؛ آوازِ ژرفا ـ 042",
     "slot": "بازوبند",
     "class_name": "راهب",
     "rarity": "حماسی",
@@ -747,11 +837,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "آفتابِ مدفون؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_1_8_0",
-    "name": "ریشه‌پوش حلقه ۱ آغازین • راهب",
+    "name": "اسطوره‌زادِ انگشترِ ریشه‌گاهِ واپسین؛ اشکِ ماه‌سنگ ـ 043",
     "slot": "حلقه ۱",
     "class_name": "راهب",
     "rarity": "اسطوره‌ای",
@@ -765,11 +857,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "ریشه‌گاهِ واپسین؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_1_8_1",
-    "name": "خاکستر حلقه ۱ پایدار • راهب",
+    "name": "آذرنشانِ انگشترِ اخگرِ خاموش؛ شکوهِ بی‌مرز ـ 044",
     "slot": "حلقه ۱",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -783,11 +877,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "اخگرِ خاموش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_9_0",
-    "name": "خار حلقه ۲ آغازین • راهب",
+    "name": "آذرنشانِ خاتمِ خارستانِ سوگند؛ پیکرِ ابدی ـ 045",
     "slot": "حلقه ۲",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -801,11 +897,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "خارستانِ سوگند؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_9_1",
-    "name": "سنگستر حلقه ۲ پایدار • راهب",
+    "name": "آذرنشانِ خاتمِ سنگسترِ کبود؛ مهرِ هفت‌پرده ـ 046",
     "slot": "حلقه ۲",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -819,11 +917,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "سنگسترِ کبود؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_10_0",
-    "name": "ورداش گردنبند آغازین • راهب",
+    "name": "حماسه‌زادِ گردن‌آویزِ موجِ ورداش؛ نگینِ فراموشی ـ 047",
     "slot": "گردنبند",
     "class_name": "راهب",
     "rarity": "حماسی",
@@ -837,11 +937,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "موجِ ورداش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_1_10_1",
-    "name": "جنوبی گردنبند پایدار • راهب",
+    "name": "افسانه‌نشانِ گردن‌آویزِ آفتابِ مدفون؛ قلبِ جهان ـ 048",
     "slot": "گردنبند",
     "class_name": "راهب",
     "rarity": "افسانه‌ای",
@@ -855,11 +957,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "آفتابِ مدفون؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_1_11_0",
-    "name": "ریشه‌پوش شنل آغازین • راهب",
+    "name": "افسانه‌نشانِ شنلِ ریشه‌گاهِ واپسین؛ چشمِ بیدار ـ 049",
     "slot": "شنل",
     "class_name": "راهب",
     "rarity": "افسانه‌ای",
@@ -873,11 +977,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "ریشه‌گاهِ واپسین؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_1_11_1",
-    "name": "خاکستر شنل پایدار • راهب",
+    "name": "شنلِ اخگرِ خاموش؛ خوابِ اژدها ـ 050",
     "slot": "شنل",
     "class_name": "راهب",
     "rarity": "معمولی",
@@ -890,11 +996,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "اخگرِ خاموش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_1_12_0",
-    "name": "خار نشان آغازین • راهب",
+    "name": "آذرنشانِ نشان جنگیِ خارستانِ سوگند؛ خشمِ کهن ـ 051",
     "slot": "نشان",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -907,11 +1015,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "خارستانِ سوگند؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_1_12_1",
-    "name": "سنگستر نشان پایدار • راهب",
+    "name": "آذرنشانِ نشان جنگیِ سنگسترِ کبود؛ نفرینِ جاودان ـ 052",
     "slot": "نشان",
     "class_name": "راهب",
     "rarity": "غیرمعمول",
@@ -924,11 +1034,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "سنگسترِ کبود؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_2_0_0",
-    "name": "سنگستر سلاح اصلی آغازین • جنگجو",
+    "name": "حماسه‌زادِ شمشیرِ سنگسترِ کبود؛ آوازِ ژرفا ـ 053",
     "slot": "سلاح اصلی",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -942,11 +1054,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شمشیر",
+    "description_fa": "سنگسترِ کبود؛ شمشیر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_0_1",
-    "name": "ورداش سلاح اصلی پایدار • جنگجو",
+    "name": "حماسه‌زادِ شمشیرِ موجِ ورداش؛ اشکِ ماه‌سنگ ـ 054",
     "slot": "سلاح اصلی",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -960,11 +1074,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شمشیر",
+    "description_fa": "موجِ ورداش؛ شمشیر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_1_0",
-    "name": "جنوبی سلاح دوم آغازین • جنگجو",
+    "name": "افسانه‌نشانِ شمشیر بزرگِ آفتابِ مدفون؛ شکوهِ بی‌مرز ـ 055",
     "slot": "سلاح دوم",
     "class_name": "جنگجو",
     "rarity": "افسانه‌ای",
@@ -978,11 +1094,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شمشیر بزرگ",
+    "description_fa": "آفتابِ مدفون؛ شمشیر بزرگ ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_2_1_1",
-    "name": "ریشه‌پوش سلاح دوم پایدار • جنگجو",
+    "name": "اسطوره‌زادِ شمشیر بزرگِ ریشه‌گاهِ واپسین؛ پیکرِ ابدی ـ 056",
     "slot": "سلاح دوم",
     "class_name": "جنگجو",
     "rarity": "اسطوره‌ای",
@@ -996,11 +1114,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شمشیر بزرگ",
+    "description_fa": "ریشه‌گاهِ واپسین؛ شمشیر بزرگ ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_2_2_0",
-    "name": "خاکستر زره آغازین • جنگجو",
+    "name": "زره سینهِ اخگرِ خاموش؛ مهرِ هفت‌پرده ـ 057",
     "slot": "زره",
     "class_name": "جنگجو",
     "rarity": "معمولی",
@@ -1014,11 +1134,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "اخگرِ خاموش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_2_2_1",
-    "name": "خار زره پایدار • جنگجو",
+    "name": "آذرنشانِ زره سینهِ خارستانِ سوگند؛ نگینِ فراموشی ـ 058",
     "slot": "زره",
     "class_name": "جنگجو",
     "rarity": "غیرمعمول",
@@ -1032,11 +1154,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "خارستانِ سوگند؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_2_3_0",
-    "name": "سنگستر کلاه آغازین • جنگجو",
+    "name": "حماسه‌زادِ کلاه‌خودِ سنگسترِ کبود؛ قلبِ جهان ـ 059",
     "slot": "کلاه",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1050,11 +1174,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "سنگسترِ کبود؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_3_1",
-    "name": "ورداش کلاه پایدار • جنگجو",
+    "name": "حماسه‌زادِ کلاه‌خودِ موجِ ورداش؛ چشمِ بیدار ـ 060",
     "slot": "کلاه",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1067,11 +1193,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "موجِ ورداش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_4_0",
-    "name": "جنوبی چکمه آغازین • جنگجو",
+    "name": "حماسه‌زادِ پوتینِ آفتابِ مدفون؛ خوابِ اژدها ـ 061",
     "slot": "چکمه",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1080,15 +1208,18 @@
     "stats": {
       "power": 6,
       "hp": 22,
-      "mp": 19
+      "mp": 19,
+      "speed": 8
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "آفتابِ مدفون؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_4_1",
-    "name": "ریشه‌پوش چکمه پایدار • جنگجو",
+    "name": "افسانه‌نشانِ پوتینِ ریشه‌گاهِ واپسین؛ خشمِ کهن ـ 062",
     "slot": "چکمه",
     "class_name": "جنگجو",
     "rarity": "افسانه‌ای",
@@ -1097,15 +1228,18 @@
     "stats": {
       "power": 10,
       "mp": 32,
-      "hp": 27
+      "hp": 27,
+      "speed": 10
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "ریشه‌گاهِ واپسین؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_2_5_0",
-    "name": "خاکستر دستکش آغازین • جنگجو",
+    "name": "آذرنشانِ دستکشِ اخگرِ خاموش؛ نفرینِ جاودان ـ 063",
     "slot": "دستکش",
     "class_name": "جنگجو",
     "rarity": "غیرمعمول",
@@ -1118,11 +1252,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "اخگرِ خاموش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_2_5_1",
-    "name": "خار دستکش پایدار • جنگجو",
+    "name": "آذرنشانِ دستکشِ خارستانِ سوگند؛ نفسِ خاکستر ـ 064",
     "slot": "دستکش",
     "class_name": "جنگجو",
     "rarity": "غیرمعمول",
@@ -1136,11 +1272,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "خارستانِ سوگند؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_2_6_0",
-    "name": "سنگستر ساق‌پوش آغازین • جنگجو",
+    "name": "حماسه‌زادِ ساق‌بندِ سنگسترِ کبود؛ پیمانِ آذرین ـ 065",
     "slot": "ساق‌پوش",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1154,11 +1292,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "سنگسترِ کبود؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_6_1",
-    "name": "ورداش ساق‌پوش پایدار • جنگجو",
+    "name": "حماسه‌زادِ ساق‌بندِ موجِ ورداش؛ سرودِ واپسین ـ 066",
     "slot": "ساق‌پوش",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1172,11 +1312,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "موجِ ورداش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_7_0",
-    "name": "جنوبی بازوبند آغازین • جنگجو",
+    "name": "افسانه‌نشانِ بازوبندِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 067",
     "slot": "بازوبند",
     "class_name": "جنگجو",
     "rarity": "افسانه‌ای",
@@ -1190,11 +1332,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "آفتابِ مدفون؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_2_7_1",
-    "name": "ریشه‌پوش بازوبند پایدار • جنگجو",
+    "name": "اسطوره‌زادِ بازوبندِ ریشه‌گاهِ واپسین؛ میراثِ بی‌غروب ـ 068",
     "slot": "بازوبند",
     "class_name": "جنگجو",
     "rarity": "اسطوره‌ای",
@@ -1208,11 +1352,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "ریشه‌گاهِ واپسین؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_2_8_0",
-    "name": "خاکستر حلقه ۱ آغازین • جنگجو",
+    "name": "انگشترِ اخگرِ خاموش؛ وارثِ توفان ـ 069",
     "slot": "حلقه ۱",
     "class_name": "جنگجو",
     "rarity": "معمولی",
@@ -1226,11 +1372,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "اخگرِ خاموش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_2_8_1",
-    "name": "خار حلقه ۱ پایدار • جنگجو",
+    "name": "آذرنشانِ انگشترِ خارستانِ سوگند؛ رازِ هزارساله ـ 070",
     "slot": "حلقه ۱",
     "class_name": "جنگجو",
     "rarity": "غیرمعمول",
@@ -1244,11 +1392,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "خارستانِ سوگند؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_2_9_0",
-    "name": "سنگستر حلقه ۲ آغازین • جنگجو",
+    "name": "حماسه‌زادِ خاتمِ سنگسترِ کبود؛ نشانِ تقدیر ـ 071",
     "slot": "حلقه ۲",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1262,11 +1412,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "سنگسترِ کبود؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_9_1",
-    "name": "ورداش حلقه ۲ پایدار • جنگجو",
+    "name": "حماسه‌زادِ خاتمِ موجِ ورداش؛ خونِ ستارگان ـ 072",
     "slot": "حلقه ۲",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1280,11 +1432,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "موجِ ورداش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_10_0",
-    "name": "جنوبی گردنبند آغازین • جنگجو",
+    "name": "حماسه‌زادِ گردن‌آویزِ آفتابِ مدفون؛ طلسمِ سپهر ـ 073",
     "slot": "گردنبند",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1298,11 +1452,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "آفتابِ مدفون؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_10_1",
-    "name": "ریشه‌پوش گردنبند پایدار • جنگجو",
+    "name": "افسانه‌نشانِ گردن‌آویزِ ریشه‌گاهِ واپسین؛ تاجِ فروزان ـ 074",
     "slot": "گردنبند",
     "class_name": "جنگجو",
     "rarity": "افسانه‌ای",
@@ -1316,11 +1472,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "ریشه‌گاهِ واپسین؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_2_11_0",
-    "name": "خاکستر شنل آغازین • جنگجو",
+    "name": "آذرنشانِ شنلِ اخگرِ خاموش؛ سوگندِ سپیده ـ 075",
     "slot": "شنل",
     "class_name": "جنگجو",
     "rarity": "غیرمعمول",
@@ -1334,11 +1492,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "اخگرِ خاموش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_2_11_1",
-    "name": "خار شنل پایدار • جنگجو",
+    "name": "آذرنشانِ شنلِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 076",
     "slot": "شنل",
     "class_name": "جنگجو",
     "rarity": "غیرمعمول",
@@ -1351,11 +1511,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "خارستانِ سوگند؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_2_12_0",
-    "name": "سنگستر نشان آغازین • جنگجو",
+    "name": "حماسه‌زادِ نشان جنگیِ سنگسترِ کبود؛ یادگارِ نخستین ـ 077",
     "slot": "نشان",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1368,11 +1530,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "سنگسترِ کبود؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_2_12_1",
-    "name": "ورداش نشان پایدار • جنگجو",
+    "name": "حماسه‌زادِ نشان جنگیِ موجِ ورداش؛ پناهِ سپیده ـ 078",
     "slot": "نشان",
     "class_name": "جنگجو",
     "rarity": "حماسی",
@@ -1385,11 +1549,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "موجِ ورداش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_3_0_0",
-    "name": "ورداش سلاح اصلی آغازین • جادوگر",
+    "name": "رازآلودِ عصای جادوِ موجِ ورداش؛ میراثِ بی‌غروب ـ 079",
     "slot": "سلاح اصلی",
     "class_name": "جادوگر",
     "rarity": "کمیاب",
@@ -1404,11 +1570,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "عصای جادو",
+    "description_fa": "موجِ ورداش؛ عصای جادو ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_3_0_1",
-    "name": "جنوبی سلاح اصلی پایدار • جادوگر",
+    "name": "افسانه‌نشانِ عصای جادوِ آفتابِ مدفون؛ وارثِ توفان ـ 080",
     "slot": "سلاح اصلی",
     "class_name": "جادوگر",
     "rarity": "افسانه‌ای",
@@ -1423,11 +1591,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "عصای جادو",
+    "description_fa": "آفتابِ مدفون؛ عصای جادو ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_3_1_0",
-    "name": "ریشه‌پوش سلاح دوم آغازین • جادوگر",
+    "name": "افسانه‌نشانِ کتاب طلسمِ ریشه‌گاهِ واپسین؛ رازِ هزارساله ـ 081",
     "slot": "سلاح دوم",
     "class_name": "جادوگر",
     "rarity": "افسانه‌ای",
@@ -1442,11 +1612,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کتاب طلسم",
+    "description_fa": "ریشه‌گاهِ واپسین؛ کتاب طلسم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_3_1_1",
-    "name": "خاکستر سلاح دوم پایدار • جادوگر",
+    "name": "کتاب طلسمِ اخگرِ خاموش؛ نشانِ تقدیر ـ 082",
     "slot": "سلاح دوم",
     "class_name": "جادوگر",
     "rarity": "معمولی",
@@ -1461,11 +1633,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کتاب طلسم",
+    "description_fa": "اخگرِ خاموش؛ کتاب طلسم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_3_2_0",
-    "name": "خار زره آغازین • جادوگر",
+    "name": "زره سینهِ خارستانِ سوگند؛ خونِ ستارگان ـ 083",
     "slot": "زره",
     "class_name": "جادوگر",
     "rarity": "معمولی",
@@ -1479,11 +1653,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "خارستانِ سوگند؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_3_2_1",
-    "name": "سنگستر زره پایدار • جادوگر",
+    "name": "حماسه‌زادِ زره سینهِ سنگسترِ کبود؛ طلسمِ سپهر ـ 084",
     "slot": "زره",
     "class_name": "جادوگر",
     "rarity": "حماسی",
@@ -1496,11 +1672,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "سنگسترِ کبود؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_3_3_0",
-    "name": "ورداش کلاه آغازین • جادوگر",
+    "name": "رازآلودِ کلاه‌خودِ موجِ ورداش؛ تاجِ فروزان ـ 085",
     "slot": "کلاه",
     "class_name": "جادوگر",
     "rarity": "کمیاب",
@@ -1513,11 +1691,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "موجِ ورداش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_3_3_1",
-    "name": "جنوبی کلاه پایدار • جادوگر",
+    "name": "حماسه‌زادِ کلاه‌خودِ آفتابِ مدفون؛ سوگندِ سپیده ـ 086",
     "slot": "کلاه",
     "class_name": "جادوگر",
     "rarity": "حماسی",
@@ -1530,11 +1710,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "آفتابِ مدفون؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_3_4_0",
-    "name": "ریشه‌پوش چکمه آغازین • جادوگر",
+    "name": "اسطوره‌زادِ پوتینِ ریشه‌گاهِ واپسین؛ فرمانِ خاموشی ـ 087",
     "slot": "چکمه",
     "class_name": "جادوگر",
     "rarity": "اسطوره‌ای",
@@ -1543,15 +1725,18 @@
     "stats": {
       "intellect": 12,
       "mp": 40,
-      "hp": 35
+      "hp": 35,
+      "speed": 12
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "ریشه‌گاهِ واپسین؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_3_4_1",
-    "name": "خاکستر چکمه پایدار • جادوگر",
+    "name": "آذرنشانِ پوتینِ اخگرِ خاموش؛ یادگارِ نخستین ـ 088",
     "slot": "چکمه",
     "class_name": "جادوگر",
     "rarity": "غیرمعمول",
@@ -1561,15 +1746,18 @@
       "intellect": 4,
       "vitality": 2,
       "hp": 11,
-      "mp": 11
+      "mp": 11,
+      "speed": 4
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "اخگرِ خاموش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_3_5_0",
-    "name": "خار دستکش آغازین • جادوگر",
+    "name": "دستکشِ خارستانِ سوگند؛ پناهِ سپیده ـ 089",
     "slot": "دستکش",
     "class_name": "جادوگر",
     "rarity": "معمولی",
@@ -1583,11 +1771,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "خارستانِ سوگند؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_3_5_1",
-    "name": "سنگستر دستکش پایدار • جادوگر",
+    "name": "حماسه‌زادِ دستکشِ سنگسترِ کبود؛ آوازِ ژرفا ـ 090",
     "slot": "دستکش",
     "class_name": "جادوگر",
     "rarity": "حماسی",
@@ -1601,11 +1791,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "سنگسترِ کبود؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_3_6_0",
-    "name": "ورداش ساق‌پوش آغازین • جادوگر",
+    "name": "رازآلودِ ساق‌بندِ موجِ ورداش؛ اشکِ ماه‌سنگ ـ 091",
     "slot": "ساق‌پوش",
     "class_name": "جادوگر",
     "rarity": "کمیاب",
@@ -1619,11 +1811,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "موجِ ورداش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_3_6_1",
-    "name": "جنوبی ساق‌پوش پایدار • جادوگر",
+    "name": "افسانه‌نشانِ ساق‌بندِ آفتابِ مدفون؛ شکوهِ بی‌مرز ـ 092",
     "slot": "ساق‌پوش",
     "class_name": "جادوگر",
     "rarity": "افسانه‌ای",
@@ -1636,11 +1830,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "آفتابِ مدفون؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_3_7_0",
-    "name": "ریشه‌پوش بازوبند آغازین • جادوگر",
+    "name": "افسانه‌نشانِ بازوبندِ ریشه‌گاهِ واپسین؛ پیکرِ ابدی ـ 093",
     "slot": "بازوبند",
     "class_name": "جادوگر",
     "rarity": "افسانه‌ای",
@@ -1653,11 +1849,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "ریشه‌گاهِ واپسین؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_3_7_1",
-    "name": "خاکستر بازوبند پایدار • جادوگر",
+    "name": "بازوبندِ اخگرِ خاموش؛ مهرِ هفت‌پرده ـ 094",
     "slot": "بازوبند",
     "class_name": "جادوگر",
     "rarity": "معمولی",
@@ -1671,11 +1869,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "اخگرِ خاموش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_3_8_0",
-    "name": "خار حلقه ۱ آغازین • جادوگر",
+    "name": "انگشترِ خارستانِ سوگند؛ نگینِ فراموشی ـ 095",
     "slot": "حلقه ۱",
     "class_name": "جادوگر",
     "rarity": "معمولی",
@@ -1689,11 +1889,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "خارستانِ سوگند؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_3_8_1",
-    "name": "سنگستر حلقه ۱ پایدار • جادوگر",
+    "name": "حماسه‌زادِ انگشترِ سنگسترِ کبود؛ قلبِ جهان ـ 096",
     "slot": "حلقه ۱",
     "class_name": "جادوگر",
     "rarity": "حماسی",
@@ -1707,11 +1909,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "سنگسترِ کبود؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_3_9_0",
-    "name": "ورداش حلقه ۲ آغازین • جادوگر",
+    "name": "رازآلودِ خاتمِ موجِ ورداش؛ چشمِ بیدار ـ 097",
     "slot": "حلقه ۲",
     "class_name": "جادوگر",
     "rarity": "کمیاب",
@@ -1725,11 +1929,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "موجِ ورداش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_3_9_1",
-    "name": "جنوبی حلقه ۲ پایدار • جادوگر",
+    "name": "حماسه‌زادِ خاتمِ آفتابِ مدفون؛ خوابِ اژدها ـ 098",
     "slot": "حلقه ۲",
     "class_name": "جادوگر",
     "rarity": "حماسی",
@@ -1743,11 +1949,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "آفتابِ مدفون؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_3_10_0",
-    "name": "ریشه‌پوش گردنبند آغازین • جادوگر",
+    "name": "اسطوره‌زادِ گردن‌آویزِ ریشه‌گاهِ واپسین؛ خشمِ کهن ـ 099",
     "slot": "گردنبند",
     "class_name": "جادوگر",
     "rarity": "اسطوره‌ای",
@@ -1761,11 +1969,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "ریشه‌گاهِ واپسین؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_3_10_1",
-    "name": "خاکستر گردنبند پایدار • جادوگر",
+    "name": "آذرنشانِ گردن‌آویزِ اخگرِ خاموش؛ نفرینِ جاودان ـ 100",
     "slot": "گردنبند",
     "class_name": "جادوگر",
     "rarity": "غیرمعمول",
@@ -1778,11 +1988,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "اخگرِ خاموش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_3_11_0",
-    "name": "خار شنل آغازین • جادوگر",
+    "name": "شنلِ خارستانِ سوگند؛ نفسِ خاکستر ـ 101",
     "slot": "شنل",
     "class_name": "جادوگر",
     "rarity": "معمولی",
@@ -1795,11 +2007,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "خارستانِ سوگند؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_3_11_1",
-    "name": "سنگستر شنل پایدار • جادوگر",
+    "name": "حماسه‌زادِ شنلِ سنگسترِ کبود؛ پیمانِ آذرین ـ 102",
     "slot": "شنل",
     "class_name": "جادوگر",
     "rarity": "حماسی",
@@ -1812,11 +2026,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "سنگسترِ کبود؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_3_12_0",
-    "name": "ورداش نشان آغازین • جادوگر",
+    "name": "رازآلودِ نشان جنگیِ موجِ ورداش؛ سرودِ واپسین ـ 103",
     "slot": "نشان",
     "class_name": "جادوگر",
     "rarity": "کمیاب",
@@ -1829,11 +2045,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "موجِ ورداش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_3_12_1",
-    "name": "جنوبی نشان پایدار • جادوگر",
+    "name": "افسانه‌نشانِ نشان جنگیِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 104",
     "slot": "نشان",
     "class_name": "جادوگر",
     "rarity": "افسانه‌ای",
@@ -1847,11 +2065,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "آفتابِ مدفون؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_4_0_0",
-    "name": "جنوبی سلاح اصلی آغازین • رنجر",
+    "name": "حماسه‌زادِ کمانِ آفتابِ مدفون؛ مهرِ هفت‌پرده ـ 105",
     "slot": "سلاح اصلی",
     "class_name": "رنجر",
     "rarity": "حماسی",
@@ -1862,15 +2082,18 @@
       "luck": 2,
       "hp": 14,
       "mp": 14,
-      "power": 1
+      "power": 1,
+      "speed": 4
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کمان",
+    "description_fa": "آفتابِ مدفون؛ کمان ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_4_0_1",
-    "name": "ریشه‌پوش سلاح اصلی پایدار • رنجر",
+    "name": "افسانه‌نشانِ کمانِ ریشه‌گاهِ واپسین؛ نگینِ فراموشی ـ 106",
     "slot": "سلاح اصلی",
     "class_name": "رنجر",
     "rarity": "افسانه‌ای",
@@ -1881,15 +2104,18 @@
       "faith": 3,
       "hp": 16,
       "mp": 16,
-      "power": 2
+      "power": 2,
+      "speed": 5
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کمان",
+    "description_fa": "ریشه‌گاهِ واپسین؛ کمان ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_4_1_0",
-    "name": "خاکستر سلاح دوم آغازین • رنجر",
+    "name": "آذرنشانِ خنجر شکارچیِ اخگرِ خاموش؛ قلبِ جهان ـ 107",
     "slot": "سلاح دوم",
     "class_name": "رنجر",
     "rarity": "غیرمعمول",
@@ -1900,15 +2126,18 @@
       "faith": 1,
       "hp": 8,
       "mp": 8,
-      "power": 1
+      "power": 1,
+      "speed": 2
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خنجر شکارچی",
+    "description_fa": "اخگرِ خاموش؛ خنجر شکارچی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_4_1_1",
-    "name": "خار سلاح دوم پایدار • رنجر",
+    "name": "خنجر شکارچیِ خارستانِ سوگند؛ چشمِ بیدار ـ 108",
     "slot": "سلاح دوم",
     "class_name": "رنجر",
     "rarity": "معمولی",
@@ -1918,15 +2147,18 @@
       "perception": 3,
       "hp": 6,
       "mp": 5,
-      "power": 1
+      "power": 1,
+      "speed": 1
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خنجر شکارچی",
+    "description_fa": "خارستانِ سوگند؛ خنجر شکارچی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_4_2_0",
-    "name": "سنگستر زره آغازین • رنجر",
+    "name": "رازآلودِ زره سینهِ سنگسترِ کبود؛ خوابِ اژدها ـ 109",
     "slot": "زره",
     "class_name": "رنجر",
     "rarity": "کمیاب",
@@ -1939,11 +2171,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "سنگسترِ کبود؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_4_2_1",
-    "name": "ورداش زره پایدار • رنجر",
+    "name": "رازآلودِ زره سینهِ موجِ ورداش؛ خشمِ کهن ـ 110",
     "slot": "زره",
     "class_name": "رنجر",
     "rarity": "کمیاب",
@@ -1956,11 +2190,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "موجِ ورداش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_4_3_0",
-    "name": "جنوبی کلاه آغازین • رنجر",
+    "name": "افسانه‌نشانِ کلاه‌خودِ آفتابِ مدفون؛ نفرینِ جاودان ـ 111",
     "slot": "کلاه",
     "class_name": "رنجر",
     "rarity": "افسانه‌ای",
@@ -1973,11 +2209,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "آفتابِ مدفون؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_4_3_1",
-    "name": "ریشه‌پوش کلاه پایدار • رنجر",
+    "name": "اسطوره‌زادِ کلاه‌خودِ ریشه‌گاهِ واپسین؛ نفسِ خاکستر ـ 112",
     "slot": "کلاه",
     "class_name": "رنجر",
     "rarity": "اسطوره‌ای",
@@ -1991,11 +2229,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "ریشه‌گاهِ واپسین؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_4_4_0",
-    "name": "خاکستر چکمه آغازین • رنجر",
+    "name": "پوتینِ اخگرِ خاموش؛ پیمانِ آذرین ـ 113",
     "slot": "چکمه",
     "class_name": "رنجر",
     "rarity": "معمولی",
@@ -2005,15 +2245,18 @@
       "perception": 3,
       "vitality": 1,
       "hp": 8,
-      "mp": 8
+      "mp": 8,
+      "speed": 2
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "اخگرِ خاموش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_4_4_1",
-    "name": "خار چکمه پایدار • رنجر",
+    "name": "پوتینِ خارستانِ سوگند؛ سرودِ واپسین ـ 114",
     "slot": "چکمه",
     "class_name": "رنجر",
     "rarity": "معمولی",
@@ -2023,15 +2266,18 @@
       "perception": 4,
       "endurance": 1,
       "hp": 8,
-      "mp": 8
+      "mp": 8,
+      "speed": 2
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "خارستانِ سوگند؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_4_5_0",
-    "name": "سنگستر دستکش آغازین • رنجر",
+    "name": "رازآلودِ دستکشِ سنگسترِ کبود؛ آتشِ بی‌نام ـ 115",
     "slot": "دستکش",
     "class_name": "رنجر",
     "rarity": "کمیاب",
@@ -2045,11 +2291,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "سنگسترِ کبود؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_4_5_1",
-    "name": "ورداش دستکش پایدار • رنجر",
+    "name": "رازآلودِ دستکشِ موجِ ورداش؛ میراثِ بی‌غروب ـ 116",
     "slot": "دستکش",
     "class_name": "رنجر",
     "rarity": "کمیاب",
@@ -2063,11 +2311,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "موجِ ورداش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_4_6_0",
-    "name": "جنوبی ساق‌پوش آغازین • رنجر",
+    "name": "حماسه‌زادِ ساق‌بندِ آفتابِ مدفون؛ وارثِ توفان ـ 117",
     "slot": "ساق‌پوش",
     "class_name": "رنجر",
     "rarity": "حماسی",
@@ -2081,11 +2331,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "آفتابِ مدفون؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_4_6_1",
-    "name": "ریشه‌پوش ساق‌پوش پایدار • رنجر",
+    "name": "افسانه‌نشانِ ساق‌بندِ ریشه‌گاهِ واپسین؛ رازِ هزارساله ـ 118",
     "slot": "ساق‌پوش",
     "class_name": "رنجر",
     "rarity": "افسانه‌ای",
@@ -2098,11 +2350,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "ریشه‌گاهِ واپسین؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_4_7_0",
-    "name": "خاکستر بازوبند آغازین • رنجر",
+    "name": "آذرنشانِ بازوبندِ اخگرِ خاموش؛ نشانِ تقدیر ـ 119",
     "slot": "بازوبند",
     "class_name": "رنجر",
     "rarity": "غیرمعمول",
@@ -2115,11 +2369,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "اخگرِ خاموش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_4_7_1",
-    "name": "خار بازوبند پایدار • رنجر",
+    "name": "بازوبندِ خارستانِ سوگند؛ خونِ ستارگان ـ 120",
     "slot": "بازوبند",
     "class_name": "رنجر",
     "rarity": "معمولی",
@@ -2133,11 +2389,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "خارستانِ سوگند؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_4_8_0",
-    "name": "سنگستر حلقه ۱ آغازین • رنجر",
+    "name": "رازآلودِ انگشترِ سنگسترِ کبود؛ طلسمِ سپهر ـ 121",
     "slot": "حلقه ۱",
     "class_name": "رنجر",
     "rarity": "کمیاب",
@@ -2151,11 +2409,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "سنگسترِ کبود؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_4_8_1",
-    "name": "ورداش حلقه ۱ پایدار • رنجر",
+    "name": "رازآلودِ انگشترِ موجِ ورداش؛ تاجِ فروزان ـ 122",
     "slot": "حلقه ۱",
     "class_name": "رنجر",
     "rarity": "کمیاب",
@@ -2169,11 +2429,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "موجِ ورداش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_4_9_0",
-    "name": "جنوبی حلقه ۲ آغازین • رنجر",
+    "name": "افسانه‌نشانِ خاتمِ آفتابِ مدفون؛ سوگندِ سپیده ـ 123",
     "slot": "حلقه ۲",
     "class_name": "رنجر",
     "rarity": "افسانه‌ای",
@@ -2187,11 +2449,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "آفتابِ مدفون؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_4_9_1",
-    "name": "ریشه‌پوش حلقه ۲ پایدار • رنجر",
+    "name": "اسطوره‌زادِ خاتمِ ریشه‌گاهِ واپسین؛ فرمانِ خاموشی ـ 124",
     "slot": "حلقه ۲",
     "class_name": "رنجر",
     "rarity": "اسطوره‌ای",
@@ -2204,11 +2468,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "ریشه‌گاهِ واپسین؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_4_10_0",
-    "name": "خاکستر گردنبند آغازین • رنجر",
+    "name": "گردن‌آویزِ اخگرِ خاموش؛ یادگارِ نخستین ـ 125",
     "slot": "گردنبند",
     "class_name": "رنجر",
     "rarity": "معمولی",
@@ -2221,11 +2487,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "اخگرِ خاموش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_4_10_1",
-    "name": "خار گردنبند پایدار • رنجر",
+    "name": "گردن‌آویزِ خارستانِ سوگند؛ پناهِ سپیده ـ 126",
     "slot": "گردنبند",
     "class_name": "رنجر",
     "rarity": "معمولی",
@@ -2238,11 +2506,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "خارستانِ سوگند؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_4_11_0",
-    "name": "سنگستر شنل آغازین • رنجر",
+    "name": "رازآلودِ شنلِ سنگسترِ کبود؛ آوازِ ژرفا ـ 127",
     "slot": "شنل",
     "class_name": "رنجر",
     "rarity": "کمیاب",
@@ -2255,11 +2525,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "سنگسترِ کبود؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_4_11_1",
-    "name": "ورداش شنل پایدار • رنجر",
+    "name": "رازآلودِ شنلِ موجِ ورداش؛ اشکِ ماه‌سنگ ـ 128",
     "slot": "شنل",
     "class_name": "رنجر",
     "rarity": "کمیاب",
@@ -2273,11 +2545,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "موجِ ورداش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_4_12_0",
-    "name": "جنوبی نشان آغازین • رنجر",
+    "name": "حماسه‌زادِ نشان جنگیِ آفتابِ مدفون؛ شکوهِ بی‌مرز ـ 129",
     "slot": "نشان",
     "class_name": "رنجر",
     "rarity": "حماسی",
@@ -2291,11 +2565,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "آفتابِ مدفون؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_4_12_1",
-    "name": "ریشه‌پوش نشان پایدار • رنجر",
+    "name": "افسانه‌نشانِ نشان جنگیِ ریشه‌گاهِ واپسین؛ پیکرِ ابدی ـ 130",
     "slot": "نشان",
     "class_name": "رنجر",
     "rarity": "افسانه‌ای",
@@ -2309,11 +2585,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "ریشه‌گاهِ واپسین؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_5_0_0",
-    "name": "ریشه‌پوش سلاح اصلی آغازین • آدمکش",
+    "name": "اسطوره‌زادِ خنجرِ ریشه‌گاهِ واپسین؛ خونِ ستارگان ـ 131",
     "slot": "سلاح اصلی",
     "class_name": "آدمکش",
     "rarity": "اسطوره‌ای",
@@ -2323,15 +2601,18 @@
       "power": 9,
       "faith": 4,
       "hp": 22,
-      "mp": 22
+      "mp": 22,
+      "speed": 6
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خنجر",
+    "description_fa": "ریشه‌گاهِ واپسین؛ خنجر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_5_0_1",
-    "name": "خاکستر سلاح اصلی پایدار • آدمکش",
+    "name": "آذرنشانِ خنجرِ اخگرِ خاموش؛ طلسمِ سپهر ـ 132",
     "slot": "سلاح اصلی",
     "class_name": "آدمکش",
     "rarity": "غیرمعمول",
@@ -2340,15 +2621,18 @@
     "stats": {
       "power": 4,
       "hp": 9,
-      "mp": 8
+      "mp": 8,
+      "speed": 2
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خنجر",
+    "description_fa": "اخگرِ خاموش؛ خنجر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_5_1_0",
-    "name": "خار سلاح دوم آغازین • آدمکش",
+    "name": "رازآلودِ تیغه دوقلوِ خارستانِ سوگند؛ تاجِ فروزان ـ 133",
     "slot": "سلاح دوم",
     "class_name": "آدمکش",
     "rarity": "کمیاب",
@@ -2357,15 +2641,18 @@
     "stats": {
       "power": 4,
       "hp": 13,
-      "mp": 11
+      "mp": 11,
+      "speed": 3
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "تیغه دوقلو",
+    "description_fa": "خارستانِ سوگند؛ تیغه دوقلو ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_5_1_1",
-    "name": "سنگستر سلاح دوم پایدار • آدمکش",
+    "name": "رازآلودِ تیغه دوقلوِ سنگسترِ کبود؛ سوگندِ سپیده ـ 134",
     "slot": "سلاح دوم",
     "class_name": "آدمکش",
     "rarity": "کمیاب",
@@ -2374,15 +2661,18 @@
     "stats": {
       "power": 5,
       "mp": 13,
-      "hp": 11
+      "hp": 11,
+      "speed": 3
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "تیغه دوقلو",
+    "description_fa": "سنگسترِ کبود؛ تیغه دوقلو ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_5_2_0",
-    "name": "ورداش زره آغازین • آدمکش",
+    "name": "افسانه‌نشانِ زره سینهِ موجِ ورداش؛ فرمانِ خاموشی ـ 135",
     "slot": "زره",
     "class_name": "آدمکش",
     "rarity": "افسانه‌ای",
@@ -2395,11 +2685,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "موجِ ورداش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_5_2_1",
-    "name": "جنوبی زره پایدار • آدمکش",
+    "name": "افسانه‌نشانِ زره سینهِ آفتابِ مدفون؛ یادگارِ نخستین ـ 136",
     "slot": "زره",
     "class_name": "آدمکش",
     "rarity": "افسانه‌ای",
@@ -2413,11 +2705,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "آفتابِ مدفون؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_5_3_0",
-    "name": "ریشه‌پوش کلاه آغازین • آدمکش",
+    "name": "افسانه‌نشانِ کلاه‌خودِ ریشه‌گاهِ واپسین؛ پناهِ سپیده ـ 137",
     "slot": "کلاه",
     "class_name": "آدمکش",
     "rarity": "افسانه‌ای",
@@ -2431,11 +2725,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "ریشه‌گاهِ واپسین؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_5_3_1",
-    "name": "خاکستر کلاه پایدار • آدمکش",
+    "name": "کلاه‌خودِ اخگرِ خاموش؛ آوازِ ژرفا ـ 138",
     "slot": "کلاه",
     "class_name": "آدمکش",
     "rarity": "معمولی",
@@ -2449,11 +2745,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "اخگرِ خاموش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_5_4_0",
-    "name": "خار چکمه آغازین • آدمکش",
+    "name": "رازآلودِ پوتینِ خارستانِ سوگند؛ اشکِ ماه‌سنگ ـ 139",
     "slot": "چکمه",
     "class_name": "آدمکش",
     "rarity": "کمیاب",
@@ -2463,15 +2761,18 @@
       "power": 4,
       "endurance": 2,
       "hp": 14,
-      "mp": 14
+      "mp": 14,
+      "speed": 6
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "خارستانِ سوگند؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_5_4_1",
-    "name": "سنگستر چکمه پایدار • آدمکش",
+    "name": "رازآلودِ پوتینِ سنگسترِ کبود؛ شکوهِ بی‌مرز ـ 140",
     "slot": "چکمه",
     "class_name": "آدمکش",
     "rarity": "کمیاب",
@@ -2481,15 +2782,18 @@
       "power": 5,
       "intellect": 2,
       "hp": 14,
-      "mp": 14
+      "mp": 14,
+      "speed": 6
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "سنگسترِ کبود؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_5_5_0",
-    "name": "ورداش دستکش آغازین • آدمکش",
+    "name": "افسانه‌نشانِ دستکشِ موجِ ورداش؛ پیکرِ ابدی ـ 141",
     "slot": "دستکش",
     "class_name": "آدمکش",
     "rarity": "افسانه‌ای",
@@ -2503,11 +2807,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "موجِ ورداش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_5_5_1",
-    "name": "جنوبی دستکش پایدار • آدمکش",
+    "name": "حماسه‌زادِ دستکشِ آفتابِ مدفون؛ مهرِ هفت‌پرده ـ 142",
     "slot": "دستکش",
     "class_name": "آدمکش",
     "rarity": "حماسی",
@@ -2521,11 +2827,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "آفتابِ مدفون؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_5_6_0",
-    "name": "ریشه‌پوش ساق‌پوش آغازین • آدمکش",
+    "name": "اسطوره‌زادِ ساق‌بندِ ریشه‌گاهِ واپسین؛ نگینِ فراموشی ـ 143",
     "slot": "ساق‌پوش",
     "class_name": "آدمکش",
     "rarity": "اسطوره‌ای",
@@ -2539,11 +2847,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "ریشه‌گاهِ واپسین؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_5_6_1",
-    "name": "خاکستر ساق‌پوش پایدار • آدمکش",
+    "name": "آذرنشانِ ساق‌بندِ اخگرِ خاموش؛ قلبِ جهان ـ 144",
     "slot": "ساق‌پوش",
     "class_name": "آدمکش",
     "rarity": "غیرمعمول",
@@ -2557,11 +2867,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "اخگرِ خاموش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_5_7_0",
-    "name": "خار بازوبند آغازین • آدمکش",
+    "name": "رازآلودِ بازوبندِ خارستانِ سوگند؛ چشمِ بیدار ـ 145",
     "slot": "بازوبند",
     "class_name": "آدمکش",
     "rarity": "کمیاب",
@@ -2575,11 +2887,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "خارستانِ سوگند؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_5_7_1",
-    "name": "سنگستر بازوبند پایدار • آدمکش",
+    "name": "رازآلودِ بازوبندِ سنگسترِ کبود؛ خوابِ اژدها ـ 146",
     "slot": "بازوبند",
     "class_name": "آدمکش",
     "rarity": "کمیاب",
@@ -2593,11 +2907,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "سنگسترِ کبود؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_5_8_0",
-    "name": "ورداش حلقه ۱ آغازین • آدمکش",
+    "name": "افسانه‌نشانِ انگشترِ موجِ ورداش؛ خشمِ کهن ـ 147",
     "slot": "حلقه ۱",
     "class_name": "آدمکش",
     "rarity": "افسانه‌ای",
@@ -2611,11 +2927,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "موجِ ورداش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_5_8_1",
-    "name": "جنوبی حلقه ۱ پایدار • آدمکش",
+    "name": "افسانه‌نشانِ انگشترِ آفتابِ مدفون؛ نفرینِ جاودان ـ 148",
     "slot": "حلقه ۱",
     "class_name": "آدمکش",
     "rarity": "افسانه‌ای",
@@ -2628,11 +2946,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "آفتابِ مدفون؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_5_9_0",
-    "name": "ریشه‌پوش حلقه ۲ آغازین • آدمکش",
+    "name": "افسانه‌نشانِ خاتمِ ریشه‌گاهِ واپسین؛ نفسِ خاکستر ـ 149",
     "slot": "حلقه ۲",
     "class_name": "آدمکش",
     "rarity": "افسانه‌ای",
@@ -2645,11 +2965,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "ریشه‌گاهِ واپسین؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_5_9_1",
-    "name": "خاکستر حلقه ۲ پایدار • آدمکش",
+    "name": "خاتمِ اخگرِ خاموش؛ پیمانِ آذرین ـ 150",
     "slot": "حلقه ۲",
     "class_name": "آدمکش",
     "rarity": "معمولی",
@@ -2662,11 +2984,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "اخگرِ خاموش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_5_10_0",
-    "name": "خار گردنبند آغازین • آدمکش",
+    "name": "رازآلودِ گردن‌آویزِ خارستانِ سوگند؛ سرودِ واپسین ـ 151",
     "slot": "گردنبند",
     "class_name": "آدمکش",
     "rarity": "کمیاب",
@@ -2679,11 +3003,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "خارستانِ سوگند؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_5_10_1",
-    "name": "سنگستر گردنبند پایدار • آدمکش",
+    "name": "رازآلودِ گردن‌آویزِ سنگسترِ کبود؛ آتشِ بی‌نام ـ 152",
     "slot": "گردنبند",
     "class_name": "آدمکش",
     "rarity": "کمیاب",
@@ -2697,11 +3023,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "سنگسترِ کبود؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_5_11_0",
-    "name": "ورداش شنل آغازین • آدمکش",
+    "name": "افسانه‌نشانِ شنلِ موجِ ورداش؛ میراثِ بی‌غروب ـ 153",
     "slot": "شنل",
     "class_name": "آدمکش",
     "rarity": "افسانه‌ای",
@@ -2715,11 +3043,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "موجِ ورداش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_5_11_1",
-    "name": "جنوبی شنل پایدار • آدمکش",
+    "name": "حماسه‌زادِ شنلِ آفتابِ مدفون؛ وارثِ توفان ـ 154",
     "slot": "شنل",
     "class_name": "آدمکش",
     "rarity": "حماسی",
@@ -2733,11 +3063,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "آفتابِ مدفون؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_5_12_0",
-    "name": "ریشه‌پوش نشان آغازین • آدمکش",
+    "name": "اسطوره‌زادِ نشان جنگیِ ریشه‌گاهِ واپسین؛ رازِ هزارساله ـ 155",
     "slot": "نشان",
     "class_name": "آدمکش",
     "rarity": "اسطوره‌ای",
@@ -2751,11 +3083,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "ریشه‌گاهِ واپسین؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_5_12_1",
-    "name": "خاکستر نشان پایدار • آدمکش",
+    "name": "آذرنشانِ نشان جنگیِ اخگرِ خاموش؛ نشانِ تقدیر ـ 156",
     "slot": "نشان",
     "class_name": "آدمکش",
     "rarity": "غیرمعمول",
@@ -2769,11 +3103,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "اخگرِ خاموش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_6_0_0",
-    "name": "خاکستر سلاح اصلی آغازین • کشیش",
+    "name": "عصای مقدسِ اخگرِ خاموش؛ خوابِ اژدها ـ 157",
     "slot": "سلاح اصلی",
     "class_name": "کشیش",
     "rarity": "معمولی",
@@ -2787,11 +3123,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "عصای مقدس",
+    "description_fa": "اخگرِ خاموش؛ عصای مقدس ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_6_0_1",
-    "name": "خار سلاح اصلی پایدار • کشیش",
+    "name": "رازآلودِ عصای مقدسِ خارستانِ سوگند؛ خشمِ کهن ـ 158",
     "slot": "سلاح اصلی",
     "class_name": "کشیش",
     "rarity": "کمیاب",
@@ -2805,11 +3143,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "عصای مقدس",
+    "description_fa": "خارستانِ سوگند؛ عصای مقدس ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_6_1_0",
-    "name": "سنگستر سلاح دوم آغازین • کشیش",
+    "name": "آذرنشانِ کتاب نیایشِ سنگسترِ کبود؛ نفرینِ جاودان ـ 159",
     "slot": "سلاح دوم",
     "class_name": "کشیش",
     "rarity": "غیرمعمول",
@@ -2823,11 +3163,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کتاب نیایش",
+    "description_fa": "سنگسترِ کبود؛ کتاب نیایش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_6_1_1",
-    "name": "ورداش سلاح دوم پایدار • کشیش",
+    "name": "افسانه‌نشانِ کتاب نیایشِ موجِ ورداش؛ نفسِ خاکستر ـ 160",
     "slot": "سلاح دوم",
     "class_name": "کشیش",
     "rarity": "افسانه‌ای",
@@ -2842,11 +3184,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کتاب نیایش",
+    "description_fa": "موجِ ورداش؛ کتاب نیایش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_6_2_0",
-    "name": "جنوبی زره آغازین • کشیش",
+    "name": "حماسه‌زادِ زره سینهِ آفتابِ مدفون؛ پیمانِ آذرین ـ 161",
     "slot": "زره",
     "class_name": "کشیش",
     "rarity": "حماسی",
@@ -2860,11 +3204,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "آفتابِ مدفون؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_6_2_1",
-    "name": "ریشه‌پوش زره پایدار • کشیش",
+    "name": "افسانه‌نشانِ زره سینهِ ریشه‌گاهِ واپسین؛ سرودِ واپسین ـ 162",
     "slot": "زره",
     "class_name": "کشیش",
     "rarity": "افسانه‌ای",
@@ -2878,11 +3224,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "ریشه‌گاهِ واپسین؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_6_3_0",
-    "name": "خاکستر کلاه آغازین • کشیش",
+    "name": "آذرنشانِ کلاه‌خودِ اخگرِ خاموش؛ آتشِ بی‌نام ـ 163",
     "slot": "کلاه",
     "class_name": "کشیش",
     "rarity": "غیرمعمول",
@@ -2896,11 +3244,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "اخگرِ خاموش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_6_3_1",
-    "name": "خار کلاه پایدار • کشیش",
+    "name": "رازآلودِ کلاه‌خودِ خارستانِ سوگند؛ میراثِ بی‌غروب ـ 164",
     "slot": "کلاه",
     "class_name": "کشیش",
     "rarity": "کمیاب",
@@ -2914,11 +3264,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "خارستانِ سوگند؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_6_4_0",
-    "name": "سنگستر چکمه آغازین • کشیش",
+    "name": "آذرنشانِ پوتینِ سنگسترِ کبود؛ وارثِ توفان ـ 165",
     "slot": "چکمه",
     "class_name": "کشیش",
     "rarity": "غیرمعمول",
@@ -2928,15 +3280,18 @@
       "faith": 4,
       "intellect": 2,
       "hp": 11,
-      "mp": 11
+      "mp": 11,
+      "speed": 4
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "سنگسترِ کبود؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_6_4_1",
-    "name": "ورداش چکمه پایدار • کشیش",
+    "name": "افسانه‌نشانِ پوتینِ موجِ ورداش؛ رازِ هزارساله ـ 166",
     "slot": "چکمه",
     "class_name": "کشیش",
     "rarity": "افسانه‌ای",
@@ -2946,15 +3301,18 @@
       "faith": 12,
       "perception": 4,
       "hp": 27,
-      "mp": 27
+      "mp": 27,
+      "speed": 10
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "موجِ ورداش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_6_5_0",
-    "name": "جنوبی دستکش آغازین • کشیش",
+    "name": "افسانه‌نشانِ دستکشِ آفتابِ مدفون؛ نشانِ تقدیر ـ 167",
     "slot": "دستکش",
     "class_name": "کشیش",
     "rarity": "افسانه‌ای",
@@ -2968,11 +3326,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "آفتابِ مدفون؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_6_5_1",
-    "name": "ریشه‌پوش دستکش پایدار • کشیش",
+    "name": "اسطوره‌زادِ دستکشِ ریشه‌گاهِ واپسین؛ خونِ ستارگان ـ 168",
     "slot": "دستکش",
     "class_name": "کشیش",
     "rarity": "اسطوره‌ای",
@@ -2986,11 +3346,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "ریشه‌گاهِ واپسین؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_6_6_0",
-    "name": "خاکستر ساق‌پوش آغازین • کشیش",
+    "name": "ساق‌بندِ اخگرِ خاموش؛ طلسمِ سپهر ـ 169",
     "slot": "ساق‌پوش",
     "class_name": "کشیش",
     "rarity": "معمولی",
@@ -3004,11 +3366,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "اخگرِ خاموش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_6_6_1",
-    "name": "خار ساق‌پوش پایدار • کشیش",
+    "name": "رازآلودِ ساق‌بندِ خارستانِ سوگند؛ تاجِ فروزان ـ 170",
     "slot": "ساق‌پوش",
     "class_name": "کشیش",
     "rarity": "کمیاب",
@@ -3021,11 +3385,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "خارستانِ سوگند؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_6_7_0",
-    "name": "سنگستر بازوبند آغازین • کشیش",
+    "name": "آذرنشانِ بازوبندِ سنگسترِ کبود؛ سوگندِ سپیده ـ 171",
     "slot": "بازوبند",
     "class_name": "کشیش",
     "rarity": "غیرمعمول",
@@ -3038,11 +3404,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "سنگسترِ کبود؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_6_7_1",
-    "name": "ورداش بازوبند پایدار • کشیش",
+    "name": "افسانه‌نشانِ بازوبندِ موجِ ورداش؛ فرمانِ خاموشی ـ 172",
     "slot": "بازوبند",
     "class_name": "کشیش",
     "rarity": "افسانه‌ای",
@@ -3055,11 +3423,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "موجِ ورداش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_6_8_0",
-    "name": "جنوبی حلقه ۱ آغازین • کشیش",
+    "name": "حماسه‌زادِ انگشترِ آفتابِ مدفون؛ یادگارِ نخستین ـ 173",
     "slot": "حلقه ۱",
     "class_name": "کشیش",
     "rarity": "حماسی",
@@ -3072,11 +3442,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "آفتابِ مدفون؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_6_8_1",
-    "name": "ریشه‌پوش حلقه ۱ پایدار • کشیش",
+    "name": "افسانه‌نشانِ انگشترِ ریشه‌گاهِ واپسین؛ پناهِ سپیده ـ 174",
     "slot": "حلقه ۱",
     "class_name": "کشیش",
     "rarity": "افسانه‌ای",
@@ -3089,11 +3461,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "ریشه‌گاهِ واپسین؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_6_9_0",
-    "name": "خاکستر حلقه ۲ آغازین • کشیش",
+    "name": "آذرنشانِ خاتمِ اخگرِ خاموش؛ آوازِ ژرفا ـ 175",
     "slot": "حلقه ۲",
     "class_name": "کشیش",
     "rarity": "غیرمعمول",
@@ -3106,11 +3480,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "اخگرِ خاموش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_6_9_1",
-    "name": "خار حلقه ۲ پایدار • کشیش",
+    "name": "رازآلودِ خاتمِ خارستانِ سوگند؛ اشکِ ماه‌سنگ ـ 176",
     "slot": "حلقه ۲",
     "class_name": "کشیش",
     "rarity": "کمیاب",
@@ -3124,11 +3500,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "خارستانِ سوگند؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_6_10_0",
-    "name": "سنگستر گردنبند آغازین • کشیش",
+    "name": "آذرنشانِ گردن‌آویزِ سنگسترِ کبود؛ شکوهِ بی‌مرز ـ 177",
     "slot": "گردنبند",
     "class_name": "کشیش",
     "rarity": "غیرمعمول",
@@ -3142,11 +3520,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "سنگسترِ کبود؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_6_10_1",
-    "name": "ورداش گردنبند پایدار • کشیش",
+    "name": "افسانه‌نشانِ گردن‌آویزِ موجِ ورداش؛ پیکرِ ابدی ـ 178",
     "slot": "گردنبند",
     "class_name": "کشیش",
     "rarity": "افسانه‌ای",
@@ -3160,11 +3540,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "موجِ ورداش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_6_11_0",
-    "name": "جنوبی شنل آغازین • کشیش",
+    "name": "افسانه‌نشانِ شنلِ آفتابِ مدفون؛ مهرِ هفت‌پرده ـ 179",
     "slot": "شنل",
     "class_name": "کشیش",
     "rarity": "افسانه‌ای",
@@ -3178,11 +3560,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "آفتابِ مدفون؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_6_11_1",
-    "name": "ریشه‌پوش شنل پایدار • کشیش",
+    "name": "اسطوره‌زادِ شنلِ ریشه‌گاهِ واپسین؛ نگینِ فراموشی ـ 180",
     "slot": "شنل",
     "class_name": "کشیش",
     "rarity": "اسطوره‌ای",
@@ -3196,11 +3580,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "ریشه‌گاهِ واپسین؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_6_12_0",
-    "name": "خاکستر نشان آغازین • کشیش",
+    "name": "نشان جنگیِ اخگرِ خاموش؛ قلبِ جهان ـ 181",
     "slot": "نشان",
     "class_name": "کشیش",
     "rarity": "معمولی",
@@ -3214,11 +3600,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "اخگرِ خاموش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_6_12_1",
-    "name": "خار نشان پایدار • کشیش",
+    "name": "رازآلودِ نشان جنگیِ خارستانِ سوگند؛ چشمِ بیدار ـ 182",
     "slot": "نشان",
     "class_name": "کشیش",
     "rarity": "کمیاب",
@@ -3232,11 +3620,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "خارستانِ سوگند؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_7_0_0",
-    "name": "خار سلاح اصلی آغازین • پالادین",
+    "name": "آذرنشانِ شمشیر مقدسِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 183",
     "slot": "سلاح اصلی",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3250,11 +3640,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شمشیر مقدس",
+    "description_fa": "خارستانِ سوگند؛ شمشیر مقدس ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_0_1",
-    "name": "سنگستر سلاح اصلی پایدار • پالادین",
+    "name": "آذرنشانِ شمشیر مقدسِ سنگسترِ کبود؛ یادگارِ نخستین ـ 184",
     "slot": "سلاح اصلی",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3269,11 +3661,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شمشیر مقدس",
+    "description_fa": "سنگسترِ کبود؛ شمشیر مقدس ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_1_0",
-    "name": "ورداش سلاح دوم آغازین • پالادین",
+    "name": "حماسه‌زادِ سپرِ موجِ ورداش؛ پناهِ سپیده ـ 185",
     "slot": "سلاح دوم",
     "class_name": "پالادین",
     "rarity": "حماسی",
@@ -3288,11 +3682,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "سپر",
+    "description_fa": "موجِ ورداش؛ سپر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_7_1_1",
-    "name": "جنوبی سلاح دوم پایدار • پالادین",
+    "name": "حماسه‌زادِ سپرِ آفتابِ مدفون؛ آوازِ ژرفا ـ 186",
     "slot": "سلاح دوم",
     "class_name": "پالادین",
     "rarity": "حماسی",
@@ -3307,11 +3703,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "سپر",
+    "description_fa": "آفتابِ مدفون؛ سپر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_7_2_0",
-    "name": "ریشه‌پوش زره آغازین • پالادین",
+    "name": "اسطوره‌زادِ زره سینهِ ریشه‌گاهِ واپسین؛ اشکِ ماه‌سنگ ـ 187",
     "slot": "زره",
     "class_name": "پالادین",
     "rarity": "اسطوره‌ای",
@@ -3325,11 +3723,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "ریشه‌گاهِ واپسین؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_7_2_1",
-    "name": "خاکستر زره پایدار • پالادین",
+    "name": "آذرنشانِ زره سینهِ اخگرِ خاموش؛ شکوهِ بی‌مرز ـ 188",
     "slot": "زره",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3343,11 +3743,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "اخگرِ خاموش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_3_0",
-    "name": "خار کلاه آغازین • پالادین",
+    "name": "آذرنشانِ کلاه‌خودِ خارستانِ سوگند؛ پیکرِ ابدی ـ 189",
     "slot": "کلاه",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3361,11 +3763,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "خارستانِ سوگند؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_3_1",
-    "name": "سنگستر کلاه پایدار • پالادین",
+    "name": "آذرنشانِ کلاه‌خودِ سنگسترِ کبود؛ مهرِ هفت‌پرده ـ 190",
     "slot": "کلاه",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3379,11 +3783,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "سنگسترِ کبود؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_4_0",
-    "name": "ورداش چکمه آغازین • پالادین",
+    "name": "حماسه‌زادِ پوتینِ موجِ ورداش؛ نگینِ فراموشی ـ 191",
     "slot": "چکمه",
     "class_name": "پالادین",
     "rarity": "حماسی",
@@ -3393,15 +3799,18 @@
       "faith": 7,
       "perception": 3,
       "hp": 19,
-      "mp": 19
+      "mp": 19,
+      "speed": 8
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "موجِ ورداش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_7_4_1",
-    "name": "جنوبی چکمه پایدار • پالادین",
+    "name": "افسانه‌نشانِ پوتینِ آفتابِ مدفون؛ قلبِ جهان ـ 192",
     "slot": "چکمه",
     "class_name": "پالادین",
     "rarity": "افسانه‌ای",
@@ -3411,15 +3820,18 @@
       "faith": 12,
       "luck": 4,
       "hp": 27,
-      "mp": 27
+      "mp": 27,
+      "speed": 10
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "آفتابِ مدفون؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_7_5_0",
-    "name": "ریشه‌پوش دستکش آغازین • پالادین",
+    "name": "افسانه‌نشانِ دستکشِ ریشه‌گاهِ واپسین؛ چشمِ بیدار ـ 193",
     "slot": "دستکش",
     "class_name": "پالادین",
     "rarity": "افسانه‌ای",
@@ -3433,11 +3845,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "ریشه‌گاهِ واپسین؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_7_5_1",
-    "name": "خاکستر دستکش پایدار • پالادین",
+    "name": "دستکشِ اخگرِ خاموش؛ خوابِ اژدها ـ 194",
     "slot": "دستکش",
     "class_name": "پالادین",
     "rarity": "معمولی",
@@ -3450,11 +3864,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "اخگرِ خاموش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_7_6_0",
-    "name": "خار ساق‌پوش آغازین • پالادین",
+    "name": "آذرنشانِ ساق‌بندِ خارستانِ سوگند؛ خشمِ کهن ـ 195",
     "slot": "ساق‌پوش",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3467,11 +3883,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "خارستانِ سوگند؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_6_1",
-    "name": "سنگستر ساق‌پوش پایدار • پالادین",
+    "name": "آذرنشانِ ساق‌بندِ سنگسترِ کبود؛ نفرینِ جاودان ـ 196",
     "slot": "ساق‌پوش",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3484,11 +3902,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "سنگسترِ کبود؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_7_0",
-    "name": "ورداش بازوبند آغازین • پالادین",
+    "name": "حماسه‌زادِ بازوبندِ موجِ ورداش؛ نفسِ خاکستر ـ 197",
     "slot": "بازوبند",
     "class_name": "پالادین",
     "rarity": "حماسی",
@@ -3501,11 +3921,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "موجِ ورداش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_7_7_1",
-    "name": "جنوبی بازوبند پایدار • پالادین",
+    "name": "حماسه‌زادِ بازوبندِ آفتابِ مدفون؛ پیمانِ آذرین ـ 198",
     "slot": "بازوبند",
     "class_name": "پالادین",
     "rarity": "حماسی",
@@ -3518,11 +3940,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "آفتابِ مدفون؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_7_8_0",
-    "name": "ریشه‌پوش حلقه ۱ آغازین • پالادین",
+    "name": "اسطوره‌زادِ انگشترِ ریشه‌گاهِ واپسین؛ سرودِ واپسین ـ 199",
     "slot": "حلقه ۱",
     "class_name": "پالادین",
     "rarity": "اسطوره‌ای",
@@ -3535,11 +3959,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "ریشه‌گاهِ واپسین؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_7_8_1",
-    "name": "خاکستر حلقه ۱ پایدار • پالادین",
+    "name": "آذرنشانِ انگشترِ اخگرِ خاموش؛ آتشِ بی‌نام ـ 200",
     "slot": "حلقه ۱",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3553,11 +3979,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "اخگرِ خاموش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_9_0",
-    "name": "خار حلقه ۲ آغازین • پالادین",
+    "name": "آذرنشانِ خاتمِ خارستانِ سوگند؛ میراثِ بی‌غروب ـ 201",
     "slot": "حلقه ۲",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3571,11 +3999,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "خارستانِ سوگند؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_9_1",
-    "name": "سنگستر حلقه ۲ پایدار • پالادین",
+    "name": "آذرنشانِ خاتمِ سنگسترِ کبود؛ وارثِ توفان ـ 202",
     "slot": "حلقه ۲",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3589,11 +4019,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "سنگسترِ کبود؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_10_0",
-    "name": "ورداش گردنبند آغازین • پالادین",
+    "name": "حماسه‌زادِ گردن‌آویزِ موجِ ورداش؛ رازِ هزارساله ـ 203",
     "slot": "گردنبند",
     "class_name": "پالادین",
     "rarity": "حماسی",
@@ -3607,11 +4039,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "موجِ ورداش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_7_10_1",
-    "name": "جنوبی گردنبند پایدار • پالادین",
+    "name": "افسانه‌نشانِ گردن‌آویزِ آفتابِ مدفون؛ نشانِ تقدیر ـ 204",
     "slot": "گردنبند",
     "class_name": "پالادین",
     "rarity": "افسانه‌ای",
@@ -3625,11 +4059,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "آفتابِ مدفون؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_7_11_0",
-    "name": "ریشه‌پوش شنل آغازین • پالادین",
+    "name": "افسانه‌نشانِ شنلِ ریشه‌گاهِ واپسین؛ خونِ ستارگان ـ 205",
     "slot": "شنل",
     "class_name": "پالادین",
     "rarity": "افسانه‌ای",
@@ -3643,11 +4079,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "ریشه‌گاهِ واپسین؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_7_11_1",
-    "name": "خاکستر شنل پایدار • پالادین",
+    "name": "شنلِ اخگرِ خاموش؛ طلسمِ سپهر ـ 206",
     "slot": "شنل",
     "class_name": "پالادین",
     "rarity": "معمولی",
@@ -3661,11 +4099,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "اخگرِ خاموش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_7_12_0",
-    "name": "خار نشان آغازین • پالادین",
+    "name": "آذرنشانِ نشان جنگیِ خارستانِ سوگند؛ تاجِ فروزان ـ 207",
     "slot": "نشان",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3679,11 +4119,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "خارستانِ سوگند؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_7_12_1",
-    "name": "سنگستر نشان پایدار • پالادین",
+    "name": "آذرنشانِ نشان جنگیِ سنگسترِ کبود؛ سوگندِ سپیده ـ 208",
     "slot": "نشان",
     "class_name": "پالادین",
     "rarity": "غیرمعمول",
@@ -3697,11 +4139,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "سنگسترِ کبود؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_8_0_0",
-    "name": "سنگستر سلاح اصلی آغازین • شمن",
+    "name": "حماسه‌زادِ چوب‌دستی آیینیِ سنگسترِ کبود؛ پیمانِ آذرین ـ 209",
     "slot": "سلاح اصلی",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -3716,11 +4160,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "چوب‌دستی آیینی",
+    "description_fa": "سنگسترِ کبود؛ چوب‌دستی آیینی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_0_1",
-    "name": "ورداش سلاح اصلی پایدار • شمن",
+    "name": "حماسه‌زادِ چوب‌دستی آیینیِ موجِ ورداش؛ سرودِ واپسین ـ 210",
     "slot": "سلاح اصلی",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -3735,11 +4181,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "چوب‌دستی آیینی",
+    "description_fa": "موجِ ورداش؛ چوب‌دستی آیینی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_1_0",
-    "name": "جنوبی سلاح دوم آغازین • شمن",
+    "name": "افسانه‌نشانِ طلسم آیینیِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 211",
     "slot": "سلاح دوم",
     "class_name": "شمن",
     "rarity": "افسانه‌ای",
@@ -3754,11 +4202,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "طلسم آیینی",
+    "description_fa": "آفتابِ مدفون؛ طلسم آیینی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_8_1_1",
-    "name": "ریشه‌پوش سلاح دوم پایدار • شمن",
+    "name": "اسطوره‌زادِ طلسم آیینیِ ریشه‌گاهِ واپسین؛ میراثِ بی‌غروب ـ 212",
     "slot": "سلاح دوم",
     "class_name": "شمن",
     "rarity": "اسطوره‌ای",
@@ -3773,11 +4223,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "طلسم آیینی",
+    "description_fa": "ریشه‌گاهِ واپسین؛ طلسم آیینی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_8_2_0",
-    "name": "خاکستر زره آغازین • شمن",
+    "name": "زره سینهِ اخگرِ خاموش؛ وارثِ توفان ـ 213",
     "slot": "زره",
     "class_name": "شمن",
     "rarity": "معمولی",
@@ -3791,11 +4243,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "اخگرِ خاموش؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_8_2_1",
-    "name": "خار زره پایدار • شمن",
+    "name": "آذرنشانِ زره سینهِ خارستانِ سوگند؛ رازِ هزارساله ـ 214",
     "slot": "زره",
     "class_name": "شمن",
     "rarity": "غیرمعمول",
@@ -3809,11 +4263,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "خارستانِ سوگند؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_8_3_0",
-    "name": "سنگستر کلاه آغازین • شمن",
+    "name": "حماسه‌زادِ کلاه‌خودِ سنگسترِ کبود؛ نشانِ تقدیر ـ 215",
     "slot": "کلاه",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -3827,11 +4283,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "سنگسترِ کبود؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_3_1",
-    "name": "ورداش کلاه پایدار • شمن",
+    "name": "حماسه‌زادِ کلاه‌خودِ موجِ ورداش؛ خونِ ستارگان ـ 216",
     "slot": "کلاه",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -3845,11 +4303,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "موجِ ورداش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_4_0",
-    "name": "جنوبی چکمه آغازین • شمن",
+    "name": "حماسه‌زادِ پوتینِ آفتابِ مدفون؛ طلسمِ سپهر ـ 217",
     "slot": "چکمه",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -3859,15 +4319,18 @@
       "faith": 7,
       "luck": 3,
       "hp": 19,
-      "mp": 19
+      "mp": 19,
+      "speed": 8
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "آفتابِ مدفون؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_4_1",
-    "name": "ریشه‌پوش چکمه پایدار • شمن",
+    "name": "افسانه‌نشانِ پوتینِ ریشه‌گاهِ واپسین؛ تاجِ فروزان ـ 218",
     "slot": "چکمه",
     "class_name": "شمن",
     "rarity": "افسانه‌ای",
@@ -3876,15 +4339,18 @@
     "stats": {
       "faith": 16,
       "hp": 27,
-      "mp": 27
+      "mp": 27,
+      "speed": 10
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "ریشه‌گاهِ واپسین؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_8_5_0",
-    "name": "خاکستر دستکش آغازین • شمن",
+    "name": "آذرنشانِ دستکشِ اخگرِ خاموش؛ سوگندِ سپیده ـ 219",
     "slot": "دستکش",
     "class_name": "شمن",
     "rarity": "غیرمعمول",
@@ -3897,11 +4363,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "اخگرِ خاموش؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_8_5_1",
-    "name": "خار دستکش پایدار • شمن",
+    "name": "آذرنشانِ دستکشِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 220",
     "slot": "دستکش",
     "class_name": "شمن",
     "rarity": "غیرمعمول",
@@ -3914,11 +4382,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "خارستانِ سوگند؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_8_6_0",
-    "name": "سنگستر ساق‌پوش آغازین • شمن",
+    "name": "حماسه‌زادِ ساق‌بندِ سنگسترِ کبود؛ یادگارِ نخستین ـ 221",
     "slot": "ساق‌پوش",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -3931,11 +4401,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "سنگسترِ کبود؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_6_1",
-    "name": "ورداش ساق‌پوش پایدار • شمن",
+    "name": "حماسه‌زادِ ساق‌بندِ موجِ ورداش؛ پناهِ سپیده ـ 222",
     "slot": "ساق‌پوش",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -3948,11 +4420,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "موجِ ورداش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_7_0",
-    "name": "جنوبی بازوبند آغازین • شمن",
+    "name": "افسانه‌نشانِ بازوبندِ آفتابِ مدفون؛ آوازِ ژرفا ـ 223",
     "slot": "بازوبند",
     "class_name": "شمن",
     "rarity": "افسانه‌ای",
@@ -3965,11 +4439,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "آفتابِ مدفون؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_8_7_1",
-    "name": "ریشه‌پوش بازوبند پایدار • شمن",
+    "name": "اسطوره‌زادِ بازوبندِ ریشه‌گاهِ واپسین؛ اشکِ ماه‌سنگ ـ 224",
     "slot": "بازوبند",
     "class_name": "شمن",
     "rarity": "اسطوره‌ای",
@@ -3983,11 +4459,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "ریشه‌گاهِ واپسین؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_8_8_0",
-    "name": "خاکستر حلقه ۱ آغازین • شمن",
+    "name": "انگشترِ اخگرِ خاموش؛ شکوهِ بی‌مرز ـ 225",
     "slot": "حلقه ۱",
     "class_name": "شمن",
     "rarity": "معمولی",
@@ -4001,11 +4479,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "اخگرِ خاموش؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_8_8_1",
-    "name": "خار حلقه ۱ پایدار • شمن",
+    "name": "آذرنشانِ انگشترِ خارستانِ سوگند؛ پیکرِ ابدی ـ 226",
     "slot": "حلقه ۱",
     "class_name": "شمن",
     "rarity": "غیرمعمول",
@@ -4019,11 +4499,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "خارستانِ سوگند؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_8_9_0",
-    "name": "سنگستر حلقه ۲ آغازین • شمن",
+    "name": "حماسه‌زادِ خاتمِ سنگسترِ کبود؛ مهرِ هفت‌پرده ـ 227",
     "slot": "حلقه ۲",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -4037,11 +4519,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "سنگسترِ کبود؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_9_1",
-    "name": "ورداش حلقه ۲ پایدار • شمن",
+    "name": "حماسه‌زادِ خاتمِ موجِ ورداش؛ نگینِ فراموشی ـ 228",
     "slot": "حلقه ۲",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -4055,11 +4539,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "موجِ ورداش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_10_0",
-    "name": "جنوبی گردنبند آغازین • شمن",
+    "name": "حماسه‌زادِ گردن‌آویزِ آفتابِ مدفون؛ قلبِ جهان ـ 229",
     "slot": "گردنبند",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -4073,11 +4559,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "آفتابِ مدفون؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_10_1",
-    "name": "ریشه‌پوش گردنبند پایدار • شمن",
+    "name": "افسانه‌نشانِ گردن‌آویزِ ریشه‌گاهِ واپسین؛ چشمِ بیدار ـ 230",
     "slot": "گردنبند",
     "class_name": "شمن",
     "rarity": "افسانه‌ای",
@@ -4091,11 +4579,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "ریشه‌گاهِ واپسین؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_8_11_0",
-    "name": "خاکستر شنل آغازین • شمن",
+    "name": "آذرنشانِ شنلِ اخگرِ خاموش؛ خوابِ اژدها ـ 231",
     "slot": "شنل",
     "class_name": "شمن",
     "rarity": "غیرمعمول",
@@ -4109,11 +4599,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "اخگرِ خاموش؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_8_11_1",
-    "name": "خار شنل پایدار • شمن",
+    "name": "آذرنشانِ شنلِ خارستانِ سوگند؛ خشمِ کهن ـ 232",
     "slot": "شنل",
     "class_name": "شمن",
     "rarity": "غیرمعمول",
@@ -4127,11 +4619,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "خارستانِ سوگند؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_8_12_0",
-    "name": "سنگستر نشان آغازین • شمن",
+    "name": "حماسه‌زادِ نشان جنگیِ سنگسترِ کبود؛ نفرینِ جاودان ـ 233",
     "slot": "نشان",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -4145,11 +4639,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "سنگسترِ کبود؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_8_12_1",
-    "name": "ورداش نشان پایدار • شمن",
+    "name": "حماسه‌زادِ نشان جنگیِ موجِ ورداش؛ نفسِ خاکستر ـ 234",
     "slot": "نشان",
     "class_name": "شمن",
     "rarity": "حماسی",
@@ -4162,11 +4658,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "موجِ ورداش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_9_0_0",
-    "name": "ورداش سلاح اصلی آغازین • احضارگر",
+    "name": "رازآلودِ عصای احضارِ موجِ ورداش؛ اشکِ ماه‌سنگ ـ 235",
     "slot": "سلاح اصلی",
     "class_name": "احضارگر",
     "rarity": "کمیاب",
@@ -4182,11 +4680,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "عصای احضار",
+    "description_fa": "موجِ ورداش؛ عصای احضار ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_9_0_1",
-    "name": "جنوبی سلاح اصلی پایدار • احضارگر",
+    "name": "افسانه‌نشانِ عصای احضارِ آفتابِ مدفون؛ شکوهِ بی‌مرز ـ 236",
     "slot": "سلاح اصلی",
     "class_name": "احضارگر",
     "rarity": "افسانه‌ای",
@@ -4201,11 +4701,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "عصای احضار",
+    "description_fa": "آفتابِ مدفون؛ عصای احضار ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_9_1_0",
-    "name": "ریشه‌پوش سلاح دوم آغازین • احضارگر",
+    "name": "افسانه‌نشانِ مُهر احضارِ ریشه‌گاهِ واپسین؛ پیکرِ ابدی ـ 237",
     "slot": "سلاح دوم",
     "class_name": "احضارگر",
     "rarity": "افسانه‌ای",
@@ -4220,11 +4722,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "مُهر احضار",
+    "description_fa": "ریشه‌گاهِ واپسین؛ مُهر احضار ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_9_1_1",
-    "name": "خاکستر سلاح دوم پایدار • احضارگر",
+    "name": "مُهر احضارِ اخگرِ خاموش؛ مهرِ هفت‌پرده ـ 238",
     "slot": "سلاح دوم",
     "class_name": "احضارگر",
     "rarity": "معمولی",
@@ -4240,11 +4744,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "مُهر احضار",
+    "description_fa": "اخگرِ خاموش؛ مُهر احضار ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_9_2_0",
-    "name": "خار زره آغازین • احضارگر",
+    "name": "زره سینهِ خارستانِ سوگند؛ نگینِ فراموشی ـ 239",
     "slot": "زره",
     "class_name": "احضارگر",
     "rarity": "معمولی",
@@ -4259,11 +4765,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "خارستانِ سوگند؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_9_2_1",
-    "name": "سنگستر زره پایدار • احضارگر",
+    "name": "حماسه‌زادِ زره سینهِ سنگسترِ کبود؛ قلبِ جهان ـ 240",
     "slot": "زره",
     "class_name": "احضارگر",
     "rarity": "حماسی",
@@ -4278,11 +4786,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "زره سینه",
+    "description_fa": "سنگسترِ کبود؛ زره سینه ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_9_3_0",
-    "name": "ورداش کلاه آغازین • احضارگر",
+    "name": "رازآلودِ کلاه‌خودِ موجِ ورداش؛ چشمِ بیدار ـ 241",
     "slot": "کلاه",
     "class_name": "احضارگر",
     "rarity": "کمیاب",
@@ -4297,11 +4807,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "موجِ ورداش؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_9_3_1",
-    "name": "جنوبی کلاه پایدار • احضارگر",
+    "name": "حماسه‌زادِ کلاه‌خودِ آفتابِ مدفون؛ خوابِ اژدها ـ 242",
     "slot": "کلاه",
     "class_name": "احضارگر",
     "rarity": "حماسی",
@@ -4315,11 +4827,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "کلاه‌خود",
+    "description_fa": "آفتابِ مدفون؛ کلاه‌خود ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_9_4_0",
-    "name": "ریشه‌پوش چکمه آغازین • احضارگر",
+    "name": "اسطوره‌زادِ پوتینِ ریشه‌گاهِ واپسین؛ خشمِ کهن ـ 243",
     "slot": "چکمه",
     "class_name": "احضارگر",
     "rarity": "اسطوره‌ای",
@@ -4329,15 +4843,18 @@
       "intellect": 12,
       "faith": 8,
       "hp": 35,
-      "mp": 35
+      "mp": 35,
+      "speed": 12
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "ریشه‌گاهِ واپسین؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_9_4_1",
-    "name": "خاکستر چکمه پایدار • احضارگر",
+    "name": "آذرنشانِ پوتینِ اخگرِ خاموش؛ نفرینِ جاودان ـ 244",
     "slot": "چکمه",
     "class_name": "احضارگر",
     "rarity": "غیرمعمول",
@@ -4347,15 +4864,18 @@
       "intellect": 4,
       "hp": 13,
       "mp": 11,
-      "faith": 1
+      "faith": 1,
+      "speed": 4
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "پوتین",
+    "description_fa": "اخگرِ خاموش؛ پوتین ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_9_5_0",
-    "name": "خار دستکش آغازین • احضارگر",
+    "name": "دستکشِ خارستانِ سوگند؛ نفسِ خاکستر ـ 245",
     "slot": "دستکش",
     "class_name": "احضارگر",
     "rarity": "معمولی",
@@ -4369,11 +4889,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "خارستانِ سوگند؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_9_5_1",
-    "name": "سنگستر دستکش پایدار • احضارگر",
+    "name": "حماسه‌زادِ دستکشِ سنگسترِ کبود؛ پیمانِ آذرین ـ 246",
     "slot": "دستکش",
     "class_name": "احضارگر",
     "rarity": "حماسی",
@@ -4387,11 +4909,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "دستکش",
+    "description_fa": "سنگسترِ کبود؛ دستکش ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_9_6_0",
-    "name": "ورداش ساق‌پوش آغازین • احضارگر",
+    "name": "رازآلودِ ساق‌بندِ موجِ ورداش؛ سرودِ واپسین ـ 247",
     "slot": "ساق‌پوش",
     "class_name": "احضارگر",
     "rarity": "کمیاب",
@@ -4405,11 +4929,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "موجِ ورداش؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_9_6_1",
-    "name": "جنوبی ساق‌پوش پایدار • احضارگر",
+    "name": "افسانه‌نشانِ ساق‌بندِ آفتابِ مدفون؛ آتشِ بی‌نام ـ 248",
     "slot": "ساق‌پوش",
     "class_name": "احضارگر",
     "rarity": "افسانه‌ای",
@@ -4424,11 +4950,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "ساق‌بند",
+    "description_fa": "آفتابِ مدفون؛ ساق‌بند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_9_7_0",
-    "name": "ریشه‌پوش بازوبند آغازین • احضارگر",
+    "name": "افسانه‌نشانِ بازوبندِ ریشه‌گاهِ واپسین؛ میراثِ بی‌غروب ـ 249",
     "slot": "بازوبند",
     "class_name": "احضارگر",
     "rarity": "افسانه‌ای",
@@ -4443,11 +4971,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "ریشه‌گاهِ واپسین؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   },
   {
     "id": "item_recipe_9_7_1",
-    "name": "خاکستر بازوبند پایدار • احضارگر",
+    "name": "بازوبندِ اخگرِ خاموش؛ وارثِ توفان ـ 250",
     "slot": "بازوبند",
     "class_name": "احضارگر",
     "rarity": "معمولی",
@@ -4462,11 +4992,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "بازوبند",
+    "description_fa": "اخگرِ خاموش؛ بازوبند ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_9_8_0",
-    "name": "خار حلقه ۱ آغازین • احضارگر",
+    "name": "انگشترِ خارستانِ سوگند؛ رازِ هزارساله ـ 251",
     "slot": "حلقه ۱",
     "class_name": "احضارگر",
     "rarity": "معمولی",
@@ -4481,11 +5013,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "خارستانِ سوگند؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_9_8_1",
-    "name": "سنگستر حلقه ۱ پایدار • احضارگر",
+    "name": "حماسه‌زادِ انگشترِ سنگسترِ کبود؛ نشانِ تقدیر ـ 252",
     "slot": "حلقه ۱",
     "class_name": "احضارگر",
     "rarity": "حماسی",
@@ -4499,11 +5033,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "انگشتر",
+    "description_fa": "سنگسترِ کبود؛ انگشتر ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_9_9_0",
-    "name": "ورداش حلقه ۲ آغازین • احضارگر",
+    "name": "رازآلودِ خاتمِ موجِ ورداش؛ خونِ ستارگان ـ 253",
     "slot": "حلقه ۲",
     "class_name": "احضارگر",
     "rarity": "کمیاب",
@@ -4517,11 +5053,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "موجِ ورداش؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_9_9_1",
-    "name": "جنوبی حلقه ۲ پایدار • احضارگر",
+    "name": "حماسه‌زادِ خاتمِ آفتابِ مدفون؛ طلسمِ سپهر ـ 254",
     "slot": "حلقه ۲",
     "class_name": "احضارگر",
     "rarity": "حماسی",
@@ -4536,11 +5074,13 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "خاتم",
+    "description_fa": "آفتابِ مدفون؛ خاتم ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_9_10_0",
-    "name": "ریشه‌پوش گردنبند آغازین • احضارگر",
+    "name": "اسطوره‌زادِ گردن‌آویزِ ریشه‌گاهِ واپسین؛ تاجِ فروزان ـ 255",
     "slot": "گردنبند",
     "class_name": "احضارگر",
     "rarity": "اسطوره‌ای",
@@ -4555,11 +5095,13 @@
     },
     "region_id": "rootbound_ruins",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "ریشه‌گاهِ واپسین؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده اسطوره‌ای."
   },
   {
     "id": "item_recipe_9_10_1",
-    "name": "خاکستر گردنبند پایدار • احضارگر",
+    "name": "آذرنشانِ گردن‌آویزِ اخگرِ خاموش؛ سوگندِ سپیده ـ 256",
     "slot": "گردنبند",
     "class_name": "احضارگر",
     "rarity": "غیرمعمول",
@@ -4574,11 +5116,13 @@
     },
     "region_id": "burnt_forest",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "گردن‌آویز",
+    "description_fa": "اخگرِ خاموش؛ گردن‌آویز ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده غیرمعمول."
   },
   {
     "id": "item_recipe_9_11_0",
-    "name": "خار شنل آغازین • احضارگر",
+    "name": "شنلِ خارستانِ سوگند؛ فرمانِ خاموشی ـ 257",
     "slot": "شنل",
     "class_name": "احضارگر",
     "rarity": "معمولی",
@@ -4593,11 +5137,13 @@
     },
     "region_id": "thorn_grove",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "خارستانِ سوگند؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده معمولی."
   },
   {
     "id": "item_recipe_9_11_1",
-    "name": "سنگستر شنل پایدار • احضارگر",
+    "name": "حماسه‌زادِ شنلِ سنگسترِ کبود؛ یادگارِ نخستین ـ 258",
     "slot": "شنل",
     "class_name": "احضارگر",
     "rarity": "حماسی",
@@ -4611,11 +5157,13 @@
     },
     "region_id": "ash_hills",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "شنل",
+    "description_fa": "سنگسترِ کبود؛ شنل ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده حماسی."
   },
   {
     "id": "item_recipe_9_12_0",
-    "name": "ورداش نشان آغازین • احضارگر",
+    "name": "رازآلودِ نشان جنگیِ موجِ ورداش؛ پناهِ سپیده ـ 259",
     "slot": "نشان",
     "class_name": "احضارگر",
     "rarity": "کمیاب",
@@ -4629,11 +5177,13 @@
     },
     "region_id": "vardash_river",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "موجِ ورداش؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده کمیاب."
   },
   {
     "id": "item_recipe_9_12_1",
-    "name": "جنوبی نشان پایدار • احضارگر",
+    "name": "افسانه‌نشانِ نشان جنگیِ آفتابِ مدفون؛ آوازِ ژرفا ـ 260",
     "slot": "نشان",
     "class_name": "احضارگر",
     "rarity": "افسانه‌ای",
@@ -4647,6 +5197,8 @@
     },
     "region_id": "southern_plains",
     "version": 2,
-    "balance_version": 139
+    "balance_version": 139,
+    "equipment_type_label_fa": "نشان جنگی",
+    "description_fa": "آفتابِ مدفون؛ نشان جنگی ساخته‌شده از یادگارهای این سرزمین، با نقوشی کهن و اثری متناسب با رده افسانه‌ای."
   }
 ]

@@ -1,14 +1,1 @@
-import fs from 'node:fs';
-import assert from 'node:assert/strict';
-const game=fs.readFileSync(new URL('../../game.js',import.meta.url),'utf8');
-assert.match(game,/const POTION_BASES=\[/);
-assert.match(game,/const POTION_QUALITIES=\[/);
-assert.match(game,/const POTION_RECIPES=POTION_BASES\.flatMap/);
-assert.match(game,/state\.knownPotionRecipes\.push\(pick\.id\)/);
-assert.match(game,/state\.usedPotionRecipes\.push\(id\)/);
-assert.match(game,/addInventoryItem\(\{id:r\.potionId[\s\S]*?\},5\)/);
-assert.match(game,/p\.id==='alchemist_liora'\?potionRecipePanel\(\)/);
-assert.match(game,/data-interact-action="brew-potion"/);
-assert.match(game,/function brewPotionRecipe\(id\)/);
-assert.match(game,/POTION_BASES\.flatMap/);
-console.log('Potion crafting stage 4 structural checks passed (7 potion families × 6 qualities; one-use blueprint; five output units).');
+import fs from 'node:fs';import assert from 'node:assert/strict';const game=fs.readFileSync(new URL('../../game.js',import.meta.url),'utf8');const panel=game.slice(game.indexOf('function renderInteractionPanel(){'),game.indexOf('function renderHubTabs(){'));assert.match(game,/const POTION_BASES=\[/);assert.match(game,/const POTION_QUALITIES=\[/);assert.match(game,/const POTION_RECIPES=POTION_BASES\.flatMap/);assert.match(game,/function brewPotionRecipe\(id\)/);assert.match(game,/state\.knownPotionRecipes\.push\(pick\.id\)/);assert.doesNotMatch(panel,/potionRecipePanel|data-interact-action=\"brew-potion/);assert.doesNotMatch(game,/function potionRecipePanel\(\)/);console.log('V1961: region-based potion data remains; safe-zone alchemy UI removed.');

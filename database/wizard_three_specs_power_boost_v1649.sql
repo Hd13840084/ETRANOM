@@ -41,7 +41,7 @@ begin
   slots:=coalesce(s->'equipmentSlots','{}'::jsonb);
   class_name:=coalesce(nullif(c->>'archetype',''),nullif(c->>'player_class',''),'جنگجو');
   specialization_name:=btrim(coalesce(c->>'specialization',''));
-  level_no:=greatest(1,least(50,coalesce(nullif(c->>'level','')::integer,1)));
+  level_no:=greatest(1,least(100,coalesce(nullif(c->>'level','')::integer,1)));
   vitality:=greatest(0,coalesce(nullif(stats->>'vitality','')::numeric,12));
   intellect:=greatest(0,coalesce(nullif(stats->>'intellect','')::numeric,10));
   faith:=greatest(0,coalesce(nullif(stats->>'faith','')::numeric,10));

@@ -2,8 +2,8 @@ import { getPartyRegion } from "./party-config.js";
 import { PartyManager } from "./party-manager.js";
 import { PartyInvites } from "./party-invites.js";
 import { PartySync } from "./party-sync.js";
-import { PartyCombat } from "./party-combat.js";
-import { PartyUI } from "./party-ui.js?v=184";
+import { PartyCombat } from "./party-combat.js?v=1972";
+import { PartyUI } from "./party-ui.js?v=1966";
 
 export class ETRANOMParty {
   constructor({ supabase, container = null, onUpdate = () => {} } = {}) {
@@ -55,7 +55,7 @@ export class ETRANOMParty {
       getSession: () => call("get_my_party_session"),
       getBattleSnapshot: sessionId => call("etranom_party_battle_snapshot", { p_session_id: sessionId }),
       battleHeartbeat: sessionId => call("etranom_party_battle_heartbeat", { p_session_id: sessionId }),
-      battleAction: (sessionId, action, targetIndex = null) => call("etranom_party_battle_act", { p_session_id: sessionId, p_action: action, p_target_index: targetIndex }),
+      battleAction: (sessionId, action, targetIndex = null, requestId = null) => call("etranom_party_battle_act_v1969", { p_session_id: sessionId, p_action: action, p_target_index: targetIndex, p_request_id: requestId }),
       getBattleRewards: () => call("etranom_party_battle_rewards"),
       getRegion: getPartyRegion
     };

@@ -42,7 +42,7 @@ export function renderCombatPlayerCard(source, options = {}) {
   const actor = normalizeCombatant(source);
   const role = escapeCombatHtml(options.role || 'قهرمان');
   const className = escapeCombatHtml(options.className || 'etr-battle-card player');
-  const stateLabel = options.stateLabel ? `<div class="etr-combatant-state">${escapeCombatHtml(options.stateLabel)}</div>` : '';
+  const stateLabel = (options.stateLabel || source.stateLabel) ? `<div class="etr-combatant-state">${escapeCombatHtml(options.stateLabel || source.stateLabel)}</div>` : '';
   const turnLabel = options.isTurn ? '<small class="etr-combat-turn">نوبت اقدام</small>' : '';
   const portrait = options.portrait || actor.portrait;
   const safePortrait = portrait && !/^(?:javascript:|data:)/i.test(portrait) ? escapeCombatHtml(portrait) : '';
@@ -75,7 +75,7 @@ export function renderCombatActionBar({ attribute = 'data-combat-action', disabl
     { id: 'attack', icon: '⚔️', label: 'حمله عادی', cls: 'attack' },
     { id: 'skill', icon: '✦', label: 'مهارت‌ها', cls: 'skill' },
     { id: 'items', icon: '🎒', label: 'آیتم‌ها', cls: 'items' },
-    { id: 'guard', value: 'guard', icon: '🛡️', label: 'دفاع / جاخالی', cls: 'defend' }
+    { id: 'guard', icon: '🛡️', label: 'دفاع / جاخالی', cls: 'guard' }
   ];
   return `<div class="battle-actions etr-shared-combat-actions">${actions.map(a => {
     const isDisabled = Boolean(disabled[a.id]);

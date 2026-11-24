@@ -178,7 +178,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
 .etr-turn-wait{margin:9px 0;padding:10px 12px;border:1px solid #987447;border-radius:9px;background:linear-gradient(90deg,#211a25,#30251c);color:#e8c98d;text-align:center;font-size:12px;line-height:1.8;box-shadow:0 0 14px #c49a5522}
 .combat-screen .battle-actions button:disabled{opacity:.4;filter:grayscale(.45);cursor:wait}
 </style>
-<link rel="stylesheet" href="./systems/combat/shared-combat.css?v=1854">
+<link rel="stylesheet" href="./systems/combat/shared-combat.css?v=1966">
 <style id="etr-v1854-map-launch-layout">
 /* Move social/community and guild shortcuts to the right edge of the map, stacked vertically. */
 #etr-social-launch,#etr-guild-launch{position:fixed!important;left:auto!important;right:9px!important;bottom:auto!important;z-index:100002!important;width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;margin:0!important}
@@ -208,6 +208,10 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
 .chaos-domain-active{border-color:rgba(220,35,55,.65);box-shadow:inset 0 0 35px rgba(150,0,25,.16),0 0 22px rgba(190,20,45,.12)}
 .chaos-domain-banner{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid rgba(220,35,55,.55);border-radius:12px;background:linear-gradient(100deg,rgba(30,5,12,.96),rgba(105,8,27,.55));color:#ffe7eb}.chaos-domain-banner b{display:block}.chaos-domain-banner small{display:block;opacity:.8}
 .chaos-domain-active{position:relative;overflow:hidden;background-image:radial-gradient(ellipse at 50% 0%,rgba(180,12,38,.13),transparent 58%)}.chaos-domain-active:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background:repeating-linear-gradient(128deg,transparent 0 54px,rgba(230,25,55,.24) 55px,transparent 57px 105px);animation:chaosFracturePulse 5s ease-in-out infinite}.chaos-domain-stage-2{box-shadow:inset 0 0 45px rgba(160,10,35,.2)}.chaos-domain-stage-3{box-shadow:inset 0 0 65px rgba(180,10,55,.25),0 0 25px rgba(150,0,30,.15)}.chaos-domain-stage-4{box-shadow:inset 0 0 85px rgba(210,15,50,.32),0 0 35px rgba(210,15,50,.2);animation:chaosDomainPulse 2.8s ease-in-out infinite}.chaos-ascension-selected{border-color:rgba(235,55,75,.75);background:linear-gradient(100deg,rgba(30,5,12,.95),rgba(100,8,27,.4))}.chaos-ascension-selected small{display:block;margin-top:5px;opacity:.82}@keyframes chaosFracturePulse{0%,100%{opacity:.1;transform:translateX(-3px)}50%{opacity:.25;transform:translateX(3px)}}@keyframes chaosDomainPulse{0%,100%{filter:saturate(1)}50%{filter:saturate(1.35)}}@media(prefers-reduced-motion:reduce){.chaos-domain-active:before,.chaos-domain-stage-4{animation:none}}
+</style>
+
+<style id="etranom-necromancer-collection-status-v1983">
+.necromancer-status-entry{margin:14px 0;border:1px solid #775a85;border-radius:14px;background:linear-gradient(145deg,#211a2a,#111017);overflow:hidden}.necromancer-status-entry-button{display:flex;width:100%;align-items:center;gap:11px;padding:13px;text-align:right;border:0;background:linear-gradient(100deg,#30213e,#19151f);color:#f0e3ff;font:inherit}.necro-entry-sigil{width:42px;height:42px;display:grid;place-items:center;border:1px solid #a17ab5;border-radius:11px;background:#120e19;color:#e2c1ff;font-size:23px}.necromancer-status-entry-button>span:nth-child(2){display:grid;gap:4px;flex:1}.necromancer-status-entry-button small{font-size:10px;color:#bba6cb}.necromancer-status-entry-button strong{font-size:10px;color:#e5c58d;white-space:nowrap}.necromancer-collection-panel{padding:12px}.necromancer-collection-panel[hidden]{display:none!important}.necromancer-collection-heading{display:flex;justify-content:space-between;gap:8px;align-items:center;color:#ead4ff;font-size:12px}.necromancer-collection-heading span{font-size:9px;color:#c5a6da}.necromancer-companion-collection{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}.necromancer-companion-card{display:flex;gap:10px;padding:9px;border:1px solid #51405e;border-radius:12px;background:linear-gradient(145deg,#282130,#17141d);color:#eee5f4}.necromancer-companion-card.is-active{border-color:#b28bda;box-shadow:0 0 12px #9564bb22}.necromancer-companion-art{width:100px;height:122px;flex:0 0 100px;overflow:hidden;border:1px solid #80638f;border-radius:8px;background:#100d14;display:grid;place-items:center;color:#c9a8e4;font-size:24px}.necromancer-companion-art img{width:100%;height:100%;object-fit:cover;object-position:center 25%}.necromancer-companion-info{flex:1;min-width:0}.necromancer-companion-title{display:flex;justify-content:space-between;gap:6px;align-items:center}.necromancer-companion-title b{font-size:12px;color:#f0dfff}.necromancer-companion-title span,.necromancer-companion-info>small{font-size:9px;color:#bca9c8}.necromancer-companion-hp{margin:7px 0;color:#d5c1df;font-size:9px}.necromancer-companion-hp i{display:block;height:6px;margin-top:4px;background:#482b3c;border-radius:8px;overflow:hidden}.necromancer-companion-hp em{display:block;height:100%;background:linear-gradient(90deg,#8d263e,#e45d75)}.necromancer-companion-attributes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:7px 0}.necromancer-companion-attributes span{padding:4px;border-radius:5px;background:#211b29;color:#bfaecb;font-size:8px;text-align:center}.necromancer-companion-attributes b{display:block;color:#f0d7a4;font-size:10px}.necromancer-companion-skills{margin-top:6px;font-size:9px;color:#d8c5e3}.necromancer-companion-skills p{margin:3px 0;line-height:1.8;color:#bdaec7}.necromancer-companion-actions{display:flex;gap:6px;margin-top:8px}.necromancer-companion-actions button{flex:1;min-height:34px;padding:5px;border:1px solid #75568a;border-radius:7px;background:#30233c;color:#eadcff;font:inherit;font-size:9px}.necromancer-companion-actions button:last-child{border-color:#75454b;background:#321e27;color:#f0c4c8}.necromancer-companion-actions button:disabled{opacity:.4}.necromancer-empty-collection{margin-top:12px;padding:20px 12px;text-align:center;border:1px dashed #6b567b;border-radius:10px;color:#e4d0f1}.necromancer-empty-collection p{font-size:10px;line-height:1.9;color:#b8a9c3}@media(max-width:420px){.necromancer-companion-art{width:78px;height:100px;flex-basis:78px}.necromancer-companion-title{align-items:flex-start;flex-direction:column}.necromancer-companion-attributes{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -267,6 +271,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
 </script>
 <script type="module">
 import { isSystemPlayerName, getPlayerDisplayName, syncPlayerProfile } from './systems/online/player-identity.js?v=1642';
+import { dispatchRemoteCombatActionV1972 } from './systems/combat/central-combat-runtime-v1972.js?v=1972';
 // Auth/startup state is declared before the first top-level await. This prevents
 // temporal-dead-zone failures if session restoration or an auth event starts early.
 let socialLaunch = null;
@@ -348,6 +353,7 @@ function openGuildPanel(){guildOverlay.style.display='flex';renderGuildPanel();}
 guildLaunch?.addEventListener('click',openGuildPanel);guildOverlay?.addEventListener('click',e=>{if(e.target===guildOverlay)guildOverlay.style.display='none';});const guildCloseButton=document.getElementById('etr-guild-close');if(guildCloseButton)guildCloseButton.onclick=()=>{if(guildOverlay)guildOverlay.style.display='none';};
 document.addEventListener('click',e=>{const b=e.target.closest('[data-guild-master-open]');if(b){guildTeacherVisited=true;sessionStorage.setItem('etranom:guildTeacherVisited','1');openGuildPanel();}});
 
+const createCombatRequestId=()=>globalThis.crypto?.randomUUID?.()||"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==="x"?r:(r&3|8)).toString(16);});
 window.lib={
   getUserGameState:async()=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.from('game_saves').select('save_data,updated_at').eq('user_id',currentUser.id).maybeSingle();if(error)throw error;return data?{state:data.save_data,updatedAt:data.updated_at||null}:null;},
   setSaveRevision:updatedAt=>{currentSaveRevision=updatedAt||null;return currentSaveRevision;},
@@ -383,8 +389,8 @@ window.lib={
   pvpChallenge:async target=>{const {data,error}=await supabase.rpc('etranom_pvp_challenge',{p_target:target});if(error)throw error;return data;},
   pvpRespond:async(id,accept)=>{const {data,error}=await supabase.rpc('etranom_pvp_respond',{p_challenge:id,p_accept:!!accept});if(error)throw error;return data;},
   pvpMatchSnapshot:async id=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_pvp_match_snapshot',{p_match:id});if(error)throw error;return data||{};},
-  pvpAction:async(id,action)=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_pvp_action',{p_match:id,p_action:action});if(error)throw error;return data||{};},
-  pvpSkillAction:async(id,skillId)=>{if(!currentUser)throw new Error('not_authenticated');const {data,error}=await supabase.rpc('etranom_pvp_skill_action',{p_match:id,p_skill_id:skillId,p_target_id:null});if(error){const e=new Error(error.message||'pvp_skill_action_failed');e.code=error.code;e.details=error.details;throw e;}return data||{};},
+  pvpAction:async(id,action,requestId=createCombatRequestId())=>{if(!currentUser)throw new Error('not_authenticated');const rpcArgs={p_match:id};rpcArgs.p_action=action;rpcArgs.p_request_id=requestId;return dispatchRemoteCombatActionV1972({mode:'pvp',intent:{action},requestId,execute:async()=>{const {data,error}=await supabase.rpc('etranom_pvp_action_v1969',rpcArgs);if(error)throw error;return data||{};}});},
+  pvpSkillAction:async(id,skillId,choice=null,requestId=createCombatRequestId())=>{if(!currentUser)throw new Error('not_authenticated');const rpcArgs=Object.assign({p_match:id,p_skill_id:skillId,p_target_id:null,p_choice:choice,p_request_id:requestId});return dispatchRemoteCombatActionV1972({mode:'pvp',intent:{action:'skill',skillId},serverValidatedSkill:true,requestId,execute:async()=>{const {data,error}=await supabase.rpc('etranom_pvp_skill_action_v1969',rpcArgs);if(error){const e=new Error(error.message||'pvp_skill_action_failed');e.code=error.code;e.details=error.details;throw e;}return data||{};}});},
   pvpSubscribeMatch:(id,onChange)=>{if(!currentUser)throw new Error('not_authenticated');const channel=supabase.channel('etr-pvp-match-'+id).on('postgres_changes',{event:'*',schema:'public',table:'pvp_matches',filter:'id=eq.'+id},payload=>onChange?.(payload)).subscribe();return ()=>supabase.removeChannel(channel);},
   leaderboard:async board=>{const {data,error}=await supabase.rpc('etranom_leaderboards',{p_board:board});if(error)throw error;return data||{};}
 };
@@ -402,7 +408,7 @@ async function openPartyTab(regionId=null){
     return;
   }
   if(partyInitPromise)return partyInitPromise;
-  partyInitPromise=(async()=>{try{const {ETRANOMParty}=await import('./systems/party/party.js?v=1841');partySystem=new ETRANOMParty({supabase,container:body,onUpdate:()=>{}});partySystem.preferredRegion=regionId||null;await partySystem.initialize();window.etranomParty=partySystem;const party=partySystem.manager.party;if(party&&regionId&&partySystem.manager.isLeader()&&party.status!=='active'&&party.region_id!==regionId){await partySystem.combat.selectRegion(regionId);await partySystem.refresh();}}catch(e){partySystem=null;body.innerHTML=`<h3>گروه ماجراجویان</h3><p class="social-error">اتصال گروه ناموفق بود: ${socialEsc(e.message||'خطای نامشخص')}</p><button id="etr-party-retry">تلاش دوباره</button>`;document.getElementById('etr-party-retry')?.addEventListener('click',()=>openPartyTab(regionId));}finally{partyInitPromise=null;}})();
+  partyInitPromise=(async()=>{try{const {ETRANOMParty}=await import('./systems/party/party.js?v=1972');partySystem=new ETRANOMParty({supabase,container:body,onUpdate:()=>{}});partySystem.preferredRegion=regionId||null;await partySystem.initialize();window.etranomParty=partySystem;const party=partySystem.manager.party;if(party&&regionId&&partySystem.manager.isLeader()&&party.status!=='active'&&party.region_id!==regionId){await partySystem.combat.selectRegion(regionId);await partySystem.refresh();}}catch(e){partySystem=null;body.innerHTML=`<h3>گروه ماجراجویان</h3><p class="social-error">اتصال گروه ناموفق بود: ${socialEsc(e.message||'خطای نامشخص')}</p><button id="etr-party-retry">تلاش دوباره</button>`;document.getElementById('etr-party-retry')?.addEventListener('click',()=>openPartyTab(regionId));}finally{partyInitPromise=null;}})();
   return partyInitPromise;
 }
 window.openETRANOMParty=regionId=>openPartyTab(regionId);
@@ -503,9 +509,9 @@ async function startSession(session){
   gameRoot.replaceChildren();
   gate.classList.remove('hidden');
   try{
-    try{const {ETRANOMMarketplaceUI}=await import('./systems/marketplace/marketplace-ui.js?v=91');const marketUI=new ETRANOMMarketplaceUI({api:window.lib});window.etranomOpenMarket=()=>marketUI.open();}
+    try{const {ETRANOMMarketplaceUI}=await import('./systems/marketplace/marketplace-ui.js?v=91');const marketUI=new ETRANOMMarketplaceUI({api:window.lib});window.etranomOpenMarket=()=>{if(typeof window.etranomCanOpenMarket!=='function'||!window.etranomCanOpenMarket())return false;marketUI.open();return true;};}
     catch(e){console.warn('[ETRANOM] Marketplace UI unavailable:',e);window.etranomOpenMarket=()=>alert('بازار آنلاین هنوز بارگذاری نشده است.');}
-    try{const {ETRANOMPvPUI}=await import('./systems/pvp/pvp-ui.js?v=1841');const pvpUI=new ETRANOMPvPUI(window.lib);window.etranomOpenPvP=()=>pvpUI.open();}
+    try{const {ETRANOMPvPUI}=await import('./systems/pvp/pvp-ui.js?v=1972');const pvpUI=new ETRANOMPvPUI(window.lib);window.etranomOpenPvP=()=>pvpUI.open();}
     catch(e){console.warn('[ETRANOM] PvP UI unavailable:',e);window.etranomOpenPvP=()=>alert('تالار PvP بارگذاری نشد.');}
     await refreshNotificationCounts();
     startNotificationRealtime();
@@ -520,9 +526,13 @@ async function startSession(session){
     if(socialOverlay && !socialOverlay.isConnected)document.body.appendChild(socialOverlay);
     if(!guildLaunch.isConnected)document.body.appendChild(guildLaunch);
     guildTeacherVisited=sessionStorage.getItem('etranom:guildTeacherVisited')==='1';
-    const { loadRegionOneRuntime } = await import('./systems/content/region-one-runtime.js?v=1653');
+    const safeZoneModule = await import('./systems/safe-zone/safe-zone-engine.js?v=1961');
+    window.ETRANOM_SAFE_ZONE_ENGINE = safeZoneModule.ETRANOMSafeZoneEngine;
+    const safeZonePlatformModule = await import('./systems/safe-zone/safe-zone-platform.js?v=1962');
+    window.ETRANOM_SAFE_ZONE_PLATFORM = safeZonePlatformModule.ETRANOM_SAFE_ZONE_PLATFORM;
+    const { loadRegionOneRuntime } = await import('./systems/content/region-one-runtime.js?v=1980');
     await loadRegionOneRuntime();
-    const elementalistModule = await import('./systems/classes/elementalist.js?v=1652');
+    const elementalistModule = await import('./systems/classes/elementalist.js?v=1931');
     window.ETRANOM_ELEMENTALIST = elementalistModule.ELEMENTALIST;
     window.ETRANOM_CREATE_ELEMENTALIST_PROGRESS = elementalistModule.createElementalistProgress;
     window.ETRANOM_NORMALIZE_ELEMENTALIST_PROGRESS = elementalistModule.normalizeElementalistProgress;
@@ -533,7 +543,7 @@ async function startSession(session){
     // A missing/stale specialization asset must never prevent every account from entering the game.
     // The actual Warlock module is shipped in this release and cache-busted to v125.
     try {
-      const warlockModule = await import('./systems/classes/warlock.js?v=1652');
+      const warlockModule = await import('./systems/classes/warlock.js?v=1931');
       window.ETRANOM_WARLOCK = warlockModule.WARLOCK;
       window.ETRANOM_CREATE_WARLOCK_PROGRESS = warlockModule.createWarlockProgress;
       window.ETRANOM_NORMALIZE_WARLOCK_PROGRESS = warlockModule.normalizeWarlockProgress;
@@ -551,33 +561,43 @@ async function startSession(session){
       window.ETRANOM_USE_WARLOCK_ASCENDED_SKILL = p => ({ ok: false, reason: 'module_unavailable', progress: p || {} });
       window.ETRANOM_END_WARLOCK_DOMAIN = p => p || {};
     }
-    const necromancerModule = await import('./systems/classes/necromancer.js?v=1853');
+    try { const companionModule = await import('./systems/classes/necromancer-companion-bestiary-v1994.js?v=1998'); window.ETRANOM_NECROMANCER_COMMON_COMPANIONS = companionModule.NECROMANCER_ALL_COMPANIONS; window.ETRANOM_NECROMANCER_ALL_COMPANIONS = companionModule.NECROMANCER_ALL_COMPANIONS; window.ETRANOM_RESOLVE_NECROMANCER_COMPANION = companionModule.resolveNecromancerCompanionLevel; window.ETRANOM_CHOOSE_NECROMANCER_COMPANION_INTENT = companionModule.chooseNecromancerCompanionIntent; } catch (companionLoadError) { console.error('[ETRANOM] Necromancer companion data failed to load.', companionLoadError); window.ETRANOM_NECROMANCER_COMMON_COMPANIONS = []; window.ETRANOM_NECROMANCER_ALL_COMPANIONS = []; }
+    try { const gateModule = await import('./systems/classes/necromancer-underworld-gate-v1984.js?v=1995'); window.ETRANOM_NECROMANCER_GATE = gateModule; } catch (gateLoadError) { console.error('[ETRANOM] Underworld Gate module failed to load.', gateLoadError); window.ETRANOM_NECROMANCER_GATE = null; }
+    const necromancerModule = await import('./systems/classes/necromancer.js?v=1998');
     window.ETRANOM_NECROMANCER = necromancerModule.NECROMANCER;
+    window.ETRANOM_GET_NECROMANCER_LEGION_ABILITIES = necromancerModule.getNecromancerLegionAbilities;
+    window.ETRANOM_APPLY_NECROMANCER_LEGION_IDENTITY = necromancerModule.applyNecromancerLegionIdentity;
     window.ETRANOM_CREATE_NECROMANCER_PROGRESS = necromancerModule.createNecromancerProgress;
     window.ETRANOM_NORMALIZE_NECROMANCER_PROGRESS = necromancerModule.normalizeNecromancerProgress;
     window.ETRANOM_RECRUIT_NECROMANCER_LEGION = necromancerModule.recruitNecromancerLegion;
     window.ETRANOM_ACTIVATE_NECROMANCER_DOMAIN = necromancerModule.activateNecromancerDomain;
+    window.ETRANOM_ADVANCE_NECROMANCER_DOMAIN = necromancerModule.advanceNecromancerDomain;
+    window.ETRANOM_TICK_NECROMANCER_DOMAIN = necromancerModule.tickNecromancerDomain;
+    window.ETRANOM_UNLOCK_NECROMANCER_TALENT = necromancerModule.unlockNecromancerTalent;
+    window.ETRANOM_GET_NECROMANCER_TALENT_EFFECTS = necromancerModule.getNecromancerTalentEffects;
     window.ETRANOM_GET_NECROMANCER_ASCENDED_SKILLS = necromancerModule.getAvailableNecromancerAscendedSkills;
     window.ETRANOM_USE_NECROMANCER_ASCENDED_SKILL = necromancerModule.consumeNecromancerAscendedSkill;
     window.ETRANOM_END_NECROMANCER_DOMAIN = necromancerModule.endNecromancerDomain;
     window.ETRANOM_RESET_NECROMANCER_BATTLE = necromancerModule.resetNecromancerBattle;
-    const wizardRuntimeModule = await import('./systems/classes/wizard-combat-runtime.js?v=1847');
+    window.ETRANOM_RECOVER_NECROMANCER_COMPANIONS = necromancerModule.recoverNecromancerCompanions;
+    const wizardRuntimeModule = await import('./systems/classes/wizard-combat-runtime.js?v=1936');
     window.ETRANOM_WIZARD_RUNTIME = wizardRuntimeModule;
     window.ETRANOM_COMPLETE_WIZARD_DOMAIN_TRIAL_STAGE = wizardRuntimeModule.completeWizardDomainTrial;
-    try { const swordAsceticModule = await import('./systems/classes/sword-ascetic-data.js?v=1862'); window.ETRANOM_SWORD_ASCETIC = swordAsceticModule.SWORD_ASCETIC; window.ETRANOM_CREATE_SWORD_ASCETIC_PROGRESS = swordAsceticModule.createSwordAsceticProgress; } catch (e) { console.error('[ETRANOM] Sword Ascetic data failed to load.', e); window.ETRANOM_SWORD_ASCETIC = null; }
-    try { const swordAsceticRuntime = await import('./systems/combat/sword-ascetic-runtime.js?v=1887'); window.ETRANOM_SWORD_ASCETIC_RUNTIME = swordAsceticRuntime; } catch (e) { console.error('[ETRANOM] Sword Ascetic combat runtime failed to load.', e); window.ETRANOM_SWORD_ASCETIC_RUNTIME = null; }
-    try { const apocalypseModule = await import('./systems/combat/apocalypse-harbinger-runtime.js?v=1885'); window.ETRANOM_APOCALYPSE_HARBINGER = apocalypseModule.APOCALYPSE_HARBINGER_DATA; window.ETRANOM_APOCALYPSE_RUNTIME = apocalypseModule; } catch (e) { console.error('[ETRANOM] Apocalypse Harbinger runtime failed to load.', e); window.ETRANOM_APOCALYPSE_HARBINGER = null; window.ETRANOM_APOCALYPSE_RUNTIME = null; }
-    try { const ironBastionModule = await import('./systems/combat/iron-bastion-runtime.js?v=1887'); window.ETRANOM_IRON_BASTION = ironBastionModule.IRON_BASTION_DATA; window.ETRANOM_CREATE_IRON_BASTION_PROGRESS = ironBastionModule.createIronBastionProgress; window.ETRANOM_NORMALIZE_IRON_BASTION_PROGRESS = ironBastionModule.normalizeIronBastionProgress; window.ETRANOM_IRON_BASTION_RUNTIME = ironBastionModule; } catch (e) { console.error('[ETRANOM] Iron Bastion runtime failed to load.', e); window.ETRANOM_IRON_BASTION = null; }
-    try { const chaosWarriorModule = await import('./systems/combat/chaos-warrior-runtime.js?v=1887'); window.ETRANOM_CHAOS_WARRIOR = chaosWarriorModule.CHAOS_WARRIOR_DATA; window.ETRANOM_CREATE_CHAOS_WARRIOR_PROGRESS = chaosWarriorModule.createChaosWarriorProgress; window.ETRANOM_NORMALIZE_CHAOS_WARRIOR_PROGRESS = chaosWarriorModule.normalizeChaosWarriorProgress; window.ETRANOM_CHAOS_WARRIOR_RUNTIME = chaosWarriorModule; } catch (e) { console.error('[ETRANOM] Chaos Warrior runtime failed to load.', e); window.ETRANOM_CHAOS_WARRIOR = null; }
+    try { const swordAsceticModule = await import('./systems/classes/sword-ascetic-data.js?v=1901'); window.ETRANOM_SWORD_ASCETIC = swordAsceticModule.SWORD_ASCETIC; window.ETRANOM_CREATE_SWORD_ASCETIC_PROGRESS = swordAsceticModule.createSwordAsceticProgress; } catch (e) { console.error('[ETRANOM] Sword Ascetic data failed to load.', e); window.ETRANOM_SWORD_ASCETIC = null; }
+    try { const swordAsceticRuntime = await import('./systems/combat/sword-ascetic-runtime.js?v=1937'); window.ETRANOM_SWORD_ASCETIC_RUNTIME = swordAsceticRuntime; } catch (e) { console.error('[ETRANOM] Sword Ascetic combat runtime failed to load.', e); window.ETRANOM_SWORD_ASCETIC_RUNTIME = null; }
+    try { const apocalypseModule = await import('./systems/combat/apocalypse-harbinger-runtime.js?v=1908'); window.ETRANOM_APOCALYPSE_HARBINGER = apocalypseModule.APOCALYPSE_HARBINGER_DATA; window.ETRANOM_APOCALYPSE_RUNTIME = apocalypseModule; } catch (e) { console.error('[ETRANOM] Apocalypse Harbinger runtime failed to load.', e); window.ETRANOM_APOCALYPSE_HARBINGER = null; window.ETRANOM_APOCALYPSE_RUNTIME = null; }
+    try { const ironBastionModule = await import('./systems/combat/iron-bastion-runtime.js?v=1937'); window.ETRANOM_IRON_BASTION = ironBastionModule.IRON_BASTION_DATA; window.ETRANOM_CREATE_IRON_BASTION_PROGRESS = ironBastionModule.createIronBastionProgress; window.ETRANOM_NORMALIZE_IRON_BASTION_PROGRESS = ironBastionModule.normalizeIronBastionProgress; window.ETRANOM_IRON_BASTION_RUNTIME = ironBastionModule; } catch (e) { console.error('[ETRANOM] Iron Bastion runtime failed to load.', e); window.ETRANOM_IRON_BASTION = null; }
+    try { const chaosWarriorModule = await import('./systems/combat/chaos-warrior-runtime.js?v=1901'); window.ETRANOM_CHAOS_WARRIOR = chaosWarriorModule.CHAOS_WARRIOR_DATA; window.ETRANOM_CREATE_CHAOS_WARRIOR_PROGRESS = chaosWarriorModule.createChaosWarriorProgress; window.ETRANOM_NORMALIZE_CHAOS_WARRIOR_PROGRESS = chaosWarriorModule.normalizeChaosWarriorProgress; window.ETRANOM_CHAOS_WARRIOR_RUNTIME = chaosWarriorModule; } catch (e) { console.error('[ETRANOM] Chaos Warrior runtime failed to load.', e); window.ETRANOM_CHAOS_WARRIOR = null; }
     // Load Arcane Mage from a versioned filename to bypass stale CDN/module caches.
     // A missing specialization asset must never block every player from logging in.
     try {
-      const arcaneModule = await import('./systems/classes/arcane-mage-v130.js?v=1652');
+      const arcaneModule = await import('./systems/classes/arcane-mage-v130.js?v=1931');
       window.ETRANOM_ARCANE_MAGE = arcaneModule.ARCANE_MAGE;
       window.ETRANOM_CREATE_ARCANE_PROGRESS = arcaneModule.createArcaneMageProgress;
       window.ETRANOM_NORMALIZE_ARCANE_PROGRESS = arcaneModule.normalizeArcaneMageProgress;
       window.ETRANOM_ACTIVATE_ARCANE_DOMAIN = arcaneModule.activateArcaneMageDomain;
       window.ETRANOM_GET_ARCANE_ASCENDED_SKILLS = arcaneModule.getAvailableArcaneMageAscendedSkills;
+      window.ETRANOM_SELECT_ARCANE_ASCENDED_SKILL = arcaneModule.selectArcaneMageAscendedSkill;
       window.ETRANOM_USE_ARCANE_ASCENDED_SKILL = arcaneModule.consumeArcaneMageAscendedSkill;
       window.ETRANOM_END_ARCANE_DOMAIN = arcaneModule.endArcaneMageDomain;
     } catch (arcaneLoadError) {
@@ -587,14 +607,22 @@ async function startSession(session){
       window.ETRANOM_NORMALIZE_ARCANE_PROGRESS = progress => ({...window.ETRANOM_CREATE_ARCANE_PROGRESS(),...(progress||{})});
       window.ETRANOM_ACTIVATE_ARCANE_DOMAIN = progress => ({ok:false,reason:'module_unavailable',progress:progress||window.ETRANOM_CREATE_ARCANE_PROGRESS()});
       window.ETRANOM_GET_ARCANE_ASCENDED_SKILLS = () => [];
+      window.ETRANOM_SELECT_ARCANE_ASCENDED_SKILL = progress => ({ok:false,reason:'module_unavailable',progress:progress||{}});
       window.ETRANOM_USE_ARCANE_ASCENDED_SKILL = progress => ({ok:false,reason:'module_unavailable',progress:progress||{}});
       window.ETRANOM_END_ARCANE_DOMAIN = progress => progress||{};
     }
+    try { const statCore = await import('./systems/combat/character-stat-core.js?v=1901'); window.ETRANOM_CHARACTER_STAT_CORE = statCore; } catch (statCoreError) { console.error('[ETRANOM] Character stat core failed to load.', statCoreError); window.ETRANOM_CHARACTER_STAT_CORE = null; }
     try { const combatCore = await import('./systems/combat/combat-core.js?v=170'); window.ETRANOM_COMBAT_CORE = combatCore; } catch (combatCoreError) { console.error('[ETRANOM] Shared combat core failed to load.', combatCoreError); }
-    try { const sharedSkillRuntime = await import('./systems/combat/shared-skill-runtime.js?v=1841'); window.ETRANOM_SHARED_SKILLS = sharedSkillRuntime; window.ETRANOM_SKILL_CATALOG = await sharedSkillRuntime.loadSharedSkillCatalog(); } catch (skillRuntimeError) { console.error('[ETRANOM] Shared skill catalog failed to load.', skillRuntimeError); window.ETRANOM_SKILL_CATALOG = null; }
-    try { const combatAdapters = await import('./systems/combat/combat-adapters.js?v=1863'); window.ETRANOM_COMBAT_ADAPTERS = combatAdapters.CombatAdapter; } catch (adapterError) { console.error('[ETRANOM] Combat adapters failed to load.', adapterError); window.ETRANOM_COMBAT_ADAPTERS = null; }
-    try { const combatUi = await import('./systems/combat/shared-combat-ui.js?v=1841'); window.ETRANOM_COMBAT_UI = combatUi; } catch (combatUiError) { console.error('[ETRANOM] Shared combat UI failed to load.', combatUiError); }
-    await import('./game.js?v=1887&nav=1885');
+    try { const centralCombatRuntime = await import('./systems/combat/central-combat-runtime-v1967.js?v=1967'); window.ETRANOM_CENTRAL_COMBAT_RUNTIME = centralCombatRuntime.CentralCombatRuntimeV1967; } catch (centralCombatError) { console.error('[ETRANOM] Central combat runtime gateway failed to load.', centralCombatError); window.ETRANOM_CENTRAL_COMBAT_RUNTIME = null; }
+    try { const sharedSkillRuntime = await import('./systems/combat/shared-skill-runtime.js?v=1954'); window.ETRANOM_SHARED_SKILLS = sharedSkillRuntime; window.ETRANOM_SKILL_CATALOG = await sharedSkillRuntime.loadSharedSkillCatalog(); } catch (skillRuntimeError) { console.error('[ETRANOM] Shared skill catalog failed to load.', skillRuntimeError); window.ETRANOM_SKILL_CATALOG = null; }
+    try { const combatAdapters = await import('./systems/combat/combat-adapters.js?v=1967'); window.ETRANOM_COMBAT_ADAPTERS = combatAdapters.CombatAdapter; } catch (adapterError) { console.error('[ETRANOM] Combat adapters failed to load.', adapterError); window.ETRANOM_COMBAT_ADAPTERS = null; }
+    try { const centralClassEngine = await import('./systems/combat/engines/central-specialization-engine-v1955.js?v=1955'); window.ETRANOM_CENTRAL_CLASS_ENGINE = centralClassEngine.centralSpecializationEngineV1955; window.ETRANOM_CENTRAL_CLASS_ENGINE_AUDIT = centralClassEngine.auditCentralClassEngineV1955(); } catch (centralEngineError) { console.error('[ETRANOM] Central class engine foundation failed to load.', centralEngineError); window.ETRANOM_CENTRAL_CLASS_ENGINE = null; window.ETRANOM_CENTRAL_CLASS_ENGINE_AUDIT = null; }
+    try { const lifecycleEngine = await import('./systems/combat/engines/central-combat-lifecycle-v1956.js?v=1958'); window.ETRANOM_CENTRAL_COMBAT_LIFECYCLE = lifecycleEngine; window.ETRANOM_CENTRAL_COMBAT_LIFECYCLE_VERSION = lifecycleEngine.CENTRAL_COMBAT_LIFECYCLE_VERSION_V1956; } catch (lifecycleError) { console.error('[ETRANOM] Central combat lifecycle reference engine failed to load.', lifecycleError); window.ETRANOM_CENTRAL_COMBAT_LIFECYCLE = null; }
+    try { const skillCompiler = await import('./systems/combat/engines/central-skill-effect-compiler-v1958.js?v=1958'); window.ETRANOM_CENTRAL_SKILL_EFFECT_COMPILER = skillCompiler; window.ETRANOM_CENTRAL_SKILL_EFFECT_AUDIT = skillCompiler.auditCentralSkillEffectCoverageV1958(); window.ETRANOM_CENTRAL_SKILL_EFFECT_CATALOG = skillCompiler.buildCentralSkillEffectCatalogV1958(); window.ETRANOM_CENTRAL_DOMAIN_PROFILE = skillCompiler.resolveCentralDomainProfileV1958; } catch (skillCompilerError) { console.error('[ETRANOM] Central skill effect compiler failed to load.', skillCompilerError); window.ETRANOM_CENTRAL_SKILL_EFFECT_COMPILER = null; window.ETRANOM_CENTRAL_SKILL_EFFECT_AUDIT = null; }
+    try { const combatUi = await import('./systems/combat/shared-combat-ui.js?v=1901'); window.ETRANOM_COMBAT_UI = combatUi; } catch (combatUiError) { console.error('[ETRANOM] Shared combat UI failed to load.', combatUiError); }
+    try { const contentFlow = await import('./systems/combat/combat-content-flow-v1964.js?v=1964'); window.ETRANOM_COMBAT_CONTENT_FLOW = contentFlow; } catch (contentFlowError) { console.error('[ETRANOM] Combat content flow adapters failed to load.', contentFlowError); }
+    try { const unifiedBattle = await import('./systems/combat/unified-battle-experience-v1963.js?v=1966'); window.ETRANOM_UNIFIED_BATTLE_EXPERIENCE = unifiedBattle; window.ETRANOM_UNIFIED_BATTLE_VERSION = unifiedBattle.UNIFIED_BATTLE_EXPERIENCE_VERSION_V1963; } catch (unifiedBattleError) { console.error('[ETRANOM] Unified battle experience foundation failed to load.', unifiedBattleError); window.ETRANOM_UNIFIED_BATTLE_EXPERIENCE = null; }
+    await import('./game.js?v=1999&nav=1999');
     const gameRunner=window.run;
     if(typeof gameRunner!=='function')throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
     await gameRunner('play');
@@ -675,4 +703,23 @@ body:has(#etr-guild-overlay[style*="display: flex"]) #etr-social-launch,body:has
 </style>
 <style id="etr-v1892-map-shortcut-priority">
 body:has(.starting-region-map) #etr-social-launch,body:has(.starting-region-map) #etr-guild-launch{display:grid!important}
+</style>
+
+<style id="etr-v1893-warrior-portrait-fix">
+/* Give each warrior specialization portrait a genuinely large, full-width card area. */
+.specialization-grid .specialization-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:8px!important;min-height:0!important;padding:9px!important}
+.specialization-grid .specialization-card .spec-art{display:block!important;width:100%!important;height:clamp(190px,54vw,270px)!important;min-height:0!important;flex:0 0 auto!important;overflow:hidden!important;border-radius:10px!important}
+.specialization-grid .specialization-card .spec-art img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important}
+.specialization-grid .specialization-card .spec-copy{min-height:58px!important}
+@media(max-width:520px){.specialization-grid .specialization-card .spec-art{height:230px!important}}
+</style>
+
+<style id="etranom-necromancer-companion-portraits-v1981">
+/* V1981: shared dark-fantasy companion portraits in collection and battle cards. */
+.necromancer-legion-member .legion-member-art{width:88px;height:104px;flex:0 0 88px;border:1px solid #725a86;box-shadow:inset 0 0 18px #08060d,0 0 12px #0008;background:#17121d}
+.necromancer-legion-member .legion-member-art img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
+.necromancer-summoned-card .summoned-portrait{overflow:hidden;background:#17121d;border:1px solid #765b83}
+.necromancer-summoned-card .summoned-portrait img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 28%}
+.necromancer-summoned-card .summoned-name{color:#ead9f4;text-shadow:0 1px 4px #000}
+@media(max-width:560px){.necromancer-legion-member .legion-member-art{width:76px;height:94px;flex-basis:76px}}
 </style>

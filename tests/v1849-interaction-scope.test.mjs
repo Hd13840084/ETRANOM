@@ -24,5 +24,5 @@ test('the shared resolver obtains position from state rather than a canvas-local
 });
 
 test('entry point cache-busts the interaction repair', () => {
-  assert.match(html, /game\.js\?v=1862&nav=1862/);
+  assert.match(html, /game\.js\?v=1908&nav=1908/);
 });

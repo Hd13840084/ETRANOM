@@ -1,8 +1,1 @@
-import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
-const game = await readFile(new URL('../../game.js', import.meta.url), 'utf8');
-assert.match(game, /return 5n\*\(3n\*\*BigInt\(n-1\)\)/);
-assert.match(game, /state\.gold-=Number\(cost\);restoreAllResources\(\)/);
-assert.match(game, /c\[1\]==='rest'\?'اتاقی برای استراحت/);
-assert.match(game, /const cost=innRestCost\(\)/);
-console.log('inn rest price v54: PASS');
+import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';const game=await readFile(new URL('../../game.js',import.meta.url),'utf8');const panel=game.slice(game.indexOf('function renderInteractionPanel(){'),game.indexOf('function renderHubTabs(){'));assert.doesNotMatch(panel,/استراحت|بازیابی نیرو|پرداخت سکه/);assert.doesNotMatch(game,/function innRestCost\(/);console.log('V1961: inn rest service and local rest-cost action are retired.');

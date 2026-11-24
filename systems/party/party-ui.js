@@ -1,4 +1,4 @@
-import { renderCombatPlayerCard, renderCombatActionBar } from '../combat/shared-combat-ui.js';
+import { createUnifiedBattleDescriptorV1963, renderUnifiedBattleScreenV1963 } from '../combat/unified-battle-experience-v1963.js?v=1966';
 import { isCombatActionSupported } from '../combat/combat-contract.js';
 // Shared renderer emits battle-meter hp and battle-meter mp bars (plus stamina) used by solo combat as well.
 import { getPlayerDisplayName } from '../online/player-identity.js';
@@ -113,26 +113,64 @@ export class PartyUI {
     const skillsOpen = Boolean(this.skillPanelOpen);
     const panel = document.createElement('section');
     panel.className = 'etr-party-battle etr-battle-screen';
-    panel.innerHTML = `<div class="active-danger-zone-name combat-zone-name">⚔ ${this.escape(snapshot.region_name || snapshot.region_id || 'محدوده خطر')} • نبرد گروهی</div>
-      <div class="battle-player-wrap">${playerCard}</div>
-      <div class="battle-vs"><i></i><b>⚔ VS ⚔</b><i></i></div>
-      <div class="battle-section-title"><b>☠ دشمنان</b><small>${aliveMonsters} دشمن باقی‌مانده از ${monstersList.length}</small></div>
-      <div class="battle-side enemy-side">${monsters}</div>
-      <div class="combat-target-label">🎯 هدف انتخاب‌شده: ${this.escape(selectedMonster?.name || 'انتخاب نشده')} • دور ${Number(snapshot.round) || 1}</div>
+    const descriptor = createUnifiedBattleDescriptorV1963({
+      mode: 'party',
+      encounterType: snapshot.encounter_type === 'dungeon' ? 'dungeon' : snapshot.encounter_type === 'tower' ? 'tower' : 'party_field',
+      encounterId: snapshot.session_id || snapshot.id || '',
+      title: snapshot.region_name || snapshot.region_id || 'نبرد گروهی',
+      subtitle: `دور ${Number(snapshot.round) || 1}`,
+      turn: Number(snapshot.round) || 1
+    });
+    const unifiedPlayer = {
+      ...self,
+      id: self.user_id,
+      name: getPlayerDisplayName(self, 'قهرمان'),
+      class: self.player_class,
+      maxHp: self.max_hp, maxMp: self.max_mp, maxStamina: self.max_stamina,
+      portrait: selfPortrait
+    };
+    const unifiedAllies = allies.map((member, index) => ({
+      ...member, id: member.user_id, name: getPlayerDisplayName(member, `هم‌گروهی ${index + 1}`),
+      class: member.player_class, maxHp: member.max_hp, maxMp: member.max_mp,
+      maxStamina: member.max_stamina, stateLabel: member.retreated ? 'عقب‌نشینی کرده' : member.connected ? 'آنلاین' : 'آفلاین'
+    }));
+    const unifiedEnemies = monstersList.map((monster, index) => {
+      const id = String(monster.id || `monster-${index + 1}`);
+      return {
+        id: String(Number(monster.index ?? (index + 1))), name: monster.name || id,
+        level: monster.level, hp: monster.hp, maxHp: monster.max_hp,
+        mp: monster.mp, maxMp: monster.max_mp,
+        portrait: runtimePortraits[id] || `assets/monsters/${id}.webp`
+      };
+    });
+    const extraContent = `
+      <div class="combat-target-label">🎯 هدف انتخاب‌شده: ${this.escape(selectedMonster?.name || 'انتخاب نشده')} • ${aliveMonsters} دشمن باقی‌مانده از ${monstersList.length}</div>
       <div class="battle-instruction">هر عضو گروه یک اقدام در هر دور دارد؛ پاداش هر هیولا به بازیکنی می‌رسد که ضربه نهایی را وارد کند.</div>
-      ${renderCombatActionBar({ attribute: 'data-battle-action', disabled: { attack: !(canAct && isCombatActionSupported('party','attack')), skill: !(canAct && isCombatActionSupported('party','skill')), items: !(canAct && isCombatActionSupported('party','item')), guard: !(canAct && isCombatActionSupported('party','guard')) } })}
-      ${canRetreat ? `<div class="etr-party-retreat-actions"><button type="button" data-party-retreat>↩ عقب‌نشینی تاکتیکی</button><small>فقط شخصیت تو از نبرد خارج می‌شود؛ اعضای دیگر می‌توانند ادامه دهند. پاداش‌هایی که قبلاً گرفته‌ای حفظ می‌شوند.</small></div>` : ''}
+      ${canRetreat ? `<div class="etr-party-retreat-actions"><button type="button" data-party-retreat>↩ عقب‌نشینی تاکتیکی</button><small>فقط شخصیت تو از نبرد خارج می‌شود؛ اعضای دیگر می‌توانند ادامه دهند. پاداش‌های قبلی حفظ می‌شوند.</small></div>` : ''}
       ${skillsOpen && canAct ? this.renderSkillPicker(snapshot) : ''}
       ${itemsOpen && canAct ? `<div class="etr-party-item-panel"><b>آیتم‌ها و بازیابی</b><div><button type="button" data-battle-action="heal">✚ درمان گروهی</button><button type="button" data-battle-action="potion">🧪 مصرف معجون</button></div></div>` : ''}
-      ${allies.length ? `<div class="etr-party-allies-strip"><div class="battle-section-title"><b>🤝 وضعیت هم‌گروهی‌ها</b><small>${allMembers.filter(m => hpOf(m) > 0).length} عضو زنده از ${allMembers.length}</small></div><div class="etr-party-allies-grid">${allyCards}</div></div>` : ''}
-      ${snapshot.status === 'active' ? `<div class="etr-party-round-status">${selfRetreated ? '↩ عقب‌نشینی تاکتیکی انجام شد؛ دیگر در این نبرد هدف حمله قرار نمی‌گیری و اعضای گروه می‌توانند ادامه دهند.' : this._actionPending ? '⏳ اقدام در حال ثبت و پردازش است؛ تا پایان مکث کوتاه دکمه‌ای نزن.' : selfReady ? '✓ اقدام تو برای این دور ثبت شده؛ منتظر اقدام هم‌گروهی‌ها هستیم.' : !selfAlive ? 'شخصیت تو از پا افتاده است؛ اعضای باقی‌مانده می‌توانند نبرد را ادامه دهند.' : 'نوبت اقدام توست؛ یک گزینه از چهار دکمه نبرد انتخاب کن.'}</div>` : `<div class="battle-finish">${selfRetreated ? '↩ عقب‌نشینی تاکتیکی' : snapshot.status === 'victory' ? '✓ پیروزی گروهی' : 'شکست گروهی'} • نبرد پایان یافت</div>`}
+      ${snapshot.status === 'active' ? `<div class="etr-party-round-status">${selfRetreated ? '↩ عقب‌نشینی تاکتیکی انجام شد؛ اعضای گروه می‌توانند ادامه دهند.' : this._actionPending ? '⏳ اقدام در حال ثبت و پردازش است.' : selfReady ? '✓ اقدام تو ثبت شده؛ منتظر اقدام هم‌گروهی‌ها هستیم.' : !selfAlive ? 'شخصیت تو از پا افتاده است؛ اعضای باقی‌مانده می‌توانند ادامه دهند.' : 'نوبت اقدام توست؛ یک گزینه از چهار دکمه نبرد انتخاب کن.'}</div>` : `<div class="battle-finish">${selfRetreated ? '↩ عقب‌نشینی تاکتیکی' : snapshot.status === 'victory' ? '✓ پیروزی گروهی' : 'شکست گروهی'} • نبرد پایان یافت</div>`}
       <div class="etr-party-status" data-battle-status role="status"></div>`;
+    panel.innerHTML = renderUnifiedBattleScreenV1963({
+      descriptor, player: unifiedPlayer, allies: unifiedAllies, enemies: unifiedEnemies,
+      selectedTargetId: String(this.selectedMonsterIndex || aliveTarget?.index || 1),
+      actionAttribute: 'data-battle-action',
+      disabled: {
+        attack: !(canAct && isCombatActionSupported('party','attack')),
+        skill: !(canAct && isCombatActionSupported('party','skill')),
+        items: !(canAct && isCombatActionSupported('party','item')),
+        guard: !(canAct && isCombatActionSupported('party','guard'))
+      },
+      labels: { attack: 'حمله عادی', skill: 'مهارت‌ها', items: 'آیتم‌ها', guard: 'دفاع' },
+      log: snapshot.log || snapshot.events || [],
+      extraContent
+    });
     const shell = document.createElement('section');
     shell.className = 'etr-party etr-party-battle-host';
     shell.appendChild(panel);
     this.container.replaceChildren(shell);
-    panel.querySelectorAll('[data-party-target]').forEach(button => button.addEventListener('click', () => {
-      this.selectedMonsterIndex = Number(button.dataset.partyTarget);
+    panel.querySelectorAll('[data-unified-target]').forEach(button => button.addEventListener('click', () => {
+      this.selectedMonsterIndex = Number(button.dataset.unifiedTarget);
       this.renderBattle(snapshot);
     }));
     panel.querySelector('[data-party-retreat]')?.addEventListener('click', async () => {

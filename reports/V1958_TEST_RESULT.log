@@ -1,0 +1,35 @@
+ETRANOM V1958 TEST RESULT
+Date: 2026-11-23
+
+TARGETED TESTS
+Command: node --test tests/central-class-engine-v1955.test.mjs tests/central-combat-lifecycle-v1956.test.mjs tests/central-skill-effect-compiler-v1958.test.mjs tests/shared-engine-orchestrator-v1939.test.mjs
+Result: 32 passed, 0 failed.
+
+FULL REPOSITORY TESTS
+Command: node --test tests/*.test.mjs
+Result: 580 total; 571 passed; 9 failed.
+The 9 failures are legacy source-pattern assertions outside V1958:
+- v106 applies 25% enemy stat reduction at shared combat creation
+- v106 makes blacksmith crafting resilient to saved recipe formats
+- runtime does not pre-apply an extra region-one-only attack nerf
+- game save pipeline has serialized cloud writes, local backup and periodic recovery attempts
+- crafted recipe equipment maps localized slot labels to canonical equipment slots
+- shared modules retain their identities and game entry uses the current cache-buster
+- deployed entry point requests the new cache-busted game module
+- entry point cache-busts the interaction repair
+- V1852 logs the actual target and applied damage
+
+JAVASCRIPT SYNTAX
+Command: node --check for all JavaScript files
+Result: 61 files checked; 0 syntax errors.
+
+V1958 COVERAGE
+- 8 implemented specializations
+- 80 base skills with authored effect adapters
+- 80 domain ascended forms with authored effect adapters
+- 32 domain-stage profiles (4 per specialization)
+- All generated operation types are supported by the V1956 lifecycle contract.
+- Local lifecycle smoke test with injected V1958 compiler passed.
+
+LIMITATIONS
+Shadow/reference validation only. No live Solo/Party/PvP cutover, no Supabase SQL execution, no GitHub/hosting deployment, and no online two-account parity test were performed.

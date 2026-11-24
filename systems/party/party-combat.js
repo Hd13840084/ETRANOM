@@ -1,7 +1,11 @@
+import { dispatchRemoteCombatActionV1972 } from "../combat/central-combat-runtime-v1972.js?v=1972";
 import {
     PARTY_CONFIG,
     getPartyRegion
 } from "./party-config.js";
+
+export const PARTY_WARRIOR_RPC_CONTRACT_VERSION = "1907";
+const createRequestId = () => globalThis.crypto?.randomUUID?.() || "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => { const r = Math.random() * 16 | 0; return (c === "x" ? r : (r & 3 | 8)).toString(16); });
 
 export class PartyCombat {
 
@@ -9,6 +13,7 @@ export class PartyCombat {
         this.api = api;
         this.manager = manager;
         this.session = null;
+        this.pendingAction = null;
     }
 
     async selectRegion(regionId) {
@@ -93,14 +98,27 @@ export class PartyCombat {
     async act(action, targetIndex = null) {
         const session = this.session || await this.getSession();
         if (!session?.id) throw new Error("نشست نبرد فعالی پیدا نشد.");
+        const intentKey = JSON.stringify([session.id, action, targetIndex]);
+        if (!this.pendingAction || this.pendingAction.intentKey !== intentKey) {
+            this.pendingAction = { intentKey, requestId: createRequestId() };
+        }
+        const requestId = this.pendingAction.requestId;
         try {
-            const result = await this.api.battleAction(session.id, action, targetIndex);
+            const result = await dispatchRemoteCombatActionV1972({
+                mode: "party",
+                intent: { action, targetId: targetIndex == null ? null : String(targetIndex) },
+                requestId,
+                context: { sessionId: session.id, targetIndex },
+                execute: () => this.api.battleAction(session.id, action, targetIndex, requestId)
+            });
+            this.pendingAction = null;
             if (["victory", "defeat"].includes(result?.status)) this.session = null;
             return result;
         } catch (error) {
             const code = String(error?.message || "");
             const messages = {
                 insufficient_mana: "مانای کافی برای اجرای مهارت نداری.",
+                insufficient_stamina: "استقامت کافی برای اجرای این مهارت نداری.",
                 party_potion_unavailable: "معجون سلامتی یا مانا در کیف تو وجود ندارد.",
                 party_resource_already_full: "منبع مربوطه کامل است؛ معجون مصرف نشد.",
                 already_acted_this_round: "اقدام این دور را قبلاً ثبت کرده‌ای؛ منتظر دور بعد بمان.",
@@ -112,6 +130,9 @@ export class PartyCombat {
                 party_player_already_retreated: "قبلاً از این نبرد عقب‌نشینی کرده‌ای و امکان بازگشت به همین نبرد وجود ندارد."
             };
             if (messages[code]) error.message = messages[code];
+            // Keep the same request UUID after ambiguous transport failures so a retry
+            // replays the committed result instead of spending another turn.
+            if (error?.code || messages[code] || /already_acted|not_your_turn|battle_already_finished|player_defeated/.test(code)) this.pendingAction = null;
             throw error;
         }
     }

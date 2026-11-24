@@ -1,22 +1,30 @@
 /** Iron Bastion authoritative mechanics. Shared by solo/party/PvP adapters. */
 import IRON_BASTION from '../../content/classes/warrior_iron_bastion_v1.json' with { type: 'json' };
-import { resolveCombatSkill } from './shared-skill-runtime.js?v=1841';
+import { resolveCombatSkill } from './shared-skill-runtime.js?v=1906';
+import { resolveCanonicalSkillDamage } from './character-stat-core.js?v=1901';
 
 const clone = v => JSON.parse(JSON.stringify(v ?? {}));
 const n = (v,d=0) => Number.isFinite(Number(v)) ? Number(v) : d;
+// Resolve the strongest valid physical-power alias from real combat snapshots.
+// Some snapshots carry a stale/default attack=1 alongside the populated power field.
+function resolvePhysicalAttack(actor={}) {
+ const values=[actor.attack,actor.power,actor.stats?.attack,actor.stats?.power,actor.combatStats?.attack,actor.combatStats?.power]
+  .map(v=>Number(v)).filter(v=>Number.isFinite(v)&&v>0);
+ return values.length?Math.max(...values):1;
+}
 const clamp = (v,a,b) => Math.max(a,Math.min(b,n(v)));
 const SKILLS = new Map(IRON_BASTION.skills.map(x=>[x.id,x]));
 const ASC = new Map(IRON_BASTION.ascendedSkills.map(x=>[x.id,x]));
 const TALENTS = IRON_BASTION.talentBranches.flatMap(x=>x.talents);
 const TALENT_BY_ID = new Map(TALENTS.map(x=>[x.id,x]));
 export const IRON_BASTION_DATA = IRON_BASTION;
-export const IRON_BASTION_RUNTIME_VERSION = '1.0.1';
+export const IRON_BASTION_RUNTIME_VERSION = '1.0.2';
 
 export function createIronBastionProgress(){return {skillRanks:{},unlockedTalents:[],talentRanks:{},domain:{active:false,stage:0,usedThisBattle:false,ascendedUsed:false,ascendedSkillId:null,turnsRemaining:0},domainQuest:{started:false,guardianDefeats:0,complete:false},skillCooldowns:{},buffs:{},statuses:{}};}
 export function normalizeIronBastionProgress(raw={}){
  const p={...createIronBastionProgress(),...clone(raw)};
  p.skillRanks={...(p.skillRanks||{})};
- const legacySkillMap={warrior_2_strike:'ironcleave',warrior_2_guard:'unyielding_wall',warrior_2_wave:'quake_of_iron',warrior_2_stance:'colossus_rage',warrior_2_ultimate:'last_bastion'};for(const [oldId,newId] of Object.entries(legacySkillMap)){if(p.skillRanks[oldId]!=null&&p.skillRanks[newId]==null)p.skillRanks[newId]=clamp(Math.floor(n(p.skillRanks[oldId],1)),1,6);}p.talentRanks={...(p.talentRanks||{})};p.unlockedTalents=[...new Set(Array.isArray(p.unlockedTalents)?p.unlockedTalents:[])];
+ const legacySkillMap={warrior_2_strike:'ironcleave',warrior_2_guard:'unyielding_wall',warrior_2_wave:'quake_of_iron',warrior_2_stance:'colossus_rage',warrior_2_ultimate:'last_bastion'};for(const [oldId,newId] of Object.entries(legacySkillMap)){if(p.skillRanks[oldId]!=null&&p.skillRanks[newId]==null)p.skillRanks[newId]=clamp(Math.floor(n(p.skillRanks[oldId],1)),1,7);}p.talentRanks={...(p.talentRanks||{})};p.unlockedTalents=[...new Set(Array.isArray(p.unlockedTalents)?p.unlockedTalents:[])];
  p.domain={...createIronBastionProgress().domain,...(p.domain||{})};p.domainQuest={...createIronBastionProgress().domainQuest,...(p.domainQuest||{})};p.skillCooldowns={...(p.skillCooldowns||{})};p.buffs={...(p.buffs||{})};p.statuses={...(p.statuses||{})};return p;
 }
 function getProgress(actor){return normalizeIronBastionProgress(actor.classProgress?.warrior_iron_bastion||actor.ironBastionProgress||{});}
@@ -39,12 +47,12 @@ export function purchaseIronBastionTalent(actor,talentId){
 export function upgradeIronBastionSkill(actor,skillId){
  const a=clone(actor),p=getProgress(a),s=SKILLS.get(String(skillId));if(!s)throw new Error('iron_bastion_skill_not_found');
  if(n(a.level,1)<n(s.unlockLevel,1))throw new Error('iron_bastion_skill_locked');
- const rank=clamp(Math.floor(n(p.skillRanks[s.id],1)),1,6);if(rank>=6)throw new Error('iron_bastion_skill_max_rank');
+ const rank=clamp(Math.floor(n(p.skillRanks[s.id],1)),1,7);if(rank>=7)throw new Error('iron_bastion_skill_max_rank');
  const cost=n(s.upgrades?.[rank-1]?.pointsRequired,1),points=n(a.skillPoints??a.skill_points??p.skillPoints);
  if(points<cost)throw new Error('insufficient_skill_points');a.skillPoints=Math.max(0,points-cost);p.skillRanks[s.id]=rank+1;putProgress(a,p);
  return Object.freeze({actor:a,progress:p,skillId:s.id,rank:rank+1,spent:cost});
 }
-export function listIronBastionSkills({level=1,progress={}}={}){const p=normalizeIronBastionProgress(progress);return IRON_BASTION.skills.filter(s=>n(s.unlockLevel)<=n(level)).map(s=>({...s,rank:clamp(n(p.skillRanks[s.id],1),1,6),classId:'warrior',specializationId:'warrior_iron_bastion'}));}
+export function listIronBastionSkills({level=1,progress={}}={}){const p=normalizeIronBastionProgress(progress);return IRON_BASTION.skills.filter(s=>n(s.unlockLevel)<=n(level)).map(s=>({...s,rank:clamp(n(p.skillRanks[s.id],1),1,7),classId:'warrior',specializationId:'warrior_iron_bastion'}));}
 function domainStage(level,progress={}){return [...IRON_BASTION.domain.stages].reverse().find(s=>n(level)>=n(s.unlockLevel)&&(!s.requiresQuest||Boolean(progress.domainQuest?.complete)))||null;}
 export function activateIronBastionDomain(actor,{level=actor.level,mode='solo'}={}){
  const a=clone(actor),p=getProgress(a),stage=domainStage(level,p);if(!stage)throw new Error(n(level)>=50?'iron_bastion_domain_trial_required':'iron_bastion_domain_locked');
@@ -63,7 +71,7 @@ export function endIronBastionDomain(actor,reason='ended'){
 export function tickIronBastionDomain(actor,targets=[]){
  const a=clone(actor),p=getProgress(a),d=p.domain,ts=clone(targets),log=[];if(!d.active)return Object.freeze({actor:a,targets:ts,log});
  d.turnsRemaining=Math.max(0,n(d.turnsRemaining)-1);
- if(d.turnsRemaining<=0){a.combatEffects=removeAppliedDomainEffects(a.combatEffects||{},d.domainAppliedEffects||{});if(d.stage>=4){for(const t of ts.filter(x=>n(x.hp)>0)){const boss=t.isBoss||t.isMiniboss||/boss/i.test(String(t.rank||t.type||''));const amount=Math.max(1,Math.floor(n(a.attack)* (boss?0.8:1.2)));t.hp=Math.max(0,n(t.hp)-amount);log.push({type:'iron_bastion_domain_final_wave',target:t.id,amount,bossLimited:!!boss});}}d.active=false;d.ascendedSkillId=null;d.selectedBaseSkillId=null;d.ascendedUsed=false;log.push({type:'iron_bastion_domain_ended'});}
+ if(d.turnsRemaining<=0){a.combatEffects=removeAppliedDomainEffects(a.combatEffects||{},d.domainAppliedEffects||{});if(d.stage>=4){for(const t of ts.filter(x=>n(x.hp)>0)){const boss=t.isBoss||t.isMiniboss||/boss/i.test(String(t.rank||t.type||''));const amount=resolveCanonicalSkillDamage({attackPower:n(a.attack),damagePct:boss?80:120,targetDefense:t.defense,targetDamageReductionPct:n(t.damageReductionPct)}).damage;t.hp=Math.max(0,n(t.hp)-amount);log.push({type:'iron_bastion_domain_final_wave',target:t.id,amount,bossLimited:!!boss});}}d.active=false;d.ascendedSkillId=null;d.selectedBaseSkillId=null;d.ascendedUsed=false;log.push({type:'iron_bastion_domain_ended'});}
  putProgress(a,p);return Object.freeze({actor:a,targets:ts,log});
 }
 function rankSkill(skill,rank){const out=clone(skill);for(let i=0;i<rank-1;i++){const mod=skill.upgrades?.[i]?.modifier||{};for(const [k,v] of Object.entries(mod)){if(k==='damagePct')out.powerPct=n(out.powerPct)+n(v);else if(k==='staminaCostPct')out.staminaCost=Math.max(0,n(out.staminaCost)*(1-n(v)/100));else if(k==='effects'&&v&&typeof v==='object')out.effects={...(out.effects||{}),...v};else out[k]=n(out[k])+n(v);}}return out;}
@@ -85,11 +93,14 @@ function applySpecialEffects(result,skill,asc,actor,progress,payload){
 }
 export function resolveIronBastionSkill(skillId,payload={}){
  const actor=clone(payload.actor||{}),p=getProgress(actor),asc=ASC.get(String(skillId));let skill=asc?SKILLS.get(asc.skillId):SKILLS.get(String(skillId));if(!skill)throw new Error('iron_bastion_skill_not_found');
+ // The common combat core scales physical skills from actor.attack exclusively.
+ // Older character snapshots can expose the same stat as power/stats.power.
+ actor.attack=resolvePhysicalAttack(actor);
  if(n(actor.level,1)<n(skill.unlockLevel,1))throw new Error('iron_bastion_skill_locked');if(asc&&!p.domain.active)throw new Error('iron_bastion_ascension_requires_domain');
  if(asc&&p.domain.ascendedUsed)throw new Error('iron_bastion_only_one_ascension_per_domain');
  if(asc&&p.domain.ascendedSkillId!==asc.id)throw new Error('iron_bastion_ascension_not_selected');
- const rank=clamp(n(p.skillRanks[skill.id],1),1,6),ranked=rankSkill(skill,rank),talentFx=collectIronBastionTalentEffects(p),cooldowns={...(actor.skillCooldowns||{})};if(n(cooldowns[skill.id])>0)throw new Error('skill_on_cooldown');const cost=Math.max(0,Math.ceil(n(skill.staminaCost)*(1-clamp(n(talentFx.guardCostReductionPct),0,50)/100)));
- if(n(actor.stamina,n(actor.maxStamina,100))<cost)throw new Error('insufficient_stamina');actor.stamina=Math.max(0,n(actor.stamina,n(actor.maxStamina,100))-cost);if(n(skill.cooldownTurns)>0)cooldowns[skill.id]=n(skill.cooldownTurns);actor.skillCooldowns=cooldowns;
+ const rank=clamp(n(p.skillRanks[skill.id],1),1,7),ranked=rankSkill(skill,rank),talentFx=collectIronBastionTalentEffects(p),cooldowns={...(actor.skillCooldowns||{})};if(n(cooldowns[skill.id])>0)throw new Error('skill_on_cooldown');const cost=Math.max(0,Math.ceil(n(skill.staminaCost)*(1-clamp(n(talentFx.guardCostReductionPct),0,50)/100)));
+ if(n(actor.stamina,n(actor.maxStamina,100))<cost)throw new Error('insufficient_stamina');actor.stamina=Math.max(0,n(actor.stamina,n(actor.maxStamina,100))-cost);if(n(skill.cooldownTurns)>0)cooldowns[skill.id]=n(skill.cooldownTurns);
  const type=coreType(ranked),effects={...(payload.effects||{})};let talentDamage=n(talentFx.axeDamagePct)+n(talentFx.heavyAttackPct)+(ranked.type==='multi_target_damage'||ranked.type==='ultimate_aoe'?n(talentFx.aoeDamagePct):0)+(skill.id==='ironcleave'?n(talentFx.ironcleavePct):0);let normalized={...ranked,type,scalingStat:'attack',damagePct:Math.floor(n(ranked.powerPct)*(1+talentDamage/100)),manaCost:0,staminaCost:0};
  if(['self_guard','team_guard'].includes(ranked.type)){normalized.type='shield';normalized.shieldPct=(ranked.type==='team_guard'?n(ranked.effects?.allyDamageReductionPct,14):22)*(1+n(talentFx.shieldPct)/100);normalized.durationTurns=n(ranked.effects?.durationTurns,2);normalized.damageReductionPct=n(ranked.effects?.damageReductionPct,22);normalized.target='self';}
  if(ranked.type==='counter')normalized.type='self_buff';
@@ -97,6 +108,7 @@ export function resolveIronBastionSkill(skillId,payload={}){
  if(asc){normalized.name=asc.name;normalized.damagePct=({ironcleave:300,quake_of_iron:190,breaker_slam:330,shatterguard:260,last_bastion:520}[skill.id]||0);if(skill.id==='unyielding_wall')normalized.type='shield';if(skill.id==='fortress_stance'||skill.id==='colossus_rage'||skill.id==='iron_reprisal'||skill.id==='marching_bastion')normalized.type='self_buff';}
  const core=resolveCombatSkill({...payload,actor,skill:normalized,effects:{...(payload.effects||{}),...(actor.combatEffects||{})},targets:clone(payload.targets||[]),mode:payload.mode||'solo'});
  const out=applySpecialEffects({...core,log:[...(core.log||[])]},ranked,asc,core.actor,p,payload);
+ out.actor.skillCooldowns={...(out.actor.skillCooldowns||{}),[skill.id]:Math.max(0,n(skill.cooldownTurns))};
  return Object.freeze({...out,skillId:skill.id,baseSkillId:skill.id,rank,staminaSpent:cost});
 }
 export function applyIronBastionTurnRecovery(actor={},baseRecovery=0){const a=clone(actor),p=getProgress(a),fx=collectIronBastionTalentEffects(p),bonus=Math.floor(n(a.maxStamina,100)*clamp(n(fx.staminaRegenPct),0,30)/100),before=n(a.stamina),max=n(a.maxStamina,100);a.stamina=Math.min(max,before+Math.max(0,n(baseRecovery))+bonus);return Object.freeze({actor:a,recovered:a.stamina-before,bonus});}

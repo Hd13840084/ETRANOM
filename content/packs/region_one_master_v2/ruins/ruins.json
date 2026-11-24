@@ -51,6 +51,9 @@
     ],
     "enemy_encounters": false,
     "repeatable": true,
-    "version": 2
+    "version": 2,
+    "level_min": 10,
+    "level_max": 10,
+    "recommended_level": 10
   }
 ]

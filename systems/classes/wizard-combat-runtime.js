@@ -97,9 +97,11 @@ export function normalizeLegionCapacity(progress) {
 }
 export function tickWizardCombatState(combat) {
   if (!combat) return { expired: [], damage: 0 };
-  const expired = []; let damage = 0;
+  const expired = []; const lifeSiphons = []; let damage = 0;
   for (const e of combat.enemies || []) {
     if (e.hp <= 0) continue;
+    if (e.warlockErasedThisTurn) { delete e.warlockErasedThisTurn; continue; }
+    if (e.necromancerLifeSiphon && Number(e.necromancerLifeSiphon.turns)>0) { const life={...e.necromancerLifeSiphon,targetId:e.encounterId}; e.necromancerLifeSiphon.turns--; lifeSiphons.push(life); if(e.necromancerLifeSiphon.turns<=0)delete e.necromancerLifeSiphon; }
     for (const key of ['necromancerWound','necromancerDebuff','warlockDebuff','wizardStatus']) {
       const s = e[key]; if (!s || !(Number(s.turns) > 0)) continue;
       if (key === 'necromancerWound') { const d = Math.max(1, Math.floor((Number(e.maxHp) || 1) * (Number(s.pct) || 0) / 100)); e.hp = Math.max(0, e.hp - d); damage += d; } else if (key === 'wizardStatus' && Number(s.dotPct)>0) { const d=Math.max(1,Math.floor((Number(e.maxHp)||1)*Number(s.dotPct)/100));e.hp=Math.max(0,e.hp-d);damage+=d; }
@@ -108,17 +110,21 @@ export function tickWizardCombatState(combat) {
   }
   for (const e of combat.enemies || []) {
     if (Number(e.necromancerControlledTurns) > 0) { const resist=Math.min(80,Math.max(0,Number(combat.wizardTalentEffects?.legionControlResistancePct)||0));e.necromancerControlledTurns = Math.max(0,Number(e.necromancerControlledTurns)-1+Math.floor(resist/50)); if (e.necromancerControlledTurns <= 0) { e.controlledByPlayer = false; delete e.necromancerControlledTurns; } }
-    if (e.warlockHostage && Number(e.warlockHostage.turns) > 0) { e.warlockHostage.turns -= 1; if (e.warlockHostage.turns <= 0) { const burst=Math.max(0,Number(e.warlockHostage.storedDamage)||0); if (burst && e.hp>0) { e.hp=Math.max(0,e.hp-Math.floor(burst*.7)); damage += Math.floor(burst*.7); } delete e.warlockHostage; } }
+    if (e.warlockHostage && Number(e.warlockHostage.turns) > 0) { e.warlockHostage.turns -= 1; if (e.warlockHostage.turns <= 0) { const burst=Math.max(0,Number(e.warlockHostage.storedDamage)||0),burstDamage=Math.floor(burst*Math.max(0,Number(e.warlockHostage.breakDamagePct)||70)/100); if (burstDamage && e.hp>0) { e.hp=Math.max(0,e.hp-burstDamage); damage += burstDamage; } delete e.warlockHostage; } }
+    if (e.warlockCourtAll && Number(e.warlockCourtAll.turns)>0) { e.warlockCourtAll.turns--; if (e.warlockCourtAll.turns<=0) delete e.warlockCourtAll; }
     if (e.warlockDebuff && Number(e.warlockDebuff.turns) > 0) { e.warlockDebuff.turns -= 1; if (e.warlockDebuff.turns <= 0) delete e.warlockDebuff; }
   }
   if (combat.warlockHunger && Number(combat.warlockHunger.turns) > 0) { combat.warlockHunger.turns -= 1; if (combat.warlockHunger.turns <= 0) delete combat.warlockHunger; }
   if (Number(combat.warlockCourtTurns)>0) { combat.warlockCourtTurns--; if (combat.warlockCourtTurns<=0) { delete combat.warlockCourtTurns; delete combat.warlockCourtMode; } }
+  if (Number(combat.warlockCovenantExhaustionTurns)>0) { combat.warlockCovenantExhaustionTurns--; if (combat.warlockCovenantExhaustionTurns<=0) { delete combat.warlockCovenantExhaustionTurns; delete combat.warlockCovenantDebtLock; } }
+  if (combat.necromancerReviveArmed && Number(combat.necromancerReviveTurns)>0) { combat.necromancerReviveTurns--; if (combat.necromancerReviveTurns<=0) { combat.necromancerReviveArmed=false; delete combat.necromancerReviveTurns; } }
+  if (combat.necromancerLegionBuff && Number(combat.necromancerLegionBuff.turns)>0) { combat.necromancerLegionBuff.turns--; if (combat.necromancerLegionBuff.turns<=0) { delete combat.necromancerLegionBuff; delete combat.necromancerKingdomSoulKills; } }
   if (combat.necromancerSoulGuard && Number(combat.necromancerSoulGuard.turns)>0) { combat.necromancerSoulGuard.turns--; if (combat.necromancerSoulGuard.turns<=0) delete combat.necromancerSoulGuard; }
-  if (Number(combat.necromancerSovereignTurns)>0) { combat.necromancerSovereignTurns--; if (combat.necromancerSovereignTurns<=0) { const pct=Math.max(0,Number(combat.wizardTalentEffects?.eternalSovereignFinisherPct)||0); if(pct) for(const e of combat.enemies||[]) if(e.hp>0){const d=Math.max(1,Math.floor((Number(e.maxHp)||1)*pct/100));e.hp=Math.max(0,e.hp-d);damage+=d;} delete combat.necromancerSovereignTurns; } }
+  if (Number(combat.necromancerSovereignTurns)>0) { combat.necromancerSovereignTurns--; if (combat.necromancerSovereignTurns<=0) { const pct=Math.max(0,Number(combat.wizardTalentEffects?.eternalSovereignFinisherPct)||0); if(pct) for(const e of combat.enemies||[]) if(e.hp>0){const d=Math.max(1,Math.floor((Number(e.maxHp)||1)*pct/100));e.hp=Math.max(0,e.hp-d);damage+=d;} combat.necromancerSovereignFatiguePending=true; delete combat.necromancerSovereignTurns; } }
   for (const key of Object.keys(combat.wizardBuffs || {})) {
     const b = combat.wizardBuffs[key]; if (b && Number(b.turns) > 0) { b.turns--; if (b.turns <= 0) delete combat.wizardBuffs[key]; }
   }
-  return { expired, damage };
+  return { expired, damage, lifeSiphons };
 }
 export function runLegionActions(combat, character, progress, powerScale = 1) {
   if (!combat || !Array.isArray(progress?.legion)) return [];
@@ -151,9 +157,10 @@ export function runLegionActions(combat, character, progress, powerScale = 1) {
   return reports;
 }
 export function resolveNecromancerRevive(combat, character, maxHp) {
-  if (!combat?.necromancerReviveArmed || combat.necromancerReviveConsumed || Number(character?.hp) > 0) return false;
+  if (!combat?.necromancerReviveArmed || combat.necromancerReviveConsumed || (combat.necromancerReviveTurns != null && Number(combat.necromancerReviveTurns) <= 0) || Number(character?.hp) > 0) return false;
   combat.necromancerReviveArmed = false; combat.necromancerReviveConsumed = true;
-  character.hp = Math.max(1, Math.floor(Math.max(1, Number(maxHp) || 1) * 0.3));
+  const pct=Math.max(1,Math.min(100,Number(combat.necromancerReviveHealthPct)||25));
+  character.hp = Math.max(1, Math.floor(Math.max(1, Number(maxHp) || 1) * pct / 100));
   return true;
 }
 export function completeWizardDomainTrial(progress, trialStage) {

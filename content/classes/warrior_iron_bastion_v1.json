@@ -71,6 +71,15 @@
           "modifier": {
             "damagePct": 11
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "damagePct": 11
+          }
         }
       ],
       "effects": {
@@ -79,9 +88,10 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است.",
-      "defenseReductionPct": 15
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "defenseReductionPct": 15,
+      "rankCap": 7
     },
     {
       "id": "unyielding_wall",
@@ -140,6 +150,15 @@
           "modifier": {
             "damageReductionPct": 4
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "damageReductionPct": 4
+          }
         }
       ],
       "effects": {
@@ -149,8 +168,9 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "rankCap": 7
     },
     {
       "id": "quake_of_iron",
@@ -209,6 +229,15 @@
           "modifier": {
             "damagePct": 10
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "damagePct": 10
+          }
         }
       ],
       "effects": {
@@ -218,8 +247,9 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "rankCap": 7
     },
     {
       "id": "fortress_stance",
@@ -278,6 +308,15 @@
           "modifier": {
             "defensePct": 4
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "defensePct": 4
+          }
         }
       ],
       "effects": {
@@ -289,8 +328,9 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "rankCap": 7
     },
     {
       "id": "breaker_slam",
@@ -349,6 +389,15 @@
           "modifier": {
             "damagePct": 12
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "damagePct": 12
+          }
         }
       ],
       "effects": {
@@ -357,8 +406,9 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "rankCap": 7
     },
     {
       "id": "iron_reprisal",
@@ -417,6 +467,15 @@
           "modifier": {
             "reflectPct": 5
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "reflectPct": 5
+          }
         }
       ],
       "effects": {
@@ -426,8 +485,9 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "rankCap": 7
     },
     {
       "id": "marching_bastion",
@@ -486,6 +546,15 @@
           "modifier": {
             "allyDamageReductionPct": 3
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "allyDamageReductionPct": 3
+          }
         }
       ],
       "effects": {
@@ -495,8 +564,9 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "rankCap": 7
     },
     {
       "id": "shatterguard",
@@ -555,6 +625,15 @@
           "modifier": {
             "damagePct": 11
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "damagePct": 11
+          }
         }
       ],
       "effects": {
@@ -564,8 +643,9 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "rankCap": 7
     },
     {
       "id": "colossus_rage",
@@ -624,6 +704,15 @@
           "modifier": {
             "attackPct": 4
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "attackPct": 4
+          }
         }
       ],
       "effects": {
@@ -635,8 +724,9 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "rankCap": 7
     },
     {
       "id": "last_bastion",
@@ -695,6 +785,15 @@
           "modifier": {
             "damagePct": 20
           }
+        },
+        {
+          "rank": 7,
+          "currency": "skillPoints",
+          "pointsRequired": 1,
+          "effect": "رتبه ۷: ادامه همان مسیر ارتقای اختصاصی مهارت؛ اثر عددی این مرحله مطابق ضریب ثبت‌شده اعمال می‌شود.",
+          "modifier": {
+            "damagePct": 20
+          }
         }
       ],
       "effects": {
@@ -704,8 +803,9 @@
       "rankOne": true,
       "rankCurrency": "skillPoints",
       "rankCost": 1,
-      "maxRank": 6,
-      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۶ است."
+      "maxRank": 7,
+      "upgradeSummary": "هر رتبه با ۱ امتیاز مهارت باز می‌شود؛ رتبه ۱ پایه است و حداکثر رتبه ۷ است.",
+      "rankCap": 7
     }
   ],
   "talentBranches": [

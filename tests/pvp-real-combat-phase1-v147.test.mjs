@@ -21,6 +21,8 @@ test('client exposes active match snapshot and no longer claims an automatic res
  assert.match(ui,/renderMatch/);
  assert.match(ui,/active_matches/);
 });
-test('PvP hall copy no longer advertises level/class scoring',()=>{
- assert.match(game,/نتیجه خودکار بر اساس سطح و کلاس حذف شده است/);
+test('safe-zone PvP hall no longer exposes a local launch/service control',()=>{
+ const panel=game.slice(game.indexOf('function renderInteractionPanel(){'),game.indexOf('function renderHubTabs(){'));
+ assert.doesNotMatch(panel,/data-pvp-launch|باز کردن تالار PvP/);
+ assert.match(ui,/renderMatch/);
 });

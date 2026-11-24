@@ -76,15 +76,15 @@ test('all ten base skills resolve through solo, party and PvP adapters', () => {
   }
 });
 
-test('skill rank is capped at the six defined upgrade stages', () => {
+test('skill rank is capped at the seven-rank shared contract', () => {
   const base = actor();
-  const rankSix = CombatAdapter.solo.specializationSkill(catalog, 'warrior_1', 'black_crescent', {
-    actor: { ...base, classProgress: { warrior_sword_ascetic: { skillRanks: { black_crescent: 6 } } } },
+  const rankSeven = CombatAdapter.solo.specializationSkill(catalog, 'warrior_1', 'black_crescent', {
+    actor: { ...base, classProgress: { warrior_sword_ascetic: { skillRanks: { black_crescent: 7 } } } },
     targets: targets(), targetId: 'mob1'
   });
   const overRanked = CombatAdapter.solo.specializationSkill(catalog, 'warrior_1', 'black_crescent', {
     actor: { ...base, classProgress: { warrior_sword_ascetic: { skillRanks: { black_crescent: 99 } } } },
     targets: targets(), targetId: 'mob1'
   });
-  assert.deepEqual(overRanked.targets, rankSix.targets);
+  assert.deepEqual(overRanked.targets, rankSeven.targets);
 });

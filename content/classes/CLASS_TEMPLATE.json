@@ -1,8 +1,16 @@
 {
-  "id": "unique_class_id",
+  "schema_version": "1.0.0",
+  "id": "future_class_01",
   "name_fa": "نام کلاس",
-  "description_fa": "توضیح کلاس",
-  "specialization_ids": [],
+  "description_fa": "توضیح هویت و نقش کلاس",
+  "specialization_ids": [
+    "future_class_01_spec_1",
+    "future_class_01_spec_2",
+    "future_class_01_spec_3",
+    "future_class_01_spec_4"
+  ],
   "starting_equipment_ids": [],
+  "attributeProfile": "declared_by_specialization",
+  "mustUseSharedClassContract": "content/classes/CLASS_SPECIALIZATION_CONTRACT_V1.json",
   "version": 1
 }

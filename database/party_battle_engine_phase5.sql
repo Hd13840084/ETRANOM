@@ -203,7 +203,7 @@ begin
        order by random() limit 1;
       if v_recipe is not null and random()*100 >= coalesce((select drop_chance from public.etranom_content_recipes where id=v_recipe),0) then v_recipe:=null; end if;
       v_xp:=case when v_monster->>'kind'='normal' then 20 else 100 end;
-      v_reward_level:=greatest(1,least(50,v_level));
+      v_reward_level:=greatest(1,least(100,v_level));
       v_rest_cost:=5*power(3::numeric,v_reward_level-1);
       v_coin_share:=case when v_monster->>'kind' in ('area_boss','boss') then 2.5
                          when v_monster->>'kind' in ('mini_boss','miniboss') then 0.8 else 0.2 end;

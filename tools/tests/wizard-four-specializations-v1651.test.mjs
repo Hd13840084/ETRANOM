@@ -62,6 +62,6 @@ test('every active skill type is connected to a live combat handler', async () =
   assert.equal(warlockSkill.type, 'true_name_debuff');
   assert.ok(wizardHandler.includes("type==='true_name_debuff'"));
   assert.ok(game.includes("type==='true_name_debuff'?"));
-  assert.match(index, /game\.js\?v=1653/);
-  assert.match(index, /warlock\.js\?v=1652/);
+  assert.match(index, /game\.js\?v=1961/);
+  assert.match(index, /warlock\.js\?v=1931/);
 });

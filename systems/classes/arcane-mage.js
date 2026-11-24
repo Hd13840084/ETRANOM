@@ -104,15 +104,33 @@ export function activateArcaneMageDomain(progress, playerLevel){
 }
 export function getAvailableArcaneMageAscendedSkills(progress){
   const p=normalizeArcaneMageProgress(progress);
-  return p.domainActive&&!p.ascendedSkillUsedThisDomain?ARCANE_MAGE.ascendedSkills:[];
+  if(!p.domainActive||p.ascendedSkillUsedThisDomain||p.ascendedUsesThisDomain>=1) return [];
+  if(p.ascendedSkillId) return ARCANE_MAGE.ascendedSkills.filter(x=>x.id===p.ascendedSkillId);
+  return ARCANE_MAGE.ascendedSkills;
+}
+export function selectArcaneMageAscendedSkill(progress, ascendedSkillId){
+  const p=normalizeArcaneMageProgress(progress);
+  if(!p.domainActive) return {ok:false,reason:'domain_not_active',progress:p};
+  if(p.ascendedSkillUsedThisDomain||p.ascendedUsesThisDomain>=1) return {ok:false,reason:'ascended_skill_already_used',progress:p};
+  if(p.ascendedSkillId) return {ok:false,reason:'ascended_skill_already_selected',progress:p};
+  const skill=ARCANE_MAGE.ascendedSkills.find(x=>x.id===ascendedSkillId);
+  if(!skill) return {ok:false,reason:'invalid_ascended_skill',progress:p};
+  p.ascendedSkillId=skill.id;
+  return {ok:true,progress:p,skill};
 }
 export function consumeArcaneMageAscendedSkill(progress, ascendedSkillId){
   const p=normalizeArcaneMageProgress(progress);
   if(!p.domainActive) return {ok:false,reason:'domain_not_active',progress:p};
   if(p.ascendedSkillUsedThisDomain||p.ascendedUsesThisDomain>=1) return {ok:false,reason:'ascended_skill_already_used',progress:p};
+  if(!p.ascendedSkillId) return {ok:false,reason:'ascended_skill_not_selected',progress:p};
+  if(p.ascendedSkillId!==ascendedSkillId) return {ok:false,reason:'ascended_skill_selection_mismatch',progress:p};
   const skill=ARCANE_MAGE.ascendedSkills.find(x=>x.id===ascendedSkillId);
   if(!skill) return {ok:false,reason:'invalid_ascended_skill',progress:p};
-  p.ascendedSkillUsedThisDomain=true; p.ascendedUsesThisDomain=1; p.ascendedSkillId=skill.id;
+  p.ascendedSkillUsedThisDomain=true; p.ascendedUsesThisDomain=1;
   return {ok:true,progress:p,skill};
 }
-export function endArcaneMageDomain(progress){ const p=normalizeArcaneMageProgress(progress); p.domainActive=false; p.ascendedSkillId=null; return p; }
+export function endArcaneMageDomain(progress){
+  const p=normalizeArcaneMageProgress(progress);
+  p.domainActive=false; p.ascendedSkillId=null; p.ascendedSkillUsedThisDomain=false; p.ascendedUsesThisDomain=0;
+  return p;
+}

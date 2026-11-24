@@ -1,3 +1,34 @@
+# وضعیت فعلی پروژه — V1972
+
+درگاه مرکزی اقدام‌های نبرد برای Solo، Party و PvP در `systems/combat/central-combat-runtime-v1972.js` یکپارچه شده است. مرجع اجرای Solo هنوز محلی است؛ Party و PvP از RPCهای معتبر V1969 استفاده می‌کنند. گزارش کامل: `README_V1972_FA.md` و `docs/CENTRAL_COMBAT_RUNTIME_INTEGRATION_V1972_FA.md`. این بسته هیچ تغییری روی Supabase، GitHub یا هاست اعمال نمی‌کند و SQL جدیدی ندارد.
+
+## Latest baseline — V1961
+Safe-zone content reset: only map, buildings, NPC identity, location descriptions and basic dialogue remain active. Local items, quests, services and economy loops have been removed for redesign. See `README_V1961_FA.md`.
+
+## آخرین وضعیت — V1936
+
+موارد باقی‌مانده Wizard از ممیزی V1935 تکمیل شده‌اند. وضعیت، محدوده تست و محدودیت‌های استقرار در `V1936_WIZARD_COMPLETION_STATUS_FA.md` و `V1936_RELEASE_STATUS_FA.md` ثبت شده‌اند.
+
+## نسخه V1906 — چرخه نوبت تخصص‌ها
+
+جزئیات: `CHANGELOG_V1906_SPECIALIZATION_TURN_LIFECYCLE_FA.md`
+
+V1906 API چرخه نوبت تخصصی و جلوگیری از اجرای دوباره tick در یک شناسه نوبت را اضافه می‌کند. این نسخه Party/PvP را به‌صورت زنده یا SQL به این چرخه متصل نمی‌کند؛ محدودیت‌ها در changelog ثبت شده‌اند.
+
+## نسخه V1904 — سازگاری چرخه Cooldown تخصص‌ها
+
+جزئیات: `CHANGELOG_V1904_SPECIALIZATION_COOLDOWN_COMPATIBILITY_FA.md`
+
+نسخه V1904 ساختارهای camelCase و snake_case ذخیره Cooldownها را در چرخه مشترک پشتیبانی می‌کند. این تغییر به‌تنهایی به معنی اتصال نهایی Party و PvP به Runtime مشترک یا تأیید زنده Supabase نیست.
+
+# ETRANOM — V1903
+
+جزئیات اتصال چرخه نوبت نبرد تک‌نفره: `CHANGELOG_V1903_SOLO_TURN_LIFECYCLE_FA.md`
+
+# ETRANOM — V1902
+
+نسخه V1902 چرخه مشترک نوبت و Cooldown را تکمیل می‌کند. برای جزئیات تغییرات، محدودیت ادغام سمت سرور و گزارش آزمون‌ها به `CHANGELOG_V1902_COMBAT_TURN_LIFECYCLE_FA.md` مراجعه کنید. این نسخه هنوز انتشار نهایی بدون خطا نیست.
+
 # ETRANOM — سرزمین‌های بی‌کران
 
 ETRANOM یک بازی نقش‌آفرینی فانتزی تاریک با روایت، اکتشاف دوبعدی، تعامل مکانی، NPCهای دارای هویت و حافظه، اقتصاد و اطلس جهان است. محدوده توسعه بازی در نسخه فعلی بر منطقه آغازین امن، شهر خاکستر و سه روستای پیرامون آن متمرکز است.
@@ -101,3 +132,14 @@ See `docs/PHASE4_PARTY_BATTLE_ENGINE_PROGRESS_FA.md` and `docs/PHASE4_FINALIZATI
 ## حرکت زنده بازیکنان روی نقشه
 
 مرحله دوم آواتارهای آنلاین در `docs/ONLINE_LIVE_MOVEMENT_PHASE2_FA.md` توضیح داده شده است. این قابلیت از همان Supabase Realtime Presence استفاده می‌کند و SQL تازه‌ای لازم ندارد.
+
+## استانداردسازی تخصص‌ها — نسخه V1901
+
+قرارداد مشترک هشت تخصص فعلی و قالب ۳۲ تخصص آینده در `docs/CLASS_SYSTEMS_UNIFICATION_V1901_FA.md` مستند شده است. موتور آمار در `systems/combat/character-stat-core.js` و موتور فرمول آسیب در `resolveCanonicalSkillDamage` مرجع واحد محاسبات هستند. ساختار آینده از `content/classes/SPECIALIZATION_TEMPLATE_V1.json` پیروی می‌کند.
+
+این نسخه، یکپارچگی محلی هسته آمار و مسیر آسیب را با آزمون‌های خودکار بررسی کرده است؛ اما شکست‌های قدیمی مجموعه آزمون و آزمون زنده سرور/چندحساب هنوز باقی‌اند. انتشار زنده را تا رفع آن‌ها و آزمون نهایی انجام ندهید.
+
+
+## V1908 — Warrior Combat Balance
+
+V1908 adds a post-V1907 Supabase RPC balance migration at `database/party_warrior_combat_balance_v1908.sql`. It caps final Party Warrior damage per target, applies timed attack/defense/reduction/evasion buffs, resets battle-scoped Party cooldowns/effects at the first action of a new battle, repairs Warrior damage/status type routing, and removes the duplicate Ruin Crown bonus hit in the Apocalypse Harbinger runtime. Run the V1908 SQL only after the V1907 Party Warrior integration has already been installed. Live Supabase execution is not included in this package.

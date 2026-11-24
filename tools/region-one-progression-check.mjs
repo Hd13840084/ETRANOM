@@ -9,6 +9,6 @@ assert.ok(regions.every(z=>z.region_number===1&&z.recipe_level===1&&z.item_level
 assert.ok(recipes.every(r=>r.recipe_level===1&&r.max_recipe_level===10&&r.item_level===1),'Region 1 recipes must start at level 1 and support 10 upgrade levels');
 assert.ok(game.includes('window.ETRANOM_RUNTIME_CONTENT?.recipes?.length'),'runtime recipe pack not connected');
 assert.ok(game.includes('vitality*10'),'Vitality must scale maximum HP');
-assert.ok(game.includes('intellect*8+(faithClass?faith*8:0)'),'Intellect/Faith must scale maximum MP');
+assert.ok(game.includes('characterStat("intellect")')&&game.includes('characterStat("faith")')&&game.includes('faithClass?8:4'),'Intellect/Faith must scale maximum MP through the active stat core');
 assert.ok(game.includes('const hitChance=clamp(85+(characterStat("perception")+(Number(gear.perception)||0)-10)*.35,65,98)'),'Perception must improve hit accuracy');
 console.log(`PASS progression: ${regions.length} zones use level-1 gear/recipes; all ${recipes.length} recipes support ten upgrade levels.`);

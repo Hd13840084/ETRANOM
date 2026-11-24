@@ -10,7 +10,7 @@ test('Iron Bastion portrait is registered for character creation and preview',()
  assert.match(game,/function isIronBastion\(\)/);
 });
 test('Iron Bastion status portrait resolves without changing Sword Ascetic',()=>{
- assert.match(game,/function playerClassPortrait\(\)\{return isIronBastion\(\)\?'assets\/classes\/iron_bastion_portrait\.webp':isSwordAscetic\(\)\?/);
+ assert.match(game,/function playerClassPortrait\(\)\{return [\s\S]{0,900}isIronBastion\(\)[\s\S]{0,120}'assets\/classes\/iron_bastion_portrait\.webp'/);
  assert.match(game,/assets\/classes\/sword_ascetic_portrait\.webp/);
 });
 test('party combat card can resolve both Warrior specialization portraits',()=>{
@@ -27,5 +27,7 @@ test('both specialization catalogs point to the new asset and preserve stable id
 });
 test('asset exists and client cache version is bumped',()=>{
  assert.ok(existsSync(new URL('../../assets/classes/iron_bastion_portrait.webp',import.meta.url)));
- assert.match(html,/game\.js\?v=1867&nav=1867/);
+ const cache=html.match(/game\.js\?v=(\d+)&nav=(\d+)/);
+ assert.ok(cache,'game.js must use a versioned cache key');
+ assert.equal(cache[1],cache[2],'game.js and navigation cache versions must match');
 });

@@ -1074,7 +1074,7 @@ export const ELEMENTALIST = {
     "domainAscensionLevel": 50,
     "absoluteDomainLevel": 50,
     "absoluteDomainRequiresQuest": true,
-    "ascendedSkillChoiceCount": 0,
+    "ascendedSkillChoiceCount": 1,
     "ascendedSkillAvailableOnlyInDomain": true,
     "ascendedSkillAvailability": "all_10_during_domain",
     "ascendedSkillSelectionTiming": "after_domain_activation",

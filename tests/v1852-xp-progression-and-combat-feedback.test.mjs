@@ -8,11 +8,13 @@ test('V1852 sharply raises level 5+ XP requirements while preserving levels 1-4'
   const match = game.match(/const LEVEL_XP_REQUIREMENTS=\[([^\]]+)\]/);
   assert.ok(match, 'XP table exists');
   const values = match[1].split(',').map(Number);
-  assert.equal(values.length, 49);
+  assert.equal(values.length, 99, 'V1979 extends the curve through level 100');
   assert.deepEqual(values.slice(0, 4), [100, 2300, 3800, 5700]);
   assert.equal(values[4], 25000, 'level 5 to 6 requires 25,000 XP');
   assert.equal(values[5], 28000, 'level 6 to 7 requires 28,000 XP');
   assert.ok(values[5] > values[4] && values[5] / values[4] > 1.11);
+  assert.ok(values[49] > values[48]);
+  assert.ok(values[98] > values[97]);
 });
 
 test('V1853 keeps region-one XP at 2 percent from level 5 onward instead of disabling it', () => {
