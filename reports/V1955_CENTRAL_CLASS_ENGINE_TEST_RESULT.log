@@ -1,0 +1,24 @@
+ETRANOM V1955 CENTRAL CLASS ENGINE FOUNDATION
+
+Targeted regression command:
+node --experimental-default-type=module --test tests/central-class-engine-v1955.test.mjs tests/shared-engine-runtime-v1913.test.mjs tests/shared-engine-orchestrator-v1939.test.mjs tests/shared-engine-differential-audit-v1940.test.mjs tests/class-specialization-contract-v1.test.mjs tests/specialization-content-contract-v1900.test.mjs
+Result: 46 passed, 0 failed.
+
+Full repository test command:
+node --experimental-default-type=module --test tests/*.test.mjs tests/v1923/*.test.mjs tests/v1924/*.test.mjs tests/v1925/*.test.mjs tests/v1926/*.test.mjs tests/v1927/*.test.mjs tests/v1928/*.test.mjs tests/v1929/*.test.mjs tests/v1931/*.test.mjs tests/v1932/*.test.mjs tests/v1934/*.test.mjs tests/v1937/*.test.mjs tests/v1944/*.test.mjs tests/v1954/*.test.mjs
+Result: 647 tests; 638 passed; 9 failed.
+
+The nine failures are legacy expectation mismatches outside the new central-engine files:
+- tests/balance-legion-blacksmith-v106.test.mjs (3 assertions)
+- tests/identity-save-safety-v1642.test.mjs (1 assertion)
+- tests/summon-equipment-v109.test.mjs (1 assertion)
+- tests/ui-binding-resilience-v1841.test.mjs (1 assertion)
+- tests/v1848-region-action-combat-render.test.mjs (1 assertion)
+- tests/v1849-interaction-scope.test.mjs (1 assertion)
+- tests/v1852-xp-progression-and-combat-feedback.test.mjs (1 assertion)
+
+JavaScript syntax: 58 .js files checked; 0 syntax failures.
+Central registry audit: PASS (10 classes / 40 slots / 8 implemented / 32 reserved; all 8 implemented content audits pass).
+Central skill preflight: 80 skills x 3 modes = 240 checks; input immutability preserved.
+
+Runtime status: prepare/preflight only. Existing live combat resolvers remain authoritative. No Supabase SQL was run. No GitHub or hosting changes were made.
