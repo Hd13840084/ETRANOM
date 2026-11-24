@@ -1,0 +1,4 @@
+39b71d5ba7bc848292514f91eb3c37a6cd7d94a5a9f9c552d40ab2c976b6b1e2  systems/progression/character-progression-v1977.js
+1eaf04099cddb037bc34e58a1b93ddadfc8550b4e1519957b750f65f0020ecdf  systems/economy/economy-ledger-v1977.js
+818ca837fe6b442172b4283314123419e289dd9e77cbdede86a82bf3a6790057  content/progression/character-progression-v1977.json
+274fdb2a91f40be85463b8b2ea7584fbb69d96cdf5473dcca896c03c1d7286e2  content/economy/currency-catalog-v1977.json

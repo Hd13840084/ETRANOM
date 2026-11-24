@@ -1,0 +1,9 @@
+ETRANOM V1961 SAFE ZONE CONTENT RESET
+Targeted tests: 39/39 PASS
+JavaScript syntax: 63/63 PASS
+Full project tests: 926/958 PASS, 32 FAIL
+Baseline comparison against V1960: 0 new failing test names; 4 prior failures fixed
+Safe-zone registry audit: OK (10 NPC, 9 buildings, 8 landmarks; 27 total; no duplicate IDs; no missing stewards)
+ZIP integrity: PASS (unzip -t reported no errors)
+Live browser/Supabase/GitHub/hosting tests: NOT RUN
+SQL migrations executed: NONE

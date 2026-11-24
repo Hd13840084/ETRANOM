@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const root=new URL('../content/packs/region_one_master_v2/',import.meta.url);
+const regions=JSON.parse(fs.readFileSync(new URL('regions/regions.json',root),'utf8'));
+const recipes=JSON.parse(fs.readFileSync(new URL('recipes/recipes.json',root),'utf8'));
+const game=fs.readFileSync(new URL('../game.js',import.meta.url),'utf8');
+assert.equal(regions.length,6,'All six Region 1 zones must be present');
+assert.ok(regions.every(z=>z.region_number===1&&z.recipe_level===1&&z.item_level===1),'Region 1 must only produce level-1 items and recipes');
+assert.ok(recipes.every(r=>r.recipe_level===1&&r.max_recipe_level===10&&r.item_level===1),'Region 1 recipes must start at level 1 and support 10 upgrade levels');
+assert.ok(game.includes('window.ETRANOM_RUNTIME_CONTENT?.recipes?.length'),'runtime recipe pack not connected');
+assert.ok(game.includes('vitality*10'),'Vitality must scale maximum HP');
+assert.ok(game.includes('characterStat("intellect")')&&game.includes('characterStat("faith")')&&game.includes('faithClass?8:4'),'Intellect/Faith must scale maximum MP through the active stat core');
+assert.ok(game.includes('const hitChance=clamp(85+(characterStat("perception")+(Number(gear.perception)||0)-10)*.35,65,98)'),'Perception must improve hit accuracy');
+console.log(`PASS progression: ${regions.length} zones use level-1 gear/recipes; all ${recipes.length} recipes support ten upgrade levels.`);
