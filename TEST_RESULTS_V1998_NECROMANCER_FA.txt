@@ -1,6 +1,0 @@
-ETRANOM V1998 — Necromancer focused regression
-Date: 2026-11-24
-JavaScript syntax checks: game.js and systems/classes/necromancer.js PASS
-Focused necromancer suite: 62 tests, 62 passed, 0 failed.
-Coverage includes portrait manifest, 140 companion data, summon seals and gate, AI, skill resolver, Legendary/Mythic/Divine roster wiring, talent progression, domain stages and expiry, ascension gating, companion recovery and runtime bridges.
-Not performed: live browser/device QA, real Supabase persistence, multiplayer load test, remote GitHub/hosting deployment.
