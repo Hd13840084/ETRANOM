@@ -1,0 +1,39 @@
+{
+  "version": "1978.0.0",
+  "source": "ETRANOM-V1977-CHARACTER-PROGRESSION-ECONOMY-FULL-PROJECT.zip",
+  "engineModules": {"required": 10, "available": 10},
+  "productionBindings": {
+    "solo": "legacy_executor_behind_gateway",
+    "party": "gateway_to_existing_rpc",
+    "pvp": "legacy_ui_to_existing_rpc",
+    "monsterAI": "module_only",
+    "rewardSettlement": "module_only",
+    "mitigation": "adapter_partial",
+    "progression": "module_only",
+    "economy": "module_only"
+  },
+  "contentInventory": {
+    "canonicalClasses": 10,
+    "specializations": 40,
+    "specializationsImplemented": 4,
+    "specializationsShell": 36,
+    "classCoreSkills": 30,
+    "classCoreSkillsImplemented": 3,
+    "regionOneZones": 6,
+    "regionOneMonsters": 36,
+    "regionOneMaterials": 42,
+    "regionOneRecipes": 260
+  },
+  "tests": {
+    "newV1978Passed": 6,
+    "newV1978Total": 6,
+    "fullSuitePassed": 1023,
+    "fullSuiteFailed": 48,
+    "fullSuiteTotal": 1071,
+    "baselineV1977Failed": 48,
+    "failureNamesIdenticalToBaseline": true
+  },
+  "liveSupabaseTested": false,
+  "sqlExecuted": false,
+  "githubOrHostingChanged": false
+}

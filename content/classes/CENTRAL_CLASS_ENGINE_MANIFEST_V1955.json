@@ -1,0 +1,34 @@
+{
+  "schema": "etranom.central-class-engine.manifest.v1",
+  "version": "1955.0.0",
+  "contract": "CLASS_SPECIALIZATION_CONTRACT_V1.json",
+  "class_slots": 10,
+  "specialization_slots": 40,
+  "implemented_specializations": 8,
+  "reserved_specializations": 32,
+  "combat_modes": ["solo", "party", "pvp"],
+  "shared_progression": {
+    "skill_ranks": 7,
+    "skill_upgrade_steps": 6,
+    "talent_branches": 4,
+    "talents_per_branch": 8,
+    "domain_stages": 4,
+    "ascension_options": 10,
+    "ascension_selections_per_domain_activation": 1
+  },
+  "engine_status": {
+    "registry_and_content_audit": "implemented",
+    "canonical_skill_preparation": "implemented",
+    "resource_and_cooldown_preflight": "implemented",
+    "stat_talent_upgrade_projection": "implemented",
+    "authoritative_execution": "not_cut_over",
+    "solo_party_pvp_adapters": "legacy_authoritative",
+    "supabase_persistence": "adapter_phase_required"
+  },
+  "reserved_slots_are_playable": false,
+  "notes": [
+    "V1955 is a shadow-safe central preparation foundation; it does not replace live combat resolvers.",
+    "The existing Wizard and Warrior runtime remains authoritative until differential parity and server transaction guarantees are proven.",
+    "Future specialization content must register against the same contract and may not add a separate combat lifecycle or damage formula."
+  ]
+}

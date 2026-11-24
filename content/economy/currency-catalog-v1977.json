@@ -1,0 +1,9 @@
+{
+  "version": "1977.0.0",
+  "currencies": [
+    {"id":"gold","name":"سکه طلا","symbol":"G","precision":0,"tradable":true,"displayOrder":1},
+    {"id":"silver","name":"سکه نقره","symbol":"S","precision":0,"tradable":true,"displayOrder":2},
+    {"id":"event_token","name":"نشان رویداد","symbol":"T","precision":0,"tradable":false,"displayOrder":90}
+  ],
+  "notes": "Catalog entries define identifiers and display metadata only. They do not activate new rewards, vendors, exchange rates, or prices."
+}

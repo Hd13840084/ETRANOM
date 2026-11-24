@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.1.0",
+  "applies_to": "all current and future ETRANOM specializations",
+  "current_implemented_specializations": 8,
+  "future_class_slots": 8,
+  "future_specialization_slots": 32,
+  "progression": {
+    "skills_per_specialization": 10,
+    "skill_rank_initial": 1,
+    "skill_rank_cap": 7,
+    "skill_upgrades_per_skill": 6,
+    "talent_branches": 4,
+    "talents_per_branch": 8,
+    "total_talents": 32,
+    "domain_stages": 4,
+    "ascension_options": 10,
+    "ascension_selection_limit_per_domain_activation": 1,
+    "upgrade_steps_per_skill": 6
+  },
+  "shared_combat": {
+    "stat_core": "systems/combat/character-stat-core.js",
+    "skill_contract_runtime": "systems/combat/specialization-contract-runtime.js",
+    "physical_primary_attribute": "power",
+    "magical_and_eldritch_primary_attribute": "intellect",
+    "warrior_primary_resource": "stamina",
+    "wizard_primary_resource": "mana",
+    "damage_archetypes": [
+      "physical",
+      "magical",
+      "eldritch",
+      "hybrid"
+    ],
+    "modes": [
+      "solo",
+      "party",
+      "pvp"
+    ],
+    "stat_core_version": "1.2.0",
+    "skill_damage_helper": "resolveCanonicalSkillDamage",
+    "skill_damage_formula": {
+      "defense_multiplier": 1.25,
+      "defense_penetration_cap_pct": 80,
+      "minimum_damage": 1,
+      "apply_skill_percent_once": true,
+      "target_damage_reduction_cap_pct": 90
+    }
+  },
+  "compatibility": {
+    "legacy_skill_fields_are_normalized_at_runtime": true,
+    "existing_skill_percentages_are_not_rebalanced_by_normalization": true,
+    "unimplemented_future_specializations_remain_shells": true
+  }
+}
