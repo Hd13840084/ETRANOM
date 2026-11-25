@@ -4,30 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#111016">
-<script id="etranom-runtime-diagnostics-v2128">
-(()=>{
- let phase='صفحه ورود'; const started=Date.now(); let panel;
- const clean=v=>String(v??'').slice(0,5000);
- function report(title,detail,extra=''){
-  try{ if(!panel){panel=document.createElement('section');panel.id='etranom-diagnostic-panel';panel.dir='rtl';panel.style.cssText='position:fixed;z-index:2147483647;inset:8px;max-height:94dvh;overflow:auto;padding:16px;border:2px solid #d9a65b;border-radius:12px;background:#160f1df5;color:#fff;font:13px/1.9 Tahoma,Arial;box-shadow:0 8px 40px #000';(document.body||document.documentElement).appendChild(panel);}
-   const text=`ETRANOM V2128
-مرحله: ${phase}
-خطا: ${clean(title)}
-جزئیات: ${clean(detail)}
-${clean(extra)}
-زمان: ${new Date().toISOString()}
-آدرس: ${location.href}`;
-   panel.innerHTML='<h3 style="color:#ffd18a;margin:0 0 8px">گزارش تشخیصی بازی</h3><pre id="etranom-diag-text" style="white-space:pre-wrap;word-break:break-word;font:12px/1.8 monospace"></pre><button id="etranom-diag-copy" style="padding:10px 16px;margin:8px 0;background:#d9a65b;color:#1b1110;border:0;border-radius:6px;font-weight:bold">کپی گزارش خطا</button><button id="etranom-diag-close" style="padding:10px 16px;margin:8px;background:#35283b;color:white;border:1px solid #9c7b51;border-radius:6px">بستن</button>';
-   panel.querySelector('#etranom-diag-text').textContent=text;panel.querySelector('#etranom-diag-copy').onclick=()=>{const b=new Blob([text],{type:'text/plain'});if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>alert('گزارش کپی شد')).catch(()=>download(text));else download(text)};panel.querySelector('#etranom-diag-close').onclick=()=>panel.remove();
-  }catch(e){console.error('diagnostic panel failed',e,title,detail);try{const fallback=document.createElement('pre');fallback.dir='rtl';fallback.style.cssText='position:fixed;z-index:2147483647;inset:8px;background:#160f1d;color:white;padding:16px;white-space:pre-wrap';fallback.textContent='ETRANOM DIAGNOSTIC\n'+phase+'\n'+title+'\n'+detail;(document.body||document.documentElement).appendChild(fallback)}catch(_){}}
- }
- function download(t){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/plain'}));a.download='etranom-error-report.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
- window.ETRANOM_DIAG={setPhase(p){phase=String(p);console.info('[ETRANOM phase]',phase)},report,phase:()=>phase};
- window.addEventListener('error',e=>{if(e.target&&e.target!==window){report('بارگذاری منبع ناموفق',e.target.src||e.target.href||e.target.tagName);return}report(e.message||'JavaScript error',e.filename+':'+e.lineno+':'+e.colno,e.error?.stack||'')});
- window.addEventListener('unhandledrejection',e=>report('Promise ردشده و مدیریت‌نشده',e.reason?.message||e.reason,e.reason?.stack||''));
- window.addEventListener('DOMContentLoaded',()=>{const root=document.getElementById('etr-game-root');if(root)new MutationObserver(()=>{if(root.childElementCount===0&&root.classList.contains('etr-game-ready'))report('محتوای موتور خالی شد','ریشه بازی پس از ورود خالی است')}).observe(root,{childList:true,subtree:false})});
-})();
-</script>
 <title>ETRANOM</title>
 <style>
 :root{color-scheme:dark}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#111016;color:#eee9e2;font-family:Tahoma,Arial,sans-serif}#auth-gate{position:relative;z-index:20;min-height:100dvh;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 50% 10%,#382448 0,#17131d 48%,#0c0b10 100%)}.auth-card{width:min(100%,430px);padding:28px 22px;border:1px solid #80613e88;border-radius:18px;background:linear-gradient(145deg,#211a2b,#121016);box-shadow:0 18px 70px #0009}.auth-brand{font-size:34px;letter-spacing:5px;text-align:center;color:#d7b477;margin:8px 0}.auth-sub{color:#bdb2c3;text-align:center;font-size:13px;line-height:2;margin:0 0 24px}.auth-card label{display:block;font-size:13px;color:#d8c8ad;margin:14px 0 7px}.auth-card input{width:100%;padding:14px;border:1px solid #51445c;border-radius:9px;background:#0e0c12;color:#fff;font:inherit;direction:ltr;text-align:left}.auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.auth-actions button{padding:13px 8px;border:1px solid #9a794d;border-radius:9px;background:#241d2d;color:#f5e8d1;font:inherit;font-size:13px}.auth-actions button.primary{background:linear-gradient(100deg,#c8a36b,#8c633e);color:#160f12;font-weight:bold}.auth-actions button:disabled{opacity:.55}.auth-note{min-height:42px;margin:16px 0 0;color:#d8c99f;font-size:12px;line-height:1.9;text-align:center}.hidden{display:none!important}#etr-game-root{display:none!important;min-height:100vh}#etr-game-root.etr-game-ready{display:block!important}#auth-gate.hidden{display:none!important}
@@ -975,12 +951,26 @@ function showToastNotification(key) { const labels = { private: 'پیام خصو
     document.body.appendChild(toast);
 } toast.textContent = labels[key] || 'اعلان جدید'; toast.style.display = 'block'; clearTimeout(toast._timer); toast._timer = setTimeout(() => toast.style.display = 'none', 4200); }
 function markNotificationsRead(key) { localStorage.setItem(noticeKey(key), new Date().toISOString()); setNotificationCount(key, 0); }
+/* V2130: independent startup diagnostics; this panel is outside #etr-game-root so game renders cannot erase it. */
+(function installEtranomRuntimeDiagnostics(){
+  if (window.ETRANOM_DIAG) return;
+  const diag = window.ETRANOM_DIAG = { stage: 'صفحه بارگذاری شد', startedAt: Date.now(), events: [], panel: null, stallTimer: null,
+    log(type, detail){ const item={at:new Date().toISOString(),stage:this.stage,type,detail:String(detail||'').slice(0,1200)}; this.events.push(item); if(this.events.length>80)this.events.shift(); try{console.error('[ETRANOM-DIAG]',item)}catch(_){} this.paint(); },
+    setStage(name){ this.stage=String(name); this.log('STAGE',this.stage); clearTimeout(this.stallTimer); this.stallTimer=setTimeout(()=>this.log('STALLED','بیش از ۲۵ ثانیه در این مرحله پیشرفتی ثبت نشد: '+this.stage),25000); },
+    paint(){ try { let p=this.panel; if(!p){p=document.createElement('section');p.id='etranom-runtime-diagnostic';p.style.cssText='position:fixed;z-index:2147483647;left:8px;right:8px;bottom:8px;max-height:42vh;overflow:auto;display:none;padding:12px;border:2px solid #d6a85e;border-radius:10px;background:#100d16;color:#fff;font:12px/1.7 Tahoma,sans-serif;direction:rtl;box-shadow:0 5px 30px #000'; (document.body||document.documentElement).appendChild(p);this.panel=p;} const errors=this.events.filter(x=>x.type==='ERROR'||x.type==='REJECTION'||x.type==='RESOURCE'||x.type==='STALLED').slice(-8); if(errors.length){p.style.display='block';p.innerHTML='<b style="color:#ffd18a">گزارش تشخیصی ETRANOM V2130</b><div>مرحله فعلی: '+this.escape(this.stage)+'</div>'+errors.map(x=>'<hr><b>'+this.escape(x.type)+'</b> • '+this.escape(x.stage)+'<br>'+this.escape(x.detail)).join('')+'<br><button id="etranom-diag-copy" style="padding:7px 12px">کپی گزارش کامل</button> <button id="etranom-diag-hide" style="padding:7px 12px">بستن</button>'; const c=p.querySelector('#etranom-diag-copy'); if(c)c.onclick=()=>this.copy(); const h=p.querySelector('#etranom-diag-hide'); if(h)h.onclick=()=>{p.style.display='none'}; } }catch(e){try{console.error('diagnostic panel failed',e)}catch(_){}} },
+    escape(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))},
+    report(error,where){const d=error&&error.stack?error.stack:(error&&error.message?error.message:String(error));this.log('ERROR',(where?where+' | ':'')+d);},
+    copy(){const report={version:'V2130',url:location.href,userAgent:navigator.userAgent,stage:this.stage,elapsedMs:Date.now()-this.startedAt,events:this.events};const text=JSON.stringify(report,null,2);if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(()=>alert('گزارش کپی شد')).catch(()=>prompt('گزارش را کپی کن:',text));else prompt('گزارش را کپی کن:',text);}
+  };
+  window.addEventListener('error',e=>{if(e.target&&e.target!==window){diag.log('RESOURCE',(e.target.src||e.target.href||e.target.tagName||'resource')+' بارگذاری نشد');}else diag.report(e.error||e.message,'window.error');},true);
+  window.addEventListener('unhandledrejection',e=>diag.report(e.reason,'unhandledrejection'));
+  window.addEventListener('DOMContentLoaded',()=>diag.setStage('DOM آماده شد'),{once:true});
+})();
+
 async function importGameModule(url) {
+    if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('بارگذاری ماژول: ' + url);
     try {
-        window.ETRANOM_DIAG?.setPhase('بارگذاری ماژول: ' + url);
-        const module = await import(url);
-        window.ETRANOM_DIAG?.setPhase('ماژول بارگذاری شد: ' + url);
-        return module;
+        return await import(url);
     } catch (error) {
         const detail = error && error.message ? error.message : String(error);
         const wrapped = new Error('ماژول بازی بارگذاری نشد [' + url + ']: ' + detail);
@@ -991,7 +981,7 @@ async function importGameModule(url) {
 }
 async function startSession(session) {
     var _a;
-    window.ETRANOM_DIAG?.setPhase('شروع نشست و آماده‌سازی موتور');
+    if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('شروع نشست و آماده‌سازی محیط بازی');
     if (started)
         return;
     if (!((_a = session === null || session === void 0 ? void 0 : session.user) === null || _a === void 0 ? void 0 : _a.id))
@@ -1305,16 +1295,14 @@ async function startSession(session) {
             console.error('[ETRANOM] Unified battle experience foundation failed to load.', unifiedBattleError);
             window.ETRANOM_UNIFIED_BATTLE_EXPERIENCE = null;
         }
-        window.ETRANOM_DIAG?.setPhase('بارگذاری موتور نقشه ایزومتریک');
         await importGameModule('./systems/world/isometric-dark-fantasy-v1.js?v=2034');
-        window.ETRANOM_DIAG?.setPhase('بارگذاری فایل اصلی game.js');
-        await importGameModule('./game.js?v=2129&build=2129');
+        await importGameModule('./game.js?v=2130&build=2130');
+        if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('ماژول موتور بارگذاری شد؛ اجرای موتور');
         const gameRunner = window.run;
         if (typeof gameRunner !== 'function')
             throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
-        window.ETRANOM_DIAG?.setPhase('اجرای تابع اصلی موتور بازی');
         await gameRunner('play');
-        window.ETRANOM_DIAG?.setPhase('تابع موتور اجرا شد؛ انتظار برای ساخت محیط بازی');
+        if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('تابع موتور برگشت؛ آماده‌سازی پنل مدیریت');
         try {
             const ownerModule = await importGameModule('./systems/admin/owner-control-v1.js?v=2025');
             ownerModule.mountOwnerControl(supabase);
@@ -1322,19 +1310,18 @@ async function startSession(session) {
         catch (ownerControlError) {
             console.warn('[ETRANOM] Owner Control UI unavailable; gameplay continues:', ownerControlError);
         }
-        window.ETRANOM_DIAG?.setPhase('نمایش ریشه بازی و تکمیل ورود');
         gameRoot.classList.add('etr-game-ready');
         gate.classList.add('hidden');
         started = true;
     }
     catch (e) {
+        if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.report(e, 'startSession');
         started = false;
         gameRoot.classList.remove('etr-game-ready');
         gameRoot.replaceChildren();
         gate.classList.remove('hidden');
         const detail = String((e === null || e === void 0 ? void 0 : e.message) || e || 'خطای ناشناخته').slice(0, 180);
         say('ورود انجام شد، اما اجرای بازی کامل نشد: ' + detail + ' — صفحه ورود را باز نگه داشتیم؛ دوباره تلاش کن.');
-        window.ETRANOM_DIAG?.report('راه‌اندازی بازی ناموفق بود', e?.message||e, e?.stack||'');
         console.error('[ETRANOM] Startup failed:', e);
         throw e;
     }
