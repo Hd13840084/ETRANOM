@@ -32,6 +32,7 @@ window.run = run;
 /* Legacy fallback anchor: const sharedCore=window.ETRANOM_COMBAT_CORE; sharedCore.resolveDamage remains available if the central gateway fails to load. */
 // ETRANOM: text-first dark fantasy RPG. Narrative is primary; game rules remain deterministic.
 function run(mode) {
+    window.ETRANOM_DIAG?.setPhase('ورود به تابع run در game.js');
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
     let css = ""; // Shared with the stylesheet assembly after render().
     const root = document.getElementById('etr-game-root') || document.body, api = window.lib || {};
@@ -2697,6 +2698,7 @@ function run(mode) {
         marketWalletSyncBusy = false;
     } }, 1500);
     async function load() {
+        window.ETRANOM_DIAG?.setPhase('دریافت ذخیره بازیکن از سرور');
         var _a, _b, _c, _d, _e, _f, _g;
         loaded = false;
         state = null;
@@ -2706,7 +2708,10 @@ function run(mode) {
         try {
             if (typeof api.getUserGameState !== "function")
                 throw new Error("game_save_api_missing");
-            const r = await api.getUserGameState();
+            const savePromise = Promise.resolve().then(() => api.getUserGameState());
+            let saveTimer;
+            const r = await Promise.race([savePromise, new Promise((_, reject) => { saveTimer = setTimeout(() => reject(new Error('ETRANOM_SAVE_TIMEOUT_15000')), 15000); })]).finally(() => clearTimeout(saveTimer));
+            window.ETRANOM_DIAG?.setPhase('ذخیره دریافت شد؛ اعتبارسنجی و آماده‌سازی اطلاعات بازیکن');
             if (api.setSaveRevision)
                 api.setSaveRevision((r === null || r === void 0 ? void 0 : r.updatedAt) || null);
             if (r && r.state && typeof r.state === "object" && r.state.character) {
@@ -2830,9 +2835,11 @@ function run(mode) {
             lastPersistedSaveSignature = (state && !migratedLegacyContent) ? stateSaveSignature(state) : null;
             if (state)
                 writeLocalSaveBackup(state);
+            window.ETRANOM_DIAG?.setPhase('ساخت رابط بازی و رندر اولیه');
             loaded = true;
             installSaveSafetyHooks();
             render();
+            window.ETRANOM_DIAG?.setPhase('رندر اولیه انجام شد؛ بازی آماده است');
             if (state && migratedLegacyContent) {
                 // Best-effort persistence of the targeted content migration; all unrelated save fields remain intact.
                 // A failed save leaves the remote original intact and does not block play.
@@ -2841,11 +2848,15 @@ function run(mode) {
         }
         catch (e) {
             console.error("ETRANOM load blocked to protect save:", e);
+            const detail = { message: String(e?.message || e), name: String(e?.name || 'Error'), stack: String(e?.stack || '') };
+            window.ETRANOM_DIAG?.report('بارگذاری ذخیره/جهان ناموفق', detail.message, detail.stack);
             state = null;
             loaded = false;
-            notice = "بازیابی اطلاعات ناموفق بود. برای جلوگیری از بازنویسی یا ازدست‌رفتن پیشرفت، ساخت شخصیت و ذخیره‌سازی متوقف شده است.";
-            root.innerHTML = '<div class="shell loading" style="padding:28px;line-height:2;text-align:center"><h2>بازیابی اطلاعات ناموفق بود</h2><p>' + esc(notice) + '</p><button type="button" id="etranom-retry-load">تلاش دوباره</button><small style="display:block;margin-top:12px">تا رفع خطا، هیچ ذخیره‌ای ایجاد یا جایگزین نمی‌شود.</small></div>';
+            const timedOut = detail.message === 'ETRANOM_SAVE_TIMEOUT_15000';
+            notice = timedOut ? 'پاسخ سرور ذخیره طی ۱۵ ثانیه دریافت نشد.' : 'بارگذاری بازی متوقف شد؛ گزارش فنی خطا نمایش داده شده است.';
+            root.innerHTML = '<div class="shell loading" style="padding:28px;line-height:2;text-align:center"><h2>بارگذاری بازی ناموفق بود</h2><p>' + esc(notice) + '</p><button type="button" id="etranom-retry-load">تلاش دوباره</button><button type="button" id="etranom-show-error" style="margin-right:8px">نمایش گزارش خطا</button><small style="display:block;margin-top:12px">اطلاعات ذخیره‌شده تغییر یا حذف نشده است.</small></div>';
             (_g = root.querySelector('#etranom-retry-load')) === null || _g === void 0 ? void 0 : _g.addEventListener('click', load);
+            root.querySelector('#etranom-show-error')?.addEventListener('click', () => window.ETRANOM_DIAG?.report('بارگذاری ذخیره/جهان ناموفق', detail.message, detail.stack));
         }
     }
     async function restartGame() { if (busy)
