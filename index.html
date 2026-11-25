@@ -9,7 +9,7 @@
  let phase='صفحه ورود'; const started=Date.now(); let panel;
  const clean=v=>String(v??'').slice(0,5000);
  function report(title,detail,extra=''){
-  try{ if(!panel){panel=document.createElement('section');panel.id='etranom-diagnostic-panel';panel.dir='rtl';panel.style.cssText='position:fixed;z-index:2147483647;inset:8px;max-height:94dvh;overflow:auto;padding:16px;border:2px solid #d9a65b;border-radius:12px;background:#160f1df5;color:#fff;font:13px/1.9 Tahoma,Arial;box-shadow:0 8px 40px #000';document.body.appendChild(panel);}
+  try{ if(!panel){panel=document.createElement('section');panel.id='etranom-diagnostic-panel';panel.dir='rtl';panel.style.cssText='position:fixed;z-index:2147483647;inset:8px;max-height:94dvh;overflow:auto;padding:16px;border:2px solid #d9a65b;border-radius:12px;background:#160f1df5;color:#fff;font:13px/1.9 Tahoma,Arial;box-shadow:0 8px 40px #000';(document.body||document.documentElement).appendChild(panel);}
    const text=`ETRANOM V2128
 مرحله: ${phase}
 خطا: ${clean(title)}
@@ -19,7 +19,7 @@ ${clean(extra)}
 آدرس: ${location.href}`;
    panel.innerHTML='<h3 style="color:#ffd18a;margin:0 0 8px">گزارش تشخیصی بازی</h3><pre id="etranom-diag-text" style="white-space:pre-wrap;word-break:break-word;font:12px/1.8 monospace"></pre><button id="etranom-diag-copy" style="padding:10px 16px;margin:8px 0;background:#d9a65b;color:#1b1110;border:0;border-radius:6px;font-weight:bold">کپی گزارش خطا</button><button id="etranom-diag-close" style="padding:10px 16px;margin:8px;background:#35283b;color:white;border:1px solid #9c7b51;border-radius:6px">بستن</button>';
    panel.querySelector('#etranom-diag-text').textContent=text;panel.querySelector('#etranom-diag-copy').onclick=()=>{const b=new Blob([text],{type:'text/plain'});if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>alert('گزارش کپی شد')).catch(()=>download(text));else download(text)};panel.querySelector('#etranom-diag-close').onclick=()=>panel.remove();
-  }catch(e){console.error('diagnostic panel failed',e,title,detail)}
+  }catch(e){console.error('diagnostic panel failed',e,title,detail);try{const fallback=document.createElement('pre');fallback.dir='rtl';fallback.style.cssText='position:fixed;z-index:2147483647;inset:8px;background:#160f1d;color:white;padding:16px;white-space:pre-wrap';fallback.textContent='ETRANOM DIAGNOSTIC\n'+phase+'\n'+title+'\n'+detail;(document.body||document.documentElement).appendChild(fallback)}catch(_){}}
  }
  function download(t){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/plain'}));a.download='etranom-error-report.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
  window.ETRANOM_DIAG={setPhase(p){phase=String(p);console.info('[ETRANOM phase]',phase)},report,phase:()=>phase};
@@ -1308,7 +1308,7 @@ async function startSession(session) {
         window.ETRANOM_DIAG?.setPhase('بارگذاری موتور نقشه ایزومتریک');
         await importGameModule('./systems/world/isometric-dark-fantasy-v1.js?v=2034');
         window.ETRANOM_DIAG?.setPhase('بارگذاری فایل اصلی game.js');
-        await importGameModule('./game.js?v=2128&build=2128');
+        await importGameModule('./game.js?v=2129&build=2129');
         const gameRunner = window.run;
         if (typeof gameRunner !== 'function')
             throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
