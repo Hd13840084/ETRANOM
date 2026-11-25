@@ -26,7 +26,9 @@ import { getCharacterAnimationPoseV2064, resolveCharacterAnimationV2064 } from '
 import { getFullBodyCharacterArtV2063 } from './systems/characters/fullbody-character-art-v2063.mjs?v=2063';
 import { getAtlasDrawCommandV2059, loadAtlasForDrawV2059 } from './systems/characters/character-atlas-runtime-v2059.js?v=2059';
 import { resolveMapSpecializationV2066 } from './systems/characters/character-map-binding-v2066.js?v=2066';
-// V2125: expose the game entry point at module scope before authentication calls it.\nwindow.run = run;\n/* V1967 central damage gateway: Solo uses the gateway with the legacy shared-core fallback. */
+// V2126: expose the game entry point at module scope before authentication calls it.
+window.run = run;
+/* V1967 central damage gateway: Solo uses the gateway with the legacy shared-core fallback. */
 /* Legacy fallback anchor: const sharedCore=window.ETRANOM_COMBAT_CORE; sharedCore.resolveDamage remains available if the central gateway fails to load. */
 // ETRANOM: text-first dark fantasy RPG. Narrative is primary; game rules remain deterministic.
 function run(mode) {
