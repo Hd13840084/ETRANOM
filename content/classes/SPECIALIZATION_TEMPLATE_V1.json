@@ -1,0 +1,850 @@
+{
+  "schema_version": "1.0.0",
+  "id": "future_class_01_spec_1",
+  "classId": "future_class_01",
+  "name_fa": "نام تخصص",
+  "damageArchetype": "physical",
+  "primaryAttribute": "power",
+  "primaryResource": "stamina",
+  "secondaryResource": null,
+  "skills": [
+    {
+      "id": "skill_01",
+      "name_fa": "مهارت 1",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 1,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    },
+    {
+      "id": "skill_02",
+      "name_fa": "مهارت 2",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 6,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    },
+    {
+      "id": "skill_03",
+      "name_fa": "مهارت 3",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 11,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    },
+    {
+      "id": "skill_04",
+      "name_fa": "مهارت 4",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 16,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    },
+    {
+      "id": "skill_05",
+      "name_fa": "مهارت 5",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 21,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    },
+    {
+      "id": "skill_06",
+      "name_fa": "مهارت 6",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 26,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    },
+    {
+      "id": "skill_07",
+      "name_fa": "مهارت 7",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 31,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    },
+    {
+      "id": "skill_08",
+      "name_fa": "مهارت 8",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 36,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    },
+    {
+      "id": "skill_09",
+      "name_fa": "مهارت 9",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 41,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    },
+    {
+      "id": "skill_10",
+      "name_fa": "مهارت 10",
+      "type": "single_damage",
+      "target": "single_enemy",
+      "unlockLevel": 46,
+      "resourceType": "stamina",
+      "resourceCost": 0,
+      "resourceCostMode": "flat",
+      "cooldownTurns": 0,
+      "effects": [],
+      "upgrades": [
+        {
+          "rank": 2,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 3,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 4,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 5,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 6,
+          "pointsRequired": 1,
+          "modifier": {}
+        },
+        {
+          "rank": 7,
+          "pointsRequired": 1,
+          "modifier": {}
+        }
+      ],
+      "rankCap": 7
+    }
+  ],
+  "talentBranches": [
+    {
+      "id": "branch_1",
+      "talents": [
+        {
+          "id": "talent_01",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_02",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_03",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_04",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_05",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_06",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_07",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_08",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "branch_2",
+      "talents": [
+        {
+          "id": "talent_09",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_10",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_11",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_12",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_13",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_14",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_15",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_16",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "branch_3",
+      "talents": [
+        {
+          "id": "talent_17",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_18",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_19",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_20",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_21",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_22",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_23",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_24",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "branch_4",
+      "talents": [
+        {
+          "id": "talent_25",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_26",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_27",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_28",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_29",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_30",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_31",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        },
+        {
+          "id": "talent_32",
+          "prerequisite": null,
+          "rankCap": 5,
+          "pointsRequiredPerRank": 1,
+          "effects": []
+        }
+      ]
+    }
+  ],
+  "domain": {
+    "unlockLevel": 25,
+    "activationCost": 0,
+    "durationTurns": 4,
+    "cooldownTurns": 0,
+    "stages": [
+      {
+        "stage": 1,
+        "unlockLevel": 25,
+        "effects": [],
+        "modeRules": {
+          "solo": "shared_rules",
+          "party": "shared_rules",
+          "pvp": "server_tuned"
+        }
+      },
+      {
+        "stage": 2,
+        "unlockLevel": 30,
+        "effects": [],
+        "modeRules": {
+          "solo": "shared_rules",
+          "party": "shared_rules",
+          "pvp": "server_tuned"
+        }
+      },
+      {
+        "stage": 3,
+        "unlockLevel": 35,
+        "effects": [],
+        "modeRules": {
+          "solo": "shared_rules",
+          "party": "shared_rules",
+          "pvp": "server_tuned"
+        }
+      },
+      {
+        "stage": 4,
+        "unlockLevel": 40,
+        "effects": [],
+        "modeRules": {
+          "solo": "shared_rules",
+          "party": "shared_rules",
+          "pvp": "server_tuned"
+        }
+      }
+    ]
+  },
+  "ascendedSkills": [
+    {
+      "id": "asc_01",
+      "baseSkillId": "skill_01",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    },
+    {
+      "id": "asc_02",
+      "baseSkillId": "skill_02",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    },
+    {
+      "id": "asc_03",
+      "baseSkillId": "skill_03",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    },
+    {
+      "id": "asc_04",
+      "baseSkillId": "skill_04",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    },
+    {
+      "id": "asc_05",
+      "baseSkillId": "skill_05",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    },
+    {
+      "id": "asc_06",
+      "baseSkillId": "skill_06",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    },
+    {
+      "id": "asc_07",
+      "baseSkillId": "skill_07",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    },
+    {
+      "id": "asc_08",
+      "baseSkillId": "skill_08",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    },
+    {
+      "id": "asc_09",
+      "baseSkillId": "skill_09",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    },
+    {
+      "id": "asc_10",
+      "baseSkillId": "skill_10",
+      "selectionLimitPerDomainActivation": 1,
+      "oneUsePerDomain": true,
+      "effects": []
+    }
+  ],
+  "resourceRules": {
+    "costTiming": "after_validation_before_effect",
+    "refundPolicy": "no_refund_after_cast_commits",
+    "outOfResourceBehavior": "reject_cast_without_resource_debit",
+    "cooldownUnit": "player_turns"
+  },
+  "statusEffectRules": {
+    "stacking": "refresh_same_effect_key_unless_effect_declares_stack",
+    "tickOrder": [
+      "dot_tick",
+      "duration_decrement",
+      "expiry_cleanup"
+    ],
+    "deathCleanup": "remove_temporary_combat_effects"
+  },
+  "combatModes": [
+    "solo",
+    "party",
+    "pvp"
+  ],
+  "mustUseCanonicalStatCore": true,
+  "mustUseCanonicalSkillDamage": true
+}

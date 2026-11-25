@@ -1,0 +1,1039 @@
+{
+  "version": "V2099",
+  "source": "V2098 authored atlas, component-isolated crops",
+  "format": "RGBA PNG",
+  "background": "transparent",
+  "spriteCount": 78,
+  "groups": {
+    "trees": [
+      {
+        "id": "trees_01",
+        "file": "trees_01.png",
+        "width": 178,
+        "height": 210,
+        "sourceRect": [
+          16,
+          9,
+          178,
+          210
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "trees_02",
+        "file": "trees_02.png",
+        "width": 207,
+        "height": 222,
+        "sourceRect": [
+          751,
+          9,
+          207,
+          222
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "trees_03",
+        "file": "trees_03.png",
+        "width": 129,
+        "height": 211,
+        "sourceRect": [
+          213,
+          10,
+          129,
+          211
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "trees_04",
+        "file": "trees_04.png",
+        "width": 190,
+        "height": 220,
+        "sourceRect": [
+          977,
+          11,
+          190,
+          220
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "trees_05",
+        "file": "trees_05.png",
+        "width": 171,
+        "height": 217,
+        "sourceRect": [
+          362,
+          12,
+          171,
+          217
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "trees_06",
+        "file": "trees_06.png",
+        "width": 163,
+        "height": 218,
+        "sourceRect": [
+          1358,
+          13,
+          163,
+          218
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "trees_07",
+        "file": "trees_07.png",
+        "width": 162,
+        "height": 205,
+        "sourceRect": [
+          560,
+          23,
+          162,
+          205
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "trees_08",
+        "file": "trees_08.png",
+        "width": 151,
+        "height": 208,
+        "sourceRect": [
+          1185,
+          23,
+          151,
+          208
+        ],
+        "anchor": "bottom-center"
+      }
+    ],
+    "vegetation": [
+      {
+        "id": "vegetation_01",
+        "file": "vegetation_01.png",
+        "width": 135,
+        "height": 99,
+        "sourceRect": [
+          21,
+          225,
+          135,
+          99
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "vegetation_02",
+        "file": "vegetation_02.png",
+        "width": 118,
+        "height": 89,
+        "sourceRect": [
+          186,
+          238,
+          118,
+          89
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "vegetation_03",
+        "file": "vegetation_03.png",
+        "width": 119,
+        "height": 83,
+        "sourceRect": [
+          340,
+          239,
+          119,
+          83
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "vegetation_04",
+        "file": "vegetation_04.png",
+        "width": 114,
+        "height": 83,
+        "sourceRect": [
+          965,
+          240,
+          114,
+          83
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "vegetation_05",
+        "file": "vegetation_05.png",
+        "width": 109,
+        "height": 83,
+        "sourceRect": [
+          502,
+          241,
+          109,
+          83
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "vegetation_06",
+        "file": "vegetation_06.png",
+        "width": 115,
+        "height": 86,
+        "sourceRect": [
+          652,
+          242,
+          115,
+          86
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "vegetation_07",
+        "file": "vegetation_07.png",
+        "width": 117,
+        "height": 82,
+        "sourceRect": [
+          1121,
+          242,
+          117,
+          82
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "vegetation_08",
+        "file": "vegetation_08.png",
+        "width": 98,
+        "height": 89,
+        "sourceRect": [
+          1274,
+          242,
+          98,
+          89
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "vegetation_09",
+        "file": "vegetation_09.png",
+        "width": 114,
+        "height": 90,
+        "sourceRect": [
+          1410,
+          245,
+          114,
+          90
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "vegetation_10",
+        "file": "vegetation_10.png",
+        "width": 97,
+        "height": 74,
+        "sourceRect": [
+          817,
+          249,
+          97,
+          74
+        ],
+        "anchor": "bottom-center"
+      }
+    ],
+    "rocks_ore": [
+      {
+        "id": "rocks_ore_01",
+        "file": "rocks_ore_01.png",
+        "width": 133,
+        "height": 99,
+        "sourceRect": [
+          332,
+          332,
+          133,
+          99
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "rocks_ore_02",
+        "file": "rocks_ore_02.png",
+        "width": 129,
+        "height": 94,
+        "sourceRect": [
+          174,
+          334,
+          129,
+          94
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "rocks_ore_03",
+        "file": "rocks_ore_03.png",
+        "width": 123,
+        "height": 94,
+        "sourceRect": [
+          811,
+          336,
+          123,
+          94
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "rocks_ore_04",
+        "file": "rocks_ore_04.png",
+        "width": 124,
+        "height": 92,
+        "sourceRect": [
+          499,
+          337,
+          124,
+          92
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "rocks_ore_05",
+        "file": "rocks_ore_05.png",
+        "width": 122,
+        "height": 91,
+        "sourceRect": [
+          962,
+          338,
+          122,
+          91
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "rocks_ore_06",
+        "file": "rocks_ore_06.png",
+        "width": 127,
+        "height": 90,
+        "sourceRect": [
+          19,
+          339,
+          127,
+          90
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "rocks_ore_07",
+        "file": "rocks_ore_07.png",
+        "width": 128,
+        "height": 90,
+        "sourceRect": [
+          653,
+          341,
+          128,
+          90
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "rocks_ore_08",
+        "file": "rocks_ore_08.png",
+        "width": 124,
+        "height": 87,
+        "sourceRect": [
+          1112,
+          341,
+          124,
+          87
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "rocks_ore_09",
+        "file": "rocks_ore_09.png",
+        "width": 128,
+        "height": 87,
+        "sourceRect": [
+          1259,
+          341,
+          128,
+          87
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "rocks_ore_10",
+        "file": "rocks_ore_10.png",
+        "width": 116,
+        "height": 82,
+        "sourceRect": [
+          1410,
+          346,
+          116,
+          82
+        ],
+        "anchor": "bottom-center"
+      }
+    ],
+    "mushrooms_crystals": [
+      {
+        "id": "mushrooms_crystals_01",
+        "file": "mushrooms_crystals_01.png",
+        "width": 113,
+        "height": 96,
+        "sourceRect": [
+          966,
+          435,
+          113,
+          96
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mushrooms_crystals_02",
+        "file": "mushrooms_crystals_02.png",
+        "width": 110,
+        "height": 93,
+        "sourceRect": [
+          1267,
+          437,
+          110,
+          93
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mushrooms_crystals_03",
+        "file": "mushrooms_crystals_03.png",
+        "width": 104,
+        "height": 88,
+        "sourceRect": [
+          1120,
+          441,
+          104,
+          88
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mushrooms_crystals_04",
+        "file": "mushrooms_crystals_04.png",
+        "width": 98,
+        "height": 88,
+        "sourceRect": [
+          1418,
+          442,
+          98,
+          88
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mushrooms_crystals_05",
+        "file": "mushrooms_crystals_05.png",
+        "width": 123,
+        "height": 83,
+        "sourceRect": [
+          336,
+          443,
+          123,
+          83
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mushrooms_crystals_06",
+        "file": "mushrooms_crystals_06.png",
+        "width": 115,
+        "height": 85,
+        "sourceRect": [
+          499,
+          443,
+          115,
+          85
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mushrooms_crystals_07",
+        "file": "mushrooms_crystals_07.png",
+        "width": 111,
+        "height": 84,
+        "sourceRect": [
+          177,
+          444,
+          111,
+          84
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mushrooms_crystals_08",
+        "file": "mushrooms_crystals_08.png",
+        "width": 110,
+        "height": 83,
+        "sourceRect": [
+          656,
+          447,
+          110,
+          83
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mushrooms_crystals_09",
+        "file": "mushrooms_crystals_09.png",
+        "width": 108,
+        "height": 79,
+        "sourceRect": [
+          812,
+          447,
+          108,
+          79
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mushrooms_crystals_10",
+        "file": "mushrooms_crystals_10.png",
+        "width": 111,
+        "height": 81,
+        "sourceRect": [
+          21,
+          448,
+          111,
+          81
+        ],
+        "anchor": "bottom-center"
+      }
+    ],
+    "gothic_props": [
+      {
+        "id": "gothic_props_01",
+        "file": "gothic_props_01.png",
+        "width": 68,
+        "height": 162,
+        "sourceRect": [
+          327,
+          534,
+          68,
+          162
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "gothic_props_02",
+        "file": "gothic_props_02.png",
+        "width": 107,
+        "height": 160,
+        "sourceRect": [
+          816,
+          535,
+          107,
+          160
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "gothic_props_03",
+        "file": "gothic_props_03.png",
+        "width": 85,
+        "height": 161,
+        "sourceRect": [
+          976,
+          535,
+          85,
+          161
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "gothic_props_04",
+        "file": "gothic_props_04.png",
+        "width": 92,
+        "height": 168,
+        "sourceRect": [
+          1284,
+          536,
+          92,
+          168
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "gothic_props_05",
+        "file": "gothic_props_05.png",
+        "width": 50,
+        "height": 120,
+        "sourceRect": [
+          38,
+          537,
+          50,
+          120
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "gothic_props_06",
+        "file": "gothic_props_06.png",
+        "width": 107,
+        "height": 166,
+        "sourceRect": [
+          1118,
+          537,
+          107,
+          166
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "gothic_props_07",
+        "file": "gothic_props_07.png",
+        "width": 110,
+        "height": 159,
+        "sourceRect": [
+          1413,
+          539,
+          110,
+          159
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "gothic_props_08",
+        "file": "gothic_props_08.png",
+        "width": 88,
+        "height": 144,
+        "sourceRect": [
+          163,
+          541,
+          88,
+          144
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "gothic_props_09",
+        "file": "gothic_props_09.png",
+        "width": 87,
+        "height": 157,
+        "sourceRect": [
+          475,
+          542,
+          87,
+          157
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "gothic_props_10",
+        "file": "gothic_props_10.png",
+        "width": 47,
+        "height": 159,
+        "sourceRect": [
+          668,
+          542,
+          47,
+          159
+        ],
+        "anchor": "bottom-center"
+      }
+    ],
+    "farm_props": [
+      {
+        "id": "farm_props_01",
+        "file": "farm_props_01.png",
+        "width": 117,
+        "height": 141,
+        "sourceRect": [
+          211,
+          672,
+          117,
+          141
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "farm_props_02",
+        "file": "farm_props_02.png",
+        "width": 161,
+        "height": 126,
+        "sourceRect": [
+          19,
+          677,
+          161,
+          126
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "farm_props_03",
+        "file": "farm_props_03.png",
+        "width": 187,
+        "height": 131,
+        "sourceRect": [
+          665,
+          680,
+          187,
+          131
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "farm_props_04",
+        "file": "farm_props_04.png",
+        "width": 101,
+        "height": 106,
+        "sourceRect": [
+          536,
+          700,
+          101,
+          106
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "farm_props_05",
+        "file": "farm_props_05.png",
+        "width": 77,
+        "height": 99,
+        "sourceRect": [
+          891,
+          704,
+          77,
+          99
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "farm_props_06",
+        "file": "farm_props_06.png",
+        "width": 121,
+        "height": 99,
+        "sourceRect": [
+          1399,
+          706,
+          121,
+          99
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "farm_props_07",
+        "file": "farm_props_07.png",
+        "width": 153,
+        "height": 105,
+        "sourceRect": [
+          348,
+          707,
+          153,
+          105
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "farm_props_08",
+        "file": "farm_props_08.png",
+        "width": 108,
+        "height": 95,
+        "sourceRect": [
+          1006,
+          707,
+          108,
+          95
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "farm_props_09",
+        "file": "farm_props_09.png",
+        "width": 85,
+        "height": 92,
+        "sourceRect": [
+          1148,
+          710,
+          85,
+          92
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "farm_props_10",
+        "file": "farm_props_10.png",
+        "width": 102,
+        "height": 94,
+        "sourceRect": [
+          1265,
+          712,
+          102,
+          94
+        ],
+        "anchor": "bottom-center"
+      }
+    ],
+    "mine_props": [
+      {
+        "id": "mine_props_01",
+        "file": "mine_props_01.png",
+        "width": 89,
+        "height": 130,
+        "sourceRect": [
+          1047,
+          807,
+          89,
+          130
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mine_props_02",
+        "file": "mine_props_02.png",
+        "width": 138,
+        "height": 119,
+        "sourceRect": [
+          873,
+          817,
+          138,
+          119
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mine_props_03",
+        "file": "mine_props_03.png",
+        "width": 122,
+        "height": 110,
+        "sourceRect": [
+          24,
+          819,
+          122,
+          110
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mine_props_04",
+        "file": "mine_props_04.png",
+        "width": 149,
+        "height": 112,
+        "sourceRect": [
+          695,
+          820,
+          149,
+          112
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mine_props_05",
+        "file": "mine_props_05.png",
+        "width": 192,
+        "height": 105,
+        "sourceRect": [
+          167,
+          822,
+          192,
+          105
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mine_props_06",
+        "file": "mine_props_06.png",
+        "width": 104,
+        "height": 103,
+        "sourceRect": [
+          379,
+          822,
+          104,
+          103
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mine_props_07",
+        "file": "mine_props_07.png",
+        "width": 104,
+        "height": 103,
+        "sourceRect": [
+          1174,
+          823,
+          104,
+          103
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mine_props_08",
+        "file": "mine_props_08.png",
+        "width": 91,
+        "height": 103,
+        "sourceRect": [
+          1435,
+          827,
+          91,
+          103
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mine_props_09",
+        "file": "mine_props_09.png",
+        "width": 139,
+        "height": 91,
+        "sourceRect": [
+          540,
+          830,
+          139,
+          91
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "mine_props_10",
+        "file": "mine_props_10.png",
+        "width": 101,
+        "height": 91,
+        "sourceRect": [
+          1311,
+          834,
+          101,
+          91
+        ],
+        "anchor": "bottom-center"
+      }
+    ],
+    "fences_walls": [
+      {
+        "id": "fences_walls_01",
+        "file": "fences_walls_01.png",
+        "width": 144,
+        "height": 79,
+        "sourceRect": [
+          532,
+          934,
+          144,
+          79
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "fences_walls_02",
+        "file": "fences_walls_02.png",
+        "width": 151,
+        "height": 79,
+        "sourceRect": [
+          182,
+          937,
+          151,
+          79
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "fences_walls_03",
+        "file": "fences_walls_03.png",
+        "width": 158,
+        "height": 68,
+        "sourceRect": [
+          349,
+          944,
+          158,
+          68
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "fences_walls_04",
+        "file": "fences_walls_04.png",
+        "width": 103,
+        "height": 69,
+        "sourceRect": [
+          1291,
+          944,
+          103,
+          69
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "fences_walls_05",
+        "file": "fences_walls_05.png",
+        "width": 147,
+        "height": 70,
+        "sourceRect": [
+          18,
+          945,
+          147,
+          70
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "fences_walls_06",
+        "file": "fences_walls_06.png",
+        "width": 130,
+        "height": 69,
+        "sourceRect": [
+          996,
+          945,
+          130,
+          69
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "fences_walls_07",
+        "file": "fences_walls_07.png",
+        "width": 122,
+        "height": 69,
+        "sourceRect": [
+          697,
+          946,
+          122,
+          69
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "fences_walls_08",
+        "file": "fences_walls_08.png",
+        "width": 108,
+        "height": 64,
+        "sourceRect": [
+          1153,
+          947,
+          108,
+          64
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "fences_walls_09",
+        "file": "fences_walls_09.png",
+        "width": 109,
+        "height": 66,
+        "sourceRect": [
+          1421,
+          947,
+          109,
+          66
+        ],
+        "anchor": "bottom-center"
+      },
+      {
+        "id": "fences_walls_10",
+        "file": "fences_walls_10.png",
+        "width": 124,
+        "height": 56,
+        "sourceRect": [
+          848,
+          956,
+          124,
+          56
+        ],
+        "anchor": "bottom-center"
+      }
+    ]
+  }
+}

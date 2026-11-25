@@ -1,0 +1,18 @@
+ETRANOM V2117 — REAL YARD SPRITE REPLACEMENT
+
+Base: ETRANOM V2116 BUILDING YARDS
+Changes:
+- Added 16 separate RGBA PNG sprite assets under assets/safe-zone/yard-sprites-v2117/.
+- Added systems/safe-zone/building-yards-v2117.js; all 27 existing building yard placements now render image assets rather than the previous hand-drawn canvas props.
+- Updated game.js import/render call and index.html build token to V2117.
+- No gameplay systems, collision, interactions, NPC services, economy, quests, combat, save/auth/network logic intentionally changed.
+
+Validation performed:
+- node --check game.js: PASS
+- node --check systems/safe-zone/building-yards-v2117.js: PASS
+- 16 PNG assets checked as RGBA and dimensions >100px: PASS
+- 27 yard placement records retained in module: PASS
+- Browser/mobile visual test: NOT PERFORMED
+
+Scope note:
+This is the first real-sprite conversion tranche, specifically the 27 building-yard decorations. It does NOT yet convert every safe-zone visual (roads, plaza, river, bridges, gates, perimeter, terrain, interiors, buildings, ambient villagers) into standalone sprites. Existing genuine sprites remain in place. A full conversion of those other systems is still required before claiming the entire safe zone is sprite-based.

@@ -1,0 +1,152 @@
+{
+  "version": "V2096",
+  "style": "dark-fantasy-isometric",
+  "source": "generated terrain atlas; diamond-masked tile crops",
+  "regions": {
+    "ashen_city": [
+      {
+        "id": "ashen_city_01",
+        "file": "ashen_city_01.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "ashen_city_02",
+        "file": "ashen_city_02.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "ashen_city_03",
+        "file": "ashen_city_03.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "ashen_city_04",
+        "file": "ashen_city_04.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      }
+    ],
+    "farmland": [
+      {
+        "id": "farmland_01",
+        "file": "farmland_01.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "farmland_02",
+        "file": "farmland_02.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "farmland_03",
+        "file": "farmland_03.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "farmland_04",
+        "file": "farmland_04.png",
+        "width": 141,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      }
+    ],
+    "rootwood": [
+      {
+        "id": "rootwood_01",
+        "file": "rootwood_01.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "rootwood_02",
+        "file": "rootwood_02.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "rootwood_03",
+        "file": "rootwood_03.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "rootwood_04",
+        "file": "rootwood_04.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      }
+    ],
+    "ironstone": [
+      {
+        "id": "ironstone_01",
+        "file": "ironstone_01.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "ironstone_02",
+        "file": "ironstone_02.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "ironstone_03",
+        "file": "ironstone_03.png",
+        "width": 200,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      },
+      {
+        "id": "ironstone_04",
+        "file": "ironstone_04.png",
+        "width": 141,
+        "height": 132,
+        "anchor": "center-bottom",
+        "tileType": "ground"
+      }
+    ]
+  },
+  "runtime": "integrated-v2097",
+  "integration": {
+    "module": "systems/safe-zone/terrain-sprites-v2097.js",
+    "renderer": "game.js",
+    "regionsConnected": 4,
+    "tileVariants": 16,
+    "drawOrder": "ground sprites before buildings, roads, NPCs and foreground props",
+    "collisionOrNavigationChanges": false
+  }
+}

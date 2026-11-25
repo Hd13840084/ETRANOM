@@ -1,0 +1,31 @@
+ETRANOM V2118 — MISSING SAFE-ZONE VISUALS CONVERTED TO SPRITES
+
+Base: V2117 REAL YARD SPRITES.
+
+New image assets: 16 standalone RGBA PNG files in assets/safe-zone/sprite-conversion-v2118/:
+- road straight, curve and crossing tiles
+- central plaza
+- wooden and stone bridges
+- stone and wooden gates
+- stone wall, watchtower, wayfinding sign and street lamp
+- market stall
+- woman villager, worker villager and armored guard
+
+Code integration:
+- Added systems/safe-zone/sprite-conversion-v2118.js.
+- Replaced the old canvas route strokes and central plaza call with sprite-based rendering.
+- Replaced ambient decorative villagers with image sprites.
+- Removed the old canvas perimeter-gate marker drawing; gate images are drawn at the existing ten perimeter gate coordinates.
+- Removed canvas bridge deck drawing while retaining the waterway/water effects.
+- No collision, travel, POI, gameplay interaction, NPC service, economy, quest, combat, save, auth or network logic was intentionally changed.
+
+Validation:
+- node --check game.js: PASS
+- node --check systems/safe-zone/sprite-conversion-v2118.js: PASS
+- node --check systems/safe-zone/water-v2041.js: PASS
+- 16 RGBA PNG assets and dimensions: PASS
+- Browser/mobile visual test: NOT PERFORMED.
+
+Limitations:
+- This converts the identified road/plaza/bridge/gate/ambient-resident visuals, not every remaining decorative mark in all legacy safe-zone renderers. Some fine environmental dressing and some district props remain canvas-drawn and require a later targeted audit/conversion.
+- Existing genuine building, terrain, environment-prop and interior sprites were preserved, not regenerated.

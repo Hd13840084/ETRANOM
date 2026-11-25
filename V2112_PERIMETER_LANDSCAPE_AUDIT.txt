@@ -1,0 +1,33 @@
+ETRANOM V2112 — SAFE SETTLEMENT PERIMETER LANDSCAPE
+Base: ETRANOM V2111 WORLD APPROACHES
+
+Scope implemented:
+- Decorative connective landscape on the safe side of all ten existing perimeter gates.
+- Ten short approach roads, each with distinct ground palette and local low-detail biome dressing.
+- Paired stone/wood boundary markers at each approach.
+- The ten existing gates remain closed and retain their current labels/behavior.
+- No danger-region terrain, monsters, encounters, dungeons, quests, unlocks, or travel logic were created.
+- The three settlement connections and V2110/V2111 artwork remain intact.
+
+Anchors:
+Uses the exact ten existing safePerimeterGates coordinates in game.js:
+gate_nw, gate_n, gate_ne, gate_e1, gate_e2, gate_se, gate_s, gate_sw, gate_w2, gate_w1.
+No new gate coordinates or region IDs were invented.
+
+Files changed:
+- systems/safe-zone/perimeter-landscape-v2112.js (new)
+- game.js (import and decorative render hook immediately before existing gate drawing)
+- index.html (build query updated to 2112)
+
+Strictly unchanged:
+- gate interaction/closed status
+- player movement and collision
+- travel, region entry, unlock conditions
+- combat, monsters, dungeons, quests, inventory, economy, saves, online systems
+
+Validation:
+- JavaScript syntax checks passed for new module and game.js.
+- Checked that all ten canonical gate IDs are present in the module.
+- Checked render hook is before existing gate drawing.
+- ZIP integrity checked after packaging.
+- No browser/device visual test was performed.
