@@ -12501,5 +12501,7 @@ function run(mode) {
         render();
         load();
     }
-    window.run = run;
 }
+
+// Expose the game entry point before the authentication flow invokes it.
+window.run = run;
