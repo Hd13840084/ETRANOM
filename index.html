@@ -1278,7 +1278,7 @@ async function startSession(session) {
             window.ETRANOM_UNIFIED_BATTLE_EXPERIENCE = null;
         }
         await importGameModule('./systems/world/isometric-dark-fantasy-v1.js?v=2034');
-        await importGameModule('./game.js?v=2124&build=2124');
+        await importGameModule('./game.js?v=2125&build=2125');
         const gameRunner = window.run;
         if (typeof gameRunner !== 'function')
             throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
@@ -1296,8 +1296,8 @@ async function startSession(session) {
     }
     catch (e) {
         started = false;
-        // Keep any already-rendered game content visible for diagnosis/retry.
-        gameRoot.classList.add('etr-game-ready');
+        gameRoot.classList.remove('etr-game-ready');
+        gameRoot.replaceChildren();
         gate.classList.remove('hidden');
         const detail = String((e === null || e === void 0 ? void 0 : e.message) || e || 'خطای ناشناخته').slice(0, 180);
         say('ورود انجام شد، اما اجرای بازی کامل نشد: ' + detail + ' — صفحه ورود را باز نگه داشتیم؛ دوباره تلاش کن.');
