@@ -1,7 +1,0 @@
-ETRANOM V2019 focused regression run
-Date: 2026-11-24
-Commands:
-- node --check systems/admin/owner-control-v1.js
-- node --test tests/v2019/owner-inventory-ui-v2019.test.mjs tests/v2018/owner-inventory-ban-guard-v2018.test.mjs tests/v2017/*.test.mjs tests/v2016/*.test.mjs tests/v2015-owner-server-enforcement.test.mjs tests/v2014-owner-operational-policy-bridge.test.mjs tests/v2013/*.test.mjs
-Result: 24 tests passed, 0 failed.
-Note: Structural/unit checks only. No live Supabase migration, Edge Function deployment, or production runtime test was performed.
