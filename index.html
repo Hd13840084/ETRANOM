@@ -213,6 +213,26 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
 <style id="etranom-necromancer-collection-status-v1983">
 .necromancer-status-entry{margin:14px 0;border:1px solid #775a85;border-radius:14px;background:linear-gradient(145deg,#211a2a,#111017);overflow:hidden}.necromancer-status-entry-button{display:flex;width:100%;align-items:center;gap:11px;padding:13px;text-align:right;border:0;background:linear-gradient(100deg,#30213e,#19151f);color:#f0e3ff;font:inherit}.necro-entry-sigil{width:42px;height:42px;display:grid;place-items:center;border:1px solid #a17ab5;border-radius:11px;background:#120e19;color:#e2c1ff;font-size:23px}.necromancer-status-entry-button>span:nth-child(2){display:grid;gap:4px;flex:1}.necromancer-status-entry-button small{font-size:10px;color:#bba6cb}.necromancer-status-entry-button strong{font-size:10px;color:#e5c58d;white-space:nowrap}.necromancer-collection-panel{padding:12px}.necromancer-collection-panel[hidden]{display:none!important}.necromancer-collection-heading{display:flex;justify-content:space-between;gap:8px;align-items:center;color:#ead4ff;font-size:12px}.necromancer-collection-heading span{font-size:9px;color:#c5a6da}.necromancer-companion-collection{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}.necromancer-companion-card{display:flex;gap:10px;padding:9px;border:1px solid #51405e;border-radius:12px;background:linear-gradient(145deg,#282130,#17141d);color:#eee5f4}.necromancer-companion-card.is-active{border-color:#b28bda;box-shadow:0 0 12px #9564bb22}.necromancer-companion-art{width:100px;height:122px;flex:0 0 100px;overflow:hidden;border:1px solid #80638f;border-radius:8px;background:#100d14;display:grid;place-items:center;color:#c9a8e4;font-size:24px}.necromancer-companion-art img{width:100%;height:100%;object-fit:cover;object-position:center 25%}.necromancer-companion-info{flex:1;min-width:0}.necromancer-companion-title{display:flex;justify-content:space-between;gap:6px;align-items:center}.necromancer-companion-title b{font-size:12px;color:#f0dfff}.necromancer-companion-title span,.necromancer-companion-info>small{font-size:9px;color:#bca9c8}.necromancer-companion-hp{margin:7px 0;color:#d5c1df;font-size:9px}.necromancer-companion-hp i{display:block;height:6px;margin-top:4px;background:#482b3c;border-radius:8px;overflow:hidden}.necromancer-companion-hp em{display:block;height:100%;background:linear-gradient(90deg,#8d263e,#e45d75)}.necromancer-companion-attributes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:7px 0}.necromancer-companion-attributes span{padding:4px;border-radius:5px;background:#211b29;color:#bfaecb;font-size:8px;text-align:center}.necromancer-companion-attributes b{display:block;color:#f0d7a4;font-size:10px}.necromancer-companion-skills{margin-top:6px;font-size:9px;color:#d8c5e3}.necromancer-companion-skills p{margin:3px 0;line-height:1.8;color:#bdaec7}.necromancer-companion-actions{display:flex;gap:6px;margin-top:8px}.necromancer-companion-actions button{flex:1;min-height:34px;padding:5px;border:1px solid #75568a;border-radius:7px;background:#30233c;color:#eadcff;font:inherit;font-size:9px}.necromancer-companion-actions button:last-child{border-color:#75454b;background:#321e27;color:#f0c4c8}.necromancer-companion-actions button:disabled{opacity:.4}.necromancer-empty-collection{margin-top:12px;padding:20px 12px;text-align:center;border:1px dashed #6b567b;border-radius:10px;color:#e4d0f1}.necromancer-empty-collection p{font-size:10px;line-height:1.9;color:#b8a9c3}@media(max-width:420px){.necromancer-companion-art{width:78px;height:100px;flex-basis:78px}.necromancer-companion-title{align-items:flex-start;flex-direction:column}.necromancer-companion-attributes{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
+
+<style id="etranom-v2123-auth-visual-recovery">
+/* V2123: recover the visible login panel when prior animation/visibility rules leave only the backdrop. */
+#auth-gate:not(.hidden){display:grid!important;visibility:visible!important;opacity:1!important;position:relative!important;z-index:9999!important;min-height:100dvh!important;}
+#auth-gate:not(.hidden) .auth-card,
+#auth-gate:not(.hidden) .auth-overline,
+#auth-gate:not(.hidden) .auth-brand,
+#auth-gate:not(.hidden) .auth-sub,
+#auth-gate:not(.hidden) .auth-divider,
+#auth-gate:not(.hidden) #auth-form,
+#auth-gate:not(.hidden) #auth-note,
+#auth-gate:not(.hidden) .auth-footer,
+#auth-gate:not(.hidden) .auth-bottom-mark{
+ display:initial!important;visibility:visible!important;opacity:1!important;
+ transform:none!important;filter:none!important;animation:none!important;
+}
+#auth-gate:not(.hidden) .auth-card{display:block!important;position:relative!important;z-index:10000!important;width:min(100%,430px)!important;margin:auto!important;max-height:calc(100dvh - 36px)!important;overflow-y:auto!important;background:linear-gradient(145deg,#211a2b,#121016)!important;border:1px solid #80613e!important;border-radius:18px!important;box-shadow:0 18px 70px #0009!important;padding:28px 22px!important;}
+#auth-gate:not(.hidden) .auth-frame,#auth-gate:not(.hidden) .auth-atmosphere{pointer-events:none!important;}
+#etr-game-root:not(.etr-game-ready){display:none!important;}
+</style>
 </head>
 <body>
 <div id="auth-gate">
@@ -1290,7 +1310,7 @@ async function startSession(session) {
             window.ETRANOM_UNIFIED_BATTLE_EXPERIENCE = null;
         }
         await importGameModule('./systems/world/isometric-dark-fantasy-v1.js?v=2034');
-        await importGameModule('./game.js?v=2122&build=2122');
+        await importGameModule('./game.js?v=2123&build=2123');
         const gameRunner = window.run;
         if (typeof gameRunner !== 'function')
             throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
