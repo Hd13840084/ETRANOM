@@ -31,7 +31,7 @@ window.run = run;
 /* V1967 central damage gateway: Solo uses the gateway with the legacy shared-core fallback. */
 /* Legacy fallback anchor: const sharedCore=window.ETRANOM_COMBAT_CORE; sharedCore.resolveDamage remains available if the central gateway fails to load. */
 // ETRANOM: text-first dark fantasy RPG. Narrative is primary; game rules remain deterministic.
-async function run(mode) {
+function run(mode) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
     let css = ""; // Shared with the stylesheet assembly after render().
     const root = document.getElementById('etr-game-root') || document.body, api = window.lib || {};
@@ -12501,7 +12501,6 @@ async function run(mode) {
         }
         installPrimaryNavigationRouter();
         render();
-        await load();
-        return loaded;
+        return load().then(() => loaded);
     }
 }
