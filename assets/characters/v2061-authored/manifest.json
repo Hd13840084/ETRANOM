@@ -1,0 +1,15 @@
+{
+  "version": "2061.0.0",
+  "source": "AI-generated character direction sheet, cropped into per-specialization directional pose images",
+  "specializations": [
+    "wizard_arcane_mage",
+    "wizard_elementalist",
+    "wizard_warlock",
+    "wizard_necromancer"
+  ],
+  "directions": ["south", "south-east", "east", "north-east", "north", "north-west", "west", "south-west"],
+  "states": ["idle", "walk", "run", "interact"],
+  "framesPerState": 1,
+  "frameSize": {"width": 128, "height": 160},
+  "note": "Directional authored poses are integrated. The same pose is currently reused across animation states; these are not yet frame-by-frame animated clips. Visual review is required before final approval."
+}

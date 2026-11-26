@@ -1,0 +1,28 @@
+{
+  "version": "2060.0.0",
+  "specializationId": "warrior_apocalypse_harbinger",
+  "source": "AI-generated authored concept sheet; manually segmented into 32 directional/state poses",
+  "states": [
+    "idle",
+    "walk",
+    "run",
+    "interact"
+  ],
+  "directions": [
+    "south",
+    "south-east",
+    "east",
+    "north-east",
+    "north",
+    "north-west",
+    "west",
+    "south-west"
+  ],
+  "frameCountPerPose": 1,
+  "frameSize": {
+    "width": 128,
+    "height": 160
+  },
+  "artStatus": "authored_directional_pose_set_single_frame",
+  "limitations": "One authored pose per state/direction; not multi-frame hand-animated clips."
+}

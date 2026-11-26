@@ -1,0 +1,23 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const game=fs.readFileSync(new URL('../../game.js',import.meta.url),'utf8');
+const index=fs.readFileSync(new URL('../../index.html',import.meta.url),'utf8');
+const palette=fs.readFileSync(new URL('../../systems/world/isometric-dark-fantasy-v1.js',import.meta.url),'utf8');
+assert.match(index,/isometric-dark-fantasy-v1\.js\?v=2032/);
+assert.match(game,/ctx\.transform\(\.72,\.36,-\.72,\.36,0,0\)/);
+assert.match(game,/معکوس تبدیل دوربین ایزومتریک/);
+assert.match(game,/سیلوئت پیکسلی تمام‌قد/);
+assert.match(palette,/ash_forest/);
+assert.match(palette,/rootbound_ruins/);
+assert.match(palette,/obsidian_wastes/);
+assert.match(palette,/haunted_highlands/);
+assert.match(palette,/mode:'visual-only'/);
+assert.match(game,/function drawTerrainDepth\(/);
+assert.match(game,/function drawIsoTree\(/);
+assert.match(game,/function drawAtmosphere\(/);
+assert.match(game,/drawTerrainDepth\(t,camX,camY\)/);
+assert.match(game,/drawAtmosphere\(t,camX,camY,floorPalette\)/);
+console.log('PASS V2028 isometric camera, reverse touch projection, pixel avatar and visual-only biome registry');
+
+assert.match(game,/function drawCityArchitecture\(t\)/);
+assert.match(game,/drawCityArchitecture\(t\)/);

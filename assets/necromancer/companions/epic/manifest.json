@@ -1,0 +1,107 @@
+{
+  "version": "V1987",
+  "rank": "epic",
+  "count": 20,
+  "portraits": [
+    {
+      "id": "obsidian_bell_golem",
+      "name": "غول ناقوس ابسیدین",
+      "path": "assets/necromancer/companions/epic/obsidian_bell_golem.webp"
+    },
+    {
+      "id": "cathedral_bell_colossus",
+      "name": "کلوسوس ناقوس‌خانه",
+      "path": "assets/necromancer/companions/epic/cathedral_bell_colossus.webp"
+    },
+    {
+      "id": "abyssal_prism_serpent",
+      "name": "مار منشوری مغاک",
+      "path": "assets/necromancer/companions/epic/abyssal_prism_serpent.webp"
+    },
+    {
+      "id": "astral_jelly_matriarch",
+      "name": "مادر عروس‌دریایی اختر",
+      "path": "assets/necromancer/companions/epic/astral_jelly_matriarch.webp"
+    },
+    {
+      "id": "bonewing_manta",
+      "name": "مانتای استخوان‌بال",
+      "path": "assets/necromancer/companions/epic/bonewing_manta.webp"
+    },
+    {
+      "id": "glacier_shard_beast",
+      "name": "درنده خرده‌یخ",
+      "path": "assets/necromancer/companions/epic/glacier_shard_beast.webp"
+    },
+    {
+      "id": "iron_bell_revenant",
+      "name": "بازگشته زنگ‌آهن",
+      "path": "assets/necromancer/companions/epic/iron_bell_revenant.webp"
+    },
+    {
+      "id": "voidwing_eclipse_ray",
+      "name": "پرتوی بال‌خلأ",
+      "path": "assets/necromancer/companions/epic/voidwing_eclipse_ray.webp"
+    },
+    {
+      "id": "obsidian_scarab_scourge",
+      "name": "عقرب ابسیدین‌چنگ",
+      "path": "assets/necromancer/companions/epic/obsidian_scarab_scourge.webp"
+    },
+    {
+      "id": "ironroot_colossus",
+      "name": "کلوسوس ریشه‌آهن",
+      "path": "assets/necromancer/companions/epic/ironroot_colossus.webp"
+    },
+    {
+      "id": "starless_moth_queen",
+      "name": "ملکه شب‌پره بی‌ستاره",
+      "path": "assets/necromancer/companions/epic/starless_moth_queen.webp"
+    },
+    {
+      "id": "floating_sarcophagus",
+      "name": "تابوت شناور نفرین",
+      "path": "assets/necromancer/companions/epic/floating_sarcophagus.webp"
+    },
+    {
+      "id": "eclipse_halo_herald",
+      "name": "پیام‌آور هاله کسوف",
+      "path": "assets/necromancer/companions/epic/eclipse_halo_herald.webp"
+    },
+    {
+      "id": "coral_hydra_twins",
+      "name": "هیدرای مرجان‌زاد",
+      "path": "assets/necromancer/companions/epic/coral_hydra_twins.webp"
+    },
+    {
+      "id": "stainedglass_arachnid",
+      "name": "عنکبوت شیشه‌نگار",
+      "path": "assets/necromancer/companions/epic/stainedglass_arachnid.webp"
+    },
+    {
+      "id": "astral_astrolabe_engine",
+      "name": "ماشین اسطرلاب اختر",
+      "path": "assets/necromancer/companions/epic/astral_astrolabe_engine.webp"
+    },
+    {
+      "id": "manyeyed_pomegranate",
+      "name": "انار هزارچشم",
+      "path": "assets/necromancer/companions/epic/manyeyed_pomegranate.webp"
+    },
+    {
+      "id": "chainbound_hellbeast",
+      "name": "دیو زنجیرآتش",
+      "path": "assets/necromancer/companions/epic/chainbound_hellbeast.webp"
+    },
+    {
+      "id": "hourglass_wraith_guardian",
+      "name": "نگهبان شبح‌ساعت",
+      "path": "assets/necromancer/companions/epic/hourglass_wraith_guardian.webp"
+    },
+    {
+      "id": "crystal_shell_behemoth",
+      "name": "بهموت لاک‌بلور",
+      "path": "assets/necromancer/companions/epic/crystal_shell_behemoth.webp"
+    }
+  ]
+}
