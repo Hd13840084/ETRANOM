@@ -12542,7 +12542,8 @@ async function run(mode) {
     }
   `;
         document.head.appendChild(v121ScrollRepairStyle);
-        if (mode === "edit") {
+    } // End bindGameWorld(); startup belongs to the outer async run().
+    if (mode === "edit") {
             renderEdit();
             return true;
         }
@@ -12581,5 +12582,4 @@ async function run(mode) {
             window.__ETRANOM_DIAGNOSTICS__?.report?.('خطای راه‌اندازی موتور بازی', startupError?.stack || startupError);
             throw startupError;
         }
-    }
 }
