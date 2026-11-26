@@ -281,6 +281,13 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     const reason=event?.reason; show('Promise ردشده',reason?.stack||reason?.message||reason);
   });
   window.addEventListener('rejectionhandled',event=>show('Promise بعداً مدیریت شد',event.reason?.message||event.reason));
+  // If the module never reaches Supabase initialization, expose a useful reason instead of an endless wait.
+  setTimeout(()=>{
+    if(window.__ETRANOM_AUTH_ACTIONS__?.ready) return;
+    const detail='ماژول اصلی احراز هویت تا ۲۰ ثانیه آماده نشد. احتمالاً یکی از importهای محلی یا CDN بارگذاری نشده است. صفحه را تازه‌سازی کن و گزارش زیر را ارسال کن.';
+    show('توقف در آماده‌سازی احراز هویت',detail);
+    if(note) note.textContent=detail;
+  },20000);
 })();
 </script>
 <script type="module">import { isSystemPlayerName, getPlayerDisplayName, syncPlayerProfile } from './systems/online/player-identity.js?v=1642';
@@ -353,6 +360,10 @@ window.__ETRANOM_AUTH_ACTIONS__ = {
     login: () => login().catch(e => { console.error('[ETRANOM] Unhandled login error:', e); say('ورود ناموفق بود؛ دوباره تلاش کن.'); setBusy(false); authRequestInFlight = false; }),
     signup: () => signup().catch(e => { console.error('[ETRANOM] Unhandled signup error:', e); say('ساخت حساب ناموفق بود؛ دوباره تلاش کن.'); setBusy(false); authRequestInFlight = false; })
 };
+// Enable login as soon as the auth client and its required state exist.
+// Do not make authentication depend on later optional social/guild UI setup.
+window.__ETRANOM_AUTH_ACTIONS__.ready = true;
+window.dispatchEvent(new CustomEvent('etranom:auth-ready'));
 // Guild system: a standalone world button, with founding unlocked only through Toren.
 const guildCss = document.createElement('style');
 guildCss.textContent = `#etr-guild-launch{position:fixed;z-index:100002;right:14px;bottom:calc(18px + env(safe-area-inset-bottom,0px));padding:12px 18px;border:1px solid #b99a65;border-radius:12px;background:linear-gradient(135deg,#29203a,#15121b);color:#f1d9aa;font:bold 13px Tahoma;box-shadow:0 6px 22px #0009}#etr-guild-overlay{position:fixed;inset:0;z-index:100006;background:#08070bf0;display:none;align-items:center;justify-content:center;padding:12px;font-family:Tahoma}#etr-guild-card{width:min(680px,100%);max-height:92dvh;overflow:auto;background:linear-gradient(145deg,#211a2b,#111016);border:1px solid #9b7a4e;border-radius:16px;padding:17px;color:#eee5d7;box-shadow:0 20px 70px #000}#etr-guild-card h2,#etr-guild-card h3{color:#d9b879}#etr-guild-card button,#etr-guild-card input,#etr-guild-card textarea{font:inherit}#etr-guild-card button{border:1px solid #8e704c;border-radius:8px;background:#302438;color:#f3dfbd;padding:9px 12px;margin:4px}#etr-guild-card button.primary{background:#927044;color:#120f12;font-weight:bold}#etr-guild-card input,#etr-guild-card textarea{width:100%;padding:11px;border-radius:8px;border:1px solid #63516d;background:#0d0b11;color:#fff;margin:6px 0;box-sizing:border-box}#etr-guild-card .guild-box{padding:12px;margin:9px 0;border:1px solid #51443c;border-radius:10px;background:#17141c}#etr-guild-card .guild-muted{color:#b8a78e;font-size:12px;line-height:1.9}#etr-guild-card .guild-row{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:9px;border-bottom:1px solid #403747}#etr-guild-card .guild-error{color:#ffaaa3;line-height:1.8}`;
