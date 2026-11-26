@@ -257,7 +257,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   form?.addEventListener('submit',event=>{event.preventDefault();dispatch('login');});
   signup?.addEventListener('click',event=>{event.preventDefault();dispatch('signup');});
   // Persistent diagnostics: remain active before and after authentication/game startup.
-  const diag={events:[],steps:[],stage:'صفحه ورود',panel:null,statusPanel:null,startedAt:0,completed:false};
+  const diag={events:[],steps:[],stage:'صفحه ورود',panel:null,statusPanel:null,startedAt:0,completed:false,mountInfo:null};
   const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,900);
   const ensureStatusPanel=()=>{
     if(diag.statusPanel)return diag.statusPanel;
@@ -290,6 +290,17 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     setStage:value=>{diag.stage=safeText(value);if(!diag.startedAt)diag.startedAt=Date.now();diag.steps.push(diag.stage);if(diag.steps.length>40)diag.steps.shift();paintStatus();},
     complete:()=>{diag.completed=true;diag.stage='پایان مراحل بارگذاری';paintStatus('بارگذاری موتور تمام شد؛ بررسی نمایش محیط بازی');},
     report:(kind,detail)=>{show(kind,detail);paintStatus('خطا هنگام راه‌اندازی: '+kind);},
+    inspectMount:(root)=>{
+      try{
+        const el=root||document.getElementById('etr-game-root');
+        if(!el){diag.mountInfo='ریشه بازی (#etr-game-root) پیدا نشد';paintStatus();return null;}
+        const cs=getComputedStyle(el),r=el.getBoundingClientRect(),first=el.firstElementChild;
+        const childInfo=first?(first.tagName.toLowerCase()+(first.id?'#'+first.id:'')+(typeof first.className==='string'&&first.className?'.'+first.className.trim().replace(/\\s+/g,'.'):'')):'بدون فرزند';
+        diag.mountInfo='فرزندها: '+el.childElementCount+' | HTML: '+el.innerHTML.length+' نویسه | نمایش: '+cs.display+'/'+cs.visibility+' | اندازه: '+Math.round(r.width)+'×'+Math.round(r.height)+' | اولین عنصر: '+childInfo;
+        paintStatus('بررسی DOM بازی انجام شد');
+        return {children:el.childElementCount,htmlLength:el.innerHTML.length,display:cs.display,visibility:cs.visibility,width:Math.round(r.width),height:Math.round(r.height),first:childInfo};
+      }catch(e){diag.mountInfo='خطا در بررسی DOM: '+safeText(e);paintStatus();return null;}
+    },
     getEvents:()=>diag.events.slice(),getSteps:()=>diag.steps.slice()
   };
   window.addEventListener('error',event=>{
@@ -1332,8 +1343,17 @@ async function startSession(session) {
         }
         window.__ETRANOM_DIAGNOSTICS__?.setStage('بازی آماده و در حال اجرا');
         gameRoot.classList.add('etr-game-ready');
-        window.__ETRANOM_DIAGNOSTICS__?.complete();
         gate.classList.add('hidden');
+        // Verify actual game DOM after two browser paint frames.
+        await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+        const mountInfo=window.__ETRANOM_DIAGNOSTICS__?.inspectMount(gameRoot);
+        if(mountInfo && (mountInfo.children===0 || mountInfo.htmlLength===0 || mountInfo.width===0 || mountInfo.height===0)){
+            window.__ETRANOM_DIAGNOSTICS__?.report('موتور آماده شد اما رابط بازی روی صفحه نصب/نمایش داده نشد',JSON.stringify(mountInfo));
+            if(mountInfo.children===0 || mountInfo.htmlLength===0){
+                gameRoot.innerHTML='<section dir="rtl" style="margin:16px;padding:20px;border:1px solid #bd965d;border-radius:14px;background:#21182b;color:#f4eadb;font:14px/2 Tahoma;text-align:center"><h3>موتور بازی اجرا شد، اما رابط بازی ساخته نشد</h3><p>گزارش فنی در پنل بالای صفحه ثبت شده است. لطفاً از همین صفحه عکس بفرست.</p><button onclick="location.reload()" style="padding:10px 18px;border-radius:8px">بارگذاری دوباره</button></section>';
+            }
+        }
+        window.__ETRANOM_DIAGNOSTICS__?.complete();
         started = true;
     }
     catch (e) {
