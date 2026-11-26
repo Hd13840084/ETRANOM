@@ -32,7 +32,6 @@ window.run = run;
 /* Legacy fallback anchor: const sharedCore=window.ETRANOM_COMBAT_CORE; sharedCore.resolveDamage remains available if the central gateway fails to load. */
 // ETRANOM: text-first dark fantasy RPG. Narrative is primary; game rules remain deterministic.
 function run(mode) {
-    if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('ورود به تابع run(mode)');
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
     let css = ""; // Shared with the stylesheet assembly after render().
     const root = document.getElementById('etr-game-root') || document.body, api = window.lib || {};
@@ -2699,19 +2698,21 @@ function run(mode) {
     } }, 1500);
     async function load() {
         var _a, _b, _c, _d, _e, _f, _g;
-        if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('بارگذاری ذخیره بازیکن: آغاز');
         loaded = false;
         state = null;
         notice = "در حال بازیابی امن اطلاعات بازیکن...";
         let migratedLegacyContent = false;
         try {
-            if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('رندر صفحه بارگذاری اولیه');
+            window.__ETRANOM_DIAG__?.stage('game.load.initial-render');
             render();
-            if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('درخواست ذخیره از سرور');
+            window.__ETRANOM_DIAG__?.stage('game.load.cloud-save-request');
             if (typeof api.getUserGameState !== "function")
                 throw new Error("game_save_api_missing");
-            const r = await Promise.race([api.getUserGameState(), new Promise((_, reject) => setTimeout(() => reject(new Error('SAVE_LOAD_TIMEOUT: سرور ذخیره در ۲۰ ثانیه پاسخ نداد')), 20000))]);
-            if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('پاسخ ذخیره دریافت شد؛ اعتبارسنجی داده‌ها');
+            let saveTimer;
+            const saveTimeout = new Promise((_, reject) => { saveTimer = setTimeout(() => reject(new Error('game_save_load_timeout_20000ms')), 20000); });
+            let r;
+            try { r = await Promise.race([Promise.resolve().then(() => api.getUserGameState()), saveTimeout]); }
+            finally { clearTimeout(saveTimer); }
             if (api.setSaveRevision)
                 api.setSaveRevision((r === null || r === void 0 ? void 0 : r.updatedAt) || null);
             if (r && r.state && typeof r.state === "object" && r.state.character) {
@@ -2837,9 +2838,9 @@ function run(mode) {
                 writeLocalSaveBackup(state);
             loaded = true;
             installSaveSafetyHooks();
-            if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage(state ? 'ذخیره آماده شد؛ رندر جهان بازی' : 'ذخیره‌ای نیست؛ نمایش سازنده شخصیت');
+            window.__ETRANOM_DIAG__?.stage('game.load.final-render');
             render();
-            if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.setStage('جهان بازی رندر شد');
+            window.__ETRANOM_DIAG__?.stage('game.load.ready');
             if (state && migratedLegacyContent) {
                 // Best-effort persistence of the targeted content migration; all unrelated save fields remain intact.
                 // A failed save leaves the remote original intact and does not block play.
@@ -2847,12 +2848,13 @@ function run(mode) {
             }
         }
         catch (e) {
-            if (window.ETRANOM_DIAG) window.ETRANOM_DIAG.report(e, 'game.load');
             console.error("ETRANOM load blocked to protect save:", e);
             state = null;
             loaded = false;
-            notice = "بازیابی اطلاعات ناموفق بود. برای جلوگیری از بازنویسی یا ازدست‌رفتن پیشرفت، ساخت شخصیت و ذخیره‌سازی متوقف شده است.";
-            root.innerHTML = '<div class="shell loading" style="padding:28px;line-height:2;text-align:center"><h2>بازیابی اطلاعات ناموفق بود</h2><p>' + esc(notice) + '</p><button type="button" id="etranom-retry-load">تلاش دوباره</button><small style="display:block;margin-top:12px">تا رفع خطا، هیچ ذخیره‌ای ایجاد یا جایگزین نمی‌شود.</small></div>';
+            const failureDetail = String((e && (e.stack || e.message)) || e || 'unknown_error');
+            notice = "بازیابی اطلاعات ناموفق بود: " + String((e && e.message) || e || 'خطای نامشخص').slice(0, 240) + ". برای جلوگیری از بازنویسی یا ازدست‌رفتن پیشرفت، ساخت شخصیت و ذخیره‌سازی متوقف شده است.";
+            window.__ETRANOM_DIAG__?.show('مرحله بارگذاری ذخیره/رندر اولیه شکست خورد', failureDetail);
+            root.innerHTML = '<div class="shell loading" style="padding:28px;line-height:2;text-align:center"><h2>بازیابی اطلاعات ناموفق بود</h2><p>' + esc(notice) + '</p><pre style="white-space:pre-wrap;overflow-wrap:anywhere;direction:ltr;text-align:left">' + esc(failureDetail.slice(0, 5000)) + '</pre><button type="button" id="etranom-retry-load">تلاش دوباره</button><small style="display:block;margin-top:12px">تا رفع خطا، هیچ ذخیره‌ای ایجاد یا جایگزین نمی‌شود.</small></div>';
             (_g = root.querySelector('#etranom-retry-load')) === null || _g === void 0 ? void 0 : _g.addEventListener('click', load);
         }
     }
@@ -12508,7 +12510,9 @@ function run(mode) {
             return;
         }
         installPrimaryNavigationRouter();
+        window.__ETRANOM_DIAG__?.stage('game.run.initial-render');
         render();
+        window.__ETRANOM_DIAG__?.stage('game.run.load-start');
         return load();
     }
 }
