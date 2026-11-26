@@ -27,9 +27,16 @@ export class ETRANOMWorldPresence {
     async loadRelations() {
         // Relationship lookups are optional decoration. A missing table, RLS denial,
         // or transient network error must never prevent the live map channel starting.
-        const safeQuery = async (build) => {
+        const withTimeout = (promise, ms, label) => new Promise((resolve, reject) => {
+            const timer = setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms);
+            Promise.resolve(promise).then(
+                value => { clearTimeout(timer); resolve(value); },
+                error => { clearTimeout(timer); reject(error); }
+            );
+        });
+        const safeQuery = async (build, label) => {
             try {
-                return await build();
+                return await withTimeout(build(), 5000, label);
             }
             catch (error) {
                 return { data: null, error };
@@ -37,8 +44,8 @@ export class ETRANOMWorldPresence {
         };
         const [friends, guilds] = await Promise.all([
             safeQuery(() => this.supabase.from('friendships').select('user_low,user_high')
-                .or(`user_low.eq.${this.user.id},user_high.eq.${this.user.id}`)),
-            safeQuery(() => this.supabase.from('guild_members').select('user_id,guild_id'))
+                .or(`user_low.eq.${this.user.id},user_high.eq.${this.user.id}`), 'Friend relationship lookup'),
+            safeQuery(() => this.supabase.from('guild_members').select('user_id,guild_id'), 'Guild relationship lookup')
         ]);
         const errors = [friends === null || friends === void 0 ? void 0 : friends.error, guilds === null || guilds === void 0 ? void 0 : guilds.error].filter(Boolean);
         this.relationError = errors.length ? errors.map(error => error.message || String(error)).join('; ') : null;

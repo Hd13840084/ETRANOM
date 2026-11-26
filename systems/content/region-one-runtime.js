@@ -10,11 +10,36 @@ const FILES = {
     dungeons: 'dungeons/dungeons.json', ruins: 'ruins/ruins.json', tower: 'tower/tower.json',
     towerEncounters: 'tower/tower_encounters.json', rewards: 'rewards/reward_tables.json'
 };
+function withRuntimeTimeout(promise, ms, message) {
+    let timer;
+    const timeout = new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new Error(message)), ms);
+    });
+    return Promise.race([Promise.resolve(promise), timeout]).finally(() => clearTimeout(timer));
+}
 async function readJson(path) {
-    const response = await fetch(ROOT + path, { cache: 'no-store' });
-    if (!response.ok)
-        throw new Error(`محتوای منطقه اول بارگذاری نشد: ${path} (${response.status})`);
-    return response.json();
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    let timedOut = false;
+    const timer = setTimeout(() => {
+        timedOut = true;
+        if (controller)
+            controller.abort();
+    }, 12000);
+    try {
+        const request = fetch(ROOT + path, { cache: 'no-store', ...(controller ? { signal: controller.signal } : {}) });
+        const response = await withRuntimeTimeout(request, 12000, `مهلت بارگذاری فایل منطقه اول تمام شد: ${path}`);
+        if (!response.ok)
+            throw new Error(`محتوای منطقه اول بارگذاری نشد: ${path} (${response.status})`);
+        return await withRuntimeTimeout(response.json(), 5000, `خواندن فایل منطقه اول بیش از حد طول کشید: ${path}`);
+    }
+    catch (error) {
+        if (timedOut)
+            throw new Error(`بارگذاری فایل منطقه اول به دلیل پایان مهلت متوقف شد: ${path}`);
+        throw error;
+    }
+    finally {
+        clearTimeout(timer);
+    }
 }
 function regionCombatMultiplier(_regionId) {
     // v139: encounter stats are balanced directly in the content pack.
@@ -68,23 +93,65 @@ async function assertOwnerPlayerAccess(supabase) {
     var _a;
     if (!((_a = supabase === null || supabase === void 0 ? void 0 : supabase.auth) === null || _a === void 0 ? void 0 : _a.getUser) || !(supabase === null || supabase === void 0 ? void 0 : supabase.rpc))
         return;
-    const { data: { user } = {}, error: authError } = await supabase.auth.getUser();
-    if (authError)
-        throw authError;
+    let authResult;
+    try {
+        authResult = await withRuntimeTimeout(
+            supabase.auth.getUser(),
+            7000,
+            'تأیید حساب برای بررسی دسترسی بیش از ۷ ثانیه طول کشید.'
+        );
+    }
+    catch (cause) {
+        const error = new Error(`بررسی هویت حساب انجام نشد: ${cause && cause.message ? cause.message : cause}`);
+        error.code = 'ETRANOM_ACCESS_CHECK_FAILED';
+        error.cause = cause;
+        throw error;
+    }
+    const { data: { user } = {}, error: authError } = authResult || {};
+    if (authError) {
+        const error = new Error(`بررسی هویت حساب ناموفق بود: ${authError.message || authError}`);
+        error.code = 'ETRANOM_ACCESS_CHECK_FAILED';
+        error.cause = authError;
+        throw error;
+    }
     if (!user)
         return;
-    const { data, error } = await supabase.rpc('etranom_player_access_status_v1');
-    if (error)
-        throw new Error(`بررسی وضعیت دسترسی بازیکن ناموفق بود: ${error.message}`);
+    let accessResult;
+    try {
+        accessResult = await withRuntimeTimeout(
+            supabase.rpc('etranom_player_access_status_v1'),
+            7000,
+            'بررسی مجوز حساب بیش از ۷ ثانیه طول کشید.'
+        );
+    }
+    catch (cause) {
+        const error = new Error(`بررسی مجوز حساب انجام نشد: ${cause && cause.message ? cause.message : cause}`);
+        error.code = 'ETRANOM_ACCESS_CHECK_FAILED';
+        error.cause = cause;
+        throw error;
+    }
+    const { data, error: accessError } = accessResult || {};
+    if (accessError) {
+        const error = new Error(`بررسی وضعیت دسترسی بازیکن ناموفق بود: ${accessError.message || accessError}`);
+        error.code = 'ETRANOM_ACCESS_CHECK_FAILED';
+        error.cause = accessError;
+        throw error;
+    }
     if ((data === null || data === void 0 ? void 0 : data.allowed) === false || (data === null || data === void 0 ? void 0 : data.banned) === true) {
-        throw new Error(`دسترسی این حساب مسدود است. دلیل: ${data.reason || 'بدون توضیح'}${data.expires_at ? ` | پایان محرومیت: ${data.expires_at}` : ''}`);
+        const error = new Error(`دسترسی این حساب مسدود است. دلیل: ${data.reason || 'بدون توضیح'}${data.expires_at ? ` | پایان محرومیت: ${data.expires_at}` : ''}`);
+        error.code = 'ETRANOM_ACCESS_DENIED';
+        throw error;
     }
 }
 async function fetchAdminPublishedContent(supabase) {
     if (!(supabase === null || supabase === void 0 ? void 0 : supabase.rpc))
         return [];
     try {
-        const { data, error } = await supabase.rpc('etranom_runtime_published_content_v1');
+        const { data, error } = await withRuntimeTimeout(
+            supabase.rpc('etranom_runtime_published_content_v1'),
+            5000,
+            'دریافت محتوای منتشرشده بیش از ۵ ثانیه طول کشید.'
+        );
         if (error)
             throw error;
         return Array.isArray(data) ? data : [];
