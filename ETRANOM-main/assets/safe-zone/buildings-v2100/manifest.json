@@ -1,0 +1,357 @@
+{
+  "version": "V2100",
+  "count": 27,
+  "buildings": [
+    {
+      "index": 1,
+      "file": "building_01.png",
+      "width": 252,
+      "height": 225,
+      "source_rect": [
+        0,
+        0,
+        252,
+        225
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 2,
+      "file": "building_02.png",
+      "width": 244,
+      "height": 215,
+      "source_rect": [
+        267,
+        10,
+        244,
+        215
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 3,
+      "file": "building_03.png",
+      "width": 233,
+      "height": 225,
+      "source_rect": [
+        525,
+        0,
+        233,
+        225
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 4,
+      "file": "building_04.png",
+      "width": 213,
+      "height": 213,
+      "source_rect": [
+        783,
+        12,
+        213,
+        213
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 5,
+      "file": "building_05.png",
+      "width": 249,
+      "height": 216,
+      "source_rect": [
+        1026,
+        9,
+        249,
+        216
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 6,
+      "file": "building_06.png",
+      "width": 253,
+      "height": 207,
+      "source_rect": [
+        1280,
+        18,
+        253,
+        207
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 7,
+      "file": "building_07.png",
+      "width": 256,
+      "height": 211,
+      "source_rect": [
+        0,
+        225,
+        256,
+        211
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 8,
+      "file": "building_08.png",
+      "width": 238,
+      "height": 210,
+      "source_rect": [
+        274,
+        225,
+        238,
+        210
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 9,
+      "file": "building_09.png",
+      "width": 241,
+      "height": 220,
+      "source_rect": [
+        527,
+        225,
+        241,
+        220
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 10,
+      "file": "building_10.png",
+      "width": 220,
+      "height": 215,
+      "source_rect": [
+        791,
+        227,
+        220,
+        215
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 11,
+      "file": "building_11.png",
+      "width": 256,
+      "height": 218,
+      "source_rect": [
+        1024,
+        226,
+        256,
+        218
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 12,
+      "file": "building_12.png",
+      "width": 225,
+      "height": 220,
+      "source_rect": [
+        1280,
+        225,
+        225,
+        220
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 13,
+      "file": "building_13.png",
+      "width": 273,
+      "height": 189,
+      "source_rect": [
+        0,
+        440,
+        273,
+        189
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 14,
+      "file": "building_14.png",
+      "width": 272,
+      "height": 200,
+      "source_rect": [
+        275,
+        440,
+        272,
+        200
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 15,
+      "file": "building_15.png",
+      "width": 200,
+      "height": 200,
+      "source_rect": [
+        567,
+        440,
+        200,
+        200
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 16,
+      "file": "building_16.png",
+      "width": 324,
+      "height": 199,
+      "source_rect": [
+        790,
+        440,
+        324,
+        199
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 17,
+      "file": "building_17.png",
+      "width": 356,
+      "height": 200,
+      "source_rect": [
+        1144,
+        440,
+        356,
+        200
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 18,
+      "file": "building_18.png",
+      "width": 275,
+      "height": 200,
+      "source_rect": [
+        10,
+        620,
+        275,
+        200
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 19,
+      "file": "building_19.png",
+      "width": 257,
+      "height": 200,
+      "source_rect": [
+        322,
+        620,
+        257,
+        200
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 20,
+      "file": "building_20.png",
+      "width": 238,
+      "height": 200,
+      "source_rect": [
+        630,
+        620,
+        238,
+        200
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 21,
+      "file": "building_21.png",
+      "width": 274,
+      "height": 200,
+      "source_rect": [
+        900,
+        620,
+        274,
+        200
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 22,
+      "file": "building_22.png",
+      "width": 308,
+      "height": 200,
+      "source_rect": [
+        1200,
+        620,
+        308,
+        200
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 23,
+      "file": "building_23.png",
+      "width": 291,
+      "height": 201,
+      "source_rect": [
+        9,
+        818,
+        291,
+        201
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 24,
+      "file": "building_24.png",
+      "width": 294,
+      "height": 204,
+      "source_rect": [
+        313,
+        815,
+        294,
+        204
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 25,
+      "file": "building_25.png",
+      "width": 281,
+      "height": 202,
+      "source_rect": [
+        619,
+        817,
+        281,
+        202
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 26,
+      "file": "building_26.png",
+      "width": 276,
+      "height": 209,
+      "source_rect": [
+        919,
+        815,
+        276,
+        209
+      ],
+      "anchor": "bottom-center"
+    },
+    {
+      "index": 27,
+      "file": "building_27.png",
+      "width": 290,
+      "height": 204,
+      "source_rect": [
+        1222,
+        815,
+        290,
+        204
+      ],
+      "anchor": "bottom-center"
+    }
+  ]
+}

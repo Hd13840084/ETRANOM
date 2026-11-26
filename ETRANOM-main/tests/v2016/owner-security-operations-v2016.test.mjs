@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+const root=process.cwd();
+const sql=fs.readFileSync(path.join(root,'database/admin/etranom_owner_control_v11_auth_ban_and_owner_guard.sql'),'utf8');
+const edge=fs.readFileSync(path.join(root,'supabase/functions/etranom-admin-user-access/index.ts'),'utf8');
+const ui=fs.readFileSync(path.join(root,'systems/admin/owner-control-v1.js'),'utf8');
+test('V11 has server ban guard in eight sensitive RPCs',()=>{ assert.equal((sql.match(/etranom_assert_player_access_v11\(/g)||[]).length>=9,true); });
+test('V11 protects immutable Owner identity',()=>{ assert.match(sql,/OWNER_ROLE_IMMUTABLE/); assert.match(sql,/OWNER_ID_NOT_ALLOWED/); });
+test('Edge Function verifies actor and protects Owner target',()=>{ assert.match(edge,/auth\.getUser/); assert.match(edge,/etranom_admin_roles/); assert.match(edge,/OWNER_PROTECTED/); assert.match(edge,/SUPABASE_SERVICE_ROLE_KEY/); });
+test('Edge Function revokes global sessions and records through guarded RPC',()=>{ assert.match(edge,/admin\/users\/\$\{playerId\}\/logout/); assert.match(edge,/etranom_admin_set_ban_v1/); });
+test('Owner UI calls Edge Function, not the database-only ban RPC',()=>{ assert.match(ui,/functions\.invoke\('etranom-admin-user-access'/); });

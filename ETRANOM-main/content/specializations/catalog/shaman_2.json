@@ -1,0 +1,89 @@
+{
+  "id": "shaman_2",
+  "class_id": "shaman",
+  "class_name_fa": "شمن",
+  "name_fa": "شمن ارواح",
+  "role_fa": "میانجی جهان زندگان و ارواح",
+  "identity": {
+    "combat_fantasy": "میانجی جهان زندگان و ارواح",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "shaman_2_strike",
+      "name": "شمن ارواح: نیزه ارواح",
+      "name_fa": "شمن ارواح: نیزه ارواح",
+      "type": "single_damage",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شمن ارواح؛ میانجی جهان زندگان و ارواح. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 140,
+      "scalingStat": "magicPower"
+    },
+    {
+      "id": "shaman_2_guard",
+      "name": "شمن ارواح: مرهم نیاکان برتر",
+      "name_fa": "شمن ارواح: مرهم نیاکان برتر",
+      "type": "heal",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شمن ارواح؛ میانجی جهان زندگان و ارواح. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "healPct": 125,
+      "target": "ally"
+    },
+    {
+      "id": "shaman_2_wave",
+      "name": "شمن ارواح: فراخوان روح نگهبان پیشرفته",
+      "name_fa": "شمن ارواح: فراخوان روح نگهبان پیشرفته",
+      "type": "summon",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 3,
+      "description": "مهارت اختصاصی تخصص شمن ارواح؛ میانجی جهان زندگان و ارواح. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "summonHpPct": 50,
+      "summonDamagePct": 60
+    },
+    {
+      "id": "shaman_2_stance",
+      "name": "شمن ارواح: نفرین کهن والا",
+      "name_fa": "شمن ارواح: نفرین کهن والا",
+      "type": "debuff",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شمن ارواح؛ میانجی جهان زندگان و ارواح. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "attackReductionPct": 27,
+      "defenseReductionPct": 16,
+      "dotPct": 0
+    },
+    {
+      "id": "shaman_2_ultimate",
+      "name": "شمن ارواح: خروش ابیس اساطیری",
+      "name_fa": "شمن ارواح: خروش ابیس اساطیری",
+      "type": "all_control_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شمن ارواح؛ میانجی جهان زندگان و ارواح. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 177,
+      "scalingStat": "magicPower",
+      "attackReductionPct": 30,
+      "defenseReductionPct": 18,
+      "dotPct": 10
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}

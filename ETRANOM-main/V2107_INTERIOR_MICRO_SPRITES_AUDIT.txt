@@ -1,0 +1,14 @@
+ETRANOM V2107 — INTERIOR MICRO-SPRITE PASS
+
+Base: V2106_SAFE_ZONE_MICRO_SPRITES
+Scope: systems/safe-zone/interior-renderer-v2036.js and new reusable interior prop SVG assets.
+
+Changes:
+- Replaced the repeated inline furnishing silhouettes in the interior dressing layer with independently addressable transparent SVG sprites.
+- Added 36 authored prop sprites across six visual families: forge, arcane, harvest, mine, civic, and wood.
+- Each room still chooses its family deterministically from its existing buildingId.
+- Existing room backgrounds, NPCs, work-role mapping, movement, obstacles, and interaction logic remain unchanged.
+- Existing authored room and NPC PNGs are preserved.
+
+Validation performed after packaging: module syntax, referenced sprite existence, SVG parseability, and ZIP integrity.
+Browser visual QA remains required.
