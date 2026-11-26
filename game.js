@@ -28,7 +28,7 @@ import { getAtlasDrawCommandV2059, loadAtlasForDrawV2059 } from './systems/chara
 import { resolveMapSpecializationV2066 } from './systems/characters/character-map-binding-v2066.js?v=2066';
 // V2126: expose the game entry point at module scope before authentication calls it.
 window.run = run;
-window.__ETRANOM_GAME_BUILD__ = '2126-renderfix-02';
+window.__ETRANOM_GAME_BUILD__ = '2126-renderfix-04';
 /* V1967 central damage gateway: Solo uses the gateway with the legacy shared-core fallback. */
 /* Legacy fallback anchor: const sharedCore=window.ETRANOM_COMBAT_CORE; sharedCore.resolveDamage remains available if the central gateway fails to load. */
 // ETRANOM: text-first dark fantasy RPG. Narrative is primary; game rules remain deterministic.
@@ -6463,6 +6463,315 @@ async function run(mode) {
         const c = state.character, wc = state.worldClock || { day: 1, hour: 8, minute: 0 };
         return '<section class="exploration-screen"><div class="explore-top"><div><b>⌖ ' + esc(state.location) + '</b><small>منطقه آغازین • ' + (state.inWesternDanger ? ('محدوده خطر فعال • ' + (((_a = ETRANOM_REGION_CONTENT.find(z => z.id === (state.currentDangerRegion || state.selectedDangerRegion))) === null || _a === void 0 ? void 0 : _a.name) || 'منطقه خطر')) : 'شهر و سه روستای امن') + '</small></div><div class="explore-top-actions"><button type="button" data-menu-open>☰ منو</button><button type="button" data-status-open>☷ وضعیت</button></div></div><div class="explore-mini-hud"><span>❤ ' + c.hp + '/' + warriorMaxHp() + '</span><span>✧ ' + c.mp + '/' + warriorMaxMp() + '</span><span>⚡ ' + c.stamina + '/' + warriorMaxStamina() + '</span><span>◈ ' + state.gold + '</span>' + (state.mountUntilDay >= (wc.day || 1) ? '<span>♞ اسب</span>' : '') + '<span>☼ روز ' + Number(wc.day || 1) + ' • ' + String(wc.hour || 0).padStart(2, '0') + ':' + String(wc.minute || 0).padStart(2, '0') + '</span></div><div class="explore-viewport"><canvas id="etranom-world" width="720" height="650" aria-label="نقشه پیوسته منطقه امن و مرز جنوبی ورداش"></canvas><div class="world-hint">شهر خاکستر را بگرد؛ به ساختمان‌ها و ساکنان نزدیک شو تا نام و نشانشان روشن شود.</div><div class="world-coords">X ' + Math.round(p.x) + ' • Y ' + Math.round(p.y) + '</div><div class="world-player-legend" aria-label="راهنمای رنگ بازیکنان"><span><i class="friend"></i>دوست</span><span><i class="guild"></i>هم‌انجمنی</span><span><i class="normal"></i>بازیکن عادی</span></div></div><div class="explore-controls"><div class="joystick-wrap"><div class="joystick-base" data-stick><div class="joystick-knob" data-knob></div></div><small>حرکت</small></div><div class="explore-actions"><button type="button" data-world-action="interact">◎<small>تعامل</small></button>' + (state.inWesternDanger ? '<button type="button" data-world-action="attack">⚔<small>حمله</small></button>' : '') + '<button type="button" data-world-action="inventory">⚒<small>تجهیزات و کیف</small></button></div></div>' + (worldMenuOpen ? '<div class="player-window-backdrop" data-menu-close><section class="player-window"><header><b>منوی ETRANOM</b><button data-menu-close>✕</button></header><div class="menu-grid">' + (state.inWesternDanger ? '<button data-menu-action="quests">⚑ مأموریت‌های منطقه</button><button data-menu-action="gifts">🎁 انتقال دارایی</button><button data-menu-action="online_market">🛒 بازار آنلاین بازیکنان</button>' : '') + '<button data-menu-action="reports">▣ گزارش تعاملات</button><button data-menu-action="journal">▤ ژورنال</button><button data-menu-action="settings">⚙ تنظیمات</button></div><p>محدوده فعلی: شهر خاکستر، کشتزار، ریشه‌چوب و سنگ‌آهن.</p></section></div>' : '') + (worldPanelOpen ? '<div class="player-window-backdrop" data-panel-close><section class="player-window world-panel-window" role="dialog" aria-modal="true"><header><b>' + ({ story: 'روایت و ماجراجویی', gifts: 'هدیه و انتقال دارایی', character: 'وضعیت شخصیت و مهارت‌ها', craft: 'دفتر دستورهای ساخت', inventory: 'تجهیزات شخصیت', character: 'شخصیت و کیف', reports: 'گزارش تعاملات', discoveries: 'دفتر اکتشاف', safecompletion: 'اکتشافات و تکمیل منطقه امن', discoveries: 'اکتشافات و تکمیل منطقه امن', quests: 'مأموریت‌ها', journal: 'ژورنال', map: 'اطلس جهان', residents: 'دفتر ساکنان', settings: 'تنظیمات' }[activeTab] || 'دفتر ماجراجویی') + '</b>' + (state.scene === "combat" ? '' : '<button data-panel-close>✕</button>') + '</header>' + renderHubTabs() + tabContent() + '</section></div>' : '') + renderInteractionPanel() + '</section>';
     }
+    function installPrimaryNavigationRouter() {
+        if (window.__ETRANOM_PRIMARY_NAV_ROUTER_V1846__)
+            return;
+        window.__ETRANOM_PRIMARY_NAV_ROUTER_V1846__ = true;
+        const selector = '[data-open-region],[data-region-battle],[data-region-mini],[data-region-search],[data-region-gather],[data-region-boss],[data-region-party],[data-region-dungeon],[data-region-back],[data-menu-open],[data-menu-close],[data-menu-action],[data-status-open],[data-hub-tab],[data-panel-close],[data-marketplace-launch],[data-pvp-launch],[data-tab],[data-world-action]';
+        const getActionElement = event => {
+            const path = typeof event.composedPath === 'function' ? event.composedPath() : [];
+            for (const node of path) {
+                if (node && node.nodeType === 1 && typeof node.matches === 'function' && node.matches(selector))
+                    return node;
+            }
+            const target = event.target;
+            return target && typeof target.closest === 'function' ? target.closest(selector) : null;
+        };
+        const stop = event => { event.preventDefault(); event.stopPropagation(); event.stopImmediatePropagation(); };
+        const setRegion = (id) => {
+            const zone = ETRANOM_REGION_CONTENT.find(x => x.id === id);
+            if (!zone)
+                throw new Error('شناسه محدوده معتبر نیست: ' + id);
+            activeDangerRegionId = id;
+            nearWestRegionId = id;
+            state.selectedDangerRegion = id;
+            state.currentDangerRegion = id;
+            state.currentWorldNode = 'danger_zone_' + id;
+            state.inWesternDanger = true;
+            state.scene = 'danger_zone';
+            state.location = zone.name;
+            worldMenuOpen = false;
+            worldPanelOpen = true;
+            return zone;
+        };
+        const gatherFromRegion = (id) => {
+            const zone = setRegion(id);
+            // Gathering is a region activity, not a combat action. Clear any stale combat facade
+            // before rendering the region panel so it cannot route back into combatView().
+            arcaneEndCombat();
+            ironBastionEndCombat('battle_end');
+            chaosWarriorEndCombat();
+            apocalypseEndCombat();
+            state.combat = null;
+            state.battleRewards = null;
+            state.regionWave = [];
+            state.scene = 'danger_zone';
+            state.location = zone.name;
+            activeTab = 'hunt';
+            worldPanelOpen = true;
+            worldMenuOpen = false;
+            const index = ETRANOM_REGION_CONTENT.indexOf(zone), pool = (zone.mats || []).filter(Boolean);
+            if (!pool.length)
+                throw new Error('برای این محدوده ماده قابل جمع‌آوری ثبت نشده است.');
+            const materialId = pool[Math.floor(Math.random() * pool.length)];
+            const names = REGION_MATERIAL_NAMES[index] || [], name = names[pool.indexOf(materialId)] || materialId;
+            state.inventory = Array.isArray(state.inventory) ? state.inventory : [];
+            const item = state.inventory.find(x => x.id === materialId);
+            if (item)
+                item.qty = (Number(item.qty) || 0) + 1;
+            else
+                state.inventory.push({ id: materialId, name, qty: 1, category: 'material' });
+            notice = 'در ' + zone.name + ' یک واحد «' + name + '» جمع‌آوری کردی.';
+            save(true);
+            render();
+        };
+        // Window capture runs before document/root handlers. One route owns navigation,
+        // preventing legacy per-node listeners from swallowing or duplicating transitions.
+        window.addEventListener('click', event => {
+            var _a, _b;
+            const b = getActionElement(event);
+            if (!b || !root.contains(b) || !state)
+                return;
+            try {
+                if (b.hasAttribute('data-open-region')) {
+                    stop(event);
+                    const id = String(b.dataset.openRegion || '');
+                    if (!isRegionUnlocked(id)) {
+                        const idx = mainQuestChainForRegion(id), required = REGION_MAIN_QUEST_CHAINS[Math.max(0, idx - 1)];
+                        notice = 'ورود به این محدوده قفل است؛ ابتدا زنجیره اصلی «' + ((required === null || required === void 0 ? void 0 : required.title) || 'محدوده قبلی') + '» را کامل کن.';
+                        showSystemReport('هشدار ورود: محدوده قفل است', notice, id);
+                        return;
+                    }
+                    if (isRegionTwoTarget(id) && !regionTwoUnlocked()) {
+                        notice = 'ورود به منطقه خطر دوم قفل است؛ ابتدا زنجیره اصلی منطقه اول را کامل کن.';
+                        showSystemReport('هشدار ورود: منطقه قفل است', notice, id);
+                        return;
+                    }
+                    const zone = setRegion(id), boundary = WEST_DANGER_ZONE_BOUNDARIES.find(x => x.id === id);
+                    if (!boundary)
+                        throw new Error('نقطه ورود این محدوده در نقشه ثبت نشده است.');
+                    state.worldPosition = { ...(state.worldPosition || {}), x: boundary.entryPoint[0], y: boundary.entryPoint[1] };
+                    state.dangerZoneEntry = { regionId: id, label: boundary.entry, x: boundary.entryPoint[0], y: boundary.entryPoint[1], boundaryVersion: 1 };
+                    state.location = zone.name + ' • ' + boundary.entry;
+                    activeTab = 'hunt';
+                    notice = 'وارد ' + zone.name + ' شدی. یکی از فعالیت‌ها را انتخاب کن.';
+                    save(true);
+                    render();
+                    return;
+                }
+                if (b.hasAttribute('data-region-back')) {
+                    stop(event);
+                    activeTab = 'regionmap';
+                    worldPanelOpen = true;
+                    worldMenuOpen = false;
+                    notice = '';
+                    render();
+                    return;
+                }
+                if (b.hasAttribute('data-region-battle')) {
+                    stop(event);
+                    const id = String(b.dataset.regionBattle || '');
+                    if (!isRegionUnlocked(id)) {
+                        const idx = mainQuestChainForRegion(id), required = REGION_MAIN_QUEST_CHAINS[Math.max(0, idx - 1)];
+                        notice = 'این محدوده قفل است؛ ابتدا زنجیره اصلی «' + ((required === null || required === void 0 ? void 0 : required.title) || 'محدوده قبلی') + '» را کامل کن.';
+                        showSystemReport('هشدار ورود: محدوده قفل است', notice, id);
+                        return;
+                    }
+                    setRegion(id);
+                    activeTab = 'hunt';
+                    save(true);
+                    const started = combatStart({ regionId: id });
+                    if (!started) {
+                        if (!notice)
+                            notice = 'نبرد آغاز نشد؛ اطلاعات دشمنان این محدوده را بررسی کن.';
+                        render();
+                    }
+                    return;
+                }
+                if (b.hasAttribute('data-region-mini')) {
+                    stop(event);
+                    const encounter = FIRST_REGION_ENCOUNTERS.find(x => x.id === String(b.dataset.regionMini || '') && x.kind === 'miniboss');
+                    if (!encounter)
+                        throw new Error('اطلاعات مینی‌باس این محدوده پیدا نشد.');
+                    setRegion(encounter.regionId);
+                    activeTab = 'hunt';
+                    const started = combatStart({ regionId: encounter.regionId, encounterId: encounter.id });
+                    if (!started) {
+                        if (!notice)
+                            notice = 'نبرد مینی‌باس آغاز نشد.';
+                        render();
+                    }
+                    return;
+                }
+                if (b.hasAttribute('data-region-boss')) {
+                    stop(event);
+                    const encounter = FIRST_REGION_ENCOUNTERS.find(x => x.regionId === String(b.dataset.regionBoss || '') && x.kind === 'boss');
+                    if (!encounter)
+                        throw new Error('باس نهایی برای این محدوده پیدا نشد.');
+                    setRegion(encounter.regionId);
+                    activeTab = 'hunt';
+                    const started = combatStart({ regionId: encounter.regionId, encounterId: encounter.id });
+                    if (!started) {
+                        if (!notice)
+                            notice = 'نبرد باس آغاز نشد.';
+                        render();
+                    }
+                    return;
+                }
+                if (b.hasAttribute('data-region-search') || b.hasAttribute('data-region-gather')) {
+                    stop(event);
+                    gatherFromRegion(String(b.dataset.regionSearch || b.dataset.regionGather || ''));
+                    return;
+                }
+                if (b.hasAttribute('data-region-party')) {
+                    stop(event);
+                    const id = String(b.dataset.regionParty || '');
+                    setRegion(id);
+                    if (typeof window.openETRANOMParty === 'function')
+                        window.openETRANOMParty(id);
+                    else {
+                        notice = 'سامانه گروه هنوز بارگذاری نشده است؛ دوباره تلاش کن.';
+                        render();
+                    }
+                    return;
+                }
+                if (b.hasAttribute('data-region-dungeon')) {
+                    stop(event);
+                    activeTab = 'dungeons';
+                    worldPanelOpen = true;
+                    notice = 'دانجن انتخاب شد؛ از فهرست زیر ورود را آغاز کن.';
+                    render();
+                    return;
+                }
+                if (b.hasAttribute('data-menu-open')) {
+                    stop(event);
+                    worldMenuOpen = true;
+                    render();
+                    return;
+                }
+                if (b.hasAttribute('data-menu-close')) {
+                    const isBackdrop = (_a = b.classList) === null || _a === void 0 ? void 0 : _a.contains('player-window-backdrop');
+                    if (!isBackdrop || event.target === b) {
+                        stop(event);
+                        worldMenuOpen = false;
+                        render();
+                    }
+                    return;
+                }
+                if (b.dataset.menuAction) {
+                    stop(event);
+                    const action = b.dataset.menuAction, allowed = ['character', 'inventory', 'craft', 'quests', 'reports', 'discoveries', 'journal', 'settings', 'legion', 'gifts'];
+                    worldMenuOpen = false;
+                    if (!allowed.includes(action)) {
+                        notice = 'این بخش هنوز در دسترس نیست.';
+                        render();
+                        return;
+                    }
+                    activeTab = action;
+                    worldPanelOpen = true;
+                    render();
+                    return;
+                }
+                if (b.hasAttribute('data-status-open')) {
+                    stop(event);
+                    activeTab = 'character';
+                    worldPanelOpen = true;
+                    worldMenuOpen = false;
+                    render();
+                    return;
+                }
+                if (b.dataset.hubTab) {
+                    stop(event);
+                    activeTab = b.dataset.hubTab;
+                    worldPanelOpen = true;
+                    worldMenuOpen = false;
+                    render();
+                    return;
+                }
+                if (b.hasAttribute('data-panel-close')) {
+                    const isBackdrop = (_b = b.classList) === null || _b === void 0 ? void 0 : _b.contains('player-window-backdrop');
+                    if (!isBackdrop || event.target === b) {
+                        stop(event);
+                        worldPanelOpen = false;
+                        if (activeTab === 'hunt')
+                            activeTab = 'regionmap';
+                        render();
+                    }
+                    return;
+                }
+                if (b.hasAttribute('data-marketplace-launch')) {
+                    stop(event);
+                    if (typeof window.etranomOpenMarket === 'function')
+                        window.etranomOpenMarket();
+                    else {
+                        notice = 'بازار آنلاین هنوز بارگذاری نشده است؛ دوباره تلاش کن.';
+                        render();
+                    }
+                    return;
+                }
+                if (b.hasAttribute('data-pvp-launch')) {
+                    stop(event);
+                    if (typeof window.etranomOpenPvP === 'function')
+                        window.etranomOpenPvP();
+                    else {
+                        notice = 'تالار PvP بارگذاری نشده است؛ دوباره تلاش کن.';
+                        render();
+                    }
+                    return;
+                }
+                if (b.dataset.tab) {
+                    stop(event);
+                    activeTab = b.dataset.tab;
+                    worldPanelOpen = true;
+                    worldMenuOpen = false;
+                    notice = '';
+                    render();
+                    return;
+                }
+                if (b.dataset.worldAction === 'inventory') {
+                    stop(event);
+                    activeTab = 'inventory';
+                    worldPanelOpen = true;
+                    render();
+                    return;
+                }
+                if (b.dataset.worldAction === 'interact') {
+                    stop(event);
+                    openNearest();
+                    return;
+                }
+                if (b.dataset.worldAction === 'attack') {
+                    stop(event);
+                    const id = nearWestRegionId || state.currentDangerRegion || state.selectedDangerRegion || activeDangerRegionId || String(state.currentWorldNode || '').replace(/^danger_zone_/, '');
+                    const zone = ETRANOM_REGION_CONTENT.find(z => z.id === id);
+                    if (zone && (state.inWesternDanger || state.scene === 'danger_zone' || String(state.currentWorldNode || '').startsWith('danger_zone_'))) {
+                        setRegion(id);
+                        activeTab = 'hunt';
+                        notice = 'در ' + zone.name + ' هستی؛ نوع فعالیت را انتخاب کن.';
+                        render();
+                    }
+                    else {
+                        notice = 'برای فعال‌شدن حمله، ابتدا وارد یکی از شش محدوده خطر شو.';
+                        render();
+                    }
+                    return;
+                }
+            }
+            catch (routerError) {
+                console.error('[ETRANOM] Navigation route failed:', routerError);
+                window.__ETRANOM_NAV_LAST_ERROR__ = String((routerError === null || routerError === void 0 ? void 0 : routerError.stack) || routerError);
+                notice = 'عملیات انجام نشد: ' + String((routerError === null || routerError === void 0 ? void 0 : routerError.message) || routerError || 'خطای نامشخص').slice(0, 160);
+                try {
+                    render();
+                }
+                catch (renderError) {
+                    console.error('[ETRANOM] Navigation recovery render failed:', renderError);
+                    root.innerHTML = '<section style="padding:18px;color:#fff;background:#241a25"><h3>خطا در بازکردن بخش</h3><p>' + esc(notice) + '</p><small>برای بررسی فنی، این پیام را ارسال کن.</small></section>';
+                }
+            }
+        }, true);
+    }
+
     function bindGameWorld() {
         root.querySelectorAll("[data-notice-close]").forEach(b => b.addEventListener("click", () => { notice = ""; render(); }));
         if (!document.getElementById('etranom-report-ui-style')) {
@@ -11120,314 +11429,7 @@ async function run(mode) {
         // V184.6: one window-capture router owns pre-combat navigation and primary navigation.
         // It runs before any root/optional listeners, so an earlier handler cannot swallow
         // a click before the requested page transition has been applied.
-        function installPrimaryNavigationRouter() {
-            if (window.__ETRANOM_PRIMARY_NAV_ROUTER_V1846__)
-                return;
-            window.__ETRANOM_PRIMARY_NAV_ROUTER_V1846__ = true;
-            const selector = '[data-open-region],[data-region-battle],[data-region-mini],[data-region-search],[data-region-gather],[data-region-boss],[data-region-party],[data-region-dungeon],[data-region-back],[data-menu-open],[data-menu-close],[data-menu-action],[data-status-open],[data-hub-tab],[data-panel-close],[data-marketplace-launch],[data-pvp-launch],[data-tab],[data-world-action]';
-            const getActionElement = event => {
-                const path = typeof event.composedPath === 'function' ? event.composedPath() : [];
-                for (const node of path) {
-                    if (node && node.nodeType === 1 && typeof node.matches === 'function' && node.matches(selector))
-                        return node;
-                }
-                const target = event.target;
-                return target && typeof target.closest === 'function' ? target.closest(selector) : null;
-            };
-            const stop = event => { event.preventDefault(); event.stopPropagation(); event.stopImmediatePropagation(); };
-            const setRegion = (id) => {
-                const zone = ETRANOM_REGION_CONTENT.find(x => x.id === id);
-                if (!zone)
-                    throw new Error('شناسه محدوده معتبر نیست: ' + id);
-                activeDangerRegionId = id;
-                nearWestRegionId = id;
-                state.selectedDangerRegion = id;
-                state.currentDangerRegion = id;
-                state.currentWorldNode = 'danger_zone_' + id;
-                state.inWesternDanger = true;
-                state.scene = 'danger_zone';
-                state.location = zone.name;
-                worldMenuOpen = false;
-                worldPanelOpen = true;
-                return zone;
-            };
-            const gatherFromRegion = (id) => {
-                const zone = setRegion(id);
-                // Gathering is a region activity, not a combat action. Clear any stale combat facade
-                // before rendering the region panel so it cannot route back into combatView().
-                arcaneEndCombat();
-                ironBastionEndCombat('battle_end');
-                chaosWarriorEndCombat();
-                apocalypseEndCombat();
-                state.combat = null;
-                state.battleRewards = null;
-                state.regionWave = [];
-                state.scene = 'danger_zone';
-                state.location = zone.name;
-                activeTab = 'hunt';
-                worldPanelOpen = true;
-                worldMenuOpen = false;
-                const index = ETRANOM_REGION_CONTENT.indexOf(zone), pool = (zone.mats || []).filter(Boolean);
-                if (!pool.length)
-                    throw new Error('برای این محدوده ماده قابل جمع‌آوری ثبت نشده است.');
-                const materialId = pool[Math.floor(Math.random() * pool.length)];
-                const names = REGION_MATERIAL_NAMES[index] || [], name = names[pool.indexOf(materialId)] || materialId;
-                state.inventory = Array.isArray(state.inventory) ? state.inventory : [];
-                const item = state.inventory.find(x => x.id === materialId);
-                if (item)
-                    item.qty = (Number(item.qty) || 0) + 1;
-                else
-                    state.inventory.push({ id: materialId, name, qty: 1, category: 'material' });
-                notice = 'در ' + zone.name + ' یک واحد «' + name + '» جمع‌آوری کردی.';
-                save(true);
-                render();
-            };
-            // Window capture runs before document/root handlers. One route owns navigation,
-            // preventing legacy per-node listeners from swallowing or duplicating transitions.
-            window.addEventListener('click', event => {
-                var _a, _b;
-                const b = getActionElement(event);
-                if (!b || !root.contains(b) || !state)
-                    return;
-                try {
-                    if (b.hasAttribute('data-open-region')) {
-                        stop(event);
-                        const id = String(b.dataset.openRegion || '');
-                        if (!isRegionUnlocked(id)) {
-                            const idx = mainQuestChainForRegion(id), required = REGION_MAIN_QUEST_CHAINS[Math.max(0, idx - 1)];
-                            notice = 'ورود به این محدوده قفل است؛ ابتدا زنجیره اصلی «' + ((required === null || required === void 0 ? void 0 : required.title) || 'محدوده قبلی') + '» را کامل کن.';
-                            showSystemReport('هشدار ورود: محدوده قفل است', notice, id);
-                            return;
-                        }
-                        if (isRegionTwoTarget(id) && !regionTwoUnlocked()) {
-                            notice = 'ورود به منطقه خطر دوم قفل است؛ ابتدا زنجیره اصلی منطقه اول را کامل کن.';
-                            showSystemReport('هشدار ورود: منطقه قفل است', notice, id);
-                            return;
-                        }
-                        const zone = setRegion(id), boundary = WEST_DANGER_ZONE_BOUNDARIES.find(x => x.id === id);
-                        if (!boundary)
-                            throw new Error('نقطه ورود این محدوده در نقشه ثبت نشده است.');
-                        state.worldPosition = { ...(state.worldPosition || {}), x: boundary.entryPoint[0], y: boundary.entryPoint[1] };
-                        state.dangerZoneEntry = { regionId: id, label: boundary.entry, x: boundary.entryPoint[0], y: boundary.entryPoint[1], boundaryVersion: 1 };
-                        state.location = zone.name + ' • ' + boundary.entry;
-                        activeTab = 'hunt';
-                        notice = 'وارد ' + zone.name + ' شدی. یکی از فعالیت‌ها را انتخاب کن.';
-                        save(true);
-                        render();
-                        return;
-                    }
-                    if (b.hasAttribute('data-region-back')) {
-                        stop(event);
-                        activeTab = 'regionmap';
-                        worldPanelOpen = true;
-                        worldMenuOpen = false;
-                        notice = '';
-                        render();
-                        return;
-                    }
-                    if (b.hasAttribute('data-region-battle')) {
-                        stop(event);
-                        const id = String(b.dataset.regionBattle || '');
-                        if (!isRegionUnlocked(id)) {
-                            const idx = mainQuestChainForRegion(id), required = REGION_MAIN_QUEST_CHAINS[Math.max(0, idx - 1)];
-                            notice = 'این محدوده قفل است؛ ابتدا زنجیره اصلی «' + ((required === null || required === void 0 ? void 0 : required.title) || 'محدوده قبلی') + '» را کامل کن.';
-                            showSystemReport('هشدار ورود: محدوده قفل است', notice, id);
-                            return;
-                        }
-                        setRegion(id);
-                        activeTab = 'hunt';
-                        save(true);
-                        const started = combatStart({ regionId: id });
-                        if (!started) {
-                            if (!notice)
-                                notice = 'نبرد آغاز نشد؛ اطلاعات دشمنان این محدوده را بررسی کن.';
-                            render();
-                        }
-                        return;
-                    }
-                    if (b.hasAttribute('data-region-mini')) {
-                        stop(event);
-                        const encounter = FIRST_REGION_ENCOUNTERS.find(x => x.id === String(b.dataset.regionMini || '') && x.kind === 'miniboss');
-                        if (!encounter)
-                            throw new Error('اطلاعات مینی‌باس این محدوده پیدا نشد.');
-                        setRegion(encounter.regionId);
-                        activeTab = 'hunt';
-                        const started = combatStart({ regionId: encounter.regionId, encounterId: encounter.id });
-                        if (!started) {
-                            if (!notice)
-                                notice = 'نبرد مینی‌باس آغاز نشد.';
-                            render();
-                        }
-                        return;
-                    }
-                    if (b.hasAttribute('data-region-boss')) {
-                        stop(event);
-                        const encounter = FIRST_REGION_ENCOUNTERS.find(x => x.regionId === String(b.dataset.regionBoss || '') && x.kind === 'boss');
-                        if (!encounter)
-                            throw new Error('باس نهایی برای این محدوده پیدا نشد.');
-                        setRegion(encounter.regionId);
-                        activeTab = 'hunt';
-                        const started = combatStart({ regionId: encounter.regionId, encounterId: encounter.id });
-                        if (!started) {
-                            if (!notice)
-                                notice = 'نبرد باس آغاز نشد.';
-                            render();
-                        }
-                        return;
-                    }
-                    if (b.hasAttribute('data-region-search') || b.hasAttribute('data-region-gather')) {
-                        stop(event);
-                        gatherFromRegion(String(b.dataset.regionSearch || b.dataset.regionGather || ''));
-                        return;
-                    }
-                    if (b.hasAttribute('data-region-party')) {
-                        stop(event);
-                        const id = String(b.dataset.regionParty || '');
-                        setRegion(id);
-                        if (typeof window.openETRANOMParty === 'function')
-                            window.openETRANOMParty(id);
-                        else {
-                            notice = 'سامانه گروه هنوز بارگذاری نشده است؛ دوباره تلاش کن.';
-                            render();
-                        }
-                        return;
-                    }
-                    if (b.hasAttribute('data-region-dungeon')) {
-                        stop(event);
-                        activeTab = 'dungeons';
-                        worldPanelOpen = true;
-                        notice = 'دانجن انتخاب شد؛ از فهرست زیر ورود را آغاز کن.';
-                        render();
-                        return;
-                    }
-                    if (b.hasAttribute('data-menu-open')) {
-                        stop(event);
-                        worldMenuOpen = true;
-                        render();
-                        return;
-                    }
-                    if (b.hasAttribute('data-menu-close')) {
-                        const isBackdrop = (_a = b.classList) === null || _a === void 0 ? void 0 : _a.contains('player-window-backdrop');
-                        if (!isBackdrop || event.target === b) {
-                            stop(event);
-                            worldMenuOpen = false;
-                            render();
-                        }
-                        return;
-                    }
-                    if (b.dataset.menuAction) {
-                        stop(event);
-                        const action = b.dataset.menuAction, allowed = ['character', 'inventory', 'craft', 'quests', 'reports', 'discoveries', 'journal', 'settings', 'legion', 'gifts'];
-                        worldMenuOpen = false;
-                        if (!allowed.includes(action)) {
-                            notice = 'این بخش هنوز در دسترس نیست.';
-                            render();
-                            return;
-                        }
-                        activeTab = action;
-                        worldPanelOpen = true;
-                        render();
-                        return;
-                    }
-                    if (b.hasAttribute('data-status-open')) {
-                        stop(event);
-                        activeTab = 'character';
-                        worldPanelOpen = true;
-                        worldMenuOpen = false;
-                        render();
-                        return;
-                    }
-                    if (b.dataset.hubTab) {
-                        stop(event);
-                        activeTab = b.dataset.hubTab;
-                        worldPanelOpen = true;
-                        worldMenuOpen = false;
-                        render();
-                        return;
-                    }
-                    if (b.hasAttribute('data-panel-close')) {
-                        const isBackdrop = (_b = b.classList) === null || _b === void 0 ? void 0 : _b.contains('player-window-backdrop');
-                        if (!isBackdrop || event.target === b) {
-                            stop(event);
-                            worldPanelOpen = false;
-                            if (activeTab === 'hunt')
-                                activeTab = 'regionmap';
-                            render();
-                        }
-                        return;
-                    }
-                    if (b.hasAttribute('data-marketplace-launch')) {
-                        stop(event);
-                        if (typeof window.etranomOpenMarket === 'function')
-                            window.etranomOpenMarket();
-                        else {
-                            notice = 'بازار آنلاین هنوز بارگذاری نشده است؛ دوباره تلاش کن.';
-                            render();
-                        }
-                        return;
-                    }
-                    if (b.hasAttribute('data-pvp-launch')) {
-                        stop(event);
-                        if (typeof window.etranomOpenPvP === 'function')
-                            window.etranomOpenPvP();
-                        else {
-                            notice = 'تالار PvP بارگذاری نشده است؛ دوباره تلاش کن.';
-                            render();
-                        }
-                        return;
-                    }
-                    if (b.dataset.tab) {
-                        stop(event);
-                        activeTab = b.dataset.tab;
-                        worldPanelOpen = true;
-                        worldMenuOpen = false;
-                        notice = '';
-                        render();
-                        return;
-                    }
-                    if (b.dataset.worldAction === 'inventory') {
-                        stop(event);
-                        activeTab = 'inventory';
-                        worldPanelOpen = true;
-                        render();
-                        return;
-                    }
-                    if (b.dataset.worldAction === 'interact') {
-                        stop(event);
-                        openNearest();
-                        return;
-                    }
-                    if (b.dataset.worldAction === 'attack') {
-                        stop(event);
-                        const id = nearWestRegionId || state.currentDangerRegion || state.selectedDangerRegion || activeDangerRegionId || String(state.currentWorldNode || '').replace(/^danger_zone_/, '');
-                        const zone = ETRANOM_REGION_CONTENT.find(z => z.id === id);
-                        if (zone && (state.inWesternDanger || state.scene === 'danger_zone' || String(state.currentWorldNode || '').startsWith('danger_zone_'))) {
-                            setRegion(id);
-                            activeTab = 'hunt';
-                            notice = 'در ' + zone.name + ' هستی؛ نوع فعالیت را انتخاب کن.';
-                            render();
-                        }
-                        else {
-                            notice = 'برای فعال‌شدن حمله، ابتدا وارد یکی از شش محدوده خطر شو.';
-                            render();
-                        }
-                        return;
-                    }
-                }
-                catch (routerError) {
-                    console.error('[ETRANOM] Navigation route failed:', routerError);
-                    window.__ETRANOM_NAV_LAST_ERROR__ = String((routerError === null || routerError === void 0 ? void 0 : routerError.stack) || routerError);
-                    notice = 'عملیات انجام نشد: ' + String((routerError === null || routerError === void 0 ? void 0 : routerError.message) || routerError || 'خطای نامشخص').slice(0, 160);
-                    try {
-                        render();
-                    }
-                    catch (renderError) {
-                        console.error('[ETRANOM] Navigation recovery render failed:', renderError);
-                        root.innerHTML = '<section style="padding:18px;color:#fff;background:#241a25"><h3>خطا در بازکردن بخش</h3><p>' + esc(notice) + '</p><small>برای بررسی فنی، این پیام را ارسال کن.</small></section>';
-                    }
-                }
-            }, true);
-        }
+
         // Keep the essential navigation controls usable even if optional world-map
         // initialization throws on a device/browser. The delegated listener is added
         // once and handles the same small set of navigation actions as the normal UI.
