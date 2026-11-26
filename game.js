@@ -2696,6 +2696,8 @@ async function run(mode) {
     } }, 1500);
     async function load() {
         var _a, _b, _c, _d, _e, _f, _g;
+        window.__ETRANOM_GAME_BOOT_STATE__ = { stage: 'LOAD_STARTED', at: new Date().toISOString() };
+        window.__ETRANOM_DIAG__?.stageTo('موتور اصلی: شروع بازیابی ذخیره بازیکن');
         loaded = false;
         state = null;
         notice = "در حال بازیابی امن اطلاعات بازیکن...";
@@ -2704,7 +2706,10 @@ async function run(mode) {
         try {
             if (typeof api.getUserGameState !== "function")
                 throw new Error("game_save_api_missing");
+            window.__ETRANOM_GAME_BOOT_STATE__ = { stage: 'FETCHING_PLAYER_SAVE', at: new Date().toISOString() };
+            window.__ETRANOM_DIAG__?.stageTo('دریافت ذخیره بازیکن از سرویس بازی');
             const r = await api.getUserGameState();
+            window.__ETRANOM_GAME_BOOT_STATE__ = { stage: 'PLAYER_SAVE_RECEIVED', hasSave: !!(r && r.state), hasCharacter: !!(r && r.state && r.state.character), at: new Date().toISOString() };
             if (api.setSaveRevision)
                 api.setSaveRevision((r === null || r === void 0 ? void 0 : r.updatedAt) || null);
             if (r && r.state && typeof r.state === "object" && r.state.character) {
@@ -2829,8 +2834,12 @@ async function run(mode) {
             if (state)
                 writeLocalSaveBackup(state);
             loaded = true;
+            window.__ETRANOM_GAME_BOOT_STATE__ = { stage: 'RENDERING_INITIAL_GAME', hasState: !!state, hasCharacter: !!(state && state.character), at: new Date().toISOString() };
+            window.__ETRANOM_DIAG__?.stageTo('ذخیره بازی آماده شد؛ رندر نخستین صفحه');
             installSaveSafetyHooks();
             render();
+            window.__ETRANOM_GAME_BOOT_STATE__ = { stage: 'INITIAL_RENDER_COMPLETED', hasState: !!state, hasCharacter: !!(state && state.character), rootChildren: root.children?.length || 0, rootHTMLLength: root.innerHTML?.length || 0, at: new Date().toISOString() };
+            window.__ETRANOM_DIAG__?.stageTo('رندر نخستین صفحه پایان یافت', 'rootHTMLLength=' + (root.innerHTML?.length || 0));
             if (state && migratedLegacyContent) {
                 // Best-effort persistence of the targeted content migration; all unrelated save fields remain intact.
                 // A failed save leaves the remote original intact and does not block play.
@@ -2839,6 +2848,8 @@ async function run(mode) {
         }
         catch (e) {
             console.error("ETRANOM load blocked to protect save:", e);
+            window.__ETRANOM_GAME_BOOT_STATE__ = { stage: 'SAVE_LOAD_FAILED', message: String(e?.message || e), stack: String(e?.stack || ''), at: new Date().toISOString() };
+            window.__ETRANOM_DIAG__?.report('PLAYER_SAVE_LOAD_FAILED', e);
             state = null;
             loaded = false;
             notice = "بازیابی اطلاعات ناموفق بود. برای جلوگیری از بازنویسی یا ازدست‌رفتن پیشرفت، ساخت شخصیت و ذخیره‌سازی متوقف شده است.";
