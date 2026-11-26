@@ -257,8 +257,22 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   form?.addEventListener('submit',event=>{event.preventDefault();dispatch('login');});
   signup?.addEventListener('click',event=>{event.preventDefault();dispatch('signup');});
   // Persistent diagnostics: remain active before and after authentication/game startup.
-  const diag={events:[],stage:'صفحه ورود',panel:null};
+  const diag={events:[],steps:[],stage:'صفحه ورود',panel:null,statusPanel:null,startedAt:0,completed:false};
   const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,900);
+  const ensureStatusPanel=()=>{
+    if(diag.statusPanel)return diag.statusPanel;
+    const box=document.createElement('section');box.id='etranom-startup-status';
+    box.dir='rtl';box.setAttribute('role','status');
+    box.style.cssText='position:fixed;z-index:2147483000;top:calc(10px + env(safe-area-inset-top,0px));left:10px;right:10px;max-width:620px;margin:0 auto;padding:13px 15px;background:linear-gradient(145deg,#21182bfa,#0d0b12fa);color:#f4eadb;border:1px solid #bd965d;border-radius:12px;box-shadow:0 8px 32px #000c;font:12px/1.9 Tahoma,Arial,sans-serif;pointer-events:auto;backdrop-filter:blur(8px)';
+    document.body.appendChild(box);diag.statusPanel=box;return box;
+  };
+  const paintStatus=(message)=>{
+    const box=ensureStatusPanel();
+    const elapsed=diag.startedAt?Math.max(0,Math.floor((Date.now()-diag.startedAt)/1000)):0;
+    const pct=diag.completed?100:Math.min(94,Math.max(4,diag.steps.length*5));
+    const steps=diag.steps.slice(-5).map((x,i)=>'<div style=\"opacity:'+(i===diag.steps.slice(-5).length-1?'1':'.62')+';font-size:10px\">'+(i===diag.steps.slice(-5).length-1?'▸':'·')+' '+x.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div>').join('');
+    box.innerHTML='<div style=\"display:flex;justify-content:space-between;gap:10px;align-items:center\"><b style=\"color:#e5c68c;font-size:13px\">ETRANOM · وضعیت راه‌اندازی</b><span style=\"font-size:10px;color:#c6b9a5\">'+elapsed+' ثانیه</span></div><div style=\"height:6px;background:#403448;border-radius:8px;overflow:hidden;margin:8px 0\"><i style=\"display:block;width:'+pct+'%;height:100%;background:linear-gradient(90deg,#9b7048,#e2c38a);transition:width .25s\"></i></div><div style=\"font-weight:bold;color:#f2d9aa;margin-bottom:3px\">'+(message||diag.stage).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div><div style=\"color:#d2c5b4\">مرحله فعلی: '+diag.stage.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div>'+steps+(diag.completed?'<div style=\"margin-top:6px;color:#d8c99f\">اگر محیط بازی هنوز سیاه است، این پنل را باز بگذار و گزارش را ارسال کن.</div>':'');
+  };
   const show=(kind,detail)=>{
     const item={time:new Date().toLocaleTimeString(),stage:diag.stage,kind,detail:safeText(detail)};
     diag.events.push(item); if(diag.events.length>30)diag.events.shift();
@@ -271,7 +285,13 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     diag.panel.style.display='block';
     diag.panel.textContent='ETRANOM — گزارش خطای زنده\nمرحله: '+diag.stage+'\n'+diag.events.slice(-10).map(x=>'['+x.time+'] '+x.kind+'\n'+x.detail).join('\n\n');
   };
-  window.__ETRANOM_DIAGNOSTICS__={setStage:value=>{diag.stage=safeText(value)},report:(kind,detail)=>show(kind,detail),getEvents:()=>diag.events.slice()};
+  window.__ETRANOM_DIAGNOSTICS__={
+    begin:()=>{diag.startedAt=Date.now();diag.completed=false;diag.steps=[];diag.stage='شروع آماده‌سازی بازی';paintStatus('در حال آماده‌سازی جهان بازی…');},
+    setStage:value=>{diag.stage=safeText(value);if(!diag.startedAt)diag.startedAt=Date.now();diag.steps.push(diag.stage);if(diag.steps.length>40)diag.steps.shift();paintStatus();},
+    complete:()=>{diag.completed=true;diag.stage='پایان مراحل بارگذاری';paintStatus('بارگذاری موتور تمام شد؛ بررسی نمایش محیط بازی');},
+    report:(kind,detail)=>{show(kind,detail);paintStatus('خطا هنگام راه‌اندازی: '+kind);},
+    getEvents:()=>diag.events.slice(),getSteps:()=>diag.steps.slice()
+  };
   window.addEventListener('error',event=>{
     const target=event.target;
     if(target && target!==window){show('منبع/فایل بارگذاری‌نشده',target.src||target.href||target.tagName);return;}
@@ -966,6 +986,7 @@ function showToastNotification(key) { const labels = { private: 'پیام خصو
 } toast.textContent = labels[key] || 'اعلان جدید'; toast.style.display = 'block'; clearTimeout(toast._timer); toast._timer = setTimeout(() => toast.style.display = 'none', 4200); }
 function markNotificationsRead(key) { localStorage.setItem(noticeKey(key), new Date().toISOString()); setNotificationCount(key, 0); }
 async function importGameModule(url) {
+    window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری ماژول: ' + url);
     try {
         return await import(url);
     } catch (error) {
@@ -978,6 +999,7 @@ async function importGameModule(url) {
 }
 async function startSession(session) {
     var _a;
+    window.__ETRANOM_DIAGNOSTICS__?.begin();
     window.__ETRANOM_DIAGNOSTICS__?.setStage('شروع نشست و آماده‌سازی بازی');
     if (started)
         return;
@@ -1310,6 +1332,7 @@ async function startSession(session) {
         }
         window.__ETRANOM_DIAGNOSTICS__?.setStage('بازی آماده و در حال اجرا');
         gameRoot.classList.add('etr-game-ready');
+        window.__ETRANOM_DIAGNOSTICS__?.complete();
         gate.classList.add('hidden');
         started = true;
     }

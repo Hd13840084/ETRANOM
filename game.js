@@ -2698,15 +2698,18 @@ function run(mode) {
     } }, 1500);
     async function load() {
         var _a, _b, _c, _d, _e, _f, _g;
+        window.__ETRANOM_DIAGNOSTICS__?.setStage('شروع بازیابی اطلاعات و ذخیره بازیکن');
         loaded = false;
         state = null;
         notice = "در حال بازیابی امن اطلاعات بازیکن...";
         render();
         let migratedLegacyContent = false;
         try {
+            window.__ETRANOM_DIAGNOSTICS__?.setStage('اتصال به سرویس ذخیره بازیکن');
             if (typeof api.getUserGameState !== "function")
                 throw new Error("game_save_api_missing");
             const r = await api.getUserGameState();
+            window.__ETRANOM_DIAGNOSTICS__?.setStage('دریافت پاسخ ذخیره؛ بررسی اطلاعات بازیکن');
             if (api.setSaveRevision)
                 api.setSaveRevision((r === null || r === void 0 ? void 0 : r.updatedAt) || null);
             if (r && r.state && typeof r.state === "object" && r.state.character) {
@@ -2827,19 +2830,25 @@ function run(mode) {
                     console.info("[ETRANOM] V1961 safe-zone content reset:", safeReset.removed);
                 }
             }
+            window.__ETRANOM_DIAGNOSTICS__?.setStage('آماده‌سازی وضعیت شخصیت و جهان');
             lastPersistedSaveSignature = (state && !migratedLegacyContent) ? stateSaveSignature(state) : null;
             if (state)
                 writeLocalSaveBackup(state);
             loaded = true;
+            window.__ETRANOM_DIAGNOSTICS__?.setStage('ساخت رابط بازی و نمایش جهان');
             installSaveSafetyHooks();
             render();
+            window.__ETRANOM_DIAGNOSTICS__?.setStage('رندر اولیه انجام شد؛ تکمیل کارهای پس‌زمینه');
             if (state && migratedLegacyContent) {
+                window.__ETRANOM_DIAGNOSTICS__?.setStage('ثبت امن مهاجرت سازگار ذخیره');
                 // Best-effort persistence of the targeted content migration; all unrelated save fields remain intact.
                 // A failed save leaves the remote original intact and does not block play.
                 await save(true);
             }
+            window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری اطلاعات بازیکن کامل شد');
         }
         catch (e) {
+            window.__ETRANOM_DIAGNOSTICS__?.report('خطا در بازیابی ذخیره بازیکن', e?.stack || e?.message || e);
             console.error("ETRANOM load blocked to protect save:", e);
             state = null;
             loaded = false;
