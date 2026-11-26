@@ -256,17 +256,31 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   };
   form?.addEventListener('submit',event=>{event.preventDefault();dispatch('login');});
   signup?.addEventListener('click',event=>{event.preventDefault();dispatch('signup');});
+  // Persistent diagnostics: remain active before and after authentication/game startup.
+  const diag={events:[],stage:'صفحه ورود',panel:null};
+  const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,900);
+  const show=(kind,detail)=>{
+    const item={time:new Date().toLocaleTimeString(),stage:diag.stage,kind,detail:safeText(detail)};
+    diag.events.push(item); if(diag.events.length>30)diag.events.shift();
+    console.error('[ETRANOM DIAGNOSTIC]',item);
+    if(!diag.panel){
+      const box=document.createElement('section'); box.id='etranom-diagnostic-panel';
+      box.style.cssText='position:fixed;z-index:2147483647;left:8px;right:8px;bottom:8px;max-height:42vh;overflow:auto;background:#190d12;color:#ffe8df;border:2px solid #c34c43;border-radius:10px;padding:10px;font:12px/1.7 monospace;white-space:pre-wrap;box-shadow:0 4px 24px #000';
+      document.body.appendChild(box); diag.panel=box;
+    }
+    diag.panel.style.display='block';
+    diag.panel.textContent='ETRANOM — گزارش خطای زنده\nمرحله: '+diag.stage+'\n'+diag.events.slice(-10).map(x=>'['+x.time+'] '+x.kind+'\n'+x.detail).join('\n\n');
+  };
+  window.__ETRANOM_DIAGNOSTICS__={setStage:value=>{diag.stage=safeText(value)},report:(kind,detail)=>show(kind,detail),getEvents:()=>diag.events.slice()};
   window.addEventListener('error',event=>{
-    if(!window.__ETRANOM_AUTH_ACTIONS__?.ready && note && event?.message){
-      note.textContent='راه‌اندازی سامانه ورود با خطا متوقف شد: '+String(event.message).slice(0,140);
-    }
-  });
+    const target=event.target;
+    if(target && target!==window){show('منبع/فایل بارگذاری‌نشده',target.src||target.href||target.tagName);return;}
+    show('خطای JavaScript',(event.message||'خطای ناشناخته')+' | '+(event.filename||'')+':'+(event.lineno||''));
+  },true);
   window.addEventListener('unhandledrejection',event=>{
-    if(!window.__ETRANOM_AUTH_ACTIONS__?.ready && note){
-      const reason=event?.reason?.message||event?.reason||'خطای ناشناخته';
-      note.textContent='بارگذاری سامانه ورود ناموفق بود: '+String(reason).slice(0,140);
-    }
+    const reason=event?.reason; show('Promise ردشده',reason?.stack||reason?.message||reason);
   });
+  window.addEventListener('rejectionhandled',event=>show('Promise بعداً مدیریت شد',event.reason?.message||event.reason));
 })();
 </script>
 <script type="module">import { isSystemPlayerName, getPlayerDisplayName, syncPlayerProfile } from './systems/online/player-identity.js?v=1642';
@@ -964,6 +978,7 @@ async function importGameModule(url) {
 }
 async function startSession(session) {
     var _a;
+    window.__ETRANOM_DIAGNOSTICS__?.setStage('شروع نشست و آماده‌سازی بازی');
     if (started)
         return;
     if (!((_a = session === null || session === void 0 ? void 0 : session.user) === null || _a === void 0 ? void 0 : _a.id))
@@ -1278,11 +1293,14 @@ async function startSession(session) {
             window.ETRANOM_UNIFIED_BATTLE_EXPERIENCE = null;
         }
         await importGameModule('./systems/world/isometric-dark-fantasy-v1.js?v=2034');
+        window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری موتور بازی V2126');
         await importGameModule('./game.js?v=2126&build=2126');
         const gameRunner = window.run;
         if (typeof gameRunner !== 'function')
             throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
-        await gameRunner('play');
+        window.__ETRANOM_DIAGNOSTICS__?.setStage('بازیابی ذخیره بازیکن و رندر جهان');
+        const gameLoaded = await gameRunner('play');
+        if (gameLoaded === false) throw new Error('بازیابی ذخیره/راه‌اندازی موتور کامل نشد؛ گزارش جزئیات در پنل خطا ثبت شده است.');
         try {
             const ownerModule = await importGameModule('./systems/admin/owner-control-v1.js?v=2025');
             ownerModule.mountOwnerControl(supabase);
@@ -1290,6 +1308,7 @@ async function startSession(session) {
         catch (ownerControlError) {
             console.warn('[ETRANOM] Owner Control UI unavailable; gameplay continues:', ownerControlError);
         }
+        window.__ETRANOM_DIAGNOSTICS__?.setStage('بازی آماده و در حال اجرا');
         gameRoot.classList.add('etr-game-ready');
         gate.classList.add('hidden');
         started = true;
@@ -1302,6 +1321,7 @@ async function startSession(session) {
         const detail = String((e === null || e === void 0 ? void 0 : e.message) || e || 'خطای ناشناخته').slice(0, 180);
         say('ورود انجام شد، اما اجرای بازی کامل نشد: ' + detail + ' — صفحه ورود را باز نگه داشتیم؛ دوباره تلاش کن.');
         console.error('[ETRANOM] Startup failed:', e);
+        window.__ETRANOM_DIAGNOSTICS__?.report('شکست راه‌اندازی بازی', e?.stack||e?.message||e);
         throw e;
     }
 }
