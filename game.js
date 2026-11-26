@@ -26,8 +26,6 @@ import { getCharacterAnimationPoseV2064, resolveCharacterAnimationV2064 } from '
 import { getFullBodyCharacterArtV2063 } from './systems/characters/fullbody-character-art-v2063.mjs?v=2063';
 import { getAtlasDrawCommandV2059, loadAtlasForDrawV2059 } from './systems/characters/character-atlas-runtime-v2059.js?v=2059';
 import { resolveMapSpecializationV2066 } from './systems/characters/character-map-binding-v2066.js?v=2066';
-// V2126: expose the game entry point at module scope before authentication calls it.
-window.run = run;
 /* V1967 central damage gateway: Solo uses the gateway with the legacy shared-core fallback. */
 /* Legacy fallback anchor: const sharedCore=window.ETRANOM_COMBAT_CORE; sharedCore.resolveDamage remains available if the central gateway fails to load. */
 // ETRANOM: text-first dark fantasy RPG. Narrative is primary; game rules remain deterministic.
@@ -2701,18 +2699,12 @@ function run(mode) {
         loaded = false;
         state = null;
         notice = "در حال بازیابی امن اطلاعات بازیکن...";
+        render();
         let migratedLegacyContent = false;
         try {
-            window.__ETRANOM_DIAG__?.stage('game.load.initial-render');
-            render();
-            window.__ETRANOM_DIAG__?.stage('game.load.cloud-save-request');
             if (typeof api.getUserGameState !== "function")
                 throw new Error("game_save_api_missing");
-            let saveTimer;
-            const saveTimeout = new Promise((_, reject) => { saveTimer = setTimeout(() => reject(new Error('game_save_load_timeout_20000ms')), 20000); });
-            let r;
-            try { r = await Promise.race([Promise.resolve().then(() => api.getUserGameState()), saveTimeout]); }
-            finally { clearTimeout(saveTimer); }
+            const r = await api.getUserGameState();
             if (api.setSaveRevision)
                 api.setSaveRevision((r === null || r === void 0 ? void 0 : r.updatedAt) || null);
             if (r && r.state && typeof r.state === "object" && r.state.character) {
@@ -2838,9 +2830,7 @@ function run(mode) {
                 writeLocalSaveBackup(state);
             loaded = true;
             installSaveSafetyHooks();
-            window.__ETRANOM_DIAG__?.stage('game.load.final-render');
             render();
-            window.__ETRANOM_DIAG__?.stage('game.load.ready');
             if (state && migratedLegacyContent) {
                 // Best-effort persistence of the targeted content migration; all unrelated save fields remain intact.
                 // A failed save leaves the remote original intact and does not block play.
@@ -2851,10 +2841,8 @@ function run(mode) {
             console.error("ETRANOM load blocked to protect save:", e);
             state = null;
             loaded = false;
-            const failureDetail = String((e && (e.stack || e.message)) || e || 'unknown_error');
-            notice = "بازیابی اطلاعات ناموفق بود: " + String((e && e.message) || e || 'خطای نامشخص').slice(0, 240) + ". برای جلوگیری از بازنویسی یا ازدست‌رفتن پیشرفت، ساخت شخصیت و ذخیره‌سازی متوقف شده است.";
-            window.__ETRANOM_DIAG__?.show('مرحله بارگذاری ذخیره/رندر اولیه شکست خورد', failureDetail);
-            root.innerHTML = '<div class="shell loading" style="padding:28px;line-height:2;text-align:center"><h2>بازیابی اطلاعات ناموفق بود</h2><p>' + esc(notice) + '</p><pre style="white-space:pre-wrap;overflow-wrap:anywhere;direction:ltr;text-align:left">' + esc(failureDetail.slice(0, 5000)) + '</pre><button type="button" id="etranom-retry-load">تلاش دوباره</button><small style="display:block;margin-top:12px">تا رفع خطا، هیچ ذخیره‌ای ایجاد یا جایگزین نمی‌شود.</small></div>';
+            notice = "بازیابی اطلاعات ناموفق بود. برای جلوگیری از بازنویسی یا ازدست‌رفتن پیشرفت، ساخت شخصیت و ذخیره‌سازی متوقف شده است.";
+            root.innerHTML = '<div class="shell loading" style="padding:28px;line-height:2;text-align:center"><h2>بازیابی اطلاعات ناموفق بود</h2><p>' + esc(notice) + '</p><button type="button" id="etranom-retry-load">تلاش دوباره</button><small style="display:block;margin-top:12px">تا رفع خطا، هیچ ذخیره‌ای ایجاد یا جایگزین نمی‌شود.</small></div>';
             (_g = root.querySelector('#etranom-retry-load')) === null || _g === void 0 ? void 0 : _g.addEventListener('click', load);
         }
     }
@@ -12510,9 +12498,8 @@ function run(mode) {
             return;
         }
         installPrimaryNavigationRouter();
-        window.__ETRANOM_DIAG__?.stage('game.run.initial-render');
         render();
-        window.__ETRANOM_DIAG__?.stage('game.run.load-start');
-        return load();
+        load();
     }
 }
+window.run = run;

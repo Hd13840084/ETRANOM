@@ -490,7 +490,7 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-guil
 const createCombatRequestId = () => { var _a, _b; return ((_b = (_a = globalThis.crypto) === null || _a === void 0 ? void 0 : _a.randomUUID) === null || _b === void 0 ? void 0 : _b.call(_a)) || "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => { const r = Math.random() * 16 | 0; return (c === "x" ? r : (r & 3 | 8)).toString(16); }); };
 window.lib = {
     getUserGameState: async () => { if (!currentUser)
-        throw new Error('not_authenticated'); const { data, error } = await authRequestWithTimeout(supabase.from('game_saves').select('save_data,updated_at').eq('user_id', currentUser.id).maybeSingle(), 15000, 'بازیابی ذخیره بازی بیش از ۱۵ ثانیه طول کشید؛ اتصال اینترنت یا Supabase را بررسی کن و دوباره تلاش کن.'); if (error)
+        throw new Error('not_authenticated'); const { data, error } = await supabase.from('game_saves').select('save_data,updated_at').eq('user_id', currentUser.id).maybeSingle(); if (error)
         throw error; return data ? { state: data.save_data, updatedAt: data.updated_at || null } : null; },
     setSaveRevision: updatedAt => { currentSaveRevision = updatedAt || null; return currentSaveRevision; },
     // Profile level remains the established schema invariant: player_level:Math.max(1,Number(c.level)||1).
@@ -914,46 +914,27 @@ function noticeKey(kind) { return `etranom:${kind}:lastSeen:${(currentUser === n
 async function refreshNotificationCounts() {
     if (!currentUser)
         return;
-    const defaultSince = new Date(0).toISOString();
-    let sincePrivate = defaultSince, sinceGlobal = defaultSince;
     try {
-        sincePrivate = localStorage.getItem(noticeKey('private')) || defaultSince;
-        sinceGlobal = localStorage.getItem(noticeKey('global')) || defaultSince;
+        const sincePrivate = localStorage.getItem(noticeKey('private')) || new Date(0).toISOString();
+        const sinceGlobal = localStorage.getItem(noticeKey('global')) || new Date(0).toISOString();
+        const [pm, gm, fr, pi] = await Promise.all([
+            supabase.from('private_messages').select('id', { count: 'exact', head: true }).eq('receiver_id', currentUser.id).gt('created_at', sincePrivate),
+            supabase.from('global_messages').select('id', { count: 'exact', head: true }).neq('sender_id', currentUser.id).gt('created_at', sinceGlobal),
+            supabase.from('friend_requests').select('id', { count: 'exact', head: true }).eq('receiver_id', currentUser.id).eq('status', 'pending'),
+            supabase.rpc('get_party_invites')
+        ]);
+        if (!pm.error)
+            setNotificationCount('private', pm.count || 0);
+        if (!gm.error)
+            setNotificationCount('global', gm.count || 0);
+        if (!fr.error)
+            setNotificationCount('requests', fr.count || 0);
+        if (!pi.error)
+            setNotificationCount('party', Array.isArray(pi.data) ? pi.data.length : 0);
     }
-    catch (storageError) {
-        console.warn('[ETRANOM] Notification read markers unavailable; using the default range:', storageError);
+    catch (e) {
+        console.warn('[ETRANOM] Notification counts unavailable:', e);
     }
-    const safeRequest = (factory, message) => {
-        try {
-            return authRequestWithTimeout(factory(), 5000, message);
-        }
-        catch (error) {
-            return Promise.reject(error);
-        }
-    };
-    const requests = [
-        ['private', safeRequest(() => supabase.from('private_messages').select('id', { count: 'exact', head: true }).eq('receiver_id', currentUser.id).gt('created_at', sincePrivate), 'مهلت دریافت شمارنده پیام‌های خصوصی تمام شد.')],
-        ['global', safeRequest(() => supabase.from('global_messages').select('id', { count: 'exact', head: true }).neq('sender_id', currentUser.id).gt('created_at', sinceGlobal), 'مهلت دریافت شمارنده چت جهانی تمام شد.')],
-        ['requests', safeRequest(() => supabase.from('friend_requests').select('id', { count: 'exact', head: true }).eq('receiver_id', currentUser.id).eq('status', 'pending'), 'مهلت دریافت درخواست‌های دوستی تمام شد.')],
-        ['party', safeRequest(() => supabase.rpc('get_party_invites'), 'مهلت دریافت دعوت‌های گروهی تمام شد.')]
-    ];
-    const results = await Promise.allSettled(requests.map(([, request]) => request));
-    results.forEach((result, index) => {
-        const [key] = requests[index];
-        if (result.status !== 'fulfilled') {
-            console.warn(`[ETRANOM] ${key} notification count unavailable:`, result.reason);
-            return;
-        }
-        const response = result.value;
-        if (response && response.error) {
-            console.warn(`[ETRANOM] ${key} notification count unavailable:`, response.error);
-            return;
-        }
-        if (key === 'party')
-            setNotificationCount(key, Array.isArray(response === null || response === void 0 ? void 0 : response.data) ? response.data.length : 0);
-        else
-            setNotificationCount(key, response === null || response === void 0 ? void 0 : response.count || 0);
-    });
 }
 function startNotificationRealtime() { notificationChannels.forEach(c => supabase.removeChannel(c).catch(() => { })); notificationChannels = []; const specs = [['private_messages', 'private', `receiver_id=eq.${currentUser.id}`], ['global_messages', 'global', null], ['friend_requests', 'requests', `receiver_id=eq.${currentUser.id}`], ['party_invites', 'party', `receiver_id=eq.${currentUser.id}`]]; for (const [table, key, filter] of specs) {
     let q = supabase.channel(`etr-notify:${currentUser.id}:${table}`).on('postgres_changes', { event: 'INSERT', schema: 'public', table, ...(filter ? { filter } : {}) }, payload => { const row = payload.new || {}; if (table === 'global_messages' && row.sender_id === currentUser.id)
@@ -1018,39 +999,32 @@ async function startSession(session) {
             console.warn('[ETRANOM] PvP UI unavailable:', e);
             window.etranomOpenPvP = () => alert('تالار PvP بارگذاری نشد.');
         }
-        refreshNotificationCounts().catch(e => console.warn('[ETRANOM] Notification refresh unavailable:', e));
+        await refreshNotificationCounts();
         startNotificationRealtime();
-        // Online counts and remote avatars are optional. Start them in the background so
-        // neither Supabase relation lookups nor Presence subscription delays can hold the map.
-        (async () => {
+        try {
+            const { ETRANOMPresence } = await importGameModule('./systems/online/presence.js?v=102');
+            const presence = new ETRANOMPresence(supabase, currentUser, info => { const el = document.getElementById('etr-online-indicator'); if (el) {
+                const connected = info.status === 'SUBSCRIBED';
+                el.textContent = connected ? `● جهان متصل | ${info.onlineCount} بازیکن یکتا | ${info.sessionCount} نشست` : `◌ ${info.status === 'CONNECTING' ? 'در حال اتصال' : info.status === 'DISCONNECTING' ? 'در حال خروج' : 'اتصال ناپایدار'} | وضعیت‌ها موقتاً به‌روزرسانی نمی‌شوند`;
+                el.dataset.connected = connected ? 'true' : 'false';
+                if (socialTab === 'friends' && socialOverview)
+                    renderSocial();
+            } });
+            window.etranomPresence = presence;
+            await presence.start();
             try {
-                const { ETRANOMPresence } = await authRequestWithTimeout(
-                    importGameModule('./systems/online/presence.js?v=102'),
-                    8000,
-                    'بارگذاری ماژول حضور آنلاین بیش از ۸ ثانیه طول کشید.'
-                );
-                const presence = new ETRANOMPresence(supabase, currentUser, info => { const el = document.getElementById('etr-online-indicator'); if (el) {
-                    const connected = info.status === 'SUBSCRIBED';
-                    el.textContent = connected ? `● جهان متصل | ${info.onlineCount} بازیکن یکتا | ${info.sessionCount} نشست` : `◌ ${info.status === 'CONNECTING' ? 'در حال اتصال' : info.status === 'DISCONNECTING' ? 'در حال خروج' : 'اتصال ناپایدار'} | وضعیت‌ها موقتاً به‌روزرسانی نمی‌شوند`;
-                    el.dataset.connected = connected ? 'true' : 'false';
-                    if (socialTab === 'friends' && socialOverview)
-                        renderSocial();
-                } });
-                window.etranomPresence = presence;
-                await presence.start();
-                const { ETRANOMWorldPresence } = await authRequestWithTimeout(
-                    importGameModule('./systems/online/world-presence.js?v=103'),
-                    8000,
-                    'بارگذاری ماژول حضور بازیکنان روی نقشه بیش از ۸ ثانیه طول کشید.'
-                );
+                const { ETRANOMWorldPresence } = await importGameModule('./systems/online/world-presence.js?v=102');
                 const worldPresence = new ETRANOMWorldPresence({ supabase, user: currentUser, onChange: players => window.dispatchEvent(new CustomEvent('etranom:world-presence', { detail: { players } })) });
                 window.etranomWorldPresence = worldPresence;
                 await worldPresence.start();
             }
-            catch (presenceError) {
-                console.warn('[ETRANOM] Online/map presence unavailable; gameplay continues:', presenceError);
+            catch (e) {
+                console.warn('[ETRANOM] Map presence unavailable:', e);
             }
-        })();
+        }
+        catch (e) {
+            console.warn('[ETRANOM] Online presence unavailable:', e);
+        }
         if (socialLaunch && !socialLaunch.isConnected)
             document.body.appendChild(socialLaunch);
         if (socialOverlay && !socialOverlay.isConnected)
@@ -1064,21 +1038,8 @@ async function startSession(session) {
         window.ETRANOM_SAFE_ZONE_PLATFORM = safeZonePlatformModule.ETRANOM_SAFE_ZONE_PLATFORM;
         const ownerRuntimeAdapterModule = await importGameModule('./systems/admin/owner-runtime-adapters-v2011.js?v=2014');
         window.ETRANOM_OWNER_RUNTIME_POLICIES = ownerRuntimeAdapterModule;
-        try {
-            const regionOneModule = await authRequestWithTimeout(
-                importGameModule('./systems/content/region-one-runtime.js?v=2015'),
-                15000,
-                'بارگذاری ماژول محتوای منطقه اول بیش از ۱۵ ثانیه طول کشید.'
-            );
-            await regionOneModule.loadRegionOneRuntime({ supabase });
-        }
-        catch (regionOneError) {
-            // Access verification remains fail-closed; only content/runtime loading is optional.
-            if (regionOneError && (regionOneError.code === 'ETRANOM_ACCESS_DENIED' || regionOneError.code === 'ETRANOM_ACCESS_CHECK_FAILED'))
-                throw regionOneError;
-            window.ETRANOM_RUNTIME_CONTENT = null;
-            console.error('[ETRANOM] Region One content unavailable; the built-in game data fallback will be used:', regionOneError);
-        }
+        const { loadRegionOneRuntime } = await importGameModule('./systems/content/region-one-runtime.js?v=2014');
+        await loadRegionOneRuntime({ supabase });
         const elementalistModule = await importGameModule('./systems/classes/elementalist.js?v=1931');
         window.ETRANOM_ELEMENTALIST = elementalistModule.ELEMENTALIST;
         window.ETRANOM_CREATE_ELEMENTALIST_PROGRESS = elementalistModule.createElementalistProgress;
@@ -1449,6 +1410,60 @@ catch (sessionError) {
 .hub-tabs{position:sticky;top:0;z-index:20;display:flex;overflow-x:auto;gap:6px;padding:7px;background:#17151df2;overscroll-behavior-x:contain}
 .hub-tabs button{flex:0 0 auto;white-space:nowrap}
 @media(max-width:600px){.necromancer-battle-controls button{min-height:46px;font-size:12px}}
+</style>
+<style id="etr-v1890-warrior-portrait-and-floating-ui">
+/* V1890: larger, uncropped warrior specialization portraits */
+.specialization-card .spec-art{min-height:190px!important;height:190px!important;overflow:hidden!important}
+.specialization-card .spec-art img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important}
+@media(max-width:560px){.specialization-card .spec-art{height:164px!important;min-height:164px!important}}
+.etr-battle-card.player .battle-avatar img{width:76px!important;height:92px!important;object-fit:contain!important;object-position:center center!important}
+/* Floating shortcuts stay out of internal overlays/pages; available only in world/map shell. */
+.player-window-backdrop~.etr-floating-shortcuts,.etr-interior-overlay~.etr-floating-shortcuts,.etr-profile-overlay~.etr-floating-shortcuts{display:none!important}
+</style>
+
+<style id="etr-v1892-reactive-defense-ui">
+.etr-reaction-panel{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:12px 0;padding:12px;border:1px solid #bd9657;border-radius:14px;background:linear-gradient(135deg,#2b1c31,#17131e);box-shadow:0 0 18px #bd965722}
+.etr-reaction-panel>b{flex:1 0 100%;text-align:center;color:#f0d39a}
+.etr-reaction-panel button{min-height:42px;padding:8px 14px;border:1px solid #8d704b;border-radius:10px;background:#30243a;color:#f5e8d1;font-weight:700}
+.etr-reaction-panel button.selected{background:#70512c;border-color:#f1c875;box-shadow:0 0 0 2px #f1c87555}
+.etr-reaction-panel small{flex:1 0 100%;text-align:center;color:#c3b6c9}
+</style>
+<style id="etr-v1892-map-only-social-guild-shortcuts">
+/* Community and guild shortcuts are visible only on the live world/map surface. */
+#etr-social-launch,#etr-guild-launch{display:none!important}
+body:has(.explore-viewport) #etr-social-launch,body:has(.explore-viewport) #etr-guild-launch,
+body:has(.starting-region-map) #etr-social-launch,body:has(.starting-region-map) #etr-guild-launch{display:grid!important}
+/* Internal character, inventory, skill, equipment and modal pages never show map shortcuts. */
+body:has(.player-window-backdrop) #etr-social-launch,body:has(.player-window-backdrop) #etr-guild-launch,
+body:has(.etr-social-overlay[style*="display: flex"]) #etr-social-launch,body:has(.etr-social-overlay[style*="display: flex"]) #etr-guild-launch,
+body:has(#etr-guild-overlay[style*="display: flex"]) #etr-social-launch,body:has(#etr-guild-overlay[style*="display: flex"]) #etr-guild-launch{display:none!important}
+</style>
+<style id="etr-v1892-map-shortcut-priority">
+body:has(.starting-region-map) #etr-social-launch,body:has(.starting-region-map) #etr-guild-launch{display:grid!important}
+</style>
+
+<style id="etr-v1893-warrior-portrait-fix">
+/* Give each warrior specialization portrait a genuinely large, full-width card area. */
+.specialization-grid .specialization-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:8px!important;min-height:0!important;padding:9px!important}
+.specialization-grid .specialization-card .spec-art{display:block!important;width:100%!important;height:clamp(190px,54vw,270px)!important;min-height:0!important;flex:0 0 auto!important;overflow:hidden!important;border-radius:10px!important}
+.specialization-grid .specialization-card .spec-art img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important}
+.specialization-grid .specialization-card .spec-copy{min-height:58px!important}
+@media(max-width:520px){.specialization-grid .specialization-card .spec-art{height:230px!important}}
+</style>
+
+<style id="etranom-necromancer-companion-portraits-v1981">
+/* V1981: shared dark-fantasy companion portraits in collection and battle cards. */
+.necromancer-legion-member .legion-member-art{width:88px;height:104px;flex:0 0 88px;border:1px solid #725a86;box-shadow:inset 0 0 18px #08060d,0 0 12px #0008;background:#17121d}
+.necromancer-legion-member .legion-member-art img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
+.necromancer-summoned-card .summoned-portrait{overflow:hidden;background:#17121d;border:1px solid #765b83}
+.necromancer-summoned-card .summoned-portrait img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 28%}
+.necromancer-summoned-card .summoned-name{color:#ead9f4;text-shadow:0 1px 4px #000}
+@media(max-width:560px){.necromancer-legion-member .legion-member-art{width:76px;height:94px;flex-basis:76px}}
+</style>
+
+<style id="etranom-v2028-isometric-pixel-world">
+.explore-viewport canvas{image-rendering:pixelated;image-rendering:crisp-edges;touch-action:none}
+.exploration-screen .explore-viewport{background:#17191a}
 </style>
 </body>
 </html>
