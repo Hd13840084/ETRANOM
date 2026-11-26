@@ -257,8 +257,8 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   form?.addEventListener('submit',event=>{event.preventDefault();dispatch('login');});
   signup?.addEventListener('click',event=>{event.preventDefault();dispatch('signup');});
   // Persistent diagnostics: remain active before and after authentication/game startup.
-  const diag={events:[],steps:[],stage:'صفحه ورود',panel:null,statusPanel:null,startedAt:0,completed:false,mountInfo:null};
-  const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,900);
+  const diag={events:[],steps:[],trace:[],stage:'صفحه ورود',panel:null,statusPanel:null,startedAt:0,completed:false,mountInfo:null,mountState:null};
+  const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,6000);
   const ensureStatusPanel=()=>{
     if(diag.statusPanel)return diag.statusPanel;
     const box=document.createElement('section');box.id='etranom-startup-status';
@@ -285,11 +285,68 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     diag.panel.style.display='block';
     diag.panel.textContent='ETRANOM — گزارش خطای زنده\nمرحله: '+diag.stage+'\n'+diag.events.slice(-10).map(x=>'['+x.time+'] '+x.kind+'\n'+x.detail).join('\n\n');
   };
+  const traceText=value=>{
+    try{return safeText(typeof value==='string'?value:JSON.stringify(value,null,2));}
+    catch(_){return safeText(value);}
+  };
+  const traceEvent=(kind,detail)=>{
+    const item={time:new Date().toLocaleTimeString(),kind,detail:traceText(detail)};
+    diag.trace.push(item);if(diag.trace.length>32)diag.trace.shift();
+    console.info('[ETRANOM RENDER TRACE]',item);
+    return item;
+  };
+  const mountSnapshot=el=>({connected:!!el?.isConnected,children:Number(el?.childElementCount)||0,htmlLength:String(el?.innerHTML||'').length,textLength:String(el?.textContent||'').length,width:el?Math.round(el.getBoundingClientRect().width):0,height:el?Math.round(el.getBoundingClientRect().height):0});
+  const getTraceReport=()=>{
+    const state=diag.mountState||{},render=window.__ETRANOM_RENDER_TRACE__||{};
+    return JSON.stringify({recentTrace:diag.trace.slice(-18),lastDomWriter:state.lastWriter||null,lastMutation:state.lastMutation||null,mutationSummary:state.mutationSummary||[],render:{calls:render.calls||0,successes:render.successes||0,failures:render.failures||0,last:render.last||null,history:render.history||[]}},null,2).slice(0,8500);
+  };
+  const traceMount=el=>{
+    if(!el||el.__ETRANOM_MOUNT_TRACE_ATTACHED)return false;
+    try{Object.defineProperty(el,'__ETRANOM_MOUNT_TRACE_ATTACHED',{value:true,configurable:true});}catch(_){el.__ETRANOM_MOUNT_TRACE_ATTACHED=true;}
+    const state={attachedAt:Date.now(),lastWriter:null,lastMutation:null,mutationSummary:[],everHadChildren:(el.childElementCount>0),previousChildren:el.childElementCount};
+    diag.mountState=state;window.__ETRANOM_MOUNT_TRACE_STATE__=state;
+    const captureWriter=(method,extra)=>{
+      const before=mountSnapshot(el);
+      state.lastWriter={time:new Date().toLocaleTimeString(),method,before,extra:traceText(extra),stack:safeText((new Error('DOM writer')).stack)};
+      traceEvent('DOM writer: '+method,state.lastWriter);
+    };
+    try{
+      let proto=el,desc=null;
+      while(proto&&!desc){desc=Object.getOwnPropertyDescriptor(proto,'innerHTML');proto=Object.getPrototypeOf(proto);}
+      if(desc?.get&&desc?.set)Object.defineProperty(el,'innerHTML',{configurable:true,enumerable:desc.enumerable,get(){return desc.get.call(el);},set(value){captureWriter('root.innerHTML = ...',{newLength:String(value??'').length,preview:String(value??'').slice(0,160)});return desc.set.call(el,value);}});
+      else traceEvent('DOM writer hook unavailable','innerHTML property descriptor was not found');
+    }catch(error){traceEvent('DOM writer hook failed: innerHTML',error?.stack||error);}
+    for(const method of ['replaceChildren','replaceChild','removeChild','appendChild','insertBefore']){
+      try{const original=el[method];if(typeof original!=='function')continue;Object.defineProperty(el,method,{configurable:true,writable:true,value:function(...args){captureWriter('root.'+method+'()', {argumentCount:args.length,firstNode:args[0]?.nodeName||null});return original.apply(this,args);}});}
+      catch(error){traceEvent('DOM writer hook failed: '+method,error?.message||error);}
+    }
+    try{
+      let proto=el,desc=null;while(proto&&!desc){desc=Object.getOwnPropertyDescriptor(proto,'textContent');proto=Object.getPrototypeOf(proto);}
+      if(desc?.get&&desc?.set)Object.defineProperty(el,'textContent',{configurable:true,enumerable:desc.enumerable,get(){return desc.get.call(el);},set(value){captureWriter('root.textContent = ...',{newLength:String(value??'').length});return desc.set.call(el,value);}});
+    }catch(error){traceEvent('DOM writer hook failed: textContent',error?.message||error);}
+    try{
+      const observer=new MutationObserver(records=>{
+        const now=mountSnapshot(el),added=records.reduce((n,r)=>n+r.addedNodes.length,0),removed=records.reduce((n,r)=>n+r.removedNodes.length,0),prev=state.previousChildren;
+        state.lastMutation={time:new Date().toLocaleTimeString(),previousChildren:prev,currentChildren:now.children,addedNodes:added,removedNodes:removed,connected:now.connected,lastWriter:state.lastWriter};
+        state.mutationSummary.push(state.lastMutation);if(state.mutationSummary.length>14)state.mutationSummary.shift();
+        traceEvent('DOM mutation observer',state.lastMutation);
+        if(now.children>0)state.everHadChildren=true;
+        if(state.everHadChildren&&prev>0&&now.children===0)report('ریشه بازی پس از ساخته‌شدن خالی شد؛ عامل احتمالی در آخرین نویسنده DOM است',getTraceReport());
+        state.previousChildren=now.children;
+      });
+      observer.observe(el,{childList:true});state.observer=observer;
+    }catch(error){traceEvent('MutationObserver failed',error?.stack||error);}
+    traceEvent('DOM mount trace attached',{rootId:el.id,initial:mountSnapshot(el)});
+    return true;
+  };
   window.__ETRANOM_DIAGNOSTICS__={
     begin:()=>{diag.startedAt=Date.now();diag.completed=false;diag.steps=[];diag.stage='شروع آماده‌سازی بازی';paintStatus('در حال آماده‌سازی جهان بازی…');},
     setStage:value=>{diag.stage=safeText(value);if(!diag.startedAt)diag.startedAt=Date.now();diag.steps.push(diag.stage);if(diag.steps.length>40)diag.steps.shift();paintStatus();},
     complete:()=>{diag.completed=true;diag.stage='پایان مراحل بارگذاری';paintStatus('بارگذاری موتور تمام شد؛ بررسی نمایش محیط بازی');},
-    report:(kind,detail)=>{show(kind,detail);paintStatus('خطا هنگام راه‌اندازی: '+kind);},
+    report:(kind,detail)=>{show(kind,traceText(detail));paintStatus('خطا هنگام راه‌اندازی: '+kind);},
+    traceEvent,
+    traceMount,
+    getTraceReport,
     inspectMount:(root)=>{
       try{
         const el=root||document.getElementById('etr-game-root');
@@ -298,7 +355,8 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
         const childInfo=first?(first.tagName.toLowerCase()+(first.id?'#'+first.id:'')+(typeof first.className==='string'&&first.className?'.'+first.className.trim().replace(/\\s+/g,'.'):'')):'بدون فرزند';
         diag.mountInfo='فرزندها: '+el.childElementCount+' | HTML: '+el.innerHTML.length+' نویسه | نمایش: '+cs.display+'/'+cs.visibility+' | اندازه: '+Math.round(r.width)+'×'+Math.round(r.height)+' | اولین عنصر: '+childInfo;
         paintStatus('بررسی DOM بازی انجام شد');
-        return {children:el.childElementCount,htmlLength:el.innerHTML.length,display:cs.display,visibility:cs.visibility,width:Math.round(r.width),height:Math.round(r.height),first:childInfo};
+        const renderTrace=window.__ETRANOM_RENDER_TRACE__||{};
+        return {children:el.childElementCount,htmlLength:el.innerHTML.length,display:cs.display,visibility:cs.visibility,width:Math.round(r.width),height:Math.round(r.height),first:childInfo,connected:!!el.isConnected,renderCalls:renderTrace.calls||0,renderFailures:renderTrace.failures||0,lastRender:renderTrace.last||null,traceReport:getTraceReport()};
       }catch(e){diag.mountInfo='خطا در بررسی DOM: '+safeText(e);paintStatus();return null;}
     },
     getEvents:()=>diag.events.slice(),getSteps:()=>diag.steps.slice()
@@ -1327,13 +1385,18 @@ async function startSession(session) {
         }
         await importGameModule('./systems/world/isometric-dark-fantasy-v1.js?v=2034');
         window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری موتور بازی V2126');
-        await importGameModule('./game.js?v=2126&build=2126');
+        await importGameModule('./game.js?v=2126-rendertrace-01&build=20261126');
         const gameRunner = window.run;
         if (typeof gameRunner !== 'function')
             throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
         window.__ETRANOM_DIAGNOSTICS__?.setStage('بازیابی ذخیره بازیکن و رندر جهان');
-        const gameLoaded = await gameRunner('play');
+        const runnerResult = gameRunner('play');
+        const runnerWasAsync = !!runnerResult && typeof runnerResult.then === 'function';
+        window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('gameRunner invoked', { runnerWasAsync, returnedType: typeof runnerResult });
+        const gameLoaded = await runnerResult;
+        window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('gameRunner resolved', { gameLoaded, runnerWasAsync, rootChildren: gameRoot.childElementCount, rootHtmlLength: gameRoot.innerHTML.length });
         if (gameLoaded === false) throw new Error('بازیابی ذخیره/راه‌اندازی موتور کامل نشد؛ گزارش جزئیات در پنل خطا ثبت شده است.');
+        if (!runnerWasAsync) window.__ETRANOM_DIAGNOSTICS__?.report?.('هشدار: تابع موتور بازی منتظر پایان بارگذاری نمانده است', 'gameRunner مقدار Promise برنگرداند؛ نسخه game.js قدیمی است یا اصلاح async در آن نصب نشده است.');
         try {
             const ownerModule = await importGameModule('./systems/admin/owner-control-v1.js?v=2025');
             ownerModule.mountOwnerControl(supabase);
@@ -1348,7 +1411,7 @@ async function startSession(session) {
         await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
         const mountInfo=window.__ETRANOM_DIAGNOSTICS__?.inspectMount(gameRoot);
         if(mountInfo && (mountInfo.children===0 || mountInfo.htmlLength===0 || mountInfo.width===0 || mountInfo.height===0)){
-            window.__ETRANOM_DIAGNOSTICS__?.report('موتور آماده شد اما رابط بازی روی صفحه نصب/نمایش داده نشد',JSON.stringify(mountInfo));
+            window.__ETRANOM_DIAGNOSTICS__?.report('موتور آماده شد اما رابط بازی روی صفحه نصب/نمایش داده نشد',JSON.stringify(mountInfo,null,2));
             if(mountInfo.children===0 || mountInfo.htmlLength===0){
                 gameRoot.innerHTML='<section dir="rtl" style="margin:16px;padding:20px;border:1px solid #bd965d;border-radius:14px;background:#21182b;color:#f4eadb;font:14px/2 Tahoma;text-align:center"><h3>موتور بازی اجرا شد، اما رابط بازی ساخته نشد</h3><p>گزارش فنی در پنل بالای صفحه ثبت شده است. لطفاً از همین صفحه عکس بفرست.</p><button onclick="location.reload()" style="padding:10px 18px;border-radius:8px">بارگذاری دوباره</button></section>';
             }
