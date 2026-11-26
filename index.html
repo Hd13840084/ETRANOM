@@ -1385,14 +1385,14 @@ async function startSession(session) {
         }
         await importGameModule('./systems/world/isometric-dark-fantasy-v1.js?v=2034');
         window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری موتور بازی V2126');
-        await importGameModule('./game.js?v=2126-rendertrace-01&build=20261126');
+        await importGameModule('./game.js?v=2126-renderfix-02&build=20261126');
         const gameRunner = window.run;
         if (typeof gameRunner !== 'function')
             throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
         window.__ETRANOM_DIAGNOSTICS__?.setStage('بازیابی ذخیره بازیکن و رندر جهان');
         const runnerResult = gameRunner('play');
         const runnerWasAsync = !!runnerResult && typeof runnerResult.then === 'function';
-        window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('gameRunner invoked', { runnerWasAsync, returnedType: typeof runnerResult });
+        window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('gameRunner invoked', { runnerWasAsync, returnedType: typeof runnerResult, gameBuild: window.__ETRANOM_GAME_BUILD__ || null });
         const gameLoaded = await runnerResult;
         window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('gameRunner resolved', { gameLoaded, runnerWasAsync, rootChildren: gameRoot.childElementCount, rootHtmlLength: gameRoot.innerHTML.length });
         if (gameLoaded === false) throw new Error('بازیابی ذخیره/راه‌اندازی موتور کامل نشد؛ گزارش جزئیات در پنل خطا ثبت شده است.');

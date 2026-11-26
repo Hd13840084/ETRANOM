@@ -28,14 +28,15 @@ import { getAtlasDrawCommandV2059, loadAtlasForDrawV2059 } from './systems/chara
 import { resolveMapSpecializationV2066 } from './systems/characters/character-map-binding-v2066.js?v=2066';
 // V2126: expose the game entry point at module scope before authentication calls it.
 window.run = run;
+window.__ETRANOM_GAME_BUILD__ = '2126-renderfix-02';
 /* V1967 central damage gateway: Solo uses the gateway with the legacy shared-core fallback. */
 /* Legacy fallback anchor: const sharedCore=window.ETRANOM_COMBAT_CORE; sharedCore.resolveDamage remains available if the central gateway fails to load. */
 // ETRANOM: text-first dark fantasy RPG. Narrative is primary; game rules remain deterministic.
-function run(mode) {
+async function run(mode) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
     let css = ""; // Shared with the stylesheet assembly after render().
     const root = document.getElementById('etr-game-root') || document.body, api = window.lib || {};
-    // V2126 render diagnostics: observe the actual game root before first render.
+    // V2126 live startup diagnostics: attach to the actual game mount root.
     window.__ETRANOM_DIAGNOSTICS__?.traceMount?.(root);
     window.__ETRANOM_RENDER_TRACE__ = window.__ETRANOM_RENDER_TRACE__ || { calls: 0, successes: 0, failures: 0, last: null, history: [] };
     const __etrRenderSnapshot = () => ({
@@ -45,8 +46,8 @@ function run(mode) {
         textLength: String(root.textContent || '').length,
         loaded: !!loaded,
         hasState: !!state,
-        scene: (state === null || state === void 0 ? void 0 : state.scene) || null,
-        character: (state === null || state === void 0 ? void 0 : state.character) ? String(state.character.name || 'نامشخص') : null
+        scene: state?.scene || null,
+        character: state?.character ? String(state.character.name || 'نامشخص') : null
     });
     const __etrTrace = (kind, detail) => {
         try { window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.(kind, detail); } catch (_) { }
@@ -2714,18 +2715,15 @@ function run(mode) {
     } }, 1500);
     async function load() {
         var _a, _b, _c, _d, _e, _f, _g;
-        window.__ETRANOM_DIAGNOSTICS__?.setStage('شروع بازیابی اطلاعات و ذخیره بازیکن');
         loaded = false;
         state = null;
         notice = "در حال بازیابی امن اطلاعات بازیکن...";
         render();
         let migratedLegacyContent = false;
         try {
-            window.__ETRANOM_DIAGNOSTICS__?.setStage('اتصال به سرویس ذخیره بازیکن');
             if (typeof api.getUserGameState !== "function")
                 throw new Error("game_save_api_missing");
             const r = await api.getUserGameState();
-            window.__ETRANOM_DIAGNOSTICS__?.setStage('دریافت پاسخ ذخیره؛ بررسی اطلاعات بازیکن');
             if (api.setSaveRevision)
                 api.setSaveRevision((r === null || r === void 0 ? void 0 : r.updatedAt) || null);
             if (r && r.state && typeof r.state === "object" && r.state.character) {
@@ -2846,28 +2844,19 @@ function run(mode) {
                     console.info("[ETRANOM] V1961 safe-zone content reset:", safeReset.removed);
                 }
             }
-            window.__ETRANOM_DIAGNOSTICS__?.setStage('آماده‌سازی وضعیت شخصیت و جهان');
             lastPersistedSaveSignature = (state && !migratedLegacyContent) ? stateSaveSignature(state) : null;
             if (state)
                 writeLocalSaveBackup(state);
             loaded = true;
-            window.__ETRANOM_DIAGNOSTICS__?.setStage('ساخت رابط بازی و نمایش جهان');
-            __etrTrace('load:state-ready-before-render', { loaded, hasState: !!state, scene: state?.scene || null, character: state?.character?.name || null, root: __etrRenderSnapshot() });
             installSaveSafetyHooks();
             render();
-            __etrTrace('load:render-returned', { loaded, hasState: !!state, scene: state?.scene || null, root: __etrRenderSnapshot() });
-            window.__ETRANOM_DIAGNOSTICS__?.setStage('رندر اولیه انجام شد؛ تکمیل کارهای پس‌زمینه');
             if (state && migratedLegacyContent) {
-                window.__ETRANOM_DIAGNOSTICS__?.setStage('ثبت امن مهاجرت سازگار ذخیره');
                 // Best-effort persistence of the targeted content migration; all unrelated save fields remain intact.
                 // A failed save leaves the remote original intact and does not block play.
                 await save(true);
             }
-            window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری اطلاعات بازیکن کامل شد');
         }
         catch (e) {
-            __etrTrace('load:exception', { error: e?.stack || e?.message || e, root: __etrRenderSnapshot() });
-            window.__ETRANOM_DIAGNOSTICS__?.report('خطا در بازیابی ذخیره بازیکن', e?.stack || e?.message || e);
             console.error("ETRANOM load blocked to protect save:", e);
             state = null;
             loaded = false;
@@ -11974,15 +11963,7 @@ function run(mode) {
                 return;
             }
             if (!state) {
-                __etrTrace('renderCreator:enter', { loaded, hasState: false, rootBefore: __etrRenderSnapshot(), caller: (new Error('renderCreator caller')).stack });
-                try {
-                    renderCreator();
-                    __etrTrace('renderCreator:success', __etrRenderSnapshot());
-                } catch (creatorError) {
-                    __etrTrace('renderCreator:exception', creatorError?.stack || creatorError);
-                    window.__ETRANOM_DIAGNOSTICS__?.report?.('خطا در ساخت صفحه ایجاد شخصیت', creatorError?.stack || creatorError);
-                    throw creatorError;
-                }
+                renderCreator();
                 return;
             }
             const tabs = [["story", "روایت و جهان", "✧"], ["regionmap", "نقشه منطقه", "🗺"], ["quests", "مأموریت‌ها", "⚑"], ["journal", "ژورنال", "▤"], ["settings", "تنظیمات", "⚙"]];
@@ -12386,17 +12367,20 @@ function run(mode) {
                 const after = __etrRenderSnapshot();
                 trace.successes++;
                 trace.last = { call, ok: true, durationMs: Date.now() - startedAt, before, after };
-                trace.history.push(trace.last); if (trace.history.length > 12) trace.history.shift();
+                trace.history.push(trace.last);
+                if (trace.history.length > 12) trace.history.shift();
                 __etrTrace('render:success', trace.last);
                 if (!after.children || !after.htmlLength) {
-                    const detail = { message: 'renderCore completed without mounting DOM', render: trace.last, domTrace: window.__ETRANOM_DIAGNOSTICS__?.getTraceReport?.() };
-                    window.__ETRANOM_DIAGNOSTICS__?.report?.('تابع رندر بدون خروجی قابل‌نمایش پایان یافت', detail);
+                    window.__ETRANOM_DIAGNOSTICS__?.report?.('تابع رندر بدون خروجی قابل‌نمایش پایان یافت', {
+                        build: window.__ETRANOM_GAME_BUILD__, render: trace.last
+                    });
                 }
                 return result;
             } catch (error) {
                 trace.failures++;
                 trace.last = { call, ok: false, durationMs: Date.now() - startedAt, before, error: String(error?.stack || error) };
-                trace.history.push(trace.last); if (trace.history.length > 12) trace.history.shift();
+                trace.history.push(trace.last);
+                if (trace.history.length > 12) trace.history.shift();
                 __etrTrace('render:exception', trace.last);
                 window.__ETRANOM_DIAGNOSTICS__?.report?.('استثنا داخل تابع render()', trace.last);
                 throw error;
@@ -12560,10 +12544,42 @@ function run(mode) {
         document.head.appendChild(v121ScrollRepairStyle);
         if (mode === "edit") {
             renderEdit();
-            return;
+            return true;
         }
         installPrimaryNavigationRouter();
-        render();
-        return load().then(() => loaded);
+        __etrTrace('run:entry', { mode, build: window.__ETRANOM_GAME_BUILD__, rootConnected: !!root.isConnected });
+        window.__ETRANOM_DIAGNOSTICS__?.setStage('ساخت رابط اولیه و شروع بازیابی ذخیره');
+        try {
+            // Paint a visible loading shell immediately, then wait for the real save load.
+            render();
+            await load();
+            await new Promise(resolve => {
+                if (typeof requestAnimationFrame === 'function') requestAnimationFrame(() => requestAnimationFrame(resolve));
+                else setTimeout(resolve, 0);
+            });
+            let snapshot = __etrRenderSnapshot();
+            // A defensive second render catches an empty mount without touching player data.
+            if (!snapshot.children || !snapshot.htmlLength) {
+                __etrTrace('run:empty-after-load-retry-render', { snapshot, renderTrace: window.__ETRANOM_RENDER_TRACE__ });
+                render();
+                await new Promise(resolve => {
+                    if (typeof requestAnimationFrame === 'function') requestAnimationFrame(resolve);
+                    else setTimeout(resolve, 0);
+                });
+                snapshot = __etrRenderSnapshot();
+            }
+            __etrTrace('run:completed', { loaded, snapshot, renderTrace: window.__ETRANOM_RENDER_TRACE__ });
+            if (!snapshot.children || !snapshot.htmlLength) {
+                window.__ETRANOM_DIAGNOSTICS__?.report?.('رندر بازی بدون محتوای صفحه پایان یافت', {
+                    build: window.__ETRANOM_GAME_BUILD__,
+                    loaded, snapshot, renderTrace: window.__ETRANOM_RENDER_TRACE__
+                });
+            }
+            return !!loaded && !!snapshot.children && !!snapshot.htmlLength;
+        } catch (startupError) {
+            __etrTrace('run:startup-exception', startupError?.stack || startupError);
+            window.__ETRANOM_DIAGNOSTICS__?.report?.('خطای راه‌اندازی موتور بازی', startupError?.stack || startupError);
+            throw startupError;
+        }
     }
 }
