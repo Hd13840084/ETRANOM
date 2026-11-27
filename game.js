@@ -75,7 +75,7 @@ import { getCharacterMotionPoseV2134 } from './systems/characters/character-moti
 import { getCharacterPortraitV2135, getCharacterPortraitForNameV2135 } from './systems/characters/character-portrait-bindings-v2135.js?v=2135';
 // V2126: expose the game entry point at module scope before authentication calls it.
 window.run = run;
-window.__ETRANOM_GAME_BUILD__ = '2171-startup-state-repair';
+window.__ETRANOM_GAME_BUILD__ = '2172-player-reference-repair';
 window.ETRANOM_VISUAL_PHYSICAL_CONSISTENCY_V2162 = ETRANOM_VISUAL_PHYSICAL_CONSISTENCY_V2162;
 window.ETRANOM_WEATHER_V2157 = ETRANOM_WEATHER_V2157;
 window.ETRANOM_ENVIRONMENT_AUDIO_V2160 = ETRANOM_ENVIRONMENT_AUDIO_V2160;
@@ -11213,7 +11213,7 @@ async function run(mode) {
                     if (!state.inWesternDanger) {
                         drawForegroundEnvironmentPropsV2127(ctx, p.x, p.y, currentWeatherV2157.season);
                         drawForegroundAuthoredSafeWorldPropsV2137(ctx, p.x, p.y, currentWeatherV2157.season);
-                    drawForegroundEnvironmentalPropsV2147(ctx, player.x, player.y, currentWeatherV2157.season);
+                    drawForegroundEnvironmentalPropsV2147(ctx, p.x, p.y, currentWeatherV2157.season);
                         // V2148: near-side tree crowns, trunks and understory correctly occlude the local avatar.
                         drawForegroundTreesVegetationV2148(ctx, p.x, p.y, camX, camY, weatherWindV2157, qualityProfileV2164.vegetationMotion ? t : 0, currentWeatherV2157.season);
                         drawForegroundVehiclesV2149(ctx, p.x, p.y, camX, camY, currentWeatherV2157.season);
