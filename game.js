@@ -73,7 +73,7 @@ import { getCharacterMotionPoseV2134 } from './systems/characters/character-moti
 import { getCharacterPortraitV2135, getCharacterPortraitForNameV2135 } from './systems/characters/character-portrait-bindings-v2135.js?v=2135';
 // V2126: expose the game entry point at module scope before authentication calls it.
 window.run = run;
-window.__ETRANOM_GAME_BUILD__ = '2167-stage25-comprehensive-repair-diagnostics';
+window.__ETRANOM_GAME_BUILD__ = '2168-startup-diagnostics-v2';
 window.ETRANOM_VISUAL_PHYSICAL_CONSISTENCY_V2162 = ETRANOM_VISUAL_PHYSICAL_CONSISTENCY_V2162;
 window.ETRANOM_WEATHER_V2157 = ETRANOM_WEATHER_V2157;
 window.ETRANOM_ENVIRONMENT_AUDIO_V2160 = ETRANOM_ENVIRONMENT_AUDIO_V2160;
@@ -2824,9 +2824,12 @@ async function run(mode) {
         render();
         let migratedLegacyContent = false;
         try {
+            window.__ETRANOM_DIAGNOSTICS__?.setStage('بازیابی ذخیره بازیکن: فراخوانی api.getUserGameState در game.js');
             if (typeof api.getUserGameState !== "function")
-                throw new Error("game_save_api_missing");
+                throw new Error("game_save_api_missing؛ تابع getUserGameState در window.lib وجود ندارد.");
+            const saveLoadStartedAt = performance.now();
             const r = await api.getUserGameState();
+            window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('save-load:resolved', { durationMs: Math.round(performance.now()-saveLoadStartedAt), resultType: r===null?'null':typeof r, hasState: !!r?.state, hasCharacter: !!r?.state?.character, updatedAt: r?.updatedAt||null });
             if (api.setSaveRevision)
                 api.setSaveRevision((r === null || r === void 0 ? void 0 : r.updatedAt) || null);
             if (r && r.state && typeof r.state === "object" && r.state.character) {
@@ -2940,6 +2943,7 @@ async function run(mode) {
             }
             else
                 throw new Error("invalid_save_payload");
+            window.__ETRANOM_DIAGNOSTICS__?.setStage(state ? 'اعتبارسنجی و نرمال‌سازی ذخیره شخصیت در game.js' : 'آماده‌سازی حساب تازه بدون ذخیره قبلی');
             if (state) {
                 const safeReset = (_f = (_e = window.ETRANOM_SAFE_ZONE_ENGINE) === null || _e === void 0 ? void 0 : _e.resetLegacySafeZoneProgress) === null || _f === void 0 ? void 0 : _f.call(_e, state);
                 if (safeReset === null || safeReset === void 0 ? void 0 : safeReset.changed) {
@@ -2954,6 +2958,7 @@ async function run(mode) {
             installSaveSafetyHooks();
             render();
             if (state && migratedLegacyContent) {
+                window.__ETRANOM_DIAGNOSTICS__?.setStage('ثبت مهاجرت سازگار ذخیره در فضای ابری');
                 // Best-effort persistence of the targeted content migration; all unrelated save fields remain intact.
                 // A failed save leaves the remote original intact and does not block play.
                 await save(true);
@@ -2961,6 +2966,7 @@ async function run(mode) {
         }
         catch (e) {
             console.error("ETRANOM load blocked to protect save:", e);
+            window.__ETRANOM_DIAGNOSTICS__?.report?.('بازیابی ذخیره بازیکن در game.js ناموفق شد', { file: 'game.js', function: 'load()', name: e?.name || 'Error', message: e?.message || String(e), stack: e?.stack || null, apiGetUserGameState: typeof api.getUserGameState, currentUserAvailable: typeof api.currentUserId === 'function', online: navigator.onLine, readyState: document.readyState });
             state = null;
             loaded = false;
             notice = "بازیابی اطلاعات ناموفق بود. برای جلوگیری از بازنویسی یا ازدست‌رفتن پیشرفت، ساخت شخصیت و ذخیره‌سازی متوقف شده است.";
@@ -12907,7 +12913,7 @@ async function run(mode) {
                 trace.last = { call, ok: false, durationMs: Date.now() - startedAt, before, error: String(error?.stack || error) };
                 trace.history.push(trace.last);
                 if (trace.history.length > 12) trace.history.shift();
-                __etrTrace('render:exception', trace.last);
+                __etrTrace('render:exception', trace.last);window.__ETRANOM_DIAGNOSTICS__?.report?.('خطا هنگام رندر رابط در game.js', {file:'game.js',function:'render()',error:trace.last,stack:trace.last?.error?.stack||trace.last?.stack||null});
                 window.__ETRANOM_DIAGNOSTICS__?.report?.('استثنا داخل تابع render()', trace.last);
                 throw error;
             }
@@ -13112,7 +13118,7 @@ async function run(mode) {
             return !!loaded && !!snapshot.children && !!snapshot.htmlLength;
         } catch (startupError) {
             __etrTrace('run:startup-exception', startupError?.stack || startupError);
-            window.__ETRANOM_DIAGNOSTICS__?.report?.('خطای راه‌اندازی موتور بازی', startupError?.stack || startupError);
+            window.__ETRANOM_DIAGNOSTICS__?.report?.('خطای راه‌اندازی موتور بازی', {file:'game.js',function:'run()',name:startupError?.name||'Error',message:startupError?.message||String(startupError),stack:startupError?.stack||null,build:window.__ETRANOM_GAME_BUILD__,root:{connected:!!root.isConnected,children:root.childElementCount,htmlLength:root.innerHTML.length,width:Math.round(root.getBoundingClientRect().width),height:Math.round(root.getBoundingClientRect().height)},render:window.__ETRANOM_RENDER_TRACE__||null});
             throw startupError;
         }
 }

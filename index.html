@@ -257,7 +257,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   form?.addEventListener('submit',event=>{event.preventDefault();dispatch('login');});
   signup?.addEventListener('click',event=>{event.preventDefault();dispatch('signup');});
   // Persistent diagnostics: remain active before and after authentication/game startup.
-  const diag={events:[],steps:[],trace:[],stage:'صفحه ورود',panel:null,statusPanel:null,startedAt:0,stageStartedAt:0,stageHistory:[],completed:false,mountInfo:null,mountState:null,lastError:null};
+  const diag={events:[],steps:[],trace:[],networkErrors:[],failedResources:[],stage:'صفحه ورود',panel:null,statusPanel:null,launcher:null,startedAt:0,stageStartedAt:0,stageHistory:[],completed:false,mountInfo:null,mountState:null,lastError:null,hidden:false,warnedStages:new Set()};
   const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,12000);
   const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const ensureStatusPanel=()=>{
@@ -272,14 +272,21 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
         try{await navigator.clipboard.writeText(report);button.textContent='گزارش کپی شد ✓';}
         catch(_){const area=document.createElement('textarea');area.value=report;area.style.cssText='position:fixed;opacity:0';document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();button.textContent=ok?'گزارش کپی شد ✓':'کپی نشد؛ گزارش را از کنسول بردار';}
       }
-      if(button.dataset.etrDiagAction==='hide')box.style.display='none';
+      if(button.dataset.etrDiagAction==='hide'){diag.hidden=true;box.style.display='none';ensureLauncher().style.display='block';}
     });
     document.body.appendChild(box);diag.statusPanel=box;return box;
   };
   const buildDiagnosticReport=()=>{
     const state=diag.mountState||{},render=window.__ETRANOM_RENDER_TRACE__||{};
-    const report={app:'ETRANOM startup diagnostics',generatedAt:new Date().toISOString(),page:location.origin+location.pathname,userAgent:navigator.userAgent,online:navigator.onLine,readyState:document.readyState,build:window.__ETRANOM_GAME_BUILD__||null,stage:diag.stage,completed:diag.completed,elapsedMs:diag.startedAt?Date.now()-diag.startedAt:0,steps:diag.steps,stageHistory:diag.stageHistory,events:diag.events,lastError:diag.lastError,mount:diag.mountInfo,mountState:{lastWriter:state.lastWriter||null,lastMutation:state.lastMutation||null,mutationSummary:state.mutationSummary||[]},render:{calls:render.calls||0,successes:render.successes||0,failures:render.failures||0,last:render.last||null,history:render.history||[]},authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,trace:diag.trace};
+    const report={app:'ETRANOM startup diagnostics',generatedAt:new Date().toISOString(),page:location.origin+location.pathname,userAgent:navigator.userAgent,online:navigator.onLine,readyState:document.readyState,build:window.__ETRANOM_GAME_BUILD__||null,stage:diag.stage,completed:diag.completed,elapsedMs:diag.startedAt?Date.now()-diag.startedAt:0,steps:diag.steps,stageHistory:diag.stageHistory,events:diag.events,lastError:diag.lastError,mount:diag.mountInfo,mountState:{lastWriter:state.lastWriter||null,lastMutation:state.lastMutation||null,mutationSummary:state.mutationSummary||[]},render:{calls:render.calls||0,successes:render.successes||0,failures:render.failures||0,last:render.last||null,history:render.history||[]},authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,networkErrors:diag.networkErrors,failedResources:diag.failedResources,trace:diag.trace,viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio},rootStyle:(()=>{const el=document.getElementById('etr-game-root');if(!el)return null;const c=getComputedStyle(el),r=el.getBoundingClientRect();return {display:c.display,visibility:c.visibility,opacity:c.opacity,width:Math.round(r.width),height:Math.round(r.height),children:el.childElementCount,htmlLength:el.innerHTML.length}})()};
     return safeText(JSON.stringify(report,null,2));
+  };
+  const ensureLauncher=()=>{
+    if(diag.launcher)return diag.launcher;
+    const b=document.createElement('button');b.id='etranom-diagnostic-launcher';b.type='button';b.textContent='گزارش ETRANOM';
+    b.style.cssText='position:fixed;z-index:2147483646;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));padding:8px 11px;border:1px solid #bd965d;border-radius:9px;background:#21182b;color:#f4eadb;font:11px Tahoma;box-shadow:0 4px 18px #000b;display:none';
+    b.addEventListener('click',()=>{diag.hidden=false;const panel=ensureStatusPanel();panel.style.display='block';paintStatus('گزارش راه‌اندازی');});
+    document.body.appendChild(b);diag.launcher=b;return b;
   };
   const paintStatus=(message)=>{
     const box=ensureStatusPanel();
@@ -289,13 +296,14 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     const recent=diag.steps.slice(-7);
     const steps=recent.map((x,i)=>'<div style="opacity:'+(i===recent.length-1?'1':'.62')+';font-size:10px">'+(i===recent.length-1?'▸':'·')+' '+escapeHtml(x)+'</div>').join('');
     const failure=diag.lastError?'<div style="margin-top:8px;padding:8px;border:1px solid #c34c43;border-radius:8px;background:#3a151b;color:#ffd9d4"><b>آخرین خطا:</b> '+escapeHtml(diag.lastError.kind)+'<br>'+escapeHtml(diag.lastError.message)+'</div>':'';
-    box.innerHTML='<div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><b style="color:#e5c68c;font-size:13px">ETRANOM · '+(diag.completed?'راه‌اندازی پایان یافت':'مراحل ورود و راه‌اندازی')+'</b><span style="font-size:10px;color:#c6b9a5">کل زمان '+elapsed+' ثانیه</span></div><div style="height:7px;background:#403448;border-radius:8px;overflow:hidden;margin:8px 0"><i style="display:block;width:'+pct+'%;height:100%;background:linear-gradient(90deg,#9b7048,#e2c38a);transition:width .25s"></i></div><div style="font-weight:bold;color:#f2d9aa;margin-bottom:3px">'+escapeHtml(message||diag.stage)+'</div><div style="color:#d2c5b4">مرحله فعلی: '+escapeHtml(diag.stage)+' · زمان این مرحله: '+stageElapsed+' ثانیه</div>'+steps+failure+'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:9px"><button type="button" data-etr-diag-action="copy" style="padding:7px 11px;border:1px solid #bd965d;border-radius:7px;background:#33243a;color:#ffe8c7">کپی گزارش کامل فنی</button><button type="button" data-etr-diag-action="hide" style="padding:7px 11px;border:1px solid #76617b;border-radius:7px;background:#201a27;color:#eee">پنهان‌کردن پنل</button></div>'+(diag.completed?'<div style="margin-top:6px;color:#d8c99f">اگر محیط بازی هنوز سیاه است، گزارش کامل را کپی و ارسال کن.</div>':'');
+    const warning=diag.stalledStage?'<div style="margin-top:7px;padding:7px;border:1px solid #c18a37;border-radius:8px;background:#332513;color:#ffe1a3"><b>هشدار توقف:</b> این مرحله بیش از ۳۰ ثانیه طول کشیده است. احتمال انتظار شبکه یا گیرکردن ماژول وجود دارد.</div>':'';
+    box.innerHTML='<div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><b style="color:#e5c68c;font-size:13px">ETRANOM · '+(diag.completed?'راه‌اندازی پایان یافت':'مراحل ورود و راه‌اندازی')+'</b><span style="font-size:10px;color:#c6b9a5">کل زمان '+elapsed+' ثانیه</span></div><div style="height:7px;background:#403448;border-radius:8px;overflow:hidden;margin:8px 0"><i style="display:block;width:'+pct+'%;height:100%;background:linear-gradient(90deg,#9b7048,#e2c38a);transition:width .25s"></i></div><div style="font-weight:bold;color:#f2d9aa;margin-bottom:3px">'+escapeHtml(message||diag.stage)+'</div><div style="color:#d2c5b4">مرحله فعلی: '+escapeHtml(diag.stage)+' · زمان این مرحله: '+stageElapsed+' ثانیه</div>'+steps+failure+warning+'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:9px"><button type="button" data-etr-diag-action="copy" style="padding:7px 11px;border:1px solid #bd965d;border-radius:7px;background:#33243a;color:#ffe8c7">کپی گزارش کامل فنی</button><button type="button" data-etr-diag-action="hide" style="padding:7px 11px;border:1px solid #76617b;border-radius:7px;background:#201a27;color:#eee">پنهان‌کردن پنل</button></div>'+(diag.completed?'<div style="margin-top:6px;color:#d8c99f">اگر محیط بازی هنوز سیاه است، گزارش کامل را کپی و ارسال کن.</div>':'');
   };
   const show=(kind,detail)=>{
     let detailText='';try{detailText=safeText(typeof detail==='string'?detail:JSON.stringify(detail,null,2));}catch(_){detailText=safeText(detail);}
     const item={time:new Date().toLocaleTimeString(),stage:diag.stage,kind,detail:detailText};
     diag.events.push(item); if(diag.events.length>100)diag.events.shift();
-    diag.lastError={kind,message:detailText,time:item.time,stage:diag.stage};
+    diag.lastError={kind,message:detailText,time:item.time,stage:diag.stage};diag.hidden=false;ensureStatusPanel().style.display='block';if(diag.launcher)diag.launcher.style.display='none';
     console.error('[ETRANOM DIAGNOSTIC]',item);
     if(!diag.panel){
       const box=document.createElement('section'); box.id='etranom-diagnostic-panel';
@@ -360,8 +368,8 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     return true;
   };
   window.__ETRANOM_DIAGNOSTICS__={
-    begin:()=>{diag.startedAt=Date.now();diag.stageStartedAt=Date.now();diag.completed=false;diag.steps=[];diag.stageHistory=[];diag.lastError=null;diag.stage='شروع آماده‌سازی بازی';paintStatus('در حال آماده‌سازی جهان بازی…');},
-    setStage:value=>{const now=Date.now();if(diag.stageStartedAt&&diag.stage)diag.stageHistory.push({stage:diag.stage,startedAt:new Date(diag.stageStartedAt).toISOString(),durationMs:now-diag.stageStartedAt});diag.stage=safeText(value);diag.stageStartedAt=now;if(!diag.startedAt)diag.startedAt=now;diag.steps.push(diag.stage);if(diag.steps.length>100)diag.steps.shift();paintStatus();},
+    begin:()=>{diag.startedAt=Date.now();diag.stageStartedAt=Date.now();diag.completed=false;diag.steps=[];diag.stageHistory=[];diag.lastError=null;diag.stalledStage=null;diag.warnedStages.clear();diag.stage='شروع آماده‌سازی بازی';diag.hidden=false;if(diag.launcher)diag.launcher.style.display='none';paintStatus('در حال آماده‌سازی جهان بازی…');},
+    setStage:value=>{const now=Date.now();if(diag.stageStartedAt&&diag.stage)diag.stageHistory.push({stage:diag.stage,startedAt:new Date(diag.stageStartedAt).toISOString(),durationMs:now-diag.stageStartedAt});diag.stage=safeText(value);diag.stageStartedAt=now;diag.stalledStage=null;if(!diag.startedAt)diag.startedAt=now;diag.steps.push(diag.stage);if(diag.steps.length>100)diag.steps.shift();diag.hidden=false;if(diag.launcher)diag.launcher.style.display='none';paintStatus();},
     complete:()=>{const now=Date.now();if(diag.stageStartedAt)diag.stageHistory.push({stage:diag.stage,startedAt:new Date(diag.stageStartedAt).toISOString(),durationMs:now-diag.stageStartedAt});diag.completed=true;diag.stage='پایان مراحل بارگذاری';diag.stageStartedAt=now;paintStatus('بارگذاری موتور تمام شد؛ بررسی نمایش محیط بازی');},
     report:(kind,detail)=>{show(kind,traceText(detail));paintStatus('خطا هنگام راه‌اندازی: '+kind);},
     traceEvent,
@@ -382,15 +390,33 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     },
     getEvents:()=>diag.events.slice(),getSteps:()=>diag.steps.slice()
   };
+  // Always-visible compact diagnostics. A stalled startup is reported even if no exception is thrown.
+  paintStatus('پنل آماده است؛ پس از ورود همه مراحل و خطاها ثبت می‌شوند.');
+  ensureLauncher();
+  setInterval(()=>{
+    if(!diag.startedAt||diag.completed)return;
+    const elapsed=Date.now()-diag.stageStartedAt;
+    if(diag.stageStartedAt&&elapsed>30000&&!diag.warnedStages.has(diag.stage)){
+      diag.warnedStages.add(diag.stage);diag.stalledStage=diag.stage;
+      const item={stage:diag.stage,elapsedMs:elapsed,likelyCause:'درخواست شبکه، ماژول یا عملیات async بدون پاسخ مانده است.'};
+      diag.events.push({time:new Date().toLocaleTimeString(),stage:diag.stage,kind:'هشدار توقف مرحله',detail:JSON.stringify(item)});
+      console.warn('[ETRANOM STARTUP STALLED]',item);
+    }
+    if(!diag.hidden)paintStatus();
+  },1000);
   window.addEventListener('error',event=>{
     const target=event.target;
     if(target && target!==window){show('منبع/فایل بارگذاری‌نشده',{tag:target.tagName||null,url:target.src||target.href||null,html:target.outerHTML?target.outerHTML.slice(0,500):null});return;}
-    show('خطای JavaScript',{message:event.message||'خطای ناشناخته',file:event.filename||null,line:event.lineno||null,column:event.colno||null,error:event.error?.stack||event.error?.message||null});
+    show('خطای JavaScript',{message:event.message||'خطای ناشناخته',file:event.filename||null,line:event.lineno||null,column:event.colno||null,sourceLine:event.lineno?event.filename+':'+event.lineno+':'+(event.colno||0):null,error:event.error?.stack||event.error?.message||null});
   },true);
   window.addEventListener('unhandledrejection',event=>{
     const reason=event?.reason; show('Promise ردشده',reason?.stack||reason?.message||reason);
   });
   window.addEventListener('rejectionhandled',event=>show('Promise بعداً مدیریت شد',event.reason?.message||event.reason));
+  window.addEventListener('offline',()=>show('اتصال اینترنت قطع شد',{online:false,stage:diag.stage}));
+  window.addEventListener('online',()=>{diag.events.push({time:new Date().toLocaleTimeString(),stage:diag.stage,kind:'اتصال اینترنت برقرار شد',detail:'navigator.onLine=true'});paintStatus('اتصال اینترنت برقرار شد');});
+  const nativeDiagnosticFetch=window.fetch.bind(window);
+  window.fetch=async (...args)=>{const url=String(args[0]?.url||args[0]||'');const started=Date.now();try{const response=await nativeDiagnosticFetch(...args);if(diag.startedAt&&!response.ok){const item={url,status:response.status,statusText:response.statusText,durationMs:Date.now()-started,stage:diag.stage};diag.networkErrors.push(item);if(diag.networkErrors.length>60)diag.networkErrors.shift();show('درخواست شبکه با پاسخ ناموفق',{...item});}return response;}catch(error){if(diag.startedAt){const item={url,message:error?.message||String(error),stack:error?.stack||null,durationMs:Date.now()-started,stage:diag.stage};diag.networkErrors.push(item);if(diag.networkErrors.length>60)diag.networkErrors.shift();show('شکست درخواست شبکه',item);}throw error;}};
 })();
 </script>
 <script type="module">import { isSystemPlayerName, getPlayerDisplayName, syncPlayerProfile } from './systems/online/player-identity.js?v=1642';
@@ -433,6 +459,7 @@ const importWithTimeout = (url, ms) => {
     const timeout = new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('بارگذاری کتابخانه اتصال بیش از حد طول کشید: ' + url)), ms); });
     return Promise.race([import(url), timeout]).finally(() => clearTimeout(timer));
 };
+const withStartupTimeout = (promise, ms, label) => { let timer; const timeout = new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('مهلت راه‌اندازی تمام شد (' + ms + 'ms): ' + label)), ms); }); return Promise.race([Promise.resolve(promise), timeout]).finally(() => clearTimeout(timer)); };
 try {
     ({ createClient } = await importWithTimeout('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm', 8000));
 }
@@ -1080,7 +1107,7 @@ async function importGameModule(url) {
     window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری ماژول: ' + url);
     window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('module:begin', { url, online: navigator.onLine, readyState: document.readyState });
     try {
-        const module = await import(url);
+        const module = await withStartupTimeout(import(url), 45000, 'ماژول ' + url);
         window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('module:success', { url, durationMs: Math.round(performance.now() - startedAt), exports: Object.keys(module || {}).slice(0, 40) });
         return module;
     } catch (error) {
@@ -1176,7 +1203,7 @@ async function startSession(session) {
         const ownerRuntimeAdapterModule = await importGameModule('./systems/admin/owner-runtime-adapters-v2011.js?v=2014');
         window.ETRANOM_OWNER_RUNTIME_POLICIES = ownerRuntimeAdapterModule;
         const { loadRegionOneRuntime } = await importGameModule('./systems/content/region-one-runtime.js?v=2014');
-        await loadRegionOneRuntime({ supabase });
+        await withStartupTimeout(loadRegionOneRuntime({ supabase }), 60000, 'systems/content/region-one-runtime.js → content/packs/region_one_master_v2/*.json و بررسی دسترسی Supabase');
         const elementalistModule = await importGameModule('./systems/classes/elementalist.js?v=1931');
         window.ETRANOM_ELEMENTALIST = elementalistModule.ELEMENTALIST;
         window.ETRANOM_CREATE_ELEMENTALIST_PROGRESS = elementalistModule.createElementalistProgress;
@@ -1416,7 +1443,7 @@ async function startSession(session) {
         }
         await importGameModule('./systems/world/isometric-dark-fantasy-v1.js?v=2034');
         window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری فایل اصلی game.js و وابستگی‌های آن');
-        await importGameModule('./game.js?v=2167-stage25-comprehensive-repair-diagnostics&build=20261127a');
+        await importGameModule('./game.js?v=2168-startup-diagnostics-v2&build=20261128a');
         const gameRunner = window.run;
         if (typeof gameRunner !== 'function')
             throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
@@ -1424,7 +1451,7 @@ async function startSession(session) {
         const runnerResult = gameRunner('play');
         const runnerWasAsync = !!runnerResult && typeof runnerResult.then === 'function';
         window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('gameRunner invoked', { runnerWasAsync, returnedType: typeof runnerResult, gameBuild: window.__ETRANOM_GAME_BUILD__ || null });
-        const gameLoaded = await runnerResult;
+        const gameLoaded = await withStartupTimeout(runnerResult, 60000, "game.js → run('play') → load()/render()");
         window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('gameRunner resolved', { gameLoaded, runnerWasAsync, rootChildren: gameRoot.childElementCount, rootHtmlLength: gameRoot.innerHTML.length, rootTextLength: gameRoot.textContent.length, rootRect: (()=>{const r=gameRoot.getBoundingClientRect();return {width:Math.round(r.width),height:Math.round(r.height)}})() });
         if (gameLoaded === false) throw new Error('بازیابی ذخیره/راه‌اندازی موتور کامل نشد؛ گزارش جزئیات در پنل خطا ثبت شده است.');
         if (!runnerWasAsync) window.__ETRANOM_DIAGNOSTICS__?.report?.('هشدار: تابع موتور بازی منتظر پایان بارگذاری نمانده است', 'gameRunner مقدار Promise برنگرداند؛ نسخه game.js قدیمی است یا اصلاح async در آن نصب نشده است.');
