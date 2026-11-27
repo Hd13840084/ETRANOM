@@ -1,0 +1,122 @@
+[
+  {
+    "id": "apep",
+    "name": "آپوفیس، مارِ آشوب",
+    "nameEn": "Apep",
+    "portrait": "assets/necromancer/companions/mythic/apep.webp"
+  },
+  {
+    "id": "tiamat",
+    "name": "تیامات، مادر اژدهایان",
+    "nameEn": "Tiamat",
+    "portrait": "assets/necromancer/companions/mythic/tiamat.webp"
+  },
+  {
+    "id": "surtr",
+    "name": "سورت، آتش‌سالار واپسین",
+    "nameEn": "Surtr",
+    "portrait": "assets/necromancer/companions/mythic/surtr.webp"
+  },
+  {
+    "id": "fenrir",
+    "name": "فنریر، گرگِ بندگسل",
+    "nameEn": "Fenrir",
+    "portrait": "assets/necromancer/companions/mythic/fenrir.webp"
+  },
+  {
+    "id": "jormungandr",
+    "name": "یورمونگاند، مارِ میانه‌جهان",
+    "nameEn": "Jormungandr",
+    "portrait": "assets/necromancer/companions/mythic/jormungandr.webp"
+  },
+  {
+    "id": "typhon",
+    "name": "تایفون، پدر هیولاها",
+    "nameEn": "Typhon",
+    "portrait": "assets/necromancer/companions/mythic/typhon.webp"
+  },
+  {
+    "id": "hecate",
+    "name": "هکاته، بانوی سه‌راهی",
+    "nameEn": "Hecate",
+    "portrait": "assets/necromancer/companions/mythic/hecate.webp"
+  },
+  {
+    "id": "thanatos",
+    "name": "تاناتوس، تجسم مرگ آرام",
+    "nameEn": "Thanatos",
+    "portrait": "assets/necromancer/companions/mythic/thanatos.webp"
+  },
+  {
+    "id": "izanami",
+    "name": "ایزانامی، مادر یومی",
+    "nameEn": "Izanami",
+    "portrait": "assets/necromancer/companions/mythic/izanami.webp"
+  },
+  {
+    "id": "supay",
+    "name": "سوپای، فرمانروای اوکو پاچا",
+    "nameEn": "Supay",
+    "portrait": "assets/necromancer/companions/mythic/supay.webp"
+  },
+  {
+    "id": "ah_puch",
+    "name": "آه پوچ، شاه استخوان‌ها",
+    "nameEn": "Ah Puch",
+    "portrait": "assets/necromancer/companions/mythic/ah_puch.webp"
+  },
+  {
+    "id": "veles",
+    "name": "ولس، خدای ژرفا و دگرگونی",
+    "nameEn": "Veles",
+    "portrait": "assets/necromancer/companions/mythic/veles.webp"
+  },
+  {
+    "id": "chernobog",
+    "name": "چرنو‌بوگ، خدای تاریکی",
+    "nameEn": "Chernobog",
+    "portrait": "assets/necromancer/companions/mythic/chernobog.webp"
+  },
+  {
+    "id": "rahu",
+    "name": "راهو، بلعنده خورشید",
+    "nameEn": "Rahu",
+    "portrait": "assets/necromancer/companions/mythic/rahu.webp"
+  },
+  {
+    "id": "ketu",
+    "name": "کیتو، دنباله اژدهای آسمانی",
+    "nameEn": "Ketu",
+    "portrait": "assets/necromancer/companions/mythic/ketu.webp"
+  },
+  {
+    "id": "mahishasura",
+    "name": "ماهیشاسورا، دیو گاومیش‌پیکر",
+    "nameEn": "Mahishasura",
+    "portrait": "assets/necromancer/companions/mythic/mahishasura.webp"
+  },
+  {
+    "id": "balor",
+    "name": "بالور، چشم ویرانگر",
+    "nameEn": "Balor",
+    "portrait": "assets/necromancer/companions/mythic/balor.webp"
+  },
+  {
+    "id": "nergal",
+    "name": "نرگال، سالار جنگ و طاعون",
+    "nameEn": "Nergal",
+    "portrait": "assets/necromancer/companions/mythic/nergal.webp"
+  },
+  {
+    "id": "hine_nui_te_po",
+    "name": "هینه‌نوی‌ته‌پو، بانوی شب بزرگ",
+    "nameEn": "Hine-nui-te-po",
+    "portrait": "assets/necromancer/companions/mythic/hine_nui_te_po.webp"
+  },
+  {
+    "id": "azi_dahaka",
+    "name": "اژی‌دهاک، اژدهای سه‌سر",
+    "nameEn": "Azi Dahaka",
+    "portrait": "assets/necromancer/companions/mythic/azi_dahaka.webp"
+  }
+]
