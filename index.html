@@ -215,31 +215,6 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
 </style>
 </head>
 <body>
-<aside id="etranom-diagnostic-bootstrap" dir="rtl" role="status" aria-live="polite" style="position:fixed!important;z-index:2147483647!important;top:calc(8px + env(safe-area-inset-top,0px))!important;left:8px!important;right:8px!important;width:auto!important;max-width:680px!important;max-height:46vh!important;overflow:auto!important;margin:0 auto!important;padding:11px 13px!important;border:1px solid #c9a56d!important;border-radius:12px!important;background:rgba(18,13,24,.98)!important;color:#f5ead8!important;box-shadow:0 8px 30px #000d!important;font:12px/1.85 Tahoma,Arial,sans-serif!important;display:block!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important">
-  <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b style="color:#e5c68c">ETRANOM · ناظر راه‌اندازی</b><span id="etr-diag-clock" style="font-size:10px;color:#c9b99f">HTML فعال · JS در انتظار</span></div>
-  <div id="etr-diag-stage" style="margin-top:5px;color:#f1d7a7">صفحه دریافت شد؛ پنل عیب‌یابی از خود HTML نمایش داده شده است.</div>
-  <div id="etr-diag-detail" style="font-size:10px;color:#c9c0d0">اگر JavaScript اجرا نشود نیز این پنل باید قابل مشاهده بماند.</div>
-  <pre id="etr-diag-errors" style="display:none;white-space:pre-wrap;max-height:18vh;overflow:auto;margin:7px 0;padding:7px;background:#321a20;border-radius:7px;color:#ffe0dc;font:10px/1.6 monospace"></pre>
-  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px"><button id="etr-diag-copy-bootstrap" type="button" style="padding:6px 9px;border:1px solid #bd965d;border-radius:7px;background:#33243a;color:#ffe8c7;font:11px Tahoma">کپی گزارش</button><button id="etr-diag-collapse-bootstrap" type="button" style="padding:6px 9px;border:1px solid #76617b;border-radius:7px;background:#201a27;color:#eee;font:11px Tahoma">کوچک‌کردن پنل</button></div>
-</aside>
-<script>
-/* Independent bootstrap: this runs before the app module and does not depend on game.js. */
-(()=>{
- const panel=document.getElementById('etranom-diagnostic-bootstrap'); if(!panel)return;
- const stage=document.getElementById('etr-diag-stage'),detail=document.getElementById('etr-diag-detail'),clock=document.getElementById('etr-diag-clock'),errors=document.getElementById('etr-diag-errors');
- const started=Date.now(),events=[]; window.__ETRANOM_EARLY_DIAGNOSTICS__=events;
- const clean=v=>String(v??'').replace(/(password|access_token|refresh_token|apikey|authorization)([=: ]+)\S+/ig,'$1$2[REDACTED]').slice(0,7000);
- const add=(kind,data)=>{const item={at:new Date().toISOString(),kind,detail:clean(data)};events.push(item);if(events.length>80)events.shift();errors.style.display='block';errors.textContent=events.slice(-8).map(x=>'['+x.at+'] '+x.kind+'\n'+x.detail).join('\n\n');stage.textContent='هشدار: '+kind;detail.textContent='جزئیات خطا ثبت شد؛ از «کپی گزارش» استفاده کن.';};
- window.addEventListener('error',e=>{if(e.target&&e.target!==window)add('فایل یا منبع بارگذاری نشد',JSON.stringify({tag:e.target.tagName,url:e.target.src||e.target.href||'',html:e.target.outerHTML?.slice(0,400)}));else add('خطای JavaScript',JSON.stringify({message:e.message,file:e.filename,line:e.lineno,column:e.colno,stack:e.error?.stack}));},true);
- window.addEventListener('unhandledrejection',e=>add('Promise ردشده',e.reason?.stack||e.reason?.message||e.reason));
- window.addEventListener('offline',()=>add('اتصال اینترنت قطع شد','navigator.onLine=false'));
- document.getElementById('etr-diag-copy-bootstrap').addEventListener('click',async()=>{const report={app:'ETRANOM early startup diagnostics',url:location.href,startedAt:new Date(started).toISOString(),elapsedMs:Date.now()-started,readyState:document.readyState,online:navigator.onLine,userAgent:navigator.userAgent,earlyEvents:events,appEvents:window.__ETRANOM_DIAGNOSTICS__?.getEvents?.()||[],steps:window.__ETRANOM_DIAGNOSTICS__?.getSteps?.()||[],resources:performance.getEntriesByType('resource').slice(-80).map(r=>({name:r.name,duration:Math.round(r.duration),initiatorType:r.initiatorType}))};const text=JSON.stringify(report,null,2);try{await navigator.clipboard.writeText(text);detail.textContent='گزارش کامل کپی شد.';}catch(_){errors.style.display='block';errors.textContent=text;detail.textContent='کپی خودکار ممکن نشد؛ گزارش در همین پنل نمایش داده شد.';}});
- document.getElementById('etr-diag-collapse-bootstrap').addEventListener('click',()=>{const small=panel.dataset.small==='1';panel.dataset.small=small?'0':'1';for(const id of ['etr-diag-detail','etr-diag-errors','etr-diag-copy-bootstrap']){const el=document.getElementById(id);if(el)el.style.display=small?(id==='etr-diag-errors'?'none':''):'none';}document.getElementById('etr-diag-collapse-bootstrap').textContent=small?'کوچک‌کردن پنل':'بازکردن پنل';});
- const update=()=>{clock.textContent='HTML فعال · '+Math.floor((Date.now()-started)/1000)+' ثانیه';};update();setInterval(update,1000);
- setTimeout(()=>{if(!window.__ETRANOM_DIAGNOSTICS__){add('اسکریپت عیب‌یابی اصلی اجرا نشد','پنل HTML زنده است، اما کد JavaScript تشخیصی داخل index.html تا ۱۲ ثانیه فعال نشده. احتمال خطای parse، مسدودشدن inline script یا نسخه/کش قدیمی وجود دارد.');}},12000);
- setTimeout(()=>{if(!window.__ETRANOM_AUTH_ACTIONS__?.ready && !events.length){stage.textContent='در انتظار آماده‌شدن ماژول ورود';detail.textContent='ماژول اصلی هنوز کنترل ورود را ثبت نکرده است. گزارش را کپی کن.';}},18000);
-})();
-</script>
 <div id="auth-gate">
   <div class="auth-atmosphere" aria-hidden="true"><span class="auth-orbit orbit-one"></span><span class="auth-orbit orbit-two"></span><span class="auth-rune rune-one">ᛟ</span><span class="auth-rune rune-two">✦</span><span class="auth-rune rune-three">ᚱ</span></div>
   <div class="auth-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -286,10 +261,10 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,6000);
   const ensureStatusPanel=()=>{
     if(diag.statusPanel)return diag.statusPanel;
-    const box=document.getElementById('etranom-diagnostic-bootstrap')||document.createElement('section');box.id='etranom-startup-status';
+    const box=document.createElement('section');box.id='etranom-startup-status';
     box.dir='rtl';box.setAttribute('role','status');
-    box.style.cssText+=';position:fixed!important;z-index:2147483647!important;top:calc(8px + env(safe-area-inset-top,0px))!important;left:8px!important;right:8px!important;max-width:680px!important;max-height:46vh!important;overflow:auto!important;display:block!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important';
-    if(!box.isConnected)document.body.appendChild(box);diag.statusPanel=box;return box;
+    box.style.cssText='position:fixed;z-index:2147483000;top:calc(10px + env(safe-area-inset-top,0px));left:10px;right:10px;max-width:620px;margin:0 auto;padding:13px 15px;background:linear-gradient(145deg,#21182bfa,#0d0b12fa);color:#f4eadb;border:1px solid #bd965d;border-radius:12px;box-shadow:0 8px 32px #000c;font:12px/1.9 Tahoma,Arial,sans-serif;pointer-events:auto;backdrop-filter:blur(8px)';
+    document.body.appendChild(box);diag.statusPanel=box;return box;
   };
   const paintStatus=(message)=>{
     const box=ensureStatusPanel();
@@ -356,7 +331,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
         state.mutationSummary.push(state.lastMutation);if(state.mutationSummary.length>14)state.mutationSummary.shift();
         traceEvent('DOM mutation observer',state.lastMutation);
         if(now.children>0)state.everHadChildren=true;
-        if(state.everHadChildren&&prev>0&&now.children===0)report('ریشه بازی پس از ساخته‌شدن خالی شد؛ عامل احتمالی در آخرین نویسنده DOM است',getTraceReport());
+        if(state.everHadChildren&&prev>0&&now.children===0)show('ریشه بازی پس از ساخته‌شدن خالی شد؛ عامل احتمالی در آخرین نویسنده DOM است',getTraceReport());
         state.previousChildren=now.children;
       });
       observer.observe(el,{childList:true});state.observer=observer;
@@ -395,7 +370,6 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     const reason=event?.reason; show('Promise ردشده',reason?.stack||reason?.message||reason);
   });
   window.addEventListener('rejectionhandled',event=>show('Promise بعداً مدیریت شد',event.reason?.message||event.reason));
-  paintStatus('پنل عیب‌یابی فعال است؛ منتظر ورود یا بازیابی نشست…');
 })();
 </script>
 <script type="module">import { isSystemPlayerName, getPlayerDisplayName, syncPlayerProfile } from './systems/online/player-identity.js?v=1642';
@@ -1410,8 +1384,8 @@ async function startSession(session) {
             window.ETRANOM_UNIFIED_BATTLE_EXPERIENCE = null;
         }
         await importGameModule('./systems/world/isometric-dark-fantasy-v1.js?v=2034');
-        window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری موتور بازی V2168');
-        await importGameModule('./game.js?v=2168-module-parse-fix&build=20261128');
+        window.__ETRANOM_DIAGNOSTICS__?.setStage('بارگذاری موتور بازی V2126');
+        await importGameModule('./game.js?v=2168-stage25-startup-state-fix&build=20261128');
         const gameRunner = window.run;
         if (typeof gameRunner !== 'function')
             throw new Error('موتور بازی تابع window.run را ثبت نکرد.');
