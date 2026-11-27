@@ -1,0 +1,88 @@
+{
+  "id": "warrior_4",
+  "class_id": "warrior",
+  "class_name_fa": "جنگجو",
+  "name_fa": "شوالیه ویرانی",
+  "role_fa": "شوالیه‌ای با تمرکز بر قدرت ویرانگر",
+  "identity": {
+    "combat_fantasy": "شوالیه‌ای با تمرکز بر قدرت ویرانگر",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "warrior_4_strike",
+      "name": "شوالیه ویرانی: ضربه شکافنده",
+      "name_fa": "شوالیه ویرانی: ضربه شکافنده",
+      "type": "single_damage",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه ویرانی؛ شوالیه‌ای با تمرکز بر قدرت ویرانگر. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 145,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "warrior_4_guard",
+      "name": "شوالیه ویرانی: گارد آهنین برتر",
+      "name_fa": "شوالیه ویرانی: گارد آهنین برتر",
+      "type": "shield",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه ویرانی؛ شوالیه‌ای با تمرکز بر قدرت ویرانگر. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "shieldPct": 158,
+      "damageReductionPct": 10
+    },
+    {
+      "id": "warrior_4_wave",
+      "name": "شوالیه ویرانی: چرخش سهمگین پیشرفته",
+      "name_fa": "شوالیه ویرانی: چرخش سهمگین پیشرفته",
+      "type": "multi_target_damage",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه ویرانی؛ شوالیه‌ای با تمرکز بر قدرت ویرانگر. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 111,
+      "scalingStat": "attack"
+    },
+    {
+      "id": "warrior_4_stance",
+      "name": "شوالیه ویرانی: خشم میدان والا",
+      "name_fa": "شوالیه ویرانی: خشم میدان والا",
+      "type": "self_buff",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه ویرانی؛ شوالیه‌ای با تمرکز بر قدرت ویرانگر. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "effects": {
+        "attackPct": 20,
+        "defensePct": 13,
+        "speedPct": 5
+      }
+    },
+    {
+      "id": "warrior_4_ultimate",
+      "name": "شوالیه ویرانی: فرجام تیغه اساطیری",
+      "name_fa": "شوالیه ویرانی: فرجام تیغه اساطیری",
+      "type": "all_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شوالیه ویرانی؛ شوالیه‌ای با تمرکز بر قدرت ویرانگر. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 217,
+      "scalingStat": "attack"
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}

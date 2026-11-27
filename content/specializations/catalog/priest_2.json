@@ -1,0 +1,86 @@
+{
+  "id": "priest_2",
+  "class_id": "priest",
+  "class_name_fa": "کشیش",
+  "name_fa": "شفادهنده",
+  "role_fa": "متخصص حمایت و بازیابی همراهان",
+  "identity": {
+    "combat_fantasy": "متخصص حمایت و بازیابی همراهان",
+    "theme": "دارک فانتزی",
+    "resource_affinity": "در مرحله طراحی پوسته تعیین نشده"
+  },
+  "skills": [
+    {
+      "id": "priest_2_strike",
+      "name": "شفادهنده: شفای روشن",
+      "name_fa": "شفادهنده: شفای روشن",
+      "type": "heal",
+      "unlockLevel": 1,
+      "manaCost": 4,
+      "cooldownTurns": 0,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شفادهنده؛ متخصص حمایت و بازیابی همراهان. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "healPct": 145,
+      "target": "ally"
+    },
+    {
+      "id": "priest_2_guard",
+      "name": "شفادهنده: نیایش همگانی برتر",
+      "name_fa": "شفادهنده: نیایش همگانی برتر",
+      "type": "group_heal",
+      "unlockLevel": 4,
+      "manaCost": 7,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شفادهنده؛ متخصص حمایت و بازیابی همراهان. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "healPct": 90,
+      "target": "self"
+    },
+    {
+      "id": "priest_2_wave",
+      "name": "شفادهنده: حفاظ قدسی پیشرفته",
+      "name_fa": "شفادهنده: حفاظ قدسی پیشرفته",
+      "type": "shield",
+      "unlockLevel": 8,
+      "manaCost": 9,
+      "cooldownTurns": 2,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شفادهنده؛ متخصص حمایت و بازیابی همراهان. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "shieldPct": 151,
+      "damageReductionPct": 12
+    },
+    {
+      "id": "priest_2_stance",
+      "name": "شفادهنده: داوری روح والا",
+      "name_fa": "شفادهنده: داوری روح والا",
+      "type": "debuff",
+      "unlockLevel": 13,
+      "manaCost": 11,
+      "cooldownTurns": 3,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شفادهنده؛ متخصص حمایت و بازیابی همراهان. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "attackReductionPct": 27,
+      "defenseReductionPct": 16,
+      "dotPct": 0
+    },
+    {
+      "id": "priest_2_ultimate",
+      "name": "شفادهنده: فرمان واپسین اساطیری",
+      "name_fa": "شفادهنده: فرمان واپسین اساطیری",
+      "type": "all_damage",
+      "unlockLevel": 20,
+      "manaCost": 18,
+      "cooldownTurns": 5,
+      "durationTurns": 2,
+      "description": "مهارت اختصاصی تخصص شفادهنده؛ متخصص حمایت و بازیابی همراهان. در هر سه حالت نبرد از موتور مشترک اجرا می‌شود.",
+      "damagePct": 162,
+      "scalingStat": "magicPower"
+    }
+  ],
+  "talents": [],
+  "progression": null,
+  "portrait": null,
+  "content_status": "shared_runtime_ready_v172",
+  "implementation_scope": "پنج مهارت اختصاصی متصل به کاتالوگ مشترک؛ نیازمند اتصال نهایی UI/سرور در مسیرهای اجرایی.",
+  "version": 2
+}

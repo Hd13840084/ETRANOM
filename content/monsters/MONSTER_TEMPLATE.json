@@ -1,0 +1,11 @@
+{
+  "id": "unique_monster_id",
+  "region_id": "unique_region_id",
+  "name_fa": "نام هیولا",
+  "kind": "normal",
+  "level": 1,
+  "stats": {"hp": 50, "attack": 10, "defense": 0},
+  "drops": [],
+  "skills": [],
+  "version": 1
+}
