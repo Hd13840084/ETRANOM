@@ -5,6 +5,7 @@ import { sampleTerrainElevationV2146, sampleTerrainGradientV2146, resolveTerrain
 import { ETRANOM_WORLD_GEOMETRY_V2140 } from './world-geometry-v2140.js?v=2140';
 import { drawSeasonalPropCapV2159 } from './seasonal-world-v2159.js?v=2159';
 import { getVehicleWheelLayoutV2167 } from './vehicle-suspension-v2167.js?v=2167';
+import { resolveVehicleSpriteScaleV2170 } from './world-scale-calibration-v2170.js?v=2170';
 
 const GENERATED_ROOT = './assets/safe-zone/vehicles-v2149/';
 const ASSET_CATALOG = Object.freeze({
@@ -34,11 +35,17 @@ const PLACEMENT_ROWS = [
 const CREEK = ETRANOM_WORLD_GEOMETRY_V2140.waterways.find(w => w.id === 'rootwood_creek');
 const PLACEMENTS = PLACEMENT_ROWS.map(row => {
   const spec = ASSET_CATALOG[row.asset];
+  // V2169 Stage 27: calibrate carts/wagons against the reduced player sprite.
+  // Visual dimensions and collision footprints use the same factor.
+  const vehicleScale = resolveVehicleSpriteScaleV2170(row.asset);
+  const width = Math.round(spec.width * vehicleScale);
+  const length = Math.round(spec.length * vehicleScale);
+  const height = Math.round(spec.height * vehicleScale);
   const gradient = sampleTerrainGradientV2146(row.x, row.y);
   const surface = resolveTerrainSurfaceV2146(row.x, row.y);
   const waterPlacement = spec.terrainClass === 'water';
   return Object.freeze({
-    ...row, ...spec,
+    ...row, ...spec, width, length, height,
     x: Number(row.x), y: Number(row.y),
     groundAnchor: waterPlacement ? 'hull-waterline-center' : 'wheel-contact-center',
     depth: Number(row.x) + Number(row.y),
@@ -49,7 +56,7 @@ const PLACEMENTS = PLACEMENT_ROWS.map(row => {
     surface: waterPlacement ? 'rootwood_creek-water-surface' : surface.material,
     terrain: Object.freeze({ biome: surface.biome, landform: surface.landform, elevation: surface.elevation, slopeClass: gradient.slopeClass }),
     transform: Object.freeze({ rotationRadians: Number(row.rotation) || 0, scale: 1, z: surface.elevation }),
-    footprint: Object.freeze({ length: spec.length, width: spec.width, height: spec.height, type: waterPlacement ? 'hull-footprint' : 'wheelbase-and-body-footprint' }),
+    footprint: Object.freeze({ length, width, height, type: waterPlacement ? 'hull-footprint' : 'wheelbase-and-body-footprint' }),
     mobilityContract: Object.freeze({ mode: spec.mobility, currentlyMoving: false, playerOperable: true, animalHarness: 'not-present-or-unhitched', motionRuntime: 'V2164-player-controlled-dynamic', waterRoute: waterPlacement ? row.waterwayId : null }),
     collision: Object.freeze({ policy: 'stage-19-live-oriented-footprint', type: waterPlacement ? 'boat-hull-and-shoreline' : 'vehicle-body-wheels-and-axle', blocksPlayer: true, renderRotation: 'shared-placement-rotation' }),
     navigation: Object.freeze({ policy: 'not-a-walkable-corridor', vehicleRouting: 'not-active', sourceRoadNetwork: 'V2142' }),

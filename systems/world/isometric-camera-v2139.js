@@ -1,13 +1,14 @@
-// ETRANOM V2139 — Stage 2/24: calibrated isometric camera rig.
+// ETRANOM V2169 — Stage 27: close-follow isometric camera calibration.
+// 2.8x framing is intentionally tight: typically one or two nearby buildings are visible.
 // Keeps the existing affine projection and authored sprite-plane contract intact.
 
 export const ISOMETRIC_CAMERA_V2139 = Object.freeze({
-  version: 2139,
+  version: 2169,
   mode: 'fixed-orthographic-isometric',
   projection: 'affine-isometric-2.5d',
   viewport: Object.freeze({ width: 720, height: 650 }),
   anchor: Object.freeze({ x: 360, y: 325 }),
-  zoom: 1,
+  zoom: 2.8,
   rotationRadians: 0,
   follow: Object.freeze({ smoothing: 10, maxDeltaSeconds: 0.08 }),
   boundsPolicy: 'legacy-camera-bounds-preserved',
@@ -58,9 +59,9 @@ export function auditIsometricCameraV2139() {
   const issues = [];
   if (ISOMETRIC_CAMERA_V2139.mode !== 'fixed-orthographic-isometric') issues.push('camera_mode_mismatch');
   if (ISOMETRIC_CAMERA_V2139.viewport.width <= 0 || ISOMETRIC_CAMERA_V2139.viewport.height <= 0) issues.push('invalid_viewport');
-  if (ISOMETRIC_CAMERA_V2139.zoom !== 1) issues.push('unexpected_zoom_change');
+  if (!(ISOMETRIC_CAMERA_V2139.zoom >= 2.6 && ISOMETRIC_CAMERA_V2139.zoom <= 3.0)) issues.push('camera_zoom_out_of_calibration_range');
   if (ISOMETRIC_CAMERA_V2139.follow.smoothing < 0) issues.push('invalid_smoothing');
-  return Object.freeze({ ok: issues.length === 0, version: 2139, mode: ISOMETRIC_CAMERA_V2139.mode, issues: Object.freeze(issues) });
+  return Object.freeze({ ok: issues.length === 0, version: 2169, mode: ISOMETRIC_CAMERA_V2139.mode, issues: Object.freeze(issues) });
 }
 
 if (typeof window !== 'undefined') {
