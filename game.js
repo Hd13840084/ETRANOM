@@ -73,13 +73,25 @@ import { getCharacterMotionPoseV2134 } from './systems/characters/character-moti
 import { getCharacterPortraitV2135, getCharacterPortraitForNameV2135 } from './systems/characters/character-portrait-bindings-v2135.js?v=2135';
 // V2126: expose the game entry point at module scope before authentication calls it.
 window.run = run;
-window.__ETRANOM_GAME_BUILD__ = '2166-stage24-world-validation';
+window.__ETRANOM_GAME_BUILD__ = '2167-stage25-comprehensive-repair-diagnostics';
 window.ETRANOM_VISUAL_PHYSICAL_CONSISTENCY_V2162 = ETRANOM_VISUAL_PHYSICAL_CONSISTENCY_V2162;
 window.ETRANOM_WEATHER_V2157 = ETRANOM_WEATHER_V2157;
 window.ETRANOM_ENVIRONMENT_AUDIO_V2160 = ETRANOM_ENVIRONMENT_AUDIO_V2160;
+window.__ETRANOM_DIAGNOSTICS__?.setStage('بررسی و نصب سیستم صدای محیط');
 window.ETRANOM_ENVIRONMENT_AUDIO_AUDIT_V2160 = auditEnvironmentAudioV2160();
-if (!window.ETRANOM_ENVIRONMENT_AUDIO_AUDIT_V2160.ok) console.error('[ETRANOM] Environment audio audit failed:', window.ETRANOM_ENVIRONMENT_AUDIO_AUDIT_V2160);
-ETRANOM_ENVIRONMENT_AUDIO_V2160.mount(document.getElementById('etr-game-root'));
+if (!window.ETRANOM_ENVIRONMENT_AUDIO_AUDIT_V2160.ok) {
+    console.error('[ETRANOM] Environment audio audit failed:', window.ETRANOM_ENVIRONMENT_AUDIO_AUDIT_V2160);
+    window.__ETRANOM_DIAGNOSTICS__?.report?.('بررسی سیستم صدای محیط هشدار داده است', window.ETRANOM_ENVIRONMENT_AUDIO_AUDIT_V2160);
+}
+try {
+    const audioMountRoot = document.getElementById('etr-game-root');
+    if (!audioMountRoot) throw new Error('عنصر #etr-game-root پیش از نصب سیستم صدای محیط ساخته نشده است.');
+    ETRANOM_ENVIRONMENT_AUDIO_V2160.mount(audioMountRoot);
+    window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('environment-audio:mounted', { rootConnected: audioMountRoot.isConnected, children: audioMountRoot.childElementCount });
+} catch (audioMountError) {
+    window.__ETRANOM_DIAGNOSTICS__?.report?.('نصب سیستم صدای محیط با خطا روبه‌رو شد', audioMountError?.stack || audioMountError);
+    throw audioMountError;
+}
 window.ETRANOM_WEATHER_AUDIT_V2157 = auditWeatherSystemV2157();
 if (!window.ETRANOM_WEATHER_AUDIT_V2157.ok) console.error('[ETRANOM] Weather audit failed:', window.ETRANOM_WEATHER_AUDIT_V2157);
 window.ETRANOM_DEPTH_SORTING_V2153 = ETRANOM_DEPTH_SORTING_V2153;
@@ -122,6 +134,7 @@ if (!window.ETRANOM_WORLD_GEOMETRY_AUDIT_V2140.ok) console.error('[ETRANOM] Worl
 // ETRANOM: text-first dark fantasy RPG. Narrative is primary; game rules remain deterministic.
 async function run(mode) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+    window.__ETRANOM_DIAGNOSTICS__?.setStage('ورود به تابع اصلی موتور بازی؛ آماده‌سازی وضعیت و رابط');
     let css = ""; // Shared with the stylesheet assembly after render().
     const root = document.getElementById('etr-game-root') || document.body, api = window.lib || {};
     // V2126 live startup diagnostics: attach to the actual game mount root.
@@ -13057,18 +13070,23 @@ async function run(mode) {
         document.head.appendChild(v121ScrollRepairStyle);
     } // End bindGameWorld(). The nested renderer is exported through the outer closure below.
     // Initialize the UI binder once so it assigns the renderer bridge before startup.
+    window.__ETRANOM_DIAGNOSTICS__?.setStage('اتصال رویدادهای رابط و آماده‌سازی رندرکننده جهان');
     bindGameWorld();
+    window.__ETRANOM_DIAGNOSTICS__?.traceEvent?.('game-world-binder:ready', { rootChildren: root.childElementCount, rootHtmlLength: root.innerHTML.length, rendererAvailable: typeof render === 'function' });
     if (mode === "edit") {
             renderEdit();
             return true;
         }
         installPrimaryNavigationRouter();
         __etrTrace('run:entry', { mode, build: window.__ETRANOM_GAME_BUILD__, rootConnected: !!root.isConnected });
-        window.__ETRANOM_DIAGNOSTICS__?.setStage('ساخت رابط اولیه و شروع بازیابی ذخیره');
+        window.__ETRANOM_DIAGNOSTICS__?.setStage('ساخت پوسته اولیه بازی و نمایش وضعیت بارگذاری');
         try {
             // Paint a visible loading shell immediately, then wait for the real save load.
             render();
+            __etrTrace('startup:initial-shell-rendered', __etrRenderSnapshot());
+            window.__ETRANOM_DIAGNOSTICS__?.setStage('دریافت و اعتبارسنجی ذخیره بازیکن از حافظه/سرور');
             await load();
+            window.__ETRANOM_DIAGNOSTICS__?.setStage('ذخیره بارگذاری شد؛ تکمیل رندر و بررسی صفحه');
             await new Promise(resolve => {
                 if (typeof requestAnimationFrame === 'function') requestAnimationFrame(() => requestAnimationFrame(resolve));
                 else setTimeout(resolve, 0);
