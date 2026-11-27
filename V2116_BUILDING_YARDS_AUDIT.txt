@@ -1,0 +1,24 @@
+ETRANOM V2116 — BUILDING YARDS / OUTDOOR COURTYARDS
+Base: V2115 OUTDOOR VILLAGE LIFE
+Scope: visual-only bespoke exterior work-yard dressing for the 27 safe-zone buildings.
+
+Implemented:
+- Added systems/safe-zone/building-yards-v2116.js.
+- Added 27 building-ID anchored yard layouts (12 Ash City, 5 Farmland, 5 Rootwood, 5 Ironstone).
+- Added occupation-specific decorative details: market crates, arena standards, inn barrels/benches, smithy forge/anvil tools, guild pennants, alchemy vessels, clinic herb beds, guard spears, temple brazier, stable fencing/feed, granary grain sacks, mill/bakery props, farm/herb beds, livestock pen, lumber stacks, apiary boxes, mine tools/ore, smelter forge, stone blocks, miners' stores and cartwright timber.
+- Yards are small, deterministic, camera-aware and sorted by world Y.
+- Rendered after building sprites and before ground dressing / ambient residents so props sit in the foreground of the building footprint and residents remain visible.
+- Updated game module cache token to 2116.
+
+Safety boundary:
+- No building POI coordinates/IDs altered.
+- No collision, movement, pathfinding, interaction, NPC service, economy, inventory, quest, combat, save, auth or network logic changed.
+- No existing assets or systems removed.
+
+Validation:
+- New module syntax: PASS.
+- game.js syntax: PASS.
+- Safe-zone modules syntax: checked during packaging.
+- 27 yard definitions vs 27 building IDs: PASS.
+- ZIP integrity: checked after packaging.
+- Browser/mobile visual test: NOT performed; actual spacing/occlusion needs in-game review.

@@ -1,0 +1,17 @@
+{
+  "version": "2066.0.0",
+  "scope": "local_and_remote_player_map_rendering",
+  "specializations": 40,
+  "atlasFiles": 1280,
+  "directions": 8,
+  "animationStates": ["idle", "walk", "run", "interact"],
+  "localPlayerBinding": true,
+  "remotePlayerBinding": true,
+  "directionalAtlasIsNotMirrored": true,
+  "legacyFallbackPreserved": true,
+  "portraitPolicy": "only_8_warrior_and_wizard_specializations",
+  "testsPassed": 13,
+  "testsFailed": 0,
+  "artStatus": "atlas_manifest_artwork_pending; full-body prototype art exists for 32 non-portrait specializations",
+  "deployed": false
+}
