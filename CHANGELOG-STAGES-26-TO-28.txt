@@ -1,5 +1,6 @@
-ETRANOM V2170 — cumulative changed-files patch for stages 26-28
-- Includes game.js, index.html, isometric camera, vehicle system, scale audit report.
-- Includes world-scale-calibration-v2170.js, required by game.js static imports.
-- This is a changed-files-only patch, not a complete game archive.
-- Hotfix: restores the omitted V2170 world-scale calibration ES module dependency.
+ETRANOM cumulative changed files: stages 26–28 + V2171 hotfix
+- Stage 26: startup/world scale repair files retained.
+- Stage 27: isometric camera and vehicle scale repair files retained.
+- Stage 28: world-scale calibration module and audit report retained.
+- V2171: player-state-dependent world runtime initialization deferred until save restoration; new-game paths initialize it; diagnostic report handler fixed; cache-busting build updated.
+Only changed/added files are included. This is not a full game distribution.
