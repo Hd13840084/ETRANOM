@@ -1,0 +1,16 @@
+{
+  "version": "V2137",
+  "style": "dark-fantasy-isometric",
+  "format": "individual RGBA PNG sprites",
+  "source": "newly generated 4x3 authored prop sheet, individually cropped",
+  "sprites": [
+    "lantern_post.png", "stone_bridge.png", "roofed_well.png", "direction_sign.png",
+    "market_cart.png", "stone_water_trough.png", "wayside_shrine.png", "notice_board.png",
+    "root_stump.png", "wildflower_patch.png", "firewood_rack.png", "rain_barrel.png"
+  ],
+  "runtimeModule": "systems/safe-zone/authored-props-v2137.js",
+  "placements": 24,
+  "settlements": ["ashen_city", "farmland", "rootwood", "ironstone"],
+  "rendering": "world-Y painter order with player-depth foreground pass",
+  "gameplayChanges": false
+}

@@ -1,0 +1,217 @@
+{
+  "version": "V2103",
+  "roomSceneSprites": [
+    {
+      "file": "rooms/room_01.png",
+      "width": 423,
+      "height": 240
+    },
+    {
+      "file": "rooms/room_02.png",
+      "width": 428,
+      "height": 240
+    },
+    {
+      "file": "rooms/room_03.png",
+      "width": 428,
+      "height": 240
+    },
+    {
+      "file": "rooms/room_04.png",
+      "width": 423,
+      "height": 240
+    },
+    {
+      "file": "rooms/room_05.png",
+      "width": 423,
+      "height": 245
+    },
+    {
+      "file": "rooms/room_06.png",
+      "width": 428,
+      "height": 245
+    },
+    {
+      "file": "rooms/room_07.png",
+      "width": 428,
+      "height": 245
+    },
+    {
+      "file": "rooms/room_08.png",
+      "width": 423,
+      "height": 245
+    },
+    {
+      "file": "rooms/room_09.png",
+      "width": 423,
+      "height": 245
+    },
+    {
+      "file": "rooms/room_10.png",
+      "width": 428,
+      "height": 245
+    },
+    {
+      "file": "rooms/room_11.png",
+      "width": 428,
+      "height": 245
+    },
+    {
+      "file": "rooms/room_12.png",
+      "width": 423,
+      "height": 245
+    },
+    {
+      "file": "rooms/room_13.png",
+      "width": 423,
+      "height": 241
+    },
+    {
+      "file": "rooms/room_14.png",
+      "width": 428,
+      "height": 241
+    },
+    {
+      "file": "rooms/room_15.png",
+      "width": 428,
+      "height": 241
+    },
+    {
+      "file": "rooms/room_16.png",
+      "width": 423,
+      "height": 241
+    }
+  ],
+  "npcCharacterSprites": [
+    {
+      "file": "npcs/npc_01.png",
+      "width": 73,
+      "height": 156
+    },
+    {
+      "file": "npcs/npc_02.png",
+      "width": 78,
+      "height": 156
+    },
+    {
+      "file": "npcs/npc_03.png",
+      "width": 71,
+      "height": 156
+    },
+    {
+      "file": "npcs/npc_04.png",
+      "width": 86,
+      "height": 156
+    },
+    {
+      "file": "npcs/npc_05.png",
+      "width": 60,
+      "height": 152
+    },
+    {
+      "file": "npcs/npc_06.png",
+      "width": 66,
+      "height": 153
+    },
+    {
+      "file": "npcs/npc_07.png",
+      "width": 57,
+      "height": 146
+    },
+    {
+      "file": "npcs/npc_08.png",
+      "width": 63,
+      "height": 154
+    },
+    {
+      "file": "npcs/npc_09.png",
+      "width": 76,
+      "height": 163
+    },
+    {
+      "file": "npcs/npc_10.png",
+      "width": 147,
+      "height": 151
+    },
+    {
+      "file": "npcs/npc_11.png",
+      "width": 70,
+      "height": 148
+    },
+    {
+      "file": "npcs/npc_12.png",
+      "width": 60,
+      "height": 162
+    },
+    {
+      "file": "npcs/npc_13.png",
+      "width": 62,
+      "height": 141
+    },
+    {
+      "file": "npcs/npc_14.png",
+      "width": 60,
+      "height": 138
+    },
+    {
+      "file": "npcs/npc_15.png",
+      "width": 56,
+      "height": 138
+    },
+    {
+      "file": "npcs/npc_16.png",
+      "width": 61,
+      "height": 148
+    },
+    {
+      "file": "npcs/npc_17.png",
+      "width": 89,
+      "height": 148
+    },
+    {
+      "file": "npcs/npc_18.png",
+      "width": 58,
+      "height": 142
+    },
+    {
+      "file": "npcs/npc_19.png",
+      "width": 68,
+      "height": 133
+    },
+    {
+      "file": "npcs/npc_20.png",
+      "width": 64,
+      "height": 144
+    },
+    {
+      "file": "npcs/npc_21.png",
+      "width": 84,
+      "height": 146
+    },
+    {
+      "file": "npcs/npc_22.png",
+      "width": 59,
+      "height": 144
+    },
+    {
+      "file": "npcs/npc_23.png",
+      "width": 64,
+      "height": 204
+    },
+    {
+      "file": "npcs/npc_24.png",
+      "width": 64,
+      "height": 204
+    }
+  ],
+  "propsAtlas": "interior-props-atlas.png",
+  "buildingRoomAssignments": "systems/safe-zone/interior-renderer-v2036.js",
+  "notes": "16 authored room-scene panels are mapped across the 27 existing buildings; 22 distinct NPC character crops are assigned deterministically. The props atlas remains a source atlas; individual prop cutouts are not yet separately mapped.",
+  "visualEnhancements": {
+    "gameplayChanges": false,
+    "interiorDetailsPerBuilding": 12,
+    "roleSpecificDressing": true,
+    "npcWorkAnimationAliases": true,
+    "movementContractChanged": false
+  }
+}

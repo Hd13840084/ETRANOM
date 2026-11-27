@@ -1,0 +1,107 @@
+{
+  "version": "V1986",
+  "rank": "rare",
+  "count": 20,
+  "portraits": [
+    {
+      "id": "dusk_duelist",
+      "name": "شمشیرزن گرگ‌ومیش",
+      "path": "assets/necromancer/companions/rare/dusk_duelist.webp"
+    },
+    {
+      "id": "tide_lich",
+      "name": "لیچ جزرومد",
+      "path": "assets/necromancer/companions/rare/tide_lich.webp"
+    },
+    {
+      "id": "three_crowned_hellhound",
+      "name": "سگ دوزخی سه‌تاج",
+      "path": "assets/necromancer/companions/rare/three_crowned_hellhound.webp"
+    },
+    {
+      "id": "anubis_judicator",
+      "name": "داور آنوبیسی",
+      "path": "assets/necromancer/companions/rare/anubis_judicator.webp"
+    },
+    {
+      "id": "plague_vesper",
+      "name": "طاعون‌خوان شامگاه",
+      "path": "assets/necromancer/companions/rare/plague_vesper.webp"
+    },
+    {
+      "id": "spectral_stag",
+      "name": "گوزن شبح‌تاج",
+      "path": "assets/necromancer/companions/rare/spectral_stag.webp"
+    },
+    {
+      "id": "paper_umbrella_yokai",
+      "name": "یوکای چترکاغذی",
+      "path": "assets/necromancer/companions/rare/paper_umbrella_yokai.webp"
+    },
+    {
+      "id": "serpent_crypt_priest",
+      "name": "کاهن مارگور",
+      "path": "assets/necromancer/companions/rare/serpent_crypt_priest.webp"
+    },
+    {
+      "id": "obsidian_bat_matriarch",
+      "name": "مادرخفاش ابسیدین",
+      "path": "assets/necromancer/companions/rare/obsidian_bat_matriarch.webp"
+    },
+    {
+      "id": "moss_colossus",
+      "name": "غول خزه‌پوش",
+      "path": "assets/necromancer/companions/rare/moss_colossus.webp"
+    },
+    {
+      "id": "scarab_soul_knight",
+      "name": "شوالیه سوسک‌روح",
+      "path": "assets/necromancer/companions/rare/scarab_soul_knight.webp"
+    },
+    {
+      "id": "ash_phoenix_wraith",
+      "name": "ققنوس خاکسترزاد",
+      "path": "assets/necromancer/companions/rare/ash_phoenix_wraith.webp"
+    },
+    {
+      "id": "bone_cantor",
+      "name": "سرودخوان مهره‌ها",
+      "path": "assets/necromancer/companions/rare/bone_cantor.webp"
+    },
+    {
+      "id": "abyss_centipede",
+      "name": "هزارپای مغاک",
+      "path": "assets/necromancer/companions/rare/abyss_centipede.webp"
+    },
+    {
+      "id": "hourglass_sand_djinn",
+      "name": "جن ساعت‌شکن",
+      "path": "assets/necromancer/companions/rare/hourglass_sand_djinn.webp"
+    },
+    {
+      "id": "gargoyle_penitent",
+      "name": "گَرگویل توبه‌کار",
+      "path": "assets/necromancer/companions/rare/gargoyle_penitent.webp"
+    },
+    {
+      "id": "ninefold_foxshade",
+      "name": "روباه نه‌سایه",
+      "path": "assets/necromancer/companions/rare/ninefold_foxshade.webp"
+    },
+    {
+      "id": "deep_iron_diver",
+      "name": "غواص آهن‌ژرف",
+      "path": "assets/necromancer/companions/rare/deep_iron_diver.webp"
+    },
+    {
+      "id": "thorn_crown_matron",
+      "name": "مادر تاج‌خار",
+      "path": "assets/necromancer/companions/rare/thorn_crown_matron.webp"
+    },
+    {
+      "id": "raven_of_last_oath",
+      "name": "کلاغ سوگند واپسین",
+      "path": "assets/necromancer/companions/rare/raven_of_last_oath.webp"
+    }
+  ]
+}
