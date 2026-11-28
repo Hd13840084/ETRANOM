@@ -294,23 +294,30 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     const steps=diag.steps.slice(-5).map((x,i)=>'<div style=\"opacity:'+(i===diag.steps.slice(-5).length-1?'1':'.62')+';font-size:10px\">'+(i===diag.steps.slice(-5).length-1?'▸':'·')+' '+x.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div>').join('');
     box.innerHTML='<div style=\"display:flex;justify-content:space-between;gap:10px;align-items:center\"><b style=\"color:#e5c68c;font-size:13px\">ETRANOM · وضعیت راه‌اندازی</b><span style=\"font-size:10px;color:#c6b9a5\">'+elapsed+' ثانیه</span></div><div style=\"height:6px;background:#403448;border-radius:8px;overflow:hidden;margin:8px 0\"><i style=\"display:block;width:'+pct+'%;height:100%;background:linear-gradient(90deg,#9b7048,#e2c38a);transition:width .25s\"></i></div><div style=\"font-weight:bold;color:#f2d9aa;margin-bottom:3px\">'+(message||diag.stage).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div><div style=\"color:#d2c5b4\">مرحله فعلی: '+diag.stage.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div>'+steps+(diag.completed?'<div style=\"margin-top:6px;color:#d8c99f\">اگر محیط بازی هنوز سیاه است، این پنل را باز بگذار و گزارش را ارسال کن.</div>':'');
   };
-  const normalizeResource=value=>{try{const u=new URL(String(value),location.href);return u.origin+u.pathname;}catch(_){return String(value||'').split('?')[0].split('#')[0];}};
-  const show=(kind,detail,options={})=>{
-    const raw=safeText(detail);
-    const key=options.key||((kind==='منبع/فایل بارگذاری‌نشده')?kind+'|'+normalizeResource(raw):kind+'|'+raw.slice(0,900));
-    const existing=diag.events.find(x=>x.key===key);
-    if(existing){existing.count=(existing.count||1)+1;existing.time=new Date().toLocaleTimeString();existing.detail=raw||existing.detail;}
-    else{diag.events.push({key,time:new Date().toLocaleTimeString(),stage:diag.stage,kind,detail:raw,count:1});if(diag.events.length>24)diag.events.shift();}
-    const item=diag.events.find(x=>x.key===key);
-    console.error('[ETRANOM DIAGNOSTIC]',{time:item.time,stage:item.stage,kind:item.kind,detail:item.detail,repeats:item.count});
-    if(!diag.panel){
-      const box=document.createElement('section');box.id='etranom-diagnostic-panel';
-      box.style.cssText='position:fixed;z-index:2147483647;left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));max-height:30vh;overflow:auto;background:#190d12;color:#ffe8df;border:2px solid #c34c43;border-radius:10px;padding:9px 11px;font:11px/1.65 Tahoma,Arial,sans-serif;white-space:pre-wrap;box-shadow:0 4px 24px #000;box-sizing:border-box';
-      document.body.appendChild(box);diag.panel=box;
+  const classifyError=(kind,meta={})=>{
+    const tag=String(meta.tag||'').toLowerCase(),url=String(meta.url||'').toLowerCase(),text=(String(kind)+' '+url+' '+tag).toLowerCase();
+    if(tag==='link'||url.endsWith('.css')||text.includes('css')||text.includes('stylesheet'))return 'CSS';
+    if(tag==='script'||url.endsWith('.js')||text.includes('script')||text.includes('module'))return 'SCRIPT';
+    return 'RUNTIME';
+  };
+  const renderErrorPanel=()=>{
+    if(!diag.panel)return;
+    const groups=diag.events.slice().reverse();
+    const escHtml=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const rows=groups.map((x,i)=>'<details '+(i===0?'open':'')+' style="margin:7px 0;padding:8px;border:1px solid #70464a;border-radius:7px;background:#24151b"><summary style="cursor:pointer;color:#ffe2d6;font-weight:bold">['+escHtml(x.category)+'] '+escHtml(x.kind)+' <span style="color:#e7b7a9">×'+x.count+'</span><small style="display:block;color:#c8a9a0;font-weight:normal">'+escHtml(x.time)+' · '+escHtml(x.stage)+'</small></summary><pre style="direction:ltr;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;color:#f7e8e3;font:11px/1.65 monospace;margin:8px 0 0">'+escHtml(x.detail)+'</pre></details>').join('');
+    diag.panel.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><b>ETRANOM — گزارش فنی خطا</b><span>'+diag.events.length+' خطای یکتا</span></div><div style="display:flex;gap:6px;margin:8px 0;flex-wrap:wrap"><button data-diag-copy style="padding:7px 10px">کپی گزارش کامل</button><button data-diag-clear style="padding:7px 10px">پاک‌کردن گزارش</button><button data-diag-close style="padding:7px 10px">بستن</button></div><div style="font-size:11px;color:#e5c6bb;margin-bottom:8px">هر مورد را باز کن تا URL، خط/ستون، پیام اصلی، جزئیات منبع و Stack Trace را ببینی. خطاهای تکراری ادغام می‌شوند و شمارنده دارند.</div>'+rows;
+  };
+  const show=(kind,detail,meta={})=>{
+    const category=classifyError(kind,meta),clean=safeText(detail),fingerprint=[category,kind,meta.url||'',clean].join('|');
+    const existing=diag.events.find(x=>x.fingerprint===fingerprint);
+    if(existing){existing.count++;existing.lastTime=new Date().toLocaleTimeString();existing.detail=clean;}
+    else{diag.events.push({time:new Date().toLocaleTimeString(),lastTime:null,stage:diag.stage,kind,category,detail:clean,count:1,fingerprint,meta});if(diag.events.length>60)diag.events.shift();}
+    const item=existing||diag.events[diag.events.length-1];
+    console.error('[ETRANOM DIAGNOSTIC]',item);
+    if(!diag.panel){const box=document.createElement('section');box.id='etranom-diagnostic-panel';box.dir='rtl';box.style.cssText='position:fixed;z-index:2147483647;left:8px;right:8px;bottom:8px;max-height:48vh;overflow:auto;background:#190d12;color:#ffe8df;border:2px solid #c34c43;border-radius:10px;padding:10px;font:12px/1.7 Tahoma,monospace;box-shadow:0 4px 24px #000';document.body.appendChild(box);diag.panel=box;
+      box.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-diag-close')){box.style.display='none';return;}if(b.hasAttribute('data-diag-clear')){diag.events.length=0;renderErrorPanel();return;}if(b.hasAttribute('data-diag-copy')){const report=JSON.stringify({url:location.href,userAgent:navigator.userAgent,time:new Date().toISOString(),stage:diag.stage,errors:diag.events,steps:diag.steps,trace:diag.trace,mount:diag.mountState},null,2);try{await navigator.clipboard.writeText(report);b.textContent='گزارش کپی شد ✓';}catch(_){const t=document.createElement('textarea');t.value=report;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();b.textContent='گزارش کپی شد ✓';}}});
     }
-    diag.panel.style.display='block';
-    const rows=diag.events.slice(-8).map(x=>'['+x.time+'] '+x.kind+(x.count>1?'  ×'+x.count:'')+'\n'+x.detail).join('\n\n');
-    diag.panel.textContent='ETRANOM — گزارش خطا ('+diag.events.reduce((n,x)=>n+(x.count||1),0)+' رخداد، '+diag.events.length+' مورد یکتا)\nمرحله: '+diag.stage+'\n\n'+rows;
+    diag.panel.style.display='block';renderErrorPanel();
   };
   const traceText=value=>{
     try{return safeText(typeof value==='string'?value:JSON.stringify(value,null,2));}
@@ -388,23 +395,28 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     },
     getEvents:()=>diag.events.slice(),getSteps:()=>diag.steps.slice()
   };
+  const scriptInfo=el=>{
+    const src=el?.src||el?.getAttribute?.('src')||'',type=el?.type||el?.getAttribute?.('type')||'classic';
+    const text=String(el?.textContent||''),imports=[...text.matchAll(/(?:import\s+(?:[^'";]*?\s+from\s*)?|import\s*\()\s*['"]([^'"]+)['"]/g)].map(m=>m[1]);
+    const index=[...document.scripts].indexOf(el)+1;
+    return {tag:el?.tagName||'',url:src||location.href+'#inline-script-'+index,type,async:!!el?.async,defer:!!el?.defer,scriptIndex:index,inlineLength:text.length,inlinePreview:src?'(external script)':text.slice(0,1800),staticImports:imports,html:el?.outerHTML?.slice(0,2400)||''};
+  };
   window.addEventListener('error',event=>{
     const target=event.target;
     if(target && target!==window){
-      const source=target.currentSrc||target.src||target.href||'';
-      const tag=(target.tagName||'RESOURCE').toUpperCase();
-      const browserDetail=[event.message||'',event.filename||'',event.lineno?'line '+event.lineno:'',event.colno?'column '+event.colno:'',event.error?.stack||''].filter(Boolean).join(' | ');
-      const elementDetail=source||('عنصر '+tag+(target.id?' #'+target.id:'')+(target.type?' type='+target.type:'')+' | '+(target.outerHTML||'').slice(0,900));
-      const kind=source?'منبع/فایل بارگذاری‌نشده':'خطای بارگذاری یا اجرای '+tag;
-      show(kind,[elementDetail,browserDetail].filter(Boolean).join(' | ')||'مرورگر خطای اسکریپت را بدون جزئیات برگرداند.',{key:kind+'|'+(source?normalizeResource(source):elementDetail)});
-      return;
+      const tag=String(target.tagName||'').toUpperCase(),url=target.src||target.href||target.getAttribute?.('src')||target.getAttribute?.('href')||'';
+      const meta=tag==='SCRIPT'?scriptInfo(target):{tag,url,rel:target.rel||'',as:target.as||'',type:target.type||'',html:target.outerHTML?.slice(0,2400)||''};
+      const perf=performance.getEntriesByType('resource').filter(x=>url&&x.name===url).slice(-2).map(x=>({name:x.name,initiatorType:x.initiatorType,duration:x.duration,transferSize:x.transferSize,encodedBodySize:x.encodedBodySize}));
+      show(tag==='LINK'?'بارگذاری فایل CSS ناموفق':tag==='SCRIPT'?'بارگذاری فایل/ماژول SCRIPT ناموفق':'بارگذاری منبع ناموفق',JSON.stringify({message:'مرورگر رویداد خطای منبع صادر کرد؛ جزئیات عنصر و آدرس واقعی در ادامه است.',...meta,performance:perf},null,2),meta);return;
     }
-    const detail=[event.message||'خطای ناشناخته',event.filename||'',event.lineno?'line '+event.lineno:'',event.colno?'column '+event.colno:'',event.error?.stack||''].filter(Boolean).join(' | ');
-    show('خطای JavaScript',detail);
+    const err=event.error,meta={tag:'window',url:event.filename||''};
+    show('خطای JavaScript',JSON.stringify({message:event.message||'خطای ناشناخته',filename:event.filename||'',line:event.lineno||0,column:event.colno||0,stack:err?.stack||null,errorName:err?.name||null,errorMessage:err?.message||null,sourceLine:event.lineno?('برای مشاهده خط '+event.lineno+' در فایل '+event.filename):'خط منبع توسط مرورگر گزارش نشد'},null,2),meta);
   },true);
   window.addEventListener('unhandledrejection',event=>{
-    const reason=event?.reason; show('Promise ردشده',reason?.stack||reason?.message||reason);
+    const reason=event?.reason,meta={tag:'promise',url:reason?.moduleURL||''};
+    show('Promise ردشده / خطای بارگذاری ماژول',JSON.stringify({name:reason?.name||typeof reason,message:reason?.message||String(reason),stack:reason?.stack||null,moduleURL:reason?.moduleURL||null,cause:reason?.cause?.stack||reason?.cause?.message||null,reason:String(reason)},null,2),meta);
   });
+  window.addEventListener('rejectionhandled',event=>{const r=event.reason;show('Promise بعداً مدیریت شد',JSON.stringify({message:r?.message||String(r),stack:r?.stack||null},null,2),{tag:'promise'});});
 })();
 </script>
 <script type="module">import { isSystemPlayerName, getPlayerDisplayName, syncPlayerProfile } from './systems/online/player-identity.js?v=1642';
