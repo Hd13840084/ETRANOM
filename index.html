@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<!-- ETRANOM-SCRIPT-DIAGNOSTICS-V3-20261128 -->
+<!-- ETRANOM-SCRIPT-SOURCE-DIAGNOSTICS-V4-20261128 -->
 <!-- ETRANOM-V2177 detailed module graph diagnostics v4 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -307,7 +307,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
       document.body.appendChild(box); diag.panel=box;
     }
     diag.panel.style.display='block';
-    diag.panel.textContent='ETRANOM — گزارش خطای زنده [نسخه تشخیصی V3]\nمرحله: '+diag.stage+'\n'+diag.events.slice(-10).map(x=>'['+x.time+'] '+x.kind+'\n'+x.detail).join('\n\n');
+    diag.panel.textContent='ETRANOM — گزارش خطای زنده [نسخه تشخیصی V4]\nمرحله: '+diag.stage+'\n'+diag.events.slice(-10).map(x=>'['+x.time+'] '+x.kind+'\n'+x.detail).join('\n\n');
     const copy=document.createElement('button');copy.type='button';copy.textContent='کپی گزارش کامل فنی';copy.style.cssText='position:sticky;bottom:0;display:block;margin:8px 0 0 auto;padding:8px 12px;border:1px solid #c9a46c;border-radius:8px;background:#30243a;color:#fff0d4;font:12px Tahoma';copy.addEventListener('click',async()=>{const report=buildDiagnosticReport();try{await navigator.clipboard.writeText(report);copy.textContent='گزارش کپی شد ✓'}catch(_){const area=document.createElement('textarea');area.value=report;area.style.cssText='position:fixed;opacity:0';document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();copy.textContent=ok?'گزارش کپی شد ✓':'کپی ناموفق بود'}});diag.panel.appendChild(copy);
   };
   const traceText=value=>{
@@ -472,7 +472,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   };
   const buildDiagnosticReport=()=>{
     const resources=performance.getEntriesByType('resource').slice(-250).map(r=>({url:r.name,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,decodedBodySize:r.decodedBodySize||0,type:r.initiatorType}));
-    return safeText(JSON.stringify({app:'ETRANOM SCRIPT DIAGNOSTICS V3',generatedAt:new Date().toISOString(),scriptInventory:Array.from(document.scripts).map((s,i)=>({index:i+1,type:s.type||'classic',src:s.src||null,id:s.id||null,async:!!s.async,defer:!!s.defer,inlineLength:s.src?0:(s.textContent||'').length,inlineStart:s.src?null:(s.textContent||'').trim().slice(0,240)})),page:location.href,userAgent:navigator.userAgent,online:navigator.onLine,readyState:document.readyState,stage:diag.stage,authBridgeReady:!!window.__ETRANOM_AUTH_ACTIONS__?.ready,bootAgeMs:Date.now()-diag.bootStartedAt,authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,moduleAudit:diag.moduleAudit,moduleScriptError:diag.moduleScriptError||null,events:diag.events,resources},null,2));
+    return safeText(JSON.stringify({app:'ETRANOM SCRIPT SOURCE DIAGNOSTICS V4',generatedAt:new Date().toISOString(),scriptInventory:Array.from(document.scripts).map((s,i)=>({index:i+1,type:s.type||'classic',src:s.src||null,id:s.id||null,async:!!s.async,defer:!!s.defer,inlineLength:s.src?0:(s.textContent||'').length,inlineStart:s.src?null:(s.textContent||'').trim().slice(0,240)})),page:location.href,userAgent:navigator.userAgent,online:navigator.onLine,readyState:document.readyState,stage:diag.stage,authBridgeReady:!!window.__ETRANOM_AUTH_ACTIONS__?.ready,bootAgeMs:Date.now()-diag.bootStartedAt,authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,moduleAudit:diag.moduleAudit,moduleScriptError:diag.moduleScriptError||null,events:diag.events,resources},null,2));
   };
   window.__ETRANOM_DIAGNOSTICS__={
     begin:()=>{diag.startedAt=Date.now();diag.bootStartedAt=diag.bootStartedAt||diag.startedAt;diag.completed=false;diag.steps=[];diag.stage='شروع آماده‌سازی بازی';paintStatus('در حال آماده‌سازی جهان بازی…');},
@@ -502,6 +502,12 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     const isScript=String(target?.tagName||'').toUpperCase()==='SCRIPT';
     const info={
       eventType:'resource-or-script-error',
+      // A browser reports failed module imports against the owning SCRIPT element;
+      // expose the actual imported source(s), not the unhelpful word SCRIPT.
+      sourceKind:isScript?(target?.src?'external script source':'inline script/module source'):('resource '+String(target?.tagName||'unknown').toLowerCase()),
+      sourceURL:target?.src||null,
+      sourcePage:location.href,
+      sourceImports:isScript&&!target?.src?moduleSpecifierList(target?.textContent||'').map((x,i)=>({index:i+1,kind:x.kind,specifier:x.specifier,resolvedURL:(()=>{try{return new URL(x.specifier,document.baseURI).href}catch(_){return null}})()})):[],
       tag:target?.tagName||null,
       scriptIndex:isScript?index+1:null,
       scriptCount:scripts.length,
@@ -544,7 +550,8 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     if(target && target!==window){
       describeScriptFailure(target,event).then(info=>{
         const isScript=String(target?.tagName||'').toUpperCase()==='SCRIPT';
-        show(isScript?'خطای بارگذاری SCRIPT — جزئیات تگ، URL و زنجیره import': 'منبع/فایل بارگذاری‌نشده — جزئیات کامل',info);
+        const actualSource=info.sourceURL||info.sourceImports?.map(x=>x.resolvedURL||x.specifier).filter(Boolean).join(' | ')||'منبع inline در index.html؛ جزئیات importها در گزارش کامل آمده است';
+        show(isScript?'منبع اسکریپت بارگذاری‌نشده: '+actualSource: 'منبع/فایل بارگذاری‌نشده: '+(target?.currentSrc||target?.src||target?.href||target?.getAttribute?.('src')||target?.getAttribute?.('href')||target?.tagName||'نامشخص'),info);
       }).catch(error=>show('خطا هنگام جمع‌آوری جزئیات اسکریپت',{message:error?.message||String(error),stack:error?.stack||null,target:target?.outerHTML||String(target)}));
       return;
     }
