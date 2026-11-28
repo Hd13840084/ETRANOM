@@ -466,7 +466,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   };
   const buildDiagnosticReport=()=>{
     const resources=performance.getEntriesByType('resource').slice(-80).map(r=>({url:r.name,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,decodedBodySize:r.decodedBodySize||0,type:r.initiatorType}));
-    return safeText(JSON.stringify({app:'ETRANOM detailed startup diagnostics',generatedAt:new Date().toISOString(),page:location.href,userAgent:navigator.userAgent,online:navigator.onLine,readyState:document.readyState,stage:diag.stage,authBridgeReady:!!window.__ETRANOM_AUTH_ACTIONS__?.ready,bootAgeMs:Date.now()-diag.bootStartedAt,authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,moduleAudit:diag.moduleAudit,moduleScriptError:diag.moduleScriptError||null,events:diag.events,resources},null,2));
+    return safeText(JSON.stringify({app:'ETRANOM detailed startup diagnostics V2',generatedAt:new Date().toISOString(),scriptInventory:Array.from(document.scripts).map((s,i)=>({index:i+1,type:s.type||'classic',src:s.src||null,id:s.id||null,async:!!s.async,defer:!!s.defer,inlineLength:s.src?0:(s.textContent||'').length,inlineStart:s.src?null:(s.textContent||'').trim().slice(0,240)})),page:location.href,userAgent:navigator.userAgent,online:navigator.onLine,readyState:document.readyState,stage:diag.stage,authBridgeReady:!!window.__ETRANOM_AUTH_ACTIONS__?.ready,bootAgeMs:Date.now()-diag.bootStartedAt,authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,moduleAudit:diag.moduleAudit,moduleScriptError:diag.moduleScriptError||null,events:diag.events,resources},null,2));
   };
   window.__ETRANOM_DIAGNOSTICS__={
     begin:()=>{diag.startedAt=Date.now();diag.bootStartedAt=diag.bootStartedAt||diag.startedAt;diag.completed=false;diag.steps=[];diag.stage='شروع آماده‌سازی بازی';paintStatus('در حال آماده‌سازی جهان بازی…');},
@@ -490,16 +490,61 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     },
     getEvents:()=>diag.events.slice(),getSteps:()=>diag.steps.slice(),getReport:buildDiagnosticReport,auditModules:auditBootstrapModuleGraph
   };
+  const describeScriptFailure=async(target,event)=>{
+    const scripts=Array.from(document.scripts);
+    const index=scripts.indexOf(target);
+    const isScript=String(target?.tagName||'').toUpperCase()==='SCRIPT';
+    const info={
+      eventType:'resource-or-script-error',
+      tag:target?.tagName||null,
+      scriptIndex:isScript?index+1:null,
+      scriptCount:scripts.length,
+      scriptType:isScript?(target.type||'classic (type attribute empty)'):null,
+      scriptMode:isScript?(target.type==='module'?'ES module':(target.noModule?'nomodule':'classic')):null,
+      scriptId:target?.id||null,
+      scriptSrc:target?.src||null,
+      resolvedSrc:target?.src?new URL(target.src,document.baseURI).href:null,
+      href:target?.href||null,
+      async:!!target?.async,
+      defer:!!target?.defer,
+      crossOrigin:target?.crossOrigin||null,
+      integrity:target?.integrity||null,
+      referrerPolicy:target?.referrerPolicy||null,
+      inline:!!(isScript&&!target.src),
+      inlineLength:isScript&&!target.src?(target.textContent||'').length:null,
+      inlinePreview:isScript&&!target.src?(target.textContent||'').slice(0,3500):null,
+      outerHTML:target?.outerHTML?target.outerHTML.slice(0,1800):null,
+      eventMessage:event?.message||null,
+      eventFilename:event?.filename||null,
+      eventLine:event?.lineno||null,
+      eventColumn:event?.colno||null,
+      eventError:event?.error?.stack||event?.error?.message||null,
+      currentScript:document.currentScript?.src||document.currentScript?.id||null,
+      page:location.href,
+      readyState:document.readyState
+    };
+    info.scriptInventory=scripts.map((s,i)=>({index:i+1,type:s.type||'classic',src:s.src||null,id:s.id||null,async:!!s.async,defer:!!s.defer,inlineLength:s.src?0:(s.textContent||'').length,inlineStart:s.src?null:(s.textContent||'').trim().slice(0,240)}));
+    info.recentScriptResources=performance.getEntriesByType('resource').filter(r=>/\.m?js(?:[?#]|$)/i.test(r.name)||/javascript|script/i.test(r.initiatorType)).slice(-45).map(r=>({url:r.name,initiatorType:r.initiatorType,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,decodedBodySize:r.decodedBodySize||0}));
+    if(isScript&&(target.type==='module'||!target.src)){
+      try{
+        const audit=await Promise.race([auditBootstrapModuleGraph('script resource error: '+(target.src||'inline script #'+(index+1))),new Promise(resolve=>setTimeout(()=>resolve(diag.moduleAudit),18000))]);
+        info.moduleGraph=audit;
+      }catch(e){info.moduleGraphError=e?.stack||String(e);}
+    }
+    return info;
+  };
   window.addEventListener('error',event=>{
     const target=event.target;
     if(target && target!==window){
-      const info={tag:target.tagName||null,elementType:target.type||target.rel||null,id:target.id||null,url:target.src||target.href||null,inline:target.tagName==='SCRIPT'&&!target.src,inlineLength:target.tagName==='SCRIPT'&&!target.src?(target.textContent||'').length:null,moduleScript:target.tagName==='SCRIPT'&&target.type==='module',outerHTML:target.outerHTML?target.outerHTML.slice(0,900):null};
-      if(info.moduleScript){diag.moduleScriptError=info;show('تگ SCRIPT از نوع module اجرا/بارگذاری نشد',info);auditBootstrapModuleGraph('module script error event');}
-      else show('منبع/فایل بارگذاری‌نشده',info);
+      describeScriptFailure(target,event).then(info=>{
+        const isScript=String(target?.tagName||'').toUpperCase()==='SCRIPT';
+        show(isScript?'بارگذاری/اجرای SCRIPT ناموفق شد — جزئیات کامل اسکریپت و وابستگی‌ها': 'منبع/فایل بارگذاری‌نشده — جزئیات کامل',info);
+      }).catch(error=>show('خطا هنگام جمع‌آوری جزئیات اسکریپت',{message:error?.message||String(error),stack:error?.stack||null,target:target?.outerHTML||String(target)}));
       return;
     }
     const info={message:event.message||'خطای ناشناخته',file:event.filename||null,line:event.lineno||null,column:event.colno||null,error:event.error?.stack||event.error?.message||null};
-    show('خطای JavaScript',info);
+    show('خطای JavaScript — فایل و خط دقیق',info);
+    if(event.filename||event.error?.stack)diag.moduleScriptError={message:event.message,filename:event.filename,line:event.lineno,column:event.colno,stack:event.error?.stack||null};
   },true);
   window.addEventListener('unhandledrejection',event=>{
     const reason=event?.reason; show('Promise ردشده',{message:reason?.message||String(reason),stack:reason?.stack||null});
