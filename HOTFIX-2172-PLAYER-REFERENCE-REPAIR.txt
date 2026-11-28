@@ -1,7 +1,0 @@
-ETRANOM V2172 — PLAYER REFERENCE REPAIR
-
-Live error fixed: Uncaught ReferenceError: player is not defined in the foreground environmental-props render call. The render scope uses the local avatar object `p` (the same object used by the adjacent foreground rendering calls), not a variable named `player`. Replaced `player.x, player.y` with `p.x, p.y`.
-
-Also bumped the game module cache URL in index.html and the runtime build identifier to V2172 so the browser requests the repaired JavaScript instead of reusing the previous cached module.
-
-Validation: game.js passed Node syntax validation; inline HTML scripts are checked separately; static check confirms the faulty call no longer exists. No live Cloudflare deployment or browser session was performed.

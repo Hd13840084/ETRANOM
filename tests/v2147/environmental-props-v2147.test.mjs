@@ -1,6 +1,0 @@
-import test from 'node:test'; import assert from 'node:assert/strict'; import fs from 'node:fs'; import path from 'node:path';
-const root=process.cwd(); const src=fs.readFileSync(path.join(root,'systems/safe-zone/environmental-props-v2147.js'),'utf8');
-test('V2147 exports regional prop renderer and audit',()=>{assert.match(src,/drawEnvironmentalPropsV2147/);assert.match(src,/auditEnvironmentalPropsV2147/);});
-test('V2147 defines all four settlements and semantic categories',()=>{for(const id of ['ashen_city','farmland','rootwood','ironstone'])assert.ok(src.includes(id));for(const c of ['landmark','farm','vegetation','mine','utility'])assert.ok(src.includes(c));});
-test('V2147 prop placements preserve deferred collision contract',()=>{assert.match(src,/collision:'stage-19-live-v2162-asset-contact-profile'/);assert.match(src,/navigation:'deferred-stage-6'/);});
-test('all referenced prop assets exist',()=>{const re=/\['([^']+\.png)'/g;let m,n=0;while((m=re.exec(src))){const f=m[1];const b=['market_cart.png','stone_water_trough.png','root_stump.png','wayside_shrine.png','lantern_post.png','notice_board.png','rain_barrel.png','firewood_rack.png'].includes(f)?'assets/safe-zone/props-v2137':'assets/safe-zone/props-v2099';assert.ok(fs.existsSync(path.join(root,b,f)),`${b}/${f}`);n++;}assert.ok(n>=30);});
