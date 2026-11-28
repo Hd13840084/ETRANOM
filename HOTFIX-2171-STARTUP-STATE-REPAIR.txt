@@ -1,0 +1,13 @@
+ETRANOM V2171 — STARTUP STATE REPAIR
+
+Fix 1: Deferred seasonal surface, snow structure, and vehicle runtime initialization until a real player save object has been restored. The previous V2170 startup path attempted to assign seasonalSurfaceStateV2164 while state was still null, before load() ran. Existing cloud/local player saves are preserved; runtime defaults are reconstructed from the saved values.
+
+Fix 2: New-character and explicit new-game creation paths now initialize the same persistent world runtime.
+
+Fix 3: Replaced an unbound report(...) call in the HTML diagnostic MutationObserver with the registered window.__ETRANOM_DIAGNOSTICS__.report(...) handler, preventing the diagnostic layer from throwing a second ReferenceError.
+
+Fix 4: Bumped the game module URL and build identifier to V2171 so browsers do not reuse the V2170 cached module.
+
+Validation performed: JavaScript syntax checks for game.js and both inline scripts in index.html; static checks confirm the null-unsafe startup assignment was removed and the unbound report call no longer exists.
+
+This is a changed-files-only cumulative patch package for stages 26–28 plus the V2171 hotfix. It is not the full game archive.

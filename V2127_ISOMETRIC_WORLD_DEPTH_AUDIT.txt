@@ -1,0 +1,38 @@
+ETRANOM V2127 — ISOMETRIC SPRITE PLANE + SAFE-WORLD DEPTH PASS
+Base: V2126 full-game source, with the working V2126 renderfix-05 game.js/index.html retained.
+Scope: safe-world exterior renderer only (Ash City, Farmland, Rootwood, Ironstone and their existing links/paths).
+No danger-region six-zone conversion is included in this pass.
+
+SOURCE INVENTORY CHECKED
+- 195 raster image files retained under assets/safe-zone.
+- Existing libraries retained for 27 buildings, 16 terrain tiles, 78 environmental prop images, 16 yard sprites, 16 sprite-conversion images and existing interiors/NPC artwork.
+- Existing environment and map files were not replaced with newly invented art.
+
+IMPLEMENTED
+- Added systems/safe-zone/isometric-sprite-plane-v2127.js.
+- Prevented already-authored isometric PNG image quads from receiving a second skew from the global 2:1 world projection.
+- Preserved per-sprite local rotation, scale and mirroring while retaining projected world anchors.
+- Changed safe-zone building, environment-prop and building-yard painter order to projected x+y depth.
+- Added overlap-aware near-side redraws for environment props, building yards, ambient sprite residents and building facades.
+- Split existing safe-zone NPC rendering into far-side and near-side passes around the local player; NPC designs and coordinates are unchanged.
+- Kept the local player and remote-player nameplates upright relative to the screen.
+- Preserved the V2126 renderfix-05 startup and navigation bridge.
+
+STRICTLY UNCHANGED
+- World movement, collision/path blocking, region boundaries, sealed gates and travel rules.
+- Existing image assets, buildings, NPC definitions, interiors, quests, economy and content.
+- Combat, character progression, inventory, saves, authentication, multiplayer presence/chat/party/guild/marketplace/PvP and database contracts.
+- Danger-region visuals and content scope.
+
+VALIDATION
+- Node syntax checks passed for game.js and all changed/new safe-zone modules.
+- V2127 sprite-plane unit tests: 2 passed, 0 failed.
+- Static import path scan: 29 imports checked, 0 missing.
+- All 195 safe-zone raster image files retained.
+- Repository-wide Node test run: 969 tests, 797 passed, 172 failed. The complete repository suite is therefore not clean; failures include existing source-shape/contract assertions and unrelated systems. They have not been attributed to V2127 without a clean baseline comparison.
+
+NOT YET VERIFIED
+- Real browser/device visual QA on the user's actual hosting deployment.
+- Fine alignment of every individual building, prop, road tile and interior.
+- Full sorting of every online actor against every other online actor and every foreground object.
+- Individual interiors/art atlas review and the next detailed environment pass.

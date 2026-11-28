@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "etranom://safe-zone/entity-v1",
+  "title": "ETRANOM Safe Zone Entity",
+  "type": "object",
+  "required": ["id", "entityType", "name", "capabilities"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]{1,63}$"},
+    "entityType": {"enum": ["npc", "building", "landmark"]},
+    "name": {"type": "string", "minLength": 1},
+    "stewardId": {"type": ["string", "null"]},
+    "capabilities": {"type": "array", "uniqueItems": true, "items": {"enum": ["overview", "dialogue", "location", "services", "commerce", "quests", "inventory", "crafting", "repair", "healing", "travel", "reputation", "rewards", "schedule"]}}
+  },
+  "allOf": [{"if": {"properties": {"entityType": {"const": "building"}}}, "then": {"required": ["stewardId"]}}],
+  "additionalProperties": true
+}

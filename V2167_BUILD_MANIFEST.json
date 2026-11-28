@@ -1,0 +1,66 @@
+{
+  "project": "ETRANOM",
+  "version": 2167,
+  "stage": 25,
+  "build_name": "ETRANOM V2167 — Stage 25 Comprehensive Geometry & Physics Repair",
+  "source_version": 2166,
+  "build_date": "2026-11-27",
+  "entry_point": "index.html",
+  "game_module_cache_buster": "game.js?v=2167-stage25-comprehensive-repair&build=20261127",
+  "new_modules": [
+    "systems/world/world-geometry-extensions-v2167.js",
+    "systems/world/world-art-kit-v2167.js",
+    "systems/world/bridge-mesh-physics-v2167.js",
+    "systems/world/snow-structural-geometry-v2167.js",
+    "systems/world/vehicle-suspension-v2167.js",
+    "systems/world/stage25-comprehensive-repair-v2167.js",
+    "systems/safe-zone/interior-volume-v2167.js"
+  ],
+  "new_tests": [
+    "tests/v2167-stage25-comprehensive-repair.test.mjs"
+  ],
+  "focused_tests": {
+    "total": 10,
+    "pass": 10,
+    "fail": 0
+  },
+  "full_tests": {
+    "total": 592,
+    "pass": 501,
+    "fail": 91,
+    "exit_status": "non-zero; failures remain"
+  },
+  "syntax_validation": {
+    "files": 539,
+    "errors": 0
+  },
+  "environment_audit": {
+    "recovered_art_assets_bound": 5,
+    "intentionally_unplaced_assets": 0,
+    "geometry_triangles": 188,
+    "road_graph_nodes": 32,
+    "road_graph_edges": 22,
+    "world_colliders": 161,
+    "interior_buildings": 27,
+    "interior_floors": 39,
+    "interior_triangles": 2868,
+    "interior_stairs": 108,
+    "bridge_meshes": 2,
+    "bridge_vertices": 266,
+    "bridge_triangles": 432,
+    "vehicle_land_wheels": 24
+  },
+  "known_limitations": [
+    "Canvas/SVG isometric architecture remains 2.5D, not a general 3D engine.",
+    "Bridge solver has no general mesh-to-mesh contact manifold or multibody joint constraints.",
+    "Snow collision meshes are exported and share deformed vertices with rendering, but are not wired into a world-wide general mesh collision solver.",
+    "Interior navigation and character movement remain plane-based per active floor.",
+    "Vehicle model is game-oriented and not a full engineering tyre/vehicle simulation.",
+    "91 broader legacy test failures remain across 44 test files.",
+    "No live browser, Android device or production backend verification was run."
+  ],
+  "reports": [
+    "V2167_STAGE_25_COMPREHENSIVE_REPAIR_FA.md",
+    "V2167_FULL_TEST_SUITE_LOG.txt"
+  ]
+}

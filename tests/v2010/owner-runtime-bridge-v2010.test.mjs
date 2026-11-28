@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const runtime=fs.readFileSync(new URL('../../systems/content/region-one-runtime.js',import.meta.url),'utf8');
+const admin=fs.readFileSync(new URL('../../systems/admin/owner-control-v1.js',import.meta.url),'utf8');
+const index=fs.readFileSync(new URL('../../index.html',import.meta.url),'utf8');
+const sql=fs.readFileSync(new URL('../../database/admin/etranom_owner_control_v7_runtime_content_bridge.sql',import.meta.url),'utf8');
+test('published content is fetched through authenticated runtime RPC',()=>{assert.match(runtime,/etranom_runtime_published_content_v1/);assert.match(index,/loadRegionOneRuntime\(\{ supabase \}\)/);});
+test('supported published catalog records override or extend static pack by stable id',()=>{assert.match(runtime,/ADMIN_KIND_TO_PACK_KEY/);assert.match(runtime,/findIndex\(x => String\(x\.id\)/);assert.match(runtime,/adminPublishedCount/);});
+test('invalid published overlays revert to static pack instead of blocking game startup',()=>{assert.match(runtime,/static pack restored/);assert.match(runtime,/baseline/);});
+test('runtime endpoint returns published rows only and requires authentication',()=>{assert.match(sql,/if auth\.uid\(\) is null then raise exception 'AUTH_REQUIRED'/);assert.match(sql,/where c\.status='published'/);});
+test('owner can archive published content with audit history',()=>{assert.match(admin,/etranom_admin_archive_content_v1/);assert.match(sql,/content_archive/);assert.match(sql,/status='archived'/);});
+test('new runtime content types are permitted by the server-side constraint',()=>{for(const kind of ['dungeon','ruin','tower_encounter','reward_table'])assert.ok(sql.includes(`'${kind}'`));});

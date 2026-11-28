@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "version": 2176,
+  "counts": {
+    "buildings": 27,
+    "npcs": 20,
+    "trees": 41,
+    "understory": 50,
+    "yardProps": 27,
+    "authoredProps": 24,
+    "environmentalProps": 34,
+    "vehicles": 8,
+    "roads": 30,
+    "roadPoints": 60
+  },
+  "scale": {
+    "logicalUnitsPerMeter": 40,
+    "playerHeightMeters": 1.8,
+    "doorClearWidthMeters": 0.9,
+    "doorClearHeightMeters": 2.1,
+    "buildingWidthMeters": {
+      "min": 3.75,
+      "max": 4.75
+    },
+    "buildingHeightMeters": {
+      "min": 2.95,
+      "max": 3.5
+    },
+    "roadWidthMeters": {
+      "min": 1.4,
+      "max": 2.6
+    }
+  },
+  "conflicts": {
+    "buildingOverlaps": [],
+    "treeBuildingAnchors": [],
+    "vehicleBuildingFootprints": [],
+    "groundPlacementAnchors": []
+  },
+  "errors": [],
+  "warnings": []
+}

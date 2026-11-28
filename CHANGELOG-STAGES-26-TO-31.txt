@@ -1,0 +1,1 @@
+\n\nSTAGE 31 / V2175 — Video-reference interior presentation\n- Fullscreen isolated building interior presentation on mobile/desktop.\n- Preserve ETRANOM dark-fantasy art direction; use video for composition/readability only.\n- Keep existing door interaction, working NPC loops, and disable no new services.\n- Bump game.js cache key to V2175.\n

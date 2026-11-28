@@ -1,0 +1,13 @@
+{
+  "version": "2135.0.0",
+  "profileCount": 1064,
+  "periodic_cycles": 496,
+  "held_frame_runs": 568,
+  "unchanged": 216,
+  "by_state": {
+    "idle": 320,
+    "interact": 248,
+    "run": 248,
+    "walk": 248
+  }
+}

@@ -1,0 +1,7 @@
+ETRANOM V2174 — FULL GAME PACKAGE (Stages 01–30)
+
+Assembled from the available complete V2170 game archive, overlaid with the actual V2173 changed-files patch, and the available V2174 Stage 30 index/report plus generated NPC concept sprite sheet.
+
+Scope note: the available Stage 30 material did not include a V2174 game.js, NPC runtime binding module, per-NPC exported sprite assets, or a complete Stage 30 implementation patch. The NPC sprite sheet is included as an art reference asset; it is not claimed to be individually bound to every NPC. This package contains the complete game baseline and available later updates, but does not prove that every Stage 30 feature described in the report is implemented.
+
+Repository root: etranom_v2166/

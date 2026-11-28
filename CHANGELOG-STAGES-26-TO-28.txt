@@ -1,0 +1,8 @@
+ETRANOM cumulative changed files: stages 26–28 + V2171 hotfix
+- Stage 26: startup/world scale repair files retained.
+- Stage 27: isometric camera and vehicle scale repair files retained.
+- Stage 28: world-scale calibration module and audit report retained.
+- V2171: player-state-dependent world runtime initialization deferred until save restoration; new-game paths initialize it; diagnostic report handler fixed; cache-busting build updated.
+Only changed/added files are included. This is not a full game distribution.
+
+V2172: Fixed undefined `player` reference in foreground environmental-props rendering; now uses the in-scope avatar object `p`. Updated game build/cache version to V2172.

@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {getCombatAdapter} from '../systems/combat/combat-adapters.js';
+import {createApocalypseProgress,unlockApocalypseSkills} from '../systems/combat/apocalypse-harbinger-runtime.js';
+const adapter=getCombatAdapter('solo');
+const actor={level:30,attack:140,stamina:100,maxStamina:100,classProgress:{warrior_apocalypse_harbinger:createApocalypseProgress()}};
+unlockApocalypseSkills(actor);
+assert.equal(adapter.skillById({},'apoc_strike','warrior_apocalypse_harbinger','warrior').id,'apoc_strike');
+const result=adapter.specializationSkill({},'warrior_apocalypse_harbinger','apoc_strike',{actor,targets:[{id:'mob',name:'Mob',hp:3000}],targetId:'mob',mode:'solo'});
+assert.ok(result.damage>0);
+assert.ok(result.targets[0].hp<3000);
+const domain=adapter.activateDomain({level:30,stamina:100,classProgress:{warrior_apocalypse_harbinger:createApocalypseProgress()}},{specializationId:'warrior_apocalypse_harbinger'});
+assert.equal(domain.domain.active,true);
+const tick=adapter.tickDomain(domain.actor,[],{specializationId:'warrior_apocalypse_harbinger'});
+assert.equal(tick.ended,false);
+console.log('Apocalypse Harbinger V1881 combat adapter: passed');

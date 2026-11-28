@@ -1,0 +1,11 @@
+ETRANOM V2176 — STAGE 32
+
+- Added world placement audit for building footprints, NPC anchors, trees, understory, yard props, authored props, environmental props, vehicles and road geometry.
+- Corrected conflicting placement anchors for selected buildings, carts, trees, ground cover and environment props.
+- Calibrated logical world scale at 40 units per metre; player reference 1.8m; clear door opening 0.9m x 2.1m.
+- Recalibrated road widths to 1.4m–2.6m.
+- Added world map quick-access icon, live local player marker and logical X/Y readout; added three village map nodes.
+- Reused existing project art assets to preserve ETRANOM's established visual style.
+- Focused QA: 55/55 tests pass; changed JavaScript syntax checks pass.
+- Full legacy test suite: 936/1122 passed, 186 failed; full suite is not green.
+- Live mobile/browser visual QA and server/Cloudflare deployment were not performed.

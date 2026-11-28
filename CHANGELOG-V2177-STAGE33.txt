@@ -1,0 +1,7 @@
+ETRANOM V2177 – Stage 33
+- Removed five-continent atlas from active map UI.
+- Replaced the world map with Ashen City + three settlements + ten locked future danger-region placeholders.
+- Added current player position marker using in-game world coordinates.
+- Removed old six-frontier layout from the active starting map.
+- Set known-world map scale metadata and emptied worldRegistry.continents.
+- Legacy non-map registries retained for compatibility; see Stage 33 report.

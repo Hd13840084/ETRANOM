@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {auditMaterialTexturesV2152,resolveMaterialV2152,drawMaterialTextureV2152,ETRANOM_MATERIAL_TEXTURES_V2152} from '../../systems/world/material-textures-v2152.js';
+test('V2152 material registry contains nine valid surface classes',()=>{const a=auditMaterialTexturesV2152();assert.equal(a.ok,true);assert.equal(a.materials,9);assert.equal(resolveMaterialV2152('stone').id,'stone');assert.equal(resolveMaterialV2152('unknown'),null);});
+test('V2152 authored regional surfaces reference valid materials',()=>{assert.equal(ETRANOM_MATERIAL_TEXTURES_V2152.surfaceZones.length,4);assert.ok(ETRANOM_MATERIAL_TEXTURES_V2152.surfaceZones.every(z=>resolveMaterialV2152(z.material)));});
+test('V2152 texture pass renders on Canvas2D-like context',()=>{let clips=0,draws=0;const ctx={save(){},restore(){},beginPath(){},moveTo(){},lineTo(){},closePath(){},clip(){clips++},fill(){},fillRect(){draws++},stroke(){},};const r=drawMaterialTextureV2152(ctx,0,700,0);assert.equal(r.ok,true);assert.equal(r.zones,4);assert.ok(clips>=2);assert.ok(draws>0);});

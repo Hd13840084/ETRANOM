@@ -1,0 +1,15 @@
+ETRANOM V2177 – Stage 33 focused checks
+1. JavaScript syntax: PASS (node --check game.js)
+2. World registry continent list empty: PASS
+3. World map render branch no longer appends legacy five-continent SVG: PASS
+4. World map includes Ashen City: PASS
+5. World map includes Grain Hamlet: PASS
+6. World map includes Rootwood: PASS
+7. World map includes Ironstone Hamlet: PASS
+8. Future danger placeholders count: PASS (10)
+9. Future danger entries marked unpublished/locked: PASS
+10. Player X/Y position marker: PASS (reads state.worldPosition)
+11. Legacy six-danger map removed from active starting map: PASS
+12. Mobile-responsive SVG uses viewBox and width:100% CSS: PASS
+
+Not run: live browser/mobile visual QA, Cloudflare deployment.
