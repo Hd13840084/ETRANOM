@@ -31,7 +31,7 @@
 </style>
   <link rel="stylesheet" href="./systems/party/party.css?v=2135">
 <link rel="stylesheet" href="./systems/online/social-ui.css">
-<link rel="stylesheet" href="./systems/classes/arcane-mage.css?v=2177-stage33-fix1">
+<link rel="stylesheet" href="./systems/classes/arcane-mage.css?v=1">
 <link rel="stylesheet" href="./systems/ui/dark-fantasy-pages.css?v=125">
 <link rel="stylesheet" href="./systems/ui/battle-compact-v119.css?v=1854">
 <style>.status-avatar{display:block!important;width:54px!important;height:62px!important;flex:0 0 54px!important;overflow:hidden!important;border:1px solid #b18a54!important;border-radius:11px!important;background:#17111d!important;box-shadow:0 0 13px #d18b3c55!important}.status-avatar img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 22%!important}</style>
@@ -384,8 +384,36 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   };
   window.addEventListener('error',event=>{
     const target=event.target;
-    if(target && target!==window){show('منبع/فایل بارگذاری‌نشده',target.src||target.href||target.tagName);return;}
-    show('خطای JavaScript',(event.message||'خطای ناشناخته')+' | '+(event.filename||'')+':'+(event.lineno||''));
+    if(target && target!==window){
+      const tag=(target.tagName||target.nodeName||'منبع').toUpperCase();
+      let detail='نوع منبع: '+tag;
+      if(tag==='SCRIPT'){
+        const scripts=Array.from(document.scripts||[]);
+        const index=scripts.indexOf(target);
+        const src=target.src||target.getAttribute?.('src')||'';
+        const inlineText=(!src?String(target.textContent||'').trim().slice(0,900):'');
+        const attrs=Array.from(target.attributes||[]).map(a=>a.name+'="'+a.value+'"').join(' ');
+        detail+='\nآدرس اسکریپت: '+(src||'اسکریپت داخلی (بدون src)')+
+          '\nشماره تگ SCRIPT در صفحه: '+(index>=0?index+1:'نامشخص')+
+          '\nنوع: '+(target.type||'classic/default')+
+          '\nشناسه: '+(target.id||'ندارد')+
+          '\nویژگی‌ها: '+(attrs||'ندارد')+
+          '\nوضعیت: '+(target.isConnected?'متصل به صفحه':'از صفحه جدا شده');
+        if(inlineText)detail+='\nابتدای کد اسکریپت داخلی:\n'+inlineText;
+        detail+='\nاسکریپت‌های صفحه هنگام خطا:\n'+scripts.map((s,i)=>{
+          const u=s.src||s.getAttribute('src')||'(inline)';
+          return (i+1)+'. '+u+' | type='+(s.type||'classic/default')+' | id='+(s.id||'-');
+        }).join('\n');
+      }else{
+        detail+='\nآدرس: '+(target.currentSrc||target.src||target.href||target.getAttribute?.('href')||'نامشخص');
+        detail+='\nعنصر: '+(target.outerHTML||'').slice(0,1200);
+      }
+      show('منبع/فایل بارگذاری‌نشده',detail);return;
+    }
+    const message=(event.message||'خطای JavaScript نامشخص')+'\nفایل: '+(event.filename||'نامشخص')+
+      '\nخط: '+(event.lineno||'?')+' ستون: '+(event.colno||'?')+
+      (event.error?.stack?'\nStack:\n'+event.error.stack:'');
+    show('خطای JavaScript',message);
   },true);
   window.addEventListener('unhandledrejection',event=>{
     const reason=event?.reason; show('Promise ردشده',reason?.stack||reason?.message||reason);
@@ -1080,7 +1108,8 @@ async function importGameModule(url) {
     try {
         return await import(url);
     } catch (error) {
-        const detail = error && error.message ? error.message : String(error);
+        const detail = error && error.stack ? error.stack : (error && error.message ? error.message : String(error));
+        window.__ETRANOM_DIAGNOSTICS__?.report?.('شکست بارگذاری ماژول JavaScript', 'آدرس ماژول: ' + url + '\nجزئیات خطا:\n' + detail);
         const wrapped = new Error('ماژول بازی بارگذاری نشد [' + url + ']: ' + detail);
         wrapped.cause = error;
         wrapped.moduleURL = url;
