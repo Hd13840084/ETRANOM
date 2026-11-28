@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+<!-- ETRANOM-SCRIPT-DIAGNOSTICS-V3-20261128 -->
 <!-- ETRANOM-V2177 detailed module graph diagnostics v4 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -280,7 +281,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   signup?.addEventListener('click',event=>{event.preventDefault();dispatch('signup');});
   // Persistent diagnostics: remain active before and after authentication/game startup.
   const diag={events:[],steps:[],trace:[],stage:'صفحه ورود',panel:null,statusPanel:null,startedAt:0,completed:false,mountInfo:null,mountState:null,bootStartedAt:Date.now(),authReadyStallReported:false,moduleAudit:{started:false,finished:false,roots:[],checked:[],failures:[],notes:[],truncated:false,startedAt:null,finishedAt:null}};
-  const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,6000);
+  const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,50000);
   const ensureStatusPanel=()=>{
     if(diag.statusPanel)return diag.statusPanel;
     const box=document.createElement('section');box.id='etranom-startup-status';
@@ -302,11 +303,11 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     console.error('[ETRANOM DIAGNOSTIC]',item);
     if(!diag.panel){
       const box=document.createElement('section'); box.id='etranom-diagnostic-panel';
-      box.style.cssText='position:fixed;z-index:2147483647;left:8px;right:8px;bottom:8px;max-height:42vh;overflow:auto;background:#190d12;color:#ffe8df;border:2px solid #c34c43;border-radius:10px;padding:10px;font:12px/1.7 monospace;white-space:pre-wrap;box-shadow:0 4px 24px #000';
+      box.style.cssText='position:fixed;z-index:2147483647;left:8px;right:8px;bottom:8px;max-height:68vh;overflow:auto;background:#190d12;color:#ffe8df;border:2px solid #c34c43;border-radius:10px;padding:10px;font:12px/1.7 monospace;white-space:pre-wrap;box-shadow:0 4px 24px #000';
       document.body.appendChild(box); diag.panel=box;
     }
     diag.panel.style.display='block';
-    diag.panel.textContent='ETRANOM — گزارش خطای زنده\nمرحله: '+diag.stage+'\n'+diag.events.slice(-10).map(x=>'['+x.time+'] '+x.kind+'\n'+x.detail).join('\n\n');
+    diag.panel.textContent='ETRANOM — گزارش خطای زنده [نسخه تشخیصی V3]\nمرحله: '+diag.stage+'\n'+diag.events.slice(-10).map(x=>'['+x.time+'] '+x.kind+'\n'+x.detail).join('\n\n');
     const copy=document.createElement('button');copy.type='button';copy.textContent='کپی گزارش کامل فنی';copy.style.cssText='position:sticky;bottom:0;display:block;margin:8px 0 0 auto;padding:8px 12px;border:1px solid #c9a46c;border-radius:8px;background:#30243a;color:#fff0d4;font:12px Tahoma';copy.addEventListener('click',async()=>{const report=buildDiagnosticReport();try{await navigator.clipboard.writeText(report);copy.textContent='گزارش کپی شد ✓'}catch(_){const area=document.createElement('textarea');area.value=report;area.style.cssText='position:fixed;opacity:0';document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();copy.textContent=ok?'گزارش کپی شد ✓':'کپی ناموفق بود'}});diag.panel.appendChild(copy);
   };
   const traceText=value=>{
@@ -367,17 +368,21 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     const clean=String(source||'').replace(/\/\*[\s\S]*?\*\//g,'').replace(/^\s*\/\/.*$/gm,'');
     const found=[];
     const add=(value,kind)=>{if(value&&!found.some(x=>x.specifier===value))found.push({specifier:value,kind});};
-    const staticImport=/^[\t ]*import[\t ]+(?!\()/gm;
     let match;
-    while((match=staticImport.exec(clean))){
-      const tail=clean.slice(match.index+match[0].length);
-      const end=tail.search(/;|\r?\n(?=\s*(?:import|export|const|let|var|function|class|async\s+function)\b)/);
-      const statement=end>=0?tail.slice(0,end):tail.slice(0,5000);
-      const quoted=statement.match(/(?:\bfrom\s*)?(['"])([^'"]+)\1/);
-      if(quoted)add(quoted[2],'static import');
-    }
-    const reExport=/^[\t ]*export[\t ]+[^\r\n;]*?\bfrom\s*(['"])([^'"]+)\1/gm;
-    while((match=reExport.exec(clean)))add(match[2],'re-export');
+    // Static imports: import x from './x.js' and import './side-effect.js'.
+    const staticRe=/\bimport\s+(?!\()(?:(?:[\s\S]*?\s+from\s*)?)(['"])([^'"]+)\1/g;
+    while((match=staticRe.exec(clean))) add(match[2],'static import');
+    // Re-exports: export {x} from './x.js'.
+    const exportRe=/\bexport\s+(?:\*|\{[\s\S]*?\})\s+from\s*(['"])([^'"]+)\1/g;
+    while((match=exportRe.exec(clean))) add(match[2],'re-export');
+    // Literal dynamic imports: import('./x.js').
+    const dynamicRe=/\bimport\s*\(\s*(['"])([^'"]+)\1\s*\)/g;
+    while((match=dynamicRe.exec(clean))) add(match[2],'dynamic import');
+    // ETRANOM's wrapper hides dynamic imports from the native syntax scanner.
+    const wrappedRe=/\bimportGameModule\s*\(\s*(['"])([^'"]+)\1\s*\)/g;
+    while((match=wrappedRe.exec(clean))) add(match[2],'ETRANOM importGameModule');
+    const timeoutRe=/\bimportWithTimeout\s*\(\s*(['"])([^'"]+)\1/g;
+    while((match=timeoutRe.exec(clean))) add(match[2],'timed CDN import');
     return found;
   };
   const moduleProbe=async(url,parent,chain)=>{
@@ -414,8 +419,9 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
         const source=script.src?null:script.textContent||'';
         const parentURL=script.src||location.href;
         const roots=source?moduleSpecifierList(source):[];
-        audit.roots.push({index:index+1,tag:script.outerHTML?.slice(0,500)||'<script type="module">',inline:!script.src,sourceLength:source?.length||0,staticImports:roots.map(x=>x.specifier)});
-        roots.forEach(root=>queue.push({specifier:root.specifier,parentURL,chain:['inline module script #'+(index+1),root.specifier],kind:root.kind,optionalGroup:null}));
+        audit.roots.push({index:index+1,tag:script.outerHTML?.slice(0,900)||'<script type="module">',inline:!script.src,src:script.src||null,sourceLength:source?.length||0,imports:roots.map(x=>({specifier:x.specifier,kind:x.kind}))});
+        if(script.src)queue.push({specifier:script.src,parentURL:location.href,chain:['external module script #'+(index+1),script.src],kind:'module script src',optionalGroup:null});
+        roots.forEach(root=>queue.push({specifier:root.specifier,parentURL,chain:['module script #'+(index+1),root.kind,root.specifier],kind:root.kind,optionalGroup:null}));
         if(source){
           const cdn=[...source.matchAll(/\bimportWithTimeout\s*\(\s*(['"])(https?:\/\/[^'"]+)\1/g)].map(m=>m[2]);
           if(cdn.length>1)optionalGroups.push({name:'Supabase CDN fallback',urls:cdn});
@@ -457,7 +463,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
         show('تگ ماژول اصلی خطا داد، اما دریافت وابستگی‌ها موفق بود',{
           scriptError:diag.moduleScriptError,
           checkedCount:audit.checked.length,
-          note:'هیچ خطای HTTP/MIME در وابستگی‌های بررسی‌شده پیدا نشد. علت محتمل بعدی: خطای نحوی/اجرایی داخل ماژول اصلی، سیاست CSP یا خطای هنگام ارزیابی top-level module.'
+          note:'اگر همه درخواست‌ها موفق‌اند، گزارش خطای واقعی اجرا/نحو را از moduleScriptError و stack بررسی کن؛ CSP نیز در رویداد جداگانه ثبت می‌شود.'
         });
       }
       return audit;
@@ -465,8 +471,8 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     return moduleAuditPromise;
   };
   const buildDiagnosticReport=()=>{
-    const resources=performance.getEntriesByType('resource').slice(-80).map(r=>({url:r.name,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,decodedBodySize:r.decodedBodySize||0,type:r.initiatorType}));
-    return safeText(JSON.stringify({app:'ETRANOM detailed startup diagnostics V2',generatedAt:new Date().toISOString(),scriptInventory:Array.from(document.scripts).map((s,i)=>({index:i+1,type:s.type||'classic',src:s.src||null,id:s.id||null,async:!!s.async,defer:!!s.defer,inlineLength:s.src?0:(s.textContent||'').length,inlineStart:s.src?null:(s.textContent||'').trim().slice(0,240)})),page:location.href,userAgent:navigator.userAgent,online:navigator.onLine,readyState:document.readyState,stage:diag.stage,authBridgeReady:!!window.__ETRANOM_AUTH_ACTIONS__?.ready,bootAgeMs:Date.now()-diag.bootStartedAt,authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,moduleAudit:diag.moduleAudit,moduleScriptError:diag.moduleScriptError||null,events:diag.events,resources},null,2));
+    const resources=performance.getEntriesByType('resource').slice(-250).map(r=>({url:r.name,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,decodedBodySize:r.decodedBodySize||0,type:r.initiatorType}));
+    return safeText(JSON.stringify({app:'ETRANOM SCRIPT DIAGNOSTICS V3',generatedAt:new Date().toISOString(),scriptInventory:Array.from(document.scripts).map((s,i)=>({index:i+1,type:s.type||'classic',src:s.src||null,id:s.id||null,async:!!s.async,defer:!!s.defer,inlineLength:s.src?0:(s.textContent||'').length,inlineStart:s.src?null:(s.textContent||'').trim().slice(0,240)})),page:location.href,userAgent:navigator.userAgent,online:navigator.onLine,readyState:document.readyState,stage:diag.stage,authBridgeReady:!!window.__ETRANOM_AUTH_ACTIONS__?.ready,bootAgeMs:Date.now()-diag.bootStartedAt,authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,moduleAudit:diag.moduleAudit,moduleScriptError:diag.moduleScriptError||null,events:diag.events,resources},null,2));
   };
   window.__ETRANOM_DIAGNOSTICS__={
     begin:()=>{diag.startedAt=Date.now();diag.bootStartedAt=diag.bootStartedAt||diag.startedAt;diag.completed=false;diag.steps=[];diag.stage='شروع آماده‌سازی بازی';paintStatus('در حال آماده‌سازی جهان بازی…');},
@@ -524,7 +530,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
       readyState:document.readyState
     };
     info.scriptInventory=scripts.map((s,i)=>({index:i+1,type:s.type||'classic',src:s.src||null,id:s.id||null,async:!!s.async,defer:!!s.defer,inlineLength:s.src?0:(s.textContent||'').length,inlineStart:s.src?null:(s.textContent||'').trim().slice(0,240)}));
-    info.recentScriptResources=performance.getEntriesByType('resource').filter(r=>/\.m?js(?:[?#]|$)/i.test(r.name)||/javascript|script/i.test(r.initiatorType)).slice(-45).map(r=>({url:r.name,initiatorType:r.initiatorType,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,decodedBodySize:r.decodedBodySize||0}));
+    info.recentScriptResources=performance.getEntriesByType('resource').filter(r=>/\.m?js(?:[?#]|$)/i.test(r.name)||/javascript|script/i.test(r.initiatorType)).slice(-150).map(r=>({url:r.name,initiatorType:r.initiatorType,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,decodedBodySize:r.decodedBodySize||0}));
     if(isScript&&(target.type==='module'||!target.src)){
       try{
         const audit=await Promise.race([auditBootstrapModuleGraph('script resource error: '+(target.src||'inline script #'+(index+1))),new Promise(resolve=>setTimeout(()=>resolve(diag.moduleAudit),18000))]);
@@ -538,7 +544,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     if(target && target!==window){
       describeScriptFailure(target,event).then(info=>{
         const isScript=String(target?.tagName||'').toUpperCase()==='SCRIPT';
-        show(isScript?'بارگذاری/اجرای SCRIPT ناموفق شد — جزئیات کامل اسکریپت و وابستگی‌ها': 'منبع/فایل بارگذاری‌نشده — جزئیات کامل',info);
+        show(isScript?'خطای بارگذاری SCRIPT — جزئیات تگ، URL و زنجیره import': 'منبع/فایل بارگذاری‌نشده — جزئیات کامل',info);
       }).catch(error=>show('خطا هنگام جمع‌آوری جزئیات اسکریپت',{message:error?.message||String(error),stack:error?.stack||null,target:target?.outerHTML||String(target)}));
       return;
     }
@@ -548,6 +554,9 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   },true);
   window.addEventListener('unhandledrejection',event=>{
     const reason=event?.reason; show('Promise ردشده',{message:reason?.message||String(reason),stack:reason?.stack||null});
+  });
+  window.addEventListener('securitypolicyviolation',event=>{
+    show('مرورگر اسکریپت/منبع را به‌دلیل CSP مسدود کرد',{blockedURI:event.blockedURI||null,violatedDirective:event.violatedDirective||null,effectiveDirective:event.effectiveDirective||null,sourceFile:event.sourceFile||null,lineNumber:event.lineNumber||null,columnNumber:event.columnNumber||null,disposition:event.disposition||null,originalPolicy:event.originalPolicy||null});
   });
   // Scan the entry module's real import graph. This catches 404s, HTML fallbacks,
   // CORS/network failures and invalid JavaScript MIME types behind a generic SCRIPT error.
