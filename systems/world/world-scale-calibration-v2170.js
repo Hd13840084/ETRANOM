@@ -6,7 +6,7 @@ export const ETRANOM_WORLD_SCALE_CALIBRATION_V2170 = Object.freeze({
   logicalUnitsPerMeter: 40,
   player: Object.freeze({ heightMeters: 1.8, heightUnits: 72, renderFramePx: Object.freeze({ width: 48, height: 64 }), collisionDiameterMeters: 0.55, collisionDiameterUnits: 22 }),
   door: Object.freeze({ clearWidthMeters: 0.75, clearHeightMeters: 2.0, clearWidthUnits: 30, clearHeightUnits: 80 }),
-  camera: Object.freeze({ zoom: 2.8, framing: 'tight-follow; target one to two nearby buildings', projection: 'fixed-orthographic-isometric' }),
+  camera: Object.freeze({ zoom: 2.0, framing: 'close three-quarter follow; target one to two nearby buildings', projection: 'fixed-orthographic-overhead-three-quarter' }),
   settlements: Object.freeze(['ashen_city', 'farmland', 'rootwood', 'ironstone']),
   spriteScale: Object.freeze({
     vehicle: Object.freeze({ handcart_empty: 0.55, covered_merchant_wagon: 0.55, enclosed_coach: 0.58, mine_ore_cart: 0.58, farm_hay_wagon: 0.55, river_cargo_boat: 0.70, market_cart: 0.55, grain_cart: 0.55 }),
@@ -40,7 +40,7 @@ export function auditWorldScaleCalibrationV2170() {
   if (c.logicalUnitsPerMeter !== 40) errors.push('units-per-meter-mismatch');
   if (c.player.heightUnits !== 72 || c.player.renderFramePx.height !== 64) errors.push('player-reference-mismatch');
   if (c.door.clearWidthUnits < c.player.collisionDiameterUnits) errors.push('door-clear-width-too-small');
-  if (c.camera.zoom < 2.6 || c.camera.zoom > 3.0) errors.push('camera-zoom-out-of-range');
+  if (c.camera.zoom < 1.7 || c.camera.zoom > 2.3) errors.push('camera-zoom-out-of-range');
   for (const [id, scale] of Object.entries(c.spriteScale.vehicle)) if (!(scale >= 0.5 && scale <= 0.75)) errors.push(`vehicle-scale-out-of-range:${id}`);
   return Object.freeze({ ok: errors.length === 0, version: 2170, unitsPerMeter: c.logicalUnitsPerMeter, playerHeightMeters: worldUnitsToMetersV2170(c.player.heightUnits), doorClearWidthMeters: worldUnitsToMetersV2170(c.door.clearWidthUnits), doorClearHeightMeters: worldUnitsToMetersV2170(c.door.clearHeightUnits), vehicleProfiles: Object.keys(c.spriteScale.vehicle).length, settlements: c.settlements.length, errors: Object.freeze(errors) });
 }

@@ -34,13 +34,13 @@ export const ETRANOM_WORLD_STRUCTURE_V2138 = deepFreeze({
     playerSpawn: { x: 1500, y: 1050 }
   },
   projection: {
-    type: 'affine-isometric-2.5d',
-    matrix: { a: 0.72, b: 0.36, c: -0.72, d: 0.36 },
-    axisXScreenVector: { x: 0.72, y: 0.36 },
-    axisYScreenVector: { x: -0.72, y: 0.36 },
+    type: 'orthographic-overhead-three-quarter',
+    matrix: { a: 0.96, b: 0, c: 0, d: 0.82 },
+    axisXScreenVector: { x: 0.96, y: 0 },
+    axisYScreenVector: { x: 0, y: 0.82 },
     fixedProjection: true,
     perspective: false,
-    note: 'Matches the live canvas transform in game.js; authored isometric sprite quads are separately protected from double-skew by V2127.'
+    note: 'Stage 29 replaces the diamond projection with a close orthographic three-quarter view: streets run horizontally and vertically while the vertical axis is softly compressed.'
   },
   regions: {
     safeWorld: {

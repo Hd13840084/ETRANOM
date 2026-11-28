@@ -29,7 +29,7 @@ export function getAtlasDrawCommandV2059({ specializationId, state = 'idle', dir
     const safeState = Object.hasOwn(CHARACTER_ATLAS_STATES_V2055, state) ? state : 'idle';
     const safeDirection = normalizeCharacterAtlasDirectionV2055(direction);
     const clip = CHARACTER_ATLAS_STATES_V2055[safeState];
-    const authoredUrl = authoredPoseUrlV2136(specializationId, safeState, safeDirection);
+    const authoredUrl = (safeState === 'idle' || safeState === 'interact') ? authoredPoseUrlV2136(specializationId, safeState, safeDirection) : null;
     if (authoredUrl) {
         const descriptor = Object.freeze({ url: authoredUrl, specializationId, state: safeState, direction: safeDirection, frameCount: 1, frameWidth: 128, frameHeight: 160, expectedWidth: 128, expectedHeight: 160, authoredPose: true });
         return Object.freeze({ descriptor, authoredPose: true, sourceX: 0, sourceY: 0, sourceWidth: 128, sourceHeight: 160, frameIndex: 0, sequenceIndex: 0, playbackFps: 0, normalizedTwoCycle: false, normalizedKeyframes: false, keyframeProfileKind: 'authored_single_pose', ready: false });
@@ -73,7 +73,7 @@ export function preloadCharacterAtlasesV2059(specializationId, states = ['idle']
     const jobs = [];
     for (const state of states)
         for (const direction of directions) {
-            const authoredUrl = authoredPoseUrlV2136(specializationId, state, normalizeCharacterAtlasDirectionV2055(direction));
+            const authoredUrl = (state === 'idle' || state === 'interact') ? authoredPoseUrlV2136(specializationId, state, normalizeCharacterAtlasDirectionV2055(direction)) : null;
             if (authoredUrl) {
                 if (!pending.has(authoredUrl)) {
                     const promise = new Promise(resolve => {

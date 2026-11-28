@@ -2,7 +2,7 @@ import { dispatchSoloCombatActionV1972 } from './systems/combat/central-combat-r
 import { getRegionOneSummonSealDropChanceV1999 } from './systems/content/region-one-seal-drop-rules-v1999.js?v=1999';
 import { resolveProgressionPolicyV2013, resolveClassBalancePolicyV2013 } from './systems/admin/owner-runtime-adapters-v2011.js?v=2014';
 import { SAFE_ZONE_INTERIOR_CATALOG_V2035 } from './systems/safe-zone/interior-catalog-v2035.js?v=2035';
-import { renderIsometricInteriorV2036 } from './systems/safe-zone/interior-renderer-v2036.js?v=2144';
+import { renderIsometricInteriorV2036 } from './systems/safe-zone/interior-renderer-v2036.js?v=2173';
 import { ETRANOM_INTERIOR_ARCHITECTURE_V2144, auditInteriorArchitectureV2144 } from './systems/safe-zone/interior-architecture-v2144.js?v=2144';
 import { ETRANOM_ENTRANCE_SYSTEM_V2145, auditEntranceSystemV2145, drawAuthoredEntranceV2145 } from './systems/safe-zone/entrance-system-v2145.js?v=2145';
 import { SAFE_ZONE_EXTERIOR_CATALOG_V2037 } from './systems/safe-zone/exterior-catalog-v2037.js?v=2037';
@@ -39,11 +39,15 @@ import { drawSafeWorldFinishV2113 } from './systems/safe-zone/safe-world-finish-
 import { drawOutdoorVillageLifeV2115 } from './systems/safe-zone/outdoor-village-life-v2115.js?v=2170';
 import { drawBuildingYardsV2117, drawForegroundBuildingYardsV2127 } from './systems/safe-zone/building-yards-v2117.js?v=2170';
 import { drawSafeZoneSpriteGroundV2118, drawSafeZoneSpriteActorsV2118, drawForegroundSafeZoneSpriteActorsV2127 } from './systems/safe-zone/sprite-conversion-v2118.js?v=2170';
-import { activateIsometricSpritePlaneV2127, pushUprightWorldPlaneV2127 } from './systems/safe-zone/isometric-sprite-plane-v2127.js?v=2127';
-import { ETRANOM_WORLD_STRUCTURE_V2138, WORLD_DIMENSIONS_V2138, WORLD_PROJECTION_MATRIX_V2138, auditWorldStructureV2138, isWorldPositionInBoundsV2138, resolveSafeSettlementV2138, screenDeltaToWorldV2138 } from './systems/world/world-structure-v2138.js?v=2138';
-import { createIsometricCameraV2139, ISOMETRIC_CAMERA_V2139 } from './systems/world/isometric-camera-v2139.js?v=2170';
-import { ETRANOM_WORLD_SCALE_CALIBRATION_V2170, auditWorldScaleCalibrationV2170 } from './systems/world/world-scale-calibration-v2170.js?v=2170';
-if (typeof window !== 'undefined') window.ETRANOM_WORLD_SCALE_CALIBRATION_AUDIT_V2170 = auditWorldScaleCalibrationV2170();
+import { activateIsometricSpritePlaneV2127, pushUprightWorldPlaneV2127 } from './systems/safe-zone/isometric-sprite-plane-v2127.js?v=2173';
+import { ETRANOM_WORLD_STRUCTURE_V2138, WORLD_DIMENSIONS_V2138, WORLD_PROJECTION_MATRIX_V2138, auditWorldStructureV2138, isWorldPositionInBoundsV2138, resolveSafeSettlementV2138, screenDeltaToWorldV2138 } from './systems/world/world-structure-v2138.js?v=2173';
+import { createIsometricCameraV2139, ISOMETRIC_CAMERA_V2139 } from './systems/world/isometric-camera-v2139.js?v=2173';
+import { ETRANOM_WORLD_SCALE_CALIBRATION_V2170, auditWorldScaleCalibrationV2170 } from './systems/world/world-scale-calibration-v2170.js?v=2173';
+import { drawSettlementLayoutV2173, auditSettlementLayoutV2173 } from './systems/world/settlement-layout-v2173.js?v=2173';
+if (typeof window !== 'undefined') {
+    window.ETRANOM_WORLD_SCALE_CALIBRATION_AUDIT_V2170 = auditWorldScaleCalibrationV2170();
+    window.ETRANOM_SETTLEMENT_LAYOUT_AUDIT_V2173 = auditSettlementLayoutV2173();
+}
 import { ETRANOM_WORLD_GEOMETRY_V2140, auditWorldGeometryV2140 } from './systems/world/world-geometry-v2140.js?v=2140';
 import { ETRANOM_TERRAIN_TOPOGRAPHY_V2146, auditTerrainTopographyV2146, drawTerrainTopographyV2146, sampleTerrainElevationV2146, resolveTerrainSurfaceV2146 } from './systems/world/terrain-topography-v2146.js?v=2146';
 import { ETRANOM_WORLD_PHYSICS_V2161, buildWorldPhysicsWorldV2161, auditWorldPhysicsV2161, resolveWorldMovementV2161, resolveWorldSurfacePhysicsV2161, findPhysicsPathV2161, moveInteriorPlayerV2161, moveInteriorPlayerContinuousV2164, ETRANOM_CITY_STREET_PROPS_V2161 } from './systems/world/physics-collision-v2161.js?v=2162';
@@ -67,7 +71,7 @@ import { createWorldPerformanceGovernorV2164, buildWorldChunkIndexV2164, queryWo
 import { resolveCharacterDirectionV2049, resolveCharacterMotionVectorV2049 } from './systems/characters/character-motion-v2049.js?v=2049';
 import { createCharacterAnimationClockV2131, getCharacterAnimationTimingV2131, resolveCharacterAnimationV2131, resolveCharacterDirectionV2131 } from './systems/characters/character-animation-v2131.js?v=2131';
 import { getFullBodyCharacterArtV2063 } from './systems/characters/fullbody-character-art-v2063.mjs?v=2063';
-import { getAtlasDrawCommandV2059, loadAtlasForDrawV2059 } from './systems/characters/character-atlas-runtime-v2059.js?v=2136';
+import { getAtlasDrawCommandV2059, loadAtlasForDrawV2059 } from './systems/characters/character-atlas-runtime-v2059.js?v=2173';
 import { resolveMapSpecializationV2066 } from './systems/characters/character-map-binding-v2066.js?v=2130';
 import { getGroundAnchoredSpriteRectV2132 } from './systems/characters/character-render-geometry-v2132.js?v=2132';
 import { getCharacterAtlasFootOffsetV2132 } from './systems/characters/character-atlas-foot-anchors-v2132.js?v=2132';
@@ -75,7 +79,7 @@ import { getCharacterMotionPoseV2134 } from './systems/characters/character-moti
 import { getCharacterPortraitV2135, getCharacterPortraitForNameV2135 } from './systems/characters/character-portrait-bindings-v2135.js?v=2135';
 // V2126: expose the game entry point at module scope before authentication calls it.
 window.run = run;
-window.__ETRANOM_GAME_BUILD__ = '2172-player-reference-repair';
+window.__ETRANOM_GAME_BUILD__ = '2173-settlement-interior-motion-overhaul';
 window.ETRANOM_VISUAL_PHYSICAL_CONSISTENCY_V2162 = ETRANOM_VISUAL_PHYSICAL_CONSISTENCY_V2162;
 window.ETRANOM_WEATHER_V2157 = ETRANOM_WEATHER_V2157;
 window.ETRANOM_ENVIRONMENT_AUDIO_V2160 = ETRANOM_ENVIRONMENT_AUDIO_V2160;
@@ -144,7 +148,7 @@ async function run(mode) {
     };
     let playerTradeRefreshTimer = null;
     let saveQueue = Promise.resolve(), lastPersistedSaveSignature = null, lastCloudSaveSnapshot = null, saveSafetyHooksInstalled = false, autosaveTimer = null;
-    let state = null, activeTab = "story", activeDangerRegionId = null, busy = false, notice = "", loaded = false, pendingConfirmation = null, confirmBypass = false, interiorView = null, questPopup = null, battlePopup = null;
+    let state = null, activeTab = "story", activeDangerRegionId = null, busy = false, notice = "", loaded = false, pendingConfirmation = null, confirmBypass = false, interiorView = null, autoDoorEntryPending = null, questPopup = null, battlePopup = null;
     // V2126 render bridge: the renderer is declared inside the world binder but startup needs a stable outer reference.
     let render = null;
     window.etranomCanOpenMarket = () => !!state && state.inWesternDanger === true;
@@ -6650,7 +6654,9 @@ async function run(mode) {
             v.player = floorPlayer;
             const scene = renderIsometricInteriorV2036({ buildingId: v.id, title: d.title || v.name, room: d.room, ambience: d.ambience, light: d.light, props: d.props || [], residents: v.residents || [], player: floorPlayer, floorIndex: v.floorState?.currentFloor || 0, floorCount: v.floorState?.floorCount || 1, escape: esc });
             const floorControls = v.floorState?.floorCount > 1 ? '<div class="interior-floor-controls" style="display:flex;gap:8px;justify-content:center;margin:10px auto;max-width:320px"><button type="button" data-interior-floor-change="' + (v.floorState.currentFloor === 0 ? '1' : '0') + '">' + (v.floorState.currentFloor === 0 ? '↑ رفتن به طبقه بالا' : '↓ برگشت به طبقه همکف') + '</button><small>برای استفاده از پله، به علامت طلایی پله در اتاق نزدیک شو.</small></div>' : '';
-            return '<div class="player-window-backdrop" data-interaction-close><section class="player-window interaction-window interior-room safe-zone-reset-panel" role="dialog" aria-modal="true"><header><b>✦ ' + esc(d.title || v.name) + '</b><button data-interior-exit>بازگشت</button></header>' + scene + floorControls + '<div class="interior-walk-controls" style="display:grid;grid-template-columns:repeat(3,minmax(44px,1fr));gap:7px;max-width:250px;margin:12px auto"><span></span><button type="button" data-interior-move="up">↑</button><span></span><button type="button" data-interior-move="left">←</button><button type="button" data-interior-move="down">↓</button><button type="button" data-interior-move="right">→</button></div><div class="npc-profile"><span>✧ کاوش فضای داخلی</span><p>' + esc(v.description) + '</p><small>مختصات اتاق: ' + Number(v.player?.x ?? 5) + ', ' + Number(v.player?.y ?? 7) + ' • دیوارها، مبلمان و جداکننده‌ها مانع حرکت هستند.</small></div><button class="interaction-leave" data-interior-exit>بازگشت به نقشه منطقه امن</button></section></div>';
+            const nearServiceCounter = (v.residents || []).length > 0 && Math.abs(Number(floorPlayer.x) - 5) + Math.abs(Number(floorPlayer.y) - 2) <= 2.5;
+            const serviceCounter = (v.residents || []).length ? '<div class="interior-service-panel"><b>پیشخوان خدمات</b>' + (nearServiceCounter ? '<button type="button" data-interior-service>گفت‌وگو با متصدی ' + esc(v.residents[0].name) + '</button>' : '<small>برای صحبت با متصدی، به پیشخوان نزدیک شو.</small>') + (v.lastServiceMessage ? '<p>' + esc(v.lastServiceMessage) + '</p>' : '') + '</div>' : '';
+            return '<div class="player-window-backdrop interior-fullscreen-backdrop" data-interaction-close><section class="player-window interaction-window interior-room safe-zone-reset-panel" role="dialog" aria-modal="true"><header><b>✦ ' + esc(d.title || v.name) + '</b><button data-interior-exit>بازگشت</button></header>' + scene + serviceCounter + floorControls + '<div class="interior-walk-controls" style="display:grid;grid-template-columns:repeat(3,minmax(44px,1fr));gap:7px;max-width:250px;margin:12px auto"><span></span><button type="button" data-interior-move="up">↑</button><span></span><button type="button" data-interior-move="left">←</button><button type="button" data-interior-move="down">↓</button><button type="button" data-interior-move="right">→</button></div><div class="npc-profile"><span>✧ کاوش فضای داخلی</span><p>' + esc(v.description) + '</p><small>مختصات اتاق: ' + Number(v.player?.x ?? 5) + ', ' + Number(v.player?.y ?? 7) + ' • دیوارها، مبلمان و جداکننده‌ها مانع حرکت هستند.</small></div><button class="interaction-leave" data-interior-exit>بازگشت به نقشه منطقه امن</button></section></div>';
         }
         if (!worldInteraction)
             return '';
@@ -6661,8 +6667,8 @@ async function run(mode) {
         const identity = speaker ? '<div class="npc-profile"><span>✦ ' + esc(title) + '</span><p>' + esc(description) + '</p><small>' + (isNpc ? esc(p.personality || '') + ' • ' + esc(p.goal || '') : 'متصدی: ' + esc(steward.name) + ' • ' + esc(steward.title)) + '</small></div>' : '<div class="npc-profile"><span>✦ ' + esc(title) + '</span><p>' + esc(description) + '</p></div>';
         const doorState = p.stage15Id ? getEnvironmentEntityStateV2155(state, p.stage15Id) : null;
         const doorAction = doorState ? '<div class="npc-profile"><b>وضعیت در ورودی</b><p>' + (doorState.doorOpen ? 'در باز است.' : 'در بسته است.') + '</p><button data-stage15-action="toggle-door">' + (doorState.doorOpen ? 'بستن در' : 'باز کردن در') + '</button></div>' : '';
-        const actions = speaker ? (isNpc ? '<button data-interact-action="npc-talk">💬 گفت‌وگو با ' + esc(speaker.name) + '</button><button data-interact-action="npc-ask">❖ پرسیدن درباره شهر</button>' : '<button data-hub-common-action="talk">💬 گفت‌وگو با ' + esc(speaker.name) + '</button><button data-hub-common-action="ask">❖ پرسیدن درباره این ساختمان</button><button data-enter-building="' + esc(p.id) + '">↗ ورود به ساختمان</button>') : (isLandmark ? '<p class="muted">این مکان برای مشاهده و شناخت نقشه است.</p>' : '<button data-enter-building="' + esc(p.id) + '">↗ ورود به ساختمان</button>');
-        if (p.stage15Id && p.kind === 'building-door') return '<div class="player-window-backdrop" data-interaction-close><section class="player-window interaction-window safe-zone-reset-panel" role="dialog" aria-modal="true"><header><b>⌖ ' + esc(p.name || 'ساختمان') + '</b><button data-interaction-close>✕</button></header>' + identity + doorAction + '<button data-enter-building="' + esc(p.id) + '">↗ ورود به ساختمان</button><button class="interaction-leave" data-interaction-close>بستن</button></section></div>';
+        const actions = speaker ? (isNpc ? '<button data-interact-action="npc-talk">💬 گفت‌وگو با ' + esc(speaker.name) + '</button><button data-interact-action="npc-ask">❖ پرسیدن درباره شهر</button>' : '<button data-hub-common-action="talk">💬 گفت‌وگو با ' + esc(speaker.name) + '</button><button data-hub-common-action="ask">❖ پرسیدن درباره این ساختمان</button>') : (isLandmark ? '<p class="muted">این مکان برای مشاهده و شناخت نقشه است.</p>' : '<p class="muted">برای ورود، از مسیر پیاده به در اصلی نزدیک شو و با بدنه شخصیت به در برخورد کن.</p>');
+        if (p.stage15Id && p.kind === 'building-door') return '<div class="player-window-backdrop" data-interaction-close><section class="player-window interaction-window safe-zone-reset-panel" role="dialog" aria-modal="true"><header><b>⌖ ' + esc(p.name || 'ساختمان') + '</b><button data-interaction-close>✕</button></header>' + identity + doorAction + '<p class="muted">برای ورود، به در اصلی نزدیک شو و با بدنه شخصیت به آن برخورد کن.</p><button class="interaction-leave" data-interaction-close>بستن</button></section></div>';
         if (p.kind === 'environment-prop' || p.kind === 'vehicle') {
             const current = p.stage15Id ? getEnvironmentEntityStateV2155(state, p.stage15Id) : {};
             const liveVehicle = p.kind === 'vehicle' ? state.vehicleRuntime?.vehicles?.[p.sourceId] : null;
@@ -6688,7 +6694,7 @@ async function run(mode) {
         }
         const p = state.worldPosition || (state.worldPosition = { x: 1500, y: 1050 });
         const c = state.character, wc = state.worldClock || { day: 1, hour: 8, minute: 0 };
-        return '<section class="exploration-screen"><div class="explore-top"><div><b>⌖ ' + esc(state.location) + '</b><small>منطقه آغازین • ' + (state.inWesternDanger ? ('محدوده خطر فعال • ' + (((_a = ETRANOM_REGION_CONTENT.find(z => z.id === (state.currentDangerRegion || state.selectedDangerRegion))) === null || _a === void 0 ? void 0 : _a.name) || 'منطقه خطر')) : 'شهر و سه روستای امن') + '</small></div><div class="explore-top-actions"><button type="button" data-menu-open>☰ منو</button><button type="button" data-status-open>☷ وضعیت</button></div></div><div class="explore-mini-hud"><span>❤ ' + c.hp + '/' + warriorMaxHp() + '</span><span>✧ ' + c.mp + '/' + warriorMaxMp() + '</span><span>⚡ ' + c.stamina + '/' + warriorMaxStamina() + '</span><span>◈ ' + state.gold + '</span>' + (state.mountUntilDay >= (wc.day || 1) ? '<span>♞ اسب</span>' : '') + '<span>☼ روز ' + Number(wc.day || 1) + ' • ' + String(wc.hour || 0).padStart(2, '0') + ':' + String(wc.minute || 0).padStart(2, '0') + '</span></div><div class="explore-viewport"><canvas id="etranom-world" width="720" height="650" aria-label="نقشه پیوسته منطقه امن و مرز جنوبی ورداش"></canvas><div class="world-hint">' + (state.activeVehicleId ? 'رانندگی: W/↑ حرکت • S/↓ عقب • A/D فرمان • Space ترمز • خروج از وسیله' : 'شهر خاکستر را بگرد؛ به ساختمان‌ها، وسایل و ساکنان نزدیک شو تا امکان تعامل روشن شود.') + '</div>' + (state.activeVehicleId ? '<button type="button" data-exit-vehicle style="position:absolute;right:10px;top:58px;z-index:8;padding:8px 12px;border-radius:10px">پیاده‌شدن</button>' : '') + '<div class="world-coords">X ' + Math.round(p.x) + ' • Y ' + Math.round(p.y) + '</div><div class="world-player-legend" aria-label="راهنمای رنگ بازیکنان"><span><i class="friend"></i>دوست</span><span><i class="guild"></i>هم‌انجمنی</span><span><i class="normal"></i>بازیکن عادی</span></div></div><div class="explore-controls"><div class="joystick-wrap"><div class="joystick-base" data-stick><div class="joystick-knob" data-knob></div></div><small>حرکت</small></div><div class="explore-actions"><button type="button" data-world-action="interact">◎<small>تعامل</small></button>' + (state.inWesternDanger ? '<button type="button" data-world-action="attack">⚔<small>حمله</small></button>' : '') + '<button type="button" data-world-action="inventory">⚒<small>تجهیزات و کیف</small></button></div></div>' + (worldMenuOpen ? '<div class="player-window-backdrop" data-menu-close><section class="player-window"><header><b>منوی ETRANOM</b><button data-menu-close>✕</button></header><div class="menu-grid">' + (state.inWesternDanger ? '<button data-menu-action="quests">⚑ مأموریت‌های منطقه</button><button data-menu-action="gifts">🎁 انتقال دارایی</button><button data-menu-action="online_market">🛒 بازار آنلاین بازیکنان</button>' : '') + '<button data-menu-action="reports">▣ گزارش تعاملات</button><button data-menu-action="journal">▤ ژورنال</button><button data-menu-action="settings">⚙ تنظیمات</button></div><p>محدوده فعلی: شهر خاکستر، کشتزار، ریشه‌چوب و سنگ‌آهن.</p></section></div>' : '') + (worldPanelOpen ? '<div class="player-window-backdrop" data-panel-close><section class="player-window world-panel-window" role="dialog" aria-modal="true"><header><b>' + ({ story: 'روایت و ماجراجویی', gifts: 'هدیه و انتقال دارایی', character: 'وضعیت شخصیت و مهارت‌ها', craft: 'دفتر دستورهای ساخت', inventory: 'تجهیزات شخصیت', character: 'شخصیت و کیف', reports: 'گزارش تعاملات', discoveries: 'دفتر اکتشاف', safecompletion: 'اکتشافات و تکمیل منطقه امن', discoveries: 'اکتشافات و تکمیل منطقه امن', quests: 'مأموریت‌ها', journal: 'ژورنال', map: 'اطلس جهان', residents: 'دفتر ساکنان', settings: 'تنظیمات' }[activeTab] || 'دفتر ماجراجویی') + '</b>' + (state.scene === "combat" ? '' : '<button data-panel-close>✕</button>') + '</header>' + renderHubTabs() + tabContent() + '</section></div>' : '') + renderInteractionPanel() + '</section>';
+        return '<section class="exploration-screen"><div class="explore-top"><div><b>⌖ ' + esc(state.location) + '</b><small>منطقه آغازین • ' + (state.inWesternDanger ? ('محدوده خطر فعال • ' + (((_a = ETRANOM_REGION_CONTENT.find(z => z.id === (state.currentDangerRegion || state.selectedDangerRegion))) === null || _a === void 0 ? void 0 : _a.name) || 'منطقه خطر')) : 'شهر و سه روستای امن') + '</small></div><div class="explore-top-actions"><button type="button" data-menu-open>☰ منو</button><button type="button" data-status-open>☷ وضعیت</button></div></div><div class="explore-mini-hud"><span>❤ ' + c.hp + '/' + warriorMaxHp() + '</span><span>✧ ' + c.mp + '/' + warriorMaxMp() + '</span><span>⚡ ' + c.stamina + '/' + warriorMaxStamina() + '</span><span>◈ ' + state.gold + '</span>' + (state.mountUntilDay >= (wc.day || 1) ? '<span>♞ اسب</span>' : '') + '<span>☼ روز ' + Number(wc.day || 1) + ' • ' + String(wc.hour || 0).padStart(2, '0') + ':' + String(wc.minute || 0).padStart(2, '0') + '</span></div><div class="explore-viewport"><canvas id="etranom-world" width="720" height="650" aria-label="نقشه پیوسته منطقه امن و مرز جنوبی ورداش"></canvas><div class="world-hint">' + (state.activeVehicleId ? 'رانندگی: W/↑ حرکت • S/↓ عقب • A/D فرمان • Space ترمز • خروج از وسیله' : 'برای ورود به ساختمان به در اصلی برخورد کن؛ برای گفت‌وگو با ساکنان و متصدیان به آن‌ها نزدیک شو.') + '</div>' + (state.activeVehicleId ? '<button type="button" data-exit-vehicle style="position:absolute;right:10px;top:58px;z-index:8;padding:8px 12px;border-radius:10px">پیاده‌شدن</button>' : '') + '<div class="world-coords">X ' + Math.round(p.x) + ' • Y ' + Math.round(p.y) + '</div><div class="world-player-legend" aria-label="راهنمای رنگ بازیکنان"><span><i class="friend"></i>دوست</span><span><i class="guild"></i>هم‌انجمنی</span><span><i class="normal"></i>بازیکن عادی</span></div></div><div class="explore-controls"><div class="joystick-wrap"><div class="joystick-base" data-stick><div class="joystick-knob" data-knob></div></div><small>حرکت</small></div><div class="explore-actions"><button type="button" data-world-run aria-label="دویدن">➤<small>دویدن</small></button><button type="button" data-world-action="interact">◎<small>تعامل</small></button>' + (state.inWesternDanger ? '<button type="button" data-world-action="attack">⚔<small>حمله</small></button>' : '') + '<button type="button" data-world-action="inventory">⚒<small>تجهیزات و کیف</small></button></div></div>' + (worldMenuOpen ? '<div class="player-window-backdrop" data-menu-close><section class="player-window"><header><b>منوی ETRANOM</b><button data-menu-close>✕</button></header><div class="menu-grid">' + (state.inWesternDanger ? '<button data-menu-action="quests">⚑ مأموریت‌های منطقه</button><button data-menu-action="gifts">🎁 انتقال دارایی</button><button data-menu-action="online_market">🛒 بازار آنلاین بازیکنان</button>' : '') + '<button data-menu-action="reports">▣ گزارش تعاملات</button><button data-menu-action="journal">▤ ژورنال</button><button data-menu-action="settings">⚙ تنظیمات</button></div><p>محدوده فعلی: شهر خاکستر، کشتزار، ریشه‌چوب و سنگ‌آهن.</p></section></div>' : '') + (worldPanelOpen ? '<div class="player-window-backdrop" data-panel-close><section class="player-window world-panel-window" role="dialog" aria-modal="true"><header><b>' + ({ story: 'روایت و ماجراجویی', gifts: 'هدیه و انتقال دارایی', character: 'وضعیت شخصیت و مهارت‌ها', craft: 'دفتر دستورهای ساخت', inventory: 'تجهیزات شخصیت', character: 'شخصیت و کیف', reports: 'گزارش تعاملات', discoveries: 'دفتر اکتشاف', safecompletion: 'اکتشافات و تکمیل منطقه امن', discoveries: 'اکتشافات و تکمیل منطقه امن', quests: 'مأموریت‌ها', journal: 'ژورنال', map: 'اطلس جهان', residents: 'دفتر ساکنان', settings: 'تنظیمات' }[activeTab] || 'دفتر ماجراجویی') + '</b>' + (state.scene === "combat" ? '' : '<button data-panel-close>✕</button>') + '</header>' + renderHubTabs() + tabContent() + '</section></div>' : '') + renderInteractionPanel() + '</section>';
     }
     function installPrimaryNavigationRouter() {
         if (window.__ETRANOM_PRIMARY_NAV_ROUTER_V1846__)
@@ -9700,7 +9706,7 @@ async function run(mode) {
                     const mountActive = (state.mountUntilDay || 0) >= (((_a = state.worldClock) === null || _a === void 0 ? void 0 : _a.day) || 1), keyboard = keyboardMotion;
                     const hasLiveJoystick = drag && stickState.drag && stickState.pointerId !== null;
                     const motion = resolveCharacterMotionVectorV2049({ stickX: hasLiveJoystick ? dx : 0, stickY: hasLiveJoystick ? dy : 0, keyX: keyboard.x, keyY: keyboard.y });
-                    const moveX = motion.x, moveY = motion.y, running = !!(keyboard.running || mountActive), baseMoveSpeed = (mountActive ? 22.5 : running ? 13.0 : 7.25) * ETRANOM_WORLD_SCALE_V2164.logicalUnitsPerMeter;
+                    const moveX = motion.x, moveY = motion.y, running = !!(keyboard.running || mountActive), baseMoveSpeed = (mountActive ? 5.2 : running ? 3.0 : 1.65) * ETRANOM_WORLD_SCALE_V2164.logicalUnitsPerMeter;
                     const movementWeatherRegion = state.currentDangerRegion || (state.inWesternDanger ? state.selectedDangerRegion : null) || resolveSafeSettlementV2138(p.x, p.y)?.id || 'city';
                     const movementWeather = resolveWeatherV2157(state.worldClock, movementWeatherRegion);
                     const movementSurface = resolveSeasonalMovementResponseV2159(movementWeather.season, movementWeather);
@@ -9764,6 +9770,30 @@ async function run(mode) {
                     window.__ETRANOM_PHYSICS_SURFACE_V2161 = physicalSurface;
                     window.__ETRANOM_PHYSICS_FRAME_V2161 = physicsMove;
                     window.__ETRANOM_ACCUMULATED_SURFACE_V2164 = accumulatedSurface;
+                    if (!state.inWesternDanger && !state.activeVehicleId && !interiorView && !autoDoorEntryPending && motion.moving && moveY > 0.12) {
+                        const doorwayHit = worldPhysicsV2161.colliders
+                            .filter(c => c.kind === 'building-shell' && c.doorway && c.buildingId)
+                            .map(c => ({ collider: c, door: c.doorway, distance: Math.hypot(p.x - c.doorway.x, p.y - c.doorway.frontY) }))
+                            .filter(hit => Math.abs(p.x - hit.door.x) <= hit.door.halfWidth + 28 && p.y >= hit.door.frontY - 20 && p.y <= hit.door.frontY + hit.door.depth + 34)
+                            .sort((a, b) => a.distance - b.distance)[0];
+                        if (doorwayHit) {
+                            const building = cityPOI.find(item => item.id === doorwayHit.collider.buildingId);
+                            if (building && ETRANOM_ENTRANCE_SYSTEM_V2145[building.id]) {
+                                const entryAction = executeEnvironmentInteractionV2155(state, environmentInteractionCatalogV2155, `building:${building.id}:door`, 'enter');
+                                if (entryAction?.ok && entryAction.enterBuilding) {
+                                    autoDoorEntryPending = building.id;
+                                    notice = 'درِ ' + building.name + ' باز شد؛ وارد ساختمان می‌شوی.';
+                                    window.setTimeout(() => {
+                                        if (state && !interiorView && autoDoorEntryPending === building.id) {
+                                            openBuildingInterior(building);
+                                            save(true);
+                                        }
+                                        autoDoorEntryPending = null;
+                                    }, 340);
+                                }
+                            }
+                        }
+                    }
                     const currentZone = resolveSafeSettlementV2138(p.x, p.y);
                     if (currentZone) {
                         const node = currentZone.id === 'city' ? 'settlement_ash_city' : currentZone.id === 'grain' ? 'village_grain' : currentZone.id === 'rootwood' ? 'village_rootwood' : 'village_ironhollow';
@@ -10780,6 +10810,8 @@ async function run(mode) {
                     // V2159: image-based roads and plaza are ground geometry and must receive the winter surface cover.
                     drawSafeZoneSpriteGroundV2118(ctx, t, camX, camY, currentWeatherV2157.season, 'ground');
                     window.__ETRANOM_WORLD_ART_GROUND_FRAME_V2167 = drawWorldArtKitGroundV2167(ctx, camX, camY);
+                    // V2173: connected settlement streets and central fountain plaza ground layer.
+                    window.__ETRANOM_SETTLEMENT_LAYOUT_FRAME_V2173 = !state.inWesternDanger ? drawSettlementLayoutV2173(ctx, camX, camY, t) : { skipped: 'danger-region' };
                     // V2159: season-specific ground cover is drawn in world coordinates below props/buildings/actors.
                     window.__ETRANOM_SEASON_GROUND_FRAME_V2159 = drawSeasonalGroundCoverV2159(ctx, camX, camY, p.x, p.y, currentWeatherV2157, t);
                     // V2163: footings, tree-root transitions, prop wear, road/path edges and waterbank gravel.
@@ -11260,6 +11292,15 @@ async function run(mode) {
                     }
                     catch (_) { }
                 } };
+                root.querySelectorAll('[data-world-run]').forEach(button => {
+                    const beginRun = event => { event.preventDefault(); if (window.__etranomKeyboardMotion) window.__etranomKeyboardMotion.running = true; try { button.setPointerCapture(event.pointerId); } catch (_) {} };
+                    const endRun = event => { event.preventDefault(); if (window.__etranomKeyboardMotion) window.__etranomKeyboardMotion.running = false; };
+                    button.style.touchAction = 'none';
+                    button.addEventListener('pointerdown', beginRun);
+                    button.addEventListener('pointerup', endRun);
+                    button.addEventListener('pointercancel', endRun);
+                    button.addEventListener('lostpointercapture', endRun);
+                });
                 if (stick && knob) {
                     stick.style.touchAction = 'none';
                     stick.style.userSelect = 'none';
@@ -11474,9 +11515,9 @@ async function run(mode) {
                 worldPanelOpen = false;
                 render();
             } }));
-            root.querySelectorAll('[data-interaction-close]').forEach(b => b.addEventListener('click', event => { if (event.target !== b) return; const buildingId = interiorView?.id; if (buildingId) executeEnvironmentInteractionV2155(state, environmentInteractionCatalogV2155, `building:${buildingId}:door`, 'toggle-door'); interiorView = null; worldInteraction = null; save(true); render(); }));
-            root.querySelectorAll('[data-enter-building]').forEach(b => b.addEventListener('click', () => { const building = cityPOI.find(x => x.id === b.dataset.enterBuilding); if (building && ETRANOM_ENTRANCE_SYSTEM_V2145[building.id]) { executeEnvironmentInteractionV2155(state, environmentInteractionCatalogV2155, `building:${building.id}:door`, 'enter'); openBuildingInterior(building); save(true); } else if (building) { notice = 'ورودی این ساختمان هنوز در فهرست معماری ثبت نشده است.'; render(); } }));
-            root.querySelectorAll('[data-interior-exit]').forEach(b => b.addEventListener('click', () => { const buildingId = interiorView?.id; if (buildingId) executeEnvironmentInteractionV2155(state, environmentInteractionCatalogV2155, `building:${buildingId}:door`, 'toggle-door'); interiorView = null; save(true); render(); }));
+            root.querySelectorAll('[data-interaction-close]').forEach(b => b.addEventListener('click', event => { if (event.target !== b) return; const buildingId = interiorView?.id; if (buildingId) executeEnvironmentInteractionV2155(state, environmentInteractionCatalogV2155, `building:${buildingId}:door`, 'toggle-door'); interiorView = null; autoDoorEntryPending = null; worldInteraction = null; save(true); render(); }));
+            root.querySelectorAll('[data-interior-service]').forEach(b => b.addEventListener('click', () => { if (!interiorView || !interiorView.residents?.length) return; const resident = interiorView.residents[0]; interiorView.lastServiceMessage = npcDialogueFor(resident, 'talk'); msg(interiorView.lastServiceMessage, resident.name); save(true); render(); }));
+            root.querySelectorAll('[data-interior-exit]').forEach(b => b.addEventListener('click', () => { const buildingId = interiorView?.id; if (buildingId) executeEnvironmentInteractionV2155(state, environmentInteractionCatalogV2155, `building:${buildingId}:door`, 'toggle-door'); interiorView = null; autoDoorEntryPending = null; save(true); render(); }));
             root.querySelectorAll('[data-interior-move]').forEach(b => b.addEventListener('click', () => {
                 if (!interiorView) return;
                 const vectors = {up:[0,-.42],down:[0,.42],left:[-.42,0],right:[.42,0]};

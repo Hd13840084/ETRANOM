@@ -1,9 +1,6 @@
-// ETRANOM V2127 — keep authored isometric sprites on the projected world plane.
-// The world grid is transformed by the 2:1 projection in game.js. Authored PNGs
-// already contain their own isometric perspective, so the image quad must not be
-// skewed a second time. This wrapper cancels only the world projection while
-// preserving each sprite's local translate/rotate/scale/flip transform.
-const WORLD_PROJECTION = Object.freeze({ a: 0.72, b: 0.36, c: -0.72, d: 0.36 });
+// ETRANOM V2173 — preserve upright authored sprites on the new orthographic world plane.
+// Cancel only the world projection around image quads and upright vector actors.
+const WORLD_PROJECTION = Object.freeze({ a: 0.96, b: 0, c: 0, d: 0.82 });
 const DET = WORLD_PROJECTION.a * WORLD_PROJECTION.d - WORLD_PROJECTION.b * WORLD_PROJECTION.c;
 const INV_WORLD = Object.freeze({
   a: WORLD_PROJECTION.d / DET,
