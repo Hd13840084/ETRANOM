@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+<!-- ETRANOM-V2177 detailed module graph diagnostics v4 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#111016">
@@ -278,7 +279,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
   form?.addEventListener('submit',event=>{event.preventDefault();dispatch('login');});
   signup?.addEventListener('click',event=>{event.preventDefault();dispatch('signup');});
   // Persistent diagnostics: remain active before and after authentication/game startup.
-  const diag={events:[],steps:[],trace:[],stage:'صفحه ورود',panel:null,statusPanel:null,startedAt:0,completed:false,mountInfo:null,mountState:null};
+  const diag={events:[],steps:[],trace:[],stage:'صفحه ورود',panel:null,statusPanel:null,startedAt:0,completed:false,mountInfo:null,mountState:null,bootStartedAt:Date.now(),authReadyStallReported:false,moduleAudit:{started:false,finished:false,roots:[],checked:[],failures:[],notes:[],truncated:false,startedAt:null,finishedAt:null}};
   const safeText=value=>String(value??'خطای نامشخص').replace(/(access_token|refresh_token|password|apikey|authorization)\s*[:=]\s*[^,} ]+/ig,'$1=[پنهان]').slice(0,6000);
   const ensureStatusPanel=()=>{
     if(diag.statusPanel)return diag.statusPanel;
@@ -295,7 +296,8 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     box.innerHTML='<div style=\"display:flex;justify-content:space-between;gap:10px;align-items:center\"><b style=\"color:#e5c68c;font-size:13px\">ETRANOM · وضعیت راه‌اندازی</b><span style=\"font-size:10px;color:#c6b9a5\">'+elapsed+' ثانیه</span></div><div style=\"height:6px;background:#403448;border-radius:8px;overflow:hidden;margin:8px 0\"><i style=\"display:block;width:'+pct+'%;height:100%;background:linear-gradient(90deg,#9b7048,#e2c38a);transition:width .25s\"></i></div><div style=\"font-weight:bold;color:#f2d9aa;margin-bottom:3px\">'+(message||diag.stage).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div><div style=\"color:#d2c5b4\">مرحله فعلی: '+diag.stage.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div>'+steps+(diag.completed?'<div style=\"margin-top:6px;color:#d8c99f\">اگر محیط بازی هنوز سیاه است، این پنل را باز بگذار و گزارش را ارسال کن.</div>':'');
   };
   const show=(kind,detail)=>{
-    const item={time:new Date().toLocaleTimeString(),stage:diag.stage,kind,detail:safeText(detail)};
+    const detailText=typeof detail==='string'?safeText(detail):safeText((()=>{try{return JSON.stringify(detail,null,2)}catch(_){return String(detail)}})());
+    const item={time:new Date().toLocaleTimeString(),stage:diag.stage,kind,detail:detailText};
     diag.events.push(item); if(diag.events.length>30)diag.events.shift();
     console.error('[ETRANOM DIAGNOSTIC]',item);
     if(!diag.panel){
@@ -305,6 +307,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     }
     diag.panel.style.display='block';
     diag.panel.textContent='ETRANOM — گزارش خطای زنده\nمرحله: '+diag.stage+'\n'+diag.events.slice(-10).map(x=>'['+x.time+'] '+x.kind+'\n'+x.detail).join('\n\n');
+    const copy=document.createElement('button');copy.type='button';copy.textContent='کپی گزارش کامل فنی';copy.style.cssText='position:sticky;bottom:0;display:block;margin:8px 0 0 auto;padding:8px 12px;border:1px solid #c9a46c;border-radius:8px;background:#30243a;color:#fff0d4;font:12px Tahoma';copy.addEventListener('click',async()=>{const report=buildDiagnosticReport();try{await navigator.clipboard.writeText(report);copy.textContent='گزارش کپی شد ✓'}catch(_){const area=document.createElement('textarea');area.value=report;area.style.cssText='position:fixed;opacity:0';document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();copy.textContent=ok?'گزارش کپی شد ✓':'کپی ناموفق بود'}});diag.panel.appendChild(copy);
   };
   const traceText=value=>{
     try{return safeText(typeof value==='string'?value:JSON.stringify(value,null,2));}
@@ -360,8 +363,113 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     traceEvent('DOM mount trace attached',{rootId:el.id,initial:mountSnapshot(el)});
     return true;
   };
+  const moduleSpecifierList=source=>{
+    const clean=String(source||'').replace(/\/\*[\s\S]*?\*\//g,'').replace(/^\s*\/\/.*$/gm,'');
+    const found=[];
+    const add=(value,kind)=>{if(value&&!found.some(x=>x.specifier===value))found.push({specifier:value,kind});};
+    const staticImport=/^[\t ]*import[\t ]+(?!\()/gm;
+    let match;
+    while((match=staticImport.exec(clean))){
+      const tail=clean.slice(match.index+match[0].length);
+      const end=tail.search(/;|\r?\n(?=\s*(?:import|export|const|let|var|function|class|async\s+function)\b)/);
+      const statement=end>=0?tail.slice(0,end):tail.slice(0,5000);
+      const quoted=statement.match(/(?:\bfrom\s*)?(['"])([^'"]+)\1/);
+      if(quoted)add(quoted[2],'static import');
+    }
+    const reExport=/^[\t ]*export[\t ]+[^\r\n;]*?\bfrom\s*(['"])([^'"]+)\1/gm;
+    while((match=reExport.exec(clean)))add(match[2],'re-export');
+    return found;
+  };
+  const moduleProbe=async(url,parent,chain)=>{
+    const result={url,parent:parent||null,chain:chain||[],status:null,statusText:null,contentType:null,finalURL:null,bytes:0,issue:null};
+    const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),7500);
+    try{
+      const response=await fetch(url,{method:'GET',cache:'no-store',mode:'cors',credentials:new URL(url).origin===location.origin?'same-origin':'omit',signal:controller.signal,headers:{Accept:'text/javascript, application/javascript, */*;q=0.8'}});
+      result.status=response.status;result.statusText=response.statusText;result.contentType=response.headers.get('content-type')||'(content-type ارسال نشده)';result.finalURL=response.url||url;
+      if(!response.ok){result.issue='HTTP '+response.status+' '+response.statusText;return {result,imports:[]};}
+      const body=await response.text();result.bytes=new TextEncoder().encode(body).length;
+      const head=body.slice(0,300).trimStart().toLowerCase();
+      if(/text\/html|application\/xhtml/i.test(result.contentType)||head.startsWith('<!doctype html')||head.startsWith('<html')){
+        result.issue='به‌جای JavaScript، سند HTML برگشت داده شد؛ احتمالاً مسیر فایل اشتباه است یا هاست صفحه 404 را با وضعیت 200 تحویل می‌دهد.';
+        return {result,imports:[]};
+      }
+      if(/\.m?js(?:[?#]|$)/i.test(url)&&!/^((text|application)\/(javascript|ecmascript|x-javascript))(?:\s*;|$)/i.test(result.contentType)){
+        result.issue='MIME نامعتبر برای ماژول JavaScript: '+result.contentType;
+        return {result,imports:[]};
+      }
+      if(result.bytes>4*1024*1024){result.issue='فایل بزرگ‌تر از ۴ MiB است؛ دریافت موفق شد اما بررسی importهای داخلی برای جلوگیری از مصرف زیاد متوقف شد.';return {result,imports:[]};}
+      return {result,imports:moduleSpecifierList(body),body};
+    }catch(error){result.issue=(error&&error.name==='AbortError'?'مهلت درخواست ۷٫۵ ثانیه‌ای تمام شد: ':'درخواست شبکه/CORS شکست خورد: ')+(error?.message||String(error));return {result,imports:[]};}
+    finally{clearTimeout(timer);}
+  };
+  let moduleAuditPromise=null;
+  const auditBootstrapModuleGraph=async(trigger)=>{
+    if(moduleAuditPromise)return moduleAuditPromise;
+    moduleAuditPromise=(async()=>{
+      const audit=diag.moduleAudit;audit.started=true;audit.finished=false;audit.startedAt=new Date().toISOString();audit.finishedAt=null;audit.roots=[];audit.checked=[];audit.failures=[];audit.notes=[];audit.truncated=false;
+      const moduleScripts=Array.from(document.querySelectorAll('script[type="module"]'));
+      if(!moduleScripts.length){audit.notes.push('هیچ تگ script[type=module] در سند پیدا نشد.');audit.finished=true;audit.finishedAt=new Date().toISOString();return audit;}
+      const queue=[],visited=new Set(),optionalGroups=[];
+      moduleScripts.forEach((script,index)=>{
+        const source=script.src?null:script.textContent||'';
+        const parentURL=script.src||location.href;
+        const roots=source?moduleSpecifierList(source):[];
+        audit.roots.push({index:index+1,tag:script.outerHTML?.slice(0,500)||'<script type="module">',inline:!script.src,sourceLength:source?.length||0,staticImports:roots.map(x=>x.specifier)});
+        roots.forEach(root=>queue.push({specifier:root.specifier,parentURL,chain:['inline module script #'+(index+1),root.specifier],kind:root.kind,optionalGroup:null}));
+        if(source){
+          const cdn=[...source.matchAll(/\bimportWithTimeout\s*\(\s*(['"])(https?:\/\/[^'"]+)\1/g)].map(m=>m[2]);
+          if(cdn.length>1)optionalGroups.push({name:'Supabase CDN fallback',urls:cdn});
+          cdn.forEach((url,i)=>queue.push({specifier:url,parentURL:location.href,chain:['inline module script #'+(index+1),'importWithTimeout fallback '+(i+1),url],kind:'CDN fallback',optionalGroup:cdn.length>1?'Supabase CDN fallback':null}));
+        }
+      });
+      let processed=0;
+      while(queue.length&&processed<120){
+        const batch=queue.splice(0,8);
+        await Promise.all(batch.map(async task=>{
+          let resolved;
+          try{
+            if(!/^(?:\.\.?\/|\/|https?:\/\/|data:|blob:)/i.test(task.specifier)){
+              const result={url:task.specifier,parent:task.parentURL,chain:task.chain,status:null,contentType:null,issue:'مسیر import از نوع bare specifier است و بدون import map در مرورگر resolve نمی‌شود.'};
+              audit.checked.push(result);audit.failures.push(result);processed++;return;
+            }
+            resolved=new URL(task.specifier,task.parentURL).href;
+          }catch(error){const result={url:task.specifier,parent:task.parentURL,chain:task.chain,issue:'آدرس import قابل تبدیل به URL نیست: '+error.message};audit.checked.push(result);audit.failures.push(result);processed++;return;}
+          if(visited.has(resolved)){processed++;return;}visited.add(resolved);
+          const probe=await moduleProbe(resolved,task.parentURL,task.chain);audit.checked.push(probe.result);processed++;
+          if(probe.result.issue){audit.failures.push(probe.result);return;}
+          const base=probe.result.finalURL||resolved;
+          (probe.imports||[]).forEach(item=>queue.push({specifier:item.specifier,parentURL:base,chain:task.chain.concat(item.specifier),kind:item.kind,optionalGroup:null}));
+        }));
+      }
+      if(queue.length){audit.truncated=true;audit.notes.push('برای جلوگیری از اسکن بیش از حد، بررسی پس از ۱۲۰ ماژول متوقف شد.');}
+      for(const group of optionalGroups){
+        const entries=audit.checked.filter(x=>group.urls.includes(x.url));
+        if(entries.length&&entries.every(x=>x.issue))audit.notes.push('تمام مسیرهای جایگزین '+group.name+' ناموفق بودند.');
+        else if(entries.some(x=>x.issue))audit.notes.push('یکی از مسیرهای جایگزین '+group.name+' ناموفق بود، اما حداقل یک مسیر دیگر پاسخ داده است.');
+      }
+      audit.finished=true;audit.finishedAt=new Date().toISOString();
+      const requiredFailures=audit.failures.filter(f=>!optionalGroups.some(g=>g.urls.includes(f.url)));
+      const groupsFailed=optionalGroups.some(g=>{const es=audit.checked.filter(x=>g.urls.includes(x.url));return es.length>0&&es.every(x=>x.issue);});
+      if(requiredFailures.length||groupsFailed){
+        const details={trigger:trigger||'automatic bootstrap scan',rootModules:audit.roots,failedDependencies:audit.failures,checkedCount:audit.checked.length,notes:audit.notes};
+        show('وابستگی ماژول با خطا روبه‌رو شد؛ مسیر دقیق مشخص شد',details);
+      }else if(diag.moduleScriptError){
+        show('تگ ماژول اصلی خطا داد، اما دریافت وابستگی‌ها موفق بود',{
+          scriptError:diag.moduleScriptError,
+          checkedCount:audit.checked.length,
+          note:'هیچ خطای HTTP/MIME در وابستگی‌های بررسی‌شده پیدا نشد. علت محتمل بعدی: خطای نحوی/اجرایی داخل ماژول اصلی، سیاست CSP یا خطای هنگام ارزیابی top-level module.'
+        });
+      }
+      return audit;
+    })().catch(error=>{diag.moduleAudit.notes.push('خودِ ابزار بررسی ماژول خطا داد: '+(error?.stack||error));diag.moduleAudit.finished=true;diag.moduleAudit.finishedAt=new Date().toISOString();return diag.moduleAudit;});
+    return moduleAuditPromise;
+  };
+  const buildDiagnosticReport=()=>{
+    const resources=performance.getEntriesByType('resource').slice(-80).map(r=>({url:r.name,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,decodedBodySize:r.decodedBodySize||0,type:r.initiatorType}));
+    return safeText(JSON.stringify({app:'ETRANOM detailed startup diagnostics',generatedAt:new Date().toISOString(),page:location.href,userAgent:navigator.userAgent,online:navigator.onLine,readyState:document.readyState,stage:diag.stage,authBridgeReady:!!window.__ETRANOM_AUTH_ACTIONS__?.ready,bootAgeMs:Date.now()-diag.bootStartedAt,authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,moduleAudit:diag.moduleAudit,moduleScriptError:diag.moduleScriptError||null,events:diag.events,resources},null,2));
+  };
   window.__ETRANOM_DIAGNOSTICS__={
-    begin:()=>{diag.startedAt=Date.now();diag.completed=false;diag.steps=[];diag.stage='شروع آماده‌سازی بازی';paintStatus('در حال آماده‌سازی جهان بازی…');},
+    begin:()=>{diag.startedAt=Date.now();diag.bootStartedAt=diag.bootStartedAt||diag.startedAt;diag.completed=false;diag.steps=[];diag.stage='شروع آماده‌سازی بازی';paintStatus('در حال آماده‌سازی جهان بازی…');},
     setStage:value=>{diag.stage=safeText(value);if(!diag.startedAt)diag.startedAt=Date.now();diag.steps.push(diag.stage);if(diag.steps.length>40)diag.steps.shift();paintStatus();},
     complete:()=>{diag.completed=true;diag.stage='پایان مراحل بارگذاری';paintStatus('بارگذاری موتور تمام شد؛ بررسی نمایش محیط بازی');},
     report:(kind,detail)=>{show(kind,traceText(detail));paintStatus('خطا هنگام راه‌اندازی: '+kind);},
@@ -380,44 +488,35 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
         return {children:el.childElementCount,htmlLength:el.innerHTML.length,display:cs.display,visibility:cs.visibility,width:Math.round(r.width),height:Math.round(r.height),first:childInfo,connected:!!el.isConnected,renderCalls:renderTrace.calls||0,renderFailures:renderTrace.failures||0,lastRender:renderTrace.last||null,traceReport:getTraceReport()};
       }catch(e){diag.mountInfo='خطا در بررسی DOM: '+safeText(e);paintStatus();return null;}
     },
-    getEvents:()=>diag.events.slice(),getSteps:()=>diag.steps.slice()
+    getEvents:()=>diag.events.slice(),getSteps:()=>diag.steps.slice(),getReport:buildDiagnosticReport,auditModules:auditBootstrapModuleGraph
   };
   window.addEventListener('error',event=>{
     const target=event.target;
     if(target && target!==window){
-      const tag=(target.tagName||target.nodeName||'منبع').toUpperCase();
-      let detail='نوع منبع: '+tag;
-      if(tag==='SCRIPT'){
-        const scripts=Array.from(document.scripts||[]);
-        const index=scripts.indexOf(target);
-        const src=target.src||target.getAttribute?.('src')||'';
-        const inlineText=(!src?String(target.textContent||'').trim().slice(0,900):'');
-        const attrs=Array.from(target.attributes||[]).map(a=>a.name+'="'+a.value+'"').join(' ');
-        detail+='\nآدرس اسکریپت: '+(src||'اسکریپت داخلی (بدون src)')+
-          '\nشماره تگ SCRIPT در صفحه: '+(index>=0?index+1:'نامشخص')+
-          '\nنوع: '+(target.type||'classic/default')+
-          '\nشناسه: '+(target.id||'ندارد')+
-          '\nویژگی‌ها: '+(attrs||'ندارد')+
-          '\nوضعیت: '+(target.isConnected?'متصل به صفحه':'از صفحه جدا شده');
-        if(inlineText)detail+='\nابتدای کد اسکریپت داخلی:\n'+inlineText;
-        detail+='\nاسکریپت‌های صفحه هنگام خطا:\n'+scripts.map((s,i)=>{
-          const u=s.src||s.getAttribute('src')||'(inline)';
-          return (i+1)+'. '+u+' | type='+(s.type||'classic/default')+' | id='+(s.id||'-');
-        }).join('\n');
-      }else{
-        detail+='\nآدرس: '+(target.currentSrc||target.src||target.href||target.getAttribute?.('href')||'نامشخص');
-        detail+='\nعنصر: '+(target.outerHTML||'').slice(0,1200);
-      }
-      show('منبع/فایل بارگذاری‌نشده',detail);return;
+      const info={tag:target.tagName||null,elementType:target.type||target.rel||null,id:target.id||null,url:target.src||target.href||null,inline:target.tagName==='SCRIPT'&&!target.src,inlineLength:target.tagName==='SCRIPT'&&!target.src?(target.textContent||'').length:null,moduleScript:target.tagName==='SCRIPT'&&target.type==='module',outerHTML:target.outerHTML?target.outerHTML.slice(0,900):null};
+      if(info.moduleScript){diag.moduleScriptError=info;show('تگ SCRIPT از نوع module اجرا/بارگذاری نشد',info);auditBootstrapModuleGraph('module script error event');}
+      else show('منبع/فایل بارگذاری‌نشده',info);
+      return;
     }
-    const message=(event.message||'خطای JavaScript نامشخص')+'\nفایل: '+(event.filename||'نامشخص')+
-      '\nخط: '+(event.lineno||'?')+' ستون: '+(event.colno||'?')+
-      (event.error?.stack?'\nStack:\n'+event.error.stack:'');
-    show('خطای JavaScript',message);
+    const info={message:event.message||'خطای ناشناخته',file:event.filename||null,line:event.lineno||null,column:event.colno||null,error:event.error?.stack||event.error?.message||null};
+    show('خطای JavaScript',info);
   },true);
   window.addEventListener('unhandledrejection',event=>{
-    const reason=event?.reason; show('Promise ردشده',reason?.stack||reason?.message||reason);
+    const reason=event?.reason; show('Promise ردشده',{message:reason?.message||String(reason),stack:reason?.stack||null});
   });
+  // Scan the entry module's real import graph. This catches 404s, HTML fallbacks,
+  // CORS/network failures and invalid JavaScript MIME types behind a generic SCRIPT error.
+  setTimeout(()=>auditBootstrapModuleGraph('automatic login bootstrap scan'),700);
+  // If the module body never reaches the auth bridge, report the exact import graph
+  // and recent resource activity after 20 seconds instead of saying only SCRIPT.
+  setInterval(()=>{
+    if(!window.__ETRANOM_AUTH_ACTIONS__?.ready&&!diag.authReadyStallReported&&Date.now()-diag.bootStartedAt>=20000){
+      diag.authReadyStallReported=true;
+      const resources=performance.getEntriesByType('resource').slice(-45).map(r=>({url:r.name,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,type:r.initiatorType}));
+      show('ماژول احراز هویت تا ۲۰ ثانیه آماده نشد',{stage:diag.stage,readyState:document.readyState,online:navigator.onLine,ageMs:Date.now()-diag.bootStartedAt,moduleAudit:diag.moduleAudit,moduleScriptError:diag.moduleScriptError||null,authHttp:window.__ETRANOM_LAST_AUTH_HTTP__||null,recentResources:resources,likelyInterpretation:'اگر failedDependencies خالی است ولی moduleScriptError وجود دارد، فایل‌های import شده پاسخ داده‌اند و باید خطای نحوی/اجرایی ماژول یا CSP بررسی شود.'});
+      if(!diag.moduleAudit.finished)auditBootstrapModuleGraph('20-second auth readiness timeout');
+    }
+  },1000);
   window.addEventListener('rejectionhandled',event=>show('Promise بعداً مدیریت شد',event.reason?.message||event.reason));
 })();
 </script>
@@ -1108,8 +1207,7 @@ async function importGameModule(url) {
     try {
         return await import(url);
     } catch (error) {
-        const detail = error && error.stack ? error.stack : (error && error.message ? error.message : String(error));
-        window.__ETRANOM_DIAGNOSTICS__?.report?.('شکست بارگذاری ماژول JavaScript', 'آدرس ماژول: ' + url + '\nجزئیات خطا:\n' + detail);
+        const detail = error && error.message ? error.message : String(error);
         const wrapped = new Error('ماژول بازی بارگذاری نشد [' + url + ']: ' + detail);
         wrapped.cause = error;
         wrapped.moduleURL = url;
