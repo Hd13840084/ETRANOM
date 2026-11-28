@@ -53,7 +53,35 @@
 
 </style>
 <link rel="stylesheet" href="./systems/ui/dark-fantasy-pages.css?v=125">
-<link rel="stylesheet" href="./systems/ui/battle-compact-v119.css?v=1854">
+<style id="etranom-battle-compact-v119-inline">
+/* ETRANOM v119 — compact battle layout, preserving the original card/VS/action design */
+.etr-battle-screen{padding:clamp(8px,2vw,15px)!important;gap:0!important}
+.etr-battle-screen .active-danger-zone-name{margin:0 0 7px!important;padding:6px 8px!important;font-size:12px!important}
+.etr-battle-screen .battle-player-wrap{margin:0 auto 7px!important;max-width:520px}
+.etr-battle-screen .battle-vs{margin:2px 0!important;padding:0!important}
+.etr-battle-screen .battle-section-title{margin:3px 2px 2px!important}
+.etr-battle-screen .battle-side.enemy-side{gap:7px!important;margin:0!important}
+.etr-battle-screen .etr-battle-card.enemy{min-height:145px!important}
+.etr-battle-screen .combat-target-label{margin:5px 0!important;padding:5px 8px!important;font-size:10px!important}
+.etr-battle-screen .battle-instruction{margin:4px 0!important;padding:5px 8px!important;font-size:9px!important}
+.etr-battle-screen .battle-actions{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;margin:7px 0!important}
+.etr-battle-screen .battle-actions button{min-width:0!important;min-height:54px!important;padding:5px 2px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:2px!important;border-radius:9px!important}
+.etr-battle-screen .battle-actions button span{font-size:16px!important;line-height:1!important}
+.etr-battle-screen .battle-actions button b{font-size:9px!important;white-space:normal!important;line-height:1.35!important}
+.etr-battle-screen .battle-actions button small{font-size:8px!important}
+.etr-battle-screen .battle-finish,.etr-battle-screen .battle-retreat{min-height:36px!important;margin-top:6px!important;padding:7px 10px!important;font-size:10px!important}
+.battle-skill-panel{margin:7px 0!important;padding:9px!important;border-radius:10px!important;max-height:38vh;overflow-y:auto!important}
+.battle-skill-panel>button{min-height:35px!important;margin:4px 3px!important;padding:7px 9px!important;font-size:10px!important}
+.necro-skill-tools{margin-top:8px;padding:8px;border:1px solid #76558f;border-radius:9px;background:#211a2b}
+.necro-skill-tools>b,.necro-skill-tools>small{display:block}.necro-skill-tools>b{color:#e8ceff;font-size:11px}.necro-skill-tools>small{margin-top:3px;color:#bfaed0;font-size:9px;line-height:1.7}
+.necro-skill-members{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin:7px 0}
+.necro-skill-members button{min-width:0;padding:6px;border:1px solid #59466b;border-radius:7px;background:#191622;color:#e7d9f5;font-size:9px;text-align:right}
+.necro-skill-members button.active{border-color:#c18aff;background:#38264a}
+.necro-skill-members button small{display:block;color:#bca9cc;font-size:8px}
+[data-necro-summon-all]{width:100%;border:1px solid #b58add!important;background:linear-gradient(100deg,#573477,#342044)!important;color:#f3e5ff!important;font-weight:bold}
+@media(max-width:420px){.etr-battle-screen .battle-actions{gap:3px!important}.etr-battle-screen .battle-actions button{min-height:49px!important}.etr-battle-screen .battle-actions button b{font-size:8px!important}.etr-battle-screen .etr-battle-card.enemy{min-height:130px!important}}
+
+</style>
 <style>.status-avatar{display:block!important;width:54px!important;height:62px!important;flex:0 0 54px!important;overflow:hidden!important;border:1px solid #b18a54!important;border-radius:11px!important;background:#17111d!important;box-shadow:0 0 13px #d18b3c55!important}.status-avatar img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 22%!important}</style>
 
 <style id="etranom-v93-mobile-fit">
@@ -554,6 +582,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
       readyState:document.readyState
     };
     info.scriptInventory=scripts.map((s,i)=>({index:i+1,type:s.type||'classic',src:s.src||null,id:s.id||null,async:!!s.async,defer:!!s.defer,inlineLength:s.src?0:(s.textContent||'').length,inlineStart:s.src?null:(s.textContent||'').trim().slice(0,240)}));
+    info.inlineModuleSources=scripts.filter(s=>s.type==='module'&&!s.src).map((s,i)=>({index:i+1,id:s.id||null,type:s.type,sourceURL:location.href,sourceLength:(s.textContent||'').length,imports:moduleSpecifierList(s.textContent||'').map(x=>({kind:x.kind,specifier:x.specifier,resolvedURL:(()=>{try{return new URL(x.specifier,location.href).href}catch(_){return null}})()}))}));
     info.recentScriptResources=performance.getEntriesByType('resource').filter(r=>/\.m?js(?:[?#]|$)/i.test(r.name)||/javascript|script/i.test(r.initiatorType)).slice(-150).map(r=>({url:r.name,initiatorType:r.initiatorType,durationMs:Math.round(r.duration),transferSize:r.transferSize||0,decodedBodySize:r.decodedBodySize||0}));
     if(isScript&&(target.type==='module'||!target.src)){
       try{
@@ -568,7 +597,7 @@ html,body{background:radial-gradient(ellipse at 50% -18%,#30203e 0,#100c16 48%,#
     if(target && target!==window){
       describeScriptFailure(target,event).then(info=>{
         const isScript=String(target?.tagName||'').toUpperCase()==='SCRIPT';
-        const actualSource=info.sourceURL||info.sourceImports?.map(x=>x.resolvedURL||x.specifier).filter(Boolean).join(' | ')||'اسکریپت ماژول inline در index.html؛ شناسه: '+(target?.id||'بدون شناسه')+'؛ متن کامل و گراف import در گزارش فنی';
+        const actualSource=info.sourceURL||info.sourceImports?.map(x=>x.resolvedURL||x.specifier).filter(Boolean).join(' | ')||('ماژول inline در '+location.pathname+' | script #'+(info.scriptIndex||'?')+' از '+(info.scriptCount||'?')+' | type='+(info.scriptType||'نامشخص')+' | id='+(info.scriptId||'بدون id')+' | import graph در گزارش کامل');
         show(isScript?'منبع اسکریپت بارگذاری‌نشده: '+actualSource: 'منبع/فایل بارگذاری‌نشده: '+(target?.currentSrc||target?.src||target?.href||target?.getAttribute?.('src')||target?.getAttribute?.('href')||target?.tagName||'نامشخص'),info);
       }).catch(error=>show('خطا هنگام جمع‌آوری جزئیات اسکریپت',{message:error?.message||String(error),stack:error?.stack||null,target:target?.outerHTML||String(target)}));
       return;
